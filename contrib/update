@@ -77,6 +77,10 @@ case "${PROJECT}" in
 		Hg http://bitbucket.org/andrewgodwin/south/ ${PROJECT} ${PROJECT}
 		;;
 
+	treebeard)
+		Hg http://bitbucket.org/tabo/django-treebeard/ ${PROJECT} ${PROJECT}
+		;;
+
 	--all)
 		for DIR in $(find -mindepth 1 -maxdepth 1 -type d -not -name '_*' -printf '%f\n')
 		do
