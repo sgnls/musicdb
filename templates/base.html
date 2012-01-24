@@ -6,6 +6,7 @@
 
 <title>{% block headtitle %}{% endblock %} - Music Database</title>
 
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet" type="text/css" />
 <link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
 
 <script language="javascript" src="{% static "js/jquery.js" %}"></script>
@@ -17,19 +18,23 @@
 
 {% block body %}
 
-<div id="header">
-<ul id="nav">
-	<li><a href="{% url home %}">Home</a></li>
-	<li><a href="{% url classical-composers %}">Classical</a></li>
-	<li><a href="{% url nonclassical %}">Albums</a></li>
-</ul>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="container">
+      <a class="brand" href="{% url home %}">Lamby's music database</a>
+      <ul class="nav">
+        <li class=""><a href="{% url classical-composers %}">Classical</a></li>
+        <li class=""><a href="{% url nonclassical %}">Albums</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div id="maincontent">
-<h1>{% block title %}{% endblock %}</h1>
-<h2>{% block subtitle %}{% endblock %}</h2>
+<div class="container">
+  <h1>{% block title %}{% endblock %}</h1>
+  <h2>{% block subtitle %}{% endblock %}</h2>
 
-{% block content %}{% endblock %}
+  {% block content %}{% endblock %}
 </div>
 
 {% endblock %}
