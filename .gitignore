@@ -3,5 +3,5 @@
 *.db
 *.json
 media_location
-musicdb/site_settings.py
+musicdb/settings/custom.py
 musicdb/site_media/*
