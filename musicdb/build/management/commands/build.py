@@ -18,7 +18,7 @@ class Command(BaseCommand):
         print "I: Setting role"
 
         target = os.path.join(
-            settings.MYTAB_BASE_PATH, 'musicdb/settings/role.py',
+            settings.MUSICDB_BASE_PATH, 'musicdb/settings/role.py',
         )
 
         open(target, 'wb').write("from roles.%s import *" % role)
@@ -48,7 +48,7 @@ class Command(BaseCommand):
                 hashes[common_path] = sha.hexdigest()
 
         target = os.path.join(
-            settings.MYTAB_BASE_PATH, 'musicdb/build/hashes.py',
+            settings.MUSICDB_BASE_PATH, 'musicdb/build/hashes.py',
         )
 
         open(target, 'wb').write("HASHES = %r" % hashes)
