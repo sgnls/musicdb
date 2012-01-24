@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     'django_fuse',
     'treebeard',
 
+    'musicdb.build',
     'musicdb.common',
     'musicdb.classical',
     'musicdb.nonclassical',
