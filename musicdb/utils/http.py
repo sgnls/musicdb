@@ -9,7 +9,6 @@ from django.utils import simplejson
 class M3UResponse(HttpResponse):
     def __init__(self, tracks):
         prefix = settings.MEDIA_LOCATION
-        prefix = 'http://musicdb.chris-lamb.co.uk/share/chou6OhS'
 
         content = '#EXTM3U\n'
         for track in tracks:
@@ -23,7 +22,6 @@ class M3UResponse(HttpResponse):
 class XSPFResponse(HttpResponse):
     def __init__(self, tracks):
         prefix = settings.MEDIA_LOCATION
-        prefix = 'http://musicdb.chris-lamb.co.uk/share/chou6OhS'
 
         NSMAP = {
             None: 'http://xspf.org/ns/0/',
