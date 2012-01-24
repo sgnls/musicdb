@@ -113,7 +113,7 @@ class Artist(AbstractArtist, NextPreviousMixin):
     def biography(self):
         items = []
 
-        if self.works.count():
+        if self.works.exists():
             items.append('composer')
 
         items.extend(self.instruments().values_list('adjective', flat=True))
@@ -216,7 +216,7 @@ class Work(models.Model, Mergeable, NextPreviousMixin):
             if getattr(self, attr):
                 ret += format % getattr(self, attr)
 
-        if self.catalogues.count():
+        if self.catalogues.exists():
             ret += u", %s" % ", ".join([str(x) for x in self.catalogues.all()])
 
         if show_year and self.year:

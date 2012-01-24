@@ -12,8 +12,8 @@
 
 <!-- <p><a href="{% url classical-artist-timeline artist.slug %}">Timeline</a></p> -->
 
-{% if artist.works.all %}
-  {% if artist.performances.all %}
+{% if artist.works.exists %}
+  {% if artist.performances.exists %}
     <h3>Compositions</h3>
   {% endif %}
 <ul>
@@ -24,8 +24,8 @@
 
 {% endif %}
 
-{% if artist.performances.all %}
-  {% if artist.works.all %}
+{% if artist.performances.exists %}
+  {% if artist.works.exists %}
     <h3>Recordings</h3>
   {% endif %}
 
@@ -48,7 +48,7 @@
 
 {% endif %}
 
-{% if artist.works.count %}
+{% if artist.works.exists %}
 {% with artist.previous_composer as previous %}
 {% with artist.next_composer as next %}
 <br/>
