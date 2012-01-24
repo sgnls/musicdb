@@ -14,12 +14,12 @@ INTERNAL_IPS = ('127.0.0.1',)
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'musicdb',
-        'USER': 'root',
-        'PASSWORD': 'password',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': '',
-        'PORT': '',
+        'PORT': '6432',
     }
 }
 
