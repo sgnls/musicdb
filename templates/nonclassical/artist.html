@@ -14,7 +14,7 @@
     {% if album.cover %}
     <img src="{{ album.cover.thumbnail.url }}" alt="{{ album }}">
     {% else %}
-    <img src="/media/img/no_album_art.jpg" alt="{{ album }}">
+    <img src="{% static "img/no_album_art.jpg" %}" alt="{{ album }}">
     {% endif %}
     </a>
     <br/>

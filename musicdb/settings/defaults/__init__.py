@@ -95,6 +95,7 @@ INSTALLED_APPS = (
     'musicdb.common',
     'musicdb.classical',
     'musicdb.nonclassical',
+    'musicdb.utils',
 )
 
 # Make this unique, and don't share it with anybody.
