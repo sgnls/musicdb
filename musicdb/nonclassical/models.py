@@ -105,10 +105,10 @@ class Album(models.Model, NextPreviousMixin):
         return self.get_tracks().aggregate(Sum('length')).values()[0] or 0
 
     def next(self):
-        return super(Album, self).next(artist=self.artist)
+        return super(Album, self).next(artist_id=self.artist_id)
 
     def previous(self):
-        return super(Album, self).previous(artist=self.artist)
+        return super(Album, self).previous(artist_id=self.artist_id)
 
     def set_artwork_from_url(self, url):
         tempfile, headers = urllib.urlretrieve(url)

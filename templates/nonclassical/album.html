@@ -7,8 +7,8 @@
 {% block title %}{{ album }}{% endblock %}
 
 {% block subtitle %}
-  <a href="{{ album.artist.get_absolute_url }}">
-    {{ album.artist.long_name }}
+  <a href="{{ artist.get_absolute_url }}">
+    {{ artist.long_name }}
   </a>
 {% endblock %}
 
@@ -57,12 +57,12 @@
 <tr>
   <td width="50%">
     {% if previous %}
-     &laquo; <a href="{{ previous.get_absolute_url }}">{{ previous }}</a>
+     &laquo; <a href="{% url nonclassical-album artist.slug previous.slug %}">{{ previous }}</a>
     {% endif %}
   </td>
   <td width="50%" align="right">
     {% if next %}
-     <a href="{{ next.get_absolute_url }}">{{ next }}</a> &raquo;
+     <a href="{% url nonclassical-album artist.slug next.slug %}">{{ next }}</a> &raquo;
     {% endif %}
   </td>
 </tr>

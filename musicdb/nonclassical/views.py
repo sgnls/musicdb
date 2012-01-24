@@ -30,13 +30,12 @@ def artist(request, slug):
     })
 
 def album(request, artist_slug, slug):
-    try:
-        album = Album.objects.get_from_slugs(artist_slug, slug)
-    except Album.DoesNotExist:
-        raise Http404
+    artist = get_object_or_404(Artist, slug=artist_slug)
+    album = get_object_or_404(artist.albums, slug=slug)
 
     return render(request, 'nonclassical/album.html', {
         'album': album,
+        'artist': artist,
     })
 
 def play_cd(request, cd_id):
