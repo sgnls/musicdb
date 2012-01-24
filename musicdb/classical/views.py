@@ -40,8 +40,10 @@ def artists(request):
     })
 
 def artist(request, slug):
+    artist = get_object_or_404(Artist, slug=slug)
+
     return render(request, 'classical/artist.html', {
-        'artist': get_object_or_404(Artist, slug=slug),
+        'artist': artist,
     })
 
 def ensemble(request, slug):
