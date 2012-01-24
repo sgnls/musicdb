@@ -8,7 +8,7 @@
 
 <p><a href="{% url nonclassical-letter artist.name_first %}">&laquo; Back to artist list</a></p>
 
-{% for album in artist.albums.all %}
+{% for album in albums %}
   <div style="float: left; width: 250px; height: 180px; text-align: center;">
     <a href="{{ album.get_absolute_url }}">
     {% if album.cover %}
