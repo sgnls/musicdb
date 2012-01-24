@@ -17,8 +17,8 @@
     <h3>Compositions</h3>
   {% endif %}
 <ul>
-{% for work in artist.works.all %}
-  <li><a href="{{ work.get_absolute_url }}">{{ work }}</a></li>
+{% for work in works %}
+  <li><a href="{% url classical-work artist.slug work.slug %}">{{ work }}</a></li>
 {% endfor %}
 </ul>
 

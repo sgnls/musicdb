@@ -43,6 +43,7 @@ def artist(request, slug):
     artist = get_object_or_404(Artist, slug=slug)
 
     return render(request, 'classical/artist.html', {
+        'works': artist.works.select_related('key'),
         'artist': artist,
     })
 
