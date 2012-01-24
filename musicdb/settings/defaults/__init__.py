@@ -127,3 +127,5 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 LOGIN_URL = '/login'
+
+DATABASE_ENGINE = 'dummy_for_debug_toolbar'
