@@ -1,0 +1,7 @@
+#!/bin/sh
+
+rm -rf lib/
+rm -rf docs/
+rm -rf js/tests/
+rm -rf examples/
+rm -f *.min.css
