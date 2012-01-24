@@ -8,9 +8,9 @@
 
 <p><a href="{% url nonclassical-letter artist.name_first %}">&laquo; Back to artist list</a></p>
 
-{% for album in albums %}
+{% for album in artist.albums.all %}
   <div style="float: left; width: 250px; height: 180px; text-align: center;">
-    <a href="{{ album.get_absolute_url }}">
+    <a href="{% url nonclassical-album artist.slug album.slug %}">
     {% if album.cover %}
     <img src="{{ album.cover.thumbnail.url }}" alt="{{ album }}">
     {% else %}
@@ -18,7 +18,7 @@
     {% endif %}
     </a>
     <br/>
-    <a href="{{ album.get_absolute_url }}">{{ album }}</a>
+    <a href="{% url nonclassical-album artist.slug album.slug %}">{{ album }}</a>
   </div>
 {% endfor %}
 

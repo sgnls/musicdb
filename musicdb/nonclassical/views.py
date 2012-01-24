@@ -27,7 +27,6 @@ def artist(request, slug):
 
     return render(request, 'nonclassical/artist.html', {
         'artist': artist,
-        'albums': artist.albums.select_related('artist'),
     })
 
 def album(request, artist_slug, slug):
