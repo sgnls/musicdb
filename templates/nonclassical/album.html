@@ -60,8 +60,8 @@
 
 {% with album.previous as previous %}
 {% with album.next as next %}
-<div class="row" style="padding-top: 45px">
-  <div class="span8">
+<div class="row weell" style="padding-top: 45px">
+  <div class="span7">
     {% if previous %}
      &laquo; <a href="{% url nonclassical-album artist.slug previous.slug %}">{{ previous }}</a>
     {% endif %}
