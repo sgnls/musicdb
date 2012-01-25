@@ -19,7 +19,7 @@
         CD{{ forloop.counter }}
       {% endifnotequal %}
 
-      <ol style="padding-top: 5px">
+      <ol style="padding-top: 5px; padding-left: 15px;">
         {% for track in cd.tracks.select_related.all %}
           {% if request.user.is_authenticated %}
           <li><a href="{% url play-music-file track.music_file_id %}">{{ track }}</a> {{ track.music_file.length|duration }}</li>
