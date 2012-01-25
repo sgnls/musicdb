@@ -10,19 +10,25 @@
 
 <br>
 
-{% for album in artist.albums.all %}
+{% for row in albums %}
+  <div class="row" style="padding-bottom: 50px; text-align: center;">
+    {% for album in row %}
+    {% if album %}
 
-  <div style="float: left; width: 200px; height: 180px; text-align: center;">
-    <a href="{% url nonclassical-album artist.slug album.slug %}">
-    {% if album.cover %}
-    <img src="{{ album.cover.thumbnail.url }}" alt="{{ album }}">
-    {% else %}
-    <img src="{% static "img/no_album_art.jpg" %}" alt="{{ album }}">
+    <div class="span4">
+      <a href="{% url nonclassical-album artist.slug album.slug %}">
+      {% if album.cover %}
+      <img src="{{ album.cover.thumbnail.url }}" alt="{{ album }}">
+      {% else %}
+      <img src="{% static "img/no_album_art.jpg" %}" alt="{{ album }}">
+      {% endif %}
+      </a>
+      <br/>
+      <a href="{% url nonclassical-album artist.slug album.slug %}">{{ album.title }}</a>
+      {% if album.year %}({{ album.year }}){% endif %}
+    </div>
     {% endif %}
-    </a>
-    <br/>
-    <a href="{% url nonclassical-album artist.slug album.slug %}">{{ album.title }}</a>
-    {% if album.year %}({{ album.year }}){% endif %}
+    {% endfor %}
   </div>
 {% endfor %}
 

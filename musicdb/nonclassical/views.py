@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404
 
 from django_fuse import DirectoryResponse, SymlinkResponse
 
+from musicdb.utils.iter import chunk
 from musicdb.utils.http import XSPFResponse
 from musicdb.nonclassical.models import Artist, Album, CD, Track
 
@@ -27,6 +28,7 @@ def artist(request, slug):
 
     return render(request, 'nonclassical/artist.html', {
         'artist': artist,
+        'albums': chunk(artist.albums.all(), 4),
     })
 
 def album(request, artist_slug, slug):
