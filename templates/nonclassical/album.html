@@ -11,17 +11,15 @@
     <h1>{{ album.title }}{% if album.year %} <small>({{ album.year }})</small>{% endif %}</h1>
     <h2><a href="{{ artist.get_absolute_url }}">{{ artist.long_name }}</a></h2>
 
-    <table style="margin-top: 20px;">
-    <tbody>
     {% with album.cds.count as album_cds_count %}
     {% for cd in album.cds.all %}
-    <tr>
-    <td style="border: none">
+
+    <div style="padding-top: 25px">
       {% ifnotequal album_cds_count 1 %}
         CD{{ forloop.counter }}
       {% endifnotequal %}
 
-      <ol>
+      <ol style="padding-top: 5px">
         {% for track in cd.tracks.select_related.all %}
           {% if request.user.is_authenticated %}
           <li><a href="{% url play-music-file track.music_file_id %}">{{ track }}</a> {{ track.music_file.length|duration }}</li>
@@ -37,12 +35,10 @@
         {% endif %}
         {{ cd.total_duration|duration }}
       {% endifnotequal %}
-    </td>
-    </tr>
+    </div>
+
     {% endfor %}
-    </tbody>
     {% endwith %}
-    </table>
   </div>
   <div class="span5">
     {% if album.cover %}
