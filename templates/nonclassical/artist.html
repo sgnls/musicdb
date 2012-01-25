@@ -4,6 +4,14 @@
 
 {% block container %}
 
+<ul class="breadcrumb">
+  <li><a href="{% url home %}">Home</a> <span class="divider">/</span></li>
+  <li><a href="{% url nonclassical %}">Albums</a> <span class="divider">/</span></li>
+  <li class="active">{{ artist }}</li>
+</ul>
+
+<br>
+
 <h1>{{ artist.long_name }}</h1>
 
 <p><a href="{% url nonclassical-letter artist.name_first %}">&laquo; Back to artist list</a></p>
