@@ -1,3 +1,156 @@
+commit 4da55136ecba90802f0e64b1de71687f148d7d0b
+Merge: cccd84c 8bae88a
+Author: trbs <v.oostveen@gmail.com>
+Date:   Tue Jan 24 14:00:56 2012 -0800
+
+    Merge pull request #91 from filipefigcorreia/umlish-graphmodels
+    
+    UMLish graphmodels
+
+commit 8bae88aac6b407421e9bec437349b884f305c334
+Merge: de9a4a6 cccd84c
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Tue Jan 24 16:45:28 2012 +0000
+
+    Merge branch 'master' into umlish-graphmodels
+    
+    Resolved conflicts on django_extensions/management/modelviz.py
+
+commit de9a4a6bc8560f77f7c3bc41ad6807feae1a6904
+Author: Stephen McDonald <steve@jupo.org>
+Date:   Mon Jan 23 05:23:48 2012 +1100
+
+    Don't add primary keys for abstract models.
+
+ django_extensions/management/modelviz.py |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit cccd84c13774d69d75915206d530012209818793
+Merge: d5bbec1 ae8da1a
+Author: Jannis Leidel <jannis@leidel.info>
+Date:   Mon Jan 16 00:16:38 2012 -0800
+
+    Merge pull request #163 from EnTeQuAk/django_timezone
+    
+    Added support for django 1.4 timezones
+
+commit ae8da1a0195310248ff6f7dce1c35d6503e202dd
+Author: Christopher Grebs <cg@webshox.org>
+Date:   Mon Jan 16 00:33:59 2012 +0100
+
+    Changed fallback to datetime.now
+
+ django_extensions/db/fields/__init__.py |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit a4b8a8fbdeeb1dcc9344e328d4717afd3e72f640
+Author: Christopher Grebs <cg@webshox.org>
+Date:   Sun Jan 15 14:17:43 2012 +0100
+
+    Added support for django 1.4 timezones
+
+ django_extensions/db/fields/__init__.py |   11 ++++++++---
+ 1 files changed, 8 insertions(+), 3 deletions(-)
+
+commit d5bbec16d41e2435d579b48bb6bce9cb17186fc1
+Merge: c85d3d5 a5b4c86
+Author: boostveen <bas@zedmedia.nl>
+Date:   Fri Dec 30 12:25:43 2011 +0100
+
+    Merge branch 'master' of https://github.com/django-extensions/django-extensions
+
+commit c85d3d5268196ccdf50324994e82b6c5adcae4db
+Author: boostveen <bas@zedmedia.nl>
+Date:   Fri Dec 30 12:17:09 2011 +0100
+
+    make sure only the last dot part of the engine string is used for determining which differ to use
+
+ django_extensions/management/commands/sqldiff.py |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit a5b4c86914fbfaf18627e5de75ee88514e6e3eda
+Merge: 176ae02 83265f9
+Author: trbs <v.oostveen@gmail.com>
+Date:   Mon Dec 19 15:20:14 2011 -0800
+
+    Merge pull request #139 from Vladimiroff/master
+    
+    Platform independent message for PyGraphviz
+
+commit 176ae02d1e5e4d78a2ed02a409e509ab45c92a3f
+Merge: c96b7cc d90b1af
+Author: Jannis Leidel <jannis@leidel.info>
+Date:   Mon Dec 19 08:46:28 2011 -0800
+
+    Merge pull request #159 from ralfzen/master
+    
+    email-only-export
+
+commit d90b1af9699518bc041d633c96253f64cdac07ec
+Author: ralfzen <ralfzen@gmail.com>
+Date:   Mon Dec 19 16:10:48 2011 +0100
+
+    adds email-only-export-format
+
+ .../management/commands/export_emails.py           |    8 ++++++++
+ 1 files changed, 8 insertions(+), 0 deletions(-)
+
+commit c96b7cc0b507567dd264d40e4636608630fe8917
+Merge: de27325 138203f
+Author: Jannis Leidel <jannis@leidel.info>
+Date:   Mon Dec 19 02:23:48 2011 -0800
+
+    Merge pull request #158 from darkpixel/feature/GH-122-show-urls-issue
+    
+    Import ugettext
+
+commit 138203f3bb2e79eaf2d75a90d44deaf6e82d6ba2
+Author: Aaron C. de Bruyn <aaron@heyaaron.com>
+Date:   Sun Dec 18 19:20:00 2011 -0800
+
+    Import ugettext
+
+ django_extensions/management/commands/show_urls.py |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit de27325cc2ea1b94d315d810ef744d5a43c26f6e
+Merge: 91e1139 782ade8
+Author: trbs <v.oostveen@gmail.com>
+Date:   Sat Dec 10 10:30:18 2011 -0800
+
+    Merge pull request #153 from mauler/master
+    
+    Compatibility with python2.4
+
+commit 91e1139dfb87d911ffd33f65b3b1ca45a0046a49
+Author: trbs <trbs@trbs.net>
+Date:   Sat Dec 10 19:28:14 2011 +0100
+
+    fixed #154, coerce settings.INSTALLED_APPS into a list for compatibility with django 1.4 thanks to gkappel for the patch!
+
+ django_extensions/tests/encrypted_fields.py |    1 +
+ django_extensions/tests/json_field.py       |    1 +
+ django_extensions/tests/uuid_field.py       |    1 +
+ 3 files changed, 3 insertions(+), 0 deletions(-)
+
+commit 782ade887098215fffce5276162960e2aa9aa8dd
+Author: Paulo Roberto <proberto.macedo@gmail.com>
+Date:   Thu Nov 24 11:39:29 2011 -0200
+
+    Oops, fixing run_tests.py
+
+ run_tests.py |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 57e7b1b5c842cd63c07c418b77647bfa80ba8899
+Author: Paulo Roberto <proberto.macedo@gmail.com>
+Date:   Thu Nov 24 11:37:32 2011 -0200
+
+    Changing the tests to be compatible with python2.4
+
+ django_extensions/tests/models.py |    7 ++++---
+ 1 files changed, 4 insertions(+), 3 deletions(-)
+
 commit 41ecd0c0ce485eedd62ef4a0bcaa38661a7790f9
 Author: trbs <trbs@trbs.net>
 Date:   Thu Nov 24 13:50:34 2011 +0100
@@ -160,6 +313,15 @@ Date:   Sun Oct 16 15:23:39 2011 +0200
     fixes #140 improved backwards compatibility
 
  django_extensions/management/modelviz.py |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 83265f98a8faf175ac0f42dc44d0d0f7027e0717
+Author: Kiril Vladimiroff <v.kiril@gmail.com>
+Date:   Sat Oct 15 19:38:25 2011 +0300
+
+    Error message for PyGraphviz is fixed
+
+ .../management/commands/graph_models.py            |    2 +-
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit 05059753c4f41baf110e96c95cfe3de700afe416
@@ -709,6 +871,29 @@ Date:   Mon May 16 11:18:17 2011 +0100
  .../management/commands/runserver_plus.py          |    5 ++++-
  1 files changed, 4 insertions(+), 1 deletions(-)
 
+commit bc1be8e205751c5a964432f9efe6216d40f1ef9e
+Merge: 7f63ba8 22e4d4f
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Thu May 5 20:48:08 2011 +0100
+
+    Merge branch 'django-extensions' into umlish-graphmodels
+
+commit 7f63ba8cf7520316092d43208990be059bff8fbd
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Thu May 5 20:38:47 2011 +0100
+
+    Moved misplaced code merged from tomviner's fork
+
+ django_extensions/management/modelviz.py |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 7cdb097a3722ff1d9afe4bc38835515f4f50bd50
+Merge: 9939436 a24b523
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Thu May 5 20:17:57 2011 +0100
+
+    Merge branch 'tomviner-fork' into umlish-graphmodels
+
 commit 22e4d4f9b24b8ced79ebf98dc153fcbb5d33784c
 Merge: 4afdda1 e433120
 Author: Jannis Leidel <jannis@leidel.info>
@@ -738,6 +923,24 @@ Date:   Wed Apr 27 20:25:16 2011 -0700
 
  django_extensions/management/commands/runscript.py |   35 ++++++++++++-------
  1 files changed, 22 insertions(+), 13 deletions(-)
+
+commit 9939436c9ef0b9b996b1ecc8e922b71b7cdbfdb2
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Wed Apr 27 14:35:17 2011 +0100
+
+    Excluding fields inherited from abstract models
+
+ django_extensions/management/modelviz.py |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit 256391ac220a497a53bd82bdac9b47d27170fc14
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Wed Apr 27 14:34:18 2011 +0100
+
+    Adding abstract models to the pile of models to process (get_models() doesn't return abstract models). This adds them to the loop that will depict their relations, otherwise the relations of an abstract model are never depicted at that level
+
+ django_extensions/management/modelviz.py |   14 +++++++++++---
+ 1 files changed, 11 insertions(+), 3 deletions(-)
 
 commit 6e8ed84a6fadd4f4112b9fa64d51944c490d3271
 Author: tehfink <djsnickles@yahoo.com>
@@ -803,6 +1006,15 @@ Date:   Fri Apr 15 22:08:50 2011 +0200
  .../management/commands/shell_plus.py              |   32 +++++++++++++++++--
  1 files changed, 28 insertions(+), 4 deletions(-)
 
+commit 4daefd389a285ac5506fc16740e2e834acb77974
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Wed Apr 13 01:13:27 2011 +0100
+
+    Fixed: when a base class would have a many_to_many relation, all inheriting classes were also depicted with that relation
+
+ django_extensions/management/modelviz.py |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
 commit 657b69574e58c85229ed107d10bb69d4baf81865
 Author: Chris Lea <chris.lea@gmail.com>
 Date:   Tue Apr 5 17:43:01 2011 -0700
@@ -812,6 +1024,54 @@ Date:   Tue Apr 5 17:43:01 2011 -0700
  django_extensions/db/fields/encrypted.py |    2 +-
  django_extensions/db/fields/json.py      |    2 +-
  2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit a4dc8c7260f242bf920a0cfcdf3ae086ec5d54ad
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Fri Apr 1 18:54:43 2011 +0100
+
+    Hack to make inheritance relations tend to be graphed from the top to the bottom of the diagram (i.e., parent classes appear above child classes)
+
+ django_extensions/management/modelviz.py |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit 12c0456e0705725706a85db041dfdd86c552c63e
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Fri Apr 1 18:51:16 2011 +0100
+
+    Changed some arrowheads, to resemble UML notation (i.e., dot arrowheads are used to represent multiplicit)
+
+ django_extensions/management/modelviz.py |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 66bdb3a2243f12880d1af11111aff34b71206fe8
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Fri Apr 1 18:49:48 2011 +0100
+
+    Excluded many_to_many fields from appearing as attributes (I think this was already dead code at this time).
+
+ django_extensions/management/modelviz.py |   10 +++++-----
+ 1 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 8017a3368ad73dc5efbd95e0c123e43066aab6fb
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Fri Apr 1 18:47:38 2011 +0100
+
+    - Excluding relations from being depicted as attributes
+    - Considering "local_field"s of django models, as showing "field"s will consider fields of the entire inheritance line, which is redundant.
+    - Excluding attributes suffixed with '_ptr_id', that actualy reflect relations with parent classes
+
+ django_extensions/management/modelviz.py |   15 ++++++++++-----
+ 1 files changed, 10 insertions(+), 5 deletions(-)
+
+commit b4a620537319642b16af345e03aef1b659f4c278
+Author: Filipe Correia <fcorreia@gmail.com>
+Date:   Fri Apr 1 16:44:00 2011 +0100
+
+    Merge branch 'graphmodels' of git://github.com/joernhees/django-extensions.git
+
+ .../management/commands/graph_models.py            |    4 +-
+ django_extensions/management/modelviz.py           |   75 +++++++++++++++-----
+ 2 files changed, 61 insertions(+), 18 deletions(-)
 
 commit 18c98084cd5e67cb029918b429067a1f1a7fad65
 Author: j <j@mailb.org>
@@ -829,6 +1089,15 @@ Author: j <j@mailb.org>
 Date:   Thu Mar 31 23:06:01 2011 +0200
 
     Merge remote branch 'upstream/master'
+
+commit a24b52371cc3e2159ddacf7509504f262bb2a2f7
+Author: Tom <tom.viner@u-dox.com>
+Date:   Thu Mar 31 16:56:19 2011 +0100
+
+    add reverse relation names in brackets
+
+ django_extensions/management/modelviz.py |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
 
 commit e433120c936be62e69e67f201855c5f8c015991a
 Author: Mike Blume <mike@loggly.com>
