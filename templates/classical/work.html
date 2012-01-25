@@ -2,7 +2,7 @@
 
 {% load duration %}
 
-{% block headtitle %}{{ work }} - {{ work.composer }}{% endblock %}
+{% block headtitle %}{{ work }} - {{ work.composer }} - {{ block.super }}{% endblock %}
 
 {% block title %}{{ work }}{% endblock %}
 

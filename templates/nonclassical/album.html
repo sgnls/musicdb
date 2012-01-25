@@ -2,7 +2,7 @@
 
 {% load duration %}
 
-{% block headtitle %}{{ album }} - {{ album.first_artist }}{% endblock %}
+{% block headtitle %}{{ album }} - {{ album.first_artist }} - {{ block.super }}{% endblock %}
 
 {% block title %}{{ album }}{% endblock %}
 
