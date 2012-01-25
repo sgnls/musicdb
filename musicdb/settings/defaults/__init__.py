@@ -140,3 +140,5 @@ MEDIA_LOCATION = '/media/disk/raid/share/mp3'
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.BCryptPasswordHasher',
 )
+
+SERVER_EMAIL = 'noreply@musicdb.chris-lamb.co.uk'
