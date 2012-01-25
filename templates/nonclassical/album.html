@@ -16,7 +16,7 @@
 <br>
 
 <div class="row">
-  <div class="span11">
+  <div class="span9">
     <h1>{{ album.title }}{% if album.year %} <small>({{ album.year }})</small>{% endif %}</h1>
     <h2><a href="{{ artist.get_absolute_url }}">{{ artist.long_name }}</a></h2>
 
@@ -49,7 +49,7 @@
     {% endfor %}
     {% endwith %}
   </div>
-  <div class="span5">
+  <div class="span6">
     {% if album.cover %}
 
     <ul class="media-grid">
