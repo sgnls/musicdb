@@ -103,20 +103,19 @@
 {% with work.next as next %}
 <br/>
 <br/>
-<table width="100%">
-<tr>
-  <td width="50%">
+
+<div class="row">
+  <div class="span8">
     {% if previous %}
      &laquo; <a href="{{ previous.get_absolute_url }}">{{ previous }}</a>
     {% endif %}
-  </td>
-  <td width="50%" align="right">
+  </div>
+  <div class="span8" style="text-align: right">
     {% if next %}
      <a href="{{ next.get_absolute_url }}">{{ next }}</a> &raquo;
     {% endif %}
-  </td>
-</tr>
-</table>
+  </div>
+</div>
 {% endwith %}
 {% endwith %}
 
