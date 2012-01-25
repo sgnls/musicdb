@@ -51,7 +51,7 @@ def play_album(request, album_id):
     return XSPFResponse(album.get_tracks())
 
 def collage(request):
-    albums = Album.objects.exclude(cover='')
+    albums = Album.objects.exclude(cover='').select_related('artist')
 
     return render(request, 'nonclassical/collage.html', {
         'albums': albums,
