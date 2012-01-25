@@ -1,0 +1,15 @@
+URL: https://github.com/django-extensions/django-extensions/issues/114
+
+diff --git a/django_extensions/management/commands/runserver_plus.py b/django_extensions/management/commands/runserver_plus.py
+index 291959d..0ceae38 100644
+--- a/django_extensions/management/commands/runserver_plus.py
++++ b/django_extensions/management/commands/runserver_plus.py
+@@ -71,7 +71,7 @@ class Command(BaseCommand):
+             print "Development server is running at http://%s:%s/" % (addr, port)
+             print "Using the Werkzeug debugger (http://werkzeug.pocoo.org/)"
+             print "Quit the server with %s." % quit_command
+-            path = admin_media_path or django.__path__[0] + '/contrib/admin/media'
++            path = admin_media_path or django.__path__[0] + '/contrib/admin/static/admin'
+             handler = AdminMediaHandler(WSGIHandler(), path)
+             if open_browser:
+                 import webbrowser
