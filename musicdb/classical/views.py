@@ -2,7 +2,7 @@
 
 import time
 
-from django_fuse import DirectoryResponse, FileResponse
+from django_fuse import DirectoryResponse
 from django.shortcuts import render, get_object_or_404
 
 from musicdb.utils.http import XSPFResponse
@@ -108,25 +108,3 @@ def stats(request):
         'artists_by_num_works': artists_by_num_works,
         'works_by_num_recordings': works_by_num_recordings,
     })
-
-def timeline(request):
-    return render(request, 'classical/timeline.html')
-
-def timeline_data(request):
-    composers = Artist.objects.composers()
-
-    return render(request, 'classical/timeline_data.xml', {
-        'composers': composers.exclude(born=0, died=0),
-    }, mimetype='application/xml')
-
-def artist_timeline(request, slug):
-    return render(request, 'classical/artist_timeline.html', {
-        'artist': get_object_or_404(Artist, slug=slug),
-    })
-
-def artist_timeline_data(request, slug):
-    artist = get_object_or_404(Artist, slug=slug)
-
-    return render(request, 'classical/artist_timeline_data.xml', {
-        'works': artist.works.exclude(year=0),
-    }, mimetype='application/xml')
