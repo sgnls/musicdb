@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block container %}
+<div class="hero-unit">
+  <h1>Lamby's Music Database</h1>
+</div>
 
-{% block content %}
-
-<ul>
-  <li><a href="{% url nonclassical %}">Albums</a></li>
-  <li><a href="{% url classical %}">Classical</a></li>
-  <li><a href="{% url stats %}">Statistics</a></li>
-</ul>
+<div style="text-align: center">
+  <a class="btn large primary" href="{% url nonclassical %}">Albums</a>
+  <a class="btn large primary" href="{% url classical %}">Classical</a>
+  <a class="btn large" href="{% url stats %}">Statistics</a>
+</div>
 {% endblock %}
