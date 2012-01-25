@@ -20,7 +20,7 @@
 <h3 style="border-bottom: 1px dotted black; padding-bottom: 2px" id="{{ recording.slug }}">
 {{ recording.short_name }}
 <span style="font-size: 50%">
-<a href="/admin/classical/recording/{{ recording.pk }}">edit</a>
+<a href="{% url admin:classical_recording_change recording.pk %}">edit</a>
 <a href="{{ recording.get_absolute_url }}">#</a>
 </span>
 </h3>
@@ -84,7 +84,7 @@
 
 <hr/>
 
-<p><a href="/admin/classical/work/{{ work.pk }}">edit</a></p>
+<p><a href="{% url admin:classical_work_change work.pk %}">edit</a></p>
 
 {% with work.previous as previous %}
 {% with work.next as next %}
