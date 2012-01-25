@@ -111,8 +111,8 @@ MEDIA_URL = '/site_media/'
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
 SESSION_COOKIE_HTTPONLY = True
 
 CACHES = {
