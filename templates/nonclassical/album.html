@@ -64,6 +64,8 @@
   <div class="span7">
     {% if previous %}
      &laquo; <a href="{% url nonclassical-album artist.slug previous.slug %}">{{ previous }}</a>
+    {% else %}
+     &nbsp;
     {% endif %}
   </div>
   <div class="span8" style="text-align: right">

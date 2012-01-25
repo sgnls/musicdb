@@ -108,6 +108,8 @@
   <div class="span7">
     {% if previous %}
      &laquo; <a href="{{ previous.get_absolute_url }}">{{ previous }}</a>
+    {% else %}
+     &nbsp;
     {% endif %}
   </div>
   <div class="span8" style="text-align: right">
