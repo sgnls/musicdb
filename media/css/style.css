@@ -8,6 +8,11 @@ body
   padding: 40px 0 45px 0;
 }
 
+.row
+{
+  margin-left: 0;
+}
+
 /* The white background content wrapper */
 .content
 {
