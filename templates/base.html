@@ -45,12 +45,14 @@
 </div>
 
 <div class="container">
+<div class="content">
   {% block container %}
     <h1>{% block title %}{% endblock %}</h1>
     <h2>{% block subtitle %}{% endblock %}</h2>
 
     {% block content %}{% endblock %}
   {% endblock %}
+</div>
 </div>
 
 {% endblock %}
