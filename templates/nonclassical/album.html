@@ -4,58 +4,58 @@
 
 {% block headtitle %}{{ album }} - {{ artist }} - {{ block.super }}{% endblock %}
 
-{% block title %}{{ album.title }}{% if album.year %} <small>({{ album.year }})</small>{% endif %}{% endblock %}
+{% block container %}
 
-{% block subtitle %}
-  <a href="{{ artist.get_absolute_url }}">
-    {{ artist.long_name }}
-  </a>
-{% endblock %}
+<div class="row">
+  <div class="span11">
+    <h1>{{ album.title }}{% if album.year %} <small>({{ album.year }})</small>{% endif %}</h1>
+    <h2><a href="{{ artist.get_absolute_url }}">{{ artist.long_name }}</a></h2>
 
-{% block content %}
+    <table style="margin-top: 20px;">
+    <tbody>
+    {% with album.cds.count as album_cds_count %}
+    {% for cd in album.cds.all %}
+    <tr>
+    <td style="border: none">
+      {% ifnotequal album_cds_count 1 %}
+        CD{{ forloop.counter }}
+      {% endifnotequal %}
 
-{% if album.cover %}
-<p style="float: right">
-  {% if request.user.is_authenticated %}
-  <a href="{% url nonclassical-play-album album.id %}">
-    <img src="{{ album.cover.url }}" alt="Play {{ album }}">
-  </a>
-  {% else %}
-    <img src="{{ album.cover.url }}">
-  {% endif %}
-</p>
-{% endif %}
+      <ol>
+        {% for track in cd.tracks.select_related.all %}
+          {% if request.user.is_authenticated %}
+          <li><a href="{% url play-music-file track.music_file_id %}">{{ track }}</a> {{ track.music_file.length|duration }}</li>
+          {% else %}
+          <li>{{ track }} {{ track.music_file.length|duration }}</li>
+          {% endif %}
+        {% endfor %}
+      </ol>
 
-<table>
-{% with album.cds.count as album_cds_count %}
-{% for cd in album.cds.all %}
-<tr>
-<td>
-  {% ifnotequal album_cds_count 1 %}
-    CD{{ forloop.counter }}
-  {% endifnotequal %}
-
-  <ol>
-    {% for track in cd.tracks.select_related.all %}
-      {% if request.user.is_authenticated %}
-      <li><a href="{% url play-music-file track.music_file_id %}">{{ track }}</a> {{ track.music_file.length|duration }}</li>
-      {% else %}
-      <li>{{ track }} {{ track.music_file.length|duration }}</li>
-      {% endif %}
+      {% ifnotequal album_cds_count 1 %}
+        {% if request.user.is_authenticated %}
+          <a href="{% url nonclassical-play-cd cd.id %}">Play</a>
+        {% endif %}
+        {{ cd.total_duration|duration }}
+      {% endifnotequal %}
+    </td>
+    </tbody>
+    </tr>
     {% endfor %}
-  </ol>
-
-  {% ifnotequal album_cds_count 1 %}
+    {% endwith %}
+    </table>
+  </div>
+  <div class="span5">
+    {% if album.cover %}
     {% if request.user.is_authenticated %}
-      <a href="{% url nonclassical-play-cd cd.id %}">Play</a>
+    <a href="{% url nonclassical-play-album album.id %}">
+      <img src="{{ album.cover.url }}" alt="Play {{ album }}">
+    </a>
+    {% else %}
+      <img src="{{ album.cover.url }}">
     {% endif %}
-    {{ cd.total_duration|duration }}
-  {% endifnotequal %}
-</td>
-</tr>
-{% endfor %}
-{% endwith %}
-</table>
+    {% endif %}
+  </div>
+</div>
 
 {% if request.user.is_authenticated %}
 <a href="{% url nonclassical-play-album album.id %}">Play album</a>
@@ -64,22 +64,18 @@
 
 {% with album.previous as previous %}
 {% with album.next as next %}
-<br/>
-<br/>
-<table width="100%">
-<tr>
-  <td width="50%">
+<div class="row" style="padding-top: 45px">
+  <div class="span8">
     {% if previous %}
      &laquo; <a href="{% url nonclassical-album artist.slug previous.slug %}">{{ previous }}</a>
     {% endif %}
-  </td>
-  <td width="50%" align="right">
+  </div>
+  <div class="span8" style="text-align: right">
     {% if next %}
      <a href="{% url nonclassical-album artist.slug next.slug %}">{{ next }}</a> &raquo;
     {% endif %}
-  </td>
-</tr>
-</table>
+  </div>
+</div>
 {% endwith %}
 {% endwith %}
 
