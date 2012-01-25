@@ -53,20 +53,18 @@
 {% with artist.next_composer as next %}
 <br/>
 <br/>
-<table width="100%">
-<tr>
-  <td width="50%">
-    {% if previous %}
-     &laquo; <a href="{{ previous.get_absolute_url }}">{{ previous }}</a>
-    {% endif %}
-  </td>
-  <td width="50%" align="right">
-    {% if next %}
-     <a href="{{ next.get_absolute_url }}">{{ next }}</a> &raquo;
-    {% endif %}
-  </td>
-</tr>
-</table>
+<div class="row">
+<div class="span7">
+  {% if previous %}
+   &laquo; <a href="{{ previous.get_absolute_url }}">{{ previous }}</a>
+  {% endif %}
+</td>
+<div class="span8" style="text-align: right;">
+  {% if next %}
+   <a href="{{ next.get_absolute_url }}">{{ next }}</a> &raquo;
+  {% endif %}
+</div>
+</div>
 {% endwith %}
 {% endwith %}
 {% endif %}
