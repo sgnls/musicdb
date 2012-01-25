@@ -4,7 +4,7 @@
 
 {% block headtitle %}{{ album }} - {{ artist }} - {{ block.super }}{% endblock %}
 
-{% block title %}{{ album }}{% endblock %}
+{% block title %}{{ album.title }}{% if album.year %} <small>({{ album.year }})</small>{% endif %}{% endblock %}
 
 {% block subtitle %}
   <a href="{{ artist.get_absolute_url }}">
