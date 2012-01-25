@@ -20,7 +20,9 @@
 <h3 style="border-bottom: 1px dotted black; padding-bottom: 2px" id="{{ recording.slug }}">
 {{ recording.short_name }}
 <span style="font-size: 50%">
+{% if request.user.is_superuser %}
 <a href="{% url admin:classical_recording_change recording.pk %}">edit</a>
+{% endif %}
 <a href="{{ recording.get_absolute_url }}">#</a>
 </span>
 </h3>
@@ -30,7 +32,14 @@
   <ul style="list-style-type:upper-roman">
   {% for movement in recording.movements.all %}
     {{ movement.section_title }}
-    <li><a href="{% url play-music-file movement.music_file.id %}">{{ movement }}</a> <small>{{ movement.music_file.length|duration }}</small></li>
+    <li>
+      {% if request.user.is_authenticated %}
+        <a href="{% url play-music-file movement.music_file.id %}">{{ movement }}</a>
+      {% else %}
+        {{ movement }}
+      {% endif %}
+      <small>{{ movement.music_file.length|duration }}</small>
+    </li>
   {% endfor %}
   </ul>
 {% endifnotequal %}
@@ -52,7 +61,9 @@
 <p>Recorded: {{ recording.year }}</p>
 {% endif %}
 
+{% if request.user.is_authenticated %}
 <p><a href="{% url classical-play-recording recording.id %}">Play</a> <small>{{ recording.total_duration|duration }}</small></p>
+{% endif %}
 
 {% endfor %}
 
@@ -84,7 +95,9 @@
 
 <hr/>
 
+{% if request.user.is_superuser %}
 <p><a href="{% url admin:classical_work_change work.pk %}">edit</a></p>
+{% endif %}
 
 {% with work.previous as previous %}
 {% with work.next as next %}
