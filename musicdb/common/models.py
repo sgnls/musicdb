@@ -13,8 +13,6 @@ from .managers import FileManager
 Common models.
 """
 
-__all__ = ('AbstractArtist', 'Nationality', 'MusicFile')
-
 class AbstractArtist(models.Model):
     slug = MySlugField('slug_name')
     url = models.CharField(max_length=200, blank=True)
