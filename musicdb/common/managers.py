@@ -14,7 +14,7 @@ class FileManager(models.Manager):
             # Directory already exists
             pass
 
-        op = (move and shutil.move or shutil.copyfile)
+        op = shutil.move if move else shutil.copyfile
 
         op(src, abs_location)
 
