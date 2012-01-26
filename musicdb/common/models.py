@@ -9,10 +9,6 @@ from musicdb.db.fields import MySlugField
 
 from .managers import FileManager
 
-"""
-Common models.
-"""
-
 class AbstractArtist(models.Model):
     slug = MySlugField('slug_name')
     url = models.CharField(max_length=200, blank=True)
