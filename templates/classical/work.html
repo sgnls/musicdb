@@ -74,7 +74,7 @@
 
 {% endfor %}
 
-{% if work.source_relations.count or work.derived_relations.count %}
+{% if work.source_relations.exists or work.derived_relations.exists %}
 <hr/>
 
 <h4>Related works</h4>
