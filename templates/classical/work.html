@@ -30,9 +30,9 @@
 </h3>
 </div>
 
-{% ifnotequal recording.movements.count 1 %}
 <div class="row">
-  <div class="span15">
+  <div class="span11">
+    {% if recording.movements.count > 1 %}
       <ul style="list-style-type: upper-roman">
       {% for movement in recording.movements.all %}
         {{ movement.section_title }}
@@ -46,31 +46,41 @@
         </li>
       {% endfor %}
       </ul>
+    {% endif %}
+
+    <ul>
+    {% for performance in recording.performances.all %}
+    {% with performance.get_subclass as subclass %}
+      {% ifequal performance.subclass "artist" %}
+        <li><a href="{{ subclass.artist.get_absolute_url }}">{{ subclass.artist.short_name }}</a> ({{ subclass.instrument|lower }})</li>
+      {% else %}
+        <li><a href="{{ subclass.ensemble.get_absolute_url }}">{{ subclass.ensemble }}</a></li>
+      {% endifequal %}
+    {% endwith %}
+    {% endfor %}
+    </ul>
+  </div>
+  <div class="span4">
+
+    <br>
+
+    <dl>
+      <dt>Duration</dt>
+      <dd>{{ recording.total_duration|duration }}</dd>
+
+      {% if recording.year %}
+      <dt>Recorded</dt>
+      <dd>{{ recording.year }}</dd>
+      {% endif %}
+    </dl>
+
+    {% if request.user.is_authenticated %}
+    <p>
+      <a href="{% url classical-play-recording recording.id %}" class="btn primary">Play</a>
+    </p>
+    {% endif %}
   </div>
 </div>
-{% endifnotequal %}
-
-<div class="row">
-<div class="span15">
-  <ul>
-  {% for performance in recording.performances.all %}
-  {% with performance.get_subclass as subclass %}
-    {% ifequal performance.subclass "artist" %}
-      <li><a href="{{ subclass.artist.get_absolute_url }}">{{ subclass.artist.short_name }}</a> ({{ subclass.instrument|lower }})</li>
-    {% else %}
-      <li><a href="{{ subclass.ensemble.get_absolute_url }}">{{ subclass.ensemble }}</a></li>
-    {% endifequal %}
-  {% endwith %}
-  {% endfor %}
-  </ul>
-</div>
-</div>
-
-{% if recording.year %}
-<p>Recorded: {{ recording.year }}</p>
-{% endif %}
-
-<p>{% if request.user.is_authenticated %}<a href="{% url classical-play-recording recording.id %}" class="btn primary">Play</a>{% endif %} <small>{{ recording.total_duration|duration }}</small></p>
 
 {% endfor %}
 
