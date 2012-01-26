@@ -4,11 +4,11 @@
 
 {% block headtitle %}{{ work }} - {{ work.composer }} - {{ block.super }}{% endblock %}
 
-{% block title %}{{ work }}{% endblock %}
+{% block container %}
 
-{% block subtitle %}<a href="{{ work.composer.get_absolute_url }}">{{ work.composer }}</a>{% endblock %}
+<h1>{{ work }}</h2>
 
-{% block content %}
+<h2><a href="{{ work.composer.get_absolute_url }}">{{ work.composer }}</a></h2>
 
 {% if work.category %}
   <p>Filed under <em><a href="{{ work.category.get_absolute_url }}#{{ work.composer.slug }}">{{ work.category }}</a></em></p>
