@@ -1,8 +1,5 @@
 from django.conf.urls.defaults import *
 
-from django.contrib import admin
-admin.autodiscover()
-
 urlpatterns = patterns('musicdb.nonclassical.views',
     url(r'^$', 'index',
         name='nonclassical', kwargs={'letter': None}),
