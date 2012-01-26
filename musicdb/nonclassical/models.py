@@ -1,13 +1,11 @@
 import os
 import urllib
 
-from mutagen import mp3, File as MutagenFile
-
 from django.db import models
 from django.core.files import File as DjangoFile
 from django.db.models.aggregates import Sum
 
-from musicdb.common.models import AbstractArtist, MusicFile, File
+from musicdb.common.models import AbstractArtist, MusicFile
 
 from musicdb.db.mixins import NextPreviousMixin
 from musicdb.db.fields import MySlugField, FirstLetterField, DirNameField
@@ -170,30 +168,3 @@ class Track(models.Model):
             'tracknumber': str(self.num),
             'date': str(album.year) or '',
         }
-
-    @classmethod
-    def quick_create(cls, abspath, cd, track_title, track_num):
-        audio = MutagenFile(abspath)
-
-        if isinstance(audio, mp3.MP3):
-            extension = 'mp3'
-
-        location = os.path.join(
-            'albums',
-            '%d' % cd.id,
-            '%.2d.%s' % (track_num, extension),
-        )
-
-        file = File.create_from_path(abspath, location)
-
-        music_file = MusicFile.objects.create(
-            file=file,
-            rev_model='track',
-        )
-
-        return cls.objects.create(
-            cd=cd,
-            num=track_num,
-            title=track_title,
-            music_file=music_file,
-        )
