@@ -17,19 +17,26 @@ class AbstractArtist(models.Model):
         abstract = True
 
 class Nationality(models.Model):
-    noun = models.CharField(help_text="For example, 'England'", max_length=50)
-    adjective = models.CharField(help_text="For example, 'English'", max_length=50)
+    noun = models.CharField(
+        help_text="For example, 'England'",
+        max_length=50,
+    )
+
+    adjective = models.CharField(
+        help_text="For example, 'English'",
+        max_length=50,
+    )
 
     class Meta:
         ordering = ('noun',)
-        verbose_name_plural = 'Nationalities'
+        verbose_name_plural = "Nationalities"
 
     def __unicode__(self):
         return self.adjective
 
 class File(models.Model):
     location = models.CharField(unique=True, max_length=255)
-    size = models.IntegerField('File size in bytes')
+    size = models.IntegerField("File size in bytes")
 
     objects = FileManager()
 
@@ -39,6 +46,7 @@ class File(models.Model):
     def save(self, *args, **kwargs):
         if not self.size:
             self.size = os.path.getsize(self.absolute_location())
+
         super(File, self).save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
@@ -59,7 +67,7 @@ class File(models.Model):
 
 class MusicFile(models.Model):
     file = models.OneToOneField(File)
-    length = models.IntegerField('Duration in seconds')
+    length = models.IntegerField("Duration in seconds")
     rev_model = models.CharField(max_length=8) # track, movement
     type = models.CharField(max_length=4) # mp3, flac
     tags_dirty = models.NullBooleanField(
@@ -68,7 +76,7 @@ class MusicFile(models.Model):
     )
 
     def __unicode__(self):
-        return 'Length %ds (from %s)' % (self.length, self.file)
+        return "Length %ds (from %s)" % (self.length, self.file)
 
     def save(self, *args, **kwargs):
         if not self.length:
