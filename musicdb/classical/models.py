@@ -404,7 +404,10 @@ class Recording(models.Model):
 class Movement(models.Model):
     recording = models.ForeignKey(Recording, related_name='movements')
     title = models.CharField(max_length=300)
-    music_file = models.OneToOneField(MusicFile, related_name='movement')
+    music_file = models.OneToOneField(
+        'common.MusicFile',
+        related_name='movement',
+    )
     section_title = models.CharField(max_length=200, blank=True)
     num = models.IntegerField()
 
