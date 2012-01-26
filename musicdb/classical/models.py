@@ -18,10 +18,6 @@ from .managers import ArtistManager, WorkManager
 Classical models.
 """
 
-__all__ = ('Artist', 'Ensemble', 'Work', 'Catalogue', 'WorkCatalogue', \
-    'Category', 'Instrument', 'Key', 'Recording', 'Movement', \
-    'Performance', 'WorkRelationship')
-
 class Artist(AbstractArtist, NextPreviousMixin):
     surname = models.CharField(max_length=100)
     forenames = models.CharField(max_length=100, blank=True)
