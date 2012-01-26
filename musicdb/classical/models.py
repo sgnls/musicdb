@@ -70,8 +70,7 @@ class Artist(AbstractArtist, NextPreviousMixin):
     def slug_name(self):
         if self.forenames:
             return "%s %s" % (self.forenames, self.surname)
-        else:
-            return self.surname
+        return self.surname
     short_name = slug_name
 
     def long_name(self):
@@ -145,7 +144,6 @@ class Ensemble(models.Model, Mergeable):
         blank=True,
         null=True,
         related_name='ensembles',
-
     )
 
     slug = MySlugField('name')
