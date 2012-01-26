@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls.defaults import patterns, url
 
 urlpatterns = patterns('musicdb.common.views',
     url(r'^play/(?P<music_file_id>\d+)$', 'play_music_file',
