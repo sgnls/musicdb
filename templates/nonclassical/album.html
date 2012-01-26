@@ -74,6 +74,7 @@
 
 {% with album.previous as previous %}
 {% with album.next as next %}
+{% if next or previous %}
 <div class="row weell" style="padding-top: 45px">
   <div class="span7">
     {% if previous %}
@@ -88,6 +89,7 @@
     {% endif %}
   </div>
 </div>
+{% endif %}
 {% endwith %}
 {% endwith %}
 

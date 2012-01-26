@@ -118,6 +118,7 @@
 
 {% with work.previous as previous %}
 {% with work.next as next %}
+{% if next or previous %}
 <br/>
 <br/>
 
@@ -135,6 +136,7 @@
     {% endif %}
   </div>
 </div>
+{% endif %}
 {% endwith %}
 {% endwith %}
 
