@@ -14,10 +14,6 @@ from musicdb.db.fields import MySlugField, DenormalisedCharField, DirNameField
 
 from .managers import ArtistManager, WorkManager
 
-"""
-Classical models.
-"""
-
 class Artist(AbstractArtist, NextPreviousMixin):
     surname = models.CharField(max_length=100)
     forenames = models.CharField(max_length=100, blank=True)
