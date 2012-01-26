@@ -16,12 +16,6 @@ from musicdb.db.std_image.fields import StdImageField
 
 from .managers import AlbumManager, TrackManager
 
-"""
-Non-classical models.
-"""
-
-__all__ = ('Artist', 'Album', 'CD', 'Track')
-
 class Artist(AbstractArtist, NextPreviousMixin):
     name = models.CharField(max_length=250)
 
