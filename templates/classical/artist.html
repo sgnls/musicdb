@@ -2,13 +2,10 @@
 
 {% block headtitle %}{{ artist.long_name }} - {{ block.super }}{% endblock %}
 
-{% block title %}{{ artist.long_name }}{% endblock %}
+{% block container %}
 
-{% block subtitle %}
-  {{ artist.biography }}
-{% endblock %}
-
-{% block content %}
+<h1>{{ artist.long_name }}</h1>
+<h2>{{ artist.biography }}</h2>
 
 {% if artist.works.exists %}
   {% if artist.performances.exists %}
