@@ -7,7 +7,7 @@ from django.db import models
 
 from treebeard.mp_tree import MP_Node as TreeNode
 
-from musicdb.common.models import AbstractArtist, Nationality, MusicFile
+from musicdb.common.models import AbstractArtist, MusicFile
 
 from musicdb.db.mixins import Mergeable, NextPreviousMixin
 from musicdb.db.fields import MySlugField, DenormalisedCharField, DirNameField
@@ -33,7 +33,10 @@ class Artist(AbstractArtist, NextPreviousMixin):
     )
 
     nationality = models.ForeignKey(
-        Nationality, blank=True, null=True, related_name='classical_artists',
+        'common.Nationality',
+        blank=True,
+        null=True,
+        related_name='classical_artists',
     )
 
     dir_name = DirNameField('__unicode__')
@@ -136,9 +139,15 @@ class Artist(AbstractArtist, NextPreviousMixin):
 
 class Ensemble(models.Model, Mergeable):
     name = models.CharField(max_length=150)
+
     nationality = models.ForeignKey(
-        Nationality, blank=True, null=True, related_name='ensembles'
+        'common.Nationality',
+        blank=True,
+        null=True,
+        related_name='ensembles',
+
     )
+
     slug = MySlugField('name')
 
     class Meta:
