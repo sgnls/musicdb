@@ -7,7 +7,7 @@ from django.db import models
 from django.core.files import File as DjangoFile
 from django.db.models.aggregates import Sum
 
-from musicdb.common.models import AbstractArtist, Nationality, MusicFile, File
+from musicdb.common.models import AbstractArtist, MusicFile, File
 
 from musicdb.db.mixins import NextPreviousMixin
 from musicdb.db.fields import MySlugField, FirstLetterField, DirNameField
@@ -24,7 +24,7 @@ class Artist(AbstractArtist, NextPreviousMixin):
     )
 
     nationality = models.ForeignKey(
-        Nationality, blank=True, null=True,
+        'common.Nationality', blank=True, null=True,
         related_name='nonclassical_artists',
     )
 
@@ -56,7 +56,12 @@ class Album(models.Model, NextPreviousMixin):
     artist = models.ForeignKey(Artist, related_name='albums')
     year = models.IntegerField(blank=True, null=True)
 
-    cover = StdImageField(upload_to='album_covers', size=(300, 300), thumbnail_size=(125, 125), blank=True)
+    cover = StdImageField(
+        upload_to='album_covers',
+        size=(300, 300),
+        thumbnail_size=(125, 125),
+        blank=True,
+    )
 
     slug = MySlugField('title')
     dir_name = DirNameField('get_dir_name')
@@ -140,7 +145,7 @@ class Track(models.Model):
     title = models.CharField(max_length=250)
     cd = models.ForeignKey(CD, related_name='tracks')
     num = models.IntegerField()
-    music_file = models.OneToOneField(MusicFile, related_name='track')
+    music_file = models.OneToOneField('common.MusicFile', related_name='track')
 
     dir_name = DirNameField('get_dir_name')
 
