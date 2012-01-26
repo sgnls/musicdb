@@ -1,10 +1,9 @@
 import os
 import urllib
 
-from mutagen import mp3, easyid3, File as MutagenFile
+from mutagen import mp3, File as MutagenFile
 
 from django.db import models
-from django.conf import settings
 from django.core.files import File as DjangoFile
 from django.db.models.aggregates import Sum
 
