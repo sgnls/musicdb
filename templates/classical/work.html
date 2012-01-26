@@ -14,48 +14,57 @@
   <p>Filed under <em><a href="{{ work.category.get_absolute_url }}#{{ work.composer.slug }}">{{ work.category }}</a></em></p>
 {% endif %}
 
+<br>
+
 {% for recording in work.recordings.all %}
 
-
-<h3 style="border-bottom: 1px dotted black; padding-bottom: 2px" id="{{ recording.slug }}">
-{{ recording.short_name }}
-<span style="font-size: 50%">
-{% if request.user.is_superuser %}
-<a href="{% url admin:classical_recording_change recording.pk %}">edit</a>
-{% endif %}
-<a href="{{ recording.get_absolute_url }}">#</a>
-</span>
+<div class="page-header">
+<h3 id="{{ recording.slug }}">
+  {{ recording.short_name }}
+  <small>
+  {% if request.user.is_superuser %}
+  <a href="{% url admin:classical_recording_change recording.pk %}">edit</a>
+  {% endif %}
+  <a href="{{ recording.get_absolute_url }}">#</a>
+  </small>
 </h3>
-
+</div>
 
 {% ifnotequal recording.movements.count 1 %}
-  <ul style="list-style-type:upper-roman">
-  {% for movement in recording.movements.all %}
-    {{ movement.section_title }}
-    <li>
-      {% if request.user.is_authenticated %}
-        <a href="{% url play-music-file movement.music_file.id %}">{{ movement }}</a>
-      {% else %}
-        {{ movement }}
-      {% endif %}
-      <small>{{ movement.music_file.length|duration }}</small>
-    </li>
-  {% endfor %}
-  </ul>
+<div class="row">
+  <div class="span15">
+      <ul style="list-style-type: upper-roman">
+      {% for movement in recording.movements.all %}
+        {{ movement.section_title }}
+        <li>
+          {% if request.user.is_authenticated %}
+            <a href="{% url play-music-file movement.music_file.id %}">{{ movement }}</a>
+          {% else %}
+            {{ movement }}
+          {% endif %}
+          <small>{{ movement.music_file.length|duration }}</small>
+        </li>
+      {% endfor %}
+      </ul>
+  </div>
+</div>
 {% endifnotequal %}
 
-<ul>
-{% for performance in recording.performances.all %}
-{% with performance.get_subclass as subclass %}
-  {% ifequal performance.subclass "artist" %}
-    <li><a href="{{ subclass.artist.get_absolute_url }}">{{ subclass.artist.short_name }}</a> ({{ subclass.instrument|lower }})</li>
-  {% else %}
-    <li><a href="{{ subclass.ensemble.get_absolute_url }}">{{ subclass.ensemble }}</a></li>
-  {% endifequal %}
-{% endwith %}
-{% endfor %}
-</ul>
-
+<div class="row">
+<div class="span15">
+  <ul>
+  {% for performance in recording.performances.all %}
+  {% with performance.get_subclass as subclass %}
+    {% ifequal performance.subclass "artist" %}
+      <li><a href="{{ subclass.artist.get_absolute_url }}">{{ subclass.artist.short_name }}</a> ({{ subclass.instrument|lower }})</li>
+    {% else %}
+      <li><a href="{{ subclass.ensemble.get_absolute_url }}">{{ subclass.ensemble }}</a></li>
+    {% endifequal %}
+  {% endwith %}
+  {% endfor %}
+  </ul>
+</div>
+</div>
 
 {% if recording.year %}
 <p>Recorded: {{ recording.year }}</p>
