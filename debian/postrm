@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#DEBHELPER#
+
+rm -f /etc/gunicorn.d/musicdb
+/usr/sbin/gunicorn-debian reload musicdb
+
+rm -f /etc/nginx/sites-enabled/musicdb
+invoke-rc.d nginx reload

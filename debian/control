@@ -1,0 +1,16 @@
+Source: musicdb
+Section: net
+Priority: optional
+Maintainer: Chris Lamb <lamby@debian.org>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.1
+
+Package: musicdb
+Architecture: all
+Depends:
+  ${misc:Depends},
+  ${python:Depends},
+  gunicorn (>= 0.13.4-3),
+  nginx,
+  python-pygments,
+Description: musicdb.chris-lamb.co.uk

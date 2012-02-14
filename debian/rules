@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_test:
+	musicdb/manage.py test --verbosity=2
+	find -type f -name '*.pyc' -delete
+
+override_dh_auto_build:
+	musicdb/manage.py build live

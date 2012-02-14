@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#DEBHELPER#
+
+set -eu
+
+BASE=/usr/share/musicdb
+
+/usr/sbin/gunicorn-debian stop musicdb
+su www-data -c "${BASE}/musicdb/manage.py migrate --list"
+su www-data -c "${BASE}/musicdb/manage.py migrate --all"
+ln -sf ${BASE}/config/gunicorn /etc/gunicorn.d/musicdb
+/usr/sbin/gunicorn-debian start musicdb
+
+ln -sf ${BASE}/config/nginx /etc/nginx/sites-enabled/musicdb
+invoke-rc.d nginx reload
