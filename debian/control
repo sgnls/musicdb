@@ -13,4 +13,6 @@ Depends:
   gunicorn (>= 0.13.4-3),
   nginx,
   python-pygments,
+  python-mutagen,
+  python-roman,
 Description: musicdb.chris-lamb.co.uk
