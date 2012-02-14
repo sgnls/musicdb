@@ -2,6 +2,8 @@
 
 #DEBHELPER#
 
+set -e
+
 rm -f /etc/gunicorn.d/musicdb
 /usr/sbin/gunicorn-debian reload musicdb
 
