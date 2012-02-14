@@ -2,7 +2,7 @@ import urllib
 
 from django.conf import settings
 
-from musicdb.build.hashes import HASHES
+from .hashes import HASHES
 
 def google_search(terms):
     q = terms.encode('utf8') # urlencode doesn't like unicode strings
