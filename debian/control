@@ -15,4 +15,5 @@ Depends:
   python-pygments,
   python-mutagen,
   python-roman,
+  python-imaging,
 Description: musicdb.chris-lamb.co.uk
