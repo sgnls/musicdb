@@ -13,3 +13,4 @@ override_dh_auto_test:
 
 override_dh_auto_build:
 	musicdb/manage.py build live
+	echo "from roles.live import *" > musicdb/settings/role.py

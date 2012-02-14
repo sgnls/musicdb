@@ -12,22 +12,6 @@ class Command(BaseCommand):
             raise CommandError("build <role>")
 
         self.generate_hashes()
-        self.set_role(args[0])
-
-    def set_role(self, role):
-        print "I: Setting role"
-
-        target = os.path.join(
-            settings.MUSICDB_BASE_PATH, 'musicdb/settings/role.py',
-        )
-
-        open(target, 'wb').write("from roles.%s import *" % role)
-
-        try:
-            # Delete .pyc too.
-            os.unlink('%sc' % target)
-        except OSError:
-            pass
 
     def generate_hashes(self):
         print "I: Generating hashes"
