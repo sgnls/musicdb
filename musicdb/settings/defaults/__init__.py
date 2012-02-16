@@ -131,7 +131,7 @@ LOGIN_URL = '/login'
 
 DATABASE_ENGINE = 'dummy_for_debug_toolbar'
 
-MEDIA_LOCATION = '/media/disk/raid/share/mp3'
+MEDIA_LOCATION = '/srv/musicdb.chris-lamb.co.uk'
 
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.BCryptPasswordHasher',
