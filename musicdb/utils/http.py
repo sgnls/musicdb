@@ -8,7 +8,7 @@ from django.utils import simplejson
 
 class M3UResponse(HttpResponse):
     def __init__(self, tracks):
-        prefix = settings.MEDIA_LOCATION
+        prefix = settings.MEDIA_LOCATION_HTTP
 
         content = '#EXTM3U\n'
         for track in tracks:
@@ -21,7 +21,7 @@ class M3UResponse(HttpResponse):
 
 class XSPFResponse(HttpResponse):
     def __init__(self, tracks):
-        prefix = settings.MEDIA_LOCATION
+        prefix = settings.MEDIA_LOCATION_HTTP
 
         NSMAP = {
             None: 'http://xspf.org/ns/0/',

@@ -132,6 +132,7 @@ LOGIN_URL = '/login'
 DATABASE_ENGINE = 'dummy_for_debug_toolbar'
 
 MEDIA_LOCATION = '/srv/musicdb.chris-lamb.co.uk'
+MEDIA_LOCATION_HTTP = 'http://musicdb.chris-lamb.co.uk/_z7DukHiMKH'
 
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.BCryptPasswordHasher',
