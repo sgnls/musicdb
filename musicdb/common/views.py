@@ -1,10 +1,12 @@
 from django.db.models import Sum
 from django.shortcuts import get_object_or_404, render
+from django.contrib.auth.decorators import login_required
 
 from musicdb.utils.http import XSPFResponse
 
 from .models import MusicFile
 
+@login_required
 def play_music_file(request, music_file_id):
     music_file = get_object_or_404(MusicFile, id=music_file_id)
     return XSPFResponse([music_file])

@@ -3,6 +3,7 @@
 import time
 
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 from musicdb.utils.http import XSPFResponse
 from musicdb.classical.models import Artist, Work, Recording, Movement, \
@@ -56,6 +57,7 @@ def work(request, artist_slug, slug):
         'work': get_object_or_404(Work, slug=slug, composer__slug=artist_slug),
     })
 
+@login_required
 def play_recording(request, recording_id):
     recording = get_object_or_404(Recording, id=recording_id)
     return XSPFResponse(recording.get_tracks())
