@@ -2,7 +2,6 @@
 
 import time
 
-from django_fuse import DirectoryResponse
 from django.shortcuts import render, get_object_or_404
 
 from musicdb.utils.http import XSPFResponse
@@ -60,18 +59,6 @@ def work(request, artist_slug, slug):
 def play_recording(request, recording_id):
     recording = get_object_or_404(Recording, id=recording_id)
     return XSPFResponse(recording.get_tracks())
-
-##
-
-def fuse_index():
-    return DirectoryResponse(
-        Artist.objects.composers().values_list('dir_name', flat=True),
-    )
-
-def fuse_artist(dir_name):
-    artist = get_object_or_404(Artist, dir_name=dir_name)
-
-    return DirectoryResponse()
 
 ##
 

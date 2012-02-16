@@ -75,8 +75,6 @@ TEMPLATE_DIRS = (
     join(MUSICDB_BASE_PATH, 'templates'),
 )
 
-FUSE_URLCONF = 'fuse_urls'
-
 DEBUG_TOOLBAR_CONFIG = {
     'HIDE_DJANGO_SQL': True,
     'INTERCEPT_REDIRECTS': False,

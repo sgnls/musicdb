@@ -56,37 +56,3 @@ def collage(request):
     return render(request, 'nonclassical/collage.html', {
         'albums': albums,
     })
-
-##
-
-def fuse_index():
-    artists = Artist.objects.all()
-
-    return DirectoryResponse(artists.values_list('dir_name', flat=True))
-
-def fuse_artist(dir_name):
-    artist = get_object_or_404(Artist, dir_name=dir_name)
-
-    albums = artist.albums()
-
-    return DirectoryResponse(albums.values_list('dir_name', flat=True))
-
-def fuse_album(artist_dir_name, dir_name):
-    try:
-        album = Album.objects.get_from_dir_name(artist_dir_name, dir_name)
-    except Album.DoesNotExist:
-        raise Http404
-
-    tracks = album.get_nonclassical_tracks()
-
-    return DirectoryResponse(tracks.values_list('dir_name', flat=True))
-
-def fuse_track(artist_dir_name, album_dir_name, dir_name):
-    try:
-        album = Album.objects.get_from_dir_name(artist_dir_name, album_dir_name)
-        track = Track.objects.get_from_dir_name(dir_name, album)
-    except (Album.DoesNotExist, Track.DoesNotExist):
-        raise Http404()
-
-    return SymlinkResponse('/mnt/raid/share/mp3/%s' % track.track.file.location)
-
