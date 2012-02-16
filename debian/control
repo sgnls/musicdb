@@ -16,4 +16,5 @@ Depends:
   python-mutagen,
   python-roman,
   python-imaging,
+  python-lxml,
 Description: musicdb.chris-lamb.co.uk
