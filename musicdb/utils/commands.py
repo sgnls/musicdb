@@ -38,6 +38,8 @@ class AddMusicFilesCommand(BaseCommand):
                 if os.path.splitext(filename)[1].lower() in ('.flac', '.mp3'):
                     files.append(filename)
 
+        files = map(os.path.realpath, files)
+
         tracknames = track_names_from_filenames(
             files,
             capitalise=self.CAPITALISE_TRACK_NAMES,
