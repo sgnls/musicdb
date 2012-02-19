@@ -17,4 +17,5 @@ Depends:
   python-roman,
   python-imaging,
   python-lxml,
+  python-progressbar,
 Description: musicdb.chris-lamb.co.uk
