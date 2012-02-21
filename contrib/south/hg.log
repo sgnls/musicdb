@@ -1,5 +1,111 @@
-changeset:   993:b3ed126b19a2
+changeset:   1012:00074f0d28e7
 tag:         tip
+parent:      1008:64fdcc52cd01
+parent:      1011:a618c9c634ec
+user:        Andrew Godwin <andrew@aeracode.org>
+date:        Tue Feb 14 11:11:09 2012 +0000
+summary:     Merged in charettes/south/has-ddl-transaction-feature-detection (pull request #33)
+
+changeset:   1011:a618c9c634ec
+branch:      has-ddl-transaction-feature-detection
+user:        Simon Charette <charette.s@gmail.com>
+date:        Fri Feb 10 01:22:26 2012 -0500
+summary:     Avoid has_ddl_transactions feature detection if the backend doesn't support transactions in the first place
+
+changeset:   1010:0da6aa99fdde
+branch:      has-ddl-transaction-feature-detection
+user:        Simon Charette <charette.s@gmail.com>
+date:        Fri Feb 10 01:14:47 2012 -0500
+summary:     Make sure to always drop the DDL_TRANSACTION_TEST table
+
+changeset:   1009:11e3d9534f69
+branch:      has-ddl-transaction-feature-detection
+user:        Simon Charette <charette.s@gmail.com>
+date:        Fri Feb 10 00:52:05 2012 -0500
+summary:     Moved has_dll_transaction flag to feature detection
+
+changeset:   1008:64fdcc52cd01
+parent:      1007:e71a7b0476cc
+parent:      1004:f2cd78ebe92f
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Mon Feb 06 18:58:37 2012 +0100
+summary:     Auto merge.
+
+changeset:   1007:e71a7b0476cc
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Mon Feb 06 18:56:38 2012 +0100
+summary:     Convert default values of datetime.date to datetime.datetime instances to make a better guess at which timezone is meant later when running the migrations. This is especially useful for projects starting with USE_TZ = False but enable timezones support later on and still want to use the old migrations.
+
+changeset:   1006:aee2b9453e08
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Mon Feb 06 18:54:49 2012 +0100
+summary:     Handle cases better in which the default value of a field is set to the callable django.utils.timezone.now by setting it to datetime.datetime.now (to be able to be compatible to USE_TZ = False).
+
+changeset:   1005:7933e670a075
+parent:      1000:c7ebf4eb877a
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Tue Jan 24 13:19:28 2012 +0100
+summary:     Added forgotten trailing comma.
+
+changeset:   1004:f2cd78ebe92f
+user:        Andrew Godwin <andrew@aeracode.org>
+date:        Wed Feb 01 14:16:17 2012 +0000
+summary:     Fixed #1022: Show error messages from DB commit
+
+changeset:   1003:9338757f8b9a
+user:        Kostya Rybnikov <k-bx@k-bx.com>
+date:        Sat Jan 28 15:05:45 2012 +0200
+summary:     skip non-found adapters
+
+changeset:   1002:46c9fb7ba170
+user:        Andrew Godwin <andrew@aeracode.org>
+date:        Mon Jan 23 20:23:27 2012 +0000
+summary:     Add missing comma
+
+changeset:   1001:9e9c28580009
+parent:      999:2f9a84a48350
+parent:      1000:c7ebf4eb877a
+user:        Andrew Godwin <andrew@aeracode.org>
+date:        Mon Jan 23 15:44:16 2012 +0000
+summary:     Merged in jezdez/south (pull request #26)
+
+changeset:   1000:c7ebf4eb877a
+parent:      997:fcf464bd036f
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Mon Jan 23 16:23:13 2012 +0100
+summary:     Added a custom datetime.datetime subclass to act as a compatibility layer between South and Django 1.4s timezone aware datetime objects.
+
+changeset:   999:2f9a84a48350
+user:        Andrew Godwin <andrew@aeracode.org>
+date:        Fri Jan 13 13:34:00 2012 +0000
+summary:     Fix 2.6 incompatability
+
+changeset:   998:db01664c7750
+user:        Andrew Godwin <andrew@aeracode.org>
+date:        Fri Jan 13 13:23:37 2012 +0000
+summary:     Guard MySQL database tests
+
+changeset:   997:fcf464bd036f
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Mon Jan 02 22:26:30 2012 +0100
+summary:     Fixed the timezone handling by simply converting the timezone aware datetime object into a naive version with the help of the default timezone (aka settings.TIME_ZONE).
+
+changeset:   996:b88543d0b066
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Mon Jan 02 19:19:55 2012 +0100
+summary:     Added support for timezone aware datetime objects as supported in Django 1.4.
+
+changeset:   995:e1867ac2b350
+user:        Andrew Godwin <andrew@aeracode.org>
+date:        Tue Dec 06 21:12:23 2011 +0000
+summary:     Fixed #967: Set foreign key checks to 0 at the start of every transaction on MySQL.
+
+changeset:   994:24cadbaf3043
+user:        Mike Fogel <mike@fogel.ca>
+date:        Fri Dec 02 15:32:54 2011 -0800
+summary:     #962 documentation for db.delete_index
+
+changeset:   993:b3ed126b19a2
 user:        Mike Fogel <mike@fogel.ca>
 date:        Sat Nov 26 10:45:44 2011 -0800
 summary:     logger - avoid outputing unrequested DEBUG info

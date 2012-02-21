@@ -93,11 +93,11 @@ class DatabaseOperations(generic.DatabaseOperations):
     drop_index_string = 'DROP INDEX %(index_name)s ON %(table_name)s'
     delete_primary_key_sql = "ALTER TABLE %(table)s DROP PRIMARY KEY"
     delete_foreign_key_sql = "ALTER TABLE %(table)s DROP FOREIGN KEY %(constraint)s"
-    allows_combined_alters = False
-    has_ddl_transactions = False
-    has_check_constraints = False
     delete_unique_sql = "ALTER TABLE %s DROP INDEX %s"
     rename_table_sql = "RENAME TABLE %s TO %s;"
+
+    allows_combined_alters = False
+    has_check_constraints = False
 
     geom_types = ['geometry', 'point', 'linestring', 'polygon']
     text_types = ['text', 'blob',]
@@ -176,9 +176,10 @@ class DatabaseOperations(generic.DatabaseOperations):
         cursor = self._get_connection().cursor()
         if self._has_setting('STORAGE_ENGINE') and self._get_setting('STORAGE_ENGINE'):
             cursor.execute("SET storage_engine=%s;" % self._get_setting('STORAGE_ENGINE'))
-        # Turn off foreign key checks, and turn them back on at the end
-        cursor.execute("SET FOREIGN_KEY_CHECKS=0;")
-        self.deferred_sql.append("SET FOREIGN_KEY_CHECKS=1;")
+
+    def start_transaction(self):
+        super(DatabaseOperations, self).start_transaction()
+        self.execute("SET FOREIGN_KEY_CHECKS=0;")
 
     @copy_column_constraints
     @delete_column_constraints
