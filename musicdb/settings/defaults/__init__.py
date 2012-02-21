@@ -113,6 +113,8 @@ CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
 SESSION_COOKIE_HTTPONLY = True
 
+SESSION_COOKIE_AGE = 86400 * 365 * 10
+
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
