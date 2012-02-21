@@ -16,8 +16,8 @@
 
 {% block body %}
 
-<div class="topbar" data-dropdown="dropdown">
-  <div class="topbar-inner">
+<div class="navbar navbar-fixed-top" data-dropdown="dropdown">
+  <div class="navbar-inner">
     <div class="container">
       <a class="brand" href="{% url home %}">Lamby's Music Database</a>
       <ul class="nav">
@@ -27,15 +27,15 @@
         <li class=""><a href="{% url classical-composers %}">Classical</a></li>
         {% endif %}
       </ul>
-      <ul class="nav secondary-nav">
+      <ul class="nav pull-right">
         <li class="dropdown">
           {% if request.user.is_authenticated %}
-          <a href="#" class="dropdown-toggle">Logged in as <strong>{{ request.user.username }}</strong></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Logged in as <strong>{{ request.user.username }}</strong> <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="{% url auth:logout %}">Logout</a></li>
           </ul>
           {% else %}
-          <a href="#" class="dropdown-toggle">Not logged in </a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Not logged in <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="{% url auth:login %}">Login</a></li>
           </ul>
