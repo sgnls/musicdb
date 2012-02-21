@@ -48,14 +48,14 @@
 <br/>
 <br/>
 <div class="well row">
-  <div class="span7">
+  <div class="span5">
     {% if previous %}
       &laquo; <a href="{{ previous.get_absolute_url }}">{{ previous }}</a>
     {% else %}
       &nbsp;
     {% endif %}
   </div>
-  <div class="span8" style="text-align: right;">
+  <div class="span6" style="text-align: right;">
     {% if next %}
       <a href="{{ next.get_absolute_url }}">{{ next }}</a> &raquo;
     {% endif %}
