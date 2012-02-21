@@ -60,9 +60,7 @@ class Sitemap(object):
         return obj.get_absolute_url()
 
     def _get_paginator(self):
-        if not hasattr(self, "_paginator"):
-            self._paginator = paginator.Paginator(self.items(), self.limit)
-        return self._paginator
+        return paginator.Paginator(self.items(), self.limit)
     paginator = property(_get_paginator)
 
     def get_urls(self, page=1, site=None, protocol=None):
@@ -80,10 +78,7 @@ class Sitemap(object):
                 except Site.DoesNotExist:
                     pass
             if site is None:
-                raise ImproperlyConfigured("In order to use Sitemaps "
-                        "you must either use the sites framework "
-                        "or pass in a Site or RequestSite object "
-                        "in your view code.")
+                raise ImproperlyConfigured("To use sitemaps, either enable the sites framework or pass a Site/RequestSite object in your view.")
         domain = site.domain
 
         urls = []
