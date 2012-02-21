@@ -5,4 +5,6 @@ urlpatterns = patterns('musicdb.auth.views',
         name='login'),
     url(r'^logout$', 'logout',
         name='logout'),
+    url(r'^password$', 'change_password',
+        name='change-password'),
 )

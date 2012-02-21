@@ -1,6 +1,6 @@
 from django.contrib import auth, messages
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 
 from .decorators import login_not_required
 
@@ -33,3 +33,20 @@ def logout(request):
     messages.success(request, "You were succesfully logged out")
 
     return redirect('home')
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your password was changed successfully")
+        else:
+            messages.error(request, "There was an error changing your password")
+    else:
+        form = PasswordChangeForm(request.user)
+
+    return render(request, 'auth/change_password.html', {
+        'form': form,
+    })
+
