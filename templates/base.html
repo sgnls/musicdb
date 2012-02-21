@@ -30,12 +30,12 @@
           {% if request.user.is_authenticated %}
           <a href="#" class="dropdown-toggle">Logged in as <strong>{{ request.user.username }}</strong></a>
           <ul class="dropdown-menu">
-            <li><a href="{% url admin:logout %}">Logout</a></li>
+            <li><a href="{% url auth:logout %}">Logout</a></li>
           </ul>
           {% else %}
           <a href="#" class="dropdown-toggle">Not logged in </a>
           <ul class="dropdown-menu">
-            <li><a href="{% url admin:index %}">Login</a></li>
+            <li><a href="{% url auth:login %}">Login</a></li>
           </ul>
           {% endif %}
         </li>
