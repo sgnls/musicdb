@@ -1,4 +1,4 @@
-from django.contrib import auth
+from django.contrib import auth, messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 
@@ -25,3 +25,11 @@ def login(request):
     return render(request, 'auth/login.html', {
         'form': form,
     })
+
+@login_not_required
+def logout(request):
+    auth.logout(request)
+
+    messages.success(request, "You were succesfully logged out")
+
+    return redirect('home')
