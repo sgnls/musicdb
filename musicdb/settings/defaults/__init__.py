@@ -92,6 +92,7 @@ INSTALLED_APPS = (
     'treebeard',
     'south',
 
+    'musicdb.auth',
     'musicdb.common',
     'musicdb.classical',
     'musicdb.nonclassical',
