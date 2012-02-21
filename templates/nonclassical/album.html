@@ -16,7 +16,7 @@
 <br>
 
 <div class="row">
-  <div class="span9">
+  <div class="span8">
     <h1>{{ album.title }}{% if album.year %} <small>({{ album.year }})</small>{% endif %}</h1>
     <h2><a href="{{ artist.get_absolute_url }}">{{ artist.long_name }}</a></h2>
 
@@ -49,13 +49,13 @@
     {% endfor %}
     {% endwith %}
   </div>
-  <div class="span6">
+  <div class="span3">
     {% if album.cover %}
 
-    <ul class="media-grid">
+    <ul class="thumbnails">
     <li>
       {% if request.user.is_authenticated %}
-      <a href="{% url nonclassical-play-album album.id %}">
+      <a href="{% url nonclassical-play-album album.id %}" class="thumbnail">
         <img src="{{ album.cover.url }}" alt="Play {{ album }}">
       </a>
       {% else %}
@@ -76,14 +76,14 @@
 {% with album.next as next %}
 {% if next or previous %}
 <div class="row well" style="margin-top: 45px">
-  <div class="span7">
+  <div class="span5">
     {% if previous %}
      &laquo; <a href="{% url nonclassical-album artist.slug previous.slug %}">{{ previous }}</a>
     {% else %}
      &nbsp;
     {% endif %}
   </div>
-  <div class="span8" style="text-align: right">
+  <div class="span6" style="text-align: right">
     {% if next %}
      <a href="{% url nonclassical-album artist.slug next.slug %}">{{ next }}</a> &raquo;
     {% endif %}
