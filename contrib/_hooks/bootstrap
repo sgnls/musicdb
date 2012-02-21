@@ -1,7 +1,7 @@
 #!/bin/sh
 
-rm -rf lib/
+lessc less/bootstrap.less > bootstrap.css
+
 rm -rf docs/
+rm -rf less/
 rm -rf js/tests/
-rm -rf examples/
-rm -f *.min.css
