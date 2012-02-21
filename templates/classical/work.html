@@ -37,11 +37,7 @@
       {% for movement in recording.movements.all %}
         {{ movement.section_title }}
         <li>
-          {% if request.user.is_authenticated %}
-            <a href="{% url play-music-file movement.music_file.id %}">{{ movement }}</a>
-          {% else %}
-            {{ movement }}
-          {% endif %}
+          <a href="{% url play-music-file movement.music_file.id %}">{{ movement }}</a>
           <small>{{ movement.music_file.length|duration }}</small>
         </li>
       {% endfor %}
@@ -74,11 +70,9 @@
       {% endif %}
     </dl>
 
-    {% if request.user.is_authenticated %}
     <p>
       <a href="{% url classical-play-recording recording.id %}" class="btn btn-primary">Play</a>
     </p>
-    {% endif %}
   </div>
 </div>
 

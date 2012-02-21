@@ -30,18 +30,12 @@
 
       <ol style="padding-top: 5px; padding-left: 15px;">
         {% for track in cd.tracks.select_related.all %}
-          {% if request.user.is_authenticated %}
           <li><a href="{% url play-music-file track.music_file_id %}">{{ track }}</a> {{ track.music_file.length|duration }}</li>
-          {% else %}
-          <li>{{ track }} {{ track.music_file.length|duration }}</li>
-          {% endif %}
         {% endfor %}
       </ol>
 
       {% ifnotequal album_cds_count 1 %}
-        {% if request.user.is_authenticated %}
-          <a href="{% url nonclassical-play-cd cd.id %}" class="btn btn-primary">Play</a>
-        {% endif %}
+        <a href="{% url nonclassical-play-cd cd.id %}" class="btn btn-primary">Play</a>
         {{ cd.total_duration|duration }}
       {% endifnotequal %}
     </div>
@@ -54,13 +48,9 @@
 
     <ul class="thumbnails">
     <li>
-      {% if request.user.is_authenticated %}
       <a href="{% url nonclassical-play-album album.id %}" class="thumbnail">
         <img src="{{ album.cover.url }}" alt="Play {{ album }}">
       </a>
-      {% else %}
-        <img src="{{ album.cover.url }}">
-      {% endif %}
     </li>
     </ul>
     {% endif %}
@@ -69,9 +59,7 @@
 
 <br>
 
-{% if request.user.is_authenticated %}
 <a href="{% url nonclassical-play-album album.id %}" class="btn btn-primary">Play album</a>
-{% endif %}
 ({{ album.total_duration|duration }})
 
 {% with album.previous as previous %}
