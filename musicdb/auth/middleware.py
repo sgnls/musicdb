@@ -18,4 +18,4 @@ class RequireLoginMiddleware(object):
         if getattr(fn, 'login_not_required', False):
             return
 
-        return redirect('home')
+        return redirect('auth:login')
