@@ -67,6 +67,8 @@
   </div>
 </div>
 
+<br>
+
 {% if request.user.is_authenticated %}
 <a href="{% url nonclassical-play-album album.id %}" class="btn btn-primary">Play album</a>
 {% endif %}
