@@ -31,7 +31,7 @@
 </div>
 
 <div class="row">
-  <div class="span11">
+  <div class="span8">
     {% if recording.movements.count > 1 %}
       <ul style="list-style-type: upper-roman">
       {% for movement in recording.movements.all %}
@@ -60,7 +60,7 @@
     {% endfor %}
     </ul>
   </div>
-  <div class="span4">
+  <div class="span3">
 
     <br>
 
@@ -123,14 +123,14 @@
 <br/>
 
 <div class="row well">
-  <div class="span7">
+  <div class="span5">
     {% if previous %}
      &laquo; <a href="{{ previous.get_absolute_url }}">{{ previous }}</a>
     {% else %}
      &nbsp;
     {% endif %}
   </div>
-  <div class="span8" style="text-align: right">
+  <div class="span6" style="text-align: right">
     {% if next %}
      <a href="{{ next.get_absolute_url }}">{{ next }}</a> &raquo;
     {% endif %}
