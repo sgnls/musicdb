@@ -17,6 +17,12 @@ def login(request):
             auth.login(request, user)
 
             return redirect(request.GET.get('next', request.path))
+
+        messages.error(
+            request,
+            "There was an error logging you in, please check your details.",
+        )
+
     else:
         form = AuthenticationForm()
 
