@@ -16,7 +16,7 @@ def login(request):
             user = form.get_user()
             auth.login(request, user)
 
-            return redirect(request.path)
+            return redirect(request.GET.get('next', request.path))
     else:
         form = AuthenticationForm()
 

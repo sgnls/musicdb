@@ -1,4 +1,5 @@
 from django.shortcuts import redirect
+from django.core.urlresolvers import reverse
 
 class RequireLoginMiddleware(object):
     ALLOW = (
@@ -18,4 +19,4 @@ class RequireLoginMiddleware(object):
         if getattr(fn, 'login_not_required', False):
             return
 
-        return redirect('auth:login')
+        return redirect('%s?next=%s' % (reverse('auth:login'), request.path))
