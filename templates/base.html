@@ -21,9 +21,11 @@
     <div class="container">
       <a class="brand" href="{% url home %}">Lamby's Music Database</a>
       <ul class="nav">
+        {% if request.user.is_authenticated %}
         <li class=""><a href="{% url home %}">Home</a></li>
         <li class=""><a href="{% url nonclassical %}">Albums</a></li>
         <li class=""><a href="{% url classical-composers %}">Classical</a></li>
+        {% endif %}
       </ul>
       <ul class="nav secondary-nav">
         <li class="dropdown">
