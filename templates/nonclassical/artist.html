@@ -22,7 +22,7 @@
     {% if album %}
 
     <div class="span2 {% if forloop.first %}offset1{% endif %}">
-      <a href="{% url nonclassical-album artist.slug album.slug %}">
+      <a href="{% url nonclassical-album artist.slug album.slug %}" class="thumbnail">
       {% if album.cover %}
       <img src="{{ album.cover.thumbnail.url }}" alt="{{ album }}"></a>
       {% else %}
