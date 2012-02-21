@@ -2,7 +2,6 @@
 
 from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.decorators import login_required
 
 from musicdb.utils.iter import chunk
 from musicdb.utils.http import XSPFResponse
@@ -39,13 +38,11 @@ def album(request, artist_slug, slug):
         'artist': artist,
     })
 
-@login_required
 def play_cd(request, cd_id):
     cd = get_object_or_404(CD, id=cd_id)
 
     return XSPFResponse(cd.get_tracks())
 
-@login_required
 def play_album(request, album_id):
     album = get_object_or_404(Album, id=album_id)
 
