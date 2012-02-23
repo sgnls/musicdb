@@ -123,7 +123,7 @@ CACHES = {
     }
 }
 
-SITE_URL = 'http://musicdb.chris-lamb.co.uk/'
+SITE_URL = 'https://musicdb.chris-lamb.co.uk/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
