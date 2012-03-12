@@ -24,13 +24,13 @@ class Migration(SchemaMigration):
             'born_question': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'died': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
             'died_question': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'dir_name': ('django.db.models.fields.IntegerField', [], {'max_length': '100', 'db_index': 'True'}),
+            'dir_name': ('django.db.models.fields.TextField', [], {'max_length': '100', 'db_index': 'True'}),
             'forenames': ('django.db.models.fields.CharField', [], {'max_length': '100', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'nationality': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'classical_artists'", 'null': 'True', 'to': "orm['common.Nationality']"}),
             'original_forenames': ('django.db.models.fields.CharField', [], {'max_length': '100', 'blank': 'True'}),
             'original_surname': ('django.db.models.fields.CharField', [], {'max_length': '100', 'blank': 'True'}),
-            'slug': ('django.db.models.fields.IntegerField', [], {'max_length': '100', 'db_index': 'True'}),
+            'slug': ('django.db.models.fields.TextField', [], {'max_length': '100', 'db_index': 'True'}),
             'surname': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'url': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'})
         },
@@ -55,14 +55,14 @@ class Migration(SchemaMigration):
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'numchild': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
             'path': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '255'}),
-            'slug': ('django.db.models.fields.IntegerField', [], {'max_length': '100', 'db_index': 'True'})
+            'slug': ('django.db.models.fields.TextField', [], {'max_length': '100', 'db_index': 'True'})
         },
         'classical.ensemble': {
             'Meta': {'ordering': "('name',)", 'object_name': 'Ensemble'},
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '150'}),
             'nationality': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'ensembles'", 'null': 'True', 'to': "orm['common.Nationality']"}),
-            'slug': ('django.db.models.fields.IntegerField', [], {'max_length': '100', 'db_index': 'True'})
+            'slug': ('django.db.models.fields.TextField', [], {'max_length': '100', 'db_index': 'True'})
         },
         'classical.ensembleperformance': {
             'Meta': {'ordering': "('num',)", 'object_name': 'EnsemblePerformance', '_ormbases': ['classical.Performance']},
@@ -101,7 +101,7 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Recording'},
             'created': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.utcnow', 'null': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'slug': ('django.db.models.fields.IntegerField', [], {'max_length': '100', 'db_index': 'True'}),
+            'slug': ('django.db.models.fields.TextField', [], {'max_length': '100', 'db_index': 'True'}),
             'work': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'recordings'", 'to': "orm['classical.Work']"}),
             'year': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'})
         },
@@ -112,8 +112,8 @@ class Migration(SchemaMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'key': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'works'", 'null': 'True', 'to': "orm['classical.Key']"}),
             'nickname': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'}),
-            'slug': ('django.db.models.fields.IntegerField', [], {'max_length': '100', 'db_index': 'True'}),
-            'sort_value': ('django.db.models.fields.IntegerField', [], {'max_length': '100', 'db_index': 'True'}),
+            'slug': ('django.db.models.fields.TextField', [], {'max_length': '100', 'db_index': 'True'}),
+            'sort_value': ('django.db.models.fields.TextField', [], {'max_length': '100', 'db_index': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
             'year': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
             'year_question': ('django.db.models.fields.BooleanField', [], {'default': 'False'})
