@@ -22,6 +22,11 @@ class DenormalisedCharField(fields.CharField):
 
         return val[:self.max_length]
 
+    def south_field_triple(self):
+        from south.modelsinspector import introspector
+        args, kwargs = introspector(self)
+        return ('django.db.models.fields.IntegerField', args, kwargs)
+
 class MySlugField(DenormalisedCharField):
     def __init__(self, *args, **kwargs):
         self.filter = None
