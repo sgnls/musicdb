@@ -10,7 +10,9 @@
   {% for recording in recent %}
   <li>
     <a href="{{ recording.get_absolute_url }}">
-      {{ recording.work.composer.short_name }} - {{ recording.work.short_name }} ({{ recording.short_name }})
+      {{ recording.work.composer.short_name }} -
+      {{ recording.work.short_name }}
+      ({{ recording.short_name }})
     </a>
   </li>
   {% endfor %}
