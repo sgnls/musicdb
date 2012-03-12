@@ -362,8 +362,6 @@ class Recording(models.Model):
 
     slug = MySlugField('slug_name', filter='slug_filter')
 
-    created = models.DateTimeField(default=datetime.datetime.utcnow, null=True)
-
     def __unicode__(self):
         ret = u"%s" % self.work
         if self.year:
