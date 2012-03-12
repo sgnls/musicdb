@@ -97,6 +97,7 @@ class Artist(AbstractArtist, NextPreviousMixin):
         return "%s-%s" % (born, died)
 
     def performances_by_composer(self):
+        # FIXME: Move to manager
         return self.performances.order_by(
             'recording__work__composer',
             'recording__work__sort_value',
@@ -160,12 +161,14 @@ class Ensemble(models.Model, Mergeable):
         return ('classical-ensemble', (self.slug,))
 
     def performances_by_composer(self):
+        # FIXME: Move to manager
         return self.performances.order_by(
             'recording__work__composer',
             'recording__work__sort_value',
         )
 
     def dirty_tags(self):
+        # FIXME: Move to manager
         MusicFile.objects.filter(
             movement__recording__performances__ensembleperformance__ensemble=self,
         ).update(tags_dirty=True)
@@ -238,8 +241,10 @@ class Work(models.Model, Mergeable, NextPreviousMixin):
             return "%04d" % int(match.group(0))
 
         for cat in self.catalogues.all():
-            val += "%02d%s" % (cat.catalogue.num, \
-                re.sub('\d+', zeropad, cat.value))
+            val += "%02d%s" % (
+                cat.catalogue.num, \
+                re.sub('\d+', zeropad, cat.value),
+            )
 
         val += re.sub('\d+', zeropad, self.title)
         val += self.nickname
@@ -391,12 +396,14 @@ class Recording(models.Model):
         return ret
 
     def slug_filter(self):
+        # FIXME: Move to manager
         return type(self).objects.filter(work=self.work)
 
     def get_tracks(self):
         return MusicFile.objects.filter(movement__recording=self).order_by('movement')
 
     def total_duration(self):
+        # FIXME: Move to manager
         return sum(self.get_tracks().values_list('length', flat=True))
 
     def dirty_tags(self):
