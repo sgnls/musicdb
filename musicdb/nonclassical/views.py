@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from django.http import HttpResponseRedirect, Http404
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from musicdb.utils.iter import chunk
 from musicdb.utils.http import M3UResponse
@@ -9,7 +8,7 @@ from musicdb.nonclassical.models import Artist, Album, CD, Track
 
 def index(request, letter='a'):
     if letter is None:
-        return HttpResponseRedirect('a')
+        return redirect('nonclassical-letter', 'a')
 
     letters = Artist.objects.values_list('name_first', flat=True). \
         order_by('name_first').distinct()
