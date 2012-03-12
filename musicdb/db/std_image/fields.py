@@ -155,3 +155,7 @@ class StdImageField(ImageField):
         signals.post_save.connect(self._rename_resize_image, sender=cls)
         signals.post_init.connect(self._set_thumbnail, sender=cls)
 
+    def south_field_triple(self):
+        from south.modelsinspector import introspector
+        args, kwargs = introspector(self)
+        return ('django.db.models.fields.TextField', args, kwargs)
