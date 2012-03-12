@@ -18,9 +18,9 @@ class AdminSeleniumWebDriverTestCase(LiveServerTestCase):
             mod = import_module(module)
             WebDriver = getattr(mod, attr)
             cls.selenium = WebDriver()
-        except Exception:
+        except Exception, e:
             raise SkipTest('Selenium webdriver "%s" not installed or not '
-                           'operational.' % cls.webdriver_class)
+                           'operational: %s' % (cls.webdriver_class, str(e)))
         super(AdminSeleniumWebDriverTestCase, cls).setUpClass()
 
     @classmethod
@@ -73,15 +73,33 @@ class AdminSeleniumWebDriverTestCase(LiveServerTestCase):
         return self.selenium.execute_script(
             'return django.jQuery("%s").css("%s")' % (selector, attribute))
 
-    def select_option(self, selector, value):
+    def get_select_option(self, selector, value):
         """
-        Helper function to select the <OPTION> that has the value `value` and
-        that is in the <SELECT> widget identified by the CSS selector `selector`.
+        Returns the <OPTION> with the value `value` inside the <SELECT> widget
+        identified by the CSS selector `selector`.
         """
         from selenium.common.exceptions import NoSuchElementException
-        options = self.selenium.find_elements_by_css_selector('%s option' % selector)
+        options = self.selenium.find_elements_by_css_selector('%s > option' % selector)
         for option in options:
             if option.get_attribute('value') == value:
-                option.click()
-                return
+                return option
         raise NoSuchElementException('Option "%s" not found in "%s"' % (value, selector))
+
+    def assertSelectOptions(self, selector, values):
+        """
+        Asserts that the <SELECT> widget identified by `selector` has the
+        options with the given `values`.
+        """
+        options = self.selenium.find_elements_by_css_selector('%s > option' % selector)
+        actual_values = []
+        for option in options:
+            actual_values.append(option.get_attribute('value'))
+        self.assertEqual(values, actual_values)
+
+    def has_css_class(self, selector, klass):
+        """
+        Returns True if the element identified by `selector` has the CSS class
+        `klass`.
+        """
+        return (self.selenium.find_element_by_css_selector(selector)
+                .get_attribute('class').find(klass) != -1)
