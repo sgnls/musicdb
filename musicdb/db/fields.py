@@ -4,9 +4,6 @@ from django.db.models import fields
 
 from musicdb.utils import slugify
 
-__all__ = ('DenormalisedCharField', 'MySlugField', 'FirstLetterField', \
-    'DirNameField')
-
 class DenormalisedCharField(fields.CharField):
     def __init__(self, attr, *args, **kwargs):
         # Set a longer max_length by default
