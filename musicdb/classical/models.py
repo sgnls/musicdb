@@ -25,7 +25,7 @@ class Artist(AbstractArtist, NextPreviousMixin):
     born = models.IntegerField(blank=True, null=True)
     died = models.IntegerField(blank=True, null=True)
     born_question = models.BooleanField(
-        'Year of birth uncertain',
+        "Year of birth uncertain",
         default=False,
     )
     died_question = models.BooleanField(
