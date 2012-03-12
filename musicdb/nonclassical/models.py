@@ -11,7 +11,7 @@ from musicdb.db.mixins import NextPreviousMixin
 from musicdb.db.fields import MySlugField, FirstLetterField, DirNameField
 from musicdb.db.std_image.fields import StdImageField
 
-from .managers import AlbumManager, TrackManager
+from .managers import ArtistManager, AlbumManager, TrackManager
 
 class Artist(AbstractArtist, NextPreviousMixin):
     name = models.CharField(max_length=250)
@@ -28,6 +28,8 @@ class Artist(AbstractArtist, NextPreviousMixin):
 
     name_first = FirstLetterField('name')
     dir_name = DirNameField('name')
+
+    objects = ArtistManager()
 
     class Meta:
         ordering = ('name',)

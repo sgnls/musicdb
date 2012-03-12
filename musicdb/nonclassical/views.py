@@ -10,13 +10,10 @@ def index(request, letter='a'):
     if letter is None:
         return redirect('nonclassical-letter', 'a')
 
-    letters = Artist.objects.values_list('name_first', flat=True). \
-        order_by('name_first').distinct()
-
     artists = Artist.objects.filter(name_first=letter)
 
     return render(request, 'nonclassical/index.html', {
-        'letters': letters,
+        'letters': Artist.objects.letters(),
         'artists': artists,
     })
 
