@@ -24,5 +24,7 @@ su www-data -c "${BASE}/musicdb/manage.py migrate --all"
 ln -sf ${BASE}/config/gunicorn /etc/gunicorn.d/musicdb
 gunicorn-debian start musicdb
 
-ln -sf ${BASE}/config/nginx /etc/nginx/sites-enabled/musicdb
+rm -f /etc/nginx/sites-enabled/musicdb
+sed -e "s/##HTTP_SUFFIX##/$(cat /var/lib/musicdb/http_suffix)/g" \
+	< ${BASE}/config/nginx.in > /etc/nginx/sites-enabled/musicdb
 invoke-rc.d nginx reload
