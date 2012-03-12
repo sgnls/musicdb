@@ -14,6 +14,7 @@
       {{ recording.work.short_name }}
       ({{ recording.short_name }})
     </a>
+    {{ recording.created|timesince }} ago
   </li>
   {% endfor %}
 </ul>
