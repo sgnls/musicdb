@@ -136,7 +136,14 @@ LOGIN_URL = '/login'
 DATABASE_ENGINE = 'dummy_for_debug_toolbar'
 
 MEDIA_LOCATION = '/srv/musicdb.chris-lamb.co.uk'
-MEDIA_LOCATION_HTTP = 'http://musicdb.chris-lamb.co.uk/_z7DukHiMKH'
+
+try:
+    with open('/var/lib/musicdb/http_suffix', 'r') as f:
+        SECRET_HTTP_SUFFIX = f.read().strip()
+except IOError:
+    SECRET_HTTP_SUFFIX = 'z7DukHiMKH'
+
+MEDIA_LOCATION_HTTP = 'http://musicdb.chris-lamb.co.uk/_%s' % SECRET_HTTP_SUFFIX
 
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.BCryptPasswordHasher',
