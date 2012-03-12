@@ -9,3 +9,8 @@ rm -f /etc/gunicorn.d/musicdb
 
 rm -f /etc/nginx/sites-enabled/musicdb
 invoke-rc.d nginx reload
+
+if [ "${1}" = "purge" ]
+then
+	rm -rf /var/lib/musicdb
+fi

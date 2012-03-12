@@ -14,3 +14,9 @@ gunicorn-debian start musicdb
 
 ln -sf ${BASE}/config/nginx /etc/nginx/sites-enabled/musicdb
 invoke-rc.d nginx reload
+
+if [ ! -f /var/lib/musicdb/http_suffix ]
+then
+	mkdir -p /var/lib/musicdb
+	pwgen -s > /var/lib/musicdb/http_suffix
+fi
