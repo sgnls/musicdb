@@ -12,8 +12,7 @@
     <a href="{{ recording.get_absolute_url }}">
       {{ recording.work.composer.short_name }} -
       {{ recording.work.short_name }}
-      ({{ recording.short_name }})
-    </a>
+      ({{ recording.short_name }})</a>
     {{ recording.created|timesince }} ago
   </li>
   {% endfor %}
