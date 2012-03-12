@@ -13,7 +13,7 @@ from musicdb.common.models import AbstractArtist, MusicFile
 from musicdb.db.mixins import Mergeable, NextPreviousMixin
 from musicdb.db.fields import MySlugField, DenormalisedCharField, DirNameField
 
-from .managers import ArtistManager, WorkManager
+from .managers import ArtistManager, WorkManager, RecordingManager
 
 class Artist(AbstractArtist, NextPreviousMixin):
     surname = models.CharField(max_length=100)
@@ -368,6 +368,8 @@ class Recording(models.Model):
     slug = MySlugField('slug_name', filter='slug_filter')
 
     created = models.DateTimeField(default=datetime.datetime.utcnow, null=True)
+
+    objects = RecordingManager()
 
     def __unicode__(self):
         ret = u"%s" % self.work

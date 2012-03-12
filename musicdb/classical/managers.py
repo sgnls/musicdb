@@ -19,3 +19,7 @@ class WorkManager(models.Manager):
         return self.annotate(
             num_recordings=Count('recordings')
         ).order_by('-num_recordings')
+
+class RecordingManager(models.Manager):
+    def recent(self):
+        return self.filter(created__isnull=False).order_by('-created')
