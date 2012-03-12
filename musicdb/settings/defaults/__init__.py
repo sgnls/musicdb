@@ -101,7 +101,11 @@ INSTALLED_APPS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'gh*w7@sdfj4%i=xyjatf_@!wx^d#tam^&5q6(f=z6io-302iwu'
+try:
+    with open('/var/lib/musicdb/key', 'r') as f:
+        SECRET_KEY = f.read().strip()
+except IOError:
+    SECRET_KEY = 'gh*w7@sdfj4%i=xyjatf_@!wx^d#tam^&5q6(f=z6io-302iwu'
 
 MEDIA_ROOT = 'site_media'
 MEDIA_URL = '/site_media/'

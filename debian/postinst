@@ -4,10 +4,16 @@
 
 set -eu
 
+mkdir -p /var/lib/musicdb
+
 if [ ! -f /var/lib/musicdb/http_suffix ]
 then
-	mkdir -p /var/lib/musicdb
 	pwgen -s > /var/lib/musicdb/http_suffix
+fi
+
+if [ ! -f /var/lib/musicdb/key ]
+then
+	pwgen -s 50 > /var/lib/musicdb/key
 fi
 
 BASE=/usr/share/musicdb
