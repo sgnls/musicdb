@@ -1,5 +1,6 @@
 import os
 import urllib
+import datetime
 
 from django.db import models
 from django.core.files import File as DjangoFile
@@ -65,6 +66,8 @@ class Album(models.Model, NextPreviousMixin):
 
     slug = MySlugField('title')
     dir_name = DirNameField('get_dir_name')
+
+    created = models.DateTimeField(default=datetime.datetime.utcnow, null=True)
 
     objects = AlbumManager()
 
