@@ -50,7 +50,7 @@ class MySlugField(DenormalisedCharField):
                 self.name: val,
             }
 
-            if qs.filter(**filters).exclude(pk=obj.pk).count() == 0:
+            if not qs.filter(**filters).exclude(pk=obj.pk).exists():
                 return val
 
             val = "%s-%d" % (val_to_prepend, count)
