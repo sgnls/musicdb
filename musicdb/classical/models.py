@@ -2,6 +2,7 @@
 
 import re
 import roman
+import datetime
 
 from django.db import models
 
@@ -360,6 +361,8 @@ class Recording(models.Model):
     year = models.IntegerField(blank=True, null=True)
 
     slug = MySlugField('slug_name', filter='slug_filter')
+
+    created = models.DateTimeField(default=datetime.datetime.utcnow, null=True)
 
     def __unicode__(self):
         ret = u"%s" % self.work
