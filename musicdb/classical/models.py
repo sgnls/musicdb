@@ -367,7 +367,10 @@ class Recording(models.Model):
 
     slug = MySlugField('slug_name', filter='slug_filter')
 
-    created = models.DateTimeField(default=datetime.datetime.utcnow, null=True)
+    created = models.DateTimeField(
+        default=datetime.datetime.utcnow,
+        null=True,
+    )
 
     objects = RecordingManager()
 
