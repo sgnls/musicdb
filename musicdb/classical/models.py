@@ -370,6 +370,7 @@ class Recording(models.Model):
     created = models.DateTimeField(
         default=datetime.datetime.utcnow,
         null=True,
+        blank=True,
     )
 
     objects = RecordingManager()
