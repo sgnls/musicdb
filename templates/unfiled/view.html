@@ -2,8 +2,25 @@
 
 {% block headtitle %}Unfiled - {{ block.super }}{% endblock %}
 
-{% block title %}Unfiled{% endblock %}
+{% block title %}{{ rel_path }}{% endblock %}
 
 {% block content %}
+
+<table class="table table-striped">
+{% if show_parent %}
+<tr>
+  <td>[<a href="{% if parent %}?x={{ parent|iriencode }}{% else %}{% url unfiled:view %}{% endif %}">parent</a>]</td>
+</tr>
+{% endif %}
+{% for entry in entries %}
+<tr>
+  {% if entry.isdir %}
+    <td><a href="?x={{ entry.rel_path|iriencode }}">{{ entry.name }}/</a></td>
+  {% else %}
+    <td>{{ entry.name }} <a href="{% url unfiled:play %}?x={{ entry.rel_path|iriencode }}">Play</a></td>
+  {% endif %}
+</tr>
+{% endfor %}
+</table>
 
 {% endblock %}

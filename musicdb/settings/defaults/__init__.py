@@ -150,6 +150,7 @@ except IOError:
     SECRET_HTTP_SUFFIX = 'z7DukHiMKH'
 
 MEDIA_LOCATION_HTTP = 'http://musicdb.chris-lamb.co.uk/_%s' % SECRET_HTTP_SUFFIX
+UNFILED_MEDIA_LOCATION_HTTP = 'http://musicdb.chris-lamb.co.uk/unfiled/_%s' % SECRET_HTTP_SUFFIX
 
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.BCryptPasswordHasher',
