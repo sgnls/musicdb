@@ -1,4 +1,5 @@
 import os
+import re
 
 from django.http import Http404
 from django.conf import settings
@@ -7,6 +8,8 @@ from django.shortcuts import render
 from musicdb.utils.http import XSPFResponse
 
 from .utils import Track
+
+re_show_play = re.compile(r'\.(mp3|flac)$', re.IGNORECASE)
 
 def view(request):
     try:
@@ -23,6 +26,7 @@ def view(request):
         'isdir': os.path.isdir(os.path.join(abs_path, x)),
         'abs_path': os.path.join(abs_path, x),
         'rel_path': os.path.join(rel_path, x),
+        'show_play': bool(re_show_play.search(x)),
     } for x in os.listdir(abs_path)]
 
     entries.sort(key=lambda x: (not x['isdir'], x['name']))

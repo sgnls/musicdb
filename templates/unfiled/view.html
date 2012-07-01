@@ -17,7 +17,7 @@
   {% if entry.isdir %}
     <td><a href="?x={{ entry.rel_path|iriencode }}">{{ entry.name }}/</a></td>
   {% else %}
-    <td>{{ entry.name }} <a href="{% url unfiled:play %}?x={{ entry.rel_path|iriencode }}">Play</a></td>
+    <td>{{ entry.name }}{% if entry.show_play %} <a href="{% url unfiled:play %}?x={{ entry.rel_path|iriencode }}">Play</a>{% endif %}</td>
   {% endif %}
 </tr>
 {% endfor %}
