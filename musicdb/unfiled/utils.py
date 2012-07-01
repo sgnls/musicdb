@@ -1,3 +1,5 @@
+from django.utils.encoding import iri_to_uri
+
 from musicdb.common.models import MusicFile
 
 class Dummy(object):
@@ -18,6 +20,6 @@ class Track(MusicFile):
     @property
     def file(self):
         x = Dummy()
-        x.location = self.path
+        x.location = iri_to_uri(self.path)
 
         return x
