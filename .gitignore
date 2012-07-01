@@ -5,3 +5,4 @@
 media_location
 musicdb/settings/custom.py
 site_media/*
+settings/custom.py
