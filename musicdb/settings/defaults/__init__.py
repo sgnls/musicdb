@@ -141,6 +141,7 @@ LOGIN_URL = '/login'
 DATABASE_ENGINE = 'dummy_for_debug_toolbar'
 
 MEDIA_LOCATION = '/srv/musicdb.chris-lamb.co.uk'
+UNFILED_MEDIA_LOCATION  = '/srv/files.chris-lamb.co.uk/unfiled_classical_music'
 
 try:
     with open('/var/lib/musicdb/http_suffix', 'r') as f:
