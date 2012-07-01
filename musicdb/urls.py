@@ -13,7 +13,7 @@ urlpatterns = patterns('',
     url(r'^classical/', include('musicdb.classical.urls')),
     url(r'^albums/', include('musicdb.nonclassical.urls')),
     url(r'^common/', include('musicdb.common.urls')),
-    url(r'^unfiled/', include('musicdb.unfiled.urls', namespace='unfied')),
+    url(r'^unfiled/', include('musicdb.unfiled.urls', namespace='unfiled')),
 
     (r'^admin/', include(admin.site.urls)),
 )
