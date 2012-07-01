@@ -7,9 +7,7 @@ from django.http import HttpResponse
 from django.utils import simplejson
 
 class M3UResponse(HttpResponse):
-    def __init__(self, tracks):
-        prefix = settings.MEDIA_LOCATION_HTTP
-
+    def __init__(self, tracks, prefix=settings.MEDIA_LOCATION_HTTP):
         content = '#EXTM3U\n'
         for track in tracks:
             content += '#EXTINF:%d,\n%s\n' % (
@@ -20,9 +18,7 @@ class M3UResponse(HttpResponse):
         self['Content-Disposition'] = 'attachment; filename=playlist.m3u'
 
 class XSPFResponse(HttpResponse):
-    def __init__(self, tracks):
-        prefix = settings.MEDIA_LOCATION_HTTP
-
+    def __init__(self, tracks, prefix=settings.MEDIA_LOCATION_HTTP):
         NSMAP = {
             None: 'http://xspf.org/ns/0/',
         }
