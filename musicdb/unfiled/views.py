@@ -19,7 +19,15 @@ def view(request):
         rel_path = ''
         parent = None
 
-    abs_path = os.path.join(settings.UNFILED_MEDIA_LOCATION, rel_path)
+    abs_path = os.path.realpath(
+        os.path.join(settings.UNFILED_MEDIA_LOCATION, rel_path)
+    )
+
+    if not abs_path.startswith(settings.UNFILED_MEDIA_LOCATION):
+        raise Http404
+
+    if not os.path.isdir(abs_path):
+        raise Http404
 
     entries = [{
         'name': x,
@@ -41,8 +49,14 @@ def view(request):
 def play(request):
     try:
         rel_path = request.GET['x']
-        abs_path = os.path.join(settings.UNFILED_MEDIA_LOCATION, rel_path)
     except KeyError:
+        raise Http404
+
+    abs_path = os.path.realpath(
+        os.path.join(settings.UNFILED_MEDIA_LOCATION, rel_path)
+    )
+
+    if not os.path.exists(abs_path):
         raise Http404
 
     return XSPFResponse(
