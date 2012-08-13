@@ -100,6 +100,7 @@ INSTALLED_APPS = (
     'musicdb.classical',
     'musicdb.debug',
     'musicdb.nonclassical',
+    'musicdb.profile',
     'musicdb.unfiled',
     'musicdb.utils',
 )
