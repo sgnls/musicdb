@@ -8,16 +8,19 @@ from django.utils import simplejson
 
 from musicdb.profile.enums import PlaylistFormatEnum
 
-def render_playlist(request, *args, **kwargs):
+def render_playlist(request, tracks, prefix=None):
     klass = {
         PlaylistFormatEnum.XSPF: XSPFResponse,
         PlaylistFormatEnum.M3U: M3UResponse,
     }[request.profile.playlist_format]
 
-    return klass(*args, **kwargs)
+    if prefix is None:
+        prefix = request.profile.prefix or settings.MEDIA_LOCATION_HTTP
+
+    return klass(tracks, prefix)
 
 class M3UResponse(HttpResponse):
-    def __init__(self, tracks, prefix=settings.MEDIA_LOCATION_HTTP):
+    def __init__(self, tracks, prefix):
         content = '#EXTM3U\n'
         for track in tracks:
             content += '#EXTINF:%d,\n%s\n' % (
@@ -28,7 +31,7 @@ class M3UResponse(HttpResponse):
         self['Content-Disposition'] = 'attachment; filename=playlist.m3u'
 
 class XSPFResponse(HttpResponse):
-    def __init__(self, tracks, prefix=settings.MEDIA_LOCATION_HTTP):
+    def __init__(self, tracks, prefix):
         NSMAP = {
             None: 'http://xspf.org/ns/0/',
         }
