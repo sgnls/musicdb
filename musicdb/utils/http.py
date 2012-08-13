@@ -11,7 +11,7 @@ from musicdb.profile.enums import PlaylistFormatEnum
 def render_playlist(request, *args, **kwargs):
     klass = {
         PlaylistFormatEnum.XSPF: XSPFResponse,
-        PlaylistFormatEnum.M3U: M3uResponse,
+        PlaylistFormatEnum.M3U: M3UResponse,
     }[request.profile.playlist_format]
 
     return klass(*args, **kwargs)
