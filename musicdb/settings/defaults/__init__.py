@@ -69,6 +69,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'musicdb.debug.middleware.ShowForSuperusersMiddleware',
 )
 
 ROOT_URLCONF = 'musicdb.urls'
@@ -97,6 +98,7 @@ INSTALLED_APPS = (
     'musicdb.auth',
     'musicdb.common',
     'musicdb.classical',
+    'musicdb.debug',
     'musicdb.nonclassical',
     'musicdb.unfiled',
     'musicdb.utils',
