@@ -6,6 +6,16 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.utils import simplejson
 
+from musicdb.profile.enums import PlaylistFormatEnum
+
+def render_playlist(request, *args, **kwargs):
+    klass = {
+        PlaylistFormatEnum.XSPF: XSPFResponse,
+        PlaylistFormatEnum.M3U: M3uResponse,
+    }[request.profile.playlist_format]
+
+    return klass(*args, **kwargs)
+
 class M3UResponse(HttpResponse):
     def __init__(self, tracks, prefix=settings.MEDIA_LOCATION_HTTP):
         content = '#EXTM3U\n'

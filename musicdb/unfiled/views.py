@@ -5,7 +5,7 @@ from django.http import Http404
 from django.conf import settings
 from django.shortcuts import render
 
-from musicdb.utils.http import XSPFResponse
+from musicdb.utils.http import render_playlist
 
 from .utils import Track
 
@@ -59,7 +59,8 @@ def play(request):
     if not os.path.exists(abs_path):
         raise Http404
 
-    return XSPFResponse(
+    return render_playlist(
+        request,
         [Track(rel_path)],
         prefix=settings.UNFILED_MEDIA_LOCATION_HTTP,
     )

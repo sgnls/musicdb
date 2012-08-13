@@ -3,7 +3,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from musicdb.utils.iter import chunk
-from musicdb.utils.http import M3UResponse
+from musicdb.utils.http import render_playlist
 from musicdb.nonclassical.models import Artist, Album, CD, Track
 
 def index(request, letter='a'):
@@ -37,12 +37,12 @@ def album(request, artist_slug, slug):
 def play_cd(request, cd_id):
     cd = get_object_or_404(CD, id=cd_id)
 
-    return M3UResponse(cd.get_tracks())
+    return render_playlist(request, cd.get_tracks())
 
 def play_album(request, album_id):
     album = get_object_or_404(Album, id=album_id)
 
-    return M3UResponse(album.get_tracks())
+    return render_playlist(request, album.get_tracks())
 
 def collage(request):
     albums = Album.objects.exclude(cover='').select_related('artist')

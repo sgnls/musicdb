@@ -1,13 +1,14 @@
 from django.db.models import Sum
 from django.shortcuts import get_object_or_404, render
 
-from musicdb.utils.http import M3UResponse
+from musicdb.utils.http import render_playlist
 
 from .models import MusicFile
 
 def play_music_file(request, music_file_id):
     music_file = get_object_or_404(MusicFile, id=music_file_id)
-    return M3UResponse([music_file])
+
+    return render_playlist(request, [music_file])
 
 def stats(request):
     return render(request, 'common/stats.html', {
