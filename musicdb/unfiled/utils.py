@@ -23,3 +23,6 @@ class Track(MusicFile):
         x.location = iri_to_uri(self.path)
 
         return x
+
+    class Meta:
+        managed = False
