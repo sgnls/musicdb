@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect
 from .forms import ProfileForm
 
 def view(request):
-
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=request.profile)
 
