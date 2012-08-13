@@ -10,6 +10,8 @@ urlpatterns = patterns('',
         name='home'),
 
     url(r'', include('musicdb.auth.urls', namespace='auth')),
+    url(r'', include('musicdb.profile.urls', namespace='profile')),
+
     url(r'^classical/', include('musicdb.classical.urls')),
     url(r'^albums/', include('musicdb.nonclassical.urls')),
     url(r'^common/', include('musicdb.common.urls')),
