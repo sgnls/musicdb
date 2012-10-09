@@ -12,6 +12,7 @@ Depends:
   ${python:Depends},
   lamby-www,
   gunicorn (>= 0.14.2),
+  pwgen,
   nginx,
   python-pygments,
   python-mutagen,
