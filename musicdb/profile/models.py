@@ -11,6 +11,7 @@ class Profile(models.Model):
     )
 
     prefix = models.CharField(
+        blank=True,
         max_length=500,
         verbose_name="Override file location prefix",
     )
