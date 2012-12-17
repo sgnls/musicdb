@@ -26,3 +26,4 @@ class Track(MusicFile):
 
     class Meta:
         managed = False
+        abstract = True
