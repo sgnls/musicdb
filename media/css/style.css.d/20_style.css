@@ -1,26 +1,21 @@
-body, html
-{
+body, html {
   background-color: #eee;
 }
 
-body
-{
+body {
   padding: 40px 0 45px 0;
 }
 
-.row
-{
+.row {
   margin-left: 0;
 }
 
-h1
-{
+h1 {
   margin-bottom: 18px;
 }
 
 /* The white background content wrapper */
-.content
-{
+.content {
   background-color: #fff;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
