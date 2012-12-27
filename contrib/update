@@ -68,6 +68,10 @@ case "${PROJECT}" in
 		Git git://github.com/playfire/django-enumfield.git ${PROJECT} ${PROJECT}
 		;;
 
+	gmusicapi)
+		Git git://github.com/simon-weber/Unofficial-Google-Music-API.git ${PROJECT} ${PROJECT}
+		;;
+
 	jquery)
 		mkdir -p ${PROJECT}
 		wget -Ojquery/jquery.js http://code.jquery.com/jquery.js
@@ -79,6 +83,10 @@ case "${PROJECT}" in
 
 	treebeard)
 		Hg http://bitbucket.org/tabo/django-treebeard/ ${PROJECT} ${PROJECT}
+		;;
+
+	validictory)
+		Git git://github.com/sunlightlabs/validictory.git ${PROJECT} ${PROJECT}
 		;;
 
 	--all)

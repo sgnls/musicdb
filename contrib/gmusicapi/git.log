@@ -1,0 +1,2434 @@
+commit 46cc456345b495d183a4f6bce23914f9793dd69e
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Wed Dec 26 04:22:21 2012 -0500
+
+    fix ddgenome's name
+
+ README.md |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f43ed2d899aeda1dbbb086416c2da086ef57305b
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Wed Dec 26 04:21:17 2012 -0500
+
+    add link to Mendhak's rhythmbox plugin
+
+ README.md |    1 +
+ 1 file changed, 1 insertion(+)
+
+commit b23e9dda3acbc1abd97c8697f9873dabde2093f8
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Sun Dec 23 22:13:05 2012 -0500
+
+    add example projects and coming soon to readme
+
+ README.md |   16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+commit 0bbce51ac423eb128e70d943a0bb54f04ad9df27
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Fri Dec 7 16:13:04 2012 -0500
+
+    finalize githalytics
+
+ README.md |    3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 2803dff25ade4e485032c6c75339257174a95228
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Fri Dec 7 16:09:44 2012 -0500
+
+    another githalytics test
+
+ README.md |    1 +
+ 1 file changed, 1 insertion(+)
+
+commit 46eef756512a4ea3708393ba3119df746ac1909f
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Fri Dec 7 16:06:40 2012 -0500
+
+    add githalytics
+
+ README.md |    2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 57283defdf289a4e5afb46af4241d8dbe5ee7350
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Sat Nov 10 14:38:43 2012 -0500
+
+    add Tom Graham to changelog
+
+ changelog |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1d8b328b91db17a3eeece98aa08a7be4f1dc90f3
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Sat Nov 10 14:38:03 2012 -0500
+
+    add Tom Graham to authors
+
+ AUTHORS |    1 +
+ 1 file changed, 1 insertion(+)
+
+commit 5cd888ef5705794e1aba1a210a1812327ec77af2
+Merge: 8b04c1b fb894ee
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Nov 9 20:09:48 2012 -0500
+
+    Merge branch 'release-2012.11.09'
+
+commit fb894ee967d97b233bf26941390ef4ad37f20bce
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Nov 9 20:08:39 2012 -0500
+
+    version bump
+
+ README.md           |    8 ++++----
+ changelog           |    4 ++++
+ docs/source/conf.py |    2 +-
+ setup.py            |    2 +-
+ 4 files changed, 10 insertions(+), 6 deletions(-)
+
+commit 7683a70dd8584e49118a41ef901922b8497cb6d4
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Nov 9 19:54:04 2012 -0500
+
+    fix multidownload validation and add get_dl_info test
+
+ gmusicapi/protocol.py                  |    2 +-
+ gmusicapi/test/integration_test_api.py |   13 +++++++++++++
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+
+commit 8b04c1b62a13a2ff514649f380f57a27cfad0898
+Merge: 91fcda3 1e7b761
+Author: Simon Weber <simon.weber@rochester.edu>
+Date:   Mon Sep 17 15:26:15 2012 -0400
+
+    fix uppercase mp3 uploading
+
+commit 1e7b761c14e289c606d3698135cef5b1811006a3
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Sep 4 20:38:25 2012 -0400
+
+    clean and test Tyris' patch to fix uppercase file extension uploading
+
+ gmusicapi/api.py                      |    2 +-
+ gmusicapi/protocol.py                 |    2 +-
+ gmusicapi/test/regression_test_api.py |    2 +-
+ gmusicapi/test/upper.MP3              |  Bin 0 -> 481237 bytes
+ 4 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 6afe980d8352d3c6691ddada77fe019f9417e375
+Author: Tom Graham <tom@sirwhite.com>
+Date:   Tue Sep 4 13:29:26 2012 +1000
+
+    Added support for uppercase extensions (.MP3)
+
+ gmusicapi/api.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1c4ab8f42300e53351e25a7ab8158c073dd8f5a5
+Merge: 6f2a5ff e4797d4
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Sep 4 20:20:40 2012 -0400
+
+    Merge branch 'master' into develop
+
+commit 91fcda3a8b50084355098e55c735b06c1b82cf66
+Author: Simon Weber <simon.weber@rochester.edu>
+Date:   Fri Aug 31 02:48:37 2012 -0300
+
+    fix upcoming features; add Nick Martin's java port
+
+ README.md |    9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+commit e4797d4b21df5c4aee5ae76d62e9ad0b11f2f797
+Merge: fb49e4c 0ce3a98
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Aug 31 01:40:18 2012 -0400
+
+    Merge branch 'release-2012.08.31'
+
+commit 0ce3a98557dfa8476c8a7629c45a95cc147f9d38
+Merge: 2dae852 6f2a5ff
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Aug 31 01:26:51 2012 -0400
+
+    Merge branch 'develop' into release-2012.08.31
+
+commit 6f2a5ff08f5e2ea16cd01771930e15a77b238831
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Aug 31 01:17:23 2012 -0400
+
+    add chardet to setup.py
+
+ setup.py |    3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 2dae852a079830509f68dd62e8746211ff39a2f9
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Fri Aug 31 00:58:44 2012 -0400
+
+    cut new build
+
+ README.md           |    4 +---
+ changelog           |    4 ++++
+ docs/source/conf.py |    2 +-
+ setup.py            |    2 +-
+ 4 files changed, 7 insertions(+), 5 deletions(-)
+
+commit e82901f9a20e8b0df6507a66712aae140556f4e1
+Merge: 5a2d7e3 6ffb997
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Fri Aug 31 00:27:29 2012 -0400
+
+    Merge branch 'develop' of github.com:simon-weber/Unofficial-Google-Music-API into develop
+
+commit 5a2d7e31fc6363ac969f36aba3d4186076a668a5
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Fri Aug 31 00:26:59 2012 -0400
+
+    magicPlaylists removed and merged into user playlists
+
+ gmusicapi/api.py      |   10 +++-------
+ gmusicapi/protocol.py |    1 -
+ 2 files changed, 3 insertions(+), 8 deletions(-)
+
+commit fb49e4c0042e2c112a6f38ce74a312078be415a8
+Author: Simon Weber <simon.weber@rochester.edu>
+Date:   Sun Aug 26 00:40:37 2012 -0300
+
+    add README one-liner and update upcoming features
+
+ README.md |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 6ffb997fc752bcbbb6927dadc5c97885b12c9ad1
+Author: Simon Weber <simon.weber@rochester.edu>
+Date:   Fri Aug 17 19:21:27 2012 -0300
+
+    add storeId to docs
+
+ docs/source/index.rst |    6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 005a2406e3057639c48598628b00b118c7b6e042
+Author: Simon Weber <simon@simonmweber.com>
+Date:   Wed Aug 15 22:50:05 2012 -0400
+
+    #39: make lastPlayed key optional
+
+ gmusicapi/protocol.py |    1 +
+ 1 file changed, 1 insertion(+)
+
+commit f19dfb7344d74d48aa5465b833767ca619b8b5ca
+Merge: 542bc98 421bbc4
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Aug 15 15:56:14 2012 -0400
+
+    Merge branch 'fix_unicode_uploads' into develop
+
+commit 421bbc4007f1d60fd4d10f902be73a0efbb6c3af
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Aug 15 15:55:55 2012 -0400
+
+    fix uploading of unicode filenames without tags
+
+ gmusicapi/protocol.py                         |   14 ++++++++++----
+ gmusicapi/test/regression_test_api.py         |    7 ++++---
+ "gmusicapi/test/\355\225\234\352\270\200.mp3" |  Bin 0 -> 481070 bytes
+ gmusicapi/utils/utils.py                      |   11 +++++++++++
+ 4 files changed, 25 insertions(+), 7 deletions(-)
+
+commit 116552be3227f6016909206136b47579e0100224
+Author: Simon Weber <simon.weber@rochester.edu>
+Date:   Wed Aug 15 16:20:36 2012 -0300
+
+    remove Google internship note; add php port
+
+ README.md |    4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit 542bc98c4baf1444a44fbb1dd57d5785971ea1fb
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Aug 15 15:17:33 2012 -0400
+
+    add storeId field; ignore virtualenv in .gitignore
+
+ .gitignore            |    5 +++++
+ gmusicapi/protocol.py |    5 +++++
+ 2 files changed, 10 insertions(+)
+
+commit cf5c7b71b4a01ada774ecab1d454d505d5ff3660
+Merge: eb3e177 97ffe14
+Author: Simon Weber <simon.weber@rochester.edu>
+Date:   Tue Jul 10 18:55:49 2012 -0700
+
+    Merge pull request #41 from stetro/patch-1
+    
+    fix the doc link to odiroot's example program
+
+commit 97ffe14243b666d293ab1df8b0bf37e47745a43f
+Author: Steffen Tröster <stetro.freaky@googlemail.com>
+Date:   Tue Jul 10 17:43:37 2012 +0300
+
+    fix example path
+
+ README.md |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eb3e17748a85363830cb0a8ec3c5804efa843a8e
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Jun 30 03:50:21 2012 -0700
+
+    add note about working at google
+
+ README.md |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit a6ec7c1d4e5e4606db57034094cafa855716aba4
+Merge: 4d6f452 a05c5f2
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri May 4 20:39:00 2012 -0400
+
+    Merge branch 'release-2012.05.04'
+
+commit a05c5f233dba3dccac73add7d9d9f60684d372f9
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri May 4 20:37:43 2012 -0400
+
+    version bump; add ddgenome to authors
+
+ AUTHORS             |    3 ++-
+ README.md           |    7 ++-----
+ changelog           |    5 +++++
+ docs/source/conf.py |    2 +-
+ setup.py            |    2 +-
+ 5 files changed, 11 insertions(+), 8 deletions(-)
+
+commit 7fb968aa5e54543e94f90dedb5d0d5464af09b0a
+Merge: 3b7a8d3 25b05a1
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri May 4 20:22:30 2012 -0400
+
+    Merge remote-tracking branch 'ddgenome/master' into develop
+
+commit 3b7a8d37dea7c9f419253f3a0564a5ea3e820ae6
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri May 4 20:19:30 2012 -0400
+
+    fix assumption with track/disc number md formatting
+
+ gmusicapi/protocol.py |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 25b05a1554f9d16b061328cd0cdde497b9ca3d63
+Author: David Dooling <ddgenome@gmail.com>
+Date:   Fri May 4 12:35:56 2012 -0500
+
+    index.rst: updated docs to reflect metajamId -> matchedId in song dictionary
+
+ docs/source/index.rst |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1b71cdc785685b2f762fa90aa1a062fc77de89af
+Author: David Dooling <ddgenome@gmail.com>
+Date:   Fri May 4 12:33:04 2012 -0500
+
+    protocol.py: looks like matchedID has replaced metajamId in the song dictionary
+
+ gmusicapi/protocol.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1255a88d73c31c1cd8c10fc0c106872d2cf471ae
+Author: David Dooling <ddgenome@gmail.com>
+Date:   Fri May 4 07:47:17 2012 -0500
+
+    protocol.py: google music allows ratings 0-5, not just 0,1,5
+
+ gmusicapi/protocol.py |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 4d6f452d9e3362b31a2b050d3214ecfb78511c05
+Author: Simon Weber <simon.weber@rochester.edu>
+Date:   Thu Apr 12 17:03:59 2012 -0300
+
+    update readme to refer to my site
+
+ README.md |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4c7531dc49d17f421ec542aec0a43d4fdf5b5acc
+Author: Simon Weber <simon.weber@rochester.edu>
+Date:   Sun Apr 8 16:51:47 2012 -0300
+
+    add skyjam docs to readme
+
+ README.md |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c462ab0f08a489e6fdae120e980c6d7ae9a2e45f
+Author: Simon Weber <simon.weber@rochester.edu>
+Date:   Thu Apr 5 13:40:02 2012 -0300
+
+    Add Jens to the README.
+
+ README.md |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5bb1f244afc9c26924ca07adeff05ec81e7d26fc
+Merge: 50631ef f8849a3
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Apr 3 01:07:41 2012 -0400
+
+    Merge branch 'develop'
+
+commit f8849a3439d2a9289b72befd7e756862218e2c3d
+Merge: 50631ef 5d83045
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Apr 3 01:07:09 2012 -0400
+
+    Merge branch 'switch-to-bsd' into develop
+
+commit 5d83045ede44a5c8e8f5ab841d1bd57565a31808
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Apr 3 01:06:42 2012 -0400
+
+    switch license over; version bump
+
+ COPYING                                |  698 ++------------------------------
+ README.md                              |   20 +-
+ changelog                              |    4 +
+ docs/source/conf.py                    |    2 +-
+ example.py                             |   44 +-
+ gmusicapi/__init__.py                  |   40 +-
+ gmusicapi/api.py                       |   40 +-
+ gmusicapi/gmtools/__init__.py          |   36 +-
+ gmusicapi/gmtools/tools.py             |   40 +-
+ gmusicapi/protocol.py                  |   40 +-
+ gmusicapi/test/__init__.py             |   36 +-
+ gmusicapi/test/integration_test_api.py |   40 +-
+ gmusicapi/test/regression_test_api.py  |   40 +-
+ gmusicapi/test/utils.py                |   40 +-
+ gmusicapi/utils/__init__.py            |   36 +-
+ gmusicapi/utils/apilogging.py          |   45 +-
+ gmusicapi/utils/clientlogin.py         |   44 +-
+ gmusicapi/utils/tokenauth.py           |   40 +-
+ gmusicapi/utils/utils.py               |   40 +-
+ setup.py                               |   29 +-
+ 20 files changed, 433 insertions(+), 921 deletions(-)
+
+commit 50631effba2bf82e31fa7e154acb4ee5bddda843
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Apr 3 00:22:56 2012 -0400
+
+    add antimatter15 to AUTHORS
+
+ AUTHORS |    3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit ea4460c8b51b6280e120ef3b9702eec6ce2995d4
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 18:57:29 2012 -0400
+
+    revert fake version bump. problem was on rtd end
+
+ docs/source/conf.py |    2 +-
+ setup.py            |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit b6a8f67309fe20c4e0ec0d3df017784a793a8325
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 18:37:34 2012 -0400
+
+    force rtd to update
+
+ docs/source/conf.py |    4 ++--
+ setup.py            |    2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 35264168b1cee0b53983e3aa2fa437d9905bb5ba
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 18:33:24 2012 -0400
+
+    force rtd to update
+
+ docs/source/conf.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dbcd9cbd2e8541a247b2960f10a1a4dfbf88f492
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 18:27:06 2012 -0400
+
+    fix docs
+
+ docs/source/index.rst |    4 ++--
+ gmusicapi/api.py      |   22 ++++++++++++----------
+ 2 files changed, 14 insertions(+), 12 deletions(-)
+
+commit ea4f04cbae7602160de58e5925ad72b0f526f7e5
+Merge: 0407dd1 29c5b8d
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 17:36:49 2012 -0400
+
+    Merge branch 'release-2012.04.01'
+
+commit 29c5b8dc5194ca865b0679a1a9b4b5851858e735
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 17:34:58 2012 -0400
+
+    add more installation info
+
+ README.md |    8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit 4c38878e3758cf5625e743aa0688e882edfd9166
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 17:28:45 2012 -0400
+
+    add note in README about testing errors
+
+ README.md |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 422c795a450c8dc8bd91256fff24955c80ae4352
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 17:16:55 2012 -0400
+
+    include test audio files in dist
+
+ MANIFEST.in |    5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 9bd9caca8da417805dae025c5691a5b66b6e9c2a
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 17:12:21 2012 -0400
+
+    fix bug in temp file handling error path
+
+ README.md        |    2 ++
+ gmusicapi/api.py |   11 +++++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 7aeb2e5d8959d227c6b17a48b52d22271118b0e4
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 16:55:03 2012 -0400
+
+    version bump, add new info to readme, remove example.py from scripts
+
+ README.md           |   14 ++++++++------
+ changelog           |    3 ++-
+ docs/source/conf.py |    2 +-
+ setup.py            |    6 +++---
+ 4 files changed, 14 insertions(+), 11 deletions(-)
+
+commit 2d167f523f75792f9b6fb7c40812e128bfb4a19c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 16:33:19 2012 -0400
+
+    improve tempfile handling
+
+ gmusicapi/api.py |   41 ++++++++++++++++++++++++++---------------
+ 1 file changed, 26 insertions(+), 15 deletions(-)
+
+commit fe39b5d8db3333f5182d66a48f57483a48a4c5e9
+Merge: bb519da dc24cc6
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 15:30:00 2012 -0400
+
+    Merge branch 'windows-compatibility' into develop
+
+commit dc24cc6a6e75e831a08b908ca3b50c52f1720663
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 15:25:52 2012 -0400
+
+    properly open and close mp3 files while uploading
+
+ gmusicapi/api.py      |   14 +++++++-------
+ gmusicapi/protocol.py |    2 +-
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+commit 966df9784a12187833fe83d86751431f050e640f
+Merge: dae1112 bb519da
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 14:49:06 2012 -0400
+
+    Merge branch 'develop' into windows-compatibility
+
+commit bb519da411f10cd67d604001f113c9bb2c8e72ac
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 14:48:46 2012 -0400
+
+    fix tag copying and empty playlist in testing bug
+
+ gmusicapi/test/integration_test_api.py |    2 +-
+ gmusicapi/utils/utils.py               |   38 ++++++++++++++++++++++++++------
+ 2 files changed, 32 insertions(+), 8 deletions(-)
+
+commit dae1112df9621b1bcd44316ffaed1784abd8f344
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 03:25:15 2012 -0400
+
+    add shortcircuiting for empty args and major hack for temp files on windows. need to report the mutagen bug about wma unicode tag saving
+
+ gmusicapi/api.py                       |   21 ++++++++++++++++++---
+ gmusicapi/test/integration_test_api.py |    2 +-
+ gmusicapi/test/regression_test_api.py  |    4 ++--
+ gmusicapi/utils/utils.py               |   18 ++++++++++++++++++
+ 4 files changed, 39 insertions(+), 6 deletions(-)
+
+commit 8d17390d7147b04dcb69f4c22e63acaca48e20c0
+Merge: 40abd39 fa6944e
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 01:23:43 2012 -0400
+
+    Merge branch 'nonmp3-audio-uploading' into develop
+
+commit fa6944ebf98ebc97f3d241dac85bbec4f71ca152
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 00:57:01 2012 -0400
+
+    update readme and changelog
+
+ README.md |   10 ++++++----
+ changelog |    2 ++
+ 2 files changed, 8 insertions(+), 4 deletions(-)
+
+commit 7aac7c66bad37316a5322bd373983cdddd96d895
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 00:37:56 2012 -0400
+
+    upload a random subset of files
+
+ gmusicapi/test/integration_test_api.py |   12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+commit 2320d4e6303641323d2f2377c8122d1f36119410
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Apr 1 00:28:30 2012 -0400
+
+    add support for uploading other filetypes than mp3
+
+ gmusicapi/api.py        |   10 +++++++---
+ gmusicapi/test/test.wma |  Bin 266408 -> 266408 bytes
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+commit 0153d6b6d1cf06818b208f3b6c5337ce7b232aa3
+Merge: 1283a39 40abd39
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 23:48:30 2012 -0400
+
+    Merge branch 'develop' into nonmp3-audio-uploading
+
+commit 40abd393db58c0982c6d74e619cf9ecc4ceb1192
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 23:47:51 2012 -0400
+
+    fix bug in bad-login code path
+
+ gmusicapi/utils/clientlogin.py |    6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 1283a391b0c4f43a66e02928a82edaaf13768427
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 23:35:40 2012 -0400
+
+    (stashing changes to fix invalid login bug right in develop)
+
+ gmusicapi/api.py                       |   76 +++++++++++++++++++++++++++++++-
+ gmusicapi/protocol.py                  |   16 ++-----
+ gmusicapi/test/integration_test_api.py |   23 +++++-----
+ gmusicapi/test/test.flac               |  Bin 0 -> 560752 bytes
+ gmusicapi/test/test.m4a                |  Bin 0 -> 205232 bytes
+ gmusicapi/test/test.mp3                |  Bin 481237 -> 481237 bytes
+ gmusicapi/test/test.ogg                |  Bin 0 -> 555299 bytes
+ gmusicapi/test/test.wma                |  Bin 0 -> 266408 bytes
+ gmusicapi/utils/utils.py               |   43 ++++++++++--------
+ 9 files changed, 115 insertions(+), 43 deletions(-)
+
+commit a1d7fd509cb75ea717dd35e99d118be8a9ed70ff
+Merge: 67c1cf3 b842d02
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 02:19:08 2012 -0400
+
+    Merge branch 'non-html-playlist-loading' into develop
+
+commit b842d021e1a29dccd794cd8b3fb3474631747cdd
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 02:18:06 2012 -0400
+
+    fix loadplaylist schema to include continuationToken
+
+ changelog             |    2 +-
+ gmusicapi/protocol.py |    3 ++-
+ setup.py              |    2 +-
+ 3 files changed, 4 insertions(+), 3 deletions(-)
+
+commit 989e9ad7f1c5752d75892ea5018fd66c726dfb7b
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 01:16:34 2012 -0400
+
+    add proper validation schema for new playlist loading. change all schemas to restrict additional properties
+
+ gmusicapi/protocol.py |   77 ++++++++++++++++++++++++++++++++-----------------
+ 1 file changed, 50 insertions(+), 27 deletions(-)
+
+commit 5abed554c215f2be40e49c8ed30dda9fe9cc536f
+Merge: 7d31e04 67c1cf3
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 00:48:57 2012 -0400
+
+    Merge branch 'develop' into non-html-playlist-loading
+    
+    Conflicts:
+    	gmusicapi/api.py - new method becomes Api.get_all_playlist_ids
+
+commit 67c1cf37425ec4bea11cc3b3de6b1cc7fb0ce1a4
+Merge: 0407dd1 8ae7e7e
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 00:35:40 2012 -0400
+
+    Merge branch 'consistent_interface' into develop
+
+commit 8ae7e7e25294905c01fb19f1491f1141dedb293f
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 00:32:22 2012 -0400
+
+    update changelog
+
+ changelog |    1 +
+ 1 file changed, 1 insertion(+)
+
+commit 8e94f121c2b4cf395795ef1b99021d014f105d01
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 00:31:49 2012 -0400
+
+    get_playlists -> get_all_playlist_ids to avoid confusion
+
+ gmusicapi/api.py                       |    4 ++--
+ gmusicapi/test/integration_test_api.py |   10 +++++-----
+ gmusicapi/test/utils.py                |    2 +-
+ 3 files changed, 8 insertions(+), 8 deletions(-)
+
+commit 0c934ba6a9aed08b932e5df29e66e2adac76889b
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 00:22:45 2012 -0400
+
+    update changelog
+
+ changelog |    2 --
+ 1 file changed, 2 deletions(-)
+
+commit 0cbdd958425f51888d711a4dc5e8a71724e1d98b
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 31 00:21:44 2012 -0400
+
+    update example with new interface and make it more useful
+
+ example.py |   81 ++++++++++++++++++++++++++++++++----------------------------
+ 1 file changed, 43 insertions(+), 38 deletions(-)
+
+commit 1897a22ea4322e58c238bff598c59c597c05c160
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 30 23:42:37 2012 -0400
+
+    update changelog
+
+ changelog |    2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 5496d850e7a3f9d0cedd4c34cc1f318f9ef76645
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 30 23:39:48 2012 -0400
+
+    create a unit-tested api for use in all testing that automatically enforces its return types. also make all classes new-style
+
+ gmusicapi/api.py                       |    8 +-
+ gmusicapi/gmtools/tools.py             |    4 +-
+ gmusicapi/protocol.py                  |   10 +-
+ gmusicapi/test/integration_test_api.py |  319 ++++++++++++++++++++++++++++++++
+ gmusicapi/test/regression_test_api.py  |   96 ++++++++++
+ gmusicapi/test/test_api_calls.py       |  318 -------------------------------
+ gmusicapi/test/test_regressions.py     |   98 ----------
+ gmusicapi/test/utils.py                |   86 ++++++++-
+ gmusicapi/utils/apilogging.py          |    4 +-
+ gmusicapi/utils/clientlogin.py         |    2 +-
+ gmusicapi/utils/tokenauth.py           |    2 +-
+ 11 files changed, 514 insertions(+), 433 deletions(-)
+
+commit 4405da4c1d53a9d68065725c079404c1b4ea4f7e
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 30 14:16:11 2012 -0400
+
+    add new interface to changelog; fix a bug in remove_songs_from_p return
+
+ changelog        |   13 +++++++++++++
+ gmusicapi/api.py |   12 +++++++++---
+ 2 files changed, 22 insertions(+), 3 deletions(-)
+
+commit 75208d26e02a977ee92854401d4beb042d3f0929
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 30 02:22:40 2012 -0400
+
+    construct CallFailure properly in _wc_call
+
+ gmusicapi/api.py |    6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit dacc6e2e274a48debbb8ad14e60c3c289696a4f1
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 30 02:15:27 2012 -0400
+
+    enable randomness in choosing which ways to test changing a playlist
+
+ gmusicapi/test/test_api_calls.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit de4185d16fb90f9d9f38cd1c70b76ae07e8123ad
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 30 02:13:56 2012 -0400
+
+    export CallFailure for *; add attributes to CallFailure, fix bug in internal interface, change add_songs_to_playlist return, clean test code to use CallFailure
+
+ gmusicapi/__init__.py              |    4 ++--
+ gmusicapi/api.py                   |   38 +++++++++++++++++++++++++++---------
+ gmusicapi/protocol.py              |    1 +
+ gmusicapi/test/test_api_calls.py   |   37 ++++++++++++-----------------------
+ gmusicapi/test/test_regressions.py |    6 ++----
+ gmusicapi/test/utils.py            |   17 ++++++++--------
+ 6 files changed, 55 insertions(+), 48 deletions(-)
+
+commit de662996d163359c64771c30ead8043a385b4b2f
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 30 01:13:48 2012 -0400
+
+    change to consistent interface - will detail in changelog; also add unsuppress_failures context manager
+
+ gmusicapi/api.py |  234 +++++++++++++++++++++++++++++-------------------------
+ 1 file changed, 128 insertions(+), 106 deletions(-)
+
+commit ceacb4ef2e5a924e7a44a2607eb90fe5cd82c9a8
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 30 00:08:04 2012 -0400
+
+    add exceptions for call failure, and option to suppress
+
+ gmusicapi/api.py |   52 +++++++++++++++++++++++++++++++++-------------------
+ 1 file changed, 33 insertions(+), 19 deletions(-)
+
+commit 0407dd14a55781401cebf8078fc1b773e3cf7bd3
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 20:20:38 2012 -0400
+
+    update readme for packaging
+
+ README.md |   28 +++++++++++-----------------
+ 1 file changed, 11 insertions(+), 17 deletions(-)
+
+commit 2318ec8dc4005f8e84f20e15f09cf07671ea5802
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 19:57:59 2012 -0400
+
+    add classifiers
+
+ setup.py |    8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit c4e39642b52797fbbe82ff4222321cb22a3b977b
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 19:48:04 2012 -0400
+
+    setup.py long desc needs to be in reST.
+
+ setup.py |    6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 57983615427acf4a756c593e3adc513c3235a920
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 19:38:01 2012 -0400
+
+    change pip name to gmusicapi
+
+ setup.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eb5d83f067b4b402770f6a3a09e7bf858dc8a305
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 14:32:03 2012 -0400
+
+    remove mechanize dependency; link to odiroots example
+
+ README.md |   11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
+
+commit 9f4444264b92134f9ab74d46edf2acc8aa46aedd
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 01:55:18 2012 -0400
+
+    RTD builds with pip+virtualenv; remove old mocking code
+
+ docs/source/conf.py   |   32 --------------------------------
+ docs/source/index.rst |   17 ++++++-----------
+ 2 files changed, 6 insertions(+), 43 deletions(-)
+
+commit 7a6c91a4e99ba4be921b3c9c723139846ca8a418
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 01:50:14 2012 -0400
+
+    test if decorator works on RTD
+
+ docs/source/index.rst |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 89cab939634b221ae1fe581e6a98764caad1bf87
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 01:44:34 2012 -0400
+
+    fix readme new features formatting
+
+ README.md |    3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 51658638bc4580fb5dabd0f4ad969844233d5165
+Merge: a61c053 31e5f7d
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 01:41:47 2012 -0400
+
+    Merge branch 'release-2012.03.27'
+
+commit 31e5f7d346f01f4eed4a4e6092439cd55684ff2a
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 01:40:53 2012 -0400
+
+    comment out mockout code for now
+
+ docs/source/conf.py |   40 ++++++++++++++++++++--------------------
+ 1 file changed, 20 insertions(+), 20 deletions(-)
+
+commit 402af8bf5f91d56ee4db51dfec193668937f129c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 01:18:05 2012 -0400
+
+    version bump and changelog update
+
+ README.md           |    8 +++-----
+ changelog           |    7 +++++++
+ docs/source/conf.py |    2 +-
+ 3 files changed, 11 insertions(+), 6 deletions(-)
+
+commit 66b4d1e2e2dbfe43f493c11d4d3fe7e49433f43a
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 01:05:29 2012 -0400
+
+    change import * to only import api.Api
+
+ gmusicapi/__init__.py |    5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 53cc4d60a440eb9a97fc12aa4fa7588d58ee0fba
+Merge: 0effe74 0dff3aa
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 00:55:55 2012 -0400
+
+    Merge branch 'pip-packaging' into develop
+
+commit 0dff3aad38d84c45547dcf5c24f68b597eccbd3c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Mar 27 00:55:02 2012 -0400
+
+    add AUTHORS and packaging info
+
+ AUTHORS     |    4 ++++
+ MANIFEST.in |    3 ++-
+ setup.py    |   15 +++++++++------
+ 3 files changed, 15 insertions(+), 7 deletions(-)
+
+commit 1214d09ec2eae22a05749f18e38c20238d2dce0d
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 26 23:51:31 2012 -0400
+
+    add manifest and setup.py
+
+ MANIFEST.in |    3 +++
+ setup.py    |   20 ++++++++++++++++++++
+ 2 files changed, 23 insertions(+)
+
+commit 0effe7444317e38ff696c2cf85ec7a7b5e720905
+Merge: 52920cd 846f5c7
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 26 22:46:00 2012 -0400
+
+    Merge branch 'single-session' into develop
+
+commit 846f5c7ce85e2805f5645f6c8632f77843f4f9de
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 26 22:44:59 2012 -0400
+
+    remove old session module
+
+ gmusicapi/session.py |  222 --------------------------------------------------
+ 1 file changed, 222 deletions(-)
+
+commit 27c1aa87c7539889802443d152032e98426ed63f
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 26 22:42:24 2012 -0400
+
+    pull script test cases for ClientLogin and TokenAuth - they're covered by the login in test_api_calls
+
+ gmusicapi/utils/clientlogin.py |   17 -----------------
+ gmusicapi/utils/tokenauth.py   |   27 ---------------------------
+ 2 files changed, 44 deletions(-)
+
+commit 18e71f210362941de73d719d660054b3b825c55c
+Merge: a61c053 52920cd
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 26 22:36:11 2012 -0400
+
+    Merge branch 'develop' into single-session
+
+commit 52920cd94f05bb04eb6e6b4e27fb5ed0ae53f5d0
+Merge: 90a8589 6fcf215
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 26 21:24:51 2012 -0400
+
+    Merge branch 'unknown-md-keys' into develop
+
+commit 6fcf2158b88bb73c7e5e1e72639c28ec2c336dae
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 26 21:24:32 2012 -0400
+
+    UnknownExpectation used when key is unknown; add and test new regression
+
+ gmusicapi/protocol.py              |   37 ++++++++++++++++++++++--------------
+ gmusicapi/test/test_regressions.py |   11 ++++++++++-
+ 2 files changed, 33 insertions(+), 15 deletions(-)
+
+commit 90a85895a5827788631e5b709975cf142459cfe6
+Merge: 0c8994a ae26926
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 26 18:24:29 2012 -0400
+
+    Merge branch 'new-metadata-fields' into develop
+
+commit ae269265d0c0e2ea8f656e1af3e046e8b3207927
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 26 18:24:11 2012 -0400
+
+    add subjectToCuration and metajamId as immutable md keys
+
+ gmusicapi/protocol.py |    5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit a61c053e62446d0e04efe26a76749c59c4b53061
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 26 18:11:36 2012 -0400
+
+    move PlaySession into api module
+
+ gmusicapi/api.py |  206 +++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 203 insertions(+), 3 deletions(-)
+
+commit 7919f058f30c550a4c8e023f47735dba5432259f
+Author: Darryl Pogue <dvpdiner2@gmail.com>
+Date:   Sat Mar 24 19:58:11 2012 -0700
+
+    Combine the session classes into a single class.
+    
+    Fundamentally, they are all using ClientLogin as a base now, so it makes
+    sense to only request one set of tokens and then perform the upgrade for
+    web requests.
+
+ gmusicapi/api.py     |   46 +++-----
+ gmusicapi/session.py |  321 +++++++++++++++++++++-----------------------------
+ 2 files changed, 146 insertions(+), 221 deletions(-)
+
+commit 0561492d15f36ed2e99c183765a6fc45f0bd29f5
+Author: Darryl Pogue <dvpdiner2@gmail.com>
+Date:   Sat Mar 24 19:55:45 2012 -0700
+
+    Added TokenAuth class for ClientLogin upgrading.
+    
+    This class allows you to use the ClientLogin values to request a
+    short-lived authentication token that can be exchanged for web cookies.
+
+ gmusicapi/utils/clientlogin.py |    8 +--
+ gmusicapi/utils/tokenauth.py   |  141 ++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 145 insertions(+), 4 deletions(-)
+
+commit 03f6b81a995b53ec8e8be5c3bc2046e37d4b91cd
+Author: Darryl Pogue <dvpdiner2@gmail.com>
+Date:   Sat Mar 24 15:40:18 2012 -0700
+
+    Added ClientLogin helper class.
+
+ gmusicapi/utils/clientlogin.py |  203 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 203 insertions(+)
+
+commit 0c8994af4838c39427248c08cbcc10dc35edac1f
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 19 18:08:43 2012 -0400
+
+    link readme to taylor's c# port
+
+ README.md |    8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit 7d31e0472146af54f0ec387106ce54a90fb059b1
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 18 00:47:19 2012 -0400
+
+    fix comment
+
+ gmusicapi/protocol.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5ddbaed89ef0126a1f942b9bf05af2faa019ddfd
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 18 00:45:37 2012 -0400
+
+    add new_get_playlists which doesn't load html. seems to give same results as get_playlists
+
+ gmusicapi/api.py      |   29 +++++++++++++++++++++++++++++
+ gmusicapi/protocol.py |    9 +++++++--
+ 2 files changed, 36 insertions(+), 2 deletions(-)
+
+commit e92ebfabef031e0f8cd1b6867a236747b0256a73
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 17 01:11:08 2012 -0400
+
+    fix readme formatting
+
+ README.md |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ebea2ad3ad2e80254ff290be3965f52de5f9f672
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 17 01:08:21 2012 -0400
+
+    fix readme formatting
+
+ README.md |    3 +++
+ 1 file changed, 3 insertions(+)
+
+commit dd5affc1e1273ac3874dce365adeff1443680cee
+Merge: d4ea7de ad9295c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 17 01:06:13 2012 -0400
+
+    Merge branch 'release-2012.03.16'
+
+commit ad9295c1e3797f71cedf6c0f0c33748c55081fe1
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 17 01:04:37 2012 -0400
+
+    update docs
+
+ README.md             |   35 ++++++++++++++++++++---------------
+ changelog             |    7 +++++++
+ docs/source/index.rst |    4 ++--
+ gmusicapi/api.py      |    2 +-
+ 4 files changed, 30 insertions(+), 18 deletions(-)
+
+commit 89cead47b97df23eda677810c81614a3a5d2c7c7
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 23:17:42 2012 -0400
+
+    version bump
+
+ README.md           |    2 +-
+ docs/source/conf.py |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit e32d47993393128be3fdf51511a09350cdb6c6c5
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 23:09:53 2012 -0400
+
+    fix bug with bad login creds; fix search validation schema
+
+ gmusicapi/api.py      |   14 +++++++++-----
+ gmusicapi/protocol.py |   16 ++++++++++++++--
+ 2 files changed, 23 insertions(+), 7 deletions(-)
+
+commit ff1cc7b1fb37a5606888c5ffdc624dee9b9a7070
+Merge: a98d92e 7f6784c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 22:40:34 2012 -0400
+
+    Merge branch 'mm-auth-bump' into develop
+
+commit 7f6784c0c8d0d66bbed2834a9ff9951ce2a92916
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 22:39:10 2012 -0400
+
+    login time about halved. all tests pass
+
+ gmusicapi/session.py |    7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit 364112f0f58045d3ce541251f09ade0382139005
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 17:28:16 2012 -0400
+
+    add sid_login to wc_session to bump mm sid and lsid. seems to work
+
+ gmusicapi/api.py     |    9 ++++++++-
+ gmusicapi/session.py |   52 ++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 48 insertions(+), 13 deletions(-)
+
+commit a98d92ea75f0b9fbbcdc0e3b659602163dd98361
+Merge: 59b01a4 bd38a01
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 15:58:41 2012 -0400
+
+    Merge branch 'reorder-playlist' into develop
+
+commit bd38a01b346e6419be5f801087642d1cfb93c9c0
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 15:54:13 2012 -0400
+
+    reenable other tests - all pass
+
+ gmusicapi/api.py                 |   13 +--
+ gmusicapi/test/test_api_calls.py |  220 +++++++++++++++++++-------------------
+ gmusicapi/test/utils.py          |    5 +-
+ 3 files changed, 119 insertions(+), 119 deletions(-)
+
+commit da20d380f6d1988b6288309e8d1365053e287a20
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 15:24:10 2012 -0400
+
+    remove former dead supporting code from change_playlist
+
+ gmusicapi/api.py |   43 -------------------------------------------
+ 1 file changed, 43 deletions(-)
+
+commit 3bdbb906433e0af0238886eb711d306e7ffba1c1
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 15:23:20 2012 -0400
+
+    readd remove_songs_from_playlist; make the matching functionality more explicit
+
+ gmusicapi/api.py |   21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit 42464c24e6bea417022b62653274ce76dd21adff
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 15:13:01 2012 -0400
+
+    refactor; change test code for nonunique playlists
+
+ gmusicapi/api.py                 |   98 ++++++++++++++++----------------------
+ gmusicapi/gmtools/tools.py       |   36 +++++++++++++-
+ gmusicapi/test/test_api_calls.py |   36 ++++++++------
+ gmusicapi/test/utils.py          |    2 +-
+ 4 files changed, 97 insertions(+), 75 deletions(-)
+
+commit 1cae4c2cd7e946aa02a66fe1d314215a7cf8bbf7
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 03:48:13 2012 -0400
+
+    handle nonunique playlist names
+
+ gmusicapi/api.py |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 57e7d524dc1156f5eba1b75b1c5353ff454398fa
+Merge: 45ef76b 59b01a4
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 03:40:29 2012 -0400
+
+    Merge branch 'develop' into reorder-playlist
+
+commit 59b01a498bc774c3815fce957fd9dee7fa0c9aba
+Merge: 644fe44 b9f4515
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 03:39:48 2012 -0400
+
+    Merge branch 'same-name-playlists' into develop
+
+commit b9f45157a60244d6a5e62211a1ff6638a1228674
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 03:37:20 2012 -0400
+
+    handle non-unique playlist names by mapping to a list
+
+ gmusicapi/api.py |   38 +++++++++++++++++++++++++-------------
+ 1 file changed, 25 insertions(+), 13 deletions(-)
+
+commit 45ef76b9d44a388b3c1525b8dbfc7ddeab697f4d
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 03:11:25 2012 -0400
+
+    test passes. need to cleanup
+
+ gmusicapi/api.py                 |   70 +++++++++++++++++++++++++++-----------
+ gmusicapi/protocol.py            |    2 +-
+ gmusicapi/test/test_api_calls.py |   19 +++++++----
+ 3 files changed, 64 insertions(+), 27 deletions(-)
+
+commit 5ed14ad24b035c04cae264f064af7e513f847f5c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 16 00:50:33 2012 -0400
+
+    change to multiset approach. need to add edge cases to test code; think they're handled
+
+ gmusicapi/api.py |   78 +++++++++++++++++++++++++++++++++---------------------
+ 1 file changed, 48 insertions(+), 30 deletions(-)
+
+commit bbbc219f8b5661b1e28a83492cd0965242cab5b3
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Thu Mar 15 23:46:01 2012 -0400
+
+    tests pass using backwards order setting. need to get rid of dependency on empty playlistEntryId for added tracks, so things 'just work'
+
+ gmusicapi/api.py |   76 +++++++++++++++++++++++++-----------------------------
+ 1 file changed, 35 insertions(+), 41 deletions(-)
+
+commit 4f2be2d9fa7a38e1186cda51b8b682917c69b33c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Thu Mar 15 22:35:07 2012 -0400
+
+    found some tricks with changeplaylistorder; going to implement
+
+ gmusicapi/api.py                 |   46 +++++++++++++++++++++++++-------------
+ gmusicapi/test/test_api_calls.py |    8 ++++---
+ 2 files changed, 36 insertions(+), 18 deletions(-)
+
+commit 58f2c1b3d32f8763c17315168904cb90f2ef656d
+Merge: 6474269 644fe44
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Thu Mar 15 16:09:49 2012 -0400
+
+    Merge branch 'develop' into reorder-playlist
+
+commit 644fe441d55c76173f598ebb20612ffe38d599a4
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Thu Mar 15 16:08:14 2012 -0400
+
+    update urls for Google Play. wc login still slow, though
+
+ gmusicapi/protocol.py |    2 +-
+ gmusicapi/session.py  |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 64742695b49860e2150607d07b507788874203b2
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Thu Mar 15 15:54:37 2012 -0400
+
+    old music.google.com urls are slowing down auth; fixing in develop
+
+ gmusicapi/api.py                 |    5 +++--
+ gmusicapi/test/test_api_calls.py |    5 ++++-
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+commit f079cdee4cfa885e510d7f90e2cbbc48a32bf20a
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Thu Mar 15 01:09:59 2012 -0400
+
+    still working through bugs
+
+ gmusicapi/api.py                 |    2 +-
+ gmusicapi/protocol.py            |    2 +-
+ gmusicapi/test/test_api_calls.py |   11 ++++++-----
+ gmusicapi/test/utils.py          |    3 ++-
+ 4 files changed, 10 insertions(+), 8 deletions(-)
+
+commit e5183a78e865303e32ad2c444a892e97257e1de6
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Thu Mar 15 00:20:06 2012 -0400
+
+    commented out other tests
+
+ gmusicapi/test/test_api_calls.py |  218 +++++++++++++++++++-------------------
+ 1 file changed, 109 insertions(+), 109 deletions(-)
+
+commit 10fa39e62cb7609501302f91ac90964542d096d5
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Thu Mar 15 00:17:30 2012 -0400
+
+    fleshed out change_playlist
+
+ gmusicapi/api.py |   42 +++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 41 insertions(+), 1 deletion(-)
+
+commit 7614cb1b76ba7f038a8dddd0c797f172877c6bfc
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Mar 14 23:30:29 2012 -0400
+
+    added frame and test for change_playlist
+
+ gmusicapi/api.py                 |  155 ++++++++++++++++++++++++++++++--------
+ gmusicapi/protocol.py            |   32 ++++++++
+ gmusicapi/test/test_api_calls.py |   52 ++++++++++++-
+ gmusicapi/test/utils.py          |   17 +----
+ gmusicapi/utils/utils.py         |   16 ++--
+ 5 files changed, 217 insertions(+), 55 deletions(-)
+
+commit d4ea7debf09a4abe462e8ef473ac8421ab328ab3
+Merge: 8834c81 edfdfaa
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 12 15:44:53 2012 -0400
+
+    Merge branch 'master' of github.com:simon-weber/Unofficial-Google-Music-API
+
+commit 8834c817b48fac114b9df282ac3f4b3476d42d64
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 12 15:44:07 2012 -0400
+
+    add code overview link to readme
+
+ README.md |   10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit edfdfaa3c99e8f8610df2e2bd3a04d7bf7918787
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 5 18:17:04 2012 -0500
+
+    add link to github in docs
+
+ docs/source/index.rst |    2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 8370648bf85b909d46b313d315c680ce99d93669
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 5 17:59:11 2012 -0500
+
+    mock out compiled protobuf again
+
+ docs/source/conf.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 13a6d455bbf31e3416316ed717b4f39b0386b50c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 5 17:57:06 2012 -0500
+
+    mock out compiled protobuf
+
+ docs/source/conf.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a4324bc2422355f23c21501fd633ed84fa9b6222
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 5 17:55:01 2012 -0500
+
+    mock out google
+
+ docs/source/conf.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6bc05e6aa17ab0e57946c29d59d7dab7c108227d
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 5 17:53:53 2012 -0500
+
+    mock out protobuf
+
+ docs/source/conf.py |    3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit a00863312cd322bac5a5b4e45fd8f2a94fab378c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 5 17:52:51 2012 -0500
+
+    mock out mechanize
+
+ docs/source/conf.py |    2 +-
+ gmusicapi/api.py    |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit d762581ce66a9d63fed84fc06ef064511ea43180
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 5 17:50:23 2012 -0500
+
+    fix mock_decorator bug (have to push to hook rtd each time)
+
+ gmusicapi/utils/utils.py |   10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 0d1796ea48b3d8e3e58d362f91a58e0517329428
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 5 17:48:10 2012 -0500
+
+    create mock_decorator for docs
+
+ gmusicapi/protocol.py    |    7 ++-----
+ gmusicapi/session.py     |    6 +++++-
+ gmusicapi/utils/utils.py |   29 ++++++++++++++++-------------
+ 3 files changed, 23 insertions(+), 19 deletions(-)
+
+commit b8bc0a601b1903b4dca5a44293a4c6f06f404a89
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 5 16:35:20 2012 -0500
+
+    unmock our own modules; fix docs
+
+ docs/source/conf.py   |    4 +---
+ docs/source/index.rst |    2 ++
+ gmusicapi/api.py      |    2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit c0cee5c13579f13ab81190d8d0f2fa070efae563
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 23:19:42 2012 -0500
+
+    mock out apilogging in docs
+
+ docs/source/conf.py |    3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit ae8335292c735f54fb958c6c9ef3bec09b6b3811
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 23:16:36 2012 -0500
+
+    mock out validictory in docs
+
+ docs/source/conf.py |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit ccd7082b960bc97af626a2d4d0fe49561049ed25
+Merge: 8f24ab0 471cae8
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 23:04:49 2012 -0500
+
+    Merge branch 'release-2012.03.04'
+
+commit 471cae8e40586966c5a65afede31f896e1045975
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 23:02:24 2012 -0500
+
+    link to .proto in readme
+
+ README.md |    6 ++++--
+ changelog |    3 ++-
+ 2 files changed, 6 insertions(+), 3 deletions(-)
+
+commit a4070ecf5e0aaa19ff0e1d5e79fe0df015e94850
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 22:54:11 2012 -0500
+
+    update docs with new names
+
+ docs/source/index.rst |   10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit d4bf0eaa1b55ddde9c30d1392e6d1669887318c6
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 22:49:21 2012 -0500
+
+    pluralize songs in api functions: delete_songs remove_songs_from_playlist
+
+ gmusicapi/api.py                   |    4 ++--
+ gmusicapi/test/test_api_calls.py   |    4 ++--
+ gmusicapi/test/test_regressions.py |    4 ++--
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+commit d9233e29b2c35e82f36660d19c6f2aefc9bcfca5
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 22:38:27 2012 -0500
+
+    version bump; fix testing bug with metadata retries
+
+ README.md                        |   12 +++-
+ changelog                        |    5 ++
+ docs/source/conf.py              |    4 +-
+ gmusicapi/protocol.py            |   10 ++--
+ gmusicapi/test/test_api_calls.py |  114 ++++++++++++++++++++------------------
+ protocol_info                    |    6 +-
+ 6 files changed, 86 insertions(+), 65 deletions(-)
+
+commit 3edf11a7bcbc4bb58ff57c5d7a773a60af629b76
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 21:26:27 2012 -0500
+
+    update gitignore with new name
+
+ .gitignore |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d338e171dddc8c2b3e72dcbc53637cec76609606
+Merge: 8f24ab0 108d54b
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 21:22:33 2012 -0500
+
+    Merge branch 'request-validation' into develop
+
+commit 108d54b5dde064a41e4a1d7f0d2347b70d2a28f0
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 20:52:15 2012 -0500
+
+    enable upload test: all tests pass
+
+ gmusicapi/test/test_api_calls.py |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 83e429a5bbcb7216531e9eff74d7f126954ea0a6
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 20:50:24 2012 -0500
+
+    add remaining validations
+
+ gmusicapi/protocol.py |   86 ++++++++++++++++++++++++++++++++-----------------
+ 1 file changed, 57 insertions(+), 29 deletions(-)
+
+commit 73c4e6997acaa5671aea951e4eb9184031c83ad8
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 20:29:37 2012 -0500
+
+    add validation for modifyentries
+
+ gmusicapi/protocol.py |   11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 8f24ab0755e4183f4dac835cd83de7a06cce0705
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 20:13:37 2012 -0500
+
+    finish name change in readme
+
+ README.md |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit eb26e876e7aa33aa20bca57b76a1c88f1b8b9ad1
+Merge: b7d5e74 e5c3f6a
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 20:10:41 2012 -0500
+
+    Merge branch 'master' of github.com:simon-weber/Unofficial-Google-Music-API
+
+commit 056d6c986f79353e3b49397abf7d3e3720471067
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 20:07:02 2012 -0500
+
+    add verification for loadplaylist
+
+ gmusicapi/protocol.py |   16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+
+commit cc41967f9e2719637ead4821bf268f8ab617a80d
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 18:47:49 2012 -0500
+
+    change durationMillis to immutable. change only mutable values in tests
+
+ gmusicapi/protocol.py            |    5 +++--
+ gmusicapi/test/test_api_calls.py |    3 ++-
+ 2 files changed, 5 insertions(+), 3 deletions(-)
+
+commit 3adc7b5c0bb6a0f110064f22805dc937d09c6746
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 18:37:17 2012 -0500
+
+    fix some metadata expectations; remove upload test for now
+
+ gmusicapi/api.py                 |    2 +-
+ gmusicapi/protocol.py            |    5 +++++
+ gmusicapi/test/test_api_calls.py |    4 ++--
+ gmusicapi/utils/apilogging.py    |    6 ++----
+ 4 files changed, 10 insertions(+), 7 deletions(-)
+
+commit 229698392254177f307709bd1b19cae31931de08
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 18:30:50 2012 -0500
+
+    change depends_on to a string; fix typos so tests run
+
+ gmusicapi/protocol.py            |   45 ++++++++++++++++++++++----------------
+ gmusicapi/test/test_api_calls.py |   16 +++++++-------
+ gmusicapi/utils/apilogging.py    |   11 +++++-----
+ 3 files changed, 40 insertions(+), 32 deletions(-)
+
+commit 4780fb6f1c03b949139496ec79b0765120620919
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 17:49:12 2012 -0500
+
+    add md expectations to other test code
+
+ gmusicapi/test/test_api_calls.py |    8 --------
+ gmusicapi/test/utils.py          |   27 ++++++++++++++-------------
+ gmusicapi/utils/apilogging.py    |   28 +++++++++++++++++++---------
+ 3 files changed, 33 insertions(+), 30 deletions(-)
+
+commit 8f8a4d434693556e727193096328f5dd02e1b865
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 17:20:59 2012 -0500
+
+    rewrite test_api_call with expectations
+
+ gmusicapi/protocol.py            |  114 ++++++++++++++++++++------------------
+ gmusicapi/test/test_api_calls.py |   98 ++++++++++++++++++++------------
+ 2 files changed, 123 insertions(+), 89 deletions(-)
+
+commit fa1c747ae4566e8021b06133aed393ac5b6d0439
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 16:52:52 2012 -0500
+
+    create song schema
+
+ gmusicapi/protocol.py    |   39 +++++++++++++++++----------------------
+ gmusicapi/utils/utils.py |   14 --------------
+ 2 files changed, 17 insertions(+), 36 deletions(-)
+
+commit a1f12d0d3b1eb622a071b88c779e14ca6a792bca
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 16:44:11 2012 -0500
+
+    add metaclass to define metadata .name while respecting name mangling
+
+ gmusicapi/protocol.py |   10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit 1b676de2d11e695568d8f676f113756d9293fb28
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 16:25:23 2012 -0500
+
+    add get_key and get_all_keys interface
+
+ gmusicapi/protocol.py |   45 +++++++++++++++++++--------------------------
+ 1 file changed, 19 insertions(+), 26 deletions(-)
+
+commit b0e4762c8f7ba5704c1f55200e8dfc8f1b301c21
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 15:54:11 2012 -0500
+
+    add class model for metadata expectations
+
+ gmusicapi/protocol.py    |  217 ++++++++++++++++++++++++++++++++--------------
+ gmusicapi/utils/utils.py |    6 ++
+ 2 files changed, 157 insertions(+), 66 deletions(-)
+
+commit 22a3b2fda3c4e59baac46e1d0b821be39ff444ed
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 15:09:28 2012 -0500
+
+    start building schemas, start move to metadata class model
+
+ gmusicapi/api.py                 |   24 ++-
+ gmusicapi/protocol.py            |  306 ++++++++++++++++++++++++++++++--------
+ gmusicapi/test/test_api_calls.py |   10 +-
+ gmusicapi/test/utils.py          |   10 +-
+ gmusicapi/utils/utils.py         |   26 +++-
+ 5 files changed, 297 insertions(+), 79 deletions(-)
+
+commit b7d5e74cdc29fd2e69eb5f08709abc19edc4fd3c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Mar 4 15:07:50 2012 -0500
+
+    fix name change; move to logging mixin
+
+ example.py                         |    4 ++--
+ gmusicapi/__init__.py              |    4 ++--
+ gmusicapi/api.py                   |   11 +++++------
+ gmusicapi/gmtools/__init__.py      |    4 ++--
+ gmusicapi/gmtools/tools.py         |    4 ++--
+ gmusicapi/protocol.py              |   15 +++++++++------
+ gmusicapi/session.py               |   10 +++++-----
+ gmusicapi/test/__init__.py         |    4 ++--
+ gmusicapi/test/test_api_calls.py   |   10 +++++-----
+ gmusicapi/test/test_regressions.py |   10 +++++-----
+ gmusicapi/test/utils.py            |    4 ++--
+ gmusicapi/utils/__init__.py        |    4 ++--
+ gmusicapi/utils/apilogging.py      |   35 +++++++++++++++++++++++++++++++----
+ gmusicapi/utils/utils.py           |    4 ++--
+ 14 files changed, 76 insertions(+), 47 deletions(-)
+
+commit e5c3f6a9200fa45b74b0f3bbe6b0a6a24afe009a
+Merge: 020c350 775cfa9
+Author: Simon Weber <simon.weber@rochester.edu>
+Date:   Sun Mar 4 09:08:13 2012 -0800
+
+    Merge pull request #6 from dpogue/master
+    
+    Add a .gitignore
+
+commit 775cfa931fc499d2530880df3d7dd39d0e02efcc
+Author: Darryl Pogue <dvpdiner2@gmail.com>
+Date:   Sat Mar 3 16:06:36 2012 -0800
+
+    Added gitignore for PYCs and editor temp files.
+
+ .gitignore |   14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+commit 7d7befee18583507466fc8999f5eb287ac810a2d
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 3 17:09:34 2012 -0500
+
+    change name to gmusicapi
+
+ docs/source/conf.py                |    2 +-
+ docs/source/index.rst              |    2 +-
+ example.py                         |    6 +-
+ gmapi/__init__.py                  |   18 -
+ gmapi/api.py                       |  558 ----------------------------
+ gmapi/gmtools/__init__.py          |   16 -
+ gmapi/gmtools/tools.py             |  404 ---------------------
+ gmapi/metadata_pb2.py              |  701 ------------------------------------
+ gmapi/protocol.py                  |  452 -----------------------
+ gmapi/session.py                   |  246 -------------
+ gmapi/test/__init__.py             |   16 -
+ gmapi/test/no_tags.mp3             |  Bin 481070 -> 0 bytes
+ gmapi/test/test.mp3                |  Bin 481237 -> 0 bytes
+ gmapi/test/test_api_calls.py       |  239 ------------
+ gmapi/test/test_regressions.py     |   91 -----
+ gmapi/test/utils.py                |  167 ---------
+ gmapi/utils/__init__.py            |   16 -
+ gmapi/utils/apilogging.py          |   54 ---
+ gmapi/utils/utils.py               |   77 ----
+ gmusicapi/__init__.py              |   18 +
+ gmusicapi/api.py                   |  558 ++++++++++++++++++++++++++++
+ gmusicapi/gmtools/__init__.py      |   16 +
+ gmusicapi/gmtools/tools.py         |  404 +++++++++++++++++++++
+ gmusicapi/metadata_pb2.py          |  701 ++++++++++++++++++++++++++++++++++++
+ gmusicapi/protocol.py              |  452 +++++++++++++++++++++++
+ gmusicapi/session.py               |  246 +++++++++++++
+ gmusicapi/test/__init__.py         |   16 +
+ gmusicapi/test/no_tags.mp3         |  Bin 0 -> 481070 bytes
+ gmusicapi/test/test.mp3            |  Bin 0 -> 481237 bytes
+ gmusicapi/test/test_api_calls.py   |  239 ++++++++++++
+ gmusicapi/test/test_regressions.py |   91 +++++
+ gmusicapi/test/utils.py            |  167 +++++++++
+ gmusicapi/utils/__init__.py        |   16 +
+ gmusicapi/utils/apilogging.py      |   54 +++
+ gmusicapi/utils/utils.py           |   77 ++++
+ 35 files changed, 3060 insertions(+), 3060 deletions(-)
+
+commit 432876f9861eac88c86153c01b915f2d4a59df92
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 3 16:45:45 2012 -0500
+
+    tweak what gets logged
+
+ gmapi/api.py      |    8 ++++++--
+ gmapi/protocol.py |    4 +++-
+ 2 files changed, 9 insertions(+), 3 deletions(-)
+
+commit 020c3508c920c326370faca1db531e3a275f54e6
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 3 13:57:22 2012 -0500
+
+    changes to relative imports in test code
+
+ gmapi/test/test_api_calls.py   |    6 +++---
+ gmapi/test/test_regressions.py |    4 ++--
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 0ceed2ab15cd13985b743b481ff4d9e9fc513cc7
+Merge: edbc242 7c4d267
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 3 13:46:04 2012 -0500
+
+    Merge https://github.com/mystilleef/Unofficial-Google-Music-API into mystilleef-relative_imports
+
+commit edbc2422de0b888227a183f3e3ab88744e9138d7
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 3 12:48:40 2012 -0500
+
+    updates readme
+
+ README.md |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit a57e4f73e8f44e385b991b02f89588c458ff0ea1
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Mar 3 12:46:00 2012 -0500
+
+    adds autoplaylist and instant mix support; api ensures session is logged in; docs greatly improved
+
+ docs/source/index.rst        |   50 ++++++++-
+ gmapi/api.py                 |  233 ++++++++++++++++++++++++++++++++++--------
+ gmapi/protocol.py            |    3 +
+ gmapi/session.py             |    8 ++
+ gmapi/test/test_api_calls.py |    6 +-
+ gmapi/test/utils.py          |    4 +-
+ gmapi/utils/utils.py         |   10 ++
+ 7 files changed, 261 insertions(+), 53 deletions(-)
+
+commit 7c4d26719feff97006245bf4a1f86d110d52fd50
+Author: Lateef Alabi-Oki <mystilleef@gmail.com>
+Date:   Fri Mar 2 19:40:55 2012 -0500
+
+    Use relative imports instead of global imports of gmapi API to make it easy for the library to be used in any Python package or folder other than the default Python folder or package.
+
+ gmapi/api.py     |    8 ++++----
+ gmapi/session.py |    2 +-
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 688c3393c54760d517e4aabcdad1134c139c40c3
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 2 16:30:08 2012 -0500
+
+    issue 3 tests pass
+
+ gmapi/api.py                   |    6 +++++-
+ gmapi/protocol.py              |   18 ++++++++++++------
+ gmapi/test/test_regressions.py |    2 +-
+ 3 files changed, 18 insertions(+), 8 deletions(-)
+
+commit f68be8791f05a0f8c2b2a0070475fec70b99cd65
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 2 14:30:08 2012 -0500
+
+    added regression test for issue 3 - reproduces bug
+
+ gmapi/test/no_tags.mp3         |  Bin 0 -> 481070 bytes
+ gmapi/test/test_api_calls.py   |    7 +++-
+ gmapi/test/test_regressions.py |   91 ++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 96 insertions(+), 2 deletions(-)
+
+commit ec1c1979e87ea0f6149931f262efb7692475c7a7
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Mar 2 14:10:23 2012 -0500
+
+    fixed a bug in metadata testing; refactored test code in prep for regression tests
+
+ gmapi/test/test_api_calls.py |  153 ++++-----------------------------------
+ gmapi/test/utils.py          |  165 ++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 179 insertions(+), 139 deletions(-)
+
+commit 2884f04f034d3347a2d2f617c2d3c5ede56d4f5a
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Feb 29 23:00:09 2012 -0500
+
+    fixed gumhos typo in camel case util method
+
+ gmapi/utils/utils.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e3ab1af9d5c71dee1216041d44d100741b2c9074
+Merge: 86c145b e68bc8c
+Author: Simon Weber <simon.weber@rochester.edu>
+Date:   Wed Feb 29 19:58:34 2012 -0800
+
+    Merge pull request #2 from gumho/master
+    
+    slimmed down the camel case utility method
+
+commit e68bc8cfc6f6f2d93cbb21b86e36e35ad98e1cbc
+Author: Ryan Hsu <ryanlives@gmail.com>
+Date:   Wed Feb 29 16:34:22 2012 -0800
+
+    slim down to_camel_case function
+
+ gmapi/utils/utils.py |   11 +----------
+ 1 file changed, 1 insertion(+), 10 deletions(-)
+
+commit 86c145b59c7a7fe48e246ad0e28f3b93d5350804
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Feb 29 16:32:49 2012 -0500
+
+    update readme, add gpl text
+
+ COPYING   |  674 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.md |   58 ++++--
+ 2 files changed, 711 insertions(+), 21 deletions(-)
+
+commit 974200da9c21bef85f3c18fef03229d69faf32cc
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Feb 29 00:23:39 2012 -0500
+
+    readme reformatting
+
+ README.md |   22 +++++++++-------------
+ 1 file changed, 9 insertions(+), 13 deletions(-)
+
+commit 9f9b46a3bf3f86ea1703e117a1da39fc59623af8
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Feb 29 00:16:27 2012 -0500
+
+    fix README typo
+
+ README.md |    4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 65da23e4e94bc70101a65de07072a111d0164424
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Feb 29 00:15:46 2012 -0500
+
+    update readme with dependencies
+
+ README.md |   14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+commit 48af6bde34389e91a394f94b3bbc29515afb9e3b
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Feb 29 00:05:32 2012 -0500
+
+    applied GPLv3 headers and fixed a typo
+
+ example.py                   |   18 ++++++++++++++++++
+ gmapi/__init__.py            |   17 +++++++++++++++++
+ gmapi/api.py                 |   18 ++++++++++++++++++
+ gmapi/gmtools/__init__.py    |   16 ++++++++++++++++
+ gmapi/gmtools/tools.py       |   17 +++++++++++++++++
+ gmapi/protocol.py            |   17 +++++++++++++++++
+ gmapi/session.py             |   17 +++++++++++++++++
+ gmapi/test/__init__.py       |   16 ++++++++++++++++
+ gmapi/test/test_api_calls.py |   17 +++++++++++++++++
+ gmapi/utils/__init__.py      |   16 ++++++++++++++++
+ gmapi/utils/apilogging.py    |   17 +++++++++++++++++
+ gmapi/utils/utils.py         |   21 +++++++++++++++++++--
+ 12 files changed, 205 insertions(+), 2 deletions(-)
+
+commit 5a236b549bdfa0457bde4aef17d91ad8b603b1eb
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Feb 28 23:17:12 2012 -0500
+
+    removed old tools.py
+
+ gmapi/tools.py |  387 --------------------------------------------------------
+ 1 file changed, 387 deletions(-)
+
+commit 744fb650d799f5de6abae061e37587d245d975f1
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Feb 28 02:16:20 2012 -0500
+
+    updated readme to point to readthedocs
+
+ README.md |    5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+commit cee22bed28f01dd01b51a03bc0a0c01afe48c344
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Feb 28 02:12:23 2012 -0500
+
+    will build docs even without decorator module
+
+ docs/source/index.rst |   14 +++++++++++---
+ gmapi/utils/utils.py  |   15 ++++++++++++---
+ 2 files changed, 23 insertions(+), 6 deletions(-)
+
+commit ee4a739b41591d052dc46187927fbab399623409
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Feb 28 01:34:08 2012 -0500
+
+    remove prebuilt docs, update source to autodoc - hopefully
+
+ docs/build/doctrees/environment.pickle     |  Bin 7923 -> 0 bytes
+ docs/build/doctrees/index.doctree          |  Bin 44761 -> 0 bytes
+ docs/build/html/.buildinfo                 |    4 -
+ docs/build/html/_sources/index.txt         |   38 --
+ docs/build/html/_static/ajax-loader.gif    |  Bin 673 -> 0 bytes
+ docs/build/html/_static/basic.css          |  540 -------------------
+ docs/build/html/_static/comment-bright.png |  Bin 3500 -> 0 bytes
+ docs/build/html/_static/comment-close.png  |  Bin 3578 -> 0 bytes
+ docs/build/html/_static/comment.png        |  Bin 3445 -> 0 bytes
+ docs/build/html/_static/default.css        |  256 ---------
+ docs/build/html/_static/doctools.js        |  247 ---------
+ docs/build/html/_static/down-pressed.png   |  Bin 368 -> 0 bytes
+ docs/build/html/_static/down.png           |  Bin 363 -> 0 bytes
+ docs/build/html/_static/file.png           |  Bin 392 -> 0 bytes
+ docs/build/html/_static/jquery.js          |  154 ------
+ docs/build/html/_static/minus.png          |  Bin 199 -> 0 bytes
+ docs/build/html/_static/plus.png           |  Bin 199 -> 0 bytes
+ docs/build/html/_static/pygments.css       |   62 ---
+ docs/build/html/_static/searchtools.js     |  560 -------------------
+ docs/build/html/_static/sidebar.js         |  151 ------
+ docs/build/html/_static/underscore.js      |   23 -
+ docs/build/html/_static/up-pressed.png     |  Bin 372 -> 0 bytes
+ docs/build/html/_static/up.png             |  Bin 363 -> 0 bytes
+ docs/build/html/_static/websupport.js      |  808 ----------------------------
+ docs/build/html/genindex.html              |  239 --------
+ docs/build/html/index.html                 |  387 -------------
+ docs/build/html/objects.inv                |  Bin 405 -> 0 bytes
+ docs/build/html/py-modindex.html           |  116 ----
+ docs/build/html/search.html                |  105 ----
+ docs/build/html/searchindex.js             |    1 -
+ docs/source/conf.py                        |    4 +-
+ gmapi/utils/utils.py                       |    9 +-
+ 32 files changed, 10 insertions(+), 3694 deletions(-)
+
+commit 51b55774317f841bfcc6a69f432e5e564b02458a
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Feb 28 01:13:41 2012 -0500
+
+    explicit import in api to accomodate docs
+
+ gmapi/api.py |    5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit b2b71ee43ff071a899673f25c268b99553dad848
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Feb 28 01:09:28 2012 -0500
+
+    mock out, take 6
+
+ docs/source/conf.py |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit c058fc5287b54cc1b67c74b12ff821e7201cdce5
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Feb 28 01:06:03 2012 -0500
+
+    mock out, take 5
+
+ docs/source/conf.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 39bf6c8b0c5f9cfeb90edd0ead075751a4be5603
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Feb 28 01:04:50 2012 -0500
+
+    mock out, take 4
+
+ docs/source/conf.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 34c98d39d69205248fd0de85ec8166c7d83ad9bf
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Feb 28 00:59:06 2012 -0500
+
+    mock out, take 3
+
+ docs/source/conf.py |   13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+
+commit 5ddc1ac933cb8e03dea29e07f446ca84323897a8
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Feb 28 00:51:13 2012 -0500
+
+    mock out more modules
+
+ docs/source/conf.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d55f012e2a9fae92a2d3948f7d5e0909e3f57f90
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Tue Feb 28 00:47:52 2012 -0500
+
+    mock out 3rd party modules for documentation
+
+ docs/source/conf.py |   22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+commit 3ab57090dddbbe7e1d58ef14123d5d50f3e3e452
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Feb 25 15:22:27 2012 -0500
+
+    updated readme
+
+ README.md |   13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
+
+commit 6b6b90a77c80c00fba57e45045b42971d0995fe7
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Feb 25 15:09:25 2012 -0500
+
+    added prebuilt sphinx documentation
+
+ docs/Makefile                              |  153 ++++++
+ docs/build/doctrees/environment.pickle     |  Bin 0 -> 7923 bytes
+ docs/build/doctrees/index.doctree          |  Bin 0 -> 44761 bytes
+ docs/build/html/.buildinfo                 |    4 +
+ docs/build/html/_sources/index.txt         |   38 ++
+ docs/build/html/_static/ajax-loader.gif    |  Bin 0 -> 673 bytes
+ docs/build/html/_static/basic.css          |  540 +++++++++++++++++++
+ docs/build/html/_static/comment-bright.png |  Bin 0 -> 3500 bytes
+ docs/build/html/_static/comment-close.png  |  Bin 0 -> 3578 bytes
+ docs/build/html/_static/comment.png        |  Bin 0 -> 3445 bytes
+ docs/build/html/_static/default.css        |  256 +++++++++
+ docs/build/html/_static/doctools.js        |  247 +++++++++
+ docs/build/html/_static/down-pressed.png   |  Bin 0 -> 368 bytes
+ docs/build/html/_static/down.png           |  Bin 0 -> 363 bytes
+ docs/build/html/_static/file.png           |  Bin 0 -> 392 bytes
+ docs/build/html/_static/jquery.js          |  154 ++++++
+ docs/build/html/_static/minus.png          |  Bin 0 -> 199 bytes
+ docs/build/html/_static/plus.png           |  Bin 0 -> 199 bytes
+ docs/build/html/_static/pygments.css       |   62 +++
+ docs/build/html/_static/searchtools.js     |  560 +++++++++++++++++++
+ docs/build/html/_static/sidebar.js         |  151 ++++++
+ docs/build/html/_static/underscore.js      |   23 +
+ docs/build/html/_static/up-pressed.png     |  Bin 0 -> 372 bytes
+ docs/build/html/_static/up.png             |  Bin 0 -> 363 bytes
+ docs/build/html/_static/websupport.js      |  808 ++++++++++++++++++++++++++++
+ docs/build/html/genindex.html              |  239 ++++++++
+ docs/build/html/index.html                 |  387 +++++++++++++
+ docs/build/html/objects.inv                |  Bin 0 -> 405 bytes
+ docs/build/html/py-modindex.html           |  116 ++++
+ docs/build/html/search.html                |  105 ++++
+ docs/build/html/searchindex.js             |    1 +
+ docs/source/conf.py                        |  242 +++++++++
+ docs/source/index.rst                      |   38 ++
+ 33 files changed, 4124 insertions(+)
+
+commit 249a24b87fcd132dbf18b3862a81a4941aba510d
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Feb 25 15:07:27 2012 -0500
+
+    added stream support. overhauled protocol for web client
+
+ README.md                    |    3 +-
+ gmapi/__init__.py            |    1 +
+ gmapi/api.py                 |   82 +++++++------
+ gmapi/protocol.py            |  266 ++++++++++++++++++++++++++----------------
+ gmapi/session.py             |   49 ++++----
+ gmapi/test/test_api_calls.py |   17 ++-
+ protocol_info                |    8 ++
+ 7 files changed, 261 insertions(+), 165 deletions(-)
+
+commit 58ebffe1a96c0cc1d99fffaac63158f4c56fa3fd
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Feb 20 16:01:24 2012 -0500
+
+    made unofficial-ness more explicit
+
+ README.md |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1ec0a308c9baf46810b2a70657613dabdbeea2d6
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Feb 17 14:23:24 2012 -0500
+
+    updated protocol info for new features
+
+ protocol_info |   11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit a7591c95066676462030c4624735ef31d2f61700
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Feb 17 14:16:46 2012 -0500
+
+    updated example with new names
+
+ example.py |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 7075ce7f229d9894b6de2602f21a60fc4f6d9a7d
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Feb 17 14:14:50 2012 -0500
+
+    updated README with new features
+
+ README.md |   11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+commit 2b974849da7ac18f05007f7aa5a608b70f79ff5a
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Feb 17 14:12:27 2012 -0500
+
+    can now load playlists and remove songs from playlists. also renamed some calls for consistency
+
+ gmapi/api.py                 |   74 +++++++++++++++++++++++++++++-------------
+ gmapi/protocol.py            |   19 +++++++++--
+ gmapi/test/test_api_calls.py |   49 +++++++++++++++++++---------
+ protocol_info                |    4 +--
+ 4 files changed, 103 insertions(+), 43 deletions(-)
+
+commit f3bb17fa4b1ed8f086a6fb4ee03d7b3f2f59de0b
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Feb 13 19:08:16 2012 -0500
+
+    uploading reenabled, semi-compliant hashing implemented.
+
+ README.md         |    2 +-
+ gmapi/api.py      |  102 +++++++++++++++++++++++++++++++----------------------
+ gmapi/protocol.py |   42 +++++++++++++++-------
+ 3 files changed, 91 insertions(+), 55 deletions(-)
+
+commit f41112050e4b7897ea8405585634dad64c19555f
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Feb 13 01:27:34 2012 -0500
+
+    really fixed readme formatting
+
+ README.md |    3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 86cf190f7d01fbda222701f6fb368140c6822ede
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Feb 13 01:26:38 2012 -0500
+
+    fixed readme formatting
+
+ README.md |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a6c27e289f261ac2b9f9caf0db405af3fcf1717c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Feb 13 01:24:57 2012 -0500
+
+    pulled upload support temporarily while deduplication is figured out
+
+ README.md    |    3 ++-
+ gmapi/api.py |   80 ++++++++++++++++++++++++++++++----------------------------
+ 2 files changed, 43 insertions(+), 40 deletions(-)
+
+commit 375a52419badd02769831c81634f0ee181cf4aff
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Feb 11 18:14:59 2012 -0500
+
+    changed README to markdown
+
+ README    |   52 ----------------------------------------------------
+ README.md |   52 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 52 insertions(+), 52 deletions(-)
+
+commit 9d5bb41b3119c95c54881d6ec6a58e9813647766
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Feb 11 18:10:06 2012 -0500
+
+    big changes: upload and metadata support. logging. refactoring.
+
+ README                       |   60 ++++---
+ gmapi/api.py                 |  195 +++++++++++++++++++--
+ gmapi/gmtools/tools.py       |  387 ++++++++++++++++++++++++++++++++++++++++++
+ gmapi/metadata_pb2.py        |    6 +-
+ gmapi/protocol.py            |  249 +++++++++++++++++++++++++--
+ gmapi/session.py             |  186 ++++----------------
+ gmapi/test/test.mp3          |  Bin 0 -> 481237 bytes
+ gmapi/test/test_api_calls.py |  238 +++++++++++++++++++++-----
+ gmapi/utils/apilogging.py    |   37 ++++
+ gmapi/utils/utils.py         |   43 +++++
+ protocol_info                |   42 ++++-
+ 11 files changed, 1192 insertions(+), 251 deletions(-)
+
+commit c713b9a358cdb15006d7a49ed154086f5c73d04b
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Feb 8 22:59:12 2012 -0500
+
+    updated README
+
+ README |   22 ++++------------------
+ 1 file changed, 4 insertions(+), 18 deletions(-)
+
+commit c9cf9942054e8f1a346ada1d4d117c11628b2535
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Wed Feb 8 22:55:47 2012 -0500
+
+    major reorganization. upload support on the way
+
+ example.py                   |    6 +-
+ gm_interface.py              |  364 ----------------------
+ gm_tools.py                  |  387 -----------------------
+ gmapi/api.py                 |  165 ++++++++++
+ gmapi/metadata_pb2.py        |  701 ++++++++++++++++++++++++++++++++++++++++++
+ gmapi/protocol.py            |  104 +++++++
+ gmapi/session.py             |  348 +++++++++++++++++++++
+ gmapi/test/test_api_calls.py |  156 ++++++++++
+ gmapi/tools.py               |  387 +++++++++++++++++++++++
+ test_api_calls.py            |  153 ---------
+ 10 files changed, 1864 insertions(+), 907 deletions(-)
+
+commit 66b37d2cb8874b91636d4966f55aec4a6bcd0e61
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Feb 4 14:37:13 2012 -0500
+
+    new calls, test suite, refactoring
+
+ README            |   47 ++++++++--
+ example.py        |   12 +--
+ gm_interface.py   |  248 ++++++++++++++++++++++++++++++++++++-----------------
+ protocol_info     |   19 +++-
+ test_api_calls.py |  153 +++++++++++++++++++++++++++++++++
+ 5 files changed, 385 insertions(+), 94 deletions(-)
+
+commit 9764d64abf12c2284099550a61e61d35672b64f8
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Jan 22 22:43:32 2012 -0500
+
+    updated docs
+
+ README |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 82d95b2b63fa5911db34cb2e039648c22c121722
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Jan 22 22:41:08 2012 -0500
+
+    major refactoring; added gm_tools. commit coincides with release of playlist importer
+
+ example.py      |   12 +-
+ gm_interface.py |   52 ++------
+ gm_tools.py     |  387 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 410 insertions(+), 41 deletions(-)
+
+commit a063a1b6e91f3edb34a7a17d13a16a6c4860229a
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Jan 22 15:35:16 2012 -0500
+
+    added song metadata format
+
+ protocol_info |   43 ++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 40 insertions(+), 3 deletions(-)
+
+commit 4a554e44153b6277b673f837c839693fd3457a75
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sun Jan 22 13:37:34 2012 -0500
+
+    added deleteplaylist; cleaned up docs
+
+ README          |    2 +-
+ example.py      |    8 ++++---
+ gm_interface.py |   64 +++++++++++++++++++++++++++++++++----------------------
+ protocol_info   |   10 ++++++---
+ 4 files changed, 52 insertions(+), 32 deletions(-)
+
+commit 39da7977618d67450f2f92e7dbbf786e54e9346d
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Jan 21 16:16:11 2012 -0500
+
+    fixed some typos in Tools
+
+ gm_interface.py |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 6eda67290689cd107ad5c04f6320e3693c7101e3
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Sat Jan 21 15:30:19 2012 -0500
+
+    added deleteplaylist; refactored
+
+ README          |   14 ++---
+ example.py      |   43 +++++++++++----
+ gm_interface.py |  163 +++++++++++++++++++++++++++++++++++++++----------------
+ prompt.py       |   95 --------------------------------
+ protocol_info   |   16 ++++--
+ 5 files changed, 168 insertions(+), 163 deletions(-)
+
+commit 3ae361e95438c965b20e5b952b0d6467f65331ba
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Jan 20 17:45:09 2012 -0500
+
+    updated docs with info on loadalltracks
+
+ README        |    1 +
+ protocol_info |   18 +++++++++++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+
+commit e92488d9b35fb244625b7dbbec896e4e21d5be01
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Jan 20 17:36:36 2012 -0500
+
+    added prompt.py, since I forget to pull the import every time. not mine; attribution in the code.
+
+ prompt.py |   95 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 95 insertions(+)
+
+commit 0c313751dbeab9c0778f2b96037b98e2e472f95c
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Jan 20 17:32:39 2012 -0500
+
+    api now supports loadalltracks, and exposes a utility function to easily load a library.
+
+ gm_interface.py |   37 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+
+commit 6527c4990ef00c8ec8e630c7e95216d94a5a32f4
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Jan 20 12:42:21 2012 -0500
+
+    Removed debugging module; added example code.
+
+ example.py      |   51 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ gm_interface.py |    2 --
+ 2 files changed, 51 insertions(+), 2 deletions(-)
+
+commit 880fcb3063e5ed3ba7179f1a9c8fda8c41f1dd6a
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Fri Jan 20 12:34:48 2012 -0500
+
+    initial commit.
+
+ README          |   20 +++++++
+ gm_interface.py |  174 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ protocol_info   |   22 +++++++
+ 3 files changed, 216 insertions(+)

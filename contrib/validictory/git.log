@@ -1,0 +1,1751 @@
+commit 5c70a59d792eaf4cd7dbb081fd3c1f7595ae2d5c
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Nov 28 13:27:03 2012 -0500
+
+    fix ReST link
+
+ docs/usage.rst |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e215ba1e8e8ee3a0defc0f803b13a4daab3e3724
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Nov 28 13:25:33 2012 -0500
+
+    add link to Jason's blog post
+
+ docs/usage.rst |    3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 28f0e1404a373870d743bff801ac47cc26abfa47
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Nov 28 13:20:11 2012 -0500
+
+    more cleanup w/ new version of flake8
+
+ docs/conf.py                                       |    2 +-
+ validictory/__init__.py                            |    2 +-
+ .../tests/test_disallow_unknown_properties.py      |   18 ++++----
+ validictory/tests/test_other.py                    |    4 +-
+ validictory/tests/test_properties.py               |   45 +++++++++-----------
+ validictory/tests/test_values.py                   |   24 +++++------
+ validictory/validator.py                           |   29 +++++++------
+ 7 files changed, 62 insertions(+), 62 deletions(-)
+
+commit b83f41944c0c2604454c71783fc70af63f5fd919
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Nov 27 11:24:02 2012 -0500
+
+    drop long validation since it breaks Py3
+
+ validictory/tests/test_values.py |    1 -
+ 1 file changed, 1 deletion(-)
+
+commit e5de5df52f8343ac0a4e2428fae1b8eea94cb026
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Nov 27 11:02:47 2012 -0500
+
+    start testing on Python 3.3
+
+ .travis.yml |    1 +
+ 1 file changed, 1 insertion(+)
+
+commit c831f1fcc3b6e53a3305555e7e9c57caa0e9cf9c
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Nov 27 10:56:41 2012 -0500
+
+    update housekeeping files
+
+ AUTHORS.txt        |    5 ++++-
+ docs/changelog.rst |    3 +++
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+
+commit f47cfa424e0eb927f0a664f4d87b4552fb97eb3e
+Merge: 2b07cb0 5168b53
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Nov 27 07:49:10 2012 -0800
+
+    Merge pull request #33 from nicolaiarocci/allow_unknown_fields
+    
+    Support for disallow_unknown_properties option
+
+commit 2b07cb0b80b9ccf2d93a9062228c118bc0fd5783
+Merge: c741766 900e321
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Nov 27 10:42:24 2012 -0500
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c741766b6a3491864de7bd40a67ccf4b07de1961
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Nov 27 10:42:20 2012 -0500
+
+    add long and Decimal to utc-millisec validation, fixes #36
+
+ validictory/tests/test_values.py |    4 +++-
+ validictory/validator.py         |    3 +--
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+commit 900e3217e7d31ae1adf02c96c1c0e6d066ec4055
+Merge: f585287 e53cad2
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Nov 27 07:28:50 2012 -0800
+
+    Merge pull request #35 from jonypawks/patch-1
+    
+    Added a link to documentation in README.rst
+
+commit f585287737e26fc53d12ff1bd55234cdb009d856
+Merge: 48ea3d8 aadcabc
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Nov 27 07:27:33 2012 -0800
+
+    Merge pull request #38 from EisenSheng/decimal-number
+    
+    Allow Decimal to be used in number
+
+commit 48ea3d83845dbf510e4a10aad4f997cbd4bcdd77
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Nov 14 14:40:25 2012 -0500
+
+    add classifiers
+
+ .travis.yml |    1 -
+ setup.py    |   11 +++++++++++
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+
+commit aadcabcabf745cfe0e3cb0444a91da5ee0fc55ce
+Author: Arthur Skowronek <eisensheng@gmail.com>
+Date:   Fri Sep 21 23:37:56 2012 +0200
+
+    Allow Decimal to be used in number
+    
+    Json parsers allow a custom type to be used for parsing float
+    values. It is common practice to use Decimal as float storage
+    to prevent precision loss. Example:
+    
+        parsed_data = json.loads(raw_data, parse_float=Decimal)
+
+ validictory/tests/test_type.py |    3 ++-
+ validictory/validator.py       |    5 +++--
+ 2 files changed, 5 insertions(+), 3 deletions(-)
+
+commit e53cad2cc19818d0f32336c1ef88c74a79c46836
+Author: Jesse Printz <jesse@jonypawks.net>
+Date:   Fri Aug 31 22:24:16 2012 -0500
+
+    Added a link to documentation in README.rst
+
+ README.rst |    2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 0e615d0dd4c8b1acc16ea935e405cf67365f46dc
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Aug 27 10:28:41 2012 -0400
+
+    add schema error stuff to changelog
+
+ AUTHORS.txt        |    1 +
+ docs/changelog.rst |    1 +
+ 2 files changed, 2 insertions(+)
+
+commit 65e07a24b7963b7888070ffe9b3a445fc9e384d3
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Aug 27 10:21:28 2012 -0400
+
+    Python 3 fix
+
+ validictory/tests/test_other.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ce4fa47b9402ebb52081e4eb4a21f03f8a20955a
+Merge: 967c102 ad74b72
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Aug 27 07:17:07 2012 -0700
+
+    Merge pull request #28 from alfredodeza/schema_structure
+    
+    Schema structure error message
+
+commit 5168b53353db05e5e1f9e46ef778ecb6b84c9432
+Author: Nicola Iarocci <nicola@nicolaiarocci.com>
+Date:   Wed Aug 8 10:41:46 2012 +0200
+
+    Support for disallow_unknown_properties option, available both in the validate method and in the SchemaValidator contstructor. Set to True to prevent injection of unwanted property/value pairs in your document. Defaults to False.
+    
+    While you can achieve similar results by setting 'additionalProperties = False', that only works for 'object' types and not for the 'array' type. When an array's 'items' property is set to a schema, it will accept any number of incoming dicts (objects) making sure that known fields match the schema, but still allowing for unknown/unmatched fields (the 'additionalItems' property will only block multiple array items).
+
+ validictory/__init__.py                            |    7 +-
+ .../tests/test_disallow_unknown_properties.py      |   72 ++++++++++++++++++++
+ validictory/validator.py                           |   25 ++++++-
+ 3 files changed, 101 insertions(+), 3 deletions(-)
+
+commit ad74b726ab6afbdeb511f02008e8e56c6a89214e
+Author: Alfredo Deza <alfredodeza@gmail.com>
+Date:   Tue May 29 10:40:52 2012 -0400
+
+    make proper use of setup in testcase
+
+ validictory/tests/test_other.py |   13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+
+commit dce03b9df95dbaa3727f10bde4668f3c7652eadb
+Author: Alfredo Deza <alfredodeza@gmail.com>
+Date:   Tue May 29 10:40:06 2012 -0400
+
+    avoid description redundancy
+
+ validictory/validator.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3eac4e8217ba3be6df17a287fd0f48961188000a
+Author: Alfredo Deza <alfredodeza@gmail.com>
+Date:   Tue May 29 10:39:35 2012 -0400
+
+    test the new descriptive error
+
+ validictory/tests/test_other.py |   12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit a1966229cb981a5a5d5946eeaf4ed0948b747378
+Author: Alfredo Deza <alfredodeza@gmail.com>
+Date:   Tue May 29 10:04:10 2012 -0400
+
+    better Exception message for SchemaError on non-dicts
+
+ validictory/validator.py |    3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 967c102ed64e1f417d470b40d59784f794603da8
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Apr 23 14:43:55 2012 -0400
+
+    add Lowe Thiderman to authors
+
+ AUTHORS.txt        |    1 +
+ docs/changelog.rst |    1 +
+ 2 files changed, 2 insertions(+)
+
+commit d5dfeb415627465b3c0d33abe3d3a9288ed13ac3
+Merge: 9b7db38 eacb4cc
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Apr 23 11:38:16 2012 -0700
+
+    Merge pull request #24 from daethorian/master
+    
+    Add erroneous additional key to error message
+
+commit eacb4cc19d54d4d574f6ccaf6a23d096f507dfee
+Author: Lowe Thiderman <daethorian@ninjaloot.se>
+Date:   Fri Apr 20 13:03:52 2012 +0200
+
+    Add erroneous additional key to error message
+    
+    Extends the error message raised by validate_additionalProperties() when an
+    additional unallowed property is found, by adding the erroneous key to the
+    error message. This helps give the user a hint of what actually went wrong.
+
+ validictory/validator.py |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 9b7db3898163496fcd4095d79f42da65f44df2e6
+Merge: a54200f 54849f3
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Mar 13 23:59:47 2012 -0700
+
+    merge changelog
+
+commit 54849f369bde0d731463fe4d52de8e64186b282d
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Mar 13 23:59:11 2012 -0700
+
+    update changelog
+
+ docs/changelog.rst |    5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 92a5d6c97fb5c29bcd8b2e562ff280672af8a4f7
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Mar 13 23:54:07 2012 -0700
+
+    make int_types a tuple
+
+ validictory/validator.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c324b43220c4fa7532fa1d2699e02d844473fda0
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Mar 13 23:52:11 2012 -0700
+
+    don't use long in Py3
+
+ validictory/validator.py |    6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit a54200fea7ae24c6be9ae580e399f7aff63807bc
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Mar 13 23:54:07 2012 -0700
+
+    make int_types a tuple
+
+ validictory/validator.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 45b7cd630d9ba765bb0ddbc2d44d899d9a7114f7
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Mar 13 23:52:11 2012 -0700
+
+    don't use long in Py3
+
+ validictory/validator.py |    6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 1d6549b4434e21ce45e7169616f8cf978c27a037
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Mar 13 23:27:01 2012 -0700
+
+    travis
+
+ .travis.yml |   10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit 6bce20882ecb78376c421f9baa7ab4afbd1ca5a2
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Mar 9 16:52:43 2012 -0800
+
+    .9 changelog
+
+ docs/changelog.rst |    3 +++
+ 1 file changed, 3 insertions(+)
+
+commit f37fdec27d11969448b1ef1b47cc7755cb9c8813
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Mar 9 16:49:24 2012 -0800
+
+    0.9 dev
+
+ docs/conf.py            |    4 ++--
+ validictory/__init__.py |    2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 33f76de30e1ebf22cb127284d28ac3dc812a18a4
+Merge: a7e4980 50fda95
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Mar 9 16:46:54 2012 -0800
+
+    merge
+
+commit 50fda952b08dfdc79e0297acac3c4b288bc38df8
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Mar 9 16:42:10 2012 -0800
+
+    0.8.2
+
+ docs/conf.py            |    2 +-
+ validictory/__init__.py |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 4dc63b7ac7aea6f3c00bccd81ac8d2d1beea3872
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Mar 9 16:41:42 2012 -0800
+
+    explain change in changelog
+
+ docs/changelog.rst |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 46cd35969d5c08ebc97fa87dd701540911bd01e5
+Merge: eb97013 cb4f629
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Mar 9 16:40:31 2012 -0800
+
+    flake8 again
+
+commit eb97013e384a25da4c1c6b21d6bc226816b0ec35
+Merge: 6766775 1e3d702
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Mar 9 14:32:24 2012 -0800
+
+    Merge branch 'master' of github.com:sunlightlabs/validictory
+
+commit a7e49802d3a7c6400512ea4e42106743e172f40f
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Mar 8 21:54:35 2012 -0500
+
+    remove old warnings import
+
+ validictory/validator.py |    1 -
+ 1 file changed, 1 deletion(-)
+
+commit 38f8521bdd35094c2694a9ec045a7b296fdd1b8d
+Merge: b2c2323 6766775
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Mar 8 21:54:04 2012 -0500
+
+    Merge branch 'master' into 0.9-dev
+
+commit 6766775e9a769e776698ed51fc361b719b033c72
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Mar 8 20:50:12 2012 -0500
+
+    shorten long lines
+
+ validictory/validator.py |   92 ++++++++++++++++++++++++++++++----------------
+ 1 file changed, 60 insertions(+), 32 deletions(-)
+
+commit cb4f6296bc5963d40114cdd1aace9f2175be9998
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Mar 8 20:41:39 2012 -0500
+
+    ip address is a format, not a type
+
+ docs/changelog.rst               |    1 +
+ validictory/tests/test_type.py   |    6 ------
+ validictory/tests/test_values.py |   16 ++++++++++++++++
+ validictory/validator.py         |   25 +++++++++++++++----------
+ 4 files changed, 32 insertions(+), 16 deletions(-)
+
+commit 1e3d7025bc749a41c69179744b13fe5f9f0b2d4e
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Mar 7 10:56:31 2012 -0500
+
+    update authors/changelog
+
+ AUTHORS.txt        |    5 +++--
+ docs/changelog.rst |    2 ++
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+commit 3808dd3052b91faae7200fb4de8c2ca1013d1366
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Mar 7 10:53:50 2012 -0500
+
+    test for optional patternproperties
+
+ validictory/tests/test_properties.py |   15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+commit 47dff663ad0961bb3b78f9991c21134062f9d784
+Merge: 0108280 ed5f36f
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Mar 7 07:45:24 2012 -0800
+
+    Merge pull request #22 from ahassany/master
+    
+    Fix handling empty patternProperties when it's not required"
+
+commit ed5f36fe98bdbed580e9655eabc152a0d83f4fac
+Author: Ahmed El-Hassany <ahassany@indiana.edu>
+Date:   Tue Mar 6 13:33:39 2012 -0500
+
+    Fix handling empty patternProperties when it's not required
+
+ validictory/validator.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b2c232381396cae37f4e4085065f977be70d89ea
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Mar 5 17:43:40 2012 -0500
+
+    just drop optional test altogether
+
+ validictory/tests/test_properties.py |   28 ----------------------------
+ 1 file changed, 28 deletions(-)
+
+commit 010828070ef48a25fa46760fbae270166662836a
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Mar 5 17:38:27 2012 -0500
+
+    remove old testrunner code
+
+ validictory/tests/__init__.py |   24 ------------------------
+ 1 file changed, 24 deletions(-)
+
+commit e5623f583390189ae16ca89119c60236646fdf5c
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Mar 5 17:37:17 2012 -0500
+
+    remove tests that depend on deprecated behavior
+
+ validictory/tests/test_properties.py |   49 +++++++---------------------------
+ 1 file changed, 10 insertions(+), 39 deletions(-)
+
+commit d3fd7d3139704aed3af45bf447fdc98ab70d8892
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Mar 5 17:31:56 2012 -0500
+
+    remove optional & requires
+
+ docs/changelog.rst       |    1 +
+ validictory/validator.py |   23 ++++++++---------------
+ 2 files changed, 9 insertions(+), 15 deletions(-)
+
+commit 46caf39c0127c25b4c5d12e031ba2e24f4c63e77
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Mar 5 17:06:01 2012 -0500
+
+    PEP8 tests
+
+ validictory/tests/__init__.py           |    8 +-
+ validictory/tests/test_items.py         |   29 +++--
+ validictory/tests/test_other.py         |    9 +-
+ validictory/tests/test_properties.py    |  181 +++++++++++++-------------
+ validictory/tests/test_schema_schema.py |  215 ++++++++++++++++---------------
+ validictory/tests/test_type.py          |   17 +--
+ validictory/tests/test_values.py        |  156 ++++++++++++----------
+ 7 files changed, 325 insertions(+), 290 deletions(-)
+
+commit 8bf8ca93671fa5f8c8a7298dbe6d978693d26eaf
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Mar 5 16:47:10 2012 -0500
+
+    wsome PEP8 cleanup
+
+ validictory/__init__.py  |    3 ++-
+ validictory/validator.py |   36 ++++++++++++++++++++++--------------
+ 2 files changed, 24 insertions(+), 15 deletions(-)
+
+commit 884ccb8f06e7a7ee7cd5a7fa5ef70f639029a7f5
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Mar 5 15:03:17 2012 -0500
+
+    update authors/changelog
+
+ AUTHORS.txt        |    1 +
+ docs/changelog.rst |    4 ++++
+ 2 files changed, 5 insertions(+)
+
+commit 9beb63228d134bca6559abd332b50db4ea97f3c8
+Merge: 10b5ae6 efbbfd8
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Mar 5 11:47:48 2012 -0800
+
+    Merge pull request #21 from simon-weber/master
+    
+    Add "blank" to docs
+
+commit efbbfd8d1641b34f0e61e66b38e7dff6723f6450
+Author: Simon Weber <sweb090@gmail.com>
+Date:   Mon Mar 5 00:41:49 2012 -0500
+
+    add mention of blank in usage
+
+ docs/usage.rst |    6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 10b5ae69a8a59a0e3bb11c61f1236bb7292a72a6
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Sun Mar 4 13:16:59 2012 -0500
+
+    add Michael to AUTHORS
+
+ AUTHORS.txt |    1 +
+ 1 file changed, 1 insertion(+)
+
+commit 201a4478acb86e9dbef51a8725826a2412bd088e
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Sun Mar 4 13:11:35 2012 -0500
+
+    bump to 0.8.1
+
+ AUTHORS.txt             |    1 +
+ docs/changelog.rst      |    2 ++
+ docs/conf.py            |    2 +-
+ validictory/__init__.py |    2 +-
+ 4 files changed, 5 insertions(+), 2 deletions(-)
+
+commit 8fdbe05164a7b7fa4d8f98c93fb8fb321ea12026
+Merge: 90be5dd 7c39748
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Sun Mar 4 13:00:06 2012 -0500
+
+    Merge https://github.com/aconrad/validictory into ip
+
+commit 90be5ddeb5f81719fc726064c483c73ca9d7c627
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Sun Mar 4 12:45:44 2012 -0500
+
+    update authors/changelog
+
+ AUTHORS.txt        |    1 +
+ docs/changelog.rst |    6 ++++++
+ 2 files changed, 7 insertions(+)
+
+commit fbb127a3bef98ce44636f665ca5ad272ba04077e
+Author: talos <irving.krauss@gmail.com>
+Date:   Fri Mar 2 21:48:08 2012 -0500
+
+    additionalProperties is now ignored for non-dicts
+
+ validictory/tests/test_properties.py |   18 ++++++++++++++++++
+ validictory/validator.py             |    6 ++++++
+ 2 files changed, 24 insertions(+)
+
+commit 7c3974896aa81d9914c7f950811667ccef1507da
+Author: Alexandre Conrad <alexandre.conrad@gmail.com>
+Date:   Thu Feb 23 19:33:36 2012 -0800
+
+    implement ip-address validator
+
+ validictory/tests/test_type.py |    6 ++++++
+ validictory/validator.py       |   13 ++++++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+
+commit 37174bd2b2fd68579c6f1c8751f98a6b5deaada7
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Sat Feb 11 17:00:46 2012 -0500
+
+    Filod Lin in AUTHORS
+
+ AUTHORS.txt |    1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7315d3321958c88d423179293463e0ca37523e01
+Merge: 27fbc36 808f559
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Sat Feb 11 09:16:31 2012 -0800
+
+    Merge pull request #16 from filod/patch-1
+    
+    fix the problem of 'integer'&'number' type validation: [long] is an inte...
+
+commit 808f55996779c44975a6197660364a5f7b047050
+Author: Filod Lin <filod@qq.com>
+Date:   Sat Feb 11 20:01:37 2012 +0800
+
+    fix the problem of 'integer'&'number' type validation: [long] is an integer too
+
+ validictory/validator.py |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 27fbc36be4753969d4ff6130874fcb2b6fb348d9
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jan 27 12:40:27 2012 -0500
+
+    attribute Jason Sanford for his question
+
+ docs/usage.rst |    3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 7f4aa440670a386840d2e8051df8ae058b485d3b
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jan 27 12:37:34 2012 -0500
+
+    add docs about GeoJSON example
+
+ docs/usage.rst |   84 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 84 insertions(+)
+
+commit 41e8f94b2889e361b243dacac59067fb0188c78b
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 26 12:35:41 2012 -0500
+
+    update setup.py
+
+ setup.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f08e2e1ad75c6c0d2b7417e8ff057eaf6baae00d
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 26 12:35:05 2012 -0500
+
+    update docs to 0.8
+
+ docs/changelog.rst      |    7 +++++++
+ docs/conf.py            |    4 ++--
+ validictory/__init__.py |    2 +-
+ 3 files changed, 10 insertions(+), 3 deletions(-)
+
+commit 6db6b26466dd053e656bdede9c8fd1af4d9c97df
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 26 12:32:31 2012 -0500
+
+    note about Py3
+
+ README.rst |    2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 8573aff956461f636934fbbf605f7d2872f36c74
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 26 12:32:02 2012 -0500
+
+    fix tests for Py3
+
+ validictory/tests/test_type.py   |    9 ++++++++-
+ validictory/tests/test_values.py |    8 ++++----
+ 2 files changed, 12 insertions(+), 5 deletions(-)
+
+commit 013ca0aab66a79904baffd6780d28db6eb3d45db
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 26 12:20:51 2012 -0500
+
+    Py3 compatability shim for basestring/str
+
+ validictory/validator.py |   28 +++++++++++++++++-----------
+ 1 file changed, 17 insertions(+), 11 deletions(-)
+
+commit 6ed4e278e31d5a58a15ca2dba2b495945a361847
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 26 12:01:35 2012 -0500
+
+    remove _HAS_ABCS, dropping 2.5 support
+
+ validictory/__init__.py  |    2 +-
+ validictory/validator.py |   11 ++---------
+ 2 files changed, 3 insertions(+), 10 deletions(-)
+
+commit ca2f631730d9ef9d9213888507dbf1e8b1bb583f
+Merge: fd6eef3 01e0b48
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 26 11:58:51 2012 -0500
+
+    Merge branch 'master' of github.com:sunlightlabs/validictory
+
+commit fd6eef3400673b3e3cb99f2a9baa79a311aeb159
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 26 11:58:08 2012 -0500
+
+    convert exceptions to Python 2.6 syntax, making way for Py3 port
+
+ validictory/__init__.py              |    2 +-
+ validictory/tests/test_items.py      |   14 ++++----
+ validictory/tests/test_other.py      |    4 +--
+ validictory/tests/test_properties.py |   24 +++++++-------
+ validictory/tests/test_type.py       |   10 +++---
+ validictory/tests/test_values.py     |   60 +++++++++++++++++-----------------
+ validictory/validator.py             |    6 ++--
+ 7 files changed, 60 insertions(+), 60 deletions(-)
+
+commit 01e0b48690de8e5e6d9477c26106bdbd23d90a15
+Merge: eb548d2 f58c7fd
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Dec 1 19:05:49 2011 -0800
+
+    Merge pull request #11 from aconrad/master
+    
+    validate_enum() to accept any type of container
+
+commit f58c7fd284a28a89bf406873205b31b165b051f8
+Author: Alexandre Conrad <alexandre@surveymonkey.com>
+Date:   Thu Dec 1 18:58:44 2011 -0800
+
+    make validate_enum() accept any container type (implements __contains__)
+
+ validictory/validator.py |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit eb548d20c03e1e9dc6ed0ccbbc95a570d297dbc2
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Sep 27 15:16:38 2011 -0400
+
+    0.7.2
+
+ docs/changelog.rst      |    4 ++--
+ docs/conf.py            |    4 ++--
+ validictory/__init__.py |    2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 95dea7b9a1c994e3b77da73291229360f10cbb06
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Jul 18 17:15:43 2011 -0400
+
+    more descriptive error message for validate_items
+
+ docs/changelog.rst              |    2 +-
+ validictory/tests/test_items.py |    9 +++++++++
+ validictory/validator.py        |    6 +++++-
+ 3 files changed, 15 insertions(+), 2 deletions(-)
+
+commit f847c2b53e4af821406b79039d2cf9ee7cb86011
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed May 11 11:25:27 2011 -0400
+
+    doc updates for blank_by_default
+
+ AUTHORS.txt             |    1 +
+ docs/changelog.rst      |    6 ++++++
+ docs/conf.py            |    4 ++--
+ validictory/__init__.py |    2 +-
+ 4 files changed, 10 insertions(+), 3 deletions(-)
+
+commit 61e90511215ff5d25857de5f1134eb9248c19ca9
+Merge: 8717ad9 3a35f1d
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed May 11 08:15:21 2011 -0700
+
+    Merge pull request #9 from dokai/master
+    
+    Add support for specifying the default value for the 'blank' schema field.
+
+commit 8717ad9215ff4d348e160fb9d1f509196fbf4ec1
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue May 3 10:22:09 2011 -0400
+
+    0.7.1 release
+
+ docs/changelog.rst |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 3a35f1d7592c36470e01fe59bbfe328473cf2a2f
+Author: Kai Lautaportti <kai.lautaportti@hexagonit.fi>
+Date:   Tue May 3 16:37:55 2011 +0300
+
+    Added support for specifying the default value for the 'blank' schema field.
+
+ validictory/__init__.py          |    4 ++--
+ validictory/tests/test_values.py |   36 ++++++++++++++++++++++++++++++------
+ validictory/validator.py         |    7 +++++--
+ 3 files changed, 37 insertions(+), 10 deletions(-)
+
+commit 768376bb569a0d966738b8f4d4f1ddc2672cf833
+Author: Michael Stephens <michaeljste@gmail.com>
+Date:   Mon Apr 18 15:49:54 2011 -0400
+
+    validate object against collections.Mapping (when available)
+
+ validictory/validator.py |    8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit c8cc07e76249b108e5160f8fadda8abc6732f543
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Apr 18 11:25:35 2011 -0400
+
+    add 0.7.1 to changelog
+
+ docs/changelog.rst |    7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 3c59a351ffee43c8e28d1b6103df33504b8096aa
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Apr 18 11:24:38 2011 -0400
+
+    bump to 0.7.1
+
+ docs/conf.py            |    2 +-
+ validictory/__init__.py |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit fa44118287f15986c478fe82285b84f34ebb9b9b
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Apr 18 11:19:42 2011 -0400
+
+    change validate_format to not validate formats if value is falsy
+
+ validictory/validator.py |    5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+commit 2d60d72a01a8b3fd54a5fd49bda3efefad6a9423
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Apr 18 11:17:23 2011 -0400
+
+    if required=False, don't validate formats
+
+ validictory/tests/test_values.py |   13 +++++++++++++
+ validictory/validator.py         |    3 ++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+
+commit a3d87436c55285c250b5720a217e846f3dc94c2d
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Apr 6 13:55:16 2011 -0400
+
+    pep8 round2
+
+ validictory/validator.py |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1b805911bac52e06fcf16db1f705f6d64de75cb5
+Merge: b32cb40 ea6a779
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Apr 6 13:54:04 2011 -0400
+
+    Merge branch 'master' of github.com:sunlightlabs/validictory
+
+commit b32cb40b8771e2ae702e948b8cb0ed5d8c1e8ce3
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Apr 6 13:53:56 2011 -0400
+
+    PEP8
+
+ validictory/__init__.py        |    5 +++--
+ validictory/tests/test_type.py |    2 +-
+ validictory/validator.py       |   13 ++++++++-----
+ 3 files changed, 12 insertions(+), 8 deletions(-)
+
+commit ea6a77969b7084b1236e49297d286543d8136f15
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Mar 15 15:17:19 2011 -0400
+
+    doc updates
+
+ docs/changelog.rst |    2 ++
+ docs/index.rst     |    9 +++++++++
+ docs/usage.rst     |   49 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 60 insertions(+)
+
+commit ded4acb53838139ed73d87aed681261b64289df5
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Mar 14 12:31:23 2011 -0400
+
+    dependencies dicts
+
+ docs/changelog.rst                      |    3 +-
+ validictory/tests/test_schema_schema.py |  183 +++++++++++++++++++++++++++++++
+ validictory/validator.py                |   11 ++
+ 3 files changed, 196 insertions(+), 1 deletion(-)
+
+commit 7d41ab4620f773f6836719eb0e0f5a70aac23fdc
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Mar 14 11:40:52 2011 -0400
+
+    sort of a silly use of finally
+
+ validictory/validator.py |    3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 2e393386bbff8eed17dc6698393ae62615ab8b9c
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Mar 14 11:28:26 2011 -0400
+
+    add support for dependencies lists
+
+ docs/changelog.rst                   |    4 ++++
+ validictory/tests/test_properties.py |    9 +++++++--
+ validictory/validator.py             |   12 +++++++++---
+ 3 files changed, 20 insertions(+), 5 deletions(-)
+
+commit 35a0dc78920015d697cfa7fecf2aae36c393f797
+Merge: 23a427c 05f898e
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Mar 9 17:01:09 2011 -0500
+
+    Merge branch 'master' of github.com:sunlightlabs/validictory
+
+commit 23a427c472415d772ed536da371abaf11e0c86cc
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Mar 9 16:25:44 2011 -0500
+
+    docs pass 1
+
+ CHANGELOG.txt            |   45 ----------
+ docs/Makefile            |  130 ++++++++++++++++++++++++++++
+ docs/changelog.rst       |   53 ++++++++++++
+ docs/conf.py             |  216 ++++++++++++++++++++++++++++++++++++++++++++++
+ docs/index.rst           |   30 +++++++
+ docs/usage.rst           |  138 +++++++++++++++++++++++++++++
+ docs/validictory.rst     |   21 +++++
+ validictory/__init__.py  |   33 ++++---
+ validictory/validator.py |   16 +++-
+ 9 files changed, 616 insertions(+), 66 deletions(-)
+
+commit 05f898ea67158fd9577eb53f9e5c7f0e67dc8817
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jan 21 21:42:34 2011 -0500
+
+    classifiers not used
+
+ setup.py |    8 --------
+ 1 file changed, 8 deletions(-)
+
+commit 94468b34688f07fce972e288ddbd39cec5379bee
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jan 21 21:28:41 2011 -0500
+
+    remove useless references to keys()
+
+ validictory/validator.py |   10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 3a88d9acda6efb4ef776909c025e179bc259c77f
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jan 21 09:54:58 2011 -0500
+
+    bump version
+
+ validictory/__init__.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 30983f0ea63acf1d19c189c44d844f6534a71c93
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jan 21 09:53:46 2011 -0500
+
+    0.6.1
+
+ CHANGELOG.txt           |    4 ++++
+ validictory/__init__.py |    2 +-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+commit 9dd7eb1025a854f7160d2c788ee28f2b002ec913
+Author: Filip Noetzel <filip@j03.de>
+Date:   Thu Jan 20 12:24:32 2011 +0100
+
+    Don't validate non-list types with uniqueItems
+    
+    +regression test
+
+ validictory/tests/test_values.py |    8 ++++++++
+ validictory/validator.py         |    3 +++
+ 2 files changed, 11 insertions(+)
+
+commit f48d330d2c8c3c9839f2fdb46445bc6b6341ed12
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 20 11:04:48 2011 -0500
+
+    add changelog to manifest
+
+ MANIFEST.in |    1 +
+ 1 file changed, 1 insertion(+)
+
+commit 860f0fa848c9f1e25209f3734b5ce9ce55189662
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 20 11:04:17 2011 -0500
+
+    Changelog
+
+ CHANGELOG.txt |   41 +++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 41 insertions(+)
+
+commit 6231fe7e0541c8d11e20eff8db132926454d2178
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 20 10:53:46 2011 -0500
+
+    bump version
+
+ validictory/__init__.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 29d836279f607ad70aa04c93ceb61b582ec7b08a
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jan 19 11:58:36 2011 -0500
+
+    add TestRequired
+
+ validictory/tests/test_properties.py |   33 +++++++++++++++++++++++++++++++++
+ 1 file changed, 33 insertions(+)
+
+commit 19397213ba8083ddf62e147ca473059209131980
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jan 19 11:58:22 2011 -0500
+
+    add required_by_default to validate call
+
+ validictory/__init__.py |    8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit 60be08b150f9a7e4631df7765a8c19b9f742fd5e
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jan 19 11:32:38 2011 -0500
+
+    required_by_default option
+
+ validictory/validator.py |   20 ++++++++++++++------
+ 1 file changed, 14 insertions(+), 6 deletions(-)
+
+commit 7c01b57637f3b70d32920138ef2343f13d294d17
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jan 19 11:10:15 2011 -0500
+
+    Filip's work has been a lot more broad than what I initially wrote
+
+ AUTHORS.txt |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 40bbc461ec9ff0048b34ab1b381fe0f32f68c69d
+Merge: 07a3839 97ae8d9
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jan 19 11:03:48 2011 -0500
+
+    Merge branch 'peritus'
+
+commit 97ae8d9c279a060e0f5d629f29f29f18a2937f0b
+Merge: 9e22308 6b6683e
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jan 19 10:53:47 2011 -0500
+
+    Merge branch 'requires_dependencies2' of https://github.com/peritus/validictory into peritus
+
+commit 07a3839612ae06d610507216e048a985b90e144a
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jan 19 10:49:22 2011 -0500
+
+    fix __all__ in validator.py
+
+ validictory/validator.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 05f9f4e4a981e98a50d947b058a7cbe608f88b30
+Merge: 655869a 9e22308
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jan 19 10:45:17 2011 -0500
+
+    Merge branch 'peritus'
+
+commit 9e22308afb6df22980f03e4f675f63e604c68b98
+Merge: a30c497 7450d0f
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jan 19 10:45:01 2011 -0500
+
+    Merge branch 'divisibleBy' of https://github.com/peritus/validictory into peritus
+
+commit 655869adee1c11d5f024598e40cfed8c2d56589e
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jan 19 10:44:16 2011 -0500
+
+    tuples are hashable, can treat them as such
+
+ validictory/validator.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7450d0f328f0c565faf3612d512a6a952d6b15c5
+Author: Filip Noetzel <filip@j03.de>
+Date:   Wed Jan 19 16:09:34 2011 +0100
+
+    Implement divisibleBy
+    
+    http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.24
+
+ validictory/tests/test_values.py |   21 +++++++++++++++++++++
+ validictory/validator.py         |   13 +++++++++++++
+ 2 files changed, 34 insertions(+)
+
+commit 6b6683e6ec7fbb81036ac3abafab754873b70aba
+Author: Filip Noetzel <filip@j03.de>
+Date:   Wed Jan 19 15:36:30 2011 +0100
+
+    copy validate_{requires,dependencies}
+    
+    This also deprecates validate_requires as it is no longer part of JSON
+    Schema proposal draft-03
+
+ validictory/tests/test_properties.py |   34 ++++++++++++++++++++++++++++++++++
+ validictory/validator.py             |    8 ++++++++
+ 2 files changed, 42 insertions(+)
+
+commit a30c49749aa0e961a98f897209cfcbb2726a94df
+Author: Filip Noetzel <filip@j03.de>
+Date:   Wed Jan 19 12:37:29 2011 +0100
+
+    Treat tuples as if they were lists
+    
+    Also test this because validators might have assumed list-only methods
+    that don't work on tuples.
+
+ validictory/tests/test_items.py  |    7 +++++++
+ validictory/tests/test_type.py   |    4 ++--
+ validictory/tests/test_values.py |    2 ++
+ validictory/validator.py         |   18 +++++++++---------
+ 4 files changed, 20 insertions(+), 11 deletions(-)
+
+commit 7fad0702916496d13c69e5564a963b339d2389ae
+Author: Filip Noetzel <filip@j03.de>
+Date:   Wed Jan 19 11:55:26 2011 +0100
+
+    Allow the registration of (custom) format validators
+
+ validictory/__init__.py          |   11 ++++---
+ validictory/tests/test_values.py |   54 ++++++++++++++++++++++++++++++--
+ validictory/validator.py         |   64 +++++++++++++++++++++++++-------------
+ 3 files changed, 101 insertions(+), 28 deletions(-)
+
+commit 24b82958721117028a76793564057c7cf5fe2b6c
+Author: Filip Noetzel <filip@j03.de>
+Date:   Mon Jan 17 09:05:25 2011 +0100
+
+    Be more specific about {"uniqueItems": false}
+
+ validictory/validator.py |    8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit 6a14402c0c014076ddd6a8c59e889f29b730001c
+Merge: ae948a2 ecf5ea8
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Jan 18 10:51:25 2011 -0500
+
+    Merge branch 'exclusive_minimum_maximum' of https://github.com/peritus/validictory into exclusiveMinMax
+
+commit ae948a2dfdd62af2ba98a0ee506ddd48504ee64b
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Jan 18 02:55:37 2011 -0500
+
+    bump version to 0.6-dev
+
+ validictory/__init__.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c0f05330c2eea0760cfa9f03914159525c80f18d
+Merge: 37f96eb 407a72a
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Jan 18 02:54:21 2011 -0500
+
+    merge additionalItems branch
+
+commit ecf5ea8a8a411bdbacaa4061e59239e75ca66b58
+Author: Filip Noetzel <filip@j03.de>
+Date:   Mon Jan 17 17:35:11 2011 +0100
+
+    Implement exclusive{Minimum,Maximum}
+    
+    http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.11
+    http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.12
+
+ validictory/tests/test_values.py |   38 ++++++++++++++++++++++++++++++++++++++
+ validictory/validator.py         |   10 ++++++++--
+ 2 files changed, 46 insertions(+), 2 deletions(-)
+
+commit 6efaa32a3c4396a584842e2e583bc57dc4db6079
+Author: Filip Noetzel <filip@j03.de>
+Date:   Mon Jan 17 16:37:08 2011 +0100
+
+    -- (fix typo)
+
+ validictory/tests/test_values.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 407a72aa7a1d0f6567c4e3fd0a13215e699da130
+Author: Filip Noetzel <filip@j03.de>
+Date:   Mon Jan 17 11:11:11 2011 +0100
+
+    Implement additionalItems as in draft-03 sec 5.6
+    
+    http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.6
+
+ validictory/tests/test_items.py |   68 +++++++++++++++++++++++++++++++++++++++
+ validictory/validator.py        |   26 ++++++++++++---
+ 2 files changed, 90 insertions(+), 4 deletions(-)
+
+commit 37f96ebd5b36a5535c1a22c177c9920059625b49
+Author: Filip Noetzel <filip@j03.de>
+Date:   Mon Jan 17 08:57:48 2011 +0100
+
+    Implement patternProperties as in draft-03 sec 5.3
+    
+    http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.3
+
+ validictory/tests/test_properties.py |   39 ++++++++++++++++++++++++++++++++++
+ validictory/validator.py             |   12 +++++++++++
+ 2 files changed, 51 insertions(+)
+
+commit d80106c724f0c5820e7fa2dddf2d16fe46605851
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 13 10:37:48 2011 -0500
+
+    AUTHORS and version bump
+
+ AUTHORS.txt             |    5 +++++
+ validictory/__init__.py |    2 +-
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+
+commit 7ad341db5be010a94c6ddac1c23228ab85e09ead
+Merge: eea98c6 b857d82
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jan 13 10:31:23 2011 -0500
+
+    Merge branch 'format' of https://github.com/peritus/validictory into peritus-format
+
+commit eea98c6ad38a6773f3e91c26e4b661752a0aea99
+Author: Filip Noetzel <filip@j03.de>
+Date:   Thu Jan 13 12:01:21 2011 +0100
+
+    -- (remove invalid comment; copy&paste #fail)
+
+ validictory/tests/test_values.py |    2 --
+ 1 file changed, 2 deletions(-)
+
+commit b857d8242b51335483a9041cc77f29842052bed6
+Author: Filip Noetzel <filip@j03.de>
+Date:   Thu Jan 13 12:00:45 2011 +0100
+
+    Implement date formats as in draft-03 sec 5.23
+    
+    This adds support for
+     * datetime
+     * date
+     * time
+     * utc-millisec
+    
+    format validators as specified in
+    
+    http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.23
+
+ validictory/tests/test_values.py |   75 ++++++++++++++++++++++++++++++++++++++
+ validictory/validator.py         |   32 ++++++++++++++++
+ 2 files changed, 107 insertions(+)
+
+commit e8bb2b34fa4279aa08c24308a62f6dd8d0ebbfe8
+Author: Filip Noetzel <filip@j03.de>
+Date:   Thu Jan 13 11:11:28 2011 +0100
+
+    don't validate if {"uniqueItems": false}
+
+ validictory/tests/test_values.py |   10 ++++++++++
+ validictory/validator.py         |    5 ++++-
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+
+commit eea76bef5ced03963175caabdead13cfbbb70313
+Author: Filip Noetzel <filip@j03.de>
+Date:   Thu Jan 13 10:47:19 2011 +0100
+
+    Implement uniqueItems as in draft-03 section 5.15
+    
+    http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.15
+
+ validictory/tests/test_values.py |   62 ++++++++++++++++++++++++++++++++++++++
+ validictory/validator.py         |   24 +++++++++++++++
+ 2 files changed, 86 insertions(+)
+
+commit e74b8fc36fff7651a7a3be8e17dee13554b2f60b
+Merge: 9df7227 2c689b3
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Nov 17 13:55:10 2010 -0500
+
+    Merge branch 'master' of https://github.com/silas/validictory into silas
+
+commit 2c689b3037179b1eef5543ce8e5a441b333e46a0
+Author: Silas Sewell <silas@sewell.ch>
+Date:   Tue Nov 16 13:15:06 2010 -0500
+
+    Fix various cosmetic issues
+
+ .gitignore  |    2 ++
+ MANIFEST.in |    2 +-
+ README.rst  |   29 +++++++++++++++--------------
+ 3 files changed, 18 insertions(+), 15 deletions(-)
+
+commit 9df72272579eb20826d94c91c1b06b3433c1aa71
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Sep 14 18:31:04 2010 -0400
+
+    a version bump
+
+ validictory/__init__.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 22f48aba77485aa739d6e944900e61b9156674ed
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Tue Sep 14 16:06:38 2010 -0400
+
+    blank: false by default, which means strings can't be ""
+
+ validictory/tests/test_values.py |   27 +++++++++++++++++++++++++++
+ validictory/validator.py         |   11 +++++++++++
+ 2 files changed, 38 insertions(+)
+
+commit 0ef42ee098b754e75cb29159adb1df9f5061cf7b
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Aug 27 16:43:42 2010 -0400
+
+    0.4.1 bump
+
+ validictory/__init__.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a68eca82baf74672b11b173eaa5fc2279a3dd25a
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Aug 27 13:07:32 2010 -0400
+
+    add value check in additionalProperties
+
+ .gitignore               |    1 +
+ validictory/validator.py |    5 +++--
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+commit 61ae5b6db0834aab8e4d26e8488422deae025659
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Aug 2 13:57:49 2010 -0400
+
+    remove raise_errors
+
+ validictory/tests/test_properties.py |   14 --------------
+ validictory/validator.py             |   11 +----------
+ 2 files changed, 1 insertion(+), 24 deletions(-)
+
+commit 052f5f736b9f15ecb5e1bbc15e97ece0c195a77d
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Aug 2 13:23:47 2010 -0400
+
+    don't force user to specify optional: false to make something required
+
+ validictory/tests/test_properties.py |   21 +++++++++++++++++----
+ validictory/validator.py             |   11 +++++++++--
+ 2 files changed, 26 insertions(+), 6 deletions(-)
+
+commit ecabe150861a16797b7cd7e73154083a5e1768f5
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Aug 2 11:56:30 2010 -0400
+
+    test custom types
+
+ validictory/tests/test_type.py |   37 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+
+commit 0cf8c3b1d285e9c145d6d5252edf98f3ed510509
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Aug 2 10:58:04 2010 -0400
+
+    multiple errors stored
+
+ validictory/validator.py |   11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 1256f9e65f1c2d19f8c1d8ba5649abb1630a2c73
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Mon Aug 2 10:18:29 2010 -0400
+
+    some cleanup
+
+ validictory/validator.py |   14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
+
+commit 76069c540cbc89b5c29176ea49e0fd6063bbeea9
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jul 30 18:06:14 2010 -0400
+
+    MANIFEST.in changes
+
+ MANIFEST.in |    7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+commit 6374e924a1c18b21d100dd702f49f152642f77d2
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jul 30 18:04:38 2010 -0400
+
+    changes to setup
+
+ LICENSE.txt |    2 +-
+ setup.py    |    6 +++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit a8e75b77fcb465d455a433f1f7ba9cebfec0d967
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jul 30 17:51:27 2010 -0400
+
+    change some docs
+
+ README.rst              |   57 ++++++++++
+ README.txt              |   77 --------------
+ ez_setup.py             |  272 -----------------------------------------------
+ setup.py                |   37 +------
+ validictory/__init__.py |   60 -----------
+ 5 files changed, 61 insertions(+), 442 deletions(-)
+
+commit 6eb1abe71745eeff20e746c7f55c6c1229b959b6
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jul 30 17:35:15 2010 -0400
+
+    rename to validictory
+
+ LICENSE.txt                          |    3 +-
+ jsonschema/__init__.py               |  114 -------------
+ jsonschema/tests/__init__.py         |   24 ---
+ jsonschema/tests/test_items.py       |   44 -----
+ jsonschema/tests/test_other.py       |   32 ----
+ jsonschema/tests/test_properties.py  |  178 ---------------------
+ jsonschema/tests/test_type.py        |  103 ------------
+ jsonschema/tests/test_values.py      |  169 --------------------
+ jsonschema/validator.py              |  293 ----------------------------------
+ setup.py                             |   10 +-
+ validictory/__init__.py              |  102 ++++++++++++
+ validictory/tests/__init__.py        |   24 +++
+ validictory/tests/test_items.py      |   44 +++++
+ validictory/tests/test_other.py      |   32 ++++
+ validictory/tests/test_properties.py |  178 +++++++++++++++++++++
+ validictory/tests/test_type.py       |  103 ++++++++++++
+ validictory/tests/test_values.py     |  169 ++++++++++++++++++++
+ validictory/validator.py             |  292 +++++++++++++++++++++++++++++++++
+ 18 files changed, 951 insertions(+), 963 deletions(-)
+
+commit 7bf86f7c82594e86b01222bd1f2d92f91a0e1b75
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jul 30 12:45:40 2010 -0400
+
+    new, better ways to override behavior
+
+ examples/data.js            |    4 ----
+ examples/sample_override.py |   56 -------------------------------------------
+ examples/schema.js          |    8 -------
+ 3 files changed, 68 deletions(-)
+
+commit 0ab44fe7533d5f54bfbcb186a1eb0a210be54d30
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jul 30 12:43:42 2010 -0400
+
+    test cleanup pt 2
+
+ jsonschema/tests/test_disallow.py |  158 -------------------------
+ jsonschema/tests/test_items.py    |  107 +++++++----------
+ jsonschema/tests/test_type.py     |  232 ++++++++++++++-----------------------
+ 3 files changed, 128 insertions(+), 369 deletions(-)
+
+commit 58063483cd6dd7653581f0d1538b0f48b600d5b0
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Fri Jul 30 11:10:38 2010 -0400
+
+    test cleanup pt. 1
+
+ jsonschema/tests/test_additionalProperties.py |   86 --------
+ jsonschema/tests/test_description.py          |   31 ---
+ jsonschema/tests/test_disallow.py             |  279 ++++++++++++-------------
+ jsonschema/tests/test_enum.py                 |   34 ---
+ jsonschema/tests/test_maxLength.py            |   35 ----
+ jsonschema/tests/test_maximum.py              |   65 ------
+ jsonschema/tests/test_minLength.py            |   37 ----
+ jsonschema/tests/test_minimum.py              |   65 ------
+ jsonschema/tests/test_optional.py             |   45 ----
+ jsonschema/tests/test_other.py                |   32 +++
+ jsonschema/tests/test_pattern.py              |   38 ----
+ jsonschema/tests/test_properties.py           |  235 +++++++++++++++------
+ jsonschema/tests/test_requires.py             |   44 ----
+ jsonschema/tests/test_title.py                |   31 ---
+ jsonschema/tests/test_values.py               |  169 +++++++++++++++
+ 15 files changed, 508 insertions(+), 718 deletions(-)
+
+commit 62d9191b6c150698109054b9bb451f9248aa5301
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 17:27:33 2010 -0400
+
+    allow type checkers as validate_type_*
+
+ jsonschema/validator.py |   43 +++++++++++++++++++++++++++----------------
+ 1 file changed, 27 insertions(+), 16 deletions(-)
+
+commit d45a7c85d9ffe980a0218df9774ad4ab7426be92
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 17:20:51 2010 -0400
+
+    min/maxItems/Length was two too many functions
+
+ jsonschema/tests/test_maxItems.py  |   56 ------------------------------------
+ jsonschema/tests/test_maxLength.py |   47 ++++++++++++------------------
+ jsonschema/tests/test_minItems.py  |   56 ------------------------------------
+ jsonschema/tests/test_minLength.py |   43 +++++++++++----------------
+ jsonschema/validator.py            |   38 +++++-------------------
+ 5 files changed, 42 insertions(+), 198 deletions(-)
+
+commit 8fa9f303e5eb69e90bbf653c5ec12e3a9091c44c
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 16:56:30 2010 -0400
+
+    move validate_pattern
+
+ jsonschema/validator.py |   24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+commit 304c92ca1c9719eb1feaea68956339f145caeab1
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 16:49:43 2010 -0400
+
+    introducing _error
+
+ jsonschema/validator.py |   46 +++++++++++++++++++++++++++++++---------------
+ 1 file changed, 31 insertions(+), 15 deletions(-)
+
+commit 124786520780a8e039619a0946e1fe0ccee347aa
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 16:27:43 2010 -0400
+
+    remove _is_string_type
+
+ jsonschema/validator.py |   13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
+
+commit 9485135878ef9f8966af2073037787cdae122efb
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 16:09:28 2010 -0400
+
+    differentiate between Schema and Validation errors
+
+ jsonschema/validator.py |   66 ++++++++++++++++++++++++++---------------------
+ 1 file changed, 36 insertions(+), 30 deletions(-)
+
+commit 4f239a06dd57f074831ad3768b94bfab409cc96f
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 15:59:38 2010 -0400
+
+    remove _refmap
+
+ jsonschema/validator.py |   24 ------------------------
+ 1 file changed, 24 deletions(-)
+
+commit b2c68f37213730c583f8a65a474bba391a41f480
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 15:58:33 2010 -0400
+
+    ignore all unknown attributes, not just a special list
+
+ jsonschema/tests/test_additionalProperties.py |    4 ++--
+ jsonschema/validator.py                       |   12 ++----------
+ 2 files changed, 4 insertions(+), 12 deletions(-)
+
+commit 194ed7043de5d1cf81f2f8878052d4942a3e66d1
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 15:37:33 2010 -0400
+
+    remove maxDecimal
+
+ jsonschema/tests/test_maxDecimal.py |   37 -----------------------------------
+ jsonschema/validator.py             |   13 ------------
+ 2 files changed, 50 deletions(-)
+
+commit 99b2f213d63f4b1671a6307ba8e08d60a8d76ce1
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 15:19:00 2010 -0400
+
+    removing Japanese readme because I can't keep it up to date unfortunately
+
+ README.ja.utf8.txt |   79 ----------------------------------------------------
+ 1 file changed, 79 deletions(-)
+
+commit 254dbee20ce9f417352f06d7adaf8413168d1e9d
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 14:57:42 2010 -0400
+
+    bumped version and added myself as maintainer
+
+ .gitignore             |    1 +
+ LICENSE.txt            |    1 +
+ docs/jsonschema.html   |  206 ------------------------------------------------
+ jsonschema/__init__.py |    4 +-
+ setup.py               |   14 ++--
+ 5 files changed, 9 insertions(+), 217 deletions(-)
+
+commit 45be3a7af4441fc7b8f0bbc80587b75f1a722f6e
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 14:31:19 2010 -0400
+
+    stop using _schemadefault
+
+ jsonschema/validator.py |  135 ++++++++++++++++-------------------------------
+ 1 file changed, 46 insertions(+), 89 deletions(-)
+
+commit e4fe5bd40659d75718244615ceb05742ded6a232
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 14:09:53 2010 -0400
+
+    remove interactive mode and default
+
+ jsonschema/__init__.py           |   14 +++-------
+ jsonschema/tests/test_default.py |   54 --------------------------------------
+ jsonschema/validator.py          |   51 +++--------------------------------
+ 3 files changed, 7 insertions(+), 112 deletions(-)
+
+commit 7db94df94dcc175e1ececfeca0a468cd5033aa65
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 11:09:00 2010 -0400
+
+    change how types are checked
+
+ jsonschema/validator.py |   55 ++++++++++++++++++-----------------------------
+ 1 file changed, 21 insertions(+), 34 deletions(-)
+
+commit a4d8e6688c664294a48111934bc946bd5d618784
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 02:17:48 2010 -0400
+
+    shorten some lines
+
+ jsonschema/validator.py |   56 ++++++++++++++++++++++++++++-------------------
+ 1 file changed, 34 insertions(+), 22 deletions(-)
+
+commit f5ea591f141360f4941443524c335c92301d31dc
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 02:13:16 2010 -0400
+
+    PEP8 (but lines still too long)
+
+ jsonschema/validator.py |  819 ++++++++++++++++++++++++-----------------------
+ 1 file changed, 410 insertions(+), 409 deletions(-)
+
+commit 1b1ea48c7514a33ced1a2685c2309b222c0d0686
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 02:06:32 2010 -0400
+
+    a bit more cleanup
+
+ jsonschema/validator.py |   20 +++++++-------------
+ 1 file changed, 7 insertions(+), 13 deletions(-)
+
+commit 4ee426fb90d04243b977ad6bcbe413488b604bf9
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 01:50:24 2010 -0400
+
+    use isinstance for flexibility where lists or dicts are involved
+
+ jsonschema/validator.py |  104 ++++++++++++++++++++++-------------------------
+ 1 file changed, 48 insertions(+), 56 deletions(-)
+
+commit dcbd846a4e761f87dc1e9c37904f0c7361dc94d6
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Thu Jul 29 01:00:27 2010 -0400
+
+    remove identity,options,readonly,transient no-ops
+
+ jsonschema/validator.py |   20 +++-----------------
+ 1 file changed, 3 insertions(+), 17 deletions(-)
+
+commit 44528a6e152dcfb2664adbc787e3a2cf9c4584c8
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jul 28 19:26:28 2010 -0400
+
+    change some exception strings to fix deprecated usage
+
+ jsonschema/validator.py |   10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit c8fffbad01f335fefe6738f12920d83a2635ac85
+Author: James Turk <james.p.turk@gmail.com>
+Date:   Wed Jul 28 16:00:08 2010 -0400
+
+    remove some packaging junk
+
+ PKG-INFO                                 |   21 -----------------
+ jsonschema.egg-info/PKG-INFO             |   21 -----------------
+ jsonschema.egg-info/SOURCES.txt          |   38 ------------------------------
+ jsonschema.egg-info/dependency_links.txt |    1 -
+ jsonschema.egg-info/top_level.txt        |    1 -
+ jsonschema.egg-info/zip-safe             |    1 -
+ setup.cfg                                |    5 ----
+ 7 files changed, 88 deletions(-)
+
+commit 882aabcd7515313fdf4a8967de2df292e9359bc1
+Author: Christopher Groskopf <staringmonkey@gmail.com>
+Date:   Sun Oct 4 21:50:33 2009 -0700
+
+    Initial commit.
+
+ LICENSE.txt                                   |   19 ++
+ MANIFEST.in                                   |    5 +
+ PKG-INFO                                      |   21 ++
+ README.ja.utf8.txt                            |   79 +++++
+ README.txt                                    |   77 +++++
+ docs/jsonschema.html                          |  206 ++++++++++++
+ examples/data.js                              |    4 +
+ examples/sample_override.py                   |   56 ++++
+ examples/schema.js                            |    8 +
+ ez_setup.py                                   |  272 +++++++++++++++
+ jsonschema.egg-info/PKG-INFO                  |   21 ++
+ jsonschema.egg-info/SOURCES.txt               |   38 +++
+ jsonschema.egg-info/dependency_links.txt      |    1 +
+ jsonschema.egg-info/top_level.txt             |    1 +
+ jsonschema.egg-info/zip-safe                  |    1 +
+ jsonschema/__init__.py                        |  122 +++++++
+ jsonschema/tests/__init__.py                  |   24 ++
+ jsonschema/tests/test_additionalProperties.py |   86 +++++
+ jsonschema/tests/test_default.py              |   54 +++
+ jsonschema/tests/test_description.py          |   31 ++
+ jsonschema/tests/test_disallow.py             |  163 +++++++++
+ jsonschema/tests/test_enum.py                 |   34 ++
+ jsonschema/tests/test_items.py                |   73 ++++
+ jsonschema/tests/test_maxDecimal.py           |   37 ++
+ jsonschema/tests/test_maxItems.py             |   56 ++++
+ jsonschema/tests/test_maxLength.py            |   46 +++
+ jsonschema/tests/test_maximum.py              |   65 ++++
+ jsonschema/tests/test_minItems.py             |   56 ++++
+ jsonschema/tests/test_minLength.py            |   46 +++
+ jsonschema/tests/test_minimum.py              |   65 ++++
+ jsonschema/tests/test_optional.py             |   45 +++
+ jsonschema/tests/test_pattern.py              |   38 +++
+ jsonschema/tests/test_properties.py           |   73 ++++
+ jsonschema/tests/test_requires.py             |   44 +++
+ jsonschema/tests/test_title.py                |   31 ++
+ jsonschema/tests/test_type.py                 |  157 +++++++++
+ jsonschema/validator.py                       |  448 +++++++++++++++++++++++++
+ setup.cfg                                     |    5 +
+ setup.py                                      |   59 ++++
+ 39 files changed, 2667 insertions(+)
