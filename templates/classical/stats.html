@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load humanize %}
+
 {% block headtitle %}Stats - classical music - {{ block.super }}{% endblock %}
 
 {% block title %}Classical music statistics{% endblock %}
@@ -8,19 +10,19 @@
 
 <dl>
   <dt>Number of compositions</dt>
-  <dd>{{ work_count }}</dd>
+  <dd>{{ work_count|intcomma }}</dd>
 
   <dt>Number of composers</dt>
-  <dd>{{ composer_count }}</dd>
+  <dd>{{ composer_count|intcomma }}</dd>
 
   <dt>Number of recordings</dt>
-  <dd>{{ recording_count }}</dd>
+  <dd>{{ recording_count|intcomma }}</dd>
 
   <dt>Average number of recordings per composition</dt>
   <dd>{{ recording_average|floatformat:2 }}</dd>
 
   <dt>Number of movements</dt>
-  <dd>{{ movement_count }}</dd>
+  <dd>{{ movement_count|intcomma }}</dd>
 
   <dt>Average number of movements per recording</dt>
   <dd>{{ movement_average|floatformat:2 }}</dd>

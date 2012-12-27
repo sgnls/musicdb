@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load duration %}
+{% load humanize %}
 
 {% block headtitle %}Stats{% endblock %}
 
@@ -10,7 +11,7 @@
 
 <dl>
   <dt>Number of music files</dt>
-  <dd>{{ music_file_count }}</dd>
+  <dd>{{ music_file_count|intcomma }}</dd>
 
   <dt>Total duration</dt>
   <dd>{{ total_duration|duration }}</dd>
