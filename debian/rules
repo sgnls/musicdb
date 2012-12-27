@@ -12,5 +12,5 @@ override_dh_auto_test:
 	musicdb/manage.py test --verbosity=2
 
 override_dh_auto_build:
-	debian/generate_hashes media > musicdb/settings/hashes.py
+	debian/bin/generate_hashes media > musicdb/settings/hashes.py
 	echo "from roles.live import *" > musicdb/settings/role.py
