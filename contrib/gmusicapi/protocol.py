@@ -791,6 +791,9 @@ class MM_Protocol(object):
             track.bitrate = audio.info.bitrate / 1000
             track.duration = int(audio.info.length * 1000)
 
+            track.title = "-"
+            continue
+
             #GM requires at least a title.
             if "title" in audio:
                 track.title = audio["title"][0] 
