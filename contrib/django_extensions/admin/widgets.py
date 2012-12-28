@@ -1,5 +1,7 @@
+import django
 from django import forms
 from django.conf import settings
+from django.contrib.admin.sites import site
 from django.utils.safestring import mark_safe
 from django.utils.text import truncate_words
 from django.template.loader import render_to_string
@@ -16,16 +18,16 @@ class ForeignKeySearchInput(ForeignKeyRawIdWidget):
     # Set this to the patch of the search view
     search_path = '../foreignkey_autocomplete/'
 
-    class Media:
-        css = {
-            'all': ('django_extensions/css/jquery.autocomplete.css',)
-        }
-        js = (
-            'django_extensions/js/jquery.js',
-            'django_extensions/js/jquery.bgiframe.min.js',
-            'django_extensions/js/jquery.ajaxQueue.js',
-            'django_extensions/js/jquery.autocomplete.js',
-        )
+    def _media(self):
+        js_files = ['django_extensions/js/jquery.bgiframe.min.js',
+                    'django_extensions/js/jquery.ajaxQueue.js',
+                    'django_extensions/js/jquery.autocomplete.js']
+        if django.get_version() < "1.3":
+            js_files.append('django_extensions/js/jquery.js')
+        return forms.Media(css={'all': ('django_extensions/css/jquery.autocomplete.css',)},
+                           js=js_files)
+
+    media = property(_media)
 
     def label_for_value(self, value):
         key = self.rel.get_related_field().name
@@ -34,12 +36,15 @@ class ForeignKeySearchInput(ForeignKeyRawIdWidget):
 
     def __init__(self, rel, search_fields, attrs=None):
         self.search_fields = search_fields
-        super(ForeignKeySearchInput, self).__init__(rel, attrs)
+        if django.get_version() >= "1.4":
+            super(ForeignKeySearchInput, self).__init__(rel, site, attrs)
+        else:
+            super(ForeignKeySearchInput, self).__init__(rel, attrs)
 
     def render(self, name, value, attrs=None):
         if attrs is None:
             attrs = {}
-        output = [super(ForeignKeySearchInput, self).render(name, value, attrs)]
+        #output = [super(ForeignKeySearchInput, self).render(name, value, attrs)]
         opts = self.rel.to._meta
         app_label = opts.app_label
         model_name = opts.object_name.lower()
@@ -57,16 +62,23 @@ class ForeignKeySearchInput(ForeignKeyRawIdWidget):
             label = self.label_for_value(value)
         else:
             label = u''
+
+        try:
+            admin_media_prefix = settings.ADMIN_MEDIA_PREFIX
+        except AttributeError:
+            admin_media_prefix = settings.STATIC_URL + "admin/"
+
         context = {
             'url': url,
             'related_url': related_url,
-            'admin_media_prefix': settings.ADMIN_MEDIA_PREFIX,
+            'admin_media_prefix': admin_media_prefix,
             'search_path': self.search_path,
             'search_fields': ','.join(self.search_fields),
             'model_name': model_name,
             'app_label': app_label,
             'label': label,
             'name': name,
+            'pre_django_14': (django.VERSION[:2] < (1, 4)),
         }
         output.append(render_to_string(self.widget_template or (
             'django_extensions/widgets/%s/%s/foreignkey_searchinput.html' % (app_label, model_name),

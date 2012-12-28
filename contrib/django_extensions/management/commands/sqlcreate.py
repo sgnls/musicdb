@@ -1,9 +1,20 @@
-import django
-from django.core.management.base import NoArgsCommand, CommandError
-from django.conf import settings
+from optparse import make_option
 import sys
 
-class Command(NoArgsCommand):
+import django
+from django.core.management.base import CommandError, BaseCommand
+from django.conf import settings
+
+
+class Command(BaseCommand):
+    option_list = BaseCommand.option_list + (
+        make_option('-R', '--router', action='store',
+                    dest='router', default=None,
+                    help='Use this router-database other then defined in settings.py'),
+        make_option('-D', '--drop', action='store_true',
+                    dest='drop', default=False,
+                    help='If given, includes commands to drop any existing user and database.'),
+    )
     help = """Generates the SQL to create your database for you, as specified in settings.py
 The envisioned use case is something like this:
 
@@ -17,7 +28,7 @@ The envisioned use case is something like this:
     def set_db_settings(**options):
         if django.get_version() >= "1.2":
             router = options.get('router')
-            if router == None:
+            if router is None:
                 return False
 
             # retrieve this with the 'using' argument
@@ -33,7 +44,7 @@ The envisioned use case is something like this:
             # settings are set for django < 1.2 no modification needed
             return True
 
-    def handle_noargs(self, **options):
+    def handle(self, *args, **options):
 
         if django.get_version() >= "1.2":
             got_db_settings = self.set_db_settings(**options)
@@ -58,11 +69,15 @@ The envisioned use case is something like this:
 """)
             print "CREATE DATABASE %s CHARACTER SET utf8 COLLATE utf8_bin;" % dbname
             print "GRANT ALL PRIVILEGES ON %s.* to '%s'@'%s' identified by '%s';" % (
-                    dbname, dbuser, dbhost, dbpass)
+                dbname, dbuser, dbhost, dbpass
+            )
         elif engine == 'postgresql_psycopg2':
-            print "CREATE USER %s WITH ENCRYPTED PASSWORD '%s';" % (dbuser, dbpass)
+            if options.get('drop'):
+                print "DROP DATABASE IF EXISTS %s;" % (dbname,)
+                print "DROP USER IF EXISTS %s;" % (dbuser,)
+            print "CREATE USER %s WITH ENCRYPTED PASSWORD '%s' CREATEDB;" % (dbuser, dbpass)
             print "CREATE DATABASE %s WITH ENCODING 'UTF-8' OWNER \"%s\";" % (dbname, dbuser)
-            #print "GRANT ALL PRIVILEGES ON DATABASE %s TO %s" % (dbname, dbuser)
+            print "GRANT ALL PRIVILEGES ON DATABASE %s TO %s;" % (dbname, dbuser)
         elif engine == 'sqlite3':
             sys.stderr.write("-- manage.py syncdb will automatically create a sqlite3 database file.\n")
         else:

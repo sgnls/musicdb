@@ -100,8 +100,7 @@ class UUID(object):
                     when the variant is RFC_4122)
     """
 
-    def __init__(self, hex=None, bytes=None, bytes_le=None, fields=None,
-                       int=None, version=None):
+    def __init__(self, hex=None, bytes=None, bytes_le=None, fields=None, int=None, version=None):
         r"""Create a UUID from either a string of 32 hexadecimal digits,
         a string of 16 bytes as the 'bytes' argument, a string of 16 bytes
         in little-endian order as the 'bytes_le' argument, a tuple of six
@@ -522,9 +521,10 @@ def uuid1(node=None, clock_seq=None):
 def uuid3(namespace, name):
     """Generate a UUID from the MD5 hash of a namespace UUID and a name."""
     try:
-        from hashlib import md5
+        import hashlib
+        md5 = hashlib.md5
     except ImportError:
-        from md5 import md5
+        from md5 import md5  # NOQA
     hash = md5(namespace.bytes + name).digest()
     return UUID(bytes=hash[:16], version=3)
 
@@ -550,9 +550,10 @@ def uuid4():
 def uuid5(namespace, name):
     """Generate a UUID from the SHA-1 hash of a namespace UUID and a name."""
     try:
-        from hashlib import sha1 as sha
+        import hashlib
+        sha = hashlib.sha1
     except ImportError:
-        from sha import sha
+        from sha import sha  # NOQA
     hash = sha(namespace.bytes + name).digest()
     return UUID(bytes=hash[:16], version=5)
 

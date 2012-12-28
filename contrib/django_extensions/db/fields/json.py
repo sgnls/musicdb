@@ -15,7 +15,6 @@ from decimal import Decimal
 from django.db import models
 from django.conf import settings
 from django.utils import simplejson
-from django.utils.encoding import smart_unicode
 
 
 class JSONEncoder(simplejson.JSONEncoder):
@@ -49,6 +48,7 @@ class JSONDict(dict):
     def __repr__(self):
         return dumps(self)
 
+
 class JSONList(list):
     """
     As above
@@ -65,13 +65,16 @@ class JSONField(models.TextField):
     __metaclass__ = models.SubfieldBase
 
     def __init__(self, *args, **kwargs):
-        if 'default' not in kwargs:
+        default = kwargs.get('default')
+        if not default:
             kwargs['default'] = '{}'
+        elif isinstance(default, (list, dict)):
+            kwargs['default'] = dumps(default)
         models.TextField.__init__(self, *args, **kwargs)
 
     def to_python(self, value):
         """Convert our string value to JSON after we load it from the DB"""
-        if not value:
+        if value is None or value == '':
             return {}
         elif isinstance(value, basestring):
             res = loads(value)
