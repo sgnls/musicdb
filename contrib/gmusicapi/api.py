@@ -688,7 +688,6 @@ class Api(UsesLog):
         with self._temp_mp3_conversion(filenames) as (upload_files, orig_fnames):
 
             fname_to_id = self._upload_mp3s(map(lambda f: f.name, upload_files))
-            print "back"
 
             for fname, sid in fname_to_id.items():
                 results[orig_fnames[fname]] = sid
@@ -773,35 +772,28 @@ class Api(UsesLog):
 
     def _upload_mp3s(self, filenames):
         """Uploads a list of files. All files are assumed to be mp3s."""
-        print filenames
 
         #filename -> GM song id
         fn_sid_map = {}
 
         #Form and send the metadata request.
         metadata_request, cid_map = self.mm_protocol.make_metadata_request(filenames)
-        print "m_r", metadata_request
         metadataresp = self._mm_pb_call("metadata", metadata_request)
 
         #Form upload session requests (for songs GM wants).
         session_requests = self.mm_protocol.make_upload_session_requests(cid_map, metadataresp)
-
-        print "s_r", session_requests
 
         #Try to get upload sessions and upload each song.
         #This section is in bad need of refactoring.
         for filename, server_id, payload in session_requests:
 
             post_data = json.dumps(payload)
-            print post_data
 
             success = False
             already_uploaded = False
             attempts = 0
 
             while not success and attempts < 3:
-
-                print 1
                 
                 #Pull this out with the below call when it makes sense to.
                 res = json.loads(
@@ -810,7 +802,6 @@ class Api(UsesLog):
                         post_data).read())
 
                 if 'sessionStatus' in res:
-                    print 2
                     self.log.debug("got a session. full response: %s", str(res))
                     success = True
                     break

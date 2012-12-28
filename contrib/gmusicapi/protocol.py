@@ -839,9 +839,6 @@ class MM_Protocol(object):
         sessions = []
 
         for upload in server_response.response.uploads:
-
-            print "upload", upload
-
             filename = filemap[upload.id]
             audio = MP3(filename, ID3 = EasyID3)
             upload_title = audio["title"] if "title" in audio else filename.split(r'/')[-1]
