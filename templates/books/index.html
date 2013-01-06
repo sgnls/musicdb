@@ -15,7 +15,7 @@
 
   <ul>
   {% for book in elem.list %}
-    <li><a href="#">{{ book.title }}</a></li>
+    <li><a href="{{ settings.MEDIA_LOCATION_HTTP }}/{{ book.file.location }}">{{ book.title }}</a></li>
   {% endfor %}
   </ul>
 {% endfor %}
