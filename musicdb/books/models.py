@@ -15,6 +15,8 @@ class Book(models.Model):
 
     title = models.CharField(max_length=250)
 
+    file = models.OneToOneField('common.File', related_name='book', null=True)
+
     class Meta:
         ordering = ('author', 'title')
 
