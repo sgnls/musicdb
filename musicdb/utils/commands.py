@@ -23,9 +23,7 @@ TODO
    * Reset
 """
 
-class AddMusicFilesCommand(BaseCommand):
-    CAPITALISE_TRACK_NAMES = True
-
+class AddFilesCommand(BaseCommand):
     def handle(self, *files, **options):
         self.options = options
 
@@ -38,29 +36,7 @@ class AddMusicFilesCommand(BaseCommand):
                 if os.path.splitext(filename)[1].lower() in ('.flac', '.mp3'):
                     files.append(filename)
 
-        tracknames = track_names_from_filenames(
-            files,
-            capitalise=self.CAPITALISE_TRACK_NAMES,
-        )
-        files = SortedDict(zip(files, tracknames))
-
-        if not files:
-            raise CommandError("Must specify at least one file")
-
-        for filename in files:
-            if os.path.isfile(filename):
-                continue
-
-            raise CommandError("%r is not a valid file" % filename)
-
-        try:
-            self._handle_files(files)
-        except KeyboardInterrupt:
-            sys.exit(1)
-
-    @transaction.commit_on_success
-    def _handle_files(self, files):
-        return self.handle_files(files)
+        transaction.commit_on_success(self.handle_filenames)(files)
 
     def prompt_string(self, name, qs=None, field=None, default=None):
         if qs and field:
@@ -83,8 +59,55 @@ class AddMusicFilesCommand(BaseCommand):
 
             return input.decode('utf8').strip()
 
+    def prompt_year(self, name, low=1900, high=2020, default=None):
+        readline.set_completer(None)
+        while 1:
+            try:
+                if default:
+                    input = raw_input('%s [%d]: ' % (name, default))
+                else:
+                    input = raw_input('%s: ' % name)
+
+                if not input:
+                    return default or None
+
+                year = int(input)
+
+                if year < low or year > high:
+                    continue
+
+                return year
+            except ValueError:
+                pass
+
+class AddMusicFilesCommand(AddFilesCommand):
+    CAPITALISE_TRACK_NAMES = True
+
+    def handle_filenames(self, files):
+        tracknames = track_names_from_filenames(
+            files,
+            capitalise=self.CAPITALISE_TRACK_NAMES,
+        )
+        files = SortedDict(zip(files, tracknames))
+
+        if not files:
+            raise CommandError("Must specify at least one file")
+
+        for filename in files:
+            if os.path.isfile(filename):
+                continue
+
+            raise CommandError("%r is not a valid file" % filename)
+
+        try:
+            self.handle_files(files)
+        except KeyboardInterrupt:
+            sys.exit(1)
+
     def edit_track(self, files):
-        input = raw_input('[A]ccept, 1-%d to edit name, s/pattern/repl/g: ' % len(files))
+        input = raw_input(
+            '[A]ccept, 1-%d to edit name, s/pattern/repl/g: ' % len(files)
+        )
 
         try:
             filename = files.keys()[int(input) - 1]
@@ -113,27 +136,6 @@ class AddMusicFilesCommand(BaseCommand):
             print "I: %d track(s) changed" % count
 
         return False
-
-    def prompt_year(self, name, low=1900, high=2020, default=None):
-        readline.set_completer(None)
-        while 1:
-            try:
-                if default:
-                    input = raw_input('%s [%d]: ' % (name, default))
-                else:
-                    input = raw_input('%s: ' % name)
-
-                if not input:
-                    return default or None
-
-                year = int(input)
-
-                if year < low or year > high:
-                    continue
-
-                return year
-            except ValueError:
-                pass
 
     def show_filenames(self, files):
         pad_by = len(max(files.values(), key=len)) + 2
