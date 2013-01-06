@@ -30,7 +30,7 @@
 
       <ol style="padding-top: 5px; padding-left: 15px;">
         {% for track in cd.tracks.select_related.all %}
-          <li><a href="{% url play-music-file track.music_file_id %}">{{ track }}</a> {{ track.music_file.length|duration }}</li>
+          <li><a href="{% url common:play-music-file track.music_file_id %}">{{ track }}</a> {{ track.music_file.length|duration }}</li>
         {% endfor %}
       </ol>
 

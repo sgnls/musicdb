@@ -9,7 +9,7 @@
   {% if request.user.is_authenticated %}
     <a class="btn btn-large btn-primary" href="{% url nonclassical %}">Albums</a>
     <a class="btn btn-large btn-primary" href="{% url classical %}">Classical</a>
-    <a class="btn btn-large" href="{% url stats %}">Statistics</a>
+    <a class="btn btn-large" href="{% url common:stats %}">Statistics</a>
   {% else %}
     <a class="btn btn-large btn-primary" href="{% url auth:login %}">Login</a>
   {% endif %}
