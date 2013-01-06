@@ -11,7 +11,9 @@
 {% regroup books by author as by_author %}
 
 {% for elem in by_author %}
-  <h3>{{ elem.grouper.last_name }}, {{ elem.grouper.first_names }}</h3>
+  {% with elem.grouper as author %}
+  <h3>{{ author.last_name }}{% if author.first_names %}, {{ author.first_names }}{% endif %}</h3>
+  {% endwith %}
 
   <ul>
   {% for book in elem.list %}
