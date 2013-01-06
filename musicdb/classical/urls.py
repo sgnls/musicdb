@@ -1,33 +1,33 @@
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('musicdb.classical.views',
-    url(r'^$', 'index',
+    url(r'^classical/$', 'index',
         name='classical'),
 
-    url(r'^composers/$', 'composers',
+    url(r'^classical/composers/$', 'composers',
         name='classical-composers'),
-    url(r'^artists/$', 'artists',
+    url(r'^classical/artists/$', 'artists',
         name='classical-artists'),
-    url(r'^ensembles/$', 'ensembles',
+    url(r'^classical/ensembles/$', 'ensembles',
         name='classical-ensembles'),
 
-    url(r'^categories/$', 'categories',
+    url(r'^classical/categories/$', 'categories',
         name='classical-categories'),
-    url(r'^category/(?P<category_slug>[^/]+)$', 'category',
+    url(r'^classical/category/(?P<category_slug>[^/]+)$', 'category',
         name='classical-category'),
 
-    url(r'^stats/$', 'stats',
+    url(r'^classical/stats/$', 'stats',
         name='classical-stats'),
-    url(r'^recent$', 'recent',
+    url(r'^classical/recent$', 'recent',
         name='classical-recent'),
 
-    url(r'^artist/(?P<slug>[^/]+)$', 'artist',
+    url(r'^classical/artist/(?P<slug>[^/]+)$', 'artist',
         name='classical-artist'),
-    url(r'^artist/(?P<artist_slug>[^/]+)/(?P<slug>[^/]+)$', 'work',
+    url(r'^classical/artist/(?P<artist_slug>[^/]+)/(?P<slug>[^/]+)$', 'work',
         name='classical-work'),
-    url(r'^ensemble/(?P<slug>[^/]+)$', 'ensemble',
+    url(r'^classical/ensemble/(?P<slug>[^/]+)$', 'ensemble',
         name='classical-ensemble'),
 
-    url(r'^play/recording/(?P<recording_id>\d+).m3u$', 'play_recording',
+    url(r'^classical/play/recording/(?P<recording_id>\d+).m3u$', 'play_recording',
         name='classical-play-recording'),
 )
