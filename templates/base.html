@@ -18,10 +18,10 @@
 <div class="navbar navbar-fixed-top navbar-inverse" data-dropdown="dropdown">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="{% url home %}">Lamby's Music Database</a>
+      <a class="brand" href="{% url static:home %}">Lamby's Music Database</a>
       <ul class="nav">
         {% if request.user.is_authenticated %}
-        <li class=""><a href="{% url home %}">Home</a></li>
+        <li class=""><a href="{% url static:home %}">Home</a></li>
         <li class=""><a href="{% url nonclassical %}">Albums</a></li>
         <li class=""><a href="{% url classical-composers %}">Classical</a></li>
         <li class=""><a href="{% url unfiled:view %}">Unfiled</a></li>
