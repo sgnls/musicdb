@@ -49,10 +49,12 @@ class Command(AddFilesCommand):
 
         book = author.books.create(title=title)
 
-        File.objects.create_from_path(
+        book.file = File.objects.create_from_path(
             filenames[0],
             'books/%d/%d.mobi' % (book.pk, book.pk),
         )
+
+        book.save()
 
         print "I: Added %s by %s %s" % (
             book.title,
