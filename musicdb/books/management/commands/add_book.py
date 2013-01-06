@@ -7,7 +7,7 @@ from musicdb.common.models import File
 
 class Command(AddFilesCommand):
     option_list = AddFilesCommand.option_list + (
-        make_option('-f', '--author-first-names', dest='first_names', default='',
+        make_option('-f', '--author-first-names', dest='first_names', default=None,
             action='store', help="Author first names (optional)"),
         make_option('-l', '--author-last-name', dest='last_name', default='',
             action='store', help="Author last name (optional)"),
@@ -39,9 +39,8 @@ class Command(AddFilesCommand):
         except IndexError:
             default = ''
 
-        first_names = self.options['first_names']
-
-        if not first_names:
+        first_names = ''
+        if self.options['first_names'] is None:
             first_names = self.prompt_string(
                 'Author forenames',
                 qs,
