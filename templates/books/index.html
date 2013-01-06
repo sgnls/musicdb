@@ -1,11 +1,23 @@
 {% extends "base.html" %}
 
-{% block headtitle %}Books - {{ block.super }}{% endblock %}
+{% load humanize %}
 
-{% block title %}Books{% endblock %}
+{% block headtitle %}Books - {{ block.super }}{% endblock %}
 
 {% block container %}
 
-<h1>Books</h1>
+<h1>Books <small>({{ books.count|intcomma }})</small></h1>
+
+{% regroup books by author as by_author %}
+
+{% for elem in by_author %}
+  <h3>{{ elem.grouper }}</h3>
+
+  <ul>
+  {% for book in elem.list %}
+    <li><a href="#">{{ book.title }}</a></li>
+  {% endfor %}
+  </ul>
+{% endfor %}
 
 {% endblock %}
