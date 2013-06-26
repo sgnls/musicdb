@@ -7,7 +7,7 @@ from .decorators import login_not_required
 @login_not_required
 def login(request):
     if request.user.is_authenticated():
-        return redirect('home')
+        return redirect('static:home')
 
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
