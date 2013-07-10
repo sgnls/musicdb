@@ -30,8 +30,8 @@ Local database setup
     
     musicdb=> \q
 
-Syncing with the live site
---------------------------
+Syncing with the live site (lamby only)
+---------------------------------------
 
 Sync database::
 
