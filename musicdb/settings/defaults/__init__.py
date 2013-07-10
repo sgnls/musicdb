@@ -97,6 +97,7 @@ INSTALLED_APPS = (
     'south',
 
     'musicdb.auth',
+    'musicdb.db',
     'musicdb.books',
     'musicdb.common',
     'musicdb.classical',
