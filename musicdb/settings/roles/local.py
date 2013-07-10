@@ -5,8 +5,8 @@ ADMINS = ()
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-        'NAME': 'musicdb.sqlite',             # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
+        'NAME': 'musicdb',             # Or path to database file if using sqlite3.
         'USER': '',             # Not used with sqlite3.
         'PASSWORD': '',         # Not used with sqlite3.
         'HOST': '',             # Set to empty string for localhost. Not used with sqlite3.
