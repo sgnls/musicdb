@@ -6,13 +6,6 @@
 
 {% block container %}
 
-<ul class="breadcrumb hidden-xs">
-  <li><a href="{% url static:home %}">Home</a></li>
-  <li><a href="{% url nonclassical %}">Albums</a></li>
-  <li><a href="{{ artist.get_absolute_url }}">{{ artist }}</a></li>
-  <li class="active">{{ album }}</li>
-</ul>
-
 <div class="row">
   <div class="col-sm-8">
     <h1>{{ album.title }}{% if album.year %} <small>({{ album.year }})</small>{% endif %}</h1>
