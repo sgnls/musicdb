@@ -27,7 +27,7 @@ class Command(AddFilesCommand):
         last_name = self.options['last_name']
         if not last_name:
             last_name = self.prompt_string(
-                'Author',
+                "Author last name",
                 Author.objects.all(),
                 'last_name',
             )
