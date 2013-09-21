@@ -13,6 +13,7 @@ def index(request, letter=None):
     artists = Artist.objects.filter(name_first=letter)
 
     return render(request, 'nonclassical/index.html', {
+        'letter': letter,
         'letters': Artist.objects.letters(),
         'artists': artists,
     })

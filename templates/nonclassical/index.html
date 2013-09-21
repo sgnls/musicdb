@@ -6,18 +6,18 @@
 
 {% block content %}
 
-<p>
-  {% for letter in letters %}
-    <a href="{% url nonclassical-letter letter %}">
-      {% if letter == "0" %}
+<div class="btn-group btn-group-sm">
+  {% for x in letters %}
+    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical-letter x %}">
+      {% if x == "0" %}
         #</a>
       {% else %}
-        {{ letter|upper }}</a>
+        {{ x|upper }}</a>
       {% endif %}
   {% endfor %}
-</p>
+</div>
 
-<ul>
+<ul class="list-unstyled" style="margin-top: 30px;">
 {% for artist in artists %}
   <li><a href="{{ artist.get_absolute_url }}">{{ artist }}</a></li>
 {% endfor %}
