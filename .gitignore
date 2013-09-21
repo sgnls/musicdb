@@ -1,4 +1,5 @@
 *.pyc
-/media_location/
 /musicdb/settings/custom.py
-/site_media/*
+/storage/
+/site_media/
+/media_location/

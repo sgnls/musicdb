@@ -117,8 +117,8 @@ try:
 except IOError:
     SECRET_KEY = 'gh*w7@sdfj4%i=xyjatf_@!wx^d#tam^&5q6(f=z6io-302iwu'
 
-MEDIA_ROOT = 'site_media'
-MEDIA_URL = '/site_media/'
+MEDIA_ROOT = '/srv/musicdb.chris-lamb.co.uk/storage'
+MEDIA_URL = '/storage/'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
