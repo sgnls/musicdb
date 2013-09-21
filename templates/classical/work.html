@@ -31,7 +31,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-sm-9">
     {% if recording.movements.count > 1 %}
       <ul style="list-style-type: upper-roman">
       {% for movement in recording.movements.all %}
@@ -56,7 +56,7 @@
     {% endfor %}
     </ul>
   </div>
-  <div class="col-md-3">
+  <div class="col-sm-3">
     <dl>
       <dt>Duration</dt>
       <dd>{{ recording.total_duration|duration }}</dd>
