@@ -23,11 +23,7 @@
 
   <div class="col-sm-3 text-center" style="margin-bottom: 20px;">
     <a href="{% url nonclassical-album artist.slug album.slug %}">
-    {% if album.cover %}
-    <img src="{{ album.cover.thumbnail.url }}" alt="{{ album }}"></a>
-    {% else %}
-    <img src="{% static "img/no_album_art.jpg" %}" alt="{{ album }}"></a>
-    {% endif %}
+    <img src="{{ album.image.thumbnail.url }}" alt="{{ album }}" height="125" width="125"></a>
     <br>
     <a href="{% url nonclassical-album artist.slug album.slug %}">{{ album.title }}</a>
     {% if album.year %}({{ album.year }}){% endif %}

@@ -7,7 +7,7 @@
 {% block body %}
 {% for album in albums %}
     <a href="{{ album.get_absolute_url }}" title="{{ album.artist.long_name }} - {{ album }}">
-      <img width="125" height="125" src="{{ album.cover.thumbnail.url }}" alt="{{ album }}">
+      <img width="125" height="125" src="{{ album.image.thumbnail.url }}" alt="{{ album }}">
     </a>
 {% endfor %}
 {% endblock %}
