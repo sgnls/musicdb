@@ -1,0 +1,128 @@
+commit b4cbbadcb5b6a4c30058c677eb10d01c9b54a81b
+Author: Chris Lamb <chris@thread.com>
+Date:   Mon Jun 24 10:26:57 2013 +0100
+
+    Print what we wanted vs what we got.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit fb9e518e71d742a12bcaf81209f032113bf944b0
+Author: Chris Lamb <chris@thread.com>
+Date:   Mon Mar 18 15:23:24 2013 +0000
+
+    Format for the "original" image should be configurable.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 4733da42540d3a334030b6e3106b2c138be415d3
+Author: Chris Lamb <chris@thread.com>
+Date:   Tue Mar 12 15:56:11 2013 +0000
+
+    Pass through fallback properly.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit a3bf9240424700f21b1e89b4663ca4e5c12d78ef
+Author: Chris Lamb <chris@thread.com>
+Date:   Tue Mar 12 15:52:08 2013 +0000
+
+    Add a utility for local installations to use the fallback mechanism too.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/utils.py |   14 ++++++++++++++
+ 1 files changed, 14 insertions(+), 0 deletions(-)
+
+commit db6b5bfc47f55434a034672792ca6067266241ee
+Author: Chris Lamb <chris@thread.com>
+Date:   Tue Mar 12 15:51:49 2013 +0000
+
+    Add support for generating fallback nginx configuration.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py                              |   12 ++++++
+ .../commands/yadt_generate_fallback_config.py      |   42 ++++++++++++++++++++
+ 2 files changed, 54 insertions(+), 0 deletions(-)
+
+commit a5d98f826089a0b9b35fac876e8d3dac399c01cf
+Author: Chris Lamb <chris@thread.com>
+Date:   Tue Mar 12 15:51:12 2013 +0000
+
+    Store all variants we create in a global variable.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit 66119a97f473e35590f3560bfafc956b9331fbc2
+Author: Chris Lamb <chris@thread.com>
+Date:   Tue Mar 12 15:50:35 2013 +0000
+
+    Move configuration to a class so we can hang commands off it.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |   64 ++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 45 insertions(+), 19 deletions(-)
+
+commit 36924c92d91c7e29743a4a7b799c3e87a92cf38e
+Author: Chris Lamb <chris@thread.com>
+Date:   Tue Feb 26 10:24:41 2013 +0000
+
+    Add command to invalidate all of a particular variant.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ .../management/commands/yadt_invalidate_variant.py |   16 ++++++++++++++++
+ 1 files changed, 16 insertions(+), 0 deletions(-)
+
+commit 48f7bd8178056ee925d6a2adb606455350be6426
+Author: Chris Lamb <chris@thread.com>
+Date:   Tue Feb 26 10:24:29 2013 +0000
+
+    Drop unused imports.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/management/commands/yadt_gc.py         |    2 --
+ .../management/commands/yadt_refresh_variant.py    |    1 -
+ 2 files changed, 0 insertions(+), 3 deletions(-)
+
+commit ce043475e584e5d8456a72fe6253b9f903d7716c
+Author: Chris Lamb <chris@thread.com>
+Date:   Tue Feb 26 10:23:18 2013 +0000
+
+    Split this into another method.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+commit 29f55cd97bd7f84d41eb77b831b2df1df09c5f9d
+Author: Chris Lamb <chris@thread.com>
+Date:   Thu Jan 10 11:37:49 2013 +0000
+
+    Initial commit.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ .gitignore                                         |    1 +
+ COPYING                                            |   24 ++
+ django_yadt/__init__.py                            |    1 +
+ django_yadt/fields.py                              |  279 ++++++++++++++++++++
+ django_yadt/management/commands/yadt_gc.py         |   40 +++
+ .../management/commands/yadt_refresh_variant.py    |   21 ++
+ django_yadt/utils.py                               |   30 ++
+ 7 files changed, 396 insertions(+), 0 deletions(-)
