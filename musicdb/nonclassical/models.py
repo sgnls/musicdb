@@ -2,6 +2,8 @@ import os
 import urllib
 import datetime
 
+from django_yadt import YADTImageField
+
 from django.db import models
 from django.core.files import File as DjangoFile
 from django.db.models.aggregates import Sum
@@ -56,6 +58,23 @@ class Album(models.Model, NextPreviousMixin):
     title = models.CharField(max_length=200)
     artist = models.ForeignKey(Artist, related_name='albums')
     year = models.IntegerField(blank=True, null=True)
+
+    image = YADTImageField(variants={
+        'large': {
+            'crop': True,
+            'width': 300,
+            'height': 300,
+            'format': 'jpeg',
+            'fallback': True,
+        },
+        'thumbnail': {
+            'crop': True,
+            'width': 125,
+            'height': 125,
+            'format': 'jpeg',
+            'fallback': True,
+        },
+    }, cachebust=True)
 
     cover = StdImageField(
         upload_to='album_covers',
