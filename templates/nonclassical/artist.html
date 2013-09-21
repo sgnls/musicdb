@@ -4,7 +4,7 @@
 
 {% block container %}
 
-<ul class="breadcrumb hidden-xs">
+<ul class="breadcrumb hidden-xs hidden-sm" style="margin-top: 15px;">
   <li><a href="{% url static:home %}">Home</a></li>
   <li><a href="{% url nonclassical-letter artist.name_first %}">Albums</a></li>
   <li class="active">{{ artist }}</li>
