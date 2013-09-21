@@ -133,7 +133,7 @@ class Album(models.Model, NextPreviousMixin):
     def set_artwork_from_url(self, url):
         tempfile, _ = urllib.urlretrieve(url)
         try:
-            self.cover = DjangoFile(open(tempfile))
+            self.image.save(DjangoFile(open(tempfile)))
             self.save()
         except:
             self.cover.delete()
