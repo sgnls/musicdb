@@ -58,7 +58,10 @@ def ensemble(request, slug):
 def work(request, artist_slug, slug):
     work = get_object_or_404(Work, slug=slug, composer__slug=artist_slug)
 
-    recordings = work.recordings.all()
+    recordings = work.recordings.prefetch_related(
+        'movements',
+        'performances',
+    )
 
     return render(request, 'classical/work.html', {
         'work': work,
