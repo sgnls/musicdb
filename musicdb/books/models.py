@@ -11,14 +11,27 @@ class Author(models.Model):
         return "%s %s" % (self.first_names, self.last_name)
 
 class Book(models.Model):
-    author = models.ForeignKey(Author, related_name='books')
-
     title = models.CharField(max_length=250)
 
-    file = models.OneToOneField('common.File', related_name='book', null=True)
-
     class Meta:
-        ordering = ('author', 'title')
+        ordering = ('title',)
 
     def __unicode__(self):
-        return "%s - %s" % (self.author, self.title)
+        return self.title
+
+class BookAuthor(models.Model):
+    book = models.ForeignKey(Book, related_name='authors')
+    author = models.ForeignKey(Author, related_name='books')
+    num = models.IntegerField()
+
+    class Meta:
+        ordering = ('num',)
+        unique_together = (
+            ('book', 'num'),
+            ('book', 'author'),
+        )
+
+class File(models.Model):
+    book = models.ForeignKey(Book, related_name='files')
+
+    file = models.OneToOneField('common.File', related_name='book')
