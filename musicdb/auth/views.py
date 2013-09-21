@@ -38,7 +38,7 @@ def logout(request):
 
     messages.success(request, "You were succesfully logged out")
 
-    return redirect('home')
+    return redirect('static:home')
 
 def change_password(request):
     if request.method == 'POST':
