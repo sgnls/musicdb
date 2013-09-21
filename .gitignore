@@ -1,6 +1,4 @@
 *.pyc
-*.sqlite
-*.db
 *.json
 /media_location/
 /musicdb/settings/custom.py
