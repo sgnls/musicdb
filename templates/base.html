@@ -30,12 +30,12 @@
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
       {% if request.user.is_authenticated %}
-      <li class=""><a href="{% url static:home %}">Home</a></li>
-      <li class=""><a href="{% url nonclassical %}">Albums</a></li>
-      <li class=""><a href="{% url classical-composers %}">Classical</a></li>
-      <li class=""><a href="{% url unfiled:view %}">Unfiled</a></li>
+      <li><a href="{% url static:home %}">Home</a></li>
+      <li><a href="{% url nonclassical %}">Albums</a></li>
+      <li><a href="{% url classical-composers %}">Classical</a></li>
+      <li><a href="{% url unfiled:view %}">Unfiled</a></li>
       {% if request.user.is_superuser %}
-        <li<a href="{% url books:index %}">Books</a></li>
+        <li><a href="{% url books:index %}">Books</a></li>
       {% endif %}
       {% endif %}
     </ul>
