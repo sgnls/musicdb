@@ -168,11 +168,3 @@ PASSWORD_HASHERS = (
 SERVER_EMAIL = 'noreply@musicdb.chris-lamb.co.uk'
 
 SOUTH_TESTS_MIGRATE = False
-
-GOOGLE_MUSIC_EMAIL = 'chris@chris-lamb.co.uk'
-
-try:
-    with open('/var/lib/musicdb/google_music', 'r') as f:
-        GOOGLE_MUSIC_PASSWORD = f.read().strip()
-except IOError:
-    GOOGLE_MUSIC_PASSWORD = None
