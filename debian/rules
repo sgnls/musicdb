@@ -14,6 +14,7 @@ override_dh_auto_build:
 	
 	# Generate YADT fallbacks
 	musicdb/manage.py yadt_generate_fallback_config \
+		--source-prefix=/storage/ \
 		--target-prefix=/media/-/img/yadt_fallbacks/ \
 		> config/nginx.yadt.inc
 	
