@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
 {% block container %}
-<div class="hero-unit" style="text-align: center;">
+<div class="jumbotron">
   <h1>Music Database</h1>
-</div>
 
-<div style="text-align: center">
-  {% if request.user.is_authenticated %}
-    <a class="btn btn-large btn-primary" href="{% url nonclassical %}">Albums</a>
-    <a class="btn btn-large btn-primary" href="{% url classical %}">Classical</a>
-    <a class="btn btn-large" href="{% url common:stats %}">Statistics</a>
-  {% else %}
-    <a class="btn btn-large btn-primary" href="{% url auth:login %}">Login</a>
-  {% endif %}
+  <p>
+    {% if request.user.is_authenticated %}
+      <a class="btn btn-large btn-primary" href="{% url nonclassical %}">Albums</a>
+      <a class="btn btn-large btn-primary" href="{% url classical %}">Classical</a>
+      <a class="btn btn-large btn-default" href="{% url common:stats %}">Statistics</a>
+    {% else %}
+      <a class="btn btn-large btn-primary" href="{% url auth:login %}">Login</a>
+    {% endif %}
+  </p>
 </div>
 {% endblock %}
