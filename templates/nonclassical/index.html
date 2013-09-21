@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="btn-group btn-group-sm">
+<div class="btn-group btn-group-xs visible-xs visible-sm">
   {% for x in letters %}
     <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical-letter x %}">
       {% if x == "0" %}
@@ -17,10 +17,34 @@
   {% endfor %}
 </div>
 
-<ul class="list-unstyled" style="margin-top: 30px;">
+<div class="btn-group btn-group-sm visible-md">
+  {% for x in letters %}
+    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical-letter x %}">
+      {% if x == "0" %}
+        #</a>
+      {% else %}
+        {{ x|upper }}</a>
+      {% endif %}
+  {% endfor %}
+</div>
+
+<div class="btn-group btn-group-md visible-lg">
+  {% for x in letters %}
+    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical-letter x %}">
+      {% if x == "0" %}
+        #</a>
+      {% else %}
+        {{ x|upper }}</a>
+      {% endif %}
+  {% endfor %}
+</div>
+
+<div class="clearfix"></div>
+
+<div class="list-group" style="margin-top: 30px;">
 {% for artist in artists %}
-  <li><a href="{{ artist.get_absolute_url }}">{{ artist }}</a></li>
+  <a class="list-group-item" href="{{ artist.get_absolute_url }}">{{ artist }}</a>
 {% endfor %}
-</ul>
+</div>
 
 {% endblock %}
