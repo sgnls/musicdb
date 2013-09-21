@@ -6,9 +6,7 @@
 
 {% block container %}
 
-<br>
-
-<ul class="breadcrumb">
+<ul class="breadcrumb hidden-xs">
   <li><a href="{% url static:home %}">Home</a></li>
   <li><a href="{% url nonclassical %}">Albums</a></li>
   <li><a href="{{ artist.get_absolute_url }}">{{ artist }}</a></li>
@@ -23,12 +21,12 @@
     {% with album.cds.count as album_cds_count %}
     {% for cd in album.cds.all %}
 
-    <div style="padding-top: 25px">
+    <div>
       {% if album_cds_count != 1 %}
         CD{{ forloop.counter }}
       {% endif %}
 
-      <ol style="padding-top: 5px; padding-left: 15px;">
+      <ol>
         {% for track in cd.tracks.select_related.all %}
           <li><a href="{% url common:play-music-file track.music_file_id %}">{{ track }}</a> {{ track.music_file.length|duration }}</li>
         {% endfor %}
@@ -45,7 +43,7 @@
     {% endfor %}
     {% endwith %}
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 hidden-xs">
     <a href="{% url nonclassical-play-album album.id %}" class="thumbnail">
       <img src="{{ album.image.large.url }}" alt="Play {{ album }}">
     </a>
