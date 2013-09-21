@@ -31,9 +31,9 @@
     {% with performance.recording.work as work %}
       <li>
         <a href="{{ performance.recording.get_absolute_url }}">{{ work }}</a>
-        {% ifnotequal artist.instruments.count 1 %}
+        {% if artist.instruments.count != 1 %}
           ({{ performance.instrument.noun|lower }})
-        {% endifnotequal %}
+        {% endif %}
       </li>
     {% endwith %}
     {% endfor %}

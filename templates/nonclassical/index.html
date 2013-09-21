@@ -9,11 +9,11 @@
 <p>
   {% for letter in letters %}
     <a href="{% url nonclassical-letter letter %}">
-      {% ifequal letter "0" %}
+      {% if letter == "0" %}
         #</a>
       {% else %}
         {{ letter|upper }}</a>
-      {% endifequal %}
+      {% endif %}
   {% endfor %}
 </p>
 

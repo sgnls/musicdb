@@ -47,11 +47,11 @@
     <ul>
     {% for performance in recording.performances.all %}
     {% with performance.get_subclass as subclass %}
-      {% ifequal performance.subclass "artist" %}
+      {% if performance.subclass == "artist" %}
         <li><a href="{{ subclass.artist.get_absolute_url }}">{{ subclass.artist.short_name }}</a> ({{ subclass.instrument|lower }})</li>
       {% else %}
         <li><a href="{{ subclass.ensemble.get_absolute_url }}">{{ subclass.ensemble }}</a></li>
-      {% endifequal %}
+      {% endif %}
     {% endwith %}
     {% endfor %}
     </ul>
@@ -84,18 +84,18 @@
 <ul>
 {% for rel in work.source_relations.all %}
   <li>
-    {% ifnotequal rel.derived.composer work.composer %}
+    {% if rel.derived.composer != work.composer %}
       <a href="{{ rel.derived.composer.get_absolute_url }}">{{ rel.derived.composer }}</a> -
-    {% endifnotequal %}
+    {% endif %}
     <a href="{{ rel.derived.get_absolute_url }}">{{ rel.derived }}</a>
     ({{ rel.source_nature }})
   </li>
 {% endfor %}
 {% for rel in work.derived_relations.all %}
   <li>
-    {% ifnotequal rel.source.composer work.composer %}
+    {% if rel.source.composer != work.composer %}
       <a href="{{ rel.source.composer.get_absolute_url }}">{{ rel.source.composer }}</a> -
-    {% endifnotequal %}
+    {% endif %}
     <a href="{{ rel.source.get_absolute_url }}">{{ rel.source }}</a>
     ({{ rel.derived_nature }})
   </li>
