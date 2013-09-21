@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from musicdb.utils.iter import chunk
 from musicdb.utils.http import render_playlist
-from musicdb.nonclassical.models import Artist, Album, CD, Track
+from musicdb.nonclassical.models import Artist, Album, CD
 
 def index(request, letter=None):
     if letter is None:
