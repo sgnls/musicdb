@@ -41,8 +41,12 @@ def artists(request):
 def artist(request, slug):
     artist = get_object_or_404(Artist, slug=slug)
 
+    works = artist.works.select_related('key').prefetch_related(
+        'catalogues__catalogue',
+    )
+
     return render(request, 'classical/artist.html', {
-        'works': artist.works.select_related('key'),
+        'works': works,
         'artist': artist,
     })
 
