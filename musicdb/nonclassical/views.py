@@ -6,7 +6,7 @@ from musicdb.utils.iter import chunk
 from musicdb.utils.http import render_playlist
 from musicdb.nonclassical.models import Artist, Album, CD, Track
 
-def index(request, letter='a'):
+def index(request, letter=None):
     if letter is None:
         return redirect('nonclassical-letter', 'a')
 

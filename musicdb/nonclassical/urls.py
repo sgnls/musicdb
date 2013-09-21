@@ -2,7 +2,7 @@ from django.conf.urls.defaults import patterns, url
 
 urlpatterns = patterns('musicdb.nonclassical.views',
     url(r'^albums/$', 'index',
-        name='nonclassical', kwargs={'letter': None}),
+        name='nonclassical'),
     url(r'^albums/collage$', 'collage',
         name='nonclassical-collage'),
     url(r'^albums/(?P<letter>[a-z-0])$', 'index',
