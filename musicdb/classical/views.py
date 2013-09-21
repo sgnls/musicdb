@@ -56,8 +56,10 @@ def ensemble(request, slug):
     })
 
 def work(request, artist_slug, slug):
+    work = get_object_or_404(Work, slug=slug, composer__slug=artist_slug)
+
     return render(request, 'classical/work.html', {
-        'work': get_object_or_404(Work, slug=slug, composer__slug=artist_slug),
+        'work': work,
     })
 
 def play_recording(request, recording_id):
