@@ -4,6 +4,9 @@
 
 set -eu
 
+BASE=/usr/share/musicdb
+STORAGE=/srv/musicdb.chris-lamb.co.uk/storage
+
 mkdir -p /var/lib/musicdb
 
 if [ ! -f /var/lib/musicdb/http_suffix ]
@@ -16,7 +19,8 @@ then
 	pwgen -s 50 > /var/lib/musicdb/key
 fi
 
-BASE=/usr/share/musicdb
+mkdir -p ${STORAGE}
+chown www-data:www-data ${STORAGE}
 
 gunicorn-debian stop musicdb
 su www-data -c "${BASE}/musicdb/manage.py migrate --list"
