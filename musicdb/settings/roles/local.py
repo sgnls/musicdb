@@ -1,3 +1,8 @@
+from os.path import abspath, dirname, join
+
+def get_dir(*xs):
+    return join(dirname(dirname(dirname(dirname(abspath(__file__))))), *xs)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
