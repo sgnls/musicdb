@@ -2,7 +2,7 @@ from django.core.management.base import CommandError, make_option
 
 from musicdb.utils.commands import AddFilesCommand
 
-from musicdb.books.models import Author
+from musicdb.books.models import Author, Book
 from musicdb.common.models import File
 
 class Command(AddFilesCommand):
@@ -63,17 +63,15 @@ class Command(AddFilesCommand):
                 '',
             )
 
-        book = author.books.create(title=title)
+        book = Book.objects.create(title=title)
+        book.authors.create(num=1, author=author)
 
-        book.file = File.objects.create_from_path(
+
+        file_ = File.objects.create_from_path(
             filenames[0],
-            'books/%d/%d.mobi' % (book.pk, book.pk),
+            'books/%d/01.mobi' % book.pk,
         )
 
-        book.save()
+        book.files.create(file=file_)
 
-        print "I: Added %s by %s %s" % (
-            book.title,
-            book.author.first_names,
-            book.author.last_name,
-        )
+        print "I: Added."
