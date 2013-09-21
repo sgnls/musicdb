@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Artist, Ensemble, WorkCatalogue, Work, Key, Instrument, \
+from .models import Artist, Ensemble, WorkCatalogue, Work, Instrument, \
     Category, Recording, Catalogue, Movement
 
 class ArtistAdmin(admin.ModelAdmin):
