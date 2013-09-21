@@ -8,18 +8,21 @@
 
 <h1>Books</h1>
 
-{% for author in authors %}
-  <h3>{{ author.last_name }}{% if author.first_names %}, {{ author.first_names }}{% endif %}</h3>
-
-  <ul>
-  {% for book_author in author.books.all %}
-  {% with book_author.book as book %}
-    {% for file in book.files.all %}
-      <li><a href="{{ settings.MEDIA_LOCATION_HTTP }}/{{ file.file.location }}">{{ book.title }}</a></li>
-    {% endfor %}
-  {% endwith %}
+<p>
+  {% for letter in letters %}
+    <a href="{% url books:index letter %}">
+      {% if letter == "0" %}
+        #</a>
+      {% else %}
+        {{ letter|upper }}</a>
+      {% endif %}
   {% endfor %}
-  </ul>
+</p>
+
+<ul>
+{% for author in authors %}
+  <li><a href="{% url books:author author.slug %}">{{ author.long_name }}</a></li>
 {% endfor %}
+</ul>
 
 {% endblock %}

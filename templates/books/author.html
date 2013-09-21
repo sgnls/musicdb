@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block headtitle %}{{ author.long_name }} - Books - {{ block.super }}{% endblock %}
+
+{% block container %}
+
+<h1>{{ author.long_name }}</h1>
+
+<ul>
+  {% for book_author in author.books.all %}
+  {% with book_author.book as book %}
+    {% for file in book.files.all %}
+      <li><a href="{{ settings.MEDIA_LOCATION_HTTP }}/{{ file.file.location }}">{{ book.title }}</a></li>
+    {% endfor %}
+  {% endwith %}
+  {% endfor %}
+</ul>
+
+{% endblock %}

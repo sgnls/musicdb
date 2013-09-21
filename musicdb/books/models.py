@@ -1,6 +1,6 @@
 from django.db import models
 
-from musicdb.db.fields import FirstLetterField
+from musicdb.db.fields import FirstLetterField, MySlugField
 
 from .managers import AuthorManager
 
@@ -8,6 +8,7 @@ class Author(models.Model):
     last_name = models.CharField(max_length=100)
     first_names = models.CharField(max_length=100)
 
+    slug = MySlugField('__unicode__')
     last_name_first = FirstLetterField('last_name')
 
     objects = AuthorManager()
@@ -16,6 +17,13 @@ class Author(models.Model):
         ordering = ('last_name', 'first_names')
 
     def __unicode__(self):
+        return "%s %s" % (self.first_names, self.last_name)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'books:author', (self.slug,)
+
+    def long_name(self):
         return "%s %s" % (self.first_names, self.last_name)
 
 class Book(models.Model):
