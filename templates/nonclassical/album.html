@@ -65,14 +65,14 @@
 {% with album.next as next %}
 {% if next or previous %}
 <div class="row well" style="margin-top: 45px">
-  <div class="col-md-6">
+  <div class="col-xs-6">
     {% if previous %}
      &laquo; <a href="{% url nonclassical-album artist.slug previous.slug %}">{{ previous }}</a>
     {% else %}
      &nbsp;
     {% endif %}
   </div>
-  <div class="col-md-6" style="text-align: right">
+  <div class="col-xs-6" style="text-align: right">
     {% if next %}
      <a href="{% url nonclassical-album artist.slug next.slug %}">{{ next }}</a> &raquo;
     {% endif %}
