@@ -2,9 +2,7 @@ from django.db import models
 
 class ArtistManager(models.Manager):
     def letters(self):
-        return self.values_list(
-            'name_first', flat=True,
-        ).order_by(
+        return self.values_list('name_first', flat=True).order_by(
             'name_first',
         ).distinct()
 
