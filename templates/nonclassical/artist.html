@@ -4,50 +4,50 @@
 
 {% block container %}
 
+<br>
+
 <ul class="breadcrumb">
-  <li><a href="{% url static:home %}">Home</a> <span class="divider">/</span></li>
-  <li><a href="{% url nonclassical-letter artist.name_first %}">Albums</a> <span class="divider">/</span></li>
+  <li><a href="{% url static:home %}">Home</a></li>
+  <li><a href="{% url nonclassical-letter artist.name_first %}">Albums</a></li>
   <li class="active">{{ artist }}</li>
 </ul>
 
-<br>
-
 <h1>{{ artist.long_name }}</h1>
 
-<br>
-
-{% for row in albums %}
-  <div class="row" style="padding-bottom: 50px; text-align: center;">
-    {% for album in row %}
-    {% if album %}
-
-    <div class="span2 {% if forloop.first %}offset1{% endif %}">
-      <a href="{% url nonclassical-album artist.slug album.slug %}" class="thumbnail">
-      {% if album.cover %}
-      <img src="{{ album.cover.thumbnail.url }}" alt="{{ album }}"></a>
-      {% else %}
-      <img src="{% static "img/no_album_art.jpg" %}" alt="{{ album }}"></a>
-      {% endif %}
-      <br/>
-      <a href="{% url nonclassical-album artist.slug album.slug %}">{{ album.title }}</a>
-      {% if album.year %}({{ album.year }}){% endif %}
+<div class="row">
+{% for album in artist.albums.all %}
+  {% if forloop.counter0|divisibleby:4 and forloop.counter0 != 0 %}
     </div>
+    <div class="row">
+  {% endif %}
+
+  <div class="col-md-3 text-center" style="margin-bottom: 20px;">
+    <a href="{% url nonclassical-album artist.slug album.slug %}">
+    {% if album.cover %}
+    <img src="{{ album.cover.thumbnail.url }}" alt="{{ album }}"></a>
+    {% else %}
+    <img src="{% static "img/no_album_art.jpg" %}" alt="{{ album }}"></a>
     {% endif %}
-    {% endfor %}
+    <br>
+    <a href="{% url nonclassical-album artist.slug album.slug %}">{{ album.title }}</a>
+    {% if album.year %}({{ album.year }}){% endif %}
   </div>
 {% endfor %}
+</div>
+
+<br>
 
 {% with artist.previous as previous %}
 {% with artist.next as next %}
   <div class="well row">
-    <div class="span5">
+    <div class="col-md-6">
       {% if previous %}
        &laquo; <a href="{{ previous.get_absolute_url }}">{{ previous }}</a>
        {% else %}
        &nbsp;
       {% endif %}
     </div>
-    <div class="span6" style="text-align: right">
+    <div class="col-md-6 text-right">
       {% if next %}
        <a href="{{ next.get_absolute_url }}">{{ next }}</a> &raquo;
       {% endif %}
