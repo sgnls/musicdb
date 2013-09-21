@@ -77,6 +77,10 @@ case "${PROJECT}" in
 		wget -Ojquery/jquery.js http://code.jquery.com/jquery.js
 		;;
 
+	jPlayer)
+		Git git://github.com/happyworm/jPlayer.git ${PROJECT}
+		;;
+
 	south)
 		Hg http://bitbucket.org/andrewgodwin/south/ ${PROJECT} ${PROJECT}
 		;;

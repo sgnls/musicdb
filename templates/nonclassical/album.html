@@ -4,6 +4,52 @@
 
 {% block headtitle %}{{ album }} - {{ artist }} - {{ block.super }}{% endblock %}
 
+{% block javascript %}
+  {{ block.super }}
+
+  {% if request.user.is_superuser %}
+  <script type="text/javascript">
+    $(function() {
+      var playlist = new jPlayerPlaylist({
+        jPlayer: "#jplayer"
+      }, [
+        {% for cd in album.cds.all %}
+        {% for track in cd.tracks.all %}
+        {
+          title: "{{ track.title|escapejs }}",
+          mp3: "{{ settings.MEDIA_LOCATION_HTTP }}/{{ track.music_file.file.location }}"
+        },
+        {% endfor %}
+        {% endfor %}
+      ],
+      {
+        swfPath: "../js",
+        supplied: "mp3",
+        wmode: "window",
+        smoothPlayBar: true,
+        keyEnabled: true,
+        autoPlay: true,
+      });
+      playlist.play();
+
+      $('.play').on('click', function() {
+        console.log('clicked');
+        $("#jplayer").jPlayer({
+          ready: function (event) {
+            console.log('ready');
+          },
+          swfPath: "../js",
+          supplied: "mp3",
+          wmode: "window",
+          smoothPlayBar: true,
+          keyEnabled: true
+        });
+      });
+    });
+  </script>
+  {% endif %}
+{% endblock %}
+
 {% block container %}
 
 <div class="row">
@@ -54,6 +100,16 @@
   <span class="glyphicon glyphicon-play"></span> Play album
 </a>
 <span class="text-muted">({{ album.total_duration|duration }})</span>
+
+{% if request.user.is_superuser %}
+<br>
+<br>
+<button type="button" class="btn btn-primary play">
+  <span class="glyphicon glyphicon-play"></span> Play album inline
+</button>
+<div id="jplayer"></div>
+{% endif %}
+
 
 {% with album.previous as previous %}
 {% with album.next as next %}
