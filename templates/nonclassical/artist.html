@@ -12,6 +12,8 @@
 
 <h1>{{ artist.long_name }}</h1>
 
+<br>
+
 <div class="row">
 {% for album in artist.albums.all %}
 
@@ -50,14 +52,14 @@
   <div class="well row">
     <div class="col-xs-6">
       {% if previous %}
-       &laquo; <a href="{{ previous.get_absolute_url }}">{{ previous }}</a>
+       <a class="btn btn-link" href="{{ previous.get_absolute_url }}"><span class="glyphicon glyphicon-chevron-left"></span> {{ previous }}</a>
        {% else %}
        &nbsp;
       {% endif %}
     </div>
     <div class="col-xs-6 text-right">
       {% if next %}
-       <a href="{{ next.get_absolute_url }}">{{ next }}</a> &raquo;
+       <a class="btn btn-link" href="{{ next.get_absolute_url }}">{{ next }} <span class="glyphicon glyphicon-chevron-right"></span></a>
       {% endif %}
     </div>
   </div>
