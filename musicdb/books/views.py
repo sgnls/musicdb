@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
-from .models import Book
+from .models import Author
 
 def index(request):
-    books = Book.objects.select_related('author')
+    authors = Author.objects.all()
 
     return render(request, 'books/index.html', {
-        'books': books,
+        'authors': authors,
     })

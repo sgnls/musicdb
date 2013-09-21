@@ -6,18 +6,18 @@
 
 {% block container %}
 
-<h1>Books <small>({{ books.count|intcomma }})</small></h1>
+<h1>Books</h1>
 
-{% regroup books by author as by_author %}
-
-{% for elem in by_author %}
-  {% with elem.grouper as author %}
+{% for author in authors %}
   <h3>{{ author.last_name }}{% if author.first_names %}, {{ author.first_names }}{% endif %}</h3>
-  {% endwith %}
 
   <ul>
-  {% for book in elem.list %}
-    <li><a href="{{ settings.MEDIA_LOCATION_HTTP }}/{{ book.file.location }}">{{ book.title }}</a></li>
+  {% for book_author in author.books.all %}
+  {% with book_author.book as book %}
+    {% for file in book.files.all %}
+      <li><a href="{{ settings.MEDIA_LOCATION_HTTP }}/{{ file.file.location }}">{{ book.title }}</a></li>
+    {% endfor %}
+  {% endwith %}
   {% endfor %}
   </ul>
 {% endfor %}
