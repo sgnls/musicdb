@@ -58,9 +58,10 @@ def ensemble(request, slug):
 def work(request, artist_slug, slug):
     work = get_object_or_404(Work, slug=slug, composer__slug=artist_slug)
 
-    recordings = work.recordings.prefetch_related(
-        'movements',
-        'performances',
+    recordings = work.recordings.select_related('work').prefetch_related(
+        'movements__music_file',
+        'performances__artistperformance',
+        'performances__ensembleperformance',
     )
 
     return render(request, 'classical/work.html', {
