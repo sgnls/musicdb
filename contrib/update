@@ -81,10 +81,6 @@ case "${PROJECT}" in
 		Hg http://bitbucket.org/tabo/django-treebeard/ ${PROJECT} ${PROJECT}
 		;;
 
-	validictory)
-		Git git://github.com/sunlightlabs/validictory.git ${PROJECT} ${PROJECT}
-		;;
-
 	--all)
 		for DIR in $(find -mindepth 1 -maxdepth 1 -type d -not -name '_*' -printf '%f\n')
 		do
