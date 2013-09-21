@@ -1,8 +1,16 @@
 from django.db import models
 
+from musicdb.db.fields import FirstLetterField
+
+from .managers import AuthorManager
+
 class Author(models.Model):
     last_name = models.CharField(max_length=100)
     first_names = models.CharField(max_length=100)
+
+    last_name_first = FirstLetterField('last_name')
+
+    objects = AuthorManager()
 
     class Meta:
         ordering = ('last_name', 'first_names')
