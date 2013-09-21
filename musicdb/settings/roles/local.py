@@ -30,3 +30,5 @@ SESSION_COOKIE_SECURE = False
 
 SITE_URL = 'http://127.0.0.1:8000'
 STATIC_MEDIA_URL = '/media/%(path)s'
+
+MEDIA_LOCATION = get_dir('media_location')
