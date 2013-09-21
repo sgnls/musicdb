@@ -1,6 +1,6 @@
 from os.path import abspath, dirname, join
 
-def get_dir(*xs):
+def base_dir(*xs):
     return join(dirname(dirname(dirname(dirname(abspath(__file__))))), *xs)
 
 DEBUG = True
@@ -31,4 +31,4 @@ SESSION_COOKIE_SECURE = False
 SITE_URL = 'http://127.0.0.1:8000'
 STATIC_MEDIA_URL = '/media/%(path)s'
 
-MEDIA_LOCATION = get_dir('media_location')
+MEDIA_LOCATION = base_dir('media_location')
