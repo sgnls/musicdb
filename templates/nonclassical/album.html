@@ -14,7 +14,7 @@
 </ul>
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-sm-8">
     <h1>{{ album.title }}{% if album.year %} <small>({{ album.year }})</small>{% endif %}</h1>
     <h2><a href="{{ artist.get_absolute_url }}">{{ artist.long_name }}</a></h2>
 
@@ -48,7 +48,7 @@
     {% endfor %}
     {% endwith %}
   </div>
-  <div class="col-md-3 hidden-xs" style="padding-top: 40px;">
+  <div class="col-sm-3 hidden-xs" style="padding-top: 40px;">
     <a href="{% url nonclassical-play-album album.id %}" class="thumbnail">
       <img src="{{ album.image.large.url }}" alt="Play {{ album }}">
     </a>
