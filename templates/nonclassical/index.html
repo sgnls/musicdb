@@ -16,6 +16,7 @@
       {% endifequal %}
   {% endfor %}
 </p>
+
 <ul>
 {% for artist in artists %}
   <li><a href="{{ artist.get_absolute_url }}">{{ artist }}</a></li>
