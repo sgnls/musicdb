@@ -35,7 +35,9 @@
       </ol>
 
       {% ifnotequal album_cds_count 1 %}
-        <a href="{% url nonclassical-play-cd cd.id %}" class="btn btn-primary">Play</a>
+        <a href="{% url nonclassical-play-cd cd.id %}" class="btn btn-primary">
+          <span class="glyphicon glyphicon-play"></span> Play
+        </a>
         {{ cd.total_duration|duration }}
       {% endifnotequal %}
     </div>
@@ -54,7 +56,9 @@
 
 <br>
 
-<a href="{% url nonclassical-play-album album.id %}" class="btn btn-primary">Play album</a>
+<a href="{% url nonclassical-play-album album.id %}" class="btn btn-primary">
+  <span class="glyphicon glyphicon-play"></span> Play album
+</a>
 ({{ album.total_duration|duration }})
 
 {% with album.previous as previous %}
