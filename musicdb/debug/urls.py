@@ -6,4 +6,5 @@ urlpatterns = []
 if settings.DEBUG:
     urlpatterns += patterns('musicdb.debug.views',
         url('^media/(?P<path>.*)$', 'media'),
+        url('^storage/(?P<path>.*)$', 'storage'),
     )
