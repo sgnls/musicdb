@@ -116,14 +116,14 @@
 <br/>
 
 <div class="row well">
-  <div class="col-md-6">
+  <div class="col-xs-6">
     {% if previous %}
      &laquo; <a href="{{ previous.get_absolute_url }}">{{ previous }}</a>
     {% else %}
      &nbsp;
     {% endif %}
   </div>
-  <div class="col-md-6 text-right">
+  <div class="col-xs-6 text-right">
     {% if next %}
      <a href="{{ next.get_absolute_url }}">{{ next }}</a> &raquo;
     {% endif %}
