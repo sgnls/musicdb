@@ -6,17 +6,17 @@
 
 {% block container %}
 
+<br>
+
 <ul class="breadcrumb">
-  <li><a href="{% url static:home %}">Home</a> <span class="divider">/</span></li>
-  <li><a href="{% url nonclassical %}">Albums</a> <span class="divider">/</span></li>
-  <li><a href="{{ artist.get_absolute_url }}">{{ artist }}</a> <span class="divider">/</span></li>
+  <li><a href="{% url static:home %}">Home</a></li>
+  <li><a href="{% url nonclassical %}">Albums</a></li>
+  <li><a href="{{ artist.get_absolute_url }}">{{ artist }}</a></li>
   <li class="active">{{ album }}</li>
 </ul>
 
-<br>
-
 <div class="row">
-  <div class="span8">
+  <div class="col-md-8">
     <h1>{{ album.title }}{% if album.year %} <small>({{ album.year }})</small>{% endif %}</h1>
     <h2><a href="{{ artist.get_absolute_url }}">{{ artist.long_name }}</a></h2>
 
@@ -43,16 +43,11 @@
     {% endfor %}
     {% endwith %}
   </div>
-  <div class="span3">
+  <div class="col-md-3">
     {% if album.cover %}
-
-    <ul class="thumbnails">
-    <li>
-      <a href="{% url nonclassical-play-album album.id %}" class="thumbnail">
-        <img src="{{ album.cover.url }}" alt="Play {{ album }}">
-      </a>
-    </li>
-    </ul>
+    <a href="{% url nonclassical-play-album album.id %}" class="thumbnail">
+      <img src="{{ album.cover.url }}" alt="Play {{ album }}">
+    </a>
     {% endif %}
   </div>
 </div>
@@ -66,14 +61,14 @@
 {% with album.next as next %}
 {% if next or previous %}
 <div class="row well" style="margin-top: 45px">
-  <div class="span5">
+  <div class="col-md-6">
     {% if previous %}
      &laquo; <a href="{% url nonclassical-album artist.slug previous.slug %}">{{ previous }}</a>
     {% else %}
      &nbsp;
     {% endif %}
   </div>
-  <div class="span6" style="text-align: right">
+  <div class="col-md-6" style="text-align: right">
     {% if next %}
      <a href="{% url nonclassical-album artist.slug next.slug %}">{{ next }}</a> &raquo;
     {% endif %}
