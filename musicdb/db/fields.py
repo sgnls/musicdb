@@ -70,10 +70,10 @@ class FirstLetterField(DenormalisedCharField):
 
         if re.match('[a-z]', val):
             return val
-        elif re.match('\d', val):
+        if re.match('\d', val):
             return '0'
-        else:
-            return '-'
+
+        return '-'
 
 class DirNameField(DenormalisedCharField):
     def pre_save(self, obj, add):
