@@ -18,6 +18,8 @@
     <h1>{{ album.title }}{% if album.year %} <small>({{ album.year }})</small>{% endif %}</h1>
     <h2><a href="{{ artist.get_absolute_url }}">{{ artist.long_name }}</a></h2>
 
+    <br>
+
     {% with album.cds.count as album_cds_count %}
     {% for cd in album.cds.all %}
 
@@ -28,7 +30,10 @@
 
       <ol>
         {% for track in cd.tracks.select_related.all %}
-          <li><a href="{% url common:play-music-file track.music_file_id %}">{{ track }}</a> {{ track.music_file.length|duration }}</li>
+          <li>
+            <a href="{% url common:play-music-file track.music_file_id %}">{{ track }}</a>
+            <span class="text-muted">{{ track.music_file.length|duration }}</span>
+          </li>
         {% endfor %}
       </ol>
 
@@ -43,7 +48,7 @@
     {% endfor %}
     {% endwith %}
   </div>
-  <div class="col-md-3 hidden-xs">
+  <div class="col-md-3 hidden-xs" style="padding-top: 40px;">
     <a href="{% url nonclassical-play-album album.id %}" class="thumbnail">
       <img src="{{ album.image.large.url }}" alt="Play {{ album }}">
     </a>
@@ -55,7 +60,7 @@
 <a href="{% url nonclassical-play-album album.id %}" class="btn btn-primary">
   <span class="glyphicon glyphicon-play"></span> Play album
 </a>
-({{ album.total_duration|duration }})
+<span class="text-muted">({{ album.total_duration|duration }})</span>
 
 {% with album.previous as previous %}
 {% with album.next as next %}

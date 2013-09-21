@@ -31,11 +31,14 @@
   {% endif %}
 
   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 text-center" style="margin-bottom: 20px;">
-    <a href="{% url nonclassical-album artist.slug album.slug %}">
-    <img src="{{ album.image.thumbnail.url }}" alt="{{ album }}" height="125" width="125"></a>
-    <br>
-    <a href="{% url nonclassical-album artist.slug album.slug %}">{{ album.title }}</a>
-    {% if album.year %}({{ album.year }}){% endif %}
+    <p>
+      <a href="{% url nonclassical-album artist.slug album.slug %}"><img src="{{ album.image.thumbnail.url }}" alt="{{ album }}" height="125" width="125"></a>
+    </p>
+
+    <p>
+      <a href="{% url nonclassical-album artist.slug album.slug %}">{{ album.title }}</a>
+      {% if album.year %}({{ album.year }}){% endif %}
+    </p>
   </div>
 {% endfor %}
 </div>
