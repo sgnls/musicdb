@@ -11,15 +11,18 @@
   <script type="text/javascript">
     $(function() {
       $('#jplayer').jPlayer({
-        supplied: 'mp3'
+        supplied: 'mp3',
+        cssSelectorAncestor: 'nav.player'
       });
 
       $('.track').on('click', function (e) {
         e.preventDefault();
 
         $('#jplayer').jPlayer('setMedia', {
-            mp3: $(this).data('url')
+            mp3: $(this).data('url'),
         }).jPlayer('play');
+
+        $('nav.player .title').text($(this).text());
       });
     });
   </script>
@@ -78,7 +81,6 @@
 <span class="text-muted">({{ album.total_duration|duration }})</span>
 
 {% if request.user.is_superuser %}
-<div id="jplayer"></div>
 {% endif %}
 
 
@@ -102,5 +104,34 @@
 {% endif %}
 {% endwith %}
 {% endwith %}
+
+{% if request.user.is_superuser %}
+<nav class="player navbar navbar-fixed-bottom navbar-default">
+  <div id="jplayer"></div>
+
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="#" class="jp-play" style="display: block;"><span class="glyphicon glyphicon-play"></span></a></li>
+      <li><a href="#" class="jp-pause" style="display: none;"><span class="glyphicon glyphicon-pause"></span></a></li>
+      <li><a href="#" class="jp-stop"><span class="glyphicon glyphicon-stop"></span></a></li>
+      <li class="title navbar-text"></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li style="width: 200px;">
+        <div class="progress navbar-text" style="width: 100%;">
+          <div class="progress-bar jp-play-bar"></div>
+        </div>
+      </li>
+      <li><a href="#" class="jp-mute" title="mute"><span class="glyphicon glyphicon-volume-off"></span></a></li>
+      <li><a href="#" class="jp-unmute" title="unmute" style="display: none;"><span class="glyphicon glyphicon-volume-up"></span></a></li>
+      <li class="navbar-text">
+        <span class="jp-current-time">00:00</span> / <span class="jp-duration">00:00</span>&nbsp;
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endif %}
+
 
 {% endblock %}
