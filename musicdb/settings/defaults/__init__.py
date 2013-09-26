@@ -169,3 +169,5 @@ PASSWORD_HASHERS = (
 SERVER_EMAIL = 'noreply@musicdb.chris-lamb.co.uk'
 
 SOUTH_TESTS_MIGRATE = False
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
