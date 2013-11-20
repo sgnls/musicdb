@@ -79,7 +79,7 @@ def m3u(request):
         raise Http404
 
     entries = [
-        Track(os.path.join(rel_path, x)) for x in os.listdir(abs_path)
+        Track(os.path.join(rel_path, x)) for x in sorted(os.listdir(abs_path))
         if re_show_play.search(x)
     ]
 
