@@ -2,7 +2,7 @@
 
 {% block headtitle %}Unfiled - {{ block.super }}{% endblock %}
 
-{% block title %}{{ rel_path }} <small><a href="{% url unfiled:play %}?x={{ rel_path|iriencode }}">(play all)</a></small>{% endblock %}
+{% block title %}{{ rel_path }} <small><a href="{% url unfiled:m3u %}?x={{ rel_path|iriencode }}">(play all)</a></small>{% endblock %}
 
 {% block content %}
 
