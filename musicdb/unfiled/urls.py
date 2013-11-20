@@ -5,4 +5,6 @@ urlpatterns = patterns('musicdb.unfiled.views',
         name='view'),
     url(r'^unfiled/play$', 'play',
         name='play'),
+    url(r'^unfiled/m3u$', 'm3u',
+        name='m3u'),
 )

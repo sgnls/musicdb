@@ -64,3 +64,27 @@ def play(request):
         [Track(rel_path)],
         prefix=settings.UNFILED_MEDIA_LOCATION_HTTP,
     )
+
+def m3u(request):
+    try:
+        rel_path = request.GET['x']
+    except KeyError:
+        raise Http404
+
+    abs_path = os.path.realpath(
+        os.path.join(settings.UNFILED_MEDIA_LOCATION, rel_path)
+    )
+
+    if not os.path.isdir(abs_path):
+        raise Http404
+
+    entries = [
+        Track(os.path.join(rel_path, x)) for x in os.listdir(abs_path)
+        if re_show_play.search(x)
+    ]
+
+    return render_playlist(
+        request,
+        entries,
+        prefix=settings.UNFILED_MEDIA_LOCATION_HTTP,
+    )
