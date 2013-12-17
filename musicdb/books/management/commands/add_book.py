@@ -85,4 +85,4 @@ class Command(AddFilesCommand):
 
         book.files.create(file=file_)
 
-        print "I: Added."
+        print "I: Added: %s" % book
