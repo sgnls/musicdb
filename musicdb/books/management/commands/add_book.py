@@ -2,11 +2,15 @@ from django.core.management.base import CommandError, make_option
 
 from musicdb.utils.commands import AddFilesCommand
 
-from musicdb.books.models import Author, Book
 from musicdb.common.models import File
+
+from ...utils import guess_book_details
+from ...models import Author, Book
 
 class Command(AddFilesCommand):
     option_list = AddFilesCommand.option_list + (
+        make_option('-a', '--amazon-import', dest='amazon_import', default=False,
+            action='store_true', help="Try and populate from Amazon"),
         make_option('-f', '--author-first-names', dest='first_names', default=None,
             action='store', help="Author first names (optional)"),
         make_option('-l', '--author-last-name', dest='last_name', default='',
@@ -23,6 +27,14 @@ class Command(AddFilesCommand):
 
         if not filename.lower().endswith('.mobi'):
             raise CommandError("Only .mobi files are supported.")
+
+        if self.options['amazon_import']:
+            data = guess_book_details(filename)
+
+            if not data:
+                raise CommandError("Could not guess book details")
+
+            self.options.update(data)
 
         last_name = self.options['last_name']
         if not last_name:
@@ -65,7 +77,6 @@ class Command(AddFilesCommand):
 
         book = Book.objects.create(title=title)
         book.authors.create(num=1, author=author)
-
 
         file_ = File.objects.create_from_path(
             filenames[0],
