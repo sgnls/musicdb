@@ -25,9 +25,12 @@ def guess_book_details(val):
     title = title.replace(' (Vintage Classics)', '')
     title = title.strip()
 
-    authors = root.xpath(
-        '//div[@class="buying"][h1[@class="parseasinTitle"]]/a/text()'
-    )
+    authors = []
+    for x in root.xpath(
+        '//div[@class="buying"][h1[@class="parseasinTitle"]]/a'
+    ):
+        if x.getnext().text == "(Author)":
+            authors.append(x.text)
 
     if len(authors) != 1:
         return
