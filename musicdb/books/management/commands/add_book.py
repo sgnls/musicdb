@@ -1,3 +1,7 @@
+import os
+import urllib
+
+from django.core.files import File as DjangoFile
 from django.core.management.base import CommandError, make_option
 
 from musicdb.utils.commands import AddFilesCommand
@@ -17,6 +21,8 @@ class Command(AddFilesCommand):
             action='store', help="Author last name (optional)"),
         make_option('-t', '--title', dest='title', default='',
             action='store', help="Title (optional)"),
+        make_option('-c', '--cover', dest='cover_url', default=None,
+            action='store', help="Cover URL (optional)"),
     )
 
     def handle_filenames(self, filenames):
@@ -77,6 +83,18 @@ class Command(AddFilesCommand):
 
         book = Book.objects.create(title=title)
         book.authors.create(num=1, author=author)
+
+        if self.options['cover_url']:
+            tempfile, _ = urllib.urlretrieve(self.options['cover_url'])
+
+            try:
+                book.image.save(DjangoFile(open(tempfile)))
+                book.save()
+            finally:
+                try:
+                    os.unlink(tempfile)
+                except:
+                    pass
 
         file_ = File.objects.create_from_path(
             filenames[0],

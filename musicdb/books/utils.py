@@ -37,8 +37,11 @@ def guess_book_details(val):
 
     first_names, last_name = authors[0].split(' ', 1)
 
+    cover_url = root.xpath('//img[@id="main-image-nonjs"]')[0].attrib['src']
+
     return {
         'title': title,
         'first_names': first_names,
         'last_name': last_name,
+        'cover_url': cover_url,
     }
