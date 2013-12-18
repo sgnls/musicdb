@@ -29,13 +29,15 @@ def guess_book_details(val):
     for x in root.xpath(
         '//div[@class="buying"][h1[@class="parseasinTitle"]]/a'
     ):
-        if x.getnext().text == "(Author)":
-            authors.append(x.text)
+        authors.append((x.text, x.getnext().text))
+
+    if len(authors) > 1:
+        authors = [(x, y) for x, y in authors if y == "(Author)"]
 
     if len(authors) != 1:
         return
 
-    first_names, last_name = authors[0].split(' ', 1)
+    first_names, last_name = authors[0][0].split(' ', 1)
 
     cover_url = root.xpath('//img[@id="main-image-nonjs"]')[0].attrib['src']
     cover_url = cover_url.split('._BO2')[0] + '.jpg'
