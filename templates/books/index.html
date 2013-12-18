@@ -8,21 +8,23 @@
 
 <h1>Books</h1>
 
-<p>
-  {% for letter in letters %}
-    <a href="{% url books:index letter %}">
-      {% if letter == "0" %}
+<div class="btn-group btn-group-md">
+  {% for x in letters %}
+    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url books:index x %}">
+      {% if x == "0" %}
         #</a>
       {% else %}
-        {{ letter|upper }}</a>
+        {{ x|upper }}</a>
       {% endif %}
   {% endfor %}
-</p>
+</div>
 
-<ul>
+<div class="clearfix"></div>
+
+<div class="list-group" style="margin-top: 30px;">
 {% for author in authors %}
-  <li><a href="{% url books:author author.slug %}">{{ author.long_name }}</a></li>
+  <a class="list-group-item" href="{% url books:author author.slug %}">{{ author.long_name }}</a>
 {% endfor %}
-</ul>
+</div>
 
 {% endblock %}

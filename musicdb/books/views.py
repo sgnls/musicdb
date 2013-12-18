@@ -9,6 +9,7 @@ def index(request, letter=None):
     authors = Author.objects.filter(last_name_first=letter)
 
     return render(request, 'books/index.html', {
+        'letter': letter,
         'authors': authors,
         'letters': Author.objects.letters(),
     })
