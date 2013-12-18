@@ -1,3 +1,5 @@
+from django_yadt import YADTImageField
+
 from django.db import models
 
 from musicdb.db.fields import FirstLetterField, MySlugField
@@ -28,6 +30,23 @@ class Author(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=250)
+
+    image = YADTImageField(variants={
+        'large': {
+            'crop': True,
+            'width': 300,
+            'height': 300,
+            'format': 'jpeg',
+            'fallback': True,
+        },
+        'thumbnail': {
+            'crop': True,
+            'width': 125,
+            'height': 125,
+            'format': 'jpeg',
+            'fallback': True,
+        },
+    }, cachebust=True)
 
     class Meta:
         ordering = ('title',)
