@@ -103,4 +103,9 @@ class Command(AddFilesCommand):
 
         book.files.create(file=file_)
 
-        print "I: Added: %s" % book
+        print " Author: %s" % author.long_name()
+        print "  Title: %s" % book.title
+        print
+
+        if raw_input("Accept? [Yn] ").upper() not in ('', 'Y'):
+            raise CommandError("Cancelling")
