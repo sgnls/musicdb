@@ -51,8 +51,8 @@ class Command(AddFilesCommand):
         except IndexError:
             default = ''
 
-        first_names = ''
-        if self.options['first_names'] is None:
+        first_names = self.options['first_names']
+        if not self.options['first_names']:
             first_names = self.prompt_string(
                 'Author forenames',
                 qs,
