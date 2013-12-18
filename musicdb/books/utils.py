@@ -24,6 +24,7 @@ def guess_book_details(val):
     title = root.xpath('//span[@id="btAsinTitle"]/span/text()')[0].strip()
     title = title.replace(' (Vintage Classics)', '')
     title = title.replace(' (Modern Classics)', '')
+    title = title.replace(' (Penguin Modern Classics)', '')
     title = title.strip()
 
     authors = []
