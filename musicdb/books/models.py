@@ -33,15 +33,13 @@ class Book(models.Model):
 
     image = YADTImageField(variants={
         'large': {
-            'crop': True,
             'width': 300,
-            'height': 300,
+            'height': 428,
             'format': 'jpeg',
             'fallback': True,
         },
         'thumbnail': {
-            'crop': True,
-            'width': 125,
+            'width': 88,
             'height': 125,
             'format': 'jpeg',
             'fallback': True,
