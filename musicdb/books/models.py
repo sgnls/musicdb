@@ -10,7 +10,7 @@ class Author(models.Model):
     last_name = models.CharField(max_length=100)
     first_names = models.CharField(max_length=100)
 
-    slug = MySlugField('__unicode__')
+    slug = MySlugField('long_name')
     last_name_first = FirstLetterField('last_name')
 
     objects = AuthorManager()
@@ -19,7 +19,7 @@ class Author(models.Model):
         ordering = ('last_name', 'first_names')
 
     def __unicode__(self):
-        return "%s %s" % (self.first_names, self.last_name)
+        return "%s, %s" % (self.last_name, self.first_names)
 
     @models.permalink
     def get_absolute_url(self):
