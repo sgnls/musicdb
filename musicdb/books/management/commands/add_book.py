@@ -82,6 +82,7 @@ class Command(AddFilesCommand):
 
         print " Author: %s" % author.long_name()
         print "  Title: %s" % title
+        print "  Cover: %s" % self.options['cover_url']
         print
 
         if raw_input("Accept? [Yn] ").upper() not in ('', 'Y'):
