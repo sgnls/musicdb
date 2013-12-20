@@ -46,6 +46,8 @@ class Book(models.Model):
         },
     }, cachebust=True)
 
+    file = models.OneToOneField('common.File', related_name='book')
+
     class Meta:
         ordering = ('title',)
 
@@ -63,8 +65,3 @@ class BookAuthor(models.Model):
             ('book', 'num'),
             ('book', 'author'),
         )
-
-class File(models.Model):
-    book = models.ForeignKey(Book, related_name='files')
-
-    file = models.OneToOneField('common.File', related_name='book')
