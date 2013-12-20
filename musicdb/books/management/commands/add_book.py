@@ -118,6 +118,8 @@ class Command(AddFilesCommand):
                 except:
                     pass
 
+        print "I: Added."
+
 def guess_book_details(val):
     val = os.path.basename(val)
     val = os.path.splitext(val)[0]
