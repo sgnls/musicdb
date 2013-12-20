@@ -34,9 +34,7 @@
         <li><a href="{% url nonclassical %}">Albums</a></li>
         <li><a href="{% url classical-composers %}">Classical</a></li>
         <li><a href="{% url unfiled:view %}">Unfiled</a></li>
-        {% if request.user.is_superuser %}
         <li><a href="{% url books:index %}">Books</a></li>
-        {% endif %}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
