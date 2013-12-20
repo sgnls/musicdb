@@ -39,8 +39,8 @@ class Book(models.Model):
             'fallback': True,
         },
         'thumbnail': {
-            'width': 88,
-            'height': 125,
+            'width': 150,
+            'height': 213,
             'format': 'jpeg',
             'fallback': True,
         },
