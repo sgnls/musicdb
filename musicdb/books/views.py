@@ -39,4 +39,4 @@ def book(request, book_id):
 
     messages.success(request, '"%s" sent to Kindle.' % book.title)
 
-    return redirect(book.author)
+    return redirect(book.authors.all()[0])
