@@ -16,6 +16,10 @@ class Profile(models.Model):
         verbose_name="Override file location prefix",
     )
 
+    kindle_email_address = models.EmailField(
+        blank=True,
+    )
+
     class Meta:
         managed = False
 
