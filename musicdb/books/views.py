@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import EmailMessage
 
@@ -36,6 +37,6 @@ def book(request, book_id):
     message.attach_file(book.file.absolute_location())
     message.send()
 
-    message.success(request, '\"%s\" sent to Kindle.' % book.title)
+    messages.success(request, '"%s" sent to Kindle.' % book.title)
 
     return redirect(book.author)
