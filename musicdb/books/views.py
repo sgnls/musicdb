@@ -1,6 +1,7 @@
+from django.conf import settings
 from django.shortcuts import render, redirect, get_object_or_404
 
-from .models import Author
+from .models import Author, Book
 
 def index(request, letter=None):
     if letter is None:
@@ -20,3 +21,11 @@ def author(request, slug):
     return render(request, 'books/author.html', {
         'author': author,
     })
+
+def book(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+
+    return redirect('%s/%s' % (
+        settings.MEDIA_LOCATION_HTTP,
+        book.file.location,
+    ))
