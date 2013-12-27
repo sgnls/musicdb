@@ -167,6 +167,7 @@ PASSWORD_HASHERS = (
 )
 
 SERVER_EMAIL = 'noreply@musicdb.chris-lamb.co.uk'
+DEFAULT_FROM_EMAIL = SERVER_EMAIL
 
 SOUTH_TESTS_MIGRATE = False
 
