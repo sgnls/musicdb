@@ -1,0 +1,1833 @@
+changeset:   329:210f8e3666e3
+branch:      py3k-syntax
+tag:         tip
+parent:      327:bee8286dd46b
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Tue Mar 04 20:10:50 2014 +0100
+summary:     Close branch py3k-syntax
+
+changeset:   328:f153a70ba254
+parent:      325:49c1003ea248
+parent:      327:bee8286dd46b
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Tue Mar 04 20:10:50 2014 +0100
+summary:     Merged in alex_gaynor/django-storages/py3k-syntax (pull request #91)
+
+changeset:   327:bee8286dd46b
+branch:      py3k-syntax
+parent:      325:49c1003ea248
+user:        Alex Gaynor <alex.gaynor@gmail.com>
+date:        Tue Mar 04 09:30:01 2014 -0800
+summary:     Converted the codebase to use python3 compatible syntax
+
+changeset:   326:6c4f274facef
+branch:      j00bar/support-gridfs-content-type
+parent:      324:05bb7a025d28
+user:        Rich Leland <rich@richleland.com>
+date:        Sat Mar 01 10:32:49 2014 -0500
+summary:     Close branch j00bar/support-gridfs-content-type
+
+changeset:   325:49c1003ea248
+parent:      322:cb7366693ce1
+parent:      324:05bb7a025d28
+user:        Rich Leland <rich@richleland.com>
+date:        Sat Mar 01 10:32:49 2014 -0500
+summary:     Merged in j00bar/django-storages/j00bar/support-gridfs-content-type (pull request #90)
+
+changeset:   324:05bb7a025d28
+branch:      j00bar/support-gridfs-content-type
+user:        Joshua "jag" Ginsberg <jag@flowtheory.net>
+date:        Thu Feb 20 11:27:46 2014 -0700
+summary:     Add missing import for ImproperlyConfigured
+
+changeset:   323:481b6d53cd66
+branch:      j00bar/support-gridfs-content-type
+user:        Joshua "jag" Ginsberg <jag@flowtheory.net>
+date:        Thu Feb 20 11:17:27 2014 -0700
+summary:     Support pushing content type from File object to GridFS
+
+changeset:   322:cb7366693ce1
+parent:      320:22476b349fb5
+parent:      321:833c883c4e91
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Jan 31 11:15:27 2014 -0500
+summary:     Merged in thomas_orozco/django-storages (pull request #81)
+
+changeset:   321:833c883c4e91
+parent:      314:e27c8b61ab57
+user:        thomas_orozco <thomas@orozco.fr>
+date:        Wed Aug 21 17:35:54 2013 +0000
+summary:     Removed extraneous h1 in azure.rst
+
+changeset:   320:22476b349fb5
+parent:      318:5730075f05f1
+parent:      319:375b75bde720
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Jan 31 11:11:14 2014 -0500
+summary:     Merged in alex_gaynor/django-storages/alex_gaynor/support-passing-a-region-to-the-libcloud-1384292710689 (pull request #86)
+
+changeset:   319:375b75bde720
+branch:      alex_gaynor/support-passing-a-region-to-the-libcloud-1384292710689
+user:        Alex Gaynor <alex.gaynor@gmail.com>
+date:        Tue Nov 12 21:45:14 2013 +0000
+summary:     Support passing a region to the libcloud driver.
+
+changeset:   318:5730075f05f1
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Sat Oct 19 15:42:38 2013 +0900
+summary:     Updated handling of paths with trailing slashes fixes #188
+
+changeset:   317:aed66cfeb017
+parent:      315:c1415a958359
+parent:      316:936a02aaa0a7
+user:        Ian Lewis <ianmlewis@gmail.com>
+date:        Sat Oct 19 14:12:53 2013 +0900
+summary:     Merged in dangerski/django-storages (pull request #85)
+
+changeset:   316:936a02aaa0a7
+parent:      314:e27c8b61ab57
+user:        Dan Gerszewski <dangerski@outlook.com>
+date:        Wed Oct 16 16:09:28 2013 -0600
+summary:     Fixex trailing slash getting stripped.  See issue #188
+
+changeset:   315:c1415a958359
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Sat Oct 19 14:06:56 2013 +0900
+summary:     Fixed s3boto test
+
+changeset:   314:e27c8b61ab57
+parent:      309:5f1c9db34ec5
+parent:      313:29ba17d48f6c
+user:        Ian Lewis <ianmlewis@gmail.com>
+date:        Mon Aug 12 13:32:52 2013 +0900
+summary:     Merged in pendletongp/django-storages-dont-eat-my-memory (pull request #69)
+
+changeset:   313:29ba17d48f6c
+user:        Gordon <wgordonw1@gmail.com>
+date:        Sat Jul 13 19:34:03 2013 -0400
+summary:     this was left out of the previous commit.  ..tempfile was removed so it can no longer be used as a fallback.
+
+changeset:   312:0ddcb757d356
+user:        Gordon <wgordonw1@gmail.com>
+date:        Sat Jul 13 19:30:30 2013 -0400
+summary:     per discussion in https://bitbucket.org/david/django-storages/pull-request/69/
+
+changeset:   311:ee9b97277c10
+user:        Gordon <wgordonw1@gmail.com>
+date:        Sun Apr 21 17:53:32 2013 -0400
+summary:     identify the SpooledTemporaryFile on disk with a suffix.  Use settings.FILE_UPLOAD_TEMP_DIR for placing the file.
+
+changeset:   310:16dee4fbccca
+parent:      288:c751701f596d
+user:        Gordon <wgordonw1@gmail.com>
+date:        Sat Apr 20 18:18:23 2013 -0400
+summary:     update https://bitbucket.org/IanLewis/django-storages/commits/fb0322761a82/ to work with master
+
+changeset:   309:5f1c9db34ec5
+user:        Eric Buehl <eric.buehl@gmail.com>
+date:        Wed Jul 31 17:07:02 2013 +0000
+summary:     guess content-type for streaming the same way that _save() does
+
+changeset:   308:e643ba6087a1
+parent:      305:513c418116dd
+parent:      307:544e36fcd53b
+user:        Ian Lewis <ianmlewis@gmail.com>
+date:        Sun Jul 07 11:38:11 2013 +0900
+summary:     Merged in mmlin/django-storages (pull request #72)
+
+changeset:   307:544e36fcd53b
+user:        Mike M. Lin <mike.m.lin@gmail.com>
+date:        Fri Jun 14 11:00:25 2013 -0700
+summary:     Rolled back changes to the deprecated S3 backend. Used string.endswith() to be more concise. Added test cases.
+
+changeset:   306:eba248dc7e01
+parent:      296:4294a23b33f3
+user:        Mike M. Lin <mike.m.lin@gmail.com>
+date:        Sat Jun 08 16:12:22 2013 -0700
+summary:     For the s3 and s3boto backends, the 'url' methods remove trailing slashes but should not. This fixes that.
+
+changeset:   305:513c418116dd
+parent:      303:6e72f4f66559
+parent:      304:57948be90712
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Fri Jun 14 22:18:15 2013 +0900
+summary:     Merge url encoding test case.
+
+changeset:   304:57948be90712
+parent:      296:4294a23b33f3
+user:        Andrei Coman <comandrei@gmail.com>
+date:        Sat Jun 01 19:40:16 2013 +0300
+summary:     Add test for S3Boto's URL method when using custom domain
+
+changeset:   303:6e72f4f66559
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Fri Jun 14 22:03:48 2013 +0900
+summary:     Updated tox.ini with envs for python2.6 and python2.7
+
+changeset:   302:5f9433d40181
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Fri Jun 14 21:47:16 2013 +0900
+summary:     Removed the django11 env from tox.ini
+
+changeset:   301:50dc35dd00f9
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Fri Jun 14 21:41:27 2013 +0900
+summary:     Updated the tox.ini
+
+changeset:   300:bfe26780d19a
+parent:      296:4294a23b33f3
+parent:      299:4cd1afa63ab0
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Fri Jun 14 21:29:27 2013 +0900
+summary:     Merged some new tests
+
+changeset:   299:4cd1afa63ab0
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 12 21:11:32 2012 -0700
+summary:     [s3boto] Added url() test case
+
+changeset:   298:765bf8698643
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 12 20:41:41 2012 -0700
+summary:     [s3boto] Added test for size()
+
+changeset:   297:5d573e1f6a7a
+parent:      216:83fa2f0ba20c
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 12 20:37:29 2012 -0700
+summary:     [s3boto] Added tests for exists() and delete()
+
+changeset:   296:4294a23b33f3
+parent:      294:10974b260d5e
+parent:      295:6884d826b50c
+user:        Ian Lewis <ianmlewis@gmail.com>
+date:        Sat Jun 01 10:58:17 2013 +0900
+summary:     Merged in acoman/django-storages (pull request #70)
+
+changeset:   295:6884d826b50c
+parent:      288:c751701f596d
+user:        Andrei Coman <comandrei@gmail.com>
+date:        Fri Apr 26 11:24:22 2013 +0300
+summary:     urlencode paths when using AWS_S3_CUSTOM_DOMAIN fixes #113
+
+changeset:   294:10974b260d5e
+parent:      292:7b75212a27a5
+parent:      293:3cb6a9b1308c
+user:        David Larlet <larlet@gmail.com>
+date:        Fri May 24 18:57:21 2013 +0200
+summary:     Merged in atodorov/django-storages/pass-headers-to-S3BotoConnection.generate_url (pull request #65)
+
+changeset:   293:3cb6a9b1308c
+branch:      pass-headers-to-S3BotoConnection.generate_url
+parent:      283:02afdf3d2787
+user:        Alexander Todorov <atodoroov@otb.bg>
+date:        Tue Mar 26 12:17:39 2013 +0200
+summary:     Pass headers and response_headers S3BotoConnection.generate_url()
+
+changeset:   292:7b75212a27a5
+parent:      288:c751701f596d
+parent:      291:24ae8cb3688b
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Fri Apr 26 12:21:09 2013 +0200
+summary:     Merged in fmartingr/django-storages/custom_host (pull request #66)
+
+changeset:   291:24ae8cb3688b
+branch:      custom_host
+user:        Felipe Martín <fmartin@bytepix.com>
+date:        Wed Apr 17 11:12:22 2013 +0200
+summary:     Updated host/port defaults matching @k4ml suggestion
+
+changeset:   290:d3c408e40a7e
+branch:      custom_host
+user:        Felipe Martín <fmartin@bytepix.com>
+date:        Tue Mar 26 13:30:05 2013 +0100
+summary:     + s3boto.py: Added also configuration option to allow connecting without HTTPS protocol (AWS_S3_USE_SSL)
+
+changeset:   289:deee056a3100
+branch:      custom_host
+parent:      283:02afdf3d2787
+user:        Felipe Martín <fmartin@bytepix.com>
+date:        Tue Mar 26 12:44:44 2013 +0100
+summary:     + s3boto backend: Allows custom S3 host and port.
+
+changeset:   288:c751701f596d
+user:        Rich Leland <rich@richleland.com>
+date:        Sun Mar 31 10:10:17 2013 -0400
+summary:     Added tag 1.1.8 for changeset d26425cbfcb1
+
+changeset:   287:d26425cbfcb1
+tag:         1.1.8
+user:        Rich Leland <rich@richleland.com>
+date:        Sun Mar 31 10:08:55 2013 -0400
+summary:     Bumped version, updated changelog
+
+changeset:   286:eb51472f264a
+user:        Rich Leland <rich@richleland.com>
+date:        Tue Mar 26 18:22:21 2013 -0400
+summary:     Make SFTP file URLs accessible, refs #147
+
+changeset:   285:23dc20dd2eee
+user:        Rich Leland <rich@richleland.com>
+date:        Tue Mar 26 17:49:11 2013 -0400
+summary:     Test dev versions of boto and Django
+
+changeset:   284:058390cd7773
+user:        Rich Leland <rich@richleland.com>
+date:        Tue Mar 26 17:48:08 2013 -0400
+summary:     Properly handle boto dev versioning, fixes #152
+
+changeset:   283:02afdf3d2787
+parent:      281:561f3dd07653
+parent:      282:a3b2540a10a9
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Mon Mar 25 15:16:53 2013 +0100
+summary:     Merged in k_bx/django-storages-156-parse-date (pull request #63)
+
+changeset:   282:a3b2540a10a9
+parent:      280:2d9e8ee48e71
+user:        Konstantine Rybnikov <k-bx@k-bx.com>
+date:        Thu Mar 21 17:55:21 2013 +0200
+summary:     Fixes #156 added parsing of RFC1123 dates
+
+changeset:   281:561f3dd07653
+user:        ntucker
+date:        Sun Mar 24 23:59:08 2013 -0700
+summary:     Fix accepting settings arguments to s3boto backend storage
+
+changeset:   280:2d9e8ee48e71
+user:        Rich Leland <rich@richleland.com>
+date:        Wed Mar 20 17:59:28 2013 -0400
+summary:     Added tag 1.1.7 for changeset c32a25c5ed5d
+
+changeset:   279:c32a25c5ed5d
+tag:         1.1.7
+user:        Rich Leland <rich@richleland.com>
+date:        Wed Mar 20 17:56:29 2013 -0400
+summary:     Bumped version, updated changelog
+
+changeset:   278:0fd3d8cedfec
+user:        Chris Streeter <chris@chrisstreeter.com>
+date:        Sun Feb 10 08:58:56 2013 -0800
+summary:     Add myself to AUTHORS
+
+changeset:   277:a7e065960fbf
+user:        Chris Streeter <chris@chrisstreeter.com>
+date:        Sat Feb 09 08:22:28 2013 -0800
+summary:     Prevent listing huge buckets on S3.
+
+changeset:   276:fc4deda81887
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Thu Feb 07 19:52:46 2013 +0100
+summary:     Minor bikeshedding about the utility module name.
+
+changeset:   275:c79bd4dfe83e
+user:        Andrei Coman <comandrei@gmail.com>
+date:        Sun Jan 27 17:19:02 2013 +0200
+summary:     Minor refactorings
+
+changeset:   274:bc4091b70d3c
+user:        Andrei Coman <comandrei@gmail.com>
+date:        Sat Jan 26 20:54:46 2013 +0200
+summary:     Add myself to AUTHORS
+
+changeset:   273:1390fbd35913
+user:        Andrei Coman <comandrei@gmail.com>
+date:        Sat Jan 26 20:53:28 2013 +0200
+summary:     Added initial support for Windows Azure Storage
+
+changeset:   272:67fd74678920
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sat Jan 26 18:36:24 2013 +0100
+summary:     Minor cleanup.
+
+changeset:   271:ffeff063fa4a
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sat Jan 26 18:36:01 2013 +0100
+summary:     Use boto's dateparser for getting the last modified time of a file.
+
+changeset:   270:f7b070bac52c
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sat Jan 26 16:34:53 2013 +0100
+summary:     Added an exception about the need to have at least Boto 2.4.
+
+changeset:   269:6408c5d62be1
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sat Jan 26 15:44:00 2013 +0100
+summary:     Minor cosmetic change on the error message shown if a bucket doesn't exist and isn't automatically created.
+
+changeset:   268:f5c2f7d980cf
+parent:      265:a309672818a4
+parent:      267:813a600d9121
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sat Jan 26 15:41:07 2013 +0100
+summary:     Automated merge with ssh://bitbucket.org/david/django-storages
+
+changeset:   267:813a600d9121
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sat Jan 26 15:40:55 2013 +0100
+summary:     Fixed key handling in S3Boto and Google Storage backend and made sure the Google Storage backend uses the correct file class and boto API for durable reduced availability.
+
+changeset:   266:fd89bcab790b
+parent:      263:878f305b97e7
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sat Jan 26 15:36:50 2013 +0100
+summary:     Fix uploading with a file of the Google Storage backend (multipart upload isn't supported there).
+
+changeset:   265:a309672818a4
+parent:      263:878f305b97e7
+parent:      264:72dee58cf629
+user:        David Larlet <larlet@gmail.com>
+date:        Mon Jan 21 09:13:39 2013 +0100
+summary:     Merged in darkness51/django-storages (pull request #50)
+
+changeset:   264:72dee58cf629
+parent:      257:57904933f26b
+user:        Carlos Aguilar <caguilar@dwdandsolutions.com>
+date:        Fri Dec 14 13:55:03 2012 -0600
+summary:     Fix but when IS_GZIPPED is True
+
+changeset:   263:878f305b97e7
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sun Jan 20 23:10:18 2013 +0100
+summary:     Added myself to AUTHORS.
+
+changeset:   262:4ee6e5cfa936
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sun Jan 20 22:50:55 2013 +0100
+summary:     Happy new year!
+
+changeset:   261:630f283d4b31
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sun Jan 20 22:50:47 2013 +0100
+summary:     Update tox configuration to use its substitution feature added in 1.4 and use up-to-date dependencies.
+
+changeset:   260:02b9d8304c93
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sun Jan 20 22:49:58 2013 +0100
+summary:     Dramatically improved the S3BotoStorage and GSBotoStorage.
+
+changeset:   259:235946fdb10d
+user:        David Larlet <larlet@gmail.com>
+date:        Sun Jan 06 11:56:49 2013 +0100
+summary:     Added tag 1.1.6 for changeset 082f958b3811
+
+changeset:   258:082f958b3811
+tag:         1.1.6
+user:        David Larlet <larlet@gmail.com>
+date:        Sun Jan 06 11:56:41 2013 +0100
+summary:     Bumped version, updated changelog
+
+changeset:   257:57904933f26b
+user:        David Larlet <larlet@gmail.com>
+date:        Fri Dec 07 22:23:34 2012 +0100
+summary:     Fixes #105, add an optional setting to the boto storage to produce protocol-relative URLs, thanks @idangazit @pendletongp and @derrickpetzold
+
+changeset:   256:f4593369547c
+parent:      251:51e369b99663
+parent:      255:a1fea712fa17
+user:        David Larlet <larlet@gmail.com>
+date:        Fri Dec 07 21:59:41 2012 +0100
+summary:     Merged in tobias.mcnulty/django-storages (pull request #17)
+
+changeset:   255:a1fea712fa17
+user:        Tobias McNulty <tobias@caktusgroup.com>
+date:        Wed Jun 06 20:59:18 2012 -0400
+summary:     only pass encrypt_key if True
+
+changeset:   254:65b36585b766
+parent:      253:c30b3265d50a
+parent:      217:443b8662fd46
+user:        Tobias McNulty <tobias@caktusgroup.com>
+date:        Wed Jun 06 20:32:59 2012 -0400
+summary:     merge in upstream changes
+
+changeset:   253:c30b3265d50a
+parent:      252:c2a88a888193
+parent:      180:a59c9ea953ac
+user:        Tobias McNulty <tobias@caktusgroup.com>
+date:        Tue Jan 10 10:00:00 2012 -0500
+summary:     merge in upstream changes
+
+changeset:   252:c2a88a888193
+parent:      169:52f5f464da18
+user:        Tobias McNulty <tobias@caktusgroup.com>
+date:        Fri Dec 30 13:22:23 2011 -0500
+summary:     add support for S3 server-side encryption
+
+changeset:   251:51e369b99663
+parent:      249:ef15e52ab82c
+parent:      250:0506bbc01783
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Dec 05 18:42:08 2012 +0100
+summary:     Merged in gavinwahl/django-storages (pull request #46)
+
+changeset:   250:0506bbc01783
+parent:      241:1574890d87be
+user:        Gavin Wahl <gwahl@fusionbox.com>
+date:        Mon Oct 29 16:06:59 2012 -0600
+summary:     Ungzip on download based on Content-Encoding, not arbitrary Content-Type
+
+changeset:   249:ef15e52ab82c
+parent:      247:0c46146da6e7
+parent:      248:52e38a38b4e2
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Dec 05 10:19:40 2012 +0100
+summary:     Merged in oktaysancak/django-storages (pull request #48)
+
+changeset:   248:52e38a38b4e2
+parent:      241:1574890d87be
+user:        Oktay Sancak <oktaysancak@gmail.com>
+date:        Mon Dec 03 00:55:35 2012 +1100
+summary:     Minor refactoring
+
+changeset:   247:0c46146da6e7
+parent:      244:12fd16b0fa85
+parent:      246:0c7700afc4a3
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Dec 05 10:08:53 2012 +0100
+summary:     Merged in strycore/django-storages (pull request #43)
+
+changeset:   246:0c7700afc4a3
+user:        Mathieu Comandon <strider@strycore.com>
+date:        Fri Sep 21 19:37:35 2012 +0200
+summary:     Fix for FTPStorageFile close() method
+
+changeset:   245:3a02c7a8ff89
+parent:      239:02c77e741b73
+user:        Mathieu Comandon <strider@strycore.com>
+date:        Fri Sep 21 19:36:12 2012 +0200
+summary:     flake8 formatting
+
+changeset:   244:12fd16b0fa85
+parent:      242:10a96d4b10f9
+parent:      243:f312d8bc7520
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Dec 05 09:51:33 2012 +0100
+summary:     Merged in jezdez/django-storages (pull request #45)
+
+changeset:   243:f312d8bc7520
+parent:      241:1574890d87be
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sun Oct 21 13:23:12 2012 +0200
+summary:     Pass the rewind parameter to Boto's set_contents_from_file method since rewinding a file was disabled in >= 2.3.0.
+
+changeset:   242:10a96d4b10f9
+user:        Gerardo Curiel <gerardo@gerardo.cc>
+date:        Tue Dec 04 17:50:56 2012 -0430
+summary:     Set Content-Type header for use in upload_part_from_file
+
+changeset:   241:1574890d87be
+parent:      239:02c77e741b73
+parent:      240:fc2e5ba5fce0
+user:        David Larlet <larlet@gmail.com>
+date:        Sun Sep 23 18:00:33 2012 +0200
+summary:     Merged in aurorasoftware/django-storages/issue-133 (pull request #44). Thanks @aurorasoftware!
+
+changeset:   240:fc2e5ba5fce0
+branch:      issue-133
+user:        Dan Loewenherz <dloewenherz@gmail.com>
+date:        Fri Sep 21 19:58:25 2012 -0700
+summary:     update license file, closes #133
+
+changeset:   239:02c77e741b73
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Wed Sep 05 23:13:30 2012 +0200
+summary:     Added Google Cloud Storage backend based on the boto S3 storage backend.
+
+changeset:   238:cebc3181ab7c
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Thu Aug 23 19:51:26 2012 +0900
+summary:     Fix tests so it runs on python2.5 and Django < 1.3
+
+changeset:   237:e8b661b40fe6
+parent:      224:006daa3ebc4a
+parent:      236:51c0de8a30f5
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Thu Aug 23 12:30:06 2012 +0200
+summary:     Automated merge with https://bitbucket.org/david/django-storages
+
+changeset:   236:51c0de8a30f5
+parent:      228:beda68d88ac2
+parent:      235:99d4df78f1b8
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Thu May 10 17:05:43 2012 +0200
+summary:     Merged
+
+changeset:   235:99d4df78f1b8
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Thu May 10 16:59:41 2012 +0200
+summary:     Made sure we can reset the file behind the S3BotoStorage
+
+changeset:   234:591ba7abdad0
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Thu May 10 12:35:24 2012 +0200
+summary:     Enabled Gzipping for the tests and added Django 1.4 tox environment.
+
+changeset:   233:cddf553c12b2
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Thu May 10 12:34:51 2012 +0200
+summary:     Added tests from https://bitbucket.org/david/django-storages/pull-request/32/s3boto-gzip-fix-and-associated-unit-tests
+
+changeset:   232:5a6019deb7be
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Thu May 10 12:07:29 2012 +0200
+summary:     Wrap the returned content file correctly.
+
+changeset:   231:e51055a6c13a
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Thu May 10 12:07:07 2012 +0200
+summary:     Close the Gzip file again and reset the file's current position to the beginning.
+
+changeset:   230:4c0e805adb41
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Thu May 10 10:47:04 2012 +0200
+summary:     Rolled back modified time changes made in 16b149845a2d.
+
+changeset:   229:57460e8853ab
+parent:      227:8f0632799392
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Thu May 10 10:45:10 2012 +0200
+summary:     Fixed indentation
+
+changeset:   228:beda68d88ac2
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Fri May 04 19:54:57 2012 +0200
+summary:     Fixed indentation error.
+
+changeset:   227:8f0632799392
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Fri May 04 19:50:06 2012 +0200
+summary:     Added simple ISO 8601 datetime parser.
+
+changeset:   226:5fbc5f946047
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Fri May 04 19:25:20 2012 +0200
+summary:     Use GzipFile API correctly.
+
+changeset:   225:1212abfa159f
+parent:      216:83fa2f0ba20c
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Fri May 04 19:17:23 2012 +0200
+summary:     Decompress GZIPed files on return.
+
+changeset:   224:006daa3ebc4a
+user:        Rich Leland <rich@richleland.com>
+date:        Wed Jul 18 07:40:12 2012 -0400
+summary:     Added tag 1.1.5 for changeset ae4dad30b2f6
+
+changeset:   223:ae4dad30b2f6
+tag:         1.1.5
+user:        Rich Leland <rich@richleland.com>
+date:        Wed Jul 18 07:39:01 2012 -0400
+summary:     Bumped version, updated changelog
+
+changeset:   222:127f8fa8afc5
+user:        Russell Keith-Magee <russell@keith-magee.com>
+date:        Tue Jul 03 15:47:43 2012 +0800
+summary:     Added Russell Keith-Magee to AUTHORS file.
+
+changeset:   221:162d995e8935
+user:        Russell Keith-Magee <russell@keith-magee.com>
+date:        Tue Jul 03 13:57:14 2012 +0800
+summary:     Added documentation for the libcloud backend.
+
+changeset:   220:2b46f369b5ea
+user:        Russell Keith-Magee <russell@keith-magee.com>
+date:        Tue Jul 03 13:56:59 2012 +0800
+summary:     Modified libcloud backend to allow it to be used a default file storage
+
+changeset:   219:5826efe4b043
+parent:      217:443b8662fd46
+parent:      218:8e3f1fe734f4
+user:        David Larlet <larlet@gmail.com>
+date:        Fri Jun 22 16:17:15 2012 +0900
+summary:     Merged in atodorov/django-storages/more-granular-s3-settings (pull request #35) Thanks @atodorov!
+
+changeset:   218:8e3f1fe734f4
+branch:      more-granular-s3-settings
+user:        Alexander Todorov <atodoroov@otb.bg>
+date:        Thu Jun 21 16:05:36 2012 +0300
+summary:     first use AWS_S3_ACCESS_KEY_ID/AWS_S3_SECRET_ACCESS_KEY then fallback to AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY
+
+changeset:   217:443b8662fd46
+user:        Honza Pokorny <me@honza.ca>
+date:        Fri May 18 21:58:29 2012 -0300
+summary:     Add support for SSL in Rackspace Cloudfiles backend
+
+changeset:   216:83fa2f0ba20c
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 12 20:04:21 2012 -0700
+summary:     [s3boto] Fixed the listdir() method. fixes #57
+
+changeset:   215:5f7ff4e3d760
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 12 18:23:02 2012 -0700
+summary:     [s3boto] Added base url tests for safe_join
+
+changeset:   214:7768ec886d4b
+parent:      210:7c12f85b0536
+parent:      213:baf0c2db25a8
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 12 18:14:14 2012 -0700
+summary:     Merged pull request #20.
+
+changeset:   213:baf0c2db25a8
+user:        Alan Justino <alan.justino@yahoo.com.br>
+date:        Fri Jan 13 19:53:33 2012 -0200
+summary:     Lean version of safe_join by Ian Lewis
+
+changeset:   212:f51b080b1d1a
+user:        Alan Justino <alan.justino@yahoo.com.br>
+date:        Wed Jan 11 18:05:36 2012 -0200
+summary:     Tryed to guard against writing outside AWS_LOCATION
+
+changeset:   211:d3afefc8db4b
+parent:      180:a59c9ea953ac
+user:        Alan Justino <alan.justino@yahoo.com.br>
+date:        Wed Jan 11 18:01:05 2012 -0200
+summary:     safe_join fixed for base_path ending with '/'
+
+changeset:   210:7c12f85b0536
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 12 17:03:31 2012 -0700
+summary:     Added TODO comment
+
+changeset:   209:9f4a9dd37049
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 12 15:36:41 2012 -0700
+summary:     [s3boto] Updated the FILE_WRITE_BUFFER_SIZE setting to simply FILE_BUFFER_SIZE as it may be used for reading later.
+
+changeset:   208:f42e58824eff
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 12 15:05:15 2012 -0700
+summary:     Updated tests
+
+changeset:   207:8bc95ffaa16f
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 12 11:06:00 2012 -0700
+summary:     [s3boto] Rearranged imports in tests
+
+changeset:   206:935d4e53034b
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 12 09:51:09 2012 -0700
+summary:     [s3boto] Updated and added docstrings
+
+changeset:   205:0265860e3227
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Sun Mar 11 18:10:07 2012 -0700
+summary:     Made the streaming write buffer size into a setting
+
+changeset:   204:5a0eb1694dec
+parent:      188:16b149845a2d
+parent:      203:5224766e13c8
+user:        Ian Lewis <ianmlewis@gmail.com>
+date:        Sun Mar 11 16:31:17 2012 -0700
+summary:     Merged in pendletongp/django-storages-s3boto (pull request #30) fixes #109 #110 #111
+
+changeset:   203:5224766e13c8
+user:        Gordon@Gordon-PC
+date:        Tue Mar 06 17:51:16 2012 -0500
+summary:     pass along acl policy with multipart uploads
+
+changeset:   202:2184c89ed044
+user:        Gordon@Gordon-PC
+date:        Tue Mar 06 17:26:59 2012 -0500
+summary:     correct typo:  S3BotoStorageFile should access the reduced_redundancy param via the _storage reference.
+
+changeset:   201:04710871bf02
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 23:27:39 2012 -0500
+summary:     pass headers and the reduced_redundancy to the multipart_upload constructor
+
+changeset:   200:289dd17394a6
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 23:08:03 2012 -0500
+summary:     Basic implementation of using s3 multipart uploads for file writes.  This allows for writing large files without requiring enough disk/memory space to store the file locally.
+
+changeset:   199:bc4ede7484a9
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 21:57:58 2012 -0500
+summary:     create a base test case to inherit from
+
+changeset:   198:babc13464d4f
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 20:56:19 2012 -0500
+summary:     explicitly import S3BotoStorageTests so it can be specified from the command line like so: python manage.py test storages.S3BotoStorageTests
+
+changeset:   197:2225f8151fd6
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 20:30:42 2012 -0500
+summary:     test storage url
+
+changeset:   196:0ebe132ce2d6
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 20:23:09 2012 -0500
+summary:     test for multiple dir names in test_storage_listdir
+
+changeset:   195:5015483a27c9
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 20:17:15 2012 -0500
+summary:     test storage size
+
+changeset:   194:b85d34cb2f69
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 20:10:47 2012 -0500
+summary:     test storage listdir
+
+changeset:   193:bc919d93f022
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 20:01:18 2012 -0500
+summary:     test exist and delete
+
+changeset:   192:f43c094d92a1
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 19:59:52 2012 -0500
+summary:     rename test_storage_open_for_writing to test_storage_open and explicitly assign open modes
+
+changeset:   191:0825bc7e210c
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 19:40:58 2012 -0500
+summary:     delete all files created during each test
+
+changeset:   190:12c594d4fc92
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 19:12:21 2012 -0500
+summary:     create s3boto tests
+
+changeset:   189:8d2bc197f9e9
+parent:      187:3a53e65bf4cc
+user:        Gordon@Gordon-PC
+date:        Sun Mar 04 19:05:16 2012 -0500
+summary:     support creating files via storage.open(name, 'w')
+
+changeset:   188:16b149845a2d
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Sun Mar 11 14:42:58 2012 -0700
+summary:     [s3boto] Updated the modified_time() method so that it doesn't require dateutil. fixes #111
+
+changeset:   187:3a53e65bf4cc
+parent:      185:67b7075db78c
+parent:      186:4634a2f4c495
+user:        David Larlet <larlet@gmail.com>
+date:        Fri Feb 17 23:53:34 2012 +0900
+summary:     Merged in chamal/django-storages (pull request #16)
+
+changeset:   186:4634a2f4c495
+parent:      169:52f5f464da18
+user:        Aymeric Barantal <mric@chamal.fr>
+date:        Fri Dec 16 13:20:59 2011 +0100
+summary:     apache libcloud storage backend, work at least with google storage
+
+changeset:   185:67b7075db78c
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Fri Feb 17 15:45:17 2012 +0100
+summary:     Made S3boto storage PEP8 compatible.
+
+changeset:   184:d0e0be07b29f
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Fri Feb 17 15:14:01 2012 +0100
+summary:     When preloading the S3 metadata make sure we reset the files key during saving to prevent stale metadata.
+
+changeset:   183:8a50ff32391e
+parent:      181:e971e8f02eda
+parent:      182:5b310d02dd44
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Jan 27 15:26:09 2012 -0500
+summary:     Merged in tobias.mcnulty/django-storages (pull request #24)
+
+changeset:   182:5b310d02dd44
+branch:      s3boto-timezone
+parent:      169:52f5f464da18
+user:        Tobias McNulty <tobias@caktusgroup.com>
+date:        Tue Jan 17 11:55:01 2012 -0500
+summary:     S3BotoStorage.modified_time should return time in settings.TIME_ZONE, not OS timezone
+
+changeset:   181:e971e8f02eda
+user:        Ryan Kaskel <dev@ryankaskel.com>
+date:        Sat Jan 14 17:05:42 2012 +0000
+summary:     Respect HashPathStorage.location.
+
+changeset:   180:a59c9ea953ac
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Jan 06 14:10:38 2012 -0500
+summary:     Remove download_url from setup file.
+
+changeset:   179:e34a64723760
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Jan 06 13:47:57 2012 -0500
+summary:     Added tag 1.1.4 for changeset 3e8e477cf67d
+
+changeset:   178:3e8e477cf67d
+tag:         1.1.4
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Jan 06 13:47:41 2012 -0500
+summary:     Bump version to 1.1.4
+
+changeset:   177:26a79cf71ebc
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Jan 06 13:17:58 2012 -0500
+summary:     Added PendingDeprecationWarning for mosso backend.
+
+changeset:   176:728d94d823e2
+parent:      172:dae8a868d26a
+parent:      175:30c11b2d3868
+user:        Rich Leland <rich@richleland.com>
+date:        Mon Jan 02 21:13:43 2012 -0500
+summary:     Merged in marcoala/django-storages (pull request #13)
+
+changeset:   175:30c11b2d3868
+user:        marcoala
+date:        Wed Nov 30 13:09:19 2011 +0100
+summary:     added documentation for SFTP_KNOWN_HOST_FILE
+
+changeset:   174:b71c0f16769d
+user:        marcoala
+date:        Wed Nov 30 13:04:29 2011 +0100
+summary:     a little fix
+
+changeset:   173:2536ab28c5a2
+parent:      163:11bef0c2a410
+user:        marcoala
+date:        Tue Nov 29 19:07:22 2011 +0100
+summary:     - allow configurabile known host folder
+
+changeset:   172:dae8a868d26a
+parent:      170:a03d0051ff9e
+parent:      171:77db1946b515
+user:        Rich Leland <rich@richleland.com>
+date:        Mon Jan 02 21:13:08 2012 -0500
+summary:     Merged in ryankask/django-storages (pull request #12)
+
+changeset:   171:77db1946b515
+parent:      163:11bef0c2a410
+user:        Ryan Kaskel <dev@ryankaskel.com>
+date:        Thu Dec 01 13:29:20 2011 +0000
+summary:     Make HashPathStorage tests safe.
+
+changeset:   170:a03d0051ff9e
+parent:      169:52f5f464da18
+parent:      77:f48870e31143
+user:        Rich Leland <rich@richleland.com>
+date:        Mon Jan 02 21:11:09 2012 -0500
+summary:     merged multiple heads
+
+changeset:   169:52f5f464da18
+parent:      165:7850571691a6
+parent:      168:5e5240a8c968
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Sun Dec 11 00:15:39 2011 +0900
+summary:     Merged key's changes
+
+changeset:   168:5e5240a8c968
+user:        Mitsukuni Sato <mitsukuni.sato@gmail.com>
+date:        Fri Oct 14 23:51:49 2011 +0900
+summary:     support for django-mongodb-engine 0.4.0 or later.
+
+changeset:   167:3060bb2f9278
+parent:      166:d43861701fdc
+parent:      163:11bef0c2a410
+user:        Mitsukuni Sato <mitsukuni.sato@gmail.com>
+date:        Thu Oct 13 21:49:30 2011 +0900
+summary:     merge from current
+
+changeset:   166:d43861701fdc
+parent:      142:629607f8767f
+user:        Mitsukuni Sato <mitsukuni.sato@gmail.com>
+date:        Sun Jul 10 10:21:53 2011 +0900
+summary:     Fix bug for correcting can't delete GridFS files.
+
+changeset:   165:7850571691a6
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Sat Dec 10 22:53:32 2011 +0900
+summary:     [s3boto] Updated comment for the preloaded metadata check in last_modified()
+
+changeset:   164:271d496c37f7
+user:        Yuji Tomita <yuji@yujitomita.com>
+date:        Fri Dec 09 19:17:36 2011 -0800
+summary:     Fixed S3BotoStorage performance problem calling modified_time()
+
+changeset:   163:11bef0c2a410
+user:        Rich Leland <rich@richleland.com>
+date:        Sun Aug 28 15:16:00 2011 -0400
+summary:     Refs #40. Added deprecation warning for s3 backend.
+
+changeset:   162:e17c126420a2
+user:        Rich Leland <rich@richleland.com>
+date:        Sun Aug 28 15:00:28 2011 -0400
+summary:     Fixes #78, CLOUDFILES_CONNECTION_KWARGS default.
+
+changeset:   161:341c2d44530d
+user:        Rich Leland <rich@richleland.com>
+date:        Sun Aug 28 14:42:02 2011 -0400
+summary:     copied documentation over from wiki
+
+changeset:   160:c76c0abb1ae4
+user:        Rich Leland <rich@richleland.com>
+date:        Sun Aug 28 13:56:33 2011 -0400
+summary:     Added sphinx-quickstart docs
+
+changeset:   159:97a12aa407b8
+user:        Rich Leland <rich@richleland.com>
+date:        Sun Aug 28 13:41:54 2011 -0400
+summary:     removing old docs in prep for sphinx-based docs
+
+changeset:   158:77acfd20ad41
+parent:      154:d5bd7f41e7db
+user:        fhahn <flo@fhahn.com>
+date:        Mon Aug 15 20:35:51 2011 +0200
+summary:     use exists method to check if file is already there, fixes #83
+
+changeset:   157:1323aca7e706
+branch:      release
+user:        Rich Leland <rich@richleland.com>
+date:        Mon Aug 15 14:00:15 2011 -0400
+summary:     Added tag 1.1.3 for changeset 6ddff29585bb
+
+changeset:   156:6ddff29585bb
+branch:      release
+tag:         1.1.3
+user:        Rich Leland <rich@richleland.com>
+date:        Mon Aug 15 14:00:05 2011 -0400
+summary:     Bump version to 1.1.3
+
+changeset:   155:14016bc3e46f
+branch:      release
+parent:      148:1b3bde57e20a
+parent:      154:d5bd7f41e7db
+user:        Rich Leland <rich@richleland.com>
+date:        Mon Aug 15 13:57:28 2011 -0400
+summary:     Merged changes from default.
+
+changeset:   154:d5bd7f41e7db
+user:        Rich Leland <rich@richleland.com>
+date:        Mon Aug 15 13:56:37 2011 -0400
+summary:     Created CHANGELOG
+
+changeset:   153:3cac08a40c60
+parent:      149:201cea9dd0a6
+parent:      152:b18323306b88
+user:        Rich Leland <rich@richleland.com>
+date:        Mon Aug 15 13:21:15 2011 -0400
+summary:     Merged in fhahn/django-storages (pull request #5)
+
+changeset:   152:b18323306b88
+user:        fhahn <flo@fhahn.com>
+date:        Mon Aug 15 16:17:23 2011 +0200
+summary:     use absolute path to check if file already exists
+
+changeset:   151:a7e3c80b56e9
+user:        fhahn <flo@fhahn.com>
+date:        Mon Aug 15 16:16:27 2011 +0200
+summary:     added empty models.py for correct app loading
+
+changeset:   150:99328707a5ed
+parent:      146:8f043afb500b
+user:        fhahn <flo@fhahn.com>
+date:        Mon Aug 15 16:15:18 2011 +0200
+summary:     added testcase for HashPathStorage.save()
+
+changeset:   149:201cea9dd0a6
+parent:      146:8f043afb500b
+user:        Rich Leland <rich@richleland.com>
+date:        Mon Aug 15 13:07:55 2011 -0400
+summary:     Fixes #89: broken StringIO import in CloudFiles.
+
+changeset:   148:1b3bde57e20a
+branch:      release
+user:        Rich Leland <rich@richleland.com>
+date:        Thu Aug 11 10:45:06 2011 -0400
+summary:     Added tag 1.1.2 for changeset abb24ffd60d7
+
+changeset:   147:abb24ffd60d7
+branch:      release
+tag:         1.1.2
+user:        Rich Leland <rich@richleland.com>
+date:        Thu Aug 11 10:44:29 2011 -0400
+summary:     Bump version to 1.1.2.
+
+changeset:   146:8f043afb500b
+user:        Brent Tubbs <brent.tubbs@gmail.com>
+date:        Fri Jul 29 16:39:22 2011 -0700
+summary:     use lazy SFTP connection to avoid paramiko hanging on import when storage is passed into file field init
+
+changeset:   145:0b6ff832b77b
+user:        sannies@boggs
+date:        Tue Jul 26 18:22:17 2011 +0200
+summary:     create pseudo directories for every '/' in the filename
+
+changeset:   144:592e8880384b
+user:        sannies@boggs
+date:        Tue Jul 26 17:01:06 2011 +0200
+summary:     set _pos to 0 after creating of CloudFilesStorageFile
+
+changeset:   143:68d1cd09c966
+user:        sannies@boggs
+date:        Tue Jul 26 16:28:06 2011 +0200
+summary:     Do not read beyond the end of the file. Server will respond with 416 unsatisfied range.
+
+changeset:   142:629607f8767f
+user:        dArignac
+date:        Thu Jul 07 09:46:14 2011 +0200
+summary:     fixed error on SFTPStorage.read()
+
+changeset:   141:b85568a98f57
+parent:      140:347d847fc0ec
+parent:      139:c6c65d30e7b5
+user:        Brent Tubbs <brent.tubbs@gmail.com>
+date:        Tue Jun 28 15:03:41 2011 -0700
+summary:     merge
+
+changeset:   140:347d847fc0ec
+parent:      136:704255ad8565
+user:        Brent Tubbs <brent.tubbs@gmail.com>
+date:        Tue Jun 28 15:02:31 2011 -0700
+summary:     adding SFTP storage backend
+
+changeset:   139:c6c65d30e7b5
+user:        Matt Robenolt <matt@ydekproductions.com>
+date:        Thu May 12 12:23:51 2011 -0400
+summary:     Don't validate bucket if we're not auto creating it.
+
+changeset:   138:2118944fb499
+user:        Matt Robenolt <matt@ydekproductions.com>
+date:        Wed May 04 09:46:57 2011 -0400
+summary:     Oops, a typo in the default kwarg. :(
+
+changeset:   137:6f464f3f2ba5
+user:        Matt Robenolt <matt@ydekproductions.com>
+date:        Wed May 04 09:27:18 2011 -0400
+summary:     Adding support for calling_format to S3 boto.
+
+changeset:   136:704255ad8565
+parent:      134:0db5aa65cc34
+parent:      135:13c01047203e
+user:        David Larlet <larlet@gmail.com>
+date:        Tue Apr 19 02:58:32 2011 +0200
+summary:     Merge work from Graham King, thanks
+
+changeset:   135:13c01047203e
+parent:      133:2b44d79635e6
+user:        Graham King <graham@gkgk.org>
+date:        Tue Apr 12 14:33:09 2011 -0700
+summary:     Added ThreadSafeCloudFilesStorage, a thread safe subclass of CloudFilesStorage
+
+changeset:   134:0db5aa65cc34
+user:        brokenseal <admin@brokenseal.it>
+date:        Tue Apr 12 16:54:34 2011 +0200
+summary:     Added the option to set the connection kwargs inside the django settings file
+
+changeset:   133:2b44d79635e6
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Mar 21 22:06:18 2011 +0900
+summary:     Copy the headers so that gzip headers aren't added to subsequent save() operations.  fixes #75
+
+changeset:   132:0181134a8edb
+parent:      131:185e7b83462f
+parent:      128:47673439a27f
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Wed Mar 09 13:55:16 2011 +0100
+summary:     Merged.
+
+changeset:   131:185e7b83462f
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Wed Mar 09 13:54:13 2011 +0100
+summary:     Updated S3Storage backend to also respect the new AWS_PRELOAD_METADATA settings.
+
+changeset:   130:c1e817e4412f
+parent:      125:c68ad09b3a6a
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Wed Mar 09 13:49:26 2011 +0100
+summary:     Added AWS_PRELOAD_METADATA options for S3BotoStorage backend to preload bucket metadata.
+
+changeset:   129:ab9ad3a1bb86
+branch:      bug_70
+parent:      127:1ed32435d4b8
+user:        David Larlet <larlet@gmail.com>
+date:        Mon Feb 14 19:01:37 2011 +0100
+summary:     Closing branch bug_70
+
+changeset:   128:47673439a27f
+parent:      126:def732408163
+parent:      127:1ed32435d4b8
+user:        David Larlet <larlet@gmail.com>
+date:        Mon Feb 14 19:00:27 2011 +0100
+summary:     Merging bug_70 branch
+
+changeset:   127:1ed32435d4b8
+branch:      bug_70
+user:        Yann Malet <yann.malet@gmail.com>
+date:        Mon Feb 14 15:25:02 2011 +0100
+summary:     This modification aims to fix the bug #70 of django-storage for the cloudfiles backend. The goal is to only try to delete the file if the file exits.
+
+changeset:   126:def732408163
+user:        Michael Hrivnak <mhrivnak@americanri.com>
+date:        Wed Jan 12 14:03:22 2011 -0500
+summary:     Updated version number and moved it onto the storage module.
+
+changeset:   125:c68ad09b3a6a
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Fri Jan 07 23:54:26 2011 +0100
+summary:     Added s3.PreloadingS3Storage which preloads bucket content info to make it faster in common methods (modified_time (new), size, exists). The new modified_time method requires python-dateutil to parse the ISO 8601 date.
+
+changeset:   124:f3c5837dd70b
+parent:      122:f2fca02c5f94
+parent:      123:3d21df81e88d
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Dec 22 03:30:35 2010 +0100
+summary:     Merge
+
+changeset:   123:3d21df81e88d
+parent:      120:85e72f47f638
+user:        Jason Kraus <zbyte64@gmail.com>
+date:        Thu Dec 09 14:52:11 2010 -0800
+summary:     Fix for python 2.7
+
+changeset:   122:f2fca02c5f94
+user:        zyegfryed <zyegfryed@gmail.com>
+date:        Wed Dec 15 15:17:49 2010 +0100
+summary:     Fixed #54 Fix for sha depreciation warning in S3.py
+
+changeset:   121:5fa8705b0c91
+user:        Fabian Topfstedt <topfstedt@schneevonmorgen.com>
+date:        Sat Dec 11 22:49:30 2010 +0100
+summary:     Optional overwriting of files using AWS_S3_FILE_OVERWRITE (defaults to True)
+
+changeset:   120:85e72f47f638
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Sun Oct 24 20:01:04 2010 +0900
+summary:     Fixed an import error with newer versions of Boto by importing S3ResponseError from boto.exception
+
+changeset:   119:1d5cc3050ea3
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sat Oct 23 15:36:29 2010 +0200
+summary:     Minor cosmetic changes.
+
+changeset:   118:5ed10e041043
+user:        Jannis Leidel <jannis@leidel.info>
+date:        Sat Oct 23 15:36:08 2010 +0200
+summary:     Set a default calling format since it's unnecessary to specify it proejct settings.
+
+changeset:   117:ae2572e402db
+user:        Olly Smith <olly.smith@gmail.com>
+date:        Wed Sep 22 11:21:36 2010 +0100
+summary:     s3boto: only set a bucket's ACL if it's being automatically created.
+
+changeset:   116:558b445b48f0
+user:        Olly Smith <olly.smith@gmail.com>
+date:        Thu Sep 16 15:45:33 2010 +0100
+summary:     Lazy-loading for S3BotoStorage.bucket.
+
+changeset:   115:a3b4adda4c47
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Aug 23 14:35:59 2010 +0900
+summary:     Added file name encoding parameter to allow for passing non-ascii unicode objects as path names.
+
+changeset:   114:ce9b9341c49e
+parent:      113:9f918f268110
+parent:      111:3602d345b998
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Mon Aug 23 13:44:11 2010 +0900
+summary:     Merge s3boto and mosso changes
+
+changeset:   113:9f918f268110
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Thu Jul 15 03:14:08 2010 +0900
+summary:     Changed except statement in hashbackend to support python 2.5
+
+changeset:   112:b1c97b55af17
+parent:      106:43d79098b62f
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Fri Jul 02 22:11:25 2010 +0900
+summary:     Fixed security issue where a user could create a path that would write to a file outside the base location defined by AWS_LOCATION.
+
+changeset:   111:3602d345b998
+user:        Eric Chamberlain <eric@rf.com>
+date:        Tue Aug 03 22:26:35 2010 -0400
+summary:     S3 Content-Type fix.
+
+changeset:   110:4ba06827f5ab
+user:        Eric Chamberlain <eric@rf.com>
+date:        Sun Aug 01 00:08:49 2010 -0400
+summary:     Added AWS_REDUCED_REDUNDANCY flag to set reduced redundancy mode on the file.  Default setting is False for backwards compatibility.
+
+changeset:   109:9a50f8d7751f
+user:        Eric Chamberlain <eric@rf.com>
+date:        Sat Jul 31 23:47:27 2010 -0400
+summary:     Added AWS_BUCKET_ACL to control the acl on the bucket.  AWS_BUCKET_ACL will override AWS_DEFAULT_ACL.
+
+changeset:   108:d4014b824a0b
+parent:      106:43d79098b62f
+parent:      107:ada2779e591e
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Jun 23 14:45:14 2010 +0200
+summary:     Merge @pydanny's modifications on mosso storage
+
+changeset:   107:ada2779e591e
+parent:      96:1a955dc85239
+user:        Daniel Greenfeld <pydanny@gmail.com>
+date:        Thu Jun 17 11:39:20 2010 -0500
+summary:     Fixed mosso storage to save the size on a content object before turning it into a cType string
+
+changeset:   106:43d79098b62f
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Tue Jun 22 15:39:00 2010 +0900
+summary:     Added support for a base location for the storage within the bucket. Paths given to methods are normalized to internal S3 paths.
+
+changeset:   105:a014adbbad96
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Tue Jun 22 14:56:52 2010 +0900
+summary:     Added support for custom domains and setting secure/non-secure urls
+
+changeset:   104:890ed22dd3eb
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Tue Jun 22 13:56:01 2010 +0900
+summary:     Added support for passing querystring auth and expire parameters to the constructor for S3BotoStorage
+
+changeset:   103:60d3a43970ba
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Tue Jun 22 12:41:10 2010 +0900
+summary:     Fixed a bug on the new listdir() method implementation that was accidentally added earlier.
+
+changeset:   102:17b91e958fa6
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Tue Jun 22 12:21:20 2010 +0900
+summary:     Made the S3BotoStorageFile more file object like. Fixed writes
+
+changeset:   101:871c248b5985
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Tue Jun 22 11:46:09 2010 +0900
+summary:     Updated the S3BotoStorageFile to wrap a StringIO object better. It now supports the read() method with as size attribute for chunked reading.
+
+changeset:   100:8b3bdf4fc300
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Tue Jun 22 11:27:39 2010 +0900
+summary:     Use the new_key method as someone might have changed the key_class on the bucket.
+
+changeset:   99:b839c7daadd0
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Tue Jun 22 11:12:13 2010 +0900
+summary:     Don't add the Content-Length header since boto does a better job of finding the size, and overwrites the header anyway.
+
+changeset:   98:d565c4b5d212
+user:        Ian Lewis <IanMLewis@gmail.com>
+date:        Tue Jun 22 11:09:45 2010 +0900
+summary:     Use the DefaultContentType property from the Key class
+
+changeset:   97:7824e0f704b2
+user:        David Larlet <larlet@gmail.com>
+date:        Sun Jun 20 01:27:00 2010 +0200
+summary:     Add a mongodb backend, fixes #38, thanks @wkornewald
+
+changeset:   96:1a955dc85239
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Apr 28 22:44:22 2010 +0200
+summary:     Add an hashpath storage, thanks Axel Gembe
+
+changeset:   95:8a529aaf857a
+user:        Rich Leland <rich@richleland.com>
+date:        Wed Mar 31 17:00:52 2010 -0400
+summary:     Incorporated content_type patch from adamnelson.
+
+changeset:   94:b50a8447b006
+user:        Rich Leland <rich@richleland.com>
+date:        Wed Mar 31 16:54:39 2010 -0400
+summary:     Applied patch for #44 from adamnelson.
+
+changeset:   93:66d7ac645687
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 22:16:04 2010 -0400
+summary:     Removed unused distribute_setup file.
+
+changeset:   92:dffdb05c8339
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 22:12:49 2010 -0400
+summary:     Added tag 1.1.1 for changeset 374f6d14e307
+
+changeset:   91:374f6d14e307
+tag:         1.1.1
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 22:08:49 2010 -0400
+summary:     Removing distribute. Causing issues w/PyPI install.
+
+changeset:   90:4a9812ad1606
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 21:55:04 2010 -0400
+summary:     Added tag 1.1.1 for changeset 0054d538ccb5
+
+changeset:   89:0054d538ccb5
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 21:54:31 2010 -0400
+summary:     Fixing PyPI install issue.
+
+changeset:   88:18d075b5c82e
+parent:      85:ef009ac1d6a4
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 18:22:50 2010 -0400
+summary:     Added tag 1.1 for changeset ef009ac1d6a4
+
+changeset:   87:ba5973734121
+branch:      1.1
+parent:      83:2af8df12790a
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 18:18:39 2010 -0400
+summary:     Closing 1.1 branch.
+
+changeset:   86:df08c2949b86
+branch:      1.0
+parent:      84:20182711af27
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 18:17:35 2010 -0400
+summary:     Closing 1.0 branch.
+
+changeset:   85:ef009ac1d6a4
+tag:         1.1
+parent:      83:2af8df12790a
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 18:16:00 2010 -0400
+summary:     Moving 1.1 branch into default.
+
+changeset:   84:20182711af27
+branch:      1.0
+parent:      77:f48870e31143
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 18:15:15 2010 -0400
+summary:     Creating 1.0 branch.
+
+changeset:   83:2af8df12790a
+branch:      1.1
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 18:10:18 2010 -0400
+summary:     Updated setup.py to use distribute.
+
+changeset:   82:31ac5f98ea8f
+branch:      1.1
+user:        Rich Leland <rich@richleland.com>
+date:        Fri Mar 26 18:04:46 2010 -0400
+summary:     Added build folder to ignore list.
+
+changeset:   81:6184cdc55609
+branch:      1.1
+user:        Rich Leland <rich@richleland.com>
+date:        Wed Mar 24 22:04:11 2010 -0400
+summary:     Cleaned up settings in s3
+
+changeset:   80:6dd0c5e7aaaf
+branch:      1.1
+user:        Rich Leland <rich@richleland.com>
+date:        Wed Mar 24 21:58:32 2010 -0400
+summary:     Removed unnecessary import in s3
+
+changeset:   79:07344abda9dc
+branch:      1.1
+user:        Rich Leland <rich@richleland.com>
+date:        Wed Mar 24 21:57:33 2010 -0400
+summary:     Incorporated changes from default branch.
+
+changeset:   78:4eb314dff4a5
+branch:      1.1
+parent:      65:40184a5ed699
+user:        Rich Leland <rich@richleland.com>
+date:        Wed Mar 24 20:28:38 2010 -0400
+summary:     Refs #43. Upped version number to 1.1 in setup.py.
+
+changeset:   77:f48870e31143
+user:        David Larlet <larlet@gmail.com>
+date:        Tue Feb 16 02:05:33 2010 +0100
+summary:     Fix #37, I must be more careful with my automated merges.
+
+changeset:   76:aa0eccda8ca2
+user:        pswartz
+date:        Thu Feb 11 10:16:06 2010 -0500
+summary:     add AWS_BUCKET_PREFIX setting
+
+changeset:   75:9a3017a4f577
+parent:      74:0293592c3d26
+parent:      72:f8d31c049ad0
+user:        David Ziegler <david.ziegler@gmail.com>
+date:        Thu Feb 04 04:16:58 2010 -0800
+summary:     merge gzip fork with trunk
+
+changeset:   74:0293592c3d26
+user:        David Ziegler <david.ziegler@gmail.com>
+date:        Thu Feb 04 02:29:49 2010 -0800
+summary:     better var naming, only import gzip if using gzip
+
+changeset:   73:8ee7ba390a8c
+parent:      66:41cc5987a7fb
+user:        David Ziegler <david.ziegler@gmail.com>
+date:        Fri Jan 29 09:58:15 2010 -0800
+summary:     automatically gzip text files with s3
+
+changeset:   72:f8d31c049ad0
+user:        Gert Van Gool <gertvangool@gmail.com>
+date:        Wed Feb 03 17:08:28 2010 +0100
+summary:     Use a StringIO object internally (so we have self.file again)
+
+changeset:   71:2180945212ec
+user:        Gert Van Gool <gertvangool@gmail.com>
+date:        Wed Feb 03 13:17:00 2010 +0100
+summary:     Return empty string when we try to get the URL of a key that doesn't exist in the bucket
+
+changeset:   70:5fa7267dc86a
+user:        Gert Van Gool <gertvangool@gmail.com>
+date:        Wed Feb 03 13:16:29 2010 +0100
+summary:     Typo in import
+
+changeset:   69:a94fbaa77983
+user:        Gert Van Gool <gertvangool@gmail.com>
+date:        Wed Feb 03 11:06:39 2010 +0100
+summary:     Added location support (you can now create the bucket in EU)
+
+changeset:   68:6283cd9e49c6
+user:        Gert Van Gool <gertvangool@gmail.com>
+date:        Wed Feb 03 11:05:14 2010 +0100
+summary:     You can't create the same bucket twice, so if create fails, try to get it (we assume we own it)
+
+changeset:   67:323a4a16b096
+user:        Gert Van Gool <gertvangool@gmail.com>
+date:        Wed Feb 03 11:03:15 2010 +0100
+summary:     Removed excess of whitespaces
+
+changeset:   66:41cc5987a7fb
+parent:      61:7683dd9e9f35
+user:        David Larlet <larlet@gmail.com>
+date:        Sun Jan 24 02:20:06 2010 +0100
+summary:     S3: Add encryption option, depends on ezPyCrypto lib from http://www.freenet.org.nz/ezPyCrypto/, thanks @erikcw
+
+changeset:   65:40184a5ed699
+branch:      1.1
+user:        Rich Leland <rich@richleland.com>
+date:        Thu Dec 10 22:04:27 2009 -0500
+summary:     Added AWS_AUTO_CREATE_BUCKET setting with default of True.
+
+changeset:   64:28edf052f34c
+branch:      1.1
+user:        Rich Leland <rich@richleland.com>
+date:        Thu Dec 10 21:47:33 2009 -0500
+summary:     Cleaned up AWS_ settings within file.
+
+changeset:   63:5e76f7bd9a2f
+branch:      1.1
+user:        Rich Leland <rich@richleland.com>
+date:        Thu Dec 10 21:36:52 2009 -0500
+summary:     Added get or create bucket on init.
+
+changeset:   62:bafb3c60181a
+branch:      1.1
+user:        Rich Leland <rich@richleland.com>
+date:        Thu Dec 10 20:31:07 2009 -0500
+summary:     Created storages folder and moved backends into it.
+
+changeset:   61:7683dd9e9f35
+user:        Rich Leland <rich@richleland.com>
+date:        Thu Dec 03 22:09:29 2009 -0500
+summary:     Fixed example project settings.
+
+changeset:   60:8fd8a024bc7a
+user:        Rich Leland <rich@richleland.com>
+date:        Thu Dec 03 22:08:35 2009 -0500
+summary:     Fixes #35 InvalidObjectSize issue.
+
+changeset:   59:711c5557b808
+parent:      46:d1e1d8384d24
+parent:      58:07de8d535089
+user:        Rich Leland <rich@richleland.com>
+date:        Wed Nov 18 17:04:31 2009 -0500
+summary:     Pulled mosso changes from smileychris
+
+changeset:   58:07de8d535089
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Tue Nov 10 14:32:47 2009 +1300
+summary:     Fix connection_kwargs for CloudFilesStorage.
+
+changeset:   57:a6a01ef42fb2
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Tue Nov 10 14:26:34 2009 +1300
+summary:     Add a connection_kwargs argument to the CloudFilesStorage so other available arguments (like servicenet and debuglevel) are supported.
+
+changeset:   56:b345ad831e2c
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Tue Nov 10 14:11:33 2009 +1300
+summary:     Was right the first time (but didn't need the chunking) - _save should use send, not write.
+
+changeset:   55:efaa9cb4749c
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Mon Nov 09 10:21:46 2009 +1300
+summary:     The backend was incorrectly using cloud_obj.save rather than cloud_obj.write, which was very inefficient.
+
+changeset:   54:9422f4b5c685
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Mon Nov 02 22:11:10 2009 +1300
+summary:     Don't rely on the file having a content_type already set (use mimetypes.guess_type if it's not)
+
+changeset:   53:0adc1b8f769a
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Fri Oct 30 09:49:37 2009 +1300
+summary:     Minor PEP8 fixes for mosso backend (and remove an unused import)
+
+changeset:   52:34784bfd83d8
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Wed Oct 28 17:48:52 2009 +1300
+summary:     Add a CloudFilesStorageFile which handles reading from the backend correctly (along with rudimentary seeking and lazy file opening)
+
+changeset:   51:c2b7dae1f258
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Mon Oct 19 21:06:24 2009 +1300
+summary:     Use a much more efficient way of getting file URLs for the CloudFilesStorage backend (by retrieving and caching the container's public_uri rather than getting the public uri for each and every object).
+
+changeset:   50:3f24aa193174
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Mon Oct 19 20:56:42 2009 +1300
+summary:     Make the CloudFilesStorage listdir method remove the path from the filenames.
+
+changeset:   49:c96cf44d6965
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Mon Oct 19 20:49:13 2009 +1300
+summary:     Add a full_listdir method for CloudFilesStorage which returns directory names as well (the default listdir method uses the cloudfiles' list_objects(path=...) method, which does not return directories)
+
+changeset:   48:d2c3cffc7b2a
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Mon Oct 19 20:15:09 2009 +1300
+summary:     Fix an error with CloudFilesStorage returning the size of an object (.size is a property, not a method)
+
+changeset:   47:22b5ce7fd98e
+parent:      42:684e976d9992
+user:        Chris Beaven <smileychris@gmail.com>
+date:        Mon Oct 19 19:54:41 2009 +1300
+summary:     Change the CloudFilesStorage to accept settings when initializing rather than forcing CLOUDFILES_* settings.
+
+changeset:   46:d1e1d8384d24
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Nov 11 15:11:32 2009 +0100
+summary:     S3: Added Content-Length header for put requests to s3 storage, propagates the change from @mgunneras' fork, thanks
+
+changeset:   45:85416f48b5c5
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Oct 28 00:03:07 2009 +0100
+summary:     Update AUTHORS, they deserve it.
+
+changeset:   44:113abefc61bd
+user:        David Larlet <larlet@gmail.com>
+date:        Tue Oct 27 23:56:21 2009 +0100
+summary:     S3 & Boto: clean paths' names for windows, refs #11. Thanks Jason Christa.
+
+changeset:   43:a12646a6e420
+user:        David Larlet <larlet@gmail.com>
+date:        Tue Oct 27 23:41:32 2009 +0100
+summary:     Boto & Mosso: test existence of content_type, refs #5 (boto) and #18 (mosso). Thanks @adamnelson.
+
+changeset:   42:684e976d9992
+user:        David Larlet <larlet@gmail.com>
+date:        Mon Sep 28 17:10:11 2009 +0200
+summary:     Exposes the query_auth argument to boto's generate_url via new a setting AWS_QUERYSTRING_AUTH (default True for backwards compatibility). Thanks James from @incuna for the patch.
+
+changeset:   41:0a76f62f8a71
+user:        David Larlet <larlet@gmail.com>
+date:        Fri Sep 04 14:03:55 2009 +0200
+summary:     S3: refs #9, allows 206 status code for put/read partial responses (chunks), thanks @bruno
+
+changeset:   40:b9ea6833f88a
+user:        David Larlet <larlet@gmail.com>
+date:        Thu Aug 20 08:33:06 2009 +0200
+summary:     Refs #18, change content.content_type to content.file.content_type as suggested by Anonymous to be Django 1.1 compatible
+
+changeset:   39:592b2679a010
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Jul 15 11:30:30 2009 +0200
+summary:     S3 Boto: Related to #5, set the content type in headers, thanks to @wimleers for the original patch and @richleland for the final suggestion.
+
+changeset:   38:f1b973db889a
+user:        David Larlet <larlet@gmail.com>
+date:        Thu Jun 04 02:46:59 2009 +0200
+summary:     S3 Boto: More flexibility thanks to settings from Wim Leers' patch (#5) and Mads Sülau Jørgensen's fork
+
+changeset:   37:f4c28d73ae58
+user:        Rich Leland <rich@richleland.com>
+date:        Sun May 31 10:08:15 2009 -0400
+summary:     Added Mosso Cloud Files backend and example project.
+
+changeset:   36:3c8461f08936
+user:        David Larlet <larlet@gmail.com>
+date:        Mon May 18 12:32:36 2009 +0200
+summary:     S3: Added the AWS_S3_SECURE_URLS setting to provide the option of accessing S3 objects through https urls instead of only http. Thanks weswinham.
+
+changeset:   35:5cac7fceb0f8
+user:        David Larlet <larlet@gmail.com>
+date:        Mon May 18 12:14:00 2009 +0200
+summary:     Use standard Django's exception for imports in all storages.
+
+changeset:   34:3c2abbd46308
+user:        David Larlet <larlet@gmail.com>
+date:        Mon May 18 12:00:49 2009 +0200
+summary:     CouchDB: Initial addition of the storage. Thanks Christian Klein.
+
+changeset:   33:a9ccf7174ce5
+user:        David Larlet <larlet@gmail.com>
+date:        Mon May 18 11:24:39 2009 +0200
+summary:     Image: Use os.path.splitext in image storage rather than custom code. Thanks Michael Elsdörfer.
+
+changeset:   32:6f08ab41fc2b
+user:        David Larlet <larlet@gmail.com>
+date:        Mon May 18 11:23:17 2009 +0200
+summary:     Overwrite: now works with the location defined by the user, rather than forcing MEDIA_ROOT. Thanks Michael Elsdörfer.
+
+changeset:   31:564ae319da16
+user:        David Larlet <larlet@gmail.com>
+date:        Sun May 17 20:07:13 2009 +0200
+summary:     Symlink: Tired.
+
+changeset:   30:d614d51f6408
+user:        David Larlet <larlet@gmail.com>
+date:        Sun May 17 19:51:20 2009 +0200
+summary:     Symlink: refs #6. Minor fixes + documentation.
+
+changeset:   29:91745b61f744
+user:        David Larlet <larlet@gmail.com>
+date:        Sun May 17 19:46:54 2009 +0200
+summary:     Symlink: refs #6. It allows you to symlink a file when it's identical to the original file and to copy the file if it's modified. Thanks Wim Leers.
+
+changeset:   28:a7a21b17f358
+user:        David Larlet <larlet@gmail.com>
+date:        Sun May 17 19:40:25 2009 +0200
+summary:     Rename storage modules (PEP8). Thanks Jannis Leidel.
+
+changeset:   27:741eebc7ec9c
+user:        David Larlet <larlet@gmail.com>
+date:        Sun May 17 19:37:24 2009 +0200
+summary:     FTP: refs #4, it enables the saving of large files by no longer reading all the chunks of the file in a single string. Thanks Wim Leers.
+
+changeset:   26:7b347711f591
+user:        David Larlet <larlet@gmail.com>
+date:        Sun May 17 19:31:00 2009 +0200
+summary:     FTP: refs #4, makes exists() more reliable. Thanks Wim Leers.
+
+changeset:   25:912f387906b7
+user:        David Larlet <larlet@gmail.com>
+date:        Mon Mar 02 01:05:37 2009 +0100
+summary:     mimetypes.FOO performance problems, see http://bugs.python.org/issue5401 for details
+
+changeset:   24:e20d6ac67919
+user:        David Larlet <larlet@gmail.com>
+date:        Fri Feb 27 18:04:11 2009 +0100
+summary:     S3: add more options/flexibility (query string + default acl), thanks Sebastian Serrano
+
+changeset:   23:a822235adfe9
+user:        David Larlet <larlet@gmail.com>
+date:        Fri Feb 27 17:49:18 2009 +0100
+summary:     S3: raise IOErrors if the returned status code is not expected, thanks Sebastian Serrano
+
+changeset:   22:5878ed02d2a0
+user:        David Larlet <larlet@gmail.com>
+date:        Thu Feb 19 11:54:31 2009 +0100
+summary:     Added S3 module to setup.py, thanks Jannis Leidel.
+
+changeset:   21:3fb27d6543a9
+user:        David Larlet <larlet@gmail.com>
+date:        Thu Feb 12 00:18:58 2009 +0100
+summary:     Bundle S3 lib and update S3 tests
+
+changeset:   20:a26c3c7c74fe
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Feb 11 23:51:30 2009 +0100
+summary:     Fix a couple of bugs spoted by Ariel in S3 storages
+
+changeset:   19:c8c088bc9f1b
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Feb 11 23:44:10 2009 +0100
+summary:     Add a setup.py file, thanks Ariel Nunez
+
+changeset:   18:58069e6d920e
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Feb 11 23:40:36 2009 +0100
+summary:     Reorganisation of the repository, will ease packaging, thanks Ariel Nunez
+
+changeset:   17:b1bd0ff0ce55
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Feb 11 23:25:13 2009 +0100
+summary:     Add the database storage from snippet 1305, thanks Ivanov E.
+
+changeset:   16:1c4346dcbd80
+user:        David Larlet <larlet@gmail.com>
+date:        Tue Jan 13 15:45:22 2009 +0100
+summary:     Add an AUTHORS file, they deserve it
+
+changeset:   15:2930ca5815ca
+user:        David Larlet <larlet@gmail.com>
+date:        Tue Jan 13 15:36:04 2009 +0100
+summary:     Eventually add an S3BotoStorage, thanks Chris McCormick
+
+changeset:   14:46c8e895e7fb
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Jan 07 22:43:28 2009 +0100
+summary:     Add support for FTP storage, thanks Rafal Jonca
+
+changeset:   13:af5d6b4c2d07
+user:        David Larlet <larlet@gmail.com>
+date:        Fri Oct 10 00:48:41 2008 +0200
+summary:     Add support for MogileFS storage, thanks Andrew McClain.
+
+changeset:   12:f47f16959559
+user:        David Larlet <larlet@gmail.com>
+date:        Sat Sep 13 02:33:56 2008 +0200
+summary:     Add ImageStorage and OverwriteStorage from djangosnippets
+
+changeset:   11:6978cfda5f92
+user:        David Larlet <larlet@gmail.com>
+date:        Thu Sep 04 15:19:43 2008 +0200
+summary:     S3: seek content to 0, opening the content before saving, thanks Jay!
+
+changeset:   10:0df75060a373
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Aug 27 02:52:17 2008 +0200
+summary:     S3: eventually send the storage to the file, thanks Marty Alchin for  your suggestion! Still a work in progress.
+
+changeset:   9:106927c7d4b2
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Aug 27 01:18:59 2008 +0200
+summary:     S3: chunk support still in progress but it looks very ugly now, design decision is needed at this point. The new test suite is a bit broken, I know.
+
+changeset:   8:0131d5dd1dff
+user:        David Larlet <larlet@gmail.com>
+date:        Wed Aug 20 02:21:19 2008 +0200
+summary:     S3: start chunk support, thanks Sebastian Serrano for the patch!
+
+changeset:   7:967186c5a3f8
+user:        David Larlet <larlet@gmail.com>
+date:        Thu Aug 14 09:25:13 2008 +0200
+summary:     Update README + LICENSE
+
+changeset:   6:338679f8f24c
+user:        David Larlet <larlet@gmail.com>
+date:        Thu Aug 14 08:05:38 2008 +0200
+summary:     S3: add more documentation + sync with latest revision, thanks mcdiesel
+
+changeset:   5:5e2aff555506
+user:        David Larlet <larlet@gmail.com>
+date:        Sat Aug 09 22:51:23 2008 +0200
+summary:     S3: fix the _save method, thanks Arne Brodowski!
+
+changeset:   4:2f8b033c1b07
+user:        David Larlet <larlet@gmail.com>
+date:        Sat Aug 09 00:08:00 2008 +0200
+summary:     S3: sync imports with the merged patch in django trunk, yay!
+
+changeset:   3:07f2aa041cb4
+user:        David Larlet <larlet@gmail.com>
+date:        Tue Aug 05 01:31:15 2008 +0200
+summary:     S3Storage: first draft for the latest patch (5361-r8189.diff)
+
+changeset:   2:5851d7eadb31
+user:        David Larlet <larlet@gmail.com>
+date:        Mon Jul 21 14:26:10 2008 +0200
+summary:     S3: support for latest filestorage patch + tests, no support for chuncked files for now
+
+changeset:   1:d8a8ae7b1381
+user:        David Larlet <larlet@gmail.com>
+date:        Tue Jul 01 01:22:55 2008 +0200
+summary:     Add a README file with installation instructions
+
+changeset:   0:1cbeb2a32019
+user:        David Larlet <larlet@gmail.com>
+date:        Thu Jun 12 17:58:31 2008 +0200
+summary:     Add existing S3Storage
+
