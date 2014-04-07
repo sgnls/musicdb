@@ -5,10 +5,6 @@
 set -eu
 
 BASE=/usr/share/musicdb
-STORAGE=/srv/musicdb.chris-lamb.co.uk/storage
-
-mkdir -p ${STORAGE}
-chown www-data:www-data ${STORAGE}
 
 gunicorn-debian stop musicdb
 su www-data -c "${BASE}/musicdb/manage.py migrate --list"
