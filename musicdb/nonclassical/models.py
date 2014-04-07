@@ -71,7 +71,7 @@ class Album(models.Model, NextPreviousMixin):
             'height': 125,
             'format': 'jpeg',
         },
-    }, cachebust=True)
+    }, cachebust=True, track_exists=True)
 
     cover = models.CharField(max_length=100) # deprecated
 
