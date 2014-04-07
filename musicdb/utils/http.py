@@ -14,20 +14,22 @@ def render_playlist(request, tracks, prefix=None):
         PlaylistFormatEnum.M3U: M3UResponse,
     }[request.profile.playlist_format]
 
-    if prefix is None:
-        prefix = request.profile.prefix or settings.MEDIA_LOCATION_HTTP
-
     return klass(tracks, prefix)
 
 class M3UResponse(HttpResponse):
     def __init__(self, tracks, prefix):
         content = '#EXTM3U\n'
+
         for track in tracks:
-            content += '#EXTINF:%d,\n%s\n' % (
-                track.length,
-                os.path.join(prefix, track.file.location),
-            )
+            location = track.file.url().replace('https:', 'http:')
+
+            if prefix is not None:
+                location = os.path.join(prefix, track.file.location)
+
+            content += '#EXTINF:%d,\n%s\n' % (track.length, location)
+
         super(M3UResponse, self).__init__(content, mimetype='audio/x-mpegurl')
+
         self['Content-Disposition'] = 'attachment; filename=playlist.m3u'
 
 class XSPFResponse(HttpResponse):
@@ -52,7 +54,11 @@ class XSPFResponse(HttpResponse):
             duration.text = unicode(track.length * 1000)
 
             location = etree.SubElement(elem, 'location')
-            location.text = os.path.join(prefix, track.file.location)
+
+            location.text = track.file.url().replace('https:', 'http:')
+
+            if prefix is not None:
+                location.text = os.path.join(prefix, track.file.location)
 
         super(XSPFResponse, self).__init__(
             etree.tounicode(playlist),
