@@ -28,10 +28,7 @@ def book(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
 
     if not request.profile.kindle_email_address:
-        return redirect('%s/%s' % (
-            settings.MEDIA_LOCATION_HTTP,
-            book.file.location,
-        ))
+        return redirect(book.file.url())
 
     message = EmailMessage(to=(request.profile.kindle_email_address,))
     message.attach_file(book.file.absolute_location())

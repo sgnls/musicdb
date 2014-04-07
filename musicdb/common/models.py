@@ -4,6 +4,7 @@ from mutagen import mp3, flac, easyid3, File as MutagenFile
 
 from django.db import models
 from django.conf import settings
+from django.core.files.storage import default_storage
 
 from musicdb.db.fields import MySlugField
 
@@ -48,6 +49,9 @@ class File(models.Model):
             self.size = os.path.getsize(self.absolute_location())
 
         super(File, self).save(*args, **kwargs)
+
+    def url(self):
+        return default_storage.url(self.location)
 
     def delete(self, *args, **kwargs):
         path = self.absolute_location(for_writing=True)
