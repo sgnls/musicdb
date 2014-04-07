@@ -33,3 +33,4 @@ STATIC_MEDIA_URL = '/media/%(path)s'
 
 MEDIA_ROOT = base_dir('storage')
 MEDIA_LOCATION = base_dir('media_location')
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
