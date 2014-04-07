@@ -11,9 +11,10 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 IMAGE_VARIANTS = []
 
 class YADTImageField(object):
-    def __init__(self, variants=None, cachebust=False, fallback=False, format='jpeg', filename_prefix=lambda x: x.pk):
+    def __init__(self, variants=None, cachebust=False, track_exists=False, fallback=False, format='jpeg', filename_prefix=lambda x: x.pk):
         self.variants = {}
         self.cachebust = cachebust
+        self.track_exists = track_exists
         self.filename_prefix = filename_prefix
 
         variants = variants or {}
@@ -49,7 +50,9 @@ class YADTImageField(object):
     def contribute_to_class(self, cls, name):
         self.model = cls
         self.name = name
+
         self.cachebusting_field = None
+        self.exists_field = None
 
         self.upload_to = os.path.join(
             'yadt',
@@ -68,6 +71,11 @@ class YADTImageField(object):
             )
 
             cls.add_to_class('%s_hash' % name, self.cachebusting_field)
+
+        if self.track_exists:
+            self.exists_field = models.BooleanField(default=False)
+
+            cls.add_to_class('%s_exists' % name, self.exists_field)
 
         cls._meta.add_virtual_field(self)
 
@@ -123,7 +131,7 @@ class YADTImage(object):
         self.__dict__.update(self.variants)
 
         # Convenience methods
-        for x in ('url', 'save', 'open', 'exists'):
+        for x in ('url', 'open'):
             setattr(self, x, getattr(self.original, x))
 
     def __repr__(self):
@@ -133,6 +141,18 @@ class YADTImage(object):
             self.field.name,
             self.field.upload_to,
         )
+
+    def save(self, *args, **kwargs):
+        try:
+            return self.original.save(*args, **kwargs)
+        finally:
+            self.mark_exists(True)
+
+    def exists(self):
+        if not self.field.exists_field:
+            return self.original.exists()
+
+        return getattr(self.instance, self.field.exists_field.name)
 
     def refresh(self):
         for variant in self.variants.values():
@@ -147,10 +167,15 @@ class YADTImage(object):
                 get_random_string(self.field.cachebusting_field.max_length),
             )
 
+    def mark_exists(self, exists):
+        if self.field.exists_field:
+            return setattr(self.instance, self.field.exists_field.name, exists)
+
     def delete(self):
         for variant in self.variants.values():
             variant.delete()
         self.cachebust()
+        self.mark_exists(False)
 
 class YADTImageFile(object):
     def __init__(self, name, config, image, instance):
