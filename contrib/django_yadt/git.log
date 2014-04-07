@@ -1,3 +1,47 @@
+commit 7eeb9ccc26346fc0491daf179b8696f93c7ead8c
+Author: Chris Lamb <chris@thread.com>
+Date:   Mon Apr 7 16:12:09 2014 +0100
+
+    Add support for an 'exists' field.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |   25 ++++++++++++++++++++++---
+ 1 file changed, 22 insertions(+), 3 deletions(-)
+
+commit d1ff4b87705aded40f5fe72c97fc5458231705c8
+Author: Chris Lamb <chris@thread.com>
+Date:   Mon Apr 7 16:00:05 2014 +0100
+
+    Manual pass-through for .exists()  (for next commit)
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 328ceb7511b0150e9a030c49cf4ec710c06add7b
+Author: Chris Lamb <chris@thread.com>
+Date:   Mon Apr 7 15:59:32 2014 +0100
+
+    Manual pass-through for save (for next commit)
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 5910a4b869380318687dd1f295ad900f022fb301
+Author: Chris Lamb <chris@thread.com>
+Date:   Mon Apr 7 15:58:52 2014 +0100
+
+    Reflow.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
 commit 1fe0d32c4a9b5b3d2eb4b35871124f46beaa1165
 Author: Chris Lamb <chris@thread.com>
 Date:   Mon Apr 7 13:58:11 2014 +0100
