@@ -1,3 +1,63 @@
+commit 1fe0d32c4a9b5b3d2eb4b35871124f46beaa1165
+Author: Chris Lamb <chris@thread.com>
+Date:   Mon Apr 7 13:58:11 2014 +0100
+
+    If URL already has a querystring, append an anonymous param.
+    
+    We were previously generating bogus URLs like:
+    
+      http://example.com/?some_arg_from_default_storage=1?cache_key
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 119908954ddc42267001bf4fedf98fcbf7a79269
+Author: Chris Lamb <chris@thread.com>
+Date:   Tue Apr 1 14:34:33 2014 +0100
+
+    After deleting, we should try and cachebust.
+
+ django_yadt/fields.py |    1 +
+ 1 file changed, 1 insertion(+)
+
+commit dbb93cc3cf2ee04b5ab83fcf48ffeb6f79ab302e
+Author: Chris Lamb <chris@thread.com>
+Date:   Thu Mar 27 19:04:06 2014 +0000
+
+    Add support for deleting images and variants.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit 72f0dbcaf881ea4c4dac2aa3b952a0303fbe92a0
+Author: Chris Lamb <chris@thread.com>
+Date:   Mon Mar 24 19:53:58 2014 +0000
+
+    Support deterministic names based on a callback.
+    
+    This allows us to use, say, a slugfield to avoid leaking primary
+    keys.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit 13cb1ce7be531a1f33f448bcc0ca1886aba2d05c
+Author: Chris Lamb <chris@thread.com>
+Date:   Tue Mar 11 09:40:16 2014 +0000
+
+    Support arbitrary PIL kwargs.
+    
+    Signed-off-by: Chris Lamb <chris@thread.com>
+
+ django_yadt/fields.py |    6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
 commit b4cbbadcb5b6a4c30058c677eb10d01c9b54a81b
 Author: Chris Lamb <chris@thread.com>
 Date:   Mon Jun 24 10:26:57 2013 +0100
@@ -7,7 +67,7 @@ Date:   Mon Jun 24 10:26:57 2013 +0100
     Signed-off-by: Chris Lamb <chris@thread.com>
 
  django_yadt/fields.py |    4 ++--
- 1 files changed, 2 insertions(+), 2 deletions(-)
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 commit fb9e518e71d742a12bcaf81209f032113bf944b0
 Author: Chris Lamb <chris@thread.com>
@@ -18,7 +78,7 @@ Date:   Mon Mar 18 15:23:24 2013 +0000
     Signed-off-by: Chris Lamb <chris@thread.com>
 
  django_yadt/fields.py |    4 ++--
- 1 files changed, 2 insertions(+), 2 deletions(-)
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 commit 4733da42540d3a334030b6e3106b2c138be415d3
 Author: Chris Lamb <chris@thread.com>
@@ -29,7 +89,7 @@ Date:   Tue Mar 12 15:56:11 2013 +0000
     Signed-off-by: Chris Lamb <chris@thread.com>
 
  django_yadt/fields.py |    1 +
- 1 files changed, 1 insertions(+), 0 deletions(-)
+ 1 file changed, 1 insertion(+)
 
 commit a3bf9240424700f21b1e89b4663ca4e5c12d78ef
 Author: Chris Lamb <chris@thread.com>
@@ -40,7 +100,7 @@ Date:   Tue Mar 12 15:52:08 2013 +0000
     Signed-off-by: Chris Lamb <chris@thread.com>
 
  django_yadt/utils.py |   14 ++++++++++++++
- 1 files changed, 14 insertions(+), 0 deletions(-)
+ 1 file changed, 14 insertions(+)
 
 commit db6b5bfc47f55434a034672792ca6067266241ee
 Author: Chris Lamb <chris@thread.com>
@@ -52,7 +112,7 @@ Date:   Tue Mar 12 15:51:49 2013 +0000
 
  django_yadt/fields.py                              |   12 ++++++
  .../commands/yadt_generate_fallback_config.py      |   42 ++++++++++++++++++++
- 2 files changed, 54 insertions(+), 0 deletions(-)
+ 2 files changed, 54 insertions(+)
 
 commit a5d98f826089a0b9b35fac876e8d3dac399c01cf
 Author: Chris Lamb <chris@thread.com>
@@ -63,7 +123,7 @@ Date:   Tue Mar 12 15:51:12 2013 +0000
     Signed-off-by: Chris Lamb <chris@thread.com>
 
  django_yadt/fields.py |    4 ++++
- 1 files changed, 4 insertions(+), 0 deletions(-)
+ 1 file changed, 4 insertions(+)
 
 commit 66119a97f473e35590f3560bfafc956b9331fbc2
 Author: Chris Lamb <chris@thread.com>
@@ -73,8 +133,8 @@ Date:   Tue Mar 12 15:50:35 2013 +0000
     
     Signed-off-by: Chris Lamb <chris@thread.com>
 
- django_yadt/fields.py |   64 ++++++++++++++++++++++++++++++++++--------------
- 1 files changed, 45 insertions(+), 19 deletions(-)
+ django_yadt/fields.py |   64 ++++++++++++++++++++++++++++++++++---------------
+ 1 file changed, 45 insertions(+), 19 deletions(-)
 
 commit 36924c92d91c7e29743a4a7b799c3e87a92cf38e
 Author: Chris Lamb <chris@thread.com>
@@ -84,8 +144,8 @@ Date:   Tue Feb 26 10:24:41 2013 +0000
     
     Signed-off-by: Chris Lamb <chris@thread.com>
 
- .../management/commands/yadt_invalidate_variant.py |   16 ++++++++++++++++
- 1 files changed, 16 insertions(+), 0 deletions(-)
+ .../management/commands/yadt_invalidate_variant.py     |   16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
 commit 48f7bd8178056ee925d6a2adb606455350be6426
 Author: Chris Lamb <chris@thread.com>
@@ -95,9 +155,9 @@ Date:   Tue Feb 26 10:24:29 2013 +0000
     
     Signed-off-by: Chris Lamb <chris@thread.com>
 
- django_yadt/management/commands/yadt_gc.py         |    2 --
- .../management/commands/yadt_refresh_variant.py    |    1 -
- 2 files changed, 0 insertions(+), 3 deletions(-)
+ django_yadt/management/commands/yadt_gc.py              |    2 --
+ django_yadt/management/commands/yadt_refresh_variant.py |    1 -
+ 2 files changed, 3 deletions(-)
 
 commit ce043475e584e5d8456a72fe6253b9f903d7716c
 Author: Chris Lamb <chris@thread.com>
@@ -108,7 +168,7 @@ Date:   Tue Feb 26 10:23:18 2013 +0000
     Signed-off-by: Chris Lamb <chris@thread.com>
 
  django_yadt/fields.py |    3 +++
- 1 files changed, 3 insertions(+), 0 deletions(-)
+ 1 file changed, 3 insertions(+)
 
 commit 29f55cd97bd7f84d41eb77b831b2df1df09c5f9d
 Author: Chris Lamb <chris@thread.com>
@@ -124,5 +184,5 @@ Date:   Thu Jan 10 11:37:49 2013 +0000
  django_yadt/fields.py                              |  279 ++++++++++++++++++++
  django_yadt/management/commands/yadt_gc.py         |   40 +++
  .../management/commands/yadt_refresh_variant.py    |   21 ++
- django_yadt/utils.py                               |   30 ++
- 7 files changed, 396 insertions(+), 0 deletions(-)
+ django_yadt/utils.py                               |   30 +++
+ 7 files changed, 396 insertions(+)

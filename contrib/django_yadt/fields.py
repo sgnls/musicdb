@@ -11,9 +11,10 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 IMAGE_VARIANTS = []
 
 class YADTImageField(object):
-    def __init__(self, variants=None, cachebust=False, fallback=False, format='jpeg'):
+    def __init__(self, variants=None, cachebust=False, fallback=False, format='jpeg', filename_prefix=lambda x: x.pk):
         self.variants = {}
         self.cachebust = cachebust
+        self.filename_prefix = filename_prefix
 
         variants = variants or {}
         for name, config in variants.iteritems():
@@ -32,6 +33,7 @@ class YADTImageField(object):
                 crop=config.get('crop', False),
                 width=config.get('width', None),
                 height=config.get('height', None),
+                kwargs=config.get('kwargs', None),
                 fallback=config.get('fallback', False),
                 transform=config.get('transform', None),
             )
@@ -75,13 +77,14 @@ class YADTImageField(object):
         setattr(cls, name, Descriptor(self))
 
 class YADTVariantConfig(object):
-    def __init__(self, field, name, format, width=None, height=None, crop=False, fallback=None, transform=None, original=False):
+    def __init__(self, field, name, format, width=None, height=None, kwargs=None, crop=False, fallback=None, transform=None, original=False):
         self.field = field
         self.name = name
 
         self.crop = crop
         self.width = width
         self.height = height
+        self.kwargs = kwargs or {}
         self.format = format
         self.transform = transform
         self.fallback = fallback
@@ -147,6 +150,11 @@ class YADTImage(object):
                 get_random_string(self.field.cachebusting_field.max_length),
             )
 
+    def delete(self):
+        for variant in self.variants.values():
+            variant.delete()
+        self.cachebust()
+
 class YADTImageFile(object):
     def __init__(self, name, config, image, instance):
         self.name = name
@@ -157,7 +165,10 @@ class YADTImageFile(object):
         self.filename = os.path.join(
             self.image.field.upload_to,
             self.name,
-            '%d.%s' % (self.instance.pk, self.config.format),
+            '%s.%s' % (
+                self.image.field.filename_prefix(self.instance),
+                self.config.format,
+            ),
         )
 
     def __repr__(self):
@@ -174,7 +185,11 @@ class YADTImageFile(object):
             )
 
             if suffix:
-                url += '?%s' % suffix
+                # If URL already has a querystring, append an anonymous param.
+                if '?' in url:
+                    url += '&_=%s' % suffix
+                else:
+                    url += '?%s' % suffix
 
         return url
 
@@ -182,7 +197,7 @@ class YADTImageFile(object):
         return default_storage.exists(self.filename)
 
     def save(self, content):
-        default_storage.delete(self.filename)
+        self.delete()
 
         filename = default_storage.save(self.filename, content)
 
@@ -196,6 +211,9 @@ class YADTImageFile(object):
 
     def open(self, mode='rb'):
         return default_storage.open(self.filename)
+
+    def delete(self):
+        return default_storage.delete(self.filename)
 
     def refresh(self):
         if self.config.original:
@@ -256,7 +274,7 @@ class YADTImageFile(object):
                 im.paste(existing, mask=existing.split()[3])
 
         fileobj = StringIO.StringIO()
-        im.save(fileobj, self.config.format)
+        im.save(fileobj, self.config.format, **self.config.kwargs)
 
         self.save(InMemoryUploadedFile(
             fileobj,
