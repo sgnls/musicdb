@@ -12,7 +12,6 @@ from musicdb.common.models import AbstractArtist, MusicFile
 
 from musicdb.db.mixins import NextPreviousMixin
 from musicdb.db.fields import MySlugField, FirstLetterField, DirNameField
-from musicdb.db.std_image.fields import StdImageField
 
 from .managers import ArtistManager, AlbumManager, TrackManager
 
@@ -76,12 +75,7 @@ class Album(models.Model, NextPreviousMixin):
         },
     }, cachebust=True)
 
-    cover = StdImageField(
-        upload_to='album_covers',
-        size=(300, 300),
-        thumbnail_size=(125, 125),
-        blank=True,
-    )
+    cover = models.CharField(max_length=100) # deprecated
 
     slug = MySlugField('title')
     dir_name = DirNameField('get_dir_name')
