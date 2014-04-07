@@ -1,7 +1,4 @@
-from django.conf import settings
-from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
-from django.core.mail import EmailMessage
 
 from .models import Author, Book
 
@@ -23,17 +20,3 @@ def author(request, slug):
     return render(request, 'books/author.html', {
         'author': author,
     })
-
-def book(request, book_id):
-    book = get_object_or_404(Book, pk=book_id)
-
-    if not request.profile.kindle_email_address:
-        return redirect(book.file.url())
-
-    message = EmailMessage(to=(request.profile.kindle_email_address,))
-    message.attach_file(book.file.absolute_location())
-    message.send()
-
-    messages.success(request, '"%s" sent to Kindle.' % book.title)
-
-    return redirect(book.authors.all()[0].author)

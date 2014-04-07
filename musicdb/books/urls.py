@@ -7,6 +7,4 @@ urlpatterns = patterns('musicdb.books.views',
         name='index'),
     url(r'^books/(?P<slug>[^/]+)$', 'author',
         name='author'),
-    url(r'^books/download/(?P<book_id>\d+)$', 'book',
-        name='book'),
 )
