@@ -42,7 +42,7 @@ class Book(models.Model):
             'height': 213,
             'format': 'jpeg',
         },
-    }, cachebust=True)
+    }, track_exists=True, cachebust=True)
 
     file = models.OneToOneField('common.File', related_name='book')
 
