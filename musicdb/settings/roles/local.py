@@ -35,4 +35,3 @@ DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 MEDIA_URL = '/storage/'
 MEDIA_ROOT = base_dir('storage')
-MEDIA_LOCATION = base_dir('media_location')
