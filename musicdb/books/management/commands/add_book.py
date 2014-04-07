@@ -26,6 +26,8 @@ class Command(AddFilesCommand):
     )
 
     def handle_filenames(self, filenames):
+        assert False, "needs to be ported to default_storage"
+
         if len(filenames) != 1:
             raise CommandError("Must specify one file")
 
