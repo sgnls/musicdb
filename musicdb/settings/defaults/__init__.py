@@ -110,12 +110,7 @@ INSTALLED_APPS = (
     'musicdb.utils',
 )
 
-# Make this unique, and don't share it with anybody.
-try:
-    with open('/var/lib/musicdb/key', 'r') as f:
-        SECRET_KEY = f.read().strip()
-except IOError:
-    SECRET_KEY = 'gh*w7@sdfj4%i=xyjatf_@!wx^d#tam^&5q6(f=z6io-302iwu'
+SECRET_KEY = 'EWf30GO9FL7rdgBpdUNuJF1RPx8mtmpFYOvcdNwMzhcyGk4Jxb'
 
 MEDIA_ROOT = '/srv/musicdb.chris-lamb.co.uk/storage'
 MEDIA_URL = '/storage/'
@@ -153,11 +148,7 @@ DATABASE_ENGINE = 'dummy_for_debug_toolbar'
 MEDIA_LOCATION = '/srv/musicdb.chris-lamb.co.uk'
 UNFILED_MEDIA_LOCATION  = '/srv/unfiled.chris-lamb.co.uk/unfiled_classical_music'
 
-try:
-    with open('/var/lib/musicdb/http_suffix', 'r') as f:
-        SECRET_HTTP_SUFFIX = f.read().strip()
-except IOError:
-    SECRET_HTTP_SUFFIX = 'z7DukHiMKH'
+SECRET_HTTP_SUFFIX = '0BCidVG6'
 
 MEDIA_LOCATION_HTTP = 'http://musicdb.chris-lamb.co.uk/_%s' % SECRET_HTTP_SUFFIX
 UNFILED_MEDIA_LOCATION_HTTP = 'http://musicdb.chris-lamb.co.uk/unfiled/_%s' % SECRET_HTTP_SUFFIX

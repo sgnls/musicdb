@@ -7,18 +7,6 @@ set -eu
 BASE=/usr/share/musicdb
 STORAGE=/srv/musicdb.chris-lamb.co.uk/storage
 
-mkdir -p /var/lib/musicdb
-
-if [ ! -f /var/lib/musicdb/http_suffix ]
-then
-	pwgen -s > /var/lib/musicdb/http_suffix
-fi
-
-if [ ! -f /var/lib/musicdb/key ]
-then
-	pwgen -s 50 > /var/lib/musicdb/key
-fi
-
 mkdir -p ${STORAGE}
 chown www-data:www-data ${STORAGE}
 
@@ -29,6 +17,5 @@ ln -sf ${BASE}/config/gunicorn /etc/gunicorn.d/musicdb
 gunicorn-debian start musicdb
 
 rm -f /etc/nginx/sites-enabled/musicdb
-sed -e "s/##HTTP_SUFFIX##/$(cat /var/lib/musicdb/http_suffix)/g" \
-	< ${BASE}/config/nginx.in > /etc/nginx/sites-enabled/musicdb
+cp ${BASE}/config/nginx.in /etc/nginx/sites-enabled/musicdb
 invoke-rc.d nginx reload
