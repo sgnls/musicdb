@@ -36,13 +36,11 @@ class Book(models.Model):
             'width': 300,
             'height': 428,
             'format': 'jpeg',
-            'fallback': True,
         },
         'thumbnail': {
             'width': 150,
             'height': 213,
             'format': 'jpeg',
-            'fallback': True,
         },
     }, cachebust=True)
 

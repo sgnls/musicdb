@@ -12,12 +12,6 @@ override_dh_auto_build:
 	# Test in build so we don't have to build first
 	musicdb/manage.py test --verbosity=2
 	
-	# Generate YADT fallbacks
-	musicdb/manage.py yadt_generate_fallback_config \
-		--source-prefix=/storage/ \
-		--target-prefix=/media/-/img/yadt_fallbacks/ \
-		> config/nginx.yadt.inc
-	
 	debian/bin/concatenate_media media
 	debian/bin/generate_hashes media > musicdb/settings/hashes.py
 	echo "from roles.live import *" > musicdb/settings/role.py

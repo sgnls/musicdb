@@ -2,9 +2,6 @@ import os
 import stat
 import mimetypes
 
-from django_yadt.utils import get_variant_from_path
-
-from django.http import Http404
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseNotModified
 from django.utils.http import http_date
@@ -51,21 +48,9 @@ def media(request, path):
     return response
 
 def storage(request, path):
-    try:
-        return serve(
-            request,
-            path,
-            show_indexes=True,
-            document_root=settings.MEDIA_ROOT,
-        )
-    except Http404:
-        variant = get_variant_from_path(path)
-
-        if variant is None or not variant.fallback:
-            raise
-
-        return media(request, os.path.join(
-            'img',
-            'yadt_fallbacks',
-            variant.fallback_filename(),
-        ))
+    return serve(
+        request,
+        path,
+        show_indexes=True,
+        document_root=settings.MEDIA_ROOT,
+    )

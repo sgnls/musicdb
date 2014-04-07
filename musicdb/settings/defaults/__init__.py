@@ -120,9 +120,6 @@ AWS_ACCESS_KEY_ID = 'AKIAJ2MH6KAU3WOSKPCQ'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'lamby-musicdb'
 
-MEDIA_ROOT = '/srv/musicdb.chris-lamb.co.uk/storage'
-MEDIA_URL = '/storage/'
-
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 

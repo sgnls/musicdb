@@ -64,14 +64,12 @@ class Album(models.Model, NextPreviousMixin):
             'width': 300,
             'height': 300,
             'format': 'jpeg',
-            'fallback': True,
         },
         'thumbnail': {
             'crop': True,
             'width': 125,
             'height': 125,
             'format': 'jpeg',
-            'fallback': True,
         },
     }, cachebust=True)
 

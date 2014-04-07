@@ -31,6 +31,8 @@ SESSION_COOKIE_SECURE = False
 SITE_URL = 'http://127.0.0.1:8000'
 STATIC_MEDIA_URL = '/media/%(path)s'
 
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+
+MEDIA_URL = '/storage/'
 MEDIA_ROOT = base_dir('storage')
 MEDIA_LOCATION = base_dir('media_location')
-DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
