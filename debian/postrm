@@ -4,8 +4,8 @@
 
 set -e
 
-gunicorn-debian stop musicdb
+gunicorn-debian stop musicdb || true
 rm -f /etc/gunicorn.d/musicdb
 
 rm -f /etc/nginx/sites-enabled/musicdb
-invoke-rc.d nginx reload
+invoke-rc.d nginx reload || true
