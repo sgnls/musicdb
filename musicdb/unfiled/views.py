@@ -12,6 +12,9 @@ from .utils import Track
 re_show_play = re.compile(r'\.(mp3|flac)$', re.IGNORECASE)
 
 def view(request):
+    from django.http import HttpResponse
+    return HttpResponse("Returning soon...")
+
     try:
         rel_path = request.GET['x']
         parent = os.path.dirname(rel_path)
