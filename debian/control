@@ -13,7 +13,7 @@ Depends:
   gunicorn (>= 0.14.2),
   pwgen,
   nginx,
-  python-boto (>= 2.4),
+  python-boto (>= 2.25),
   python-pygments,
   python-mutagen,
   python-roman,
