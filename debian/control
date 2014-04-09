@@ -14,6 +14,8 @@ Depends:
   nginx,
   python-boto (>= 2.25),
   python-mutagen,
+  python-memcache,
+  python-psycopg2,
   python-roman,
   python-imaging,
   python-lxml,
