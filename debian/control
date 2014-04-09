@@ -20,6 +20,4 @@ Depends:
   python-imaging,
   python-lxml,
   python-progressbar,
-  python-decorator,
-  python-protobuf,
 Description: musicdb.chris-lamb.co.uk
