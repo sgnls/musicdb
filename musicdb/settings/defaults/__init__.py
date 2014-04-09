@@ -150,12 +150,6 @@ LOGIN_URL = '/login'
 
 DATABASE_ENGINE = 'dummy_for_debug_toolbar'
 
-UNFILED_MEDIA_LOCATION  = '/srv/unfiled.chris-lamb.co.uk/classical'
-
-SECRET_HTTP_SUFFIX = '0BCidVG6'
-
-UNFILED_MEDIA_LOCATION_HTTP = 'http://musicdb.chris-lamb.co.uk/unfiled/_%s' % SECRET_HTTP_SUFFIX
-
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.BCryptPasswordHasher',
 )
