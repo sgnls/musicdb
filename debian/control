@@ -13,6 +13,7 @@ Depends:
   gunicorn (>= 0.14.2),
   nginx,
   python-boto (>= 2.25),
+  python-bcrypt,
   python-mutagen,
   python-memcache,
   python-psycopg2,
