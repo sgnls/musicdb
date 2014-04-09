@@ -150,7 +150,7 @@ LOGIN_URL = '/login'
 
 DATABASE_ENGINE = 'dummy_for_debug_toolbar'
 
-UNFILED_MEDIA_LOCATION  = '/srv/unfiled.chris-lamb.co.uk/unfiled_classical_music'
+UNFILED_MEDIA_LOCATION  = '/srv/unfiled.chris-lamb.co.uk/classical'
 
 SECRET_HTTP_SUFFIX = '0BCidVG6'
 
