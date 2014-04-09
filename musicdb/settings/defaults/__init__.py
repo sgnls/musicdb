@@ -154,7 +154,6 @@ UNFILED_MEDIA_LOCATION  = '/srv/unfiled.chris-lamb.co.uk/unfiled_classical_music
 
 SECRET_HTTP_SUFFIX = '0BCidVG6'
 
-MEDIA_LOCATION_HTTP = 'http://musicdb.chris-lamb.co.uk/_%s' % SECRET_HTTP_SUFFIX
 UNFILED_MEDIA_LOCATION_HTTP = 'http://musicdb.chris-lamb.co.uk/unfiled/_%s' % SECRET_HTTP_SUFFIX
 
 PASSWORD_HASHERS = (
