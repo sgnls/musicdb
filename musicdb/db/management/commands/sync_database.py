@@ -62,7 +62,7 @@ class Command(NoArgsCommand):
             '--hostname',
             dest='hostname',
             help="Remote host to sync from [default: %default]",
-            default='longcat.chris-lamb.co.uk',
+            default='tallis.chris-lamb.co.uk',
         ),
         make_option(
             '--no-data',
