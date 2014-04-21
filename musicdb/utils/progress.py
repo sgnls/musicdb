@@ -1,4 +1,4 @@
-from progressbar import *
+from progressbar import ProgressBar, Percentage, Bar, ETA
 
 def progress(iterable, maxval=None):
     if maxval is None:
