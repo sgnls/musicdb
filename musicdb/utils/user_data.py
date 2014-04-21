@@ -23,8 +23,8 @@ def PerUserData(related_name=None):
     """
 
     class UserDataBase(models.base.ModelBase):
-        def __new__(mcs, name, bases, attrs):
-            model = super(UserDataBase, mcs).__new__(mcs, name, bases, attrs)
+        def __new__(cls, name, bases, attrs):
+            model = super(UserDataBase, cls).__new__(cls, name, bases, attrs)
 
             if model._meta.abstract:
                 return model
