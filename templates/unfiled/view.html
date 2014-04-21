@@ -2,25 +2,34 @@
 
 {% block headtitle %}Unfiled - {{ block.super }}{% endblock %}
 
-{% block title %}{{ rel_path }} <small><a href="{% url unfiled:m3u %}?x={{ rel_path|iriencode }}">(play all)</a></small>{% endblock %}
+{% block title %}
+  {% if path %}
+    {{ path }}
+  {% else %}
+    Unfiled classical music
+  {% endif %}
+{% endblock %}
 
 {% block content %}
 
 <table class="table table-striped">
-{% if show_parent %}
-<tr>
-  <td>[<a href="{% if parent %}?x={{ parent|iriencode }}{% else %}{% url unfiled:view %}{% endif %}">parent</a>]</td>
-</tr>
-{% endif %}
-{% for entry in entries %}
-<tr>
-  {% if entry.isdir %}
-    <td><a href="?x={{ entry.rel_path|iriencode }}">{{ entry.name }}/</a></td>
-  {% else %}
-    <td>{{ entry.name }}{% if entry.show_play %} <a href="{% url unfiled:play %}?x={{ entry.rel_path|iriencode }}">Play</a>{% endif %}</td>
+  {% if path %}
+    <tr><td>[<a href="..">parent</a>]</td></tr>
   {% endif %}
-</tr>
-{% endfor %}
+
+  {% for dirname in dirnames|dictsort:"name" %}
+  <tr>
+    <td><a href="{% url unfiled:view dirname.path %}">{{ dirname.name }}</a></td>
+  </tr>
+  {% endfor %}
+
+  {% for filename in filenames|dictsort:"name" %}
+  <tr>
+    <td>
+      <a href="{{ filename.url }}">{{ filename.name }}</a>
+    </td>
+  </tr>
+  {% endfor %}
 </table>
 
 {% endblock %}
