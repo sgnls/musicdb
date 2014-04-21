@@ -7,6 +7,5 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = (
             'prefix',
-            'playlist_format',
             'kindle_email_address',
         )

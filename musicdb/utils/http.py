@@ -2,35 +2,11 @@ import os
 
 from lxml import etree
 
-from django.conf import settings
 from django.http import HttpResponse
 from django.utils import simplejson
 
-from musicdb.profile.enums import PlaylistFormatEnum
-
 def render_playlist(request, tracks, prefix=None):
-    klass = {
-        PlaylistFormatEnum.XSPF: XSPFResponse,
-        PlaylistFormatEnum.M3U: M3UResponse,
-    }[request.user.profile.playlist_format]
-
-    return klass(tracks, prefix)
-
-class M3UResponse(HttpResponse):
-    def __init__(self, tracks, prefix):
-        content = '#EXTM3U\n'
-
-        for track in tracks:
-            location = track.file.url().replace('https:', 'http:')
-
-            if prefix is not None:
-                location = os.path.join(prefix, track.file.location)
-
-            content += '#EXTINF:%d,\n%s\n' % (track.length, location)
-
-        super(M3UResponse, self).__init__(content, mimetype='audio/x-mpegurl')
-
-        self['Content-Disposition'] = 'attachment; filename=playlist.m3u'
+    return XSPFResponse(tracks, prefix)
 
 class XSPFResponse(HttpResponse):
     def __init__(self, tracks, prefix):
