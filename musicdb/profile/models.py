@@ -2,9 +2,11 @@ from django_enumfield import EnumField
 
 from django.db import models
 
+from musicdb.utils.user_data import PerUserData
+
 from .enums import PlaylistFormatEnum
 
-class Profile(models.Model):
+class Profile(PerUserData('profile')):
     playlist_format = EnumField(
         PlaylistFormatEnum,
         default=PlaylistFormatEnum.XSPF,
@@ -16,15 +18,4 @@ class Profile(models.Model):
         verbose_name="Override file location prefix",
     )
 
-    kindle_email_address = models.EmailField(
-        blank=True,
-    )
-
-    class Meta:
-        managed = False
-
-    def save(self, request):
-        data = {}
-        for x in self._meta.fields:
-            data[x.attname] = x.value_to_string(self)
-        request.session['profile'] = data
+    kindle_email_address = models.EmailField(blank=True)

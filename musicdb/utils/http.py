@@ -12,7 +12,7 @@ def render_playlist(request, tracks, prefix=None):
     klass = {
         PlaylistFormatEnum.XSPF: XSPFResponse,
         PlaylistFormatEnum.M3U: M3UResponse,
-    }[request.profile.playlist_format]
+    }[request.user.profile.playlist_format]
 
     return klass(tracks, prefix)
 
