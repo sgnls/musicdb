@@ -18,8 +18,20 @@
   <br>
 
   <div class="well">
-    Add <tt>{{ settings.DEFAULT_FROM_EMAIL }}</tt> to your
-    <a href="http://www.amazon.co.uk/manageyourkindle">Kindle Account</a>.
+    <h2>Kindle instructions</h2>
+
+    <ul>
+      <li>Log into <a href="http://www.amazon.co.uk/manageyourkindle">Manage Your Kindle</a>.</li>
+      <li>Click <em>Personal Document Settings</em> on the left hand side</li>
+      <li>
+        Select <em>Add a new approved e-mail address</em> at the bottom of the
+        page and enter <tt>{{ settings.DEFAULT_FROM_EMAIL }}</tt>
+      </li>
+      <li>
+        Copy your Kindle's email address from the <em>Send-to-Kindle E-Mail
+        Settings</em> table and enter it into the form above and press <em>Save</em>.
+      </li>
+    </ul>
   </div>
 
 </form>
