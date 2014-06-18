@@ -34,7 +34,10 @@ def book(request, book_id):
         return redirect(book.file.url())
 
     message = EmailMessage(to=(address,))
-    message.attach_file(default_storage.open(book.file.location))
+    message.attach(
+        '%d.mobi' % book.pk,
+        default_storage.open(book.file.location),
+    )
     message.send()
 
     messages.success(request, '"%s" sent to Kindle.' % book.title)
