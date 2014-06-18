@@ -36,7 +36,7 @@ def book(request, book_id):
     message = EmailMessage(to=(address,))
     message.attach(
         '%d.mobi' % book.pk,
-        default_storage.open(book.file.location),
+        default_storage.open(book.file.location).read(),
     )
     message.send()
 
