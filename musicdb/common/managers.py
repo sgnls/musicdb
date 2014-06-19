@@ -3,17 +3,12 @@ import shutil
 
 from django.db import models
 from django.conf import settings
+from django.core.files import File
+from django.core.files.storage import default_storage
 
 class FileManager(models.Manager):
     def create_from_path(self, src, location):
-        abs_location = os.path.join(settings.MEDIA_LOCATION, location)
-
-        try:
-            os.makedirs(os.path.dirname(abs_location))
-        except OSError:
-            # Directory already exists
-            pass
-
-        shutil.copyfile(src, abs_location)
+        with open(src) as f:
+            assert default_storage.save(location, File(f)) == location
 
         return self.create(location=location)

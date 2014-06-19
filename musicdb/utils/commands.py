@@ -25,8 +25,6 @@ TODO
 
 class AddFilesCommand(BaseCommand):
     def handle(self, *files, **options):
-        assert False, "needs to be ported to default_storage"
-
         self.options = options
 
         # Expand if we have specified a directory

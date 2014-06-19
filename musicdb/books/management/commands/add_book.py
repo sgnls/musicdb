@@ -26,8 +26,6 @@ class Command(AddFilesCommand):
     )
 
     def handle_filenames(self, filenames):
-        assert False, "needs to be ported to default_storage"
-
         if len(filenames) != 1:
             raise CommandError("Must specify one file")
 
@@ -36,12 +34,11 @@ class Command(AddFilesCommand):
         if not filename.lower().endswith('.mobi'):
             raise CommandError("Only .mobi files are supported.")
 
-        data = guess_book_details(filename)
-
-        if not data:
-            raise CommandError("Could not guess book details")
-
-        self.options.update(data)
+        try:
+            data = guess_book_details(filename)
+            self.options.update(data)
+        except Exception:
+            print "W: Exception when guessing book details"
 
         last_name = self.options['last_name']
         if not last_name:

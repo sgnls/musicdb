@@ -37,18 +37,12 @@ class Nationality(models.Model):
 
 class File(models.Model):
     location = models.CharField(unique=True, max_length=255)
-    size = models.IntegerField("File size in bytes")
+    size = models.IntegerField("File size in bytes", default=0)
 
     objects = FileManager()
 
     def __unicode__(self):
         return "%s (%d bytes)" % (self.location, self.size)
-
-    def save(self, *args, **kwargs):
-        if not self.size:
-            self.size = os.path.getsize(self.absolute_location())
-
-        super(File, self).save(*args, **kwargs)
 
     def url(self):
         return default_storage.url(self.location)
@@ -60,14 +54,6 @@ class File(models.Model):
             os.unlink(path)
 
         super(File, self).delete(*args, **kwargs)
-
-    def absolute_location(self, for_writing=False):
-        base = {
-            True:  settings.MEDIA_LOCATION,
-            False: settings.MEDIA_LOCATION,
-        }[for_writing]
-
-        return os.path.join(base, self.location)
 
 class MusicFile(models.Model):
     file = models.OneToOneField(File)
