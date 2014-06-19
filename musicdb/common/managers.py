@@ -5,7 +5,7 @@ from django.db import models
 from django.conf import settings
 
 class FileManager(models.Manager):
-    def create_from_path(self, src, location, move=False):
+    def create_from_path(self, src, location):
         abs_location = os.path.join(settings.MEDIA_LOCATION, location)
 
         try:
@@ -14,8 +14,6 @@ class FileManager(models.Manager):
             # Directory already exists
             pass
 
-        op = shutil.move if move else shutil.copyfile
-
-        op(src, abs_location)
+        shutil.copyfile(src, abs_location)
 
         return self.create(location=location)
