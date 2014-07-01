@@ -1,13 +1,11 @@
 {% extends "base/base.html" %}
 
 {% block container %}
-<div class="jumbotron">
-  <h1>Music database</h1>
 
-  <p class="text-center">
-    <a class="btn btn-lg btn-primary" href="{% url nonclassical %}">Albums</a>
-    <a class="btn btn-lg btn-primary" href="{% url classical %}">Classical</a>
-    <a class="btn btn-lg btn-default" href="{% url common:stats %}">Statistics</a>
-  </p>
-</div>
+<p class="text-center">
+  <a class="btn btn-lg btn-primary" href="{% url nonclassical %}">Albums</a>
+  <a class="btn btn-lg btn-primary" href="{% url classical %}">Classical</a>
+  <a class="btn btn-lg btn-default" href="{% url common:stats %}">Statistics</a>
+</p>
+
 {% endblock %}
