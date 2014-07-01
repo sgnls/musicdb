@@ -11,22 +11,9 @@
 <div class="row">
 {% for album in artist.albums.all %}
 
-  {% if forloop.counter0 != 0 %}
-    {% if forloop.counter0|divisibleby:2 %}
-    <div class="clearfix visible-xs"></div>
-    {% endif %}
-    {% if forloop.counter0|divisibleby:3 %}
-    <div class="clearfix visible-sm"></div>
-    {% endif %}
-    {% if forloop.counter0|divisibleby:4 %}
-    <div class="clearfix visible-md"></div>
-    {% endif %}
-    {% if forloop.counter0|divisibleby:6 %}
-    <div class="clearfix visible-lg"></div>
-    {% endif %}
-  {% endif %}
+  {% grid_clearfix xs=2 sm=3 md=4 lg=6 %}
 
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 text-center" style="margin-bottom: 20px;">
+  <div class="{% grid_classes xs=2 sm=3 md=4 lg=6 %} text-center" style="margin-bottom: 20px;">
     <p>
       <a href="{% url nonclassical-album artist.slug album.slug %}"><img src="{% if album.image.exists %}{{ album.image.thumbnail.url }}{% else %}{% static "img/missing_album_medium.jpeg" %}{% endif %}" alt="{{ album }}" height="125" width="125"></a>
     </p>
