@@ -5,13 +5,9 @@
   <h1>Music database</h1>
 
   <p class="text-center">
-    {% if request.user.is_authenticated %}
-      <a class="btn btn-lg btn-primary" href="{% url nonclassical %}">Albums</a>
-      <a class="btn btn-lg btn-primary" href="{% url classical %}">Classical</a>
-      <a class="btn btn-lg btn-default" href="{% url common:stats %}">Statistics</a>
-    {% else %}
-      <a class="btn btn-lg btn-primary" href="{% url auth:login %}">Login</a>
-    {% endif %}
+    <a class="btn btn-lg btn-primary" href="{% url nonclassical %}">Albums</a>
+    <a class="btn btn-lg btn-primary" href="{% url classical %}">Classical</a>
+    <a class="btn btn-lg btn-default" href="{% url common:stats %}">Statistics</a>
   </p>
 </div>
 {% endblock %}
