@@ -33,9 +33,14 @@
     <p>
       <a href="{{ book.get_absolute_url }}">
         <img
+          {% if book.image.exists %}
           src="{{ book.image.thumbnail.url }}"
+          {% else %}
+          src="{% static "img/f_books/missing_cover.jpg" %}"
+          {% endif %}
           alt="{{ book.title }}"
           class="img-responsive"
+          style="margin: 0 auto;"
         >
       </a>
     </p>
