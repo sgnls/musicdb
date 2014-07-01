@@ -10,4 +10,4 @@ def google_font(definition):
     if not settings.FONTS_ENABLED:
         return ''
 
-    return TEMPLATE % definition
+    return GOOGLE_FONT_TEMPLATE % definition
