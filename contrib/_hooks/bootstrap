@@ -1,7 +1,5 @@
 #!/bin/sh
 
-lessc less/bootstrap.less > bootstrap.css
+rm -rf */*.min.*
 
-rm -rf docs/
-rm -rf less/
-rm -rf js/tests/
+sed -i -e 's|sourceMappingURL=[^ ]*||g' css/*.css
