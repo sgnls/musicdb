@@ -43,7 +43,7 @@
   </div>
   <div class="col-sm-4 hidden-xs" style="padding-top: 40px;">
     <a href="{% url nonclassical-play-album album.id %}" class="thumbnail">
-      <img src="{% if album.image.exists %}{{ album.image.large.url }}{% else %}{% static "images/missing_album_large.jpeg" %}{% endif %}" alt="Play {{ album }}">
+      <img src="{% if album.image.exists %}{{ album.image.large.url }}{% else %}{% static "img/missing_album_large.jpeg" %}{% endif %}" alt="Play {{ album }}">
     </a>
   </div>
 </div>
