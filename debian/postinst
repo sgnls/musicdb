@@ -4,14 +4,23 @@
 
 set -eu
 
-BASE=/usr/share/musicdb
+NAME=musicdb
+BASE=/usr/share/${NAME}/${NAME}
 
-gunicorn-debian stop musicdb
-su www-data -c "${BASE}/musicdb/manage.py migrate --list"
-su www-data -c "${BASE}/musicdb/manage.py migrate --all"
-ln -sf ${BASE}/config/gunicorn /etc/gunicorn.d/musicdb
-gunicorn-debian start musicdb
+case "${1}" in
+	configure)
+		gunicorn-debian stop ${NAME} || true
+		su www-data -c "${BASE}/manage.py migrate --all --noinput"
+		gunicorn-debian start ${NAME} || true
+		;;
 
-rm -f /etc/nginx/sites-enabled/musicdb
-cp ${BASE}/config/nginx.in /etc/nginx/sites-enabled/musicdb
-invoke-rc.d nginx reload
+	abort-upgrade|abort-remove|abort-deconfigure)
+		;;
+
+	*)
+		echo "postinst called with unknown argument \`${1}'" >&2
+		exit 1
+		;;
+esac
+
+exit 0
