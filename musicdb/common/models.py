@@ -1,9 +1,10 @@
 import os
+import tempfile
 
-from mutagen import mp3, flac, easyid3, File as MutagenFile
+from mutagen import mp3, easyid3, File as MutagenFile
 
 from django.db import models
-from django.conf import settings
+from django.core.files import File as DjangoFile
 from django.core.files.storage import default_storage
 
 from musicdb.db.fields import MySlugField
@@ -68,22 +69,6 @@ class MusicFile(models.Model):
     def __unicode__(self):
         return "Length %ds (from %s)" % (self.length, self.file)
 
-    def save(self, *args, **kwargs):
-        if not self.length:
-            filename = os.path.join(settings.MEDIA_LOCATION, self.file.location)
-            audio = MutagenFile(filename)
-
-            if isinstance(audio, mp3.MP3):
-                self.type = 'mp3'
-            elif isinstance(audio, flac.FLAC):
-                self.type = 'flac'
-            else:
-                assert False, "Unsupported Mutagen class %s" % audio.__class__
-
-            self.length = int(audio.info.length)
-
-        super(MusicFile, self).save(*args, **kwargs)
-
     def delete(self, *args, **kwargs):
         super(MusicFile, self).delete(*args, **kwargs)
 
@@ -95,13 +80,29 @@ class MusicFile(models.Model):
     def tag(self):
         try:
             data = self.get_parent_instance().metadata()
-            filename = os.path.join(settings.MEDIA_LOCATION, self.file.location)
-            audio = MutagenFile(filename)
-            audio.delete()
-            if isinstance(audio, mp3.MP3):
-                audio.tags = easyid3.EasyID3()
-            audio.update(data)
-            audio.save()
+
+            with tempfile.NamedTemporaryFile(prefix='musicdb') as f:
+                # Download
+                with default_storage.open(self.file.location) as g:
+                    f.write(g.read())
+                    f.flush()
+
+                audio = MutagenFile(f.name)
+                audio.delete()
+
+                if isinstance(audio, mp3.MP3):
+                    audio.tags = easyid3.EasyID3()
+
+                audio.update(data)
+                audio.save()
+
+                self.length = int(audio.info.length)
+
+                # Copy it back
+                default_storage.delete(self.file.location)
+                dst = default_storage.save(self.file.location, DjangoFile(f))
+
+                assert dst == self.file.location
         except:
             self.tags_dirty = None
             self.save()
