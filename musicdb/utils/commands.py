@@ -2,11 +2,11 @@ import os
 import re
 import sys
 import glob
-import shutil
 import readline
 
 from django.db import transaction
 from django.conf import settings
+from django.core.files.storage import default_storage
 from django.core.management.base import BaseCommand, CommandError
 from django.utils.datastructures import SortedDict
 
@@ -184,8 +184,11 @@ class AddMusicFilesCommand(AddFilesCommand):
                 music_file.tag()
 
         except:
-            path = os.path.join(settings.MEDIA_LOCATION, target)
+            print "Caught exception; cleaning up %r" % target
 
-            print "Caught exception; cleaning up %r" % path
-            shutil.rmtree(path)
+            _, filenames = default_storage.listdir(target)
+
+            for x in filenames:
+                default_storage.delete(os.path.join(target, x))
+
             raise
