@@ -58,7 +58,7 @@ class File(models.Model):
 
 class MusicFile(models.Model):
     file = models.OneToOneField(File)
-    length = models.IntegerField("Duration in seconds")
+    length = models.IntegerField("Duration in seconds", default=0)
     rev_model = models.CharField(max_length=8) # track, movement
     type = models.CharField(max_length=4) # mp3, flac
     tags_dirty = models.NullBooleanField(
