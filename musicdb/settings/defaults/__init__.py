@@ -4,9 +4,6 @@ from setup_warnings import *
 
 from os.path import abspath, dirname, join
 
-def get(k, d=None):
-    return os.environ.get('DJANGO_%s' % k, d)
-
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
@@ -115,13 +112,13 @@ INSTALLED_APPS = (
     'musicdb.utils',
 )
 
-SECRET_KEY = get('SECRET_KEY', 'EWf30GO9FL7rdgBpdUNuJF1RPx8mtmpFYOvcdNwMzhcyGk4Jxb')
+SECRET_KEY = 'private'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 AWS_DEFAULT_ACL = 'private'
-AWS_ACCESS_KEY_ID = get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = get('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = 'private'
+AWS_SECRET_ACCESS_KEY = 'private'
 AWS_QUERYSTRING_EXPIRE = 86400 * 7
 AWS_STORAGE_BUCKET_NAME = 'lamby-musicdb'
 
