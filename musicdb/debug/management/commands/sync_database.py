@@ -70,6 +70,7 @@ class Command(NoArgsCommand):
             action='append',
             help="Model names of tables to not get data for [default: %default]",
             default=[
+                'django_session',
             ],
         ),
     )
