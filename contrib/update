@@ -60,6 +60,10 @@ case "${PROJECT}" in
 		Svn http://code.djangoproject.com/svn/django/trunk/django ${PROJECT}
 		;;
 
+	django_autologin)
+		Git git://github.com/thread/django-autologin.git ${PROJECT} ${PROJECT}
+		;;
+
 	django_extensions)
 		Git git://github.com/django-extensions/django-extensions.git ${PROJECT} ${PROJECT}
 		;;
