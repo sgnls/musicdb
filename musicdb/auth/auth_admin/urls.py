@@ -5,4 +5,6 @@ urlpatterns = patterns('musicdb.auth.auth_admin.views',
         name='view'),
     url(r'^superuser/users/(?P<user_id>\d+)$', 'user',
         name='user'),
+    url(r'^superuser/users/(?P<user_id>\d+)/reset-password$', 'reset_password',
+        name='reset-password'),
 )
