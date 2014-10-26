@@ -71,6 +71,7 @@ MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'musicdb.debug.middleware.ShowForSuperusersMiddleware',
+    'django_autologin.middleware.AutomaticLoginMiddleware',
 )
 
 ROOT_URLCONF = 'musicdb.urls'

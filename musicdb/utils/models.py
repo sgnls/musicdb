@@ -7,3 +7,5 @@ for x in (
     'pagination',
 ):
     add_to_builtins('musicdb.utils.templatetags.%s' % x)
+
+add_to_builtins('django_autologin.templatetags.django_autologin')
