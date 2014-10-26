@@ -1,0 +1,16 @@
+{% extends "base/base.html" %}
+
+{% load duration %}
+{% load humanize %}
+
+{% block headtitle %}Superuser menu{% endblock %}
+
+{% block title %}Superuser menu{% endblock %}
+
+{% block content %}
+
+<ul>
+  <li><a href="{% url admin:index %}">Django admin</a></li>
+</ul>
+
+{% endblock %}

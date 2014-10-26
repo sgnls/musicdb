@@ -44,7 +44,7 @@
           <ul class="dropdown-menu">
             <li><a href="{% url common:stats %}">Statistics</a></li>
             {% if request.user.is_superuser %}
-            <li><a href="{% url admin:index %}">Admin</a></li>
+            <li><a href="{% url superuser:view %}">Superuser</a></li>
             {% endif %}
             <li><a href="{% url profile:view %}">Profile</a></li>
             <li><a href="{% url auth:change-password %}">Change password</a></li>
