@@ -9,8 +9,6 @@ musicdb TODO
 
    - Requires removing SSL certificate - rewrite history?
 
- * Move to Bootstrap v3.
-
  * Reverse @logout_required, etc. to standard Django.
 
  * Books.
