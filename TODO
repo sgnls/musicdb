@@ -5,10 +5,6 @@ musicdb TODO
 
    - Send password reminders, etc.
 
- * Move config/, etc. to ansible and make code public.
-
-   - Requires removing SSL certificate - rewrite history?
-
  * Reverse @logout_required, etc. to standard Django.
 
  * Books.
