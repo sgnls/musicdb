@@ -13,15 +13,15 @@ It is entirely web-based and generates XSPF files pointing to the actual files.
 Local database setup
 --------------------
 
- #. Create PostgreSQL user with id matching your UNIX username::
+#. Create PostgreSQL user with id matching your UNIX username::
 
     $ sudo -u postgres createuser $(whoami) -SDR
 
- #. Create a database owned by this user::
+#. Create a database owned by this user::
 
     $ sudo -u postgres createdb -E UTF-8 -O $(whoami) musicdb
 
- #. Check we can connect to this database::
+#. Check we can connect to this database::
 
     $ /usr/bin/psql musicdb
     psql (9.1.2)
