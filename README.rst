@@ -8,8 +8,7 @@ The feature-set is mostly geared towards accurately storing western classical
 music circa 1500 to the present day. It also supports albums ("non-classical")
 too with correct support for multiple CDs.
 
-It is entirely web-based and generates M3U or XSPF files pointing to the actual
-files.
+It is entirely web-based and generates XSPF files pointing to the actual files.
 
 Local database setup
 --------------------
