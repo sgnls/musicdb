@@ -9,8 +9,6 @@ musicdb TODO
 
  * Books.
 
- * Use URL namespacing.
-
  * Move to Django storage system.
 
  * Script to look at ID3 tags and extract years where we don't have one for a recording.
