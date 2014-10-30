@@ -104,6 +104,7 @@ INSTALLED_APPS = (
     'musicdb.auth.auth_admin',
     'musicdb.db',
     'musicdb.books',
+    'musicdb.books.books_admin',
     'musicdb.common',
     'musicdb.classical',
     'musicdb.debug',

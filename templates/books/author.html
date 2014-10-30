@@ -6,6 +6,16 @@
 
 {% block container %}
 
+
+{% if request.user.is_superuser %}
+<div class="pull-right">
+  <a
+    href="{% url books:admin:author author.pk %}"
+    class="btn btn-default"
+  >Edit</a>
+</div>
+{% endif %}
+
 <div class="page-header">
   <h1>{{ author.long_name }}</h1>
 </div>
