@@ -10,7 +10,7 @@ class AuthorForm(forms.ModelForm):
             'first_names',
         )
 
-class MergeForm(forms.Form):
+class AuthorMergeForm(forms.Form):
     duplicate = forms.ModelChoiceField(
         queryset=Author.objects.none()
     )
@@ -18,7 +18,7 @@ class MergeForm(forms.Form):
     def __init__(self, original, *args, **kwargs):
         self.original = original
 
-        super(MergeForm, self).__init__(*args, **kwargs)
+        super(AuthorMergeForm, self).__init__(*args, **kwargs)
 
         self.fields['duplicate'].queryset = Author.objects.exclude(
             pk=original.pk,

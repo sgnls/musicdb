@@ -5,7 +5,7 @@ from musicdb.utils.decorators import superuser_required
 
 from ..models import Author, Book
 
-from .forms import AuthorForm, MergeForm, BookForm
+from .forms import AuthorForm, AuthorMergeForm, BookForm
 
 @superuser_required
 def author(request, author_id):
@@ -33,7 +33,7 @@ def author_merge(request, author_id):
     author = get_object_or_404(Author, pk=author_id)
 
     if request.method == 'POST':
-        form = MergeForm(author, request.POST)
+        form = AuthorMergeForm(author, request.POST)
 
         if form.is_valid():
             form.save()
@@ -42,7 +42,7 @@ def author_merge(request, author_id):
 
             return redirect('books:admin:author', author.pk)
     else:
-        form = MergeForm(author)
+        form = AuthorMergeForm(author)
 
     return render(request, 'books/admin/author_merge.html', {
         'form': form,
