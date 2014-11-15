@@ -8,6 +8,7 @@ musicdb TODO
  * Reverse @logout_required, etc. to standard Django.
 
  * Books.
+   - Email books in a queue, not synchronously.
 
  * Move to Django storage system.
 
