@@ -3,9 +3,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from musicdb.utils.decorators import superuser_required
 
-from ..models import Author
+from ..models import Author, Book
 
-from .forms import AuthorForm, MergeForm
+from .forms import AuthorForm, MergeForm, BookForm
 
 @superuser_required
 def author(request, author_id):
@@ -47,4 +47,26 @@ def author_merge(request, author_id):
     return render(request, 'books/admin/author_merge.html', {
         'form': form,
         'author': author,
+    })
+
+@superuser_required
+def book(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+
+    if request.method == 'POST':
+        form = BookForm(request.POST, instance=book)
+
+        if form.is_valid():
+            form.save()
+
+            messages.success(request, "Book saved.")
+
+            return redirect('books:admin:book', book.pk)
+
+    else:
+        form = BookForm(instance=book)
+
+    return render(request, 'books/admin/book.html', {
+        'book': book,
+        'form': form,
     })

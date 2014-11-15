@@ -44,6 +44,9 @@
 
     <p>
       <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+      {% if request.user.is_superuser %}
+      <a href="{% url books:admin:book book.pk %}">[e]</a>
+      {% endif %}
     </p>
   </div>
 {% endwith %}
