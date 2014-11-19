@@ -11,15 +11,21 @@ You've been granted access to musicdb. Here are your login details:
   Username: {{ user.username }}
   Password: {{ password }}
 
-You can login here:
+You can get started here:
 
   {{ settings.SITE_URL }}
 
-You should change your password - you can do that here:
+You should change your password as soon as possible. You can do that here once
+you are logged in:
 
   {{ settings.SITE_URL }}{% url auth:change-password %}
 
+You can also edit your Kindle settings, etc. from your profile:
+
+  {{ settings.SITE_URL }}{% url profile:view %}
+
 ... or at any time via the menu in the top-right corner.
+
 
 
 -- 
