@@ -20,6 +20,8 @@ def view(request):
             messages.success(request, "User invited.")
 
             return redirect('auth:admin:user', user.pk)
+
+        messages.error(request, "There was an error creating this user.")
     else:
         form = NewUserForm()
 
