@@ -1,5 +1,3 @@
-from django_enumfield import EnumField
-
 from django.db import models
 
 from musicdb.utils.user_data import PerUserData
