@@ -6,34 +6,71 @@
 
 <h1>Profile</h1>
 
-<form method="POST" class="form-horizontal">
+{% if form.non_field_errors %}
+<div class="has-error">
+  {% for x in form.non_field_errors %}
+  <p class="help-block">{{ x }}</p>
+  {% endfor %}
+</div>
+{% endif %}
+
+<form
+  method="POST"
+  class="form-horizontal"
+  action=""
+>
   {% csrf_token %}
 
-  {{ form.as_p }}
-
-  <div class="form-actions">
-    <button type="submit" class="btn btn-primary">Save</button>
+  <div class="form-group {% if form.errors.kindle_email_address %}has-error{% endif %}">
+    <label
+      for="{{ form.kindle_email_address.id_for_label }}"
+      class="control-label col-sm-2"
+    >
+      Kindle email address
+    </label>
+    <div class="col-sm-10">
+      <input
+        id="{{ form.kindle_email_address.id_for_label }}"
+        type="email"
+        class="form-control"
+        name="{{ form.kindle_email_address.html_name }}"
+        value="{{ form.kindle_email_address.value|default:"" }}"
+        {% if form.fields.kindle_email_address.required %}required{% endif %}
+        maxlength="{{ form.fields.kindle_email_address.max_length }}"
+        placeholder=""
+      >
+      {% for x in form.errors.kindle_email_address %}
+        <p class="help-block">{{ x }}</p>
+      {% endfor %}
+    </div>
   </div>
 
-  <br>
-
-  <div class="well">
-    <h2>Kindle instructions</h2>
-
-    <ul>
-      <li>Log into <a href="http://www.amazon.co.uk/manageyourkindle">Manage Your Kindle</a>.</li>
-      <li>Click <em>Personal Document Settings</em> on the left hand side</li>
-      <li>
-        Select <em>Add a new approved e-mail address</em> at the bottom of the
-        page and enter <tt>{{ settings.DEFAULT_FROM_EMAIL }}</tt>
-      </li>
-      <li>
-        Copy your Kindle's email address from the <em>Send-to-Kindle E-Mail
-        Settings</em> table and enter it into the form above and press <em>Save</em>.
-      </li>
-    </ul>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">
+        Save
+      </button>
+    </div>
   </div>
-
 </form>
+
+<br>
+
+<div class="well">
+  <h2>Kindle instructions</h2>
+
+  <ul>
+    <li>Log into <a href="http://www.amazon.co.uk/manageyourkindle">Manage Your Kindle</a>.</li>
+    <li>Click <em>Personal Document Settings</em> on the left hand side</li>
+    <li>
+      Select <em>Add a new approved e-mail address</em> at the bottom of the
+      page and enter <tt>{{ settings.DEFAULT_FROM_EMAIL }}</tt>
+    </li>
+    <li>
+      Copy your Kindle's email address from the <em>Send-to-Kindle E-Mail
+      Settings</em> table and enter it into the form above and press <em>Save</em>.
+    </li>
+  </ul>
+</div>
 
 {% endblock %}
