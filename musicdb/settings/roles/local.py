@@ -35,3 +35,5 @@ DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 MEDIA_URL = '/storage/'
 MEDIA_ROOT = base_dir('storage')
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
