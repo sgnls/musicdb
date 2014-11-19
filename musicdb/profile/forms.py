@@ -6,6 +6,5 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = (
-            'prefix',
             'kindle_email_address',
         )
