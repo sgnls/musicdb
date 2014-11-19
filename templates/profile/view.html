@@ -35,9 +35,9 @@
         class="form-control"
         name="{{ form.kindle_email_address.html_name }}"
         value="{{ form.kindle_email_address.value|default:"" }}"
-        {% if form.fields.kindle_email_address.required %}required{% endif %}
         maxlength="{{ form.fields.kindle_email_address.max_length }}"
         placeholder=""
+        {% if form.fields.kindle_email_address.required %}required{% endif %}
       >
       {% for x in form.errors.kindle_email_address %}
         <p class="help-block">{{ x }}</p>
