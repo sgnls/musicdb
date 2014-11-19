@@ -1,0 +1,27 @@
+{% extends email_from_template %}
+
+{% block subject %}You've been invited{% endblock %}
+
+{% block body %}
+
+Hi {{ user.username }},
+
+You've been granted access to musicdb. Here are your login details:
+
+  Username: {{ user.username }}
+  Password: {{ password }}
+
+You can login here:
+
+  {{ settings.SITE_URL }}
+
+You should change your password - you can do that here:
+
+  {{ settings.SITE_URL }}{% url auth:change-password %}
+
+... or at any time via the menu in the top-right corner.
+
+
+-- 
+musicdb
+{% endblock %}
