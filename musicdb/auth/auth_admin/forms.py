@@ -2,7 +2,24 @@ from django import forms
 from django.utils.crypto import get_random_string
 from django.contrib.auth.models import User
 
-class UserForm(forms.ModelForm):
+class NewUserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = (
+            'username',
+            'email',
+        )
+
+    def save(self):
+        password = get_random_string(8)
+
+        instance = super(NewUserForm, self).save(commit=False)
+        instance.set_password(password)
+        instance.save()
+
+        return instance
+
+class EditUserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = (

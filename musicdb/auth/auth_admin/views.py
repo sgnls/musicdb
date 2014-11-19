@@ -6,13 +6,25 @@ from django.views.decorators.http import require_POST
 from musicdb.utils.paginator import AutoPaginator
 from musicdb.utils.decorators import superuser_required
 
-from .forms import NewUserForm, ResetPasswordForm
+from .forms import NewUserForm, EditUserForm, ResetPasswordForm
 
 @superuser_required
 def view(request):
     page = AutoPaginator(request, User.objects.all(), 10).current_page()
 
+    if request.method == 'POST':
+        form = NewUserForm(request.POST)
+
+        if form.is_valid():
+            user = form.save()
+            messages.success(request, "User invited.")
+
+            return redirect('auth:admin:user', user.pk)
+    else:
+        form = NewUserForm()
+
     return render(request, 'auth/admin/view.html', {
+        'form': form,
         'page': page,
     })
 
@@ -21,7 +33,7 @@ def user(request, user_id):
     user = get_object_or_404(User, pk=user_id)
 
     if request.method == 'POST':
-        form = UserForm(request.POST, instance=user)
+        form = EditUserForm(request.POST, instance=user)
 
         if form.is_valid():
             form.save()
@@ -29,7 +41,7 @@ def user(request, user_id):
 
             return redirect('auth:admin:user', user.pk)
     else:
-        form = UserForm(instance=user)
+        form = EditUserForm(instance=user)
 
     return render(request, 'auth/admin/user.html', {
         'user': user,

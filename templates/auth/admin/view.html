@@ -27,4 +27,82 @@
 
 {% include "includes/pagination.html" %}
 
+<hr>
+
+<h1 class="page-header">
+  Add/invite user
+</h1>
+
+{% if form.non_field_errors %}
+<div class="has-error">
+  {% for x in form.non_field_errors %}
+  <p class="help-block">{{ x }}</p>
+  {% endfor %}
+</div>
+{% endif %}
+
+<form
+  method="POST"
+  class="form-horizontal"
+  action=""
+>
+  {% csrf_token %}
+
+  <div class="form-group {% if form.errors.username %}has-error{% endif %}">
+    <label
+      for="{{ form.username.id_for_label }}"
+      class="control-label col-sm-2"
+    >
+      Username
+    </label>
+    <div class="col-sm-10">
+      <input
+        id="{{ form.username.id_for_label }}"
+        type="text"
+        class="form-control"
+        name="{{ form.username.html_name }}"
+        value="{{ form.username.value|default:"" }}"
+        required
+        maxlength="{{ form.fields.username.max_length }}"
+        placeholder=""
+      >
+      {% for x in form.errors.username %}
+        <p class="help-block">{{ x }}</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="form-group {% if form.errors.email %}has-error{% endif %}">
+    <label
+      for="{{ form.email.id_for_label }}"
+      class="control-label col-sm-2"
+    >
+      Email
+    </label>
+    <div class="col-sm-10">
+      <input
+        id="{{ form.email.id_for_label }}"
+        type="email"
+        class="form-control"
+        name="{{ form.email.html_name }}"
+        value="{{ form.email.value|default:"" }}"
+        required
+        maxlength="{{ form.fields.email.max_length }}"
+        placeholder=""
+      >
+      {% for x in form.errors.email %}
+        <p class="help-block">{{ x }}</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">
+        Invite user
+      </button>
+    </div>
+  </div>
+</form>
+
 {% endblock %}
