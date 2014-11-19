@@ -96,6 +96,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'django_extensions',
     'django_yadt',
+    'email_from_template',
     'treebeard',
     'storages',
     'south',
