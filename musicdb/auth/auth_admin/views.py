@@ -1,13 +1,12 @@
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
-from django.utils.crypto import get_random_string
 from django.contrib.auth.models import User
 from django.views.decorators.http import require_POST
 
 from musicdb.utils.paginator import AutoPaginator
 from musicdb.utils.decorators import superuser_required
 
-from .forms import UserForm
+from .forms import NewUserForm, ResetPasswordForm
 
 @superuser_required
 def view(request):
@@ -41,10 +40,8 @@ def user(request, user_id):
 @require_POST
 def reset_password(request, user_id):
     user = get_object_or_404(User, pk=user_id)
-    new_password = get_random_string(8)
 
-    user.set_password(new_password)
-    user.save()
+    new_password = ResetPasswordForm(instance=user).save()
 
     messages.success(request, "Password reset to '%s'." % new_password)
 
