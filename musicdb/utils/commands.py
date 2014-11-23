@@ -181,7 +181,12 @@ class AddMusicFilesCommand(AddFilesCommand):
             # depending on the presence of other tracks.
             print "Tagging tracks..."
             for music_file in progress(music_files):
-                music_file.tag()
+                try:
+                    music_file.tag()
+                except:
+                    print "Caught exception when tagging %s" % \
+                        music_file.file.location
+                    raise
 
         except:
             print "Caught exception; cleaning up %r" % target
