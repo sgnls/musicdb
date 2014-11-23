@@ -82,14 +82,25 @@ class MusicFile(models.Model):
             data = self.get_parent_instance().metadata()
 
             with tempfile.NamedTemporaryFile(prefix='musicdb') as f:
+                print "I: Downloading %s to %s" % (
+                    self.file.location,
+                    f.name,
+                )
+                import os
+                os.stat(f.name)
+
                 # Download
                 with default_storage.open(self.file.location) as g:
-                    f.write(g.read())
+                    contents = g.read()
 
+                f.write(contents)
                 f.flush()
                 f.seek(0)
 
+                print "wrote %d bytes?" % len(contents)
+
                 audio = MutagenFile(f.name)
+                print "audio is %r %s" % (audio, type(audio))
                 audio.delete()
 
                 if isinstance(audio, mp3.MP3):
