@@ -85,7 +85,9 @@ class MusicFile(models.Model):
                 # Download
                 with default_storage.open(self.file.location) as g:
                     f.write(g.read())
-                    f.flush()
+
+                f.flush()
+                f.seek(0)
 
                 audio = MutagenFile(f.name)
                 audio.delete()
