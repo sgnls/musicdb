@@ -81,7 +81,7 @@ class MusicFile(models.Model):
         try:
             data = self.get_parent_instance().metadata()
 
-            with tempfile.NamedTemporaryFile(prefix='musicdb') as f:
+            with tempfile.NamedTemporaryFile(suffix='-musicdb.mp3') as f:
                 # Download
                 with default_storage.open(self.file.location) as g:
                     contents = g.read()
