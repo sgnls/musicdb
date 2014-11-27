@@ -85,7 +85,11 @@ class Command(AddMusicFilesCommand):
             artist.died = prompt('Died')
             artist.save()
 
-        print "I: %s %s %s" % (created and 'Created' or 'Using existing', name.lower(), artist)
+        print "I: %s %s %s" % (
+            "Created" if created else "Using existing",
+            name.lower(),
+            artist,
+        )
 
         return artist
 
