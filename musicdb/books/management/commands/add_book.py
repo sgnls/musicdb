@@ -88,6 +88,8 @@ class Command(AddFilesCommand):
         if raw_input("Accept? [Yn] ").upper() not in ('', 'Y'):
             raise CommandError("Cancelling")
 
+        # Need to know where to store the book before we create, hence manual
+        # cursor manipulation
         cursor = connection.cursor()
         cursor.execute("SELECT NEXTVAL('books_book_id_seq')")
         book_pk = cursor.fetchone()[0]
