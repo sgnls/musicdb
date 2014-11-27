@@ -41,7 +41,10 @@ class Command(AddMusicFilesCommand):
             try:
                 album_year = int(self.options['year'])
             except TypeError:
-                print "Google this album: %s" % google_search('%s - %s' % (artist.long_name(), album.title))
+                print "Google this album: %s" % google_search('%s - %s' % (
+                    artist.long_name(),
+                    album.title,
+                ))
                 album_year = self.prompt_year('Album year')
             if album_year:
                 album.year = album_year
