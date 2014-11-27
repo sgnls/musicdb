@@ -283,15 +283,17 @@ class Command(AddMusicFilesCommand):
         try:
             return Instrument.objects.get(noun=noun)
         except Instrument.DoesNotExist:
-            adjective = ''
-            while not adjective:
-                adjective = raw_input('Adjective [%s player]: ' % noun) or \
-                    '%s player' % noun
+            pass
 
-            return Instrument.objects.create(
-                noun=noun,
-                adjective=adjective,
-            )
+        adjective = ''
+        while not adjective:
+            adjective = raw_input('Adjective [%s player]: ' % noun) \
+                or '%s player' % noun
+
+        return Instrument.objects.create(
+            noun=noun,
+            adjective=adjective,
+        )
 
     def confirm_movement_titles(self, recording, files):
         while True:
