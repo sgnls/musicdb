@@ -1,8 +1,7 @@
 import readline
 
+from django.db import models
 from django.conf import settings
-from django.db.models import Count
-from django.db.models.expressions import F
 
 from musicdb.utils.commands import AddMusicFilesCommand
 from musicdb.utils.completion import Completer
@@ -240,7 +239,7 @@ class Command(AddMusicFilesCommand):
 
                     qs.get(num=num).delete()
                     qs.filter(num__gt=num).update(
-                        num=F('num') - 1,
+                        num=models.F('num') - 1,
                     )
 
                 except (ValueError, Performance.DoesNotExist):
@@ -272,7 +271,7 @@ class Command(AddMusicFilesCommand):
     def get_instrument(self, artist):
         try:
             instrument_id = artist.performances.values('instrument'). \
-                annotate(count=Count('instrument')). \
+                annotate(count=models.Count('instrument')). \
                 order_by('-count')[0]['instrument']
 
             default = Instrument.objects.get(pk=instrument_id).noun
