@@ -6,7 +6,7 @@ from django.conf import settings
 from musicdb.utils.commands import AddMusicFilesCommand
 from musicdb.utils.completion import Completer
 
-from musicdb.classical.models import Artist, Instrument, ArtistPerformance, \
+from ...models import Artist, Instrument, ArtistPerformance, \
     EnsemblePerformance, Ensemble, Performance, Key, Recording, Catalogue
 
 """

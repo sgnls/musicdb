@@ -4,7 +4,7 @@ from django.core.management.base import make_option
 from musicdb.utils.urls import google_search
 from musicdb.utils.commands import AddMusicFilesCommand
 
-from musicdb.nonclassical.models import Artist
+from ...models import Artist
 
 class Command(AddMusicFilesCommand):
     option_list = AddMusicFilesCommand.option_list + (
