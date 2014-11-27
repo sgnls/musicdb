@@ -7,15 +7,15 @@ from musicdb.utils.completion import Completer
 from ...models import Artist, Instrument, ArtistPerformance, \
     EnsemblePerformance, Ensemble, Performance, Key, Recording, Catalogue
 
-"""
-TODO
-
- - Work catalogue selection / creation
- - Re-using previous recording movement names
- - Add 'change' instrument to performer selection
-"""
-
 class Command(AddMusicFilesCommand):
+    """
+    TODO
+
+     - Work catalogue selection / creation
+     - Re-using previous recording movement names
+     - Add 'change' instrument to performer selection
+    """
+
     CAPITALISE_TRACK_NAMES = False
 
     def handle_files(self, files):
