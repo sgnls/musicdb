@@ -290,10 +290,10 @@ class Command(AddMusicFilesCommand):
             pass
 
         adjective = ''
+        default = "%s player" % noun
 
         while not adjective:
-            adjective = raw_input('Adjective [%s player]: ' % noun) \
-                or '%s player' % noun
+            adjective = raw_input("Adjective [%s]:" % default) or default
 
         return Instrument.objects.create(
             noun=noun,
