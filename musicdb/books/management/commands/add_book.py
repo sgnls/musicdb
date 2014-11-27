@@ -8,6 +8,7 @@ from django.conf import settings
 from django.core.files import File as DjangoFile
 from django.core.management.base import CommandError, make_option
 
+from musicdb.utils.db import nextval
 from musicdb.utils.commands import AddFilesCommand
 
 from musicdb.common.models import File
@@ -90,9 +91,7 @@ class Command(AddFilesCommand):
 
         # Need to know where to store the book before we create, hence manual
         # cursor manipulation
-        cursor = connection.cursor()
-        cursor.execute("SELECT NEXTVAL('books_book_id_seq')")
-        book_pk = cursor.fetchone()[0]
+        book_pk = nextval('books_book_id_seq')
 
         # Store the file
         file_ = File.objects.create_from_path(
