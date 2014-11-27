@@ -21,20 +21,32 @@ class Command(AddMusicFilesCommand):
 
         artist_name = self.options['artist']
         if not artist_name:
-            artist_name = self.prompt_string('Artist', Artist.objects.all(), 'name')
+            artist_name = self.prompt_string(
+                "Artist",
+                Artist.objects.all(),
+                'name',
+            )
 
         artist, created = Artist.objects.get_or_create(name=artist_name)
         if created and ', ' in artist_name:
             artist.is_solo_artist = True
             artist.save()
-        print "%s artist %s" % (created and 'Created' or 'Using existing', artist)
+
+        print "I: %s artist %s" % (
+            "Created" if created else "Using existing",
+            artist,
+        )
 
         album_name = self.options['album']
         if not album_name:
             album_name = self.prompt_string('Album name', artist.albums.all(), 'title')
 
         album, created = artist.albums.get_or_create(title=album_name)
-        print "%s album %s" % (created and 'Created' or 'Using existing', album)
+
+        print "I: %s album %s" % (
+            "Created" if created else "Using existing",
+            album,
+        )
 
         album_year = None
         if created:
