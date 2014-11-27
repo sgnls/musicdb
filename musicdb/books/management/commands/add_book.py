@@ -4,6 +4,7 @@ import urllib
 from lxml import etree
 
 from django.db import connection
+from django.conf import settings
 from django.core.files import File as DjangoFile
 from django.core.management.base import CommandError, make_option
 
@@ -117,7 +118,7 @@ class Command(AddFilesCommand):
                 except:
                     pass
 
-        print "I: Added."
+        print "I: Added: %s%s" % (settings.SITE_URL, author.get_absolute_url())
 
 def guess_book_details(val):
     val = os.path.basename(val)

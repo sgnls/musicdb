@@ -1,5 +1,6 @@
 import readline
 
+from django.conf import settings
 from django.db.models import Count
 from django.db.models.expressions import F
 
@@ -54,6 +55,11 @@ class Command(AddMusicFilesCommand):
             'classical/%d' % recording.pk,
             'movement',
             recording.movements,
+        )
+
+        print "I: Added: %s%s" % (
+            settings.SITE_URL,
+            recording.get_absolute_url(),
         )
 
     def get_artist(self, name, prompt_years=True):
