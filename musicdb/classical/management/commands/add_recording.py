@@ -21,7 +21,7 @@ class Command(AddMusicFilesCommand):
     def handle_files(self, files):
         self.show_filenames(files)
 
-        if raw_input('Re-use last recording info? [Y] ').strip().lower() in ('y', ''):
+        if raw_input("Re-use last recording info? [Y] ").strip().lower() in ('y', ''):
             prev = Recording.objects.order_by('-pk')[0]
             composer = prev.work.composer
 
@@ -61,7 +61,7 @@ class Command(AddMusicFilesCommand):
 
     def get_artist(self, name, prompt_years=True):
         surname = self.prompt_string(
-            '%s surname' % name,
+            "%s surname" % name,
             Artist.objects.all(),
             'surname',
         )
