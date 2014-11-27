@@ -281,7 +281,7 @@ class Command(AddMusicFilesCommand):
             default = None
 
         noun = self.prompt_string(
-            'Instrument', Instrument.objects.all(), 'noun', default,
+            "Instrument", Instrument.objects.all(), 'noun', default,
         )
 
         try:
