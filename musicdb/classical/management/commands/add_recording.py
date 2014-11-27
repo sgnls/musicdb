@@ -268,9 +268,13 @@ class Command(AddMusicFilesCommand):
 
     def get_instrument(self, artist):
         try:
-            instrument_id = artist.performances.values('instrument'). \
-                annotate(count=models.Count('instrument')). \
-                order_by('-count')[0]['instrument']
+            instrument_id = artist.performances.values(
+                'instrument',
+            ).annotate(
+                count=models.Count('instrument'),
+            ).order_by(
+                '-count'
+            )[0]['instrument']
 
             default = Instrument.objects.get(pk=instrument_id).noun
         except IndexError:
@@ -286,6 +290,7 @@ class Command(AddMusicFilesCommand):
             pass
 
         adjective = ''
+
         while not adjective:
             adjective = raw_input('Adjective [%s player]: ' % noun) \
                 or '%s player' % noun
