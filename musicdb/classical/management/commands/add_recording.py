@@ -161,7 +161,7 @@ class Command(AddMusicFilesCommand):
                     )
                     print "I: Created %s" % catalogue
 
-                work_catalogue = work.catalogues.create(
+                work.catalogues.create(
                     value=value,
                     catalogue=catalogue,
                 )
@@ -262,7 +262,7 @@ class Command(AddMusicFilesCommand):
             'Ensemble', Ensemble.objects.all(), 'name',
         )
 
-        ensemble, created = Ensemble.objects.get_or_create(name=name)
+        ensemble, _ = Ensemble.objects.get_or_create(name=name)
 
         return ensemble
 
