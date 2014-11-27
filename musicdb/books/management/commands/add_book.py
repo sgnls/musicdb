@@ -59,7 +59,7 @@ class Command(AddFilesCommand):
         first_names = self.options['first_names']
         if not self.options['first_names']:
             first_names = self.prompt_string(
-                'Author forenames',
+                "Author forenames",
                 qs,
                 'first_names',
                 default,
@@ -74,7 +74,7 @@ class Command(AddFilesCommand):
 
         if not title:
             title = self.prompt_string(
-                'Title',
+                "Title",
                 author.books.all(),
                 'title',
                 '',
