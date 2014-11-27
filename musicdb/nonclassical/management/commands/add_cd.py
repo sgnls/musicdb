@@ -79,7 +79,7 @@ class Command(AddMusicFilesCommand):
         for trackname in files.values():
             assert trackname.strip()
 
-        print "Creating CD..."
+        print "I: Creating CD..."
         cd = album.cds.create(num=album.cds.count() + 1)
 
         self.copy_and_tag(files, 'albums/%d' % cd.pk, 'track', cd.tracks)
