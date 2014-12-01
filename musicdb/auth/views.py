@@ -47,8 +47,10 @@ def change_password(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Your password was changed successfully")
-        else:
-            messages.error(request, "There was an error changing your password")
+
+            return redirect(request.path)
+
+        messages.error(request, "There was an error changing your password")
     else:
         form = PasswordChangeForm(request.user)
 
