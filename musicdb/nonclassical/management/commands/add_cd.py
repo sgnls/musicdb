@@ -84,4 +84,7 @@ class Command(AddMusicFilesCommand):
 
         self.copy_and_tag(files, 'albums/%d' % cd.pk, 'track', cd.tracks)
 
+        # To ensure the slug?
+        album.save()
+
         print "I: Added: %s%s" % (settings.SITE_URL, album.get_absolute_url())
