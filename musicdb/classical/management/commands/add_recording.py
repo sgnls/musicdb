@@ -54,11 +54,6 @@ class Command(AddMusicFilesCommand):
             recording.movements,
         )
 
-        print "I: Added: %s%s" % (
-            settings.SITE_URL,
-            recording.get_absolute_url(),
-        )
-
     def get_artist(self, name, prompt_years=True):
         surname = self.prompt_string(
             "%s surname" % name,

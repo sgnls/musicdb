@@ -119,8 +119,6 @@ class Command(AddFilesCommand):
                 except:
                     pass
 
-        print "I: Added: %s%s" % (settings.SITE_URL, author.get_absolute_url())
-
 def guess_book_details(val):
     val = os.path.basename(val)
     val = os.path.splitext(val)[0]
@@ -168,4 +166,3 @@ def guess_book_details(val):
         'last_name': last_name,
         'cover_url': cover_url,
     }
-
