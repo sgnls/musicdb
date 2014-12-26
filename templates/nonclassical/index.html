@@ -8,7 +8,7 @@
 
 <div class="btn-group btn-group-xs visible-xs visible-sm">
   {% for x in letters %}
-    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical:letter x %}">
+    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical:view x %}">
       {% if x == "0" %}
         #</a>
       {% else %}
@@ -19,7 +19,7 @@
 
 <div class="btn-group btn-group-sm visible-md">
   {% for x in letters %}
-    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical:letter x %}">
+    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical:view x %}">
       {% if x == "0" %}
         #</a>
       {% else %}
@@ -30,7 +30,7 @@
 
 <div class="btn-group btn-group-md visible-lg">
   {% for x in letters %}
-    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical:letter x %}">
+    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical:view x %}">
       {% if x == "0" %}
         #</a>
       {% else %}

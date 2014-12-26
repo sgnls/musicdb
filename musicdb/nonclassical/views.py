@@ -9,7 +9,7 @@ from .models import Artist, Album
 
 def index(request, letter=None):
     if letter is None:
-        return redirect('nonclassical:letter', 'a')
+        return redirect('nonclassical:view', 'a')
 
     artists = Artist.objects.filter(name_first=letter)
 
