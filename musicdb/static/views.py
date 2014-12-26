@@ -1,4 +1,4 @@
 from django.shortcuts import redirect
 
 def index(request):
-    return redirect('nonclassical:nonclassical')
+    return redirect('nonclassical:view')

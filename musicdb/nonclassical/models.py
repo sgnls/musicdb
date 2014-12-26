@@ -41,7 +41,7 @@ class Artist(AbstractArtist, NextPreviousMixin):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('nonclassical:nonclassical-artist', (self.slug,))
+        return ('nonclassical:artist', (self.slug,))
 
     def long_name(self):
         if self.is_solo_artist:
@@ -98,7 +98,7 @@ class Album(models.Model, NextPreviousMixin):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('nonclassical:nonclassical-album', (self.artist.slug, self.slug))
+        return ('nonclassical:album', (self.artist.slug, self.slug))
 
     def get_dir_name(self):
         if self.year:
