@@ -1,4 +1,4 @@
-from django.db.models import Sum
+from django.db import models
 from django.shortcuts import get_object_or_404, render
 
 from musicdb.utils.http import render_playlist
@@ -12,7 +12,7 @@ def play_music_file(request, music_file_id):
 
 def stats(request):
     total_duration = MusicFile.objects.aggregate(
-        x=Sum('length'),
+        x=models.Sum('length'),
     )['x'] or 0
 
     return render(request, 'common/stats.html', {
