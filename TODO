@@ -21,3 +21,5 @@ musicdb TODO
  * Classical recordings with a single movement should show movement title (eg.
    when we only have a small part of the work and need to show that). Needs
    clearing of all existing work movement title where #movements == 1 too.
+
+ * Move to velocity theme
