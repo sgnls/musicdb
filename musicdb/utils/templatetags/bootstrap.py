@@ -45,7 +45,7 @@ def grid_classes(context, *args, **kwargs):
 
     classes = []
 
-    for idx, breakpoint, cols in _get_cols(context, *args, **kwargs):
+    for _, breakpoint, cols in _get_cols(context, *args, **kwargs):
         classes.append('col-%s-%d' % (breakpoint, 12 / cols))
 
     return ' '.join(classes)
