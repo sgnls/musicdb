@@ -149,6 +149,16 @@ class Command(BaseCommand):
                 import webbrowser
                 url = "http://%s:%s/" % (addr, port)
                 webbrowser.open(url)
+
+            import errno, socket
+            from werkzeug.serving import BaseWSGIServer
+            def handle_error(self, *args, **kwargs):
+                exc_type, exc_value = sys.exc_info()[:2]
+                if exc_type is socket.error and exc_value.errno == errno.EPIPE:
+                    return
+                super(BaseWSGIServer, self).handle_error(*args, **kwargs)
+            BaseWSGIServer.handle_error = handle_error
+
             run_simple(addr, int(port), DebuggedApplication(handler, True),
                        use_reloader=use_reloader, use_debugger=True, threaded=threaded)
         inner_run()
