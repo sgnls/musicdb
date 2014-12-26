@@ -34,7 +34,7 @@
       {% for movement in recording.movements.all %}
         {{ movement.section_title }}
         <li>
-          <a href="{% url common:play-music-file movement.music_file.pk %}">{{ movement }}</a>
+          <a href="{% url common:play-music-file movement.music_file_id %}">{{ movement }}</a>
           <small>{{ movement.music_file.length|duration }}</small>
         </li>
       {% endfor %}
