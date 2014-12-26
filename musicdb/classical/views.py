@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import time
-
 from django.shortcuts import render, get_object_or_404
 
 from musicdb.utils.http import render_playlist
-from musicdb.classical.models import Artist, Work, Recording, Movement, \
-    Ensemble, Category
+from musicdb.classical.models import Artist, Work, Recording, Ensemble, \
+    Category
 
 def index(request):
     return render(request, 'classical/index.html')
@@ -89,38 +87,4 @@ def recent(request):
 
     return render(request, 'classical/recent.html', {
         'recent': recent,
-    })
-
-def stats(request):
-    composer_count = Artist.objects.composers().count()
-    work_count = Work.objects.count()
-    recording_count = Recording.objects.count()
-    movement_count = Movement.objects.count()
-
-    anniversaries = {}
-    current_year = time.localtime()[0]
-    for artist in Artist.objects.all():
-        for attr in ('born', 'died'):
-            val = getattr(artist, attr)
-            if not val:
-                continue
-
-            delta = current_year - val
-            if delta % 50 == 0:
-                anniversaries.setdefault(attr, []).append((artist, delta))
-
-    artists_by_num_works = Artist.objects.by_num_works()[:10]
-    works_by_num_recordings = Work.objects.by_num_recordings()[:10]
-
-    return render(request, 'classical/stats.html', {
-        'work_count': work_count,
-        'composer_count': composer_count,
-        'recording_count': recording_count,
-        'movement_count': movement_count,
-        'movement_average': recording_count and 1.0 * movement_count / recording_count or 0,
-        'recording_average': work_count and 1.0 * recording_count / work_count or 0,
-
-        'anniversaries': anniversaries,
-        'artists_by_num_works': artists_by_num_works,
-        'works_by_num_recordings': works_by_num_recordings,
     })
