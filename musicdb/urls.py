@@ -11,6 +11,4 @@ urlpatterns = patterns('',
     url(r'', include('musicdb.static.urls', namespace='static')),
     url(r'', include('musicdb.superuser.urls', namespace='superuser')),
     url(r'', include('musicdb.unfiled.urls', namespace='unfiled')),
-
-    (r'^admin/', include(admin.site.urls)),
 )
