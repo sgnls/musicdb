@@ -22,9 +22,6 @@
 <h3 id="{{ recording.slug }}">
   {{ recording.short_name }}
   <small>
-  {% if request.user.is_superuser %}
-  <a href="{% url admin:classical_recording_change recording.pk %}">edit</a>
-  {% endif %}
   <a href="{{ recording.get_absolute_url }}">#</a>
   </small>
 </h3>
@@ -104,10 +101,6 @@
 {% endif %}
 
 <hr/>
-
-{% if request.user.is_superuser %}
-<p><a href="{% url admin:classical_work_change work.pk %}">edit</a></p>
-{% endif %}
 
 {% with work.previous as previous %}
 {% with work.next as next %}
