@@ -77,7 +77,7 @@ case "${PROJECT}" in
 		;;
 
 	email_from_template)
-		Git git://github.com/playfire/django-email-from-template.git ${PROJECT} ${PROJECT}
+		Git git://github.com/lamby/django-email-from-template.git ${PROJECT} ${PROJECT}
 		;;
 
 	jquery)
