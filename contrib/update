@@ -73,7 +73,7 @@ case "${PROJECT}" in
 		;;
 
 	django_yadt)
-		Git git://github.com/thread/django-yadt.git ${PROJECT} ${PROJECT}
+		Git git://github.com/lamby/django-yadt.git ${PROJECT} ${PROJECT}
 		;;
 
 	email_from_template)
