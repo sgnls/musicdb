@@ -8,7 +8,7 @@ from musicdb.nonclassical.models import Artist, Album, CD
 
 def index(request, letter=None):
     if letter is None:
-        return redirect('nonclassical-letter', 'a')
+        return redirect('nonclassical:nonclassical-letter', 'a')
 
     artists = Artist.objects.filter(name_first=letter)
 

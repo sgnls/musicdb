@@ -15,11 +15,11 @@
 
   <div class="{% grid_classes xs=2 sm=3 md=4 lg=6 %} text-center" style="margin-bottom: 20px;">
     <p>
-      <a href="{% url nonclassical-album artist.slug album.slug %}"><img src="{% if album.image.exists %}{{ album.image.thumbnail.url }}{% else %}{% static "img/missing_album_medium.jpeg" %}{% endif %}" alt="{{ album }}" height="125" width="125"></a>
+      <a href="{% url nonclassical:nonclassical-album artist.slug album.slug %}"><img src="{% if album.image.exists %}{{ album.image.thumbnail.url }}{% else %}{% static "img/missing_album_medium.jpeg" %}{% endif %}" alt="{{ album }}" height="125" width="125"></a>
     </p>
 
     <p>
-      <a href="{% url nonclassical-album artist.slug album.slug %}">{{ album.title }}</a>
+      <a href="{% url nonclassical:nonclassical-album artist.slug album.slug %}">{{ album.title }}</a>
       {% if album.year %}({{ album.year }}){% endif %}
     </p>
   </div>
