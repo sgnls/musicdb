@@ -44,10 +44,3 @@ def play_album(request, album_id):
     album = get_object_or_404(Album, id=album_id)
 
     return render_playlist(request, album.get_tracks())
-
-def collage(request):
-    albums = Album.objects.exclude(cover='').select_related('artist')
-
-    return render(request, 'nonclassical/collage.html', {
-        'albums': albums,
-    })
