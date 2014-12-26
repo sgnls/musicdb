@@ -33,14 +33,16 @@ class Book(models.Model):
 
     image = YADTImageField(variants={
         'large': {
-            'width': 300,
-            'height': 428,
             'format': 'jpeg',
+            'pipeline': (
+                {'name': 'thumbnail', 'width': 300, 'height': 428},
+            ),
         },
         'thumbnail': {
-            'width': 150,
-            'height': 213,
             'format': 'jpeg',
+            'pipeline': (
+                {'name': 'thumbnail', 'width': 150, 'height': 213},
+            ),
         },
     }, track_exists=True, cachebust=True)
 

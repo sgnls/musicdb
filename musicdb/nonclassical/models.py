@@ -60,16 +60,16 @@ class Album(models.Model, NextPreviousMixin):
 
     image = YADTImageField(variants={
         'large': {
-            'crop': True,
-            'width': 300,
-            'height': 300,
             'format': 'jpeg',
+            'pipeline': (
+                {'name': 'crop', 'width': 300, 'height': 300},
+            ),
         },
         'thumbnail': {
-            'crop': True,
-            'width': 125,
-            'height': 125,
             'format': 'jpeg',
+            'pipeline': (
+                {'name': 'crop', 'width': 125, 'height': 125},
+            ),
         },
     }, cachebust=True, track_exists=True)
 
