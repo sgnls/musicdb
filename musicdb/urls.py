@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import pattern, include
+from django.conf.urls.defaults import include, url
 
 urlpatterns = patterns('',
     url(r'', include('musicdb.auth.urls', namespace='auth')),
