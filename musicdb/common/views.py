@@ -11,7 +11,11 @@ def play_music_file(request, music_file_id):
     return render_playlist(request, [music_file])
 
 def stats(request):
+    total_duration = MusicFile.objects.aggregate(
+        Sum('length'),
+    )['length__sum'] or 0
+
     return render(request, 'common/stats.html', {
+        'total_duration': total_duration,
         'music_file_count': MusicFile.objects.count(),
-        'total_duration': MusicFile.objects.aggregate(Sum('length'))['length__sum'] or 0,
     })
