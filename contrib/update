@@ -69,7 +69,7 @@ case "${PROJECT}" in
 		;;
 
 	django_enumfield)
-		Git git://github.com/playfire/django-enumfield.git ${PROJECT} ${PROJECT}
+		Git git://github.com/lamby/django-enumfield.git ${PROJECT} ${PROJECT}
 		;;
 
 	django_yadt)
