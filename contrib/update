@@ -80,6 +80,10 @@ case "${PROJECT}" in
 		Git git://github.com/lamby/django-email-from-template.git ${PROJECT} ${PROJECT}
 		;;
 
+	instantclick)
+		Git git://github.com/dieulot/instantclick.git ${PROJECT}
+		;;
+
 	jquery)
 		mkdir -p ${PROJECT}
 		wget -Ojquery/jquery.js http://code.jquery.com/jquery.js

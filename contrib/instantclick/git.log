@@ -1,0 +1,1195 @@
+commit 4ffd511b034f7c71eb989c236339ac12bbb00d69
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Dec 25 23:09:29 2014 +0100
+
+    v3.1.0
+
+ bower.json      | 2 +-
+ instantclick.js | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 715fee1aca0b5e4e5778ad1736dbf330ec0fce6c
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Dec 25 19:08:20 2014 +0100
+
+    Allow to alter body and title on receive
+    
+    Also bring URL on receive, read-only
+
+ instantclick.js          | 36 +++++++++++++++++++++++++++++++-----
+ tests/alter-receive.html |  7 +++++++
+ tests/index.php          | 16 +++++++++++++++-
+ 3 files changed, 53 insertions(+), 6 deletions(-)
+
+commit bfb920d50093c704d3885ea3f6843a7ec426e3f5
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Dec 25 16:18:03 2014 +0100
+
+    Reduce number of delays
+
+ tests/index.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5a63f67854dce487103bf18ceda5503701d74bda
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Dec 25 16:14:37 2014 +0100
+
+    Use pjax on click even when there has been no preloading before
+    
+    Useful because of a regression in 3ca896cda35c8f4ba4c71a1924aab1d4a30709d5 (previous commit), on touch devices when a user taps *near* a link the browser will correct that, but no preloading will have happened.
+    
+    It’s also useful for non-standard ways to navigate a website, like when using Tab and Return on one’s keyboard to access links.
+
+ instantclick.js | 51 +++++++++++++++++++++++++++------------------------
+ 1 file changed, 27 insertions(+), 24 deletions(-)
+
+commit 3ca896cda35c8f4ba4c71a1924aab1d4a30709d5
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Mon Dec 22 15:39:57 2014 +0100
+
+    Don’t act on mouseover/mousedown if there has been preloading in the last 500ms
+    
+    Fixes the bug in the last commit, click wouldn’t fire because mouseover/mousedown prevented that, for some reason (haven’t dig).
+    
+    It introduces a regression though, if you tap near a link, it will not be loaded through InstantClick. Previously, it would load through InstantClick (but be preloaded just 1ms before, on mousedown).
+    
+    A way to fix that in the future is to preload on click if it hasn’t been done. Currently, no preload on click means InstantClick will redirect to the new page, without pjax. Fixing this may also be useful for those that navigate without their mouses.
+
+ instantclick.js | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit d73da578f46f623cc4ef59f2116053b6af6c90c1
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Mon Dec 22 10:02:25 2014 +0100
+
+    Handle dynamic links (buggy with touch)
+
+ instantclick.js    | 78 ++++++++++++++++++++++++++++++++++--------------------
+ tests/welcome.html |  3 +++
+ 2 files changed, 53 insertions(+), 28 deletions(-)
+
+commit a8fc5e9927e7eeb5c807dcc7519f5930b6793f57
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sun Dec 21 20:16:24 2014 +0100
+
+    Clarify underscores as CSS comments
+
+ tests/style.css | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 917a3eeead90cdac237f7a91bf022b0f4956e155
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sun Dec 21 19:20:52 2014 +0100
+
+    Add test for links with multiple element
+    
+    Exposes problem detailed in #65
+
+ tests/welcome.html | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit edf0293005ec1db2ae25b400181dde969bd93516
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sun Dec 21 19:06:33 2014 +0100
+
+    `instantclick:newpage` event
+
+ instantclick.js | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 5157ffb27cb364f9ab19fa74a0bae038b518d633
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Oct 17 16:31:56 2014 +0200
+
+    Remove <noscript> tags
+    
+    Fixes #69, bug with IE
+    
+    Also fixes a bug with most browsers when there are explicitly closed tags around noscript elements.
+
+ instantclick.js     | 9 ++++++++-
+ tests/index.php     | 3 ++-
+ tests/noscript.html | 7 +++++++
+ 3 files changed, 17 insertions(+), 2 deletions(-)
+
+commit 7ccc5d5a68bcc6530d74ea31f6d05f269fc8e2ea
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Mon Oct 13 19:46:26 2014 +0200
+
+    typo: Chrome -on +for iOS
+
+ instantclick.js | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 23d0c23c6051e2e577481bea40088d8148b11f13
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Mon Oct 13 19:34:43 2014 +0200
+
+    Fix for #79 - Page’s title not displaying on Chrome for iOS
+
+ instantclick.js | 18 ++++++++++++++++--
+ 1 file changed, 16 insertions(+), 2 deletions(-)
+
+commit fdd54c37cb01aa9c62451ada80ed8ef043abc8df
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Mon Oct 13 18:14:16 2014 +0200
+
+    typo
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4e22ffec322204048f55d599b3a029e4516f9198
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Mon Oct 13 18:13:42 2014 +0200
+
+    Getting rid of the debug variables
+    
+    Haven’t used that in ages
+
+ instantclick.js | 24 ------------------------
+ 1 file changed, 24 deletions(-)
+
+commit 6b37a0169603a3244c272937805149767b7de546
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Mon Oct 13 18:10:17 2014 +0200
+
+    extension-less link to license
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 158aeed3d0e7d4d5aa23e82d3bd3413ab340c0be
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Sep 18 13:49:21 2014 +0200
+
+    In tests, load instantclick.js via PHP, so it can be used on the root of a website
+    
+    You can make tests live on http://ictests.dev/, before that it needed to be on http://ictests.dev/tests/
+
+ tests/index.php           | 2 +-
+ tests/instantclick.js.php | 8 ++++++++
+ tests/xhtml.php           | 2 +-
+ 3 files changed, 10 insertions(+), 2 deletions(-)
+
+commit a92fd5c9d9f10929e1a482c4b07bf72b5fc1acf5
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Mar 21 13:45:46 2014 +0100
+
+    3.0.1
+
+ bower.json      | 2 +-
+ instantclick.js | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit e4e986266815fa4e96791dac53f8c390e20f4c17
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Mar 20 13:26:34 2014 +0100
+
+    Makefile adjustments
+
+ makefile | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 61f8650a3ea13cde377655f5f237a1aea652671b
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Mar 20 13:21:55 2014 +0100
+
+    Makefile
+
+ .gitignore |  1 +
+ makefile   | 11 +++++++++++
+ 2 files changed, 12 insertions(+)
+
+commit aa88056a0266f69c352e7f2685370d4b9295720a
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Mar 20 11:59:32 2014 +0100
+
+    Make one long line two short lines
+
+ instantclick.js | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit b92465b1e5561acf79a12ef12aed790383c37b75
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Wed Mar 19 15:37:35 2014 +0100
+
+    Contributing guidelines
+
+ README.md | 34 +++++++++++++++++++++++++++++++---
+ 1 file changed, 31 insertions(+), 3 deletions(-)
+
+commit d2702485d6ee0c2e0b4fc453d0f03507da54a557
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Mar 13 22:03:39 2014 +0100
+
+    Test for #54
+
+ tests/welcome.html | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 85422224763e2daf94e81d79c9801d7d2aedda10
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Mar 13 20:49:28 2014 +0100
+
+    Add (failed) test for XHTML
+
+ tests/xhtml.php | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+
+commit 2be25e844641ef58b3f7dbed61a9707cd9b5b226
+Merge: 6763987 12a8fa2
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Mar 13 19:29:43 2014 +0100
+
+    Merge pull request #51 from connor4312/patch-1
+    
+    Prevent error being thrown in non-mobile browers
+
+commit 6763987a045e198d6b7268e1ea35367b10e09ad4
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Mar 8 14:47:47 2014 +0100
+
+    3.0
+
+ bower.json      | 10 ++++++++--
+ instantclick.js |  2 +-
+ 2 files changed, 9 insertions(+), 3 deletions(-)
+
+commit 12a8fa232b029dcd79ece1e2191b7c85c178a8cb
+Author: Connor Peet <connor@connorpeet.com>
+Date:   Fri Mar 7 18:46:50 2014 -0600
+
+    Prevent error being thrown in non-mobile browers
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 926e73e48c1db29ead8a12a33b562f37370e6de1
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Mar 7 18:26:42 2014 +0100
+
+    [Minor] add comment
+
+ instantclick.js | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 92b0b6c592a4d282019fa8a0b66e40f03ba60c0d
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Mar 7 18:04:00 2014 +0100
+
+    [Minor] update test for NProgress
+
+ tests/index.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 36221dc691f692b09898ad40e1184d5612dbce51
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Mar 7 11:05:15 2014 +0100
+
+    [Minor] Give credits for auto-scaling on mobile
+
+ instantclick.js | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 6bb2962d2e3471fd38805403b3dcd96f19a334e8
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Mar 7 09:25:37 2014 +0100
+
+    Bugfix: Don’t re-evaluate scripts in the head
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9b5488f4d76f977f9467227f56e0779dadc4430b
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Mar 1 13:48:28 2014 +0100
+
+    Update comments + Bugfix: allow application/xhtml+xml content-type.
+
+ instantclick.js | 31 ++++++++-----------------------
+ 1 file changed, 8 insertions(+), 23 deletions(-)
+
+commit 16ef85eabf4df804fcd712ba339859f98ee04c87
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Mar 1 13:26:23 2014 +0100
+
+    “beforechange” event renamed to “wait”
+    
+    More appropriate. This event isn’t always triggered, its name suggests it’s always triggered before “change”.
+
+ instantclick.js | 6 +++---
+ tests/index.php | 4 ++--
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 0c1ef030503f6d4a880347d844b573e0fbf849ee
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Mar 1 13:18:49 2014 +0100
+
+    New events: “fetch” and “receive”
+
+ instantclick.js | 4 ++++
+ tests/index.php | 8 ++++++++
+ 2 files changed, 12 insertions(+)
+
+commit 4e0c6e157906444aab2bd9da2df44e30a9d635e6
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Mar 1 12:26:10 2014 +0100
+
+    “click” event slightly altered and renamed to “beforechange”
+    
+    Doesn't trigger anymore when we're redirecting.
+
+ instantclick.js | 8 ++++----
+ tests/index.php | 9 +++++++--
+ 2 files changed, 11 insertions(+), 6 deletions(-)
+
+commit 64876dc952fb5870534e6eca0357b6e5b2c81f5d
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Mar 1 11:40:25 2014 +0100
+
+    Blacklisting/Whitelisting via parent container
+
+ instantclick.js    | 36 ++++++++++++++++++++++++++++++++++--
+ tests/welcome.html |  5 +++++
+ 2 files changed, 39 insertions(+), 2 deletions(-)
+
+commit cee5c8f21952595288c568ded8118ca729cf73c8
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Mar 1 10:17:32 2014 +0100
+
+    Touchstart preloading + some progress bar adjustments
+    
+    Progress bar adjustments:
+    - Height goes from 3px to 2px, and twice that on mobile.
+    - Bump z-index to max value
+    - Less flashy color, from #29f to #29d (like NProgress) #46
+
+ instantclick.js | 22 +++++++++++++++++++---
+ 1 file changed, 19 insertions(+), 3 deletions(-)
+
+commit 3c403a7ebe729e45c65246ce4a69c256e576ac91
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Feb 28 12:55:22 2014 +0100
+
+    Fix regression: Progress bar not showing after scroll
+    
+    Introduced in f89abd5f646f536ad459a106c3535a16d8ccb5f8
+    `absolute` renders better on mobile (i.e. touch-enabled) devices when zooming, `fixed` is needed on non-touch devices to show even after we’ve scrolled.
+
+ instantclick.js | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 1eb1fd2b118a0c95d6972e671a16efe0efebdd18
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Feb 28 11:26:51 2014 +0100
+
+    Track assets with `data-instant-track`
+
+ instantclick.js   | 43 ++++++++++++++++++++++++++++++++++++++-----
+ tests/index.php   |  7 +++++--
+ tests/trackme.css |  0
+ tests/trackme.js  |  0
+ 4 files changed, 43 insertions(+), 7 deletions(-)
+
+commit c8e66ba63f9d20c70360cd1610c64d4c806bd195
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Feb 27 20:57:39 2014 +0100
+
+    Hotfix: saving body on init, not its outerHTML
+
+ instantclick.js | 13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
+
+commit 25380bc8ca2f80b51053132e1337daf5fbbc54db
+Merge: 24b96e6 7c1361f
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Feb 27 20:44:01 2014 +0100
+
+    Merge branch 'master' of https://github.com/dieulot/instantclick
+
+commit 24b96e6ed222e0d417f544a107d6fb88fef396de
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Feb 27 20:40:42 2014 +0100
+
+    DOMify the ajax response
+    
+    Fixes a minor bug (that nobody reported), an explicit <body> tag is now optionnal (as in HTML5)
+
+ instantclick.js     |  36 ++++++++++--------------------------
+ tests/entities.html |   3 +++
+ tests/image.png     | Bin 0 -> 22822 bytes
+ tests/index.php     |   7 ++++++-
+ tests/style.css     |  17 ++++++++++-------
+ tests/welcome.html  |   4 +++-
+ 6 files changed, 32 insertions(+), 35 deletions(-)
+
+commit 7c1361f4408fed8264964de0a8a7df0a77b3d92a
+Merge: f89abd5 c6ed5b2
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Feb 27 14:59:58 2014 +0100
+
+    Merge pull request #43 from wtfaremyinitials/master
+    
+    Disables itself when used in a file:// page
+
+commit f89abd5f646f536ad459a106c3535a16d8ccb5f8
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Feb 27 11:16:27 2014 +0100
+
+    Progress bar adjusts its size for mobile devices + config via CSS
+    
+    The progress bar adjusts its size and position, so that you don't need to optimize your website for mobile for it to work correctly.
+    
+    The progress bar configuration is now done by CSS instead of another argument in `InstantClick.init`.
+
+ instantclick.js      | 65 +++++++++++++++++++++-------------------------------
+ tests/index.php      | 17 +++-----------
+ tests/no-pb.html     |  3 ---
+ tests/orange-pb.html |  3 ---
+ tests/style.css      | 10 +++++++-
+ tests/welcome.html   |  4 ++++
+ 6 files changed, 42 insertions(+), 60 deletions(-)
+
+commit c6ed5b2e57b844b7f37d339c933576725dbb0658
+Author: Will Franzen <wtfranzen@gmail.com>
+Date:   Tue Feb 25 09:42:31 2014 -0600
+
+    Moved location.protocol check to supported variable
+
+ instantclick.js | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+commit 9513185d45fcd06b3f3c068ef09c94594dba7572
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Mon Feb 24 11:30:09 2014 +0100
+
+    Progress bar
+
+ instantclick.js      | 147 ++++++++++++++++++++++++++++++++++++++++++++++++++-
+ tests/index.php      |  28 ++++++++--
+ tests/no-pb.html     |   3 ++
+ tests/orange-pb.html |   3 ++
+ 4 files changed, 176 insertions(+), 5 deletions(-)
+
+commit 7d1ea6032ab0d5d723e2bfba426f837146d366d0
+Author: Will Franzen <wtfranzen@gmail.com>
+Date:   Sat Feb 22 10:17:35 2014 -0600
+
+    Disables itself when used in a file:// page
+    
+    This change was made because when somebody tries to use a page with instantclick.js via a file:// url, all the links sort of glitch out. They require you to click twice and don't add any speed improvements.
+
+ instantclick.js | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 84411cd5f25a55749671d2f44f2f3764ee8f03fc
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Feb 21 14:13:21 2014 +0100
+
+    Align comments and variables, + tests for anchors
+
+ instantclick.js    | 143 +++++++++++++++++++++++++++++++----------------------
+ tests/1.html       |   1 -
+ tests/2.html       |   1 -
+ tests/anchor1.html |   5 ++
+ tests/anchor2.html |   5 ++
+ tests/anchors.html |  57 +++++++++++++++++++++
+ tests/index.php    |  13 ++---
+ tests/welcome.html |   2 +
+ 8 files changed, 161 insertions(+), 66 deletions(-)
+
+commit 58a621f3f264b9b624a319108d75f9faebb77eb9
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Feb 21 10:48:37 2014 +0100
+
+    Switching from tabs to two spaces
+
+ instantclick.js | 934 ++++++++++++++++++++++++++++----------------------------
+ 1 file changed, 467 insertions(+), 467 deletions(-)
+
+commit 2d0e6e2a24e16a317385c254e7f9c88f1e42b5a9
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Feb 21 10:40:33 2014 +0100
+
+    [Minor] add comment
+
+ instantclick.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit d10440f85dd262dee4194690053683b97887b8f6
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Feb 21 10:29:39 2014 +0100
+
+    Disable Android when it doesn’t support pushState or DOM operations well
+    
+    Unlike what I claim in #23, Android isn’t well supported.
+
+ instantclick.js | 32 +++++++++++++++++++++++++++++++-
+ tests/index.php |  7 +++++++
+ 2 files changed, 38 insertions(+), 1 deletion(-)
+
+commit 52096302794596b66071fc7cde7a079413e59b16
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Feb 20 11:51:15 2014 +0100
+
+    .gitignore
+
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit c07464a4a592faf7b0df8de24213f1b707f9d9db
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Feb 20 10:33:11 2014 +0100
+
+    Permits putting instantclick.js in the tests directory
+    
+    Handy for testing an older version of InstantClick (to spot a regression) or for making it accessible on a webserver.
+
+ tests/index.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 41c440d0a70b3a24e152f586e9202254074b7c70
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Feb 20 10:24:12 2014 +0100
+
+    Add `click` event (brings compatibility for NProgress)
+
+ instantclick.js                             |    4 +-
+ tests/index.php                             |   34 +-
+ tests/nprogress.html                        |    5 +
+ tests/vendors/jquery/MIT-LICENSE.txt        |   21 +
+ tests/vendors/jquery/jquery-2.1.0.js        | 9111 +++++++++++++++++++++++++++
+ tests/vendors/nprogress/License.md          |   19 +
+ tests/vendors/nprogress/nprogress-0.1.2.css |   81 +
+ tests/vendors/nprogress/nprogress-0.1.2.js  |  275 +
+ 8 files changed, 9547 insertions(+), 3 deletions(-)
+
+commit cffa970d5b02f4ccb485c256c2f79d8bd24f8cb3
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Wed Feb 19 14:42:37 2014 +0100
+
+    Bugfix when there is no title tag on a page
+    
+    Before this bugfix, the title would be set to the last one we preloaded.
+    Also, I already saw a page without title having `document.title` set to `false`, but I don’t remember the browser or the context.
+
+ instantclick.js     |  1 +
+ tests/index.php     | 14 +++++++++++---
+ tests/no-title.html |  1 +
+ 3 files changed, 13 insertions(+), 3 deletions(-)
+
+commit a96fbde4995235d34dcd808f3708e0ef9c7ecc27
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Wed Feb 19 12:48:13 2014 +0100
+
+    Add isInitialLoad argument to 'change' event, and add tests
+
+ instantclick.js    | 12 ++++----
+ tests/1.html       |  1 +
+ tests/2.html       |  1 +
+ tests/index.php    | 83 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ tests/style.css    | 28 ++++++++++++++++++
+ tests/welcome.html |  1 +
+ 6 files changed, 121 insertions(+), 5 deletions(-)
+
+commit dbf6d74f5417378c6a62f7b1239d1e4ca8db2695
+Merge: 69c5d5e e1addbb
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Feb 14 10:32:54 2014 +0100
+
+    Merge pull request #29 from nosir/master
+    
+    Fix incorrect method name
+
+commit e1addbb6159882d94d15ecf3509ba3e3391bf8e2
+Author: Max Huang <toorison@gmail.com>
+Date:   Fri Feb 14 10:37:50 2014 +1100
+
+    Fix incorrect method name
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 69c5d5e72bd89c70db9760dfc19c4271da154b32
+Merge: a6058c3 d20804c
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Feb 11 14:17:08 2014 +0100
+
+    Merge pull request #13 from gratimax/master
+    
+    Create bower.json
+
+commit a6058c3b1588073a278fc1b784b3eeeacf92e193
+Merge: 93597ff a0403ef
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Feb 11 13:08:48 2014 +0100
+
+    Merge pull request #15 from pborreli/typos
+    
+    Fixed typos
+
+commit 93597fff8a673327c663d40d2cd45830ccf5e644
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Feb 11 13:02:53 2014 +0100
+
+    Rename “global” variables
+    
+    This shaves off 100+ bytes from the minified+gzipped file size.
+
+ instantclick.js | 196 +++++++++++++++++++++++++++++---------------------------
+ 1 file changed, 102 insertions(+), 94 deletions(-)
+
+commit 0beaac91f3e4cf37c8ca030634b8e911d5c71e6f
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Feb 11 10:53:35 2014 +0100
+
+    Debug function is now in comments
+
+ instantclick.js | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+commit 79e14bd3bee670dc26427b6ecc5e5eae7188b3b3
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Feb 11 10:26:41 2014 +0100
+
+    Code cleanup, + bugfix for one regression
+    
+    Bugfix:
+    - Regression introduced in 091d55d346975f5c7bad93f3dc3c754aa0b014cf , would prevent scrolling when clicking on a link with an #anchor
+    
+    Code cleanups:
+    - Removing redundant conditions (!p.isPreloading || p.isPreloading && …)
+    - Removing unused `e` variable in `readystatechange`’s arguments
+    - Refactoring: add function `setPreloadingAsHalted`
+    - Go through `init`’s arguments backwards (better for gzipped file size)
+    - Some comments makeover
+    - Check if InstantClick has already been initialized now the first condition in `init`
+    - Removed `supported` and `useWhitelist` from `debug`
+    - Better names for `triggerPageEvent` and `on`’s arguments
+
+ instantclick.js | 74 +++++++++++++++++++++++++++++++++++----------------------
+ 1 file changed, 45 insertions(+), 29 deletions(-)
+
+commit 1b25bc37e094ed69b4d63b3c3fa96e45b566cb54
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Feb 11 07:38:20 2014 +0100
+
+    [Minor] Rename useBlacklist to useWhitelist
+
+ instantclick.js | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 091d55d346975f5c7bad93f3dc3c754aa0b014cf
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Feb 11 07:35:55 2014 +0100
+
+    [Minor] Refactoring changePage
+    
+    + Puts triggerPageEvent outside of instantanize
+    + Add comment regarding replaceChild
+
+ instantclick.js | 50 ++++++++++++++++++++++++++++++++------------------
+ 1 file changed, 32 insertions(+), 18 deletions(-)
+
+commit a0403efdf52de0375241f8aea9e90390ffc7f9f7
+Author: Pascal Borreli <pascal@borreli.com>
+Date:   Mon Feb 10 13:10:57 2014 +0000
+
+    Fixed typos
+
+ instantclick.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit d20804c80bd8f61050dc4a637b00312ff931e1f6
+Author: Max Ovsiankin <max@ovsankin.com>
+Date:   Sun Feb 9 12:55:48 2014 -0800
+
+    Create bower.json
+
+ bower.json | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 8c52cbe486d206d2dffa2609d58070148af2790c
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sun Feb 9 18:31:45 2014 +0100
+
+    2.1
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c656c9b922d1fcadf59af65373a39106c2a7477d
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sun Feb 9 18:29:17 2014 +0100
+
+    Blacklisting is now the default.
+    
+    Activating whitelisting by default (in 1.1) was a poor design choice.
+
+ instantclick.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 8017c112f0e00f0994e74691cb4cf98bc1d61d72
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sun Feb 9 10:47:41 2014 +0100
+
+    Bugfix: HTML entities would show up in title tag
+    
+    Fixes #6
+
+ instantclick.js | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+
+commit 4e1b2611c7faf3f88794c3700cdaf6aa6f7ac143
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Feb 8 15:49:34 2014 +0100
+
+    2.0
+
+ instantclick.js | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 264c85fb73471c45b118af048a88ef74acde6d1b
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Feb 8 15:47:52 2014 +0100
+
+    Bugfix (regression): Safari was executing data-no-instant scripts
+    
+    Regression introduced in 59f9658baea268e69c495f31fe3b25558cd70c54
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6c9acc618d0be85a468ba1968c867a2d56843cda
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Feb 8 14:17:29 2014 +0100
+
+    Replace `scrollY` by `pageYOffset`
+    
+    IE 10 is making a scene.
+
+ instantclick.js | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 4e6bcf987d555dbd8fb3021339f219165f96dd82
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Fri Feb 7 11:52:06 2014 +0100
+
+    Don’t preload links with a `download` attribute
+
+ instantclick.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 05eab8c671d7d022bc59322af465a40d97e22cc9
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Wed Feb 5 12:02:48 2014 +0100
+
+    Add preload on mousedown support
+
+ instantclick.js | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
+
+commit 2743df78f0e81c9c211f59b00512d60a3321135f
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Wed Feb 5 10:02:50 2014 +0100
+
+    Prevent preloading 100 ms after page display
+    
+    Prevents fetching the link your mouse’s cursor is over after a new page is displayed. The most common case for this is when you’ve clicked on an item that have the same position on the previous and current page.
+    
+    Thanks to quchen on Reddit for the idea.
+    
+    This commit also changes p.timing and p.timingStart:
+    - p.timingStart is now p.timing.start
+    - p.timing is now p.timing.ready
+    - p.timing.display is when a page is displayed
+    
+    Also in this commit: detect in `readystatechange()` if a request is aborted.
+
+ instantclick.js | 44 +++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 35 insertions(+), 9 deletions(-)
+
+commit b1072e35f01d525d2c408103b8d83c131f59fbb7
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Feb 4 09:41:14 2014 +0100
+
+    Add option to set a delay before preloading kicks in.
+    
+    To use: InstantClick.init(<delay in ms>)
+    Or, with blacklist mode: InstantClick.init(true, <delay in ms>)
+    (The order of InstantClick.init’s arguments doesn’t matter)
+
+ instantclick.js | 64 +++++++++++++++++++++++++++++++++++++++++++++++++++------
+ 1 file changed, 58 insertions(+), 6 deletions(-)
+
+commit a91f86a55f7b4368f124b5db271de9a2721766a1
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 30 09:53:47 2014 +0100
+
+    [Minor] Reorder functions’ place in source code by their “categories”
+
+ instantclick.js | 160 ++++++++++++++++++++++++++++++--------------------------
+ 1 file changed, 87 insertions(+), 73 deletions(-)
+
+commit f3a7065fb6009fab971f5179969d2831b3395ad9
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Mon Jan 27 10:48:11 2014 +0100
+
+    Bugfix (regression): No redirect if displaying a bit later
+    
+    Because of the first condition in `display` (introduced in df56c1908222809a0587699610b931ac3d69136c) the page would redirect (location.href = url).
+
+ instantclick.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 59f9658baea268e69c495f31fe3b25558cd70c54
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sun Jan 26 15:34:53 2014 +0100
+
+    Get/set body’s outerHTML instead on innerHTML
+    
+    So that body’s attributes are applied when you change page.
+
+ instantclick.js | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+commit 6c6d66636840b7b2b6655c763ce13b065f7a64f6
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 19:59:26 2014 +0100
+
+    [Minor] move !p.hasBody condition, + remove mouseout’s target
+
+ instantclick.js | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+commit 25acf073590269d833b21fd9df47caf0e613caa1
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 19:50:41 2014 +0100
+
+    Get rid of “states”
+    
+    Those were confusing.
+
+ instantclick.js | 43 ++++++++++++++++++++-----------------------
+ 1 file changed, 20 insertions(+), 23 deletions(-)
+
+commit 33e33b2ed59327b127b88db0d1a0ed42f0bb5e13
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 15:32:33 2014 +0100
+
+    Remove displayed state
+    
+    This “state” thing is confusing enough without an useless fourth state.
+    
+    Also in this commit:
+    - Conditions in preload ordered in states’ chronological order
+    - Use currentLocationWithoutHash to check if InstantClick hasn’t been initialized already (so that we gain in minified file size)
+
+ instantclick.js | 23 +++++++++++------------
+ 1 file changed, 11 insertions(+), 12 deletions(-)
+
+commit 00ed54d5cef24c2345ed3c31eb8278f493195561
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 15:12:32 2014 +0100
+
+    [Minor] Comment about lack of href attribute
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit bcd8747ab477cca3a6dc73ee8cb44c68e8728bb0
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 15:09:18 2014 +0100
+
+    Simplify scroll handling on display
+    
+    Gets rid of handling <a name="hash"></a> (HTML4)
+
+ instantclick.js | 26 ++++++++------------------
+ 1 file changed, 8 insertions(+), 18 deletions(-)
+
+commit bd8a6f1fce4148b8c9d7628231df397d7c7db4e2
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 13:43:20 2014 +0100
+
+    [Minor] Improve minified size + add semicolon at the end
+    
+    Passing `document` and `location` as parameters to `InstantClick` shaves 6 bytes off the minified & gzipped file size. Yay!
+    Shaves 151 bytes off the minified non-gzipped size.
+
+ instantclick.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 8b1c8c7eaff7df40bf3b5cea8a24cf13a547a7e8
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 13:01:44 2014 +0100
+
+    [Minor] `triggerEvent` becomes `triggerPageEvent`
+
+ instantclick.js | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 454b7625be1f1909615abfe2d2ed60c72f535087
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 12:57:38 2014 +0100
+
+    [Minor] !!arg_useBlacklist
+
+ instantclick.js | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+commit 6fc4bd9d91f293e587dfb4255194af916ef5d5d5
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 12:48:34 2014 +0100
+
+    [Minor] xhr.open: remove optional async param
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 230562170a9b6a6a816b46632a21c154c1a347c8
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 12:26:20 2014 +0100
+
+    [Minor] Use currentLocationWithoutHash where appropriate
+
+ instantclick.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit f9b13fca348aea1cfb41f8bff5182ecb384df396
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 12:08:51 2014 +0100
+
+    Bugfix: Scroll wasn’t remembered on popstate
+    
+    Previously, if you went back then forward in history, the scroll would be at the top of the document instead of where you were.
+    
+    Also, hovering over a link when this link is already in pHistory doesn’t override the scroll position anymore.
+
+ instantclick.js | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit df56c1908222809a0587699610b931ac3d69136c
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 23 11:19:10 2014 +0100
+
+    Remove pId (only one http request at a time)
+    
+    Previously, if we clicked on a link and it was still loading, hovering over another link would preload this latter link in parallel.
+    
+    This added huge (HUGE) complexity to the InstantClick’s equation, now in the rare case that a link is stuck, if we click on another one (or the same) it just redirects the user with location.href. Big win in simplicity, and a win in usability in the case that the page is stuck: clicking on another link gives back the browser’s loading indicator.
+
+ instantclick.js | 165 +++++++++++++++++++++++++++++++-------------------------
+ 1 file changed, 92 insertions(+), 73 deletions(-)
+
+commit 80246950290df77190f2b064d05757f6a79c38e1
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Wed Jan 22 10:01:31 2014 +0100
+
+    Scrolls when using the browser’s back/forward button
+    
+    The reason this was not included since the beginning is that when used on my website it worked without reimplementing it in InstantClick. No idea why.
+
+ instantclick.js | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+commit aa9f743711da0aa2f9979e877116ae2ed71b5c4c
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 16 21:59:06 2014 +0100
+
+    1.1
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 29f5a87a3df8220e1ae97bffc4d21f658d287387
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Thu Jan 16 18:59:44 2014 +0100
+
+    More elegant events
+    
+    Before:
+    function onPageChange() {
+       ga('send', 'pageview')
+    }
+    if (InstantClick.supported) {
+      addEventListener('page:change', onPageChange)
+    }
+    else {
+      onPageChange()
+    }
+    
+    After:
+    InstantClick.on('change', function() {
+      ga('send', 'pageview')
+    })
+
+ instantclick.js | 27 +++++++++++++++++++--------
+ 1 file changed, 19 insertions(+), 8 deletions(-)
+
+commit edcb8faa10fe0d4ec80dbf5c964e1f45fd13bfa8
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Wed Jan 15 20:03:53 2014 +0100
+
+    Whitelist mode doesn't change scripts' behavior anymore
+    
+    Changing it is too confusing, bad idea.
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 479ee4433b9903328125e78266de379f1a52514d
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Jan 14 18:20:39 2014 +0100
+
+    Bugfix: popstate works on URL with different ?search
+    
+    Previously on popstate, if two URL had the same pathname (URL without ?search and #hash) the function invoked on popstate would abort. But you don't want to abort when ?search is different, only when #hash is.
+
+ instantclick.js | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+
+commit b6831fc9006abf6fb6e1136fc52bda3dac0e2228
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Jan 14 16:49:21 2014 +0100
+
+    [Minor] var renaming
+
+ instantclick.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 0dc3aced27f64b8823bed251313e51e724fe9a01
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Jan 14 15:43:11 2014 +0100
+
+    Abort request on mouseout
+
+ instantclick.js | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+
+commit d80d511720caa41341756d825785e969c8cb194f
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Tue Jan 14 11:56:30 2014 +0100
+
+    Adding a whitelist mode, activated by default
+    
+    + Remove checkLinkFunction (the old clunky way of doing whitelist)
+    + Detecting script[data-no-instant] in the DOM instead of via regex
+    + InstantClick.debug() now shows `useBlacklist` (and `supported`)
+
+ instantclick.js | 23 ++++++++++++-----------
+ 1 file changed, 12 insertions(+), 11 deletions(-)
+
+commit 3804e2e8bd57cea1128fecbb53ca29748f053aff
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Jan 11 09:10:15 2014 +0100
+
+    remove `throw`
+
+ instantclick.js | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit c58748ba21b1d860e9e366708e514c0630972368
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Jan 11 09:05:31 2014 +0100
+
+    Clarify comment
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 084b0f0e96b8a60ce6101f4f54e8f9fc5f5d824c
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Jan 11 08:21:12 2014 +0100
+
+    Fix comment’s case
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 05fa6d25004375695addfc99d4ef9a19db859c32
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Jan 11 08:15:18 2014 +0100
+
+    InstantClick.supported
+
+ instantclick.js | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 6dbb2a5b27ba592eb17e7e8ddda6bf8396c203b9
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Jan 11 07:49:44 2014 +0100
+
+    Add redirect in case of non-html content
+
+ instantclick.js | 25 +++++++++++++++++--------
+ 1 file changed, 17 insertions(+), 8 deletions(-)
+
+commit c8c33c7e9d508383c7bda4bbcfeb90ff3665295a
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Jan 11 06:29:31 2014 +0100
+
+    Retrieve correct target on events
+    
+    Fixes #1
+    
+    Thanks to Ksevio on Reddit
+
+ instantclick.js | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+commit 47ae87c2f7477b4fd6a9fc74509b648ec649b31c
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Wed Jan 8 11:11:41 2014 +0100
+
+    1.0
+
+ instantclick.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fdccfbabdec17c0c5e75e1e4e799bdcd299b4b9f
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Wed Jan 8 10:34:55 2014 +0100
+
+    Import instantclick.js
+
+ instantclick.js | 226 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 226 insertions(+)
+
+commit 382d66f89a9dcae541d62ae36d136d713c4526a8
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Wed Jan 8 10:16:38 2014 +0100
+
+    readme
+
+ README.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit d130877b4d9da7e279437db0e7d21b401475322e
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Wed Jan 8 10:13:42 2014 +0100
+
+    (C) 2014
+
+ LICENSE | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ee7f62c36654e326b9268b7895f379c0c8c348da
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Nov 23 13:46:36 2013 +0100
+
+    © Alexandre Dieulot
+
+ LICENSE | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 95928a8a2d9faba229a60a207c70ae139d88d6f4
+Author: Alex Dieulot <adieulot@gmail.com>
+Date:   Sat Nov 23 02:08:40 2013 -0800
+
+    Initial commit
+
+ LICENSE   | 20 ++++++++++++++++++++
+ README.md |  2 ++
+ 2 files changed, 22 insertions(+)
