@@ -37,12 +37,12 @@ def album(request, artist_slug, slug):
     })
 
 def play_album(request, album_id):
-    album = get_object_or_404(Album, id=album_id)
+    album = get_object_or_404(Album, pk=album_id)
 
     return render_playlist(request, album.get_tracks())
 
 def play_cd(request, album_id, cd_id):
-    album = get_object_or_404(Album, id=album_id)
-    cd = get_object_or_404(album.cds.all(), id=cd_id)
+    album = get_object_or_404(Album, pk=album_id)
+    cd = get_object_or_404(album.cds.all(), pk=cd_id)
 
     return render_playlist(request, cd.get_tracks())
