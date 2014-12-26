@@ -31,7 +31,7 @@
       </ol>
 
       {% if album_cds_count != 1 %}
-        <a href="{% url nonclassical:play-cd cd.id %}" class="btn btn-primary">
+        <a href="{% url nonclassical:play-cd album.pk cd.id %}" class="btn btn-primary">
           <span class="glyphicon glyphicon-play"></span> Play
         </a>
         {{ cd.total_duration|duration }}

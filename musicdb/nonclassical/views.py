@@ -41,7 +41,8 @@ def play_album(request, album_id):
 
     return render_playlist(request, album.get_tracks())
 
-def play_cd(request, cd_id):
-    cd = get_object_or_404(CD, id=cd_id)
+def play_cd(request, album_id, cd_id):
+    album = get_object_or_404(Album, id=album_id)
+    cd = get_object_or_404(album.cds.all(), id=cd_id)
 
     return render_playlist(request, cd.get_tracks())

@@ -11,6 +11,6 @@ urlpatterns = patterns('musicdb.nonclassical.views',
         name='album'),
     url(r'^albums/play/album/(?P<album_id>\d+)$', 'play_album',
         name='play-album'),
-    url(r'^albums/play/cd/(?P<cd_id>\d+)$', 'play_cd',
+    url(r'^albums/play/album/(?P<album_id>\d+)/cd/(?P<cd_id>\d+)$', 'play_cd',
         name='play-cd'),
 )
