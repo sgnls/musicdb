@@ -5,7 +5,6 @@ import glob
 import readline
 
 from django.db import transaction
-from django.conf import settings
 from django.core.files.storage import default_storage
 from django.core.management.base import BaseCommand, CommandError
 from django.utils.datastructures import SortedDict
