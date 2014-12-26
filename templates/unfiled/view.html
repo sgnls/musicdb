@@ -16,19 +16,19 @@
 
 <table class="table table-striped">
   {% if path %}
-    <tr><td>[<a href="..">parent</a>]</td></tr>
+    <tr><td>[<a href=".." data-no-instant>parent</a>]</td></tr>
   {% endif %}
 
   {% for dirname in dirnames|dictsort:"name" %}
   <tr>
-    <td><a href="{% url unfiled:view dirname.path %}">{{ dirname.name }}</a></td>
+    <td><a href="{% url unfiled:view dirname.path %}" data-no-instant>{{ dirname.name }}</a></td>
   </tr>
   {% endfor %}
 
   {% for filename in filenames|dictsort:"name" %}
   <tr>
     <td>
-      <a href="{{ filename.url }}">{{ filename.name }}</a>
+      <a href="{{ filename.url }}" data-no-instant>{{ filename.name }}</a>
     </td>
   </tr>
   {% endfor %}

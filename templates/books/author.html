@@ -28,7 +28,7 @@
 
   <div class="{% grid_classes xs=2 sm=3 md=4 lg=6 %} text-center" style="margin-bottom: 20px;">
     <p>
-      <a href="{{ book.get_absolute_url }}">
+      <a href="{{ book.get_absolute_url }}" data-no-instant>
         <img
           {% if book.image.exists %}
           src="{{ book.image.thumbnail.url }}"
@@ -43,7 +43,7 @@
     </p>
 
     <p>
-      <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+      <a href="{{ book.get_absolute_url }}" data-no-instant>{{ book.title }}</a>
       {% if request.user.is_superuser %}
       <a href="{% url books:admin:book book.pk %}">[e]</a>
       {% endif %}

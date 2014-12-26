@@ -35,7 +35,7 @@
         <li class="{% block navbar_active_nonclassical %}{% endblock %}"><a href="{% url nonclassical:view %}">Albums</a></li>
         <li class="{% block navbar_active_classical %}{% endblock %}"><a href="{% url classical-composers %}">Classical</a></li>
         <li class="{% block navbar_active_books %}{% endblock %}"><a href="{% url books:index %}">Books</a></li>
-        <li class="{% block navbar_active_unfiled %}{% endblock %}"><a href="{% url unfiled:view %}">Unfiled</a></li>
+        <li class="{% block navbar_active_unfiled %}{% endblock %}"><a href="{% url unfiled:view %}" data-no-instant>Unfiled</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
