@@ -447,7 +447,7 @@ class Movement(models.Model):
         }
 
     def dirty_tags(self):
-        MusicFile.objects.filter(id=self.music_file).update(tags_dirty=True)
+        MusicFile.objects.filter(pk=self.music_file).update(tags_dirty=True)
 
 class Performance(models.Model):
     recording = models.ForeignKey(Recording, related_name='performances')

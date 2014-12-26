@@ -70,7 +70,7 @@ def work(request, artist_slug, slug):
     })
 
 def play_recording(request, recording_id):
-    recording = get_object_or_404(Recording, id=recording_id)
+    recording = get_object_or_404(Recording, pk=recording_id)
 
     return render_playlist(request, recording.get_tracks())
 
