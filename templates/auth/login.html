@@ -2,11 +2,9 @@
 
 {% block title %}Login - {{ block.super }}{% endblock %}
 
-{% block container %}
+{% block container_title %}Login{% endblock %}
 
-<div class="jumbotron">
-  <h1>Lamby's music database</h1>
-</div>
+{% block container %}
 
 <form method="POST" class="form-horizontal">
   {% csrf_token %}
