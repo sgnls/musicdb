@@ -8,7 +8,7 @@
 
 {% block container %}
 
-<div class="btn-group btn-group-md">
+<div class="btn-group btn-group-sm">
   {% for x in letters %}
     <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url books:index x %}" data-no-instant>
       {% if x == "0" %}
