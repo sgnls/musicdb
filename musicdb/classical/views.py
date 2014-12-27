@@ -5,8 +5,8 @@ from django.shortcuts import render, get_object_or_404
 from musicdb.utils.http import render_playlist
 from musicdb.classical.models import Artist, Work, Recording, Ensemble
 
-def composers(request):
-    return render(request, 'classical/composers.html', {
+def view(request):
+    return render(request, 'classical/view.html', {
         'composers': Artist.objects.composers(),
     })
 

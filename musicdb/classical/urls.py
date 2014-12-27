@@ -1,8 +1,8 @@
 from django.conf.urls.defaults import url, patterns
 
 urlpatterns = patterns('musicdb.classical.views',
-    url(r'^classical$', 'composers',
-        name='composers'),
+    url(r'^classical$', 'view',
+        name='view'),
 
     url(r'^classical/artists$', 'artists',
         name='artists'),
