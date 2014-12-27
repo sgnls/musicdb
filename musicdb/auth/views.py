@@ -7,7 +7,7 @@ from .decorators import login_not_required
 
 def login(request):
     if request.user.is_authenticated():
-        return redirect('static:home')
+        return redirect('static:landing')
 
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
@@ -37,7 +37,7 @@ def logout(request):
 
     messages.success(request, "You were succesfully logged out")
 
-    return redirect('static:home')
+    return redirect('static:landing')
 
 @login_required
 def change_password(request):

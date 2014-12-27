@@ -1,6 +1,9 @@
-from django.shortcuts import redirect
-from django.contrib.auth.decorators import login_required
+from django.conf import settings
+from django.shortcuts import render, redirect
 
-@login_required
-def index(request):
-    return redirect('nonclassical:view')
+def landing(request):
+    if request.user.is_authenticated():
+        return redirect(settings.LOGIN_REDIRECT_URL)
+
+    return render(request, 'static/landing.html', {
+    })

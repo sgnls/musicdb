@@ -1,0 +1,44 @@
+{% extends "base/generic_base.html" %}
+
+{% block body_classes %}{{ block.super }} home-page f_landing{% endblock %}
+
+{% block body %}
+
+<a
+  href="https://github.com/lamby/musicdb"
+  class="hidden-xs"
+>
+  <img
+    src="{% static "img/f_landing/github_left.png" %}"
+    alt="Fork me on GitHub"
+    style="position: absolute; top: 0; left: 0; border: 0; z-index: 999;"
+  >
+</a>
+
+<div
+  class="bg-slider-wrapper"
+  style="
+    background-size: cover;
+    background-image: url({% static "img/f_landing/header.jpg" %});
+  "
+></div>
+
+<section class="promo section section-on-bg">
+  <div class="container text-center">
+    <h2 class="title">
+      Finally, a music library
+      <br>
+      done the right way
+    </h2>
+    <p class="intro">
+      This is my personal music database which I wrote after being frustrated
+      with the "media libraries" using pre-1970s database technology.
+    </p>
+    <p>
+      <a class="btn btn-cta btn-cta-primary" href="{% url auth:login %}">Login</a>
+    </p>
+  </div>
+</section>
+
+
+{% endblock %}
