@@ -55,20 +55,3 @@ def play_recording(request, recording_id):
     recording = get_object_or_404(Recording, pk=recording_id)
 
     return render_playlist(request, recording.get_tracks())
-
-##
-
-def recent(request):
-    recent = Recording.objects.recent().select_related(
-        'work__key',
-        'work__composer',
-    ).prefetch_related(
-        'performances',
-        'performances__artistperformance__artist',
-        'performances__ensembleperformance__ensemble',
-        'work__catalogues__catalogue',
-    )[:20]
-
-    return render(request, 'classical/recent.html', {
-        'recent': recent,
-    })
