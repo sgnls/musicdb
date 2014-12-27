@@ -1,10 +1,10 @@
 from django.contrib import auth, messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
+from django.contrib.auth.decorators import login_required
 
 from .decorators import login_not_required
 
-@login_not_required
 def login(request):
     if request.user.is_authenticated():
         return redirect('static:home')
@@ -32,7 +32,6 @@ def login(request):
         'form': form,
     })
 
-@login_not_required
 def logout(request):
     auth.logout(request)
 
@@ -40,6 +39,7 @@ def logout(request):
 
     return redirect('static:home')
 
+@login_required
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
@@ -57,4 +57,3 @@ def change_password(request):
     return render(request, 'auth/change_password.html', {
         'form': form,
     })
-

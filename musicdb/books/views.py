@@ -2,9 +2,11 @@ from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import EmailMessage
 from django.core.files.storage import default_storage
+from django.contrib.auth.decorators import login_required
 
 from .models import Author, Book
 
+@login_required
 def view(request, letter=None):
     if letter is None:
         return redirect('books:view', 'a')
@@ -17,6 +19,7 @@ def view(request, letter=None):
         'letters': Author.objects.letters(),
     })
 
+@login_required
 def author(request, slug):
     author = get_object_or_404(Author, slug=slug)
 
@@ -24,6 +27,7 @@ def author(request, slug):
         'author': author,
     })
 
+@login_required
 def book(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
 

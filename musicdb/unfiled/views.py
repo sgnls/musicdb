@@ -3,9 +3,11 @@ import os
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.files.storage import default_storage
+from django.contrib.auth.decorators import login_required
 
 PREFIX = 'unfiled/classical'
 
+@login_required
 def view(request, path=None):
     if path is None:
         path = ''
