@@ -14,11 +14,14 @@
   <div class="member {% grid_classes xs=2 sm=3 md=4 lg=4 %}">
     <div class="member-inner">
       <figure class="profile">
-        <img
-          class="img-responsive"
-          src="{% if album.image.exists %}{{ album.image.thumbnail.url }}{% else %}{% static "img/missing_album_medium.jpeg" %}{% endif %}"
-          alt="{{ album.title }}"
-        >
+        <a href="{{ album.get_absolute_url }}">
+          <img
+            class="img-responsive"
+            src="{% if album.image.exists %}{{ album.image.thumbnail.url }}{% else %}{% static "img/missing_album_medium.jpeg" %}{% endif %}"
+            alt="{{ album.title }}"
+          >
+        </a>
+
         <figcaption class="info">
           <span class="name">{{ album.title }}</span>
           {% if album.year %}
