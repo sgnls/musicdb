@@ -18,6 +18,6 @@ urlpatterns = patterns('musicdb.classical.views',
     url(r'^classical/ensemble/(?P<slug>[^/]+)$', 'ensemble',
         name='ensemble'),
 
-    url(r'^classical/play/recording/(?P<recording_id>\d+).m3u$', 'play_recording',
+    url(r'^classical/play/recording/(?P<recording_id>\d+)/play$', 'play_recording',
         name='play-recording'),
 )
