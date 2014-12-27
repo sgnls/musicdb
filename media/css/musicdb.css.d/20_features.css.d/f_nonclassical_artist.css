@@ -5,3 +5,7 @@
 .f_nonclassical_artist .cover {
   padding-top: 20px;
 }
+
+.f_nonclassical_artist .story-section .team .member .profile .info {
+  padding: 15px 10px;
+}
