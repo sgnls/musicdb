@@ -6,22 +6,38 @@
 
 {% block container %}
 
-<div class="row">
-{% for album in artist.albums.all %}
+<div class="team row">
+  {% for album in artist.albums.all %}
 
-  {% grid_clearfix xs=2 sm=3 md=4 lg=6 %}
+  {% grid_clearfix xs=2 sm=3 md=4 lg=4 %}
 
-  <div class="{% grid_classes xs=2 sm=3 md=4 lg=6 %} text-center" style="margin-bottom: 20px;">
-    <p>
-      <a href="{% url nonclassical:album artist.slug album.slug %}"><img src="{% if album.image.exists %}{{ album.image.thumbnail.url }}{% else %}{% static "img/missing_album_medium.jpeg" %}{% endif %}" alt="{{ album }}" height="125" width="125"></a>
-    </p>
+  <div class="member {% grid_classes xs=2 sm=3 md=4 lg=4 %}">
+    <div class="member-inner">
+      <figure class="profile">
+        <img
+          class="img-responsive"
+          src="{% if album.image.exists %}{{ album.image.thumbnail.url }}{% else %}{% static "img/missing_album_medium.jpeg" %}{% endif %}"
+          alt="{{ album.title }}"
+        >
+        <figcaption class="info">
+          <span class="name">{{ album.title }}</span>
+          {% if album.year %}
+          <br>
+          <span class="job-title">{{ album.year }}</span>
+          {% endif %}
+        </figcaption>
+      </figure>
 
-    <p>
-      <a href="{% url nonclassical:album artist.slug album.slug %}">{{ album.title }}</a>
-      {% if album.year %}({{ album.year }}){% endif %}
-    </p>
+      <div class="social">
+        <ul class="social-list list-inline">
+          <li><a
+            href="{% url nonclassical:play-album album.pk %}"
+          ><i class="fa fa-play"></i></a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-{% endfor %}
+  {% endfor %}
 </div>
 
 <br>
