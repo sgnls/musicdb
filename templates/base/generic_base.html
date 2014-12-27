@@ -67,8 +67,11 @@
               </ul>
             </li>
             {% else %}
-              <li class="nav-item"><a href="login.html">Log in</a></li>
-              <li class="nav-item nav-item-cta last"><a class="btn btn-cta btn-cta-secondary" href="signup.html">Sign Up Free</a></li>
+              <li class="nav-item nav-item-cta last">
+                <a class="btn btn-cta btn-cta-secondary" href="{% url auth:login %}">
+                  Login
+                </a>
+              </li>
             {% endif %}
           </ul>
         </div>
