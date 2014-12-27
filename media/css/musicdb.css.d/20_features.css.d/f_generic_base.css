@@ -9,3 +9,7 @@
 .f_generic_base .story-section .intro {
   margin-bottom: 40px;
 }
+
+.f_generic_base .story-section .intro a {
+  color: white;
+}
