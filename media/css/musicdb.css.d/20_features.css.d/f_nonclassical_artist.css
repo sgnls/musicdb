@@ -3,7 +3,7 @@
 }
 
 .f_nonclassical_artist .cover {
-  padding-top: 10px;
+  margin: 0 auto 10px auto;
 }
 
 .f_nonclassical_artist .story-section .team .member .profile .info {

@@ -18,15 +18,16 @@
   {% grid_clearfix xs=2 sm=3 md=4 lg=4 %}
 
   <div class="member {% grid_classes xs=2 sm=3 md=4 lg=4 %}">
+    <a href="{{ album.get_absolute_url }}">
+      <img
+        class="img-responsive cover"
+        src="{% if album.image.exists %}{{ album.image.thumbnail.url }}{% else %}{% static "img/missing_album_medium.jpeg" %}{% endif %}"
+        alt="{{ album.title }}"
+      >
+    </a>
+
     <div class="member-inner">
       <figure class="profile">
-        <a href="{{ album.get_absolute_url }}">
-          <img
-            class="img-responsive cover"
-            src="{% if album.image.exists %}{{ album.image.thumbnail.url }}{% else %}{% static "img/missing_album_medium.jpeg" %}{% endif %}"
-            alt="{{ album.title }}"
-          >
-        </a>
 
         <figcaption class="info">
           <a class="name" href="{{ album.get_absolute_url }}">
