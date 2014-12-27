@@ -2,38 +2,38 @@
 
 {% block body %}
 
-  <div
-    class="headline-bg about-headline-bg"
-  ></div>
+<div
+  class="headline-bg about-headline-bg"
+></div>
 
-  <section class="story-section section section-on-bg">
+<section class="story-section section section-on-bg">
 
-    <h2 class="title container text-center">
-      {% block container_title %}{% endblock %}
-    </h2>
+  <h2 class="title container text-center">
+    {% block container_title %}{% endblock %}
+  </h2>
 
-    <p class="intro text-center">
-      {% block container_subtitle %}{% endblock %}
-    </p>
+  <p class="intro text-center">
+    {% block container_subtitle %}{% endblock %}
+  </p>
 
-    <div class="story-container container text-center">
-      <div class="story-container-inner">
-        {% block container %}
-          {% block content %}{% endblock %}
-        {% endblock %}
-      </div>
+  <div class="story-container container text-center">
+    <div class="story-container-inner">
+      {% block container %}
+        {% block content %}{% endblock %}
+      {% endblock %}
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="footer">
-    <div class="bottom-bar">
-      <div class="container">
-        <small class="copyright">
-          Copyright &copy; 2004&mdash;{% now "Y" %}
-          <a href="https://chris-lamb.co.uk/" target="_blank">Chris Lamb</a>
-        </small>
-      </div>
+<footer class="footer">
+  <div class="bottom-bar">
+    <div class="container">
+      <small class="copyright">
+        Copyright &copy; 2004&mdash;{% now "Y" %}
+        <a href="https://chris-lamb.co.uk/" target="_blank">Chris Lamb</a>
+      </small>
     </div>
-  </footer>
+  </div>
+</footer>
 
 {% endblock %}
