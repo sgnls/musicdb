@@ -6,9 +6,6 @@ from musicdb.utils.http import render_playlist
 from musicdb.classical.models import Artist, Work, Recording, Ensemble, \
     Category
 
-def index(request):
-    return render(request, 'classical/index.html')
-
 def categories(request):
     return render(request, 'classical/categories.html', {
         'categories': Category.get_root_nodes(),
