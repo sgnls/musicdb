@@ -7,7 +7,7 @@
 {% block content %}
 
 <p>
-<a href="{% url classical:classical-categories %}">Classical music</a> &raquo;
+<a href="{% url classical:categories %}">Classical music</a> &raquo;
 {% for ancestor  in category.get_ancestors %}
 <a href="{{ ancestor.get_absolute_url }}">{{ ancestor.name }}</a> &raquo;
 {% endfor %}
