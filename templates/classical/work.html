@@ -4,13 +4,12 @@
 
 {% block title %}{{ work }} - {{ work.composer }} - {{ block.super }}{% endblock %}
 
+{% block container_title %}{{ work }}{% endblock %}
+{% block container_subtitle %}
+  <a href="{{ work.composer.get_absolute_url }}">{{ work.composer }}</a>
+{% endblock %}
+
 {% block container %}
-
-<h1>{{ work }}</h2>
-
-<h2><a href="{{ work.composer.get_absolute_url }}">{{ work.composer }}</a></h2>
-
-<br>
 
 {% for recording in recordings %}
 
