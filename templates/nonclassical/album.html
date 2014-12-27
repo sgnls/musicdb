@@ -11,7 +11,7 @@
 
 {% if album.image.exists %}
 {% block headline_background_image %}
-  linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url({{ album.image.large.url }})
+  linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)), url({{ album.image.large.url }})
 {% endblock %}
 {% endif %}
 
