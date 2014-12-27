@@ -2,17 +2,17 @@
 
 {% load duration %}
 
-{% block title %}{{ album }} - {{ artist }} - {{ block.super }}{% endblock %}
+{% block title %}{{ album.title }} - {{ artist.long_name }} - {{ block.super }}{% endblock %}
+
+{% block container_title %}{{ album }}{% endblock %}
+{% block container_subtitle %}
+  <a href="{{ artist.get_absolute_url }}">{{ artist.long_name }}</a>
+{% endblock %}
 
 {% block container %}
 
 <div class="row">
   <div class="col-sm-8">
-    <h1>{{ album.title }}{% if album.year %} <small>({{ album.year }})</small>{% endif %}</h1>
-    <h2><a href="{{ artist.get_absolute_url }}">{{ artist.long_name }}</a></h2>
-
-    <br>
-
     {% with album.cds.count as album_cds_count %}
     {% for cd in album.cds.all %}
 
