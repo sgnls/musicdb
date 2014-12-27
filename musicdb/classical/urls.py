@@ -1,14 +1,14 @@
 from django.conf.urls.defaults import url, patterns
 
 urlpatterns = patterns('musicdb.classical.views',
-    url(r'^classical/composers/$', 'composers',
+    url(r'^classical/composers$', 'composers',
         name='composers'),
-    url(r'^classical/artists/$', 'artists',
+    url(r'^classical/artists$', 'artists',
         name='artists'),
-    url(r'^classical/ensembles/$', 'ensembles',
+    url(r'^classical/ensembles$', 'ensembles',
         name='ensembles'),
 
-    url(r'^classical/categories/$', 'categories',
+    url(r'^classical/categories$', 'categories',
         name='categories'),
     url(r'^classical/category/(?P<category_slug>[^/]+)$', 'category',
         name='category'),
