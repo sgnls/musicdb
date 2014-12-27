@@ -3,20 +3,7 @@
 from django.shortcuts import render, get_object_or_404
 
 from musicdb.utils.http import render_playlist
-from musicdb.classical.models import Artist, Work, Recording, Ensemble, \
-    Category
-
-def categories(request):
-    return render(request, 'classical/categories.html', {
-        'categories': Category.get_root_nodes(),
-    })
-
-def category(request, category_slug):
-    category = get_object_or_404(Category, slug=category_slug)
-
-    return render(request, 'classical/category.html', {
-        'category': category,
-    })
+from musicdb.classical.models import Artist, Work, Recording, Ensemble
 
 def composers(request):
     return render(request, 'classical/composers.html', {

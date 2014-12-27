@@ -8,11 +8,6 @@ urlpatterns = patterns('musicdb.classical.views',
     url(r'^classical/ensembles$', 'ensembles',
         name='ensembles'),
 
-    url(r'^classical/categories$', 'categories',
-        name='categories'),
-    url(r'^classical/category/(?P<category_slug>[^/]+)$', 'category',
-        name='category'),
-
     url(r'^classical/recent$', 'recent',
         name='recent'),
 

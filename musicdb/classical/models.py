@@ -185,7 +185,6 @@ class Work(models.Model, Mergeable, NextPreviousMixin):
     )
 
     key = models.ForeignKey('Key', null=True, blank=True, related_name='works')
-    category = models.ForeignKey('Category', null=True, blank=True, related_name='works')
 
     slug = MySlugField('slug_name', filter='slug_filter')
     sort_value = DenormalisedCharField('get_sort_value')
@@ -307,26 +306,6 @@ class WorkCatalogue(models.Model):
         MusicFile.objects.filter(
             movement__recording__work=self,
         ).update(tags_dirty=True)
-
-class Category(TreeNode):
-    name = models.CharField(max_length=100)
-    long_name = models.CharField(max_length=100, unique=True)
-
-    slug = MySlugField('long_name')
-
-    class Meta:
-        ordering = ('path',)
-        verbose_name_plural = 'Categories'
-
-    def __unicode__(self):
-        return self.long_name
-
-    @models.permalink
-    def get_absolute_url(self):
-        return ('classical:category', (self.slug,))
-
-    def works_by_composer(self):
-        return self.works.order_by('composer', 'sort_value')
 
 class Instrument(models.Model):
     noun = models.CharField(

@@ -10,10 +10,6 @@
 
 <h2><a href="{{ work.composer.get_absolute_url }}">{{ work.composer }}</a></h2>
 
-{% if work.category %}
-  <p>Filed under <em><a href="{{ work.category.get_absolute_url }}#{{ work.composer.slug }}">{{ work.category }}</a></em></p>
-{% endif %}
-
 <br>
 
 {% for recording in recordings %}
