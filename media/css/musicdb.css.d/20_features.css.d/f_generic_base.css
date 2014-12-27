@@ -1,3 +1,11 @@
 .f_generic_base .story-section {
   padding-top: 50px;
 }
+
+.f_generic_base .story-section .title {
+  margin-bottom: 50px;
+}
+
+.f_generic_base .story-section .intro {
+  margin-bottom: 40px;
+}
