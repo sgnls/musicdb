@@ -1,1 +1,0 @@
-../../../contrib/instantclick/instantclick.js
