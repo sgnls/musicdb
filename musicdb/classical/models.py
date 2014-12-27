@@ -78,7 +78,10 @@ class Artist(AbstractArtist, NextPreviousMixin):
         name = self.short_name()
 
         if self.original_surname or self.original_forenames:
-            name += " (%s %s)" % (self.original_forenames, self.original_surname)
+            name += " (%s %s)" % (
+                self.original_forenames,
+                self.original_surname,
+            )
 
         if self.born or self.died:
             name += " (%s)" % self.date_range()
@@ -104,7 +107,9 @@ class Artist(AbstractArtist, NextPreviousMixin):
         )
 
     def instruments(self):
-        return Instrument.objects.filter(performances__artist=self).distinct()
+        return Instrument.objects.filter(
+            performances__artist=self,
+        ).distinct()
 
     def biography(self):
         items = []
