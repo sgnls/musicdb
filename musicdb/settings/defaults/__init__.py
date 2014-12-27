@@ -123,6 +123,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/albums' # nonclassical:view
 
 DATABASE_ENGINE = 'dummy_for_debug_toolbar'
 

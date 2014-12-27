@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import patterns, url
 
 urlpatterns = patterns('musicdb.nonclassical.views',
+    # settings.LOGIN_REDIRECT_URL
     url(r'^albums$', 'view',
         name='view'),
     url(r'^albums/(?P<letter>[a-z-0])$', 'view',
