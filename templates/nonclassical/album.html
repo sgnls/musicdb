@@ -9,6 +9,10 @@
   <a href="{{ artist.get_absolute_url }}">{{ artist.long_name }}</a>
 {% endblock %}
 
+{% block headline_background_image %}
+  url({% if album.image.exists %}{{ album.image.large.url }}{% else %}{% static "img/missing_album_large.jpeg" %}{% endif %})
+{% endblock %}
+
 {% block container %}
 
 <div class="row">

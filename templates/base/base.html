@@ -6,7 +6,10 @@
 
 <div
   class="headline-bg about-headline-bg"
-  style="background-image: none;"
+  style="
+    background-size: cover;
+    background-image: {% block headline_background_image %}none{% endblock %};
+  "
 ></div>
 
 <section class="story-section section section-on-bg">
