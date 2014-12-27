@@ -10,6 +10,10 @@
 {% endblock %}
 
 {% block headline_background_image %}
+  linear-gradient(
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  ),
   url({% if album.image.exists %}{{ album.image.large.url }}{% else %}{% static "img/missing_album_large.jpeg" %}{% endif %})
 {% endblock %}
 
