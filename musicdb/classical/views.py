@@ -10,11 +10,6 @@ def composers(request):
         'composers': Artist.objects.composers(),
     })
 
-def ensembles(request):
-    return render(request, 'classical/ensembles.html', {
-        'ensembles': Ensemble.objects.all(),
-    })
-
 def artists(request):
     return render(request, 'classical/artists.html', {
         'artists': Artist.objects.artists(),
@@ -34,11 +29,6 @@ def artist(request, slug):
         'artist': artist,
     })
 
-def ensemble(request, slug):
-    return render(request, 'classical/ensemble.html', {
-        'ensemble': get_object_or_404(Ensemble, slug=slug),
-    })
-
 def work(request, artist_slug, slug):
     work = get_object_or_404(Work, slug=slug, composer__slug=artist_slug)
 
@@ -53,6 +43,16 @@ def work(request, artist_slug, slug):
     return render(request, 'classical/work.html', {
         'work': work,
         'recordings': recordings,
+    })
+
+def ensembles(request):
+    return render(request, 'classical/ensembles.html', {
+        'ensembles': Ensemble.objects.all(),
+    })
+
+def ensemble(request, slug):
+    return render(request, 'classical/ensemble.html', {
+        'ensemble': get_object_or_404(Ensemble, slug=slug),
     })
 
 def play_recording(request, recording_id):
