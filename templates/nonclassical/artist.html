@@ -2,11 +2,9 @@
 
 {% block title %}{{ artist.long_name }} - {{ block.super }}{% endblock %}
 
+{% block container_title %}{{ artist.long_name }}{% endblock %}
+
 {% block container %}
-
-<h1>{{ artist.long_name }}</h1>
-
-<br>
 
 <div class="row">
 {% for album in artist.albums.all %}

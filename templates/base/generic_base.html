@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <title>{% block title %}Music Database{% endblock %}</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+
+  {% font "Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300" %}
+  {% font "Roboto+Slab:400,700,300,100" %}
+
+  <link href="{% static "css/musicdb.css" %}" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="class="{% block body_classes %}about-page{% endblock %}"">
+  <header id="header" class="header">
+    <div class="container">
+      <h1 class="logo">
+        <a href="{% url static:home %}"><span class="logo-icon"></span><span class="text">musicdb</span></a>
+      </h1>
+      <nav class="main-nav navbar-right" role="navigation">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button><!--//nav-toggle-->
+        </div><!--//navbar-header-->
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="nav-item {% block navbar_active_nonclassical %}{% endblock %}"><a href="{% url nonclassical:view %}">Albums</a></li>
+            <li class="nav-item {% block navbar_active_classical %}{% endblock %}"><a href="{% url classical:view %}">Classical</a></li>
+            <li class="nav-item {% block navbar_active_books %}{% endblock %}"><a href="{% url books:index %}">Books</a></li>
+            <li class="nav-item {% block navbar_active_unfiled %}{% endblock %}"><a href="{% url unfiled:view %}" data-no-instant>Unfiled</a></li>
+
+            {% if request.user.is_authenticated %}
+            <li class="nav-item dropdown">
+              <a
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                data-hover="dropdown"
+                data-delay="0"
+                data-close-others="false"
+                href="#"
+              >Logged in as <strong>{{ request.user.username }}</strong> <i class="fa fa-angle-down"></i></a>
+
+              <ul class="dropdown-menu">
+                {% if request.user.is_superuser %}
+                <li><a href="{% url superuser:view %}">Superuser</a></li>
+                {% endif %}
+                <li><a href="{% url profile:view %}">Profile</a></li>
+                <li><a href="{% url auth:change-password %}">Change password</a></li>
+                <li><a href="{% url auth:logout %}" data-no-instant>Logout</a></li>
+              </ul>
+            </li>
+            {% else %}
+              <li class="nav-item"><a href="login.html">Log in</a></li>
+              <li class="nav-item nav-item-cta last"><a class="btn btn-cta btn-cta-secondary" href="signup.html">Sign Up Free</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  {% if messages %}
+    <div class="container">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+      {{ message }}
+    </div>
+    {% endfor %}
+    </div>
+  {% endif %}
+
+  <div
+    class="headline-bg about-headline-bg"
+  ></div>
+
+  <section class="story-section section section-on-bg">
+
+    <h2 class="title container text-center">
+      {% block container_title %}{% endblock %}
+    </h2>
+
+    <p class="intro text-center">
+      {% block container_subtitle %}{% endblock %}
+    </p>
+
+    <div class="story-container container text-center">
+      <div class="story-container-inner">
+        {% block container %}
+        {% block content %}{% endblock %}
+        {% endblock %}
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col links col-md-2 col-sm-4 col-xs-12">
+            <div class="footer-col-inner">
+              <h3 class="title">About us</h3>
+              <ul class="list-unstyled">
+                <li><a href="#"><i class="fa fa-caret-right"></i>Who we are</a></li>
+                <li><a href="#"><i class="fa fa-caret-right"></i>Press</a></li>
+                <li><a href="#"><i class="fa fa-caret-right"></i>Blog</a></li>
+                <li><a href="#"><i class="fa fa-caret-right"></i>Jobs</a></li>
+                <li><a href="#"><i class="fa fa-caret-right"></i>Contact us</a></li>
+              </ul>
+            </div><!--//footer-col-inner-->
+          </div><!--//foooter-col-->
+          <div class="footer-col links col-md-2 col-sm-4 col-xs-12">
+            <div class="footer-col-inner">
+              <h3 class="title">Product</h3>
+              <ul class="list-unstyled">
+                <li><a href="#"><i class="fa fa-caret-right"></i>How it works</a></li>
+                <li><a href="#"><i class="fa fa-caret-right"></i>API</a></li>
+                <li><a href="#"><i class="fa fa-caret-right"></i>Download Apps</a></li>
+                <li><a href="#"><i class="fa fa-caret-right"></i>Pricing</a></li>
+              </ul>
+            </div><!--//footer-col-inner-->
+          </div><!--//foooter-col-->
+          <div class="footer-col links col-md-2 col-sm-4 col-xs-12 sm-break">
+            <div class="footer-col-inner">
+              <h3 class="title">Support</h3>
+              <ul class="list-unstyled">
+                <li><a href="#"><i class="fa fa-caret-right"></i>Help</a></li>
+                <li><a href="#"><i class="fa fa-caret-right"></i>Documentation</a></li>
+                <li><a href="#"><i class="fa fa-caret-right"></i>Terms of services</a></li>
+                <li><a href="#"><i class="fa fa-caret-right"></i>Privacy</a></li>
+              </ul>
+            </div><!--//footer-col-inner-->
+          </div><!--//foooter-col-->
+          <div class="footer-col connect col-md-6 col-sm-12 col-xs-12">
+            <div class="footer-col-inner">
+              <ul class="social list-inline">
+                <li><a href="https://twitter.com/3rdwave_themes" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li class="row-end"><a href="#"><i class="fa fa-rss"></i></a></li>
+              </ul>
+              <div class="form-container">
+                <p class="intro">Stay up to date with the latest news and offers from Velocity</p>
+                <form class="signup-form navbar-form">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter your email address">
+                  </div>
+                  <button type="submit" class="btn btn-cta btn-cta-primary">Subscribe Now</button>
+                </form>
+              </div><!--//subscription-form-->
+            </div><!--//footer-col-inner-->
+          </div><!--//foooter-col-->
+          <div class="clearfix"></div>
+        </div><!--//row-->
+      </div><!--//container-->
+    </div><!--//footer-content-->
+    <div class="bottom-bar">
+      <div class="container">
+        <small class="copyright">
+          Copyright &copy; 2014
+          <a href="http://themes.3rdwavemedia.com/" target="_blank">Chris Lamb</a>
+        </small>
+      </div>
+    </div>
+  </footer>
+</body>
+
+{% block body %}
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+  <script src="{% static "js/musicdb.js" %}"></script>
+{% endblock %}
+
+</body>
+</html>

@@ -4,20 +4,9 @@
 
 {% block title %}{{ author.long_name }} - Books - {{ block.super }}{% endblock %}
 
+{% block container_title %}{{ author.long_name }}{% endblock %}
+
 {% block container %}
-
-{% if request.user.is_superuser %}
-<div class="pull-right">
-  <a
-    href="{% url books:admin:author author.pk %}"
-    class="btn btn-default"
-  >Edit</a>
-</div>
-{% endif %}
-
-<div class="page-header">
-  <h1>{{ author.long_name }}</h1>
-</div>
 
 <div class="row">
 {% for book_author in author.books.all %}
@@ -51,5 +40,14 @@
 {% endwith %}
 {% endfor %}
 </div>
+
+{% if request.user.is_superuser %}
+<p class="text-right">
+  <a
+    href="{% url books:admin:author author.pk %}"
+    class="btn btn-default"
+  >Edit</a>
+</p>
+{% endif %}
 
 {% endblock %}
