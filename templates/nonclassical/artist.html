@@ -4,7 +4,11 @@
 
 {% block title %}{{ artist.long_name }} - {{ block.super }}{% endblock %}
 
-{% block container_title %}{{ artist.long_name }}{% endblock %}
+{% block container_title %}
+  <a href="{% url nonclassical:view artist.name_first %}">
+    {{ artist.long_name }}
+  </a>
+{% endblock %}
 
 {% block container %}
 
