@@ -1,9 +1,9 @@
 from django.conf.urls.defaults import patterns, url
 
 urlpatterns = patterns('musicdb.nonclassical.views',
-    url(r'^albums$', 'index',
+    url(r'^albums$', 'view',
         name='view'),
-    url(r'^albums/(?P<letter>[a-z-0])$', 'index',
+    url(r'^albums/(?P<letter>[a-z-0])$', 'view',
         name='view'),
 
     url(r'^albums/(?P<slug>[^/]+)$', 'artist',

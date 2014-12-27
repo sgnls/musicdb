@@ -7,13 +7,13 @@ from musicdb.utils.http import render_playlist
 
 from .models import Artist, Album
 
-def index(request, letter=None):
+def view(request, letter=None):
     if letter is None:
         return redirect('nonclassical:view', 'a')
 
     artists = Artist.objects.filter(name_first=letter)
 
-    return render(request, 'nonclassical/index.html', {
+    return render(request, 'nonclassical/view.html', {
         'letter': letter,
         'letters': Artist.objects.letters(),
         'artists': artists,
