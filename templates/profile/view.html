@@ -6,6 +6,12 @@
 
 <h1>Profile</h1>
 
+<p>
+  <a href="{% url auth:change-password %}">Change password</a>
+</p>
+
+<hr>
+
 {% if form.non_field_errors %}
 <div class="has-error">
   {% for x in form.non_field_errors %}
