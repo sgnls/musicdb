@@ -140,6 +140,9 @@ class Command(NoArgsCommand):
             # Create some other (empty) ignored tables
             call_command('syncdb')
 
+            psql('UPDATE books_book SET image_exists = false')
+            psql('UPDATE nonclassical_album SET image_exists = false')
+
             return
 
         raise CommandError("Could not sync database")
