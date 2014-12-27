@@ -97,10 +97,6 @@ case "${PROJECT}" in
 		Hg http://bitbucket.org/david/django-storages ${PROJECT} ${PROJECT}
 		;;
 
-	treebeard)
-		Hg http://bitbucket.org/tabo/django-treebeard/ ${PROJECT} ${PROJECT}
-		;;
-
 	*)
 		echo "${0}: Unknown project '${PROJECT}'" >&2
 		exit 1

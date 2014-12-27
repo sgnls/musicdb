@@ -8,7 +8,6 @@ INSTALLED_APPS = (
     'django_extensions',
     'django_yadt',
     'email_from_template',
-    'treebeard',
     'storages',
     'south',
 

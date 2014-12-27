@@ -6,8 +6,6 @@ import datetime
 
 from django.db import models
 
-from treebeard.mp_tree import MP_Node as TreeNode
-
 from musicdb.common.models import AbstractArtist, MusicFile
 
 from musicdb.db.mixins import Mergeable, NextPreviousMixin
