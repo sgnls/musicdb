@@ -11,7 +11,12 @@
 }
 
 .f_nonclassical_artist .story-section .team .member .profile .name {
+  color: #fff;
   font-size: 15px;
+}
+
+.f_nonclassical_artist .story-section .team .member .profile .name:hover {
+  text-decoration: none;
 }
 
 .f_nonclassical_artist .story-section .team .member .profile .job-title {

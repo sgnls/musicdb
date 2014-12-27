@@ -25,7 +25,10 @@
         </a>
 
         <figcaption class="info">
-          <span class="name">{{ album.title }}</span>
+          <a class="name" href="{{ album.get_absolute_url }}">
+            {{ album.title }}
+          </a>
+
           {% if album.year %}
           <br>
           <span class="job-title">{{ album.year }}</span>
