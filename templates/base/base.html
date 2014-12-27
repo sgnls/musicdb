@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
   <title>{% block title %}Music Database{% endblock %}</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
 
-  <!--[if lt IE 9]>
-  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-  {% font "Open+Sans:300,400,600,700,800" %}
+  {% font "Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300" %}
+  {% font "Roboto+Slab:400,700,300,100" %}
 
   <link href="{% static "css/musicdb.css" %}" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
 <body class="{% block body_classes %}{% endblock %}">
