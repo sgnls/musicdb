@@ -2,7 +2,7 @@ from django.conf.urls.defaults import url, patterns
 
 urlpatterns = patterns('musicdb.classical.views',
     url(r'^classical/$', 'index',
-        name='classical'),
+        name='view'),
 
     url(r'^classical/composers/$', 'composers',
         name='classical-composers'),
