@@ -41,7 +41,6 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Logged in as <strong>{{ request.user.username }}</strong> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="{% url common:stats %}">Statistics</a></li>
             {% if request.user.is_superuser %}
             <li><a href="{% url superuser:view %}">Superuser</a></li>
             {% endif %}
