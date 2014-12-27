@@ -12,7 +12,7 @@
   {% endif %}
 <ul>
 {% for work in works %}
-  <li><a href="{% url classical-work artist.slug work.slug %}">{{ work.pretty_title }}</a></li>
+  <li><a href="{% url classical:classical-work artist.slug work.slug %}">{{ work.pretty_title }}</a></li>
 {% endfor %}
 </ul>
 

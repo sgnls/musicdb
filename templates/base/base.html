@@ -33,7 +33,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="{% block navbar_active_nonclassical %}{% endblock %}"><a href="{% url nonclassical:view %}">Albums</a></li>
-        <li class="{% block navbar_active_classical %}{% endblock %}"><a href="{% url classical-composers %}">Classical</a></li>
+        <li class="{% block navbar_active_classical %}{% endblock %}"><a href="{% url classical:classical-composers %}">Classical</a></li>
         <li class="{% block navbar_active_books %}{% endblock %}"><a href="{% url books:index %}">Books</a></li>
         <li class="{% block navbar_active_unfiled %}{% endblock %}"><a href="{% url unfiled:view %}" data-no-instant>Unfiled</a></li>
       </ul>
