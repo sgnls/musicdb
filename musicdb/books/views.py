@@ -5,13 +5,13 @@ from django.core.files.storage import default_storage
 
 from .models import Author, Book
 
-def index(request, letter=None):
+def view(request, letter=None):
     if letter is None:
-        return redirect('books:index', 'a')
+        return redirect('books:view', 'a')
 
     authors = Author.objects.filter(last_name_first=letter)
 
-    return render(request, 'books/index.html', {
+    return render(request, 'books/view.html', {
         'letter': letter,
         'authors': authors,
         'letters': Author.objects.letters(),
