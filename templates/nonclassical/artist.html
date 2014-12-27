@@ -1,5 +1,7 @@
 {% extends "nonclassical/base.html" %}
 
+{% block body_classes %}{{ block.super }} f_nonclassical_artist{% endblock %}
+
 {% block title %}{{ artist.long_name }} - {{ block.super }}{% endblock %}
 
 {% block container_title %}{{ artist.long_name }}{% endblock %}
@@ -16,10 +18,9 @@
       <figure class="profile">
         <a href="{{ album.get_absolute_url }}">
           <img
-            class="img-responsive"
+            class="img-responsive cover"
             src="{% if album.image.exists %}{{ album.image.thumbnail.url }}{% else %}{% static "img/missing_album_medium.jpeg" %}{% endif %}"
             alt="{{ album.title }}"
-            style="padding-top: 20px;"
           >
         </a>
 
