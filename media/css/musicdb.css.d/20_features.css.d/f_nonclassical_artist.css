@@ -1,11 +1,19 @@
 .f_nonclassical_artist .story-section .team .member .social {
-  top: 27%;
+  top: 32%;
 }
 
 .f_nonclassical_artist .cover {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .f_nonclassical_artist .story-section .team .member .profile .info {
   padding: 15px 10px;
+}
+
+.f_nonclassical_artist .story-section .team .member .profile .name {
+  font-size: 15px;
+}
+
+.f_nonclassical_artist .story-section .team .member .profile .job-title {
+  font-size: 13px;
 }
