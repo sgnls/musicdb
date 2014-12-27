@@ -19,6 +19,7 @@
             class="img-responsive"
             src="{% if album.image.exists %}{{ album.image.thumbnail.url }}{% else %}{% static "img/missing_album_medium.jpeg" %}{% endif %}"
             alt="{{ album.title }}"
+            style="padding-top: 20px;"
           >
         </a>
 
