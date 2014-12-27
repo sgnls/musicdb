@@ -1,10 +1,6 @@
 musicdb TODO
 ============
 
- * Ability to view all users
-
-   - Send password reminders, etc.
-
  * Reverse @logout_required, etc. to standard Django.
 
  * Books.
