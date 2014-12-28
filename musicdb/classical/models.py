@@ -305,7 +305,7 @@ class Key(models.Model):
 
     def __unicode__(self):
         if self.minor:
-            return u"%s minor" % val
+            return u"%s minor" % self.name
 
         return u"%s" % self.name
 
