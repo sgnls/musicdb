@@ -13,35 +13,59 @@
 <form method="POST" class="form-horizontal">
   {% csrf_token %}
 
-  <div class="form-group {% if form.username.errors %}has-error{% endif %}">
-    <label class="control-label col-sm-offset-2 col-sm-2" for="{{ form.username.id_for_label }}">Username</label>
-
-    <div class="col-sm-4">
-      <input id="{{ form.username.id_for_label }}" class="form-control" name="{{ form.username.html_name }}" type="text" value="{{ form.username.value|default:"" }}">
-      <p class="help-block">
-        {% for error in form.username.errors %}
-          {{ error }}
-        {% endfor %}
-      </p>
+  <div class="form-group {% if form.errors.username %}has-error{% endif %}">
+    <label
+      for="{{ form.username.id_for_label }}"
+      class="control-label col-sm-offset-2 col-sm-2"
+    >
+      Username
+    </label>
+    <div class="col-sm-6">
+      <input
+        id="{{ form.username.id_for_label }}"
+        type="text"
+        class="form-control"
+        name="{{ form.username.html_name }}"
+        value="{{ form.username.value|default:"" }}"
+        maxlength="{{ form.fields.username.max_length }}"
+        placeholder=""
+        {% if form.fields.username.required %}required{% endif %}
+      >
+      {% for x in form.errors.username %}
+        <p class="help-block">{{ x }}</p>
+      {% endfor %}
     </div>
   </div>
 
-  <div class="form-group {% if form.password.errors %}has-error{% endif %}">
-    <label class="control-label col-sm-offset-2 col-sm-2" for="{{ form.password.id_for_label }}">Password</label>
-    <div class="col-sm-4">
-      <input id="{{ form.password.id_for_label }}" class="form-control" name="{{ form.password.html_name }}" type="password" value="{{ form.password.value|default:"" }}">
-      <p class="help-block">
-        {% for error in form.password.errors %}
-          {{ error }}
-        {% endfor %}
-      </p>
+  <div class="form-group {% if form.errors.password %}has-error{% endif %}">
+    <label
+      for="{{ form.password.id_for_label }}"
+      class="control-label col-sm-offset-2 col-sm-2"
+    >
+      Password
+    </label>
+    <div class="col-sm-6">
+      <input
+        id="{{ form.password.id_for_label }}"
+        type="password"
+        class="form-control"
+        name="{{ form.password.html_name }}"
+        value="{{ form.password.value|default:"" }}"
+        maxlength="{{ form.fields.password.max_length }}"
+        placeholder=""
+        {% if form.fields.password.required %}required{% endif %}
+      >
+      {% for x in form.errors.password %}
+        <p class="help-block">{{ x }}</p>
+      {% endfor %}
     </div>
   </div>
+
+  <br>
 
   <div class="form-group">
-    <label class="control-label col-sm-offset-2 col-sm-2">&nbsp;</label>
-    <div class="col-sm-4">
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+    <div class="col-sm-6 col-sm-offset-4">
+      <button type="submit" class="btn btn-cta btn-cta-primary">Login</button>
     </div>
   </div>
 </form>
