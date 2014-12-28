@@ -4,7 +4,11 @@
 
 {% block title %}{{ author.long_name }} - Books - {{ block.super }}{% endblock %}
 
-{% block container_title %}{{ author.long_name }}{% endblock %}
+{% block container_title %}
+  <a href="{% url books:view author.last_name_first %}">
+    {{ author.long_name }}
+  </a>
+{% endblock %}
 
 {% block container %}
 
