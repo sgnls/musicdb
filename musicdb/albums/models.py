@@ -9,7 +9,7 @@ from musicdb.db.fields import MySlugField, FirstLetterField
 
 from musicdb.common.models import MusicFile
 
-from .managers import ArtistManager, AlbumManager, TrackManager
+from .managers import ArtistManager, TrackManager
 
 class Artist(models.Model, NextPreviousMixin):
     name = models.CharField(max_length=250)
@@ -77,8 +77,6 @@ class Album(models.Model, NextPreviousMixin):
         null=True,
         default=datetime.datetime.utcnow,
     )
-
-    objects = AlbumManager()
 
     class Meta:
         ordering = ('year', 'title')
