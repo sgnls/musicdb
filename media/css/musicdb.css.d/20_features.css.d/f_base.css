@@ -1,7 +1,3 @@
-.f_base {
-  background-color: #253340;
-}
-
 .f_base .story-section {
   padding-top: 50px;
 }
@@ -24,4 +20,8 @@
 
 .f_base .story-section .intro a {
   color: white;
+}
+
+.f_base .footer {
+  background: none;
 }
