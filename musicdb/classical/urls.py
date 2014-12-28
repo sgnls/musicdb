@@ -1,6 +1,8 @@
-from django.conf.urls.defaults import url, patterns
+from django.conf.urls.defaults import url, patterns, include
 
 urlpatterns = patterns('musicdb.classical.views',
+    url(r'', include('musicdb.classical.classical_unfiled.urls', namespace='unfiled')),
+
     url(r'^classical$', 'view',
         name='view'),
 

@@ -19,7 +19,7 @@
 
   {% for dirname in dirnames|dictsort:"name" %}
   <tr>
-    <td><a href="{% url unfiled:view dirname.path %}" data-no-instant>{{ dirname.name }}</a></td>
+    <td><a href="{% url classical:unfiled:view dirname.path %}" data-no-instant>{{ dirname.name }}</a></td>
   </tr>
   {% endfor %}
 

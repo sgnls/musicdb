@@ -18,11 +18,11 @@ INSTALLED_APPS = (
     'musicdb.books.books_admin',
     'musicdb.common',
     'musicdb.classical',
+    'musicdb.classical.classical_unfiled',
     'musicdb.debug',
     'musicdb.albums',
     'musicdb.profile',
     'musicdb.static',
     'musicdb.superuser',
-    'musicdb.unfiled',
     'musicdb.utils',
 )
