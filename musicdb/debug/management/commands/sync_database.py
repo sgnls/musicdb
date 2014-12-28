@@ -79,37 +79,54 @@ class Command(NoArgsCommand):
 
         psql('DROP DATABASE IF EXISTS %(database_name)s' % options)
 
+        # Need to try a few locales because of Mac
+        for x in ('UTF8', 'UTF-8'):
+            self.handle_locale(x, **options)
+            break
+
+    def handle_locale(self, locale, **options):
+        psql("""
+            CREATE DATABASE %(database)s WITH
+                TEMPLATE = template0
+                ENCODING = 'UTF-8'
+                LC_COLLATE = 'en_GB.UTF-8'
+                LC_CTYPE = 'en_GB.%(locale)s'
+                OWNER = %(owner)s
+        """ % {
+            'owner': getpass.getuser(),
+            'locale': locale,
+            'database': options['database_name'],
+        })
+
+        # Get tables and data at the same time
+
+        args = ['ssh', options['hostname'], 'sudo', '-u', 'postgres', 'pg_dump',
+            '--no-owner', '--compress', '9']
+
         no_data_tables = [
             models.get_model(*model.split('.', 1))._meta.db_table
             for model in options['no_data']
         ]
 
-        # Need to try a few locales because of Mac
-        for locale in ('UTF8', 'UTF-8'):
-            try:
-                psql("""
-                    CREATE DATABASE %(database)s WITH
-                        TEMPLATE = template0
-                        ENCODING = 'UTF-8'
-                        LC_COLLATE = 'en_GB.UTF-8'
-                        LC_CTYPE = 'en_GB.%(locale)s'
-                        OWNER = %(owner)s
-                """ % {
-                    'owner': getpass.getuser(),
-                    'locale': locale,
-                    'database': options['database_name'],
-                })
-            except CommandError:
-                # Might be okay
-                continue
+        for table in no_data_tables:
+            args.extend(['-T', table])
 
-            # Get tables and data at the same time
+        psql(
+            args + [options['database_name']],
+            database=options['database_name'],
+            gzip=True,
+            sudo=False,
+            stop_on_error=False,
+        )
 
+        # Create (empty) ignored tables.
+
+        if options['no_data']:
             args = ['ssh', options['hostname'], 'sudo', '-u', 'postgres', 'pg_dump',
-                '--no-owner', '--compress', '9']
+                '--no-owner', '--compress', '9', '--schema-only']
 
             for table in no_data_tables:
-                args.extend(['-T', table])
+                args.extend(['-t', table])
 
             psql(
                 args + [options['database_name']],
@@ -119,29 +136,14 @@ class Command(NoArgsCommand):
                 stop_on_error=False,
             )
 
-            # Create (empty) ignored tables.
+        # Create some other (empty) ignored tables
+        call_command('syncdb')
 
-            if options['no_data']:
-                args = ['ssh', options['hostname'], 'sudo', '-u', 'postgres', 'pg_dump',
-                    '--no-owner', '--compress', '9', '--schema-only']
-
-                for table in no_data_tables:
-                    args.extend(['-t', table])
-
-                psql(
-                    args + [options['database_name']],
-                    database=options['database_name'],
-                    gzip=True,
-                    sudo=False,
-                    stop_on_error=False,
-                )
-
-            # Create some other (empty) ignored tables
-            call_command('syncdb')
-
-            psql('UPDATE books_book SET image_exists = false')
-            psql('UPDATE nonclassical_album SET image_exists = false')
-
-            return
-
-        raise CommandError("Could not sync database")
+        for x in (
+            'books_book',
+            'nonclassical_album',
+        ):
+            psql(
+                'UPDATE %s SET image_exists = false' % x,
+                database=options['database_name'],
+            )
