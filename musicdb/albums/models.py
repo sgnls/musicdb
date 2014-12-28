@@ -42,13 +42,14 @@ class Artist(models.Model, NextPreviousMixin):
         return 'albums:artist', (self.slug,)
 
     def long_name(self):
-        if self.is_solo_artist:
-            try:
-                last, first = self.name.split(', ', 1)
-                return "%s %s" % (first, last)
-            except ValueError:
-                return self.name
-        return self.name
+        if not self.is_solo_artist:
+            return self.name
+
+        try:
+            last, first = self.name.split(', ', 1)
+            return "%s %s" % (first, last)
+        except ValueError:
+            return self.name
     slug_name = long_name
 
 class Album(models.Model, NextPreviousMixin):
