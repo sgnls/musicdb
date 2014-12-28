@@ -293,7 +293,7 @@ class Instrument(models.Model):
         ordering = ('noun',)
 
     def __unicode__(self):
-        return self.noun
+        return u"%s" % self.noun
 
 class Key(models.Model):
     name = models.CharField(max_length=13)
@@ -304,12 +304,10 @@ class Key(models.Model):
         unique_together = (('name', 'minor'),)
 
     def __unicode__(self):
-        val = self.name
-
         if self.minor:
             return u"%s minor" % val
 
-        return val
+        return u"%s" % self.name
 
 # Recording-specific
 
@@ -379,7 +377,7 @@ class Movement(models.Model):
         unique_together = ('recording', 'num')
 
     def __unicode__(self):
-        return self.title
+        return u"%s" % self.title
 
     def metadata(self):
         title = self.recording.work.pretty_title(show_year=False)
@@ -420,15 +418,25 @@ class Performance(models.Model):
         return getattr(self, '%sperformance' % self.subclass)
 
 class ArtistPerformance(Performance):
-    artist = models.ForeignKey(Artist, related_name='performances')
-    instrument = models.ForeignKey(Instrument, related_name='performances')
+    artist = models.ForeignKey(
+        Artist,
+        related_name='performances',
+    )
+
+    instrument = models.ForeignKey(
+        Instrument,
+        related_name='performances',
+    )
 
     class Meta:
         ordering = ('instrument',)
 
     def __unicode__(self):
-        return u"%s performing the %s on %s" % \
-            (self.artist, self.instrument.noun.lower(), self.recording)
+        return u"%s performing the %s on %s" % (
+            self.artist,
+            self.instrument.noun.lower(),
+            self.recording,
+        )
 
     def short_name(self):
         return self.artist.surname
