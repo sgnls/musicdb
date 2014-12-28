@@ -69,8 +69,6 @@ class Album(models.Model, NextPreviousMixin):
         },
     }, cachebust=True, track_exists=True)
 
-    cover = models.CharField(max_length=100) # deprecated
-
     slug = MySlugField('title')
 
     created = models.DateTimeField(default=datetime.datetime.utcnow, null=True)
