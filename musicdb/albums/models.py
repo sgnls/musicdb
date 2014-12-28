@@ -104,14 +104,6 @@ class Album(models.Model, NextPreviousMixin):
             'track',
         )
 
-    def get_albums_tracks(self):
-        return Track.objects.filter(
-            cd__album=self,
-        ).order_by(
-            'cd__num',
-            'track',
-        )
-
     def total_duration(self):
         return self.get_tracks().aggregate(
             models.Sum('length'),
