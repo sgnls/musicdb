@@ -364,7 +364,9 @@ class Recording(models.Model):
 
     def total_duration(self):
         # FIXME: Move to manager
-        return sum(self.get_tracks().values_list('length', flat=True))
+        return self.movements.aggregate(
+            x=models.Sum('music_file__length'),
+        )['x'] or 0
 
 class Movement(models.Model):
     recording = models.ForeignKey(Recording, related_name='movements')
