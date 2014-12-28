@@ -4,10 +4,10 @@ from django_yadt import YADTImageField
 
 from django.db import models
 
-from musicdb.common.models import MusicFile
-
 from musicdb.db.mixins import NextPreviousMixin
 from musicdb.db.fields import MySlugField, FirstLetterField
+
+from musicdb.common.models import MusicFile
 
 from .managers import ArtistManager, AlbumManager, TrackManager
 
