@@ -190,6 +190,7 @@ class Track(models.Model):
 
     def metadata(self):
         album = self.cd.album
+
         return {
             'title': self.title,
             'album': unicode(album.title),
