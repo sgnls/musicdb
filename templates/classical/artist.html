@@ -2,7 +2,17 @@
 
 {% block title %}{{ artist.long_name }} - {{ block.super }}{% endblock %}
 
-{% block container_title %}{{ artist.long_name }}{% endblock %}
+{% block container_title %}
+  <a href="{% url classical:view %}">
+    {{ artist.short_name }}
+  </a>
+{% endblock %}
+
+{% block container_subtitle %}
+  {% if artist.born or artist.died %}
+    ({{ artist.date_range }})
+  {% endif %}
+{% endblock %}
 
 {% block container %}
 
