@@ -10,15 +10,11 @@ from django.core.files.storage import default_storage
 from .managers import FileManager
 
 class Nationality(models.Model):
-    noun = models.CharField(
-        help_text="For example, 'England'",
-        max_length=50,
-    )
+    # eg. "England"
+    noun = models.CharField(max_length=50)
 
-    adjective = models.CharField(
-        help_text="For example, 'English'",
-        max_length=50,
-    )
+    # eg. "English"
+    adjective = models.CharField(max_length=50)
 
     class Meta:
         ordering = ('noun',)
