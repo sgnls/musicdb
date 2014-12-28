@@ -1,5 +1,7 @@
 {% extends "base/base.html" %}
 
+{% block body_classes %}{{ block.super }} f_auth_login{% endblock %}
+
 {% block title %}Login - {{ block.super }}{% endblock %}
 
 {% block container_title %}Login{% endblock %}
