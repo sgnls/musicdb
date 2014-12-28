@@ -1,3 +1,16 @@
 .f_albums_album .cover {
   display: none;
 }
+
+@media (min-width: 768px) {
+  .f_albums_album .cover {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .f_albums_album .cover {
+    top: -70px;
+    right: -70px;
+  }
+}
