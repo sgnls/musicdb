@@ -36,7 +36,7 @@ class Artist(AbstractArtist, NextPreviousMixin):
         ordering = ('name',)
 
     def __unicode__(self):
-        return self.name
+        return u"%s" % self.name
 
     @models.permalink
     def get_absolute_url(self):
@@ -87,7 +87,7 @@ class Album(models.Model, NextPreviousMixin):
     def __unicode__(self):
         if self.year:
             return u"%s (%d)" % (self.title, self.year)
-        return self.title
+        return u"%s" % self.title
 
     def delete(self, *args, **kwargs):
         for track in self.get_tracks():
@@ -186,7 +186,7 @@ class Track(models.Model):
         unique_together = ('cd', 'num')
 
     def __unicode__(self):
-        return self.title
+        return u"%s" % self.title
 
     def metadata(self):
         album = self.cd.album
