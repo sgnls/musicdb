@@ -44,7 +44,7 @@
         <a href="{% url albums:play-cd album.pk cd.pk %}" class="btn btn-primary">
           <span class="glyphicon glyphicon-play"></span> Play
         </a>
-        {{ cd.total_duration|duration }}
+        {{ cd.tracks.total_duration|duration }}
       {% endif %}
     </div>
 

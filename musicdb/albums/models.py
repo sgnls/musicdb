@@ -9,7 +9,7 @@ from musicdb.common.models import AbstractArtist, MusicFile
 from musicdb.db.mixins import NextPreviousMixin
 from musicdb.db.fields import MySlugField, FirstLetterField
 
-from .managers import ArtistManager, AlbumManager
+from .managers import ArtistManager, AlbumManager, TrackManager
 
 class Artist(AbstractArtist, NextPreviousMixin):
     name = models.CharField(max_length=250)
@@ -139,11 +139,6 @@ class CD(models.Model):
             'track',
         )
 
-    def total_duration(self):
-        return self.tracks.aggregate(
-            x=models.Sum('music_file__length'),
-        )['x'] or 0
-
 class Track(models.Model):
     title = models.CharField(max_length=250)
 
@@ -154,6 +149,8 @@ class Track(models.Model):
         'common.MusicFile',
         related_name='track',
     )
+
+    objects = TrackManager()
 
     class Meta:
         ordering = ('num',)
