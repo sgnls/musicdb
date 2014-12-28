@@ -14,7 +14,10 @@ class TestCase(TestCase):
         if kwargs.pop('login', True):
             self.client.login(username='testuser', password='password')
 
-        response = fn(reverse(urlconf, args=args, kwargs=kwargs))
+        url = reverse(urlconf, args=args, kwargs=kwargs) \
+            if not urlconf.startswith('/') else urlconf
+
+        response = fn(url)
 
         self.assertEqual(response.status_code, status_code, response)
 
