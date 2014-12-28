@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 
 from musicdb.utils.urls import google_search
 
-from musicdb.nonclassical.models import Album
+from musicdb.albums.models import Album
 
 class Command(BaseCommand):
     def handle(self, *files, **options):

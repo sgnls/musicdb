@@ -1,0 +1,24 @@
+.f_albums_artist .story-section .team .member .social {
+  top: 27%;
+}
+
+.f_albums_artist .cover {
+  margin: 0 auto 10px auto;
+}
+
+.f_albums_artist .story-section .team .member .profile .info {
+  padding: 15px 10px;
+}
+
+.f_albums_artist .story-section .team .member .profile .name {
+  color: #fff;
+  font-size: 15px;
+}
+
+.f_albums_artist .story-section .team .member .profile .name:hover {
+  text-decoration: none;
+}
+
+.f_albums_artist .story-section .team .member .profile .job-title {
+  font-size: 13px;
+}

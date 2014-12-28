@@ -6,7 +6,7 @@ from django.core.management.base import BaseCommand
 
 from musicdb.utils.progress import progress_qs
 
-from musicdb.nonclassical.models import Album
+from musicdb.albums.models import Album
 
 re_image = re.compile(r'<a href="([^"]+)" title="View larger image"')
 

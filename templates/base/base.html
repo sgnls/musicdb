@@ -21,7 +21,7 @@
       <div id="navbar-collapse" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           {% if request.user.is_authenticated %}
-          <li class="nav-item {% block navbar_active_nonclassical %}{% endblock %}"><a href="{% url nonclassical:view %}">Albums</a></li>
+          <li class="nav-item {% block navbar_active_albums %}{% endblock %}"><a href="{% url albums:view %}">Albums</a></li>
           <li class="nav-item {% block navbar_active_classical %}{% endblock %}"><a href="{% url classical:view %}">Classical</a></li>
           <li class="nav-item {% block navbar_active_books %}{% endblock %}"><a href="{% url books:view %}">Books</a></li>
 

@@ -25,7 +25,7 @@ class Artist(AbstractArtist, NextPreviousMixin):
 
     nationality = models.ForeignKey(
         'common.Nationality', blank=True, null=True,
-        related_name='nonclassical_artists',
+        related_name='albums_artists',
     )
 
     name_first = FirstLetterField('name')
@@ -34,6 +34,7 @@ class Artist(AbstractArtist, NextPreviousMixin):
     objects = ArtistManager()
 
     class Meta:
+        db_table = 'nonclassical_artist'
         ordering = ('name',)
 
     def __unicode__(self):
@@ -41,7 +42,7 @@ class Artist(AbstractArtist, NextPreviousMixin):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('nonclassical:artist', (self.slug,))
+        return ('albums:artist', (self.slug,))
 
     def long_name(self):
         if self.is_solo_artist:
@@ -84,6 +85,7 @@ class Album(models.Model, NextPreviousMixin):
 
     class Meta:
         ordering = ('year', 'title')
+        db_table = 'nonclassical_album'
 
     def __unicode__(self):
         if self.year:
@@ -98,7 +100,7 @@ class Album(models.Model, NextPreviousMixin):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('nonclassical:album', (self.artist.slug, self.slug))
+        return ('albums:album', (self.artist.slug, self.slug))
 
     def get_dir_name(self):
         if self.year:
@@ -109,7 +111,7 @@ class Album(models.Model, NextPreviousMixin):
         return MusicFile.objects.filter(track__cd__album=self). \
             order_by('track__cd', 'track')
 
-    def get_nonclassical_tracks(self):
+    def get_albums_tracks(self):
         return Track.objects.filter(cd__album=self). \
             order_by('cd__num', 'track')
 
@@ -142,6 +144,7 @@ class CD(models.Model):
 
     class Meta:
         ordering = ('num',)
+        db_table = 'nonclassical_cd'
         unique_together = ('album', 'num')
         verbose_name_plural = 'CDs'
 
@@ -167,6 +170,7 @@ class Track(models.Model):
 
     class Meta:
         ordering = ('num',)
+        db_table = 'nonclassical_track'
         unique_together = ('cd', 'num')
 
     def __unicode__(self):

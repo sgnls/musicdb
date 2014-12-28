@@ -1,4 +1,4 @@
-{% extends "nonclassical/base.html" %}
+{% extends "albums/base.html" %}
 
 {% block title %}Albums - {{ block.super }}{% endblock %}
 
@@ -8,7 +8,7 @@
 
 <div class="btn-group btn-group-xs visible-xs visible-sm">
   {% for x in letters %}
-    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical:view x %}">
+    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url albums:view x %}">
       {% if x == "0" %}
         #</a>
       {% else %}
@@ -19,7 +19,7 @@
 
 <div class="btn-group btn-group-sm visible-md visible-lg">
   {% for x in letters %}
-    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url nonclassical:view x %}">
+    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url albums:view x %}">
       {% if x == "0" %}
         #</a>
       {% else %}

@@ -19,7 +19,7 @@ INSTALLED_APPS = (
     'musicdb.common',
     'musicdb.classical',
     'musicdb.debug',
-    'musicdb.nonclassical',
+    'musicdb.albums',
     'musicdb.profile',
     'musicdb.static',
     'musicdb.superuser',

@@ -1,4 +1,4 @@
-{% extends "nonclassical/base.html" %}
+{% extends "albums/base.html" %}
 
 {% load duration %}
 
@@ -41,7 +41,7 @@
       </ol>
 
       {% if album_cds_count != 1 %}
-        <a href="{% url nonclassical:play-cd album.pk cd.pk %}" class="btn btn-primary">
+        <a href="{% url albums:play-cd album.pk cd.pk %}" class="btn btn-primary">
           <span class="glyphicon glyphicon-play"></span> Play
         </a>
         {{ cd.total_duration|duration }}
@@ -52,7 +52,7 @@
     {% endwith %}
   </div>
   <div class="col-sm-4 hidden-xs">
-    <a href="{% url nonclassical:play-album album.pk %}" class="thumbnail">
+    <a href="{% url albums:play-album album.pk %}" class="thumbnail">
       <img src="{% if album.image.exists %}{{ album.image.large.url }}{% else %}{% static "img/missing_album_large.jpeg" %}{% endif %}" alt="Play {{ album }}">
     </a>
   </div>
@@ -60,7 +60,7 @@
 
 <br>
 
-<a href="{% url nonclassical:play-album album.pk %}" class="btn btn-primary">
+<a href="{% url albums:play-album album.pk %}" class="btn btn-primary">
   <span class="glyphicon glyphicon-play"></span> Play album
 </a>
 <span class="text-muted">({{ album.total_duration|duration }})</span>
@@ -71,14 +71,14 @@
 <div class="row well" style="margin-top: 45px">
   <div class="col-xs-6">
     {% if previous %}
-     &laquo; <a href="{% url nonclassical:album artist.slug previous.slug %}">{{ previous }}</a>
+     &laquo; <a href="{% url albums:album artist.slug previous.slug %}">{{ previous }}</a>
     {% else %}
      &nbsp;
     {% endif %}
   </div>
   <div class="col-xs-6 text-right">
     {% if next %}
-     <a href="{% url nonclassical:album artist.slug next.slug %}">{{ next }}</a> &raquo;
+     <a href="{% url albums:album artist.slug next.slug %}">{{ next }}</a> &raquo;
     {% endif %}
   </div>
 </div>
