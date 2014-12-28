@@ -1,22 +1,22 @@
 """
 Classes allowing "generic" relations through ContentType and object-id fields.
 """
+from __future__ import unicode_literals
 
 from collections import defaultdict
 from functools import partial
-from operator import attrgetter
 
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import connection
 from django.db.models import signals
 from django.db import models, router, DEFAULT_DB_ALIAS
 from django.db.models.fields.related import RelatedField, Field, ManyToManyRel
-from django.db.models.loading import get_model
 from django.forms import ModelForm
 from django.forms.models import BaseModelFormSet, modelformset_factory, save_instance
 from django.contrib.admin.options import InlineModelAdmin, flatten_fieldsets
 from django.contrib.contenttypes.models import ContentType
-from django.utils.encoding import smart_unicode
+from django.utils.encoding import smart_text
+
 
 class GenericForeignKey(object):
     """
@@ -51,9 +51,6 @@ class GenericForeignKey(object):
             kwargs[self.fk_field] = value._get_pk_val()
 
     def get_content_type(self, obj=None, id=None, using=None):
-        # Convenience function using get_model avoids a circular import when
-        # using this model
-        ContentType = get_model("contenttypes", "contenttype")
         if obj:
             return ContentType.objects.db_manager(obj._state.db).get_for_model(obj)
         elif id:
@@ -85,16 +82,16 @@ class GenericForeignKey(object):
             ret_val.extend(ct.get_all_objects_for_this_type(pk__in=fkeys))
 
         # For doing the join in Python, we have to match both the FK val and the
-        # content type, so the 'attr' vals we return need to be callables that
-        # will return a (fk, class) pair.
+        # content type, so we use a callable that returns a (fk, class) pair.
         def gfk_key(obj):
             ct_id = getattr(obj, ct_attname)
             if ct_id is None:
                 return None
             else:
-                return (getattr(obj, self.fk_field),
-                        self.get_content_type(id=ct_id,
-                                              using=obj._state.db).model_class())
+                model = self.get_content_type(id=ct_id,
+                                              using=obj._state.db).model_class()
+                return (model._meta.pk.get_prep_value(getattr(obj, self.fk_field)),
+                        model)
 
         return (ret_val,
                 lambda obj: (obj._get_pk_val(), obj.__class__),
@@ -131,7 +128,7 @@ class GenericForeignKey(object):
 
     def __set__(self, instance, value):
         if instance is None:
-            raise AttributeError(u"%s must be accessed via instance" % self.related.opts.object_name)
+            raise AttributeError("%s must be accessed via instance" % self.related.opts.object_name)
 
         ct = None
         fk = None
@@ -168,7 +165,7 @@ class GenericRelation(RelatedField, Field):
 
     def value_to_string(self, obj):
         qs = getattr(obj, self.name).all()
-        return smart_unicode([instance._get_pk_val() for instance in qs])
+        return smart_text([instance._get_pk_val() for instance in qs])
 
     def m2m_db_table(self):
         return self.rel.to._meta.db_table
@@ -208,18 +205,16 @@ class GenericRelation(RelatedField, Field):
         # same db_type as well.
         return None
 
-    def extra_filters(self, pieces, pos, negate):
+    def get_content_type(self):
         """
-        Return an extra filter to the queryset so that the results are filtered
-        on the appropriate content type.
+        Returns the content type associated with this field's model.
         """
-        if negate:
-            return []
-        ContentType = get_model("contenttypes", "contenttype")
-        content_type = ContentType.objects.get_for_model(self.model)
-        prefix = "__".join(pieces[:pos + 1])
-        return [("%s__%s" % (prefix, self.content_type_field_name),
-            content_type)]
+        return ContentType.objects.get_for_model(self.model)
+
+    def get_extra_join_sql(self, connection, qn, lhs_alias, rhs_alias):
+        extra_col = self.rel.to._meta.get_field_by_name(self.content_type_field_name)[0].column
+        contenttype = self.get_content_type().pk
+        return " AND %s.%s = %%s" % (qn(rhs_alias), qn(extra_col)), [contenttype]
 
     def bulk_related_objects(self, objs, using=DEFAULT_DB_ALIAS):
         """
@@ -249,9 +244,6 @@ class ReverseGenericRelatedObjectsDescriptor(object):
     def __get__(self, instance, instance_type=None):
         if instance is None:
             return self
-
-        # This import is done here to avoid circular import importing this module
-        from django.contrib.contenttypes.models import ContentType
 
         # Dynamically create a class that subclasses the related model's
         # default manager.
@@ -328,8 +320,11 @@ def create_generic_related_manager(superclass):
                     set(obj._get_pk_val() for obj in instances)
                 }
             qs = super(GenericRelatedObjectManager, self).get_query_set().using(db).filter(**query)
+            # We (possibly) need to convert object IDs to the type of the
+            # instances' PK in order to match up instances:
+            object_id_converter = instances[0]._meta.pk.to_python
             return (qs,
-                    attrgetter(self.object_id_field_name),
+                    lambda relobj: object_id_converter(getattr(relobj, self.object_id_field_name)),
                     lambda obj: obj._get_pk_val(),
                     False,
                     self.prefetch_cache_name)
@@ -380,8 +375,6 @@ class BaseGenericInlineFormSet(BaseModelFormSet):
 
     def __init__(self, data=None, files=None, instance=None, save_as_new=None,
                  prefix=None, queryset=None):
-        # Avoid a circular import.
-        from django.contrib.contenttypes.models import ContentType
         opts = self.model._meta
         self.instance = instance
         self.rel_name = '-'.join((
@@ -410,8 +403,6 @@ class BaseGenericInlineFormSet(BaseModelFormSet):
         ))
 
     def save_new(self, form, commit=True):
-        # Avoid a circular import.
-        from django.contrib.contenttypes.models import ContentType
         kwargs = {
             self.ct_field.get_attname(): ContentType.objects.get_for_model(self.instance).pk,
             self.ct_fk_field.get_attname(): self.instance.pk,
@@ -433,8 +424,6 @@ def generic_inlineformset_factory(model, form=ModelForm,
     defaults ``content_type`` and ``object_id`` respectively.
     """
     opts = model._meta
-    # Avoid a circular import.
-    from django.contrib.contenttypes.models import ContentType
     # if there is no field called `ct_field` let the exception propagate
     ct_field = opts.get_field(ct_field)
     if not isinstance(ct_field, models.ForeignKey) or ct_field.rel.to != ContentType:

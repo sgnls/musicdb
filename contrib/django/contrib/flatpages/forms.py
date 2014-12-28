@@ -31,11 +31,11 @@ class FlatpageForm(forms.ModelForm):
         if self.instance.pk:
             same_url = same_url.exclude(pk=self.instance.pk)
 
-        if same_url.filter(sites__in=sites).exists():
+        if sites and same_url.filter(sites__in=sites).exists():
             for site in sites:
                 if same_url.filter(sites=site).exists():
                     raise forms.ValidationError(
-                        _('Flatpage with url %(url)s already exists for site %(site)s' %
-                          {'url': url, 'site': site}))
+                        _('Flatpage with url %(url)s already exists for site %(site)s') %
+                          {'url': url, 'site': site})
 
         return super(FlatpageForm, self).clean()

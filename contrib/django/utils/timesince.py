@@ -1,9 +1,11 @@
+from __future__ import unicode_literals
+
 import datetime
 
 from django.utils.timezone import is_aware, utc
 from django.utils.translation import ungettext, ugettext
 
-def timesince(d, now=None):
+def timesince(d, now=None, reversed=False):
     """
     Takes two datetime objects and returns the time between d and now
     as a nicely formatted string, e.g. "10 minutes".  If d occurs after now,
@@ -33,12 +35,12 @@ def timesince(d, now=None):
     if not now:
         now = datetime.datetime.now(utc if is_aware(d) else None)
 
-    delta = now - d
+    delta = (d - now) if reversed else (now - d)
     # ignore microseconds
     since = delta.days * 24 * 60 * 60 + delta.seconds
     if since <= 0:
         # d is in the future compared to now, stop processing.
-        return u'0 ' + ugettext('minutes')
+        return '0 ' + ugettext('minutes')
     for i, (seconds, name) in enumerate(chunks):
         count = since // seconds
         if count != 0:
@@ -57,6 +59,4 @@ def timeuntil(d, now=None):
     Like timesince, but returns a string measuring the time until
     the given time.
     """
-    if not now:
-        now = datetime.datetime.now(utc if is_aware(d) else None)
-    return timesince(now, d)
+    return timesince(d, now, reversed=True)

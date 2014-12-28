@@ -1,9 +1,14 @@
+from __future__ import unicode_literals
+
+import base64
 import hashlib
 
+from django.dispatch import receiver
 from django.conf import settings
+from django.test.signals import setting_changed
 from django.utils import importlib
 from django.utils.datastructures import SortedDict
-from django.utils.encoding import smart_str
+from django.utils.encoding import force_bytes, force_str
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.crypto import (
     pbkdf2, constant_time_compare, get_random_string)
@@ -14,9 +19,22 @@ UNUSABLE_PASSWORD = '!'  # This will never be a valid encoded hash
 HASHERS = None  # lazily loaded from PASSWORD_HASHERS
 PREFERRED_HASHER = None  # defaults to first item in PASSWORD_HASHERS
 
+@receiver(setting_changed)
+def reset_hashers(**kwargs):
+    if kwargs['setting'] == 'PASSWORD_HASHERS':
+        global HASHERS, PREFERRED_HASHER
+        HASHERS = None
+        PREFERRED_HASHER = None
+
 
 def is_password_usable(encoded):
-    return (encoded is not None and encoded != UNUSABLE_PASSWORD)
+    if encoded is None or encoded == UNUSABLE_PASSWORD:
+        return False
+    try:
+        hasher = identify_hasher(encoded)
+    except ValueError:
+        return False
+    return True
 
 
 def check_password(password, encoded, setter=None, preferred='default'):
@@ -31,20 +49,12 @@ def check_password(password, encoded, setter=None, preferred='default'):
         return False
 
     preferred = get_hasher(preferred)
-    raw_password = password
-    password = smart_str(password)
-    encoded = smart_str(encoded)
-
-    if len(encoded) == 32 and '$' not in encoded:
-        hasher = get_hasher('unsalted_md5')
-    else:
-        algorithm = encoded.split('$', 1)[0]
-        hasher = get_hasher(algorithm)
+    hasher = identify_hasher(encoded)
 
     must_update = hasher.algorithm != preferred.algorithm
     is_correct = hasher.verify(password, encoded)
     if setter and is_correct and must_update:
-        setter(raw_password)
+        setter(password)
     return is_correct
 
 
@@ -60,11 +70,9 @@ def make_password(password, salt=None, hasher='default'):
         return UNUSABLE_PASSWORD
 
     hasher = get_hasher(hasher)
-    password = smart_str(password)
 
     if not salt:
         salt = hasher.salt()
-    salt = smart_str(salt)
 
     return hasher.encode(password, salt)
 
@@ -114,6 +122,21 @@ def get_hasher(algorithm='default'):
                              "Did you specify it in the PASSWORD_HASHERS "
                              "setting?" % algorithm)
         return HASHERS[algorithm]
+
+
+def identify_hasher(encoded):
+    """
+    Returns an instance of a loaded password hasher.
+
+    Identifies hasher algorithm by examining encoded hash, and calls
+    get_hasher() to return hasher. Raises ValueError if
+    algorithm cannot be identified, or if hasher is not loaded.
+    """
+    if len(encoded) == 32 and '$' not in encoded:
+        algorithm = 'unsalted_md5'
+    else:
+        algorithm = encoded.split('$', 1)[0]
+    return get_hasher(algorithm)
 
 
 def mask_hash(hash, show=6, char="*"):
@@ -202,7 +225,7 @@ class PBKDF2PasswordHasher(BasePasswordHasher):
         if not iterations:
             iterations = self.iterations
         hash = pbkdf2(password, salt, iterations, digest=self.digest)
-        hash = hash.encode('base64').strip()
+        hash = base64.b64encode(hash).decode('ascii').strip()
         return "%s$%d$%s$%s" % (self.algorithm, iterations, salt, hash)
 
     def verify(self, password, encoded):
@@ -252,14 +275,16 @@ class BCryptPasswordHasher(BasePasswordHasher):
 
     def encode(self, password, salt):
         bcrypt = self._load_library()
-        data = bcrypt.hashpw(password, salt)
+        # Need to reevaluate the force_bytes call once bcrypt is supported on
+        # Python 3
+        data = bcrypt.hashpw(force_bytes(password), salt)
         return "%s$%s" % (self.algorithm, data)
 
     def verify(self, password, encoded):
         algorithm, data = encoded.split('$', 1)
         assert algorithm == self.algorithm
         bcrypt = self._load_library()
-        return constant_time_compare(data, bcrypt.hashpw(password, data))
+        return constant_time_compare(data, bcrypt.hashpw(force_bytes(password), data))
 
     def safe_summary(self, encoded):
         algorithm, empty, algostr, work_factor, data = encoded.split('$', 4)
@@ -282,7 +307,7 @@ class SHA1PasswordHasher(BasePasswordHasher):
     def encode(self, password, salt):
         assert password
         assert salt and '$' not in salt
-        hash = hashlib.sha1(salt + password).hexdigest()
+        hash = hashlib.sha1(force_bytes(salt + password)).hexdigest()
         return "%s$%s$%s" % (self.algorithm, salt, hash)
 
     def verify(self, password, encoded):
@@ -310,7 +335,7 @@ class MD5PasswordHasher(BasePasswordHasher):
     def encode(self, password, salt):
         assert password
         assert salt and '$' not in salt
-        hash = hashlib.md5(salt + password).hexdigest()
+        hash = hashlib.md5(force_bytes(salt + password)).hexdigest()
         return "%s$%s$%s" % (self.algorithm, salt, hash)
 
     def verify(self, password, encoded):
@@ -344,7 +369,7 @@ class UnsaltedMD5PasswordHasher(BasePasswordHasher):
         return ''
 
     def encode(self, password, salt):
-        return hashlib.md5(password).hexdigest()
+        return hashlib.md5(force_bytes(password)).hexdigest()
 
     def verify(self, password, encoded):
         encoded_2 = self.encode(password, '')
@@ -372,7 +397,7 @@ class CryptPasswordHasher(BasePasswordHasher):
     def encode(self, password, salt):
         crypt = self._load_library()
         assert len(salt) == 2
-        data = crypt.crypt(password, salt)
+        data = crypt.crypt(force_str(password), salt)
         # we don't need to store the salt, but Django used to do this
         return "%s$%s$%s" % (self.algorithm, '', data)
 
@@ -380,7 +405,7 @@ class CryptPasswordHasher(BasePasswordHasher):
         crypt = self._load_library()
         algorithm, salt, data = encoded.split('$', 2)
         assert algorithm == self.algorithm
-        return constant_time_compare(data, crypt.crypt(password, data))
+        return constant_time_compare(data, crypt.crypt(force_str(password), data))
 
     def safe_summary(self, encoded):
         algorithm, salt, data = encoded.split('$', 2)
