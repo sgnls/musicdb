@@ -11,8 +11,7 @@ from musicdb.db.fields import MySlugField, DenormalisedCharField
 
 from musicdb.common.models import MusicFile
 
-from .managers import ArtistManager, WorkManager, RecordingManager, \
-    MovementManager
+from .managers import ArtistManager, RecordingManager, MovementManager
 
 class Artist(models.Model, NextPreviousMixin):
     surname = models.CharField(max_length=100)
@@ -176,8 +175,6 @@ class Work(models.Model, Mergeable, NextPreviousMixin):
 
     slug = MySlugField('slug_name', filter='slug_filter')
     sort_value = DenormalisedCharField('get_sort_value')
-
-    objects = WorkManager()
 
     class Meta:
         ordering = ('sort_value',)

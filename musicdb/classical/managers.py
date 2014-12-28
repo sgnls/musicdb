@@ -12,12 +12,6 @@ class ArtistManager(models.Manager):
             num_works=models.Count('works'),
         ).order_by('-num_works')
 
-class WorkManager(models.Manager):
-    def by_num_recordings(self):
-        return self.annotate(
-            num_recordings=models.Count('recordings')
-        ).order_by('-num_recordings')
-
 class RecordingManager(models.Manager):
     def recent(self):
         return self.filter(created__isnull=False).order_by('-created')
