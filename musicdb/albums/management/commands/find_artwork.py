@@ -33,7 +33,7 @@ class Command(BaseCommand):
             url = self.handle_terms(terms)
 
             if url:
-                album.set_artwork_from_url(url)
+                set_artwork_from_url(album, url)
                 break
 
     def handle_terms(self, q):

@@ -3,6 +3,7 @@ from django.core.management.base import BaseCommand
 from musicdb.utils.urls import google_image_search
 
 from musicdb.albums.models import Album
+from musicdb.albums.utils import set_artwork_from_url
 
 class Command(BaseCommand):
     def handle(self, *files, **options):
@@ -14,4 +15,4 @@ class Command(BaseCommand):
             url = raw_input("Image URL: ")
 
             if url:
-                album.set_artwork_from_url(url)
+                set_artwork_from_url(album, url)

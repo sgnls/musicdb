@@ -1,11 +1,8 @@
-import os
-import urllib
 import datetime
 
 from django_yadt import YADTImageField
 
 from django.db import models
-from django.core.files import File as DjangoFile
 
 from musicdb.common.models import AbstractArtist, MusicFile
 
@@ -125,20 +122,6 @@ class Album(models.Model, NextPreviousMixin):
 
     def previous(self):
         return super(Album, self).previous(artist_id=self.artist_id)
-
-    def set_artwork_from_url(self, url):
-        tempfile, _ = urllib.urlretrieve(url)
-        try:
-            self.image.save(DjangoFile(open(tempfile)))
-            self.save()
-        except:
-            self.cover.delete()
-            raise
-        finally:
-            try:
-                os.unlink(tempfile)
-            except:
-                pass
 
 class CD(models.Model):
     album = models.ForeignKey(Album, related_name='cds')
