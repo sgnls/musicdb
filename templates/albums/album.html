@@ -2,6 +2,8 @@
 
 {% load duration %}
 
+{% block body_classes %}{{ block.super }} f_albums_album{% endblock %}
+
 {% block title %}{{ album.title }} - {{ artist.long_name }} - {{ block.super }}{% endblock %}
 
 {% block container_title %}
@@ -51,7 +53,7 @@
     {% endfor %}
     {% endwith %}
   </div>
-  <div class="col-sm-4 hidden-xs">
+  <div class="col-sm-4 cover">
     <a href="{% url albums:play-album album.pk %}" class="thumbnail">
       <img src="{% if album.image.exists %}{{ album.image.large.url }}{% else %}{% static "img/missing_album_large.jpeg" %}{% endif %}" alt="Play {{ album }}">
     </a>
