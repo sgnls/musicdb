@@ -9,7 +9,7 @@ from django.db import models
 from musicdb.db.mixins import Mergeable, NextPreviousMixin
 from musicdb.db.fields import MySlugField, DenormalisedCharField
 
-from musicdb.common.models import  MusicFile
+from musicdb.common.models import MusicFile
 
 from .managers import ArtistManager, WorkManager, RecordingManager
 
