@@ -338,7 +338,7 @@ class Recording(models.Model):
         super(Recording, self).delete(*args, **kwargs)
 
     def get_absolute_url(self):
-        return "%s#%s" % (self.work.get_absolute_url(), self.slug)
+        return '%s#%s' % (self.work.get_absolute_url(), self.slug)
 
     def short_name(self):
         return ", ".join([
