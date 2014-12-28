@@ -29,9 +29,7 @@ class DenormalisedCharField(fields.CharField):
 
 class MySlugField(DenormalisedCharField):
     def __init__(self, *args, **kwargs):
-        self.filter = None
-        if 'filter' in kwargs:
-            self.filter = kwargs.pop('filter')
+        self.filter = kwargs.pop('filter', None)
 
         super(MySlugField, self).__init__(*args, **kwargs)
 
