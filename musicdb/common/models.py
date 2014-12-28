@@ -18,7 +18,6 @@ class Nationality(models.Model):
 
     class Meta:
         ordering = ('noun',)
-        verbose_name_plural = "Nationalities"
 
     def __unicode__(self):
         return self.adjective

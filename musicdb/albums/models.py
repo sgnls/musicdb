@@ -127,7 +127,6 @@ class CD(models.Model):
         ordering = ('num',)
         db_table = 'nonclassical_cd'
         unique_together = ('album', 'num')
-        verbose_name_plural = 'CDs'
 
     def __unicode__(self):
         return u"CD %d of %d from %s" % (
