@@ -18,6 +18,10 @@
   color: white;
 }
 
+.f_generic_base .story-section .title a:hover {
+  text-decoration: none;
+}
+
 .f_generic_base .story-section .intro a {
   color: white;
 }
