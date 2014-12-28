@@ -1,7 +1,5 @@
 from django.db import models
 
-from django.db.models.aggregates import Count
-
 class ArtistManager(models.Manager):
     def composers(self):
         return self.filter(works__isnull=False).distinct()
@@ -11,13 +9,13 @@ class ArtistManager(models.Manager):
 
     def by_num_works(self):
         return self.composers().annotate(
-            num_works=Count('works'),
+            num_works=models.Count('works'),
         ).order_by('-num_works')
 
 class WorkManager(models.Manager):
     def by_num_recordings(self):
         return self.annotate(
-            num_recordings=Count('recordings')
+            num_recordings=models.Count('recordings')
         ).order_by('-num_recordings')
 
 class RecordingManager(models.Manager):
