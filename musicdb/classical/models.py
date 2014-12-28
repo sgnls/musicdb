@@ -165,11 +165,9 @@ class Work(models.Model, Mergeable, NextPreviousMixin):
     nickname = models.CharField(max_length=200, blank=True)
     composer = models.ForeignKey(Artist, related_name='works')
 
-    year = models.IntegerField('Year of composition', blank=True, null=True)
-    year_question = models.BooleanField(
-        'Year of composition is uncertain',
-        default=False,
-    )
+    # Year & whether year of composition is uncertain
+    year = models.IntegerField(blank=True, null=True)
+    year_question = models.BooleanField(default=False)
 
     key = models.ForeignKey('Key', null=True, blank=True, related_name='works')
 
