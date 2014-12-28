@@ -31,7 +31,6 @@ class Artist(models.Model, NextPreviousMixin):
     objects = ArtistManager()
 
     class Meta:
-        db_table = 'nonclassical_artist'
         ordering = ('name',)
 
     def __unicode__(self):
@@ -83,7 +82,6 @@ class Album(models.Model, NextPreviousMixin):
 
     class Meta:
         ordering = ('year', 'title')
-        db_table = 'nonclassical_album'
 
     def __unicode__(self):
         if self.year:
@@ -125,7 +123,6 @@ class CD(models.Model):
 
     class Meta:
         ordering = ('num',)
-        db_table = 'nonclassical_cd'
         unique_together = ('album', 'num')
 
     def __unicode__(self):
@@ -157,7 +154,6 @@ class Track(models.Model):
 
     class Meta:
         ordering = ('num',)
-        db_table = 'nonclassical_track'
         unique_together = ('cd', 'num')
 
     def __unicode__(self):

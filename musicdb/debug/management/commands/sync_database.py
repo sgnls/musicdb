@@ -141,7 +141,7 @@ class Command(NoArgsCommand):
 
         for x in (
             'books_book',
-            'nonclassical_album',
+            'albums_album',
         ):
             psql(
                 'UPDATE %s SET image_exists = false' % x,
