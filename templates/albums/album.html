@@ -57,7 +57,7 @@
   </div>
   <div class="col-sm-4 cover">
     <a href="{% url albums:play-album album.pk %}" class="thumbnail">
-      <img src="{% if album.image.exists %}{{ album.image.large.url }}{% else %}{% static "img/missing_album_large.jpeg" %}{% endif %}" alt="Play {{ album }}">
+      <img src="{% if album.image.exists %}{{ album.image.large.url }}{% else %}{% static "img/missing_album_large.jpeg" %}{% endif %}" alt="Play {{ album.title }}">
     </a>
   </div>
 </div>
