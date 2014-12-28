@@ -74,8 +74,3 @@ class FirstLetterField(DenormalisedCharField):
             return '0'
 
         return '-'
-
-class DirNameField(DenormalisedCharField):
-    def pre_save(self, obj, add):
-        val = super(DirNameField, self).pre_save(obj, add)
-        return val.replace('/', '-')
