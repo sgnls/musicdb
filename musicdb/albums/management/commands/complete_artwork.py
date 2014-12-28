@@ -6,7 +6,7 @@ from musicdb.albums.models import Album
 
 class Command(BaseCommand):
     def handle(self, *files, **options):
-        for album in Album.objects.filter(image_hash=''):
+        for album in Album.objects.filter(image_exists=False):
             print
             print "%s - %s" % (album.artist.long_name(), album)
             print google_image_search("%s %s" % (album.artist.long_name(), album))
