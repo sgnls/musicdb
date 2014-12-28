@@ -140,9 +140,9 @@ class CD(models.Model):
         )
 
     def total_duration(self):
-        return self.get_tracks().aggregate(
-            models.Sum('length'),
-        ).values()[0] or 0
+        return self.tracks.aggregate(
+            x=models.Sum('music_file__length'),
+        )['x'] or 0
 
 class Track(models.Model):
     title = models.CharField(max_length=250)
