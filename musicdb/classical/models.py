@@ -278,12 +278,11 @@ class WorkCatalogue(models.Model):
         return "%s %s" % (self.catalogue.prefix, self.value)
 
 class Instrument(models.Model):
-    noun = models.CharField(
-        max_length=100, help_text="For example, 'Cello'", unique=True
-    )
-    adjective = models.CharField(
-        max_length=100, help_text="For example, 'Cellist'", unique=True
-    )
+    # eg. "Cello"
+    noun = models.CharField(max_length=100, unique=True)
+
+    # eg. "Cellist"
+    adjective = models.CharField(max_length=100, unique=True)
 
     class Meta:
         ordering = ('noun',)
