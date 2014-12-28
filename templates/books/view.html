@@ -10,7 +10,7 @@
 
 <div class="btn-group btn-group-sm">
   {% for x in letters %}
-    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url books:view x %}" data-no-instant>
+    <a class="btn btn-default {% if letter == x %}active{% endif %}" href="{% url "books:view" x %}" data-no-instant>
       {% if x == "0" %}
         #</a>
       {% else %}
@@ -23,7 +23,7 @@
 
 <div class="list-group" style="margin-top: 30px;">
 {% for author in authors %}
-  <a class="list-group-item" href="{% url books:author author.slug %}">{{ author.last_name }}, {{ author.first_names }}</a>
+  <a class="list-group-item" href="{% url "books:author" author.slug %}">{{ author.last_name }}, {{ author.first_names }}</a>
 {% endfor %}
 </div>
 

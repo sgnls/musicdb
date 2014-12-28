@@ -7,7 +7,7 @@
 <header id="header" class="header">
   <div class="container">
     <h1 class="logo">
-      <a href="{% url static:landing %}"><span class="logo-icon"></span><span class="text">musicdb</span></a>
+      <a href="{% url "static:landing" %}"><span class="logo-icon"></span><span class="text">musicdb</span></a>
     </h1>
     <nav class="main-nav navbar-right" role="navigation">
       <div class="navbar-header">
@@ -21,9 +21,9 @@
       <div id="navbar-collapse" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           {% if request.user.is_authenticated %}
-          <li class="nav-item {% block navbar_active_albums %}{% endblock %}"><a href="{% url albums:view %}">Albums</a></li>
-          <li class="nav-item {% block navbar_active_classical %}{% endblock %}"><a href="{% url classical:view %}">Classical</a></li>
-          <li class="nav-item {% block navbar_active_books %}{% endblock %}"><a href="{% url books:view %}">Books</a></li>
+          <li class="nav-item {% block navbar_active_albums %}{% endblock %}"><a href="{% url "albums:view" %}">Albums</a></li>
+          <li class="nav-item {% block navbar_active_classical %}{% endblock %}"><a href="{% url "classical:view" %}">Classical</a></li>
+          <li class="nav-item {% block navbar_active_books %}{% endblock %}"><a href="{% url "books:view" %}">Books</a></li>
 
           <li class="nav-item dropdown">
             <a
@@ -33,17 +33,17 @@
             >Logged in as <strong>{{ request.user.username }}</strong> <i class="fa fa-angle-down"></i></a>
 
             <ul class="dropdown-menu">
-              <li><a href="{% url profile:view %}">Profile</a></li>
-              <li><a href="{% url auth:logout %}" data-no-instant>Logout</a></li>
+              <li><a href="{% url "profile:view" %}">Profile</a></li>
+              <li><a href="{% url "auth:logout" %}" data-no-instant>Logout</a></li>
               {% if request.user.is_superuser %}
               <li class="divider"></li>
-              <li><a href="{% url superuser:view %}">Superuser</a></li>
+              <li><a href="{% url "superuser:view" %}">Superuser</a></li>
               {% endif %}
             </ul>
           </li>
           {% else %}
             <li class="nav-item nav-item-cta last">
-              <a class="btn btn-cta btn-cta-secondary" href="{% url auth:login %}">
+              <a class="btn btn-cta btn-cta-secondary" href="{% url "auth:login" %}">
                 Login
               </a>
             </li>

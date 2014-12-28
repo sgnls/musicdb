@@ -29,7 +29,7 @@
       {% for movement in recording.movements.all %}
         {{ movement.section_title }}
         <li>
-          <a href="{% url common:play-music-file movement.music_file_id %}">{{ movement }}</a>
+          <a href="{% url "common:play-music-file" movement.music_file_id %}">{{ movement }}</a>
           <small>{{ movement.music_file.length|duration }}</small>
         </li>
       {% endfor %}
@@ -60,7 +60,7 @@
     </dl>
 
     <p>
-      <a href="{% url classical:play-recording recording.pk %}" class="btn btn-primary">
+      <a href="{% url "classical:play-recording" recording.pk %}" class="btn btn-primary">
         <span class="glyphicon glyphicon-play"></span> Play
       </a>
     </p>

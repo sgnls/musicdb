@@ -3,7 +3,7 @@
 {% block title %}{{ artist.long_name }} - {{ block.super }}{% endblock %}
 
 {% block container_title %}
-  <a href="{% url classical:view %}">
+  <a href="{% url "classical:view" %}">
     {{ artist.short_name }}
   </a>
 {% endblock %}
@@ -22,7 +22,7 @@
   {% endif %}
 <ul>
 {% for work in works %}
-  <li><a href="{% url classical:work artist.slug work.slug %}">{{ work.pretty_title }}</a></li>
+  <li><a href="{% url "classical:work" artist.slug work.slug %}">{{ work.pretty_title }}</a></li>
 {% endfor %}
 </ul>
 

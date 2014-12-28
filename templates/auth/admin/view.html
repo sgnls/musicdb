@@ -18,7 +18,7 @@
     <tr>
       <td>{{ user.username }}</td>
       <td>
-        <a href="{% url auth:admin:user user.pk %}" class="btn btn-primary">Edit</a>
+        <a href="{% url "auth:admin:user" user.pk %}" class="btn btn-primary">Edit</a>
       </td>
     </tr>
     {% endfor %}

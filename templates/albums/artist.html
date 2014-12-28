@@ -5,7 +5,7 @@
 {% block title %}{{ artist.long_name }} - {{ block.super }}{% endblock %}
 
 {% block container_title %}
-  <a href="{% url albums:view artist.name_first %}">
+  <a href="{% url "albums:view" artist.name_first %}">
     {{ artist.long_name }}
   </a>
 {% endblock %}
@@ -44,7 +44,7 @@
       <div class="social">
         <ul class="social-list list-inline">
           <li><a
-            href="{% url albums:play-album album.pk %}"
+            href="{% url "albums:play-album" album.pk %}"
           ><i class="fa fa-play"></i></a></li>
         </ul>
       </div>
