@@ -11,7 +11,7 @@ from django.db.models.aggregates import Sum
 from musicdb.common.models import AbstractArtist, MusicFile
 
 from musicdb.db.mixins import NextPreviousMixin
-from musicdb.db.fields import MySlugField, FirstLetterField, DirNameField
+from musicdb.db.fields import MySlugField, FirstLetterField
 
 from .managers import ArtistManager, AlbumManager
 
@@ -29,7 +29,6 @@ class Artist(AbstractArtist, NextPreviousMixin):
     )
 
     name_first = FirstLetterField('name')
-    dir_name = DirNameField('name')
 
     objects = ArtistManager()
 
@@ -77,7 +76,6 @@ class Album(models.Model, NextPreviousMixin):
     cover = models.CharField(max_length=100) # deprecated
 
     slug = MySlugField('title')
-    dir_name = DirNameField('get_dir_name')
 
     created = models.DateTimeField(default=datetime.datetime.utcnow, null=True)
 
@@ -101,11 +99,6 @@ class Album(models.Model, NextPreviousMixin):
     @models.permalink
     def get_absolute_url(self):
         return 'albums:album', (self.artist.slug, self.slug)
-
-    def get_dir_name(self):
-        if self.year:
-            return "%d %s" % (self.year, self.title)
-        return self.title
 
     def get_tracks(self):
         return MusicFile.objects.filter(track__cd__album=self). \
@@ -164,8 +157,6 @@ class Track(models.Model):
     num = models.IntegerField()
     music_file = models.OneToOneField('common.MusicFile', related_name='track')
 
-    dir_name = DirNameField('get_dir_name')
-
     class Meta:
         ordering = ('num',)
         db_table = 'nonclassical_track'
@@ -173,9 +164,6 @@ class Track(models.Model):
 
     def __unicode__(self):
         return self.title
-
-    def get_dir_name(self):
-        return "%02d %s.mp3" % (self.num, self.title)
 
     def metadata(self):
         album = self.cd.album
