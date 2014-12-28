@@ -14,7 +14,10 @@
   margin-bottom: 40px;
 }
 
-.f_generic_base .story-section .title a,
+.f_generic_base .story-section .title a {
+  color: white;
+}
+
 .f_generic_base .story-section .intro a {
   color: white;
 }
