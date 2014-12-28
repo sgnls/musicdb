@@ -19,7 +19,7 @@ class Author(models.Model):
         ordering = ('last_name', 'first_names')
 
     def __unicode__(self):
-        return "%s, %s" % (self.last_name, self.first_names)
+        return u"%s, %s" % (self.last_name, self.first_names)
 
     @models.permalink
     def get_absolute_url(self):
@@ -52,7 +52,7 @@ class Book(models.Model):
         ordering = ('title',)
 
     def __unicode__(self):
-        return self.title
+        return u"%s" % self.title
 
     @models.permalink
     def get_absolute_url(self):
