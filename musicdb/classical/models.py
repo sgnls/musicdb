@@ -11,7 +11,8 @@ from musicdb.db.fields import MySlugField, DenormalisedCharField
 
 from musicdb.common.models import MusicFile
 
-from .managers import ArtistManager, WorkManager, RecordingManager
+from .managers import ArtistManager, WorkManager, RecordingManager, \
+    MovementManager
 
 class Artist(models.Model, NextPreviousMixin):
     surname = models.CharField(max_length=100)
@@ -362,12 +363,6 @@ class Recording(models.Model):
             movement__recording=self,
         ).order_by('movement')
 
-    def total_duration(self):
-        # FIXME: Move to manager
-        return self.movements.aggregate(
-            x=models.Sum('music_file__length'),
-        )['x'] or 0
-
 class Movement(models.Model):
     recording = models.ForeignKey(Recording, related_name='movements')
     title = models.CharField(max_length=300)
@@ -377,6 +372,8 @@ class Movement(models.Model):
     )
     section_title = models.CharField(max_length=200, blank=True)
     num = models.IntegerField()
+
+    objects = MovementManager()
 
     class Meta:
         ordering = ('num',)

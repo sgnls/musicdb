@@ -21,3 +21,9 @@ class WorkManager(models.Manager):
 class RecordingManager(models.Manager):
     def recent(self):
         return self.filter(created__isnull=False).order_by('-created')
+
+class MovementManager(models.Manager):
+    def total_duration(self):
+        return self.aggregate(
+            x=models.Sum('music_file__length'),
+        )['x'] or 0
