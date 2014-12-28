@@ -17,11 +17,13 @@
   <a href="{{ artist.get_absolute_url }}">{{ artist.long_name }}</a>
 {% endblock %}
 
-{% if album.image.exists %}
 {% block headline_background_image %}
+  {% if album.image.exists %}
   linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)), url({{ album.image.original.url }})
+  {% else %}
+  {{ block.super }}
+  {% endif %}
 {% endblock %}
-{% endif %}
 
 {% block container %}
 
