@@ -296,6 +296,8 @@ class Instrument(models.Model):
         return u"%s" % self.noun
 
 class Key(models.Model):
+    # TODO: Move to enumeration
+
     name = models.CharField(max_length=13)
     minor = models.BooleanField(default=False)
 
