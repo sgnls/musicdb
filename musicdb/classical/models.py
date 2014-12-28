@@ -131,17 +131,6 @@ class Artist(models.Model, NextPreviousMixin):
 
         return res.capitalize()
 
-    def dirty_tags(self):
-        # Compositions
-        MusicFile.objects.filter(
-            movement__recording__work__composer=self,
-        ).update(tags_dirty=True)
-
-        # Performances
-        MusicFile.objects.filter(
-            movement__recording__performances__artistperformance__artist=self,
-        ).update(tags_dirty=True)
-
 class Ensemble(models.Model, Mergeable):
     name = models.CharField(max_length=150)
 
@@ -170,12 +159,6 @@ class Ensemble(models.Model, Mergeable):
             'recording__work__composer',
             'recording__work__sort_value',
         )
-
-    def dirty_tags(self):
-        # FIXME: Move to manager
-        MusicFile.objects.filter(
-            movement__recording__performances__ensembleperformance__ensemble=self,
-        ).update(tags_dirty=True)
 
 class Work(models.Model, Mergeable, NextPreviousMixin):
     title = models.CharField(max_length=200)
@@ -254,9 +237,6 @@ class Work(models.Model, Mergeable, NextPreviousMixin):
 
         return val
 
-    def dirty_tags(self):
-        MusicFile.objects.filter(movement__recording__work=self).update(tags_dirty=True)
-
 class WorkRelationship(models.Model):
     source = models.ForeignKey(Work, related_name='source_relations')
     derived = models.ForeignKey(Work, related_name='derived_relations')
@@ -290,11 +270,6 @@ class Catalogue(models.Model):
     def __unicode__(self):
         return "%s catalogue of %s" % (self.prefix, self.artist)
 
-    def dirty_tags(self):
-        MusicFile.objects.filter(
-            movement__recording__work__artist=self.artist,
-        ).update(tags_dirty=True)
-
 class WorkCatalogue(models.Model):
     work = models.ForeignKey(Work, related_name='catalogues')
     catalogue = models.ForeignKey(Catalogue, related_name='works')
@@ -305,11 +280,6 @@ class WorkCatalogue(models.Model):
 
     def __unicode__(self):
         return "%s %s" % (self.catalogue.prefix, self.value)
-
-    def dirty_tags(self):
-        MusicFile.objects.filter(
-            movement__recording__work=self,
-        ).update(tags_dirty=True)
 
 class Instrument(models.Model):
     noun = models.CharField(
@@ -395,9 +365,6 @@ class Recording(models.Model):
         # FIXME: Move to manager
         return sum(self.get_tracks().values_list('length', flat=True))
 
-    def dirty_tags(self):
-        self.get_tracks().update(tags_dirty=True)
-
 class Movement(models.Model):
     recording = models.ForeignKey(Recording, related_name='movements')
     title = models.CharField(max_length=300)
@@ -428,9 +395,6 @@ class Movement(models.Model):
             'genre': 'Classical',
             'date': str(self.recording.year) or '',
         }
-
-    def dirty_tags(self):
-        MusicFile.objects.filter(pk=self.music_file).update(tags_dirty=True)
 
 class Performance(models.Model):
     recording = models.ForeignKey(Recording, related_name='performances')

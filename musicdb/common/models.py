@@ -52,10 +52,6 @@ class MusicFile(models.Model):
     length = models.IntegerField("Duration in seconds", default=0)
     rev_model = models.CharField(max_length=8) # track, movement
     type = models.CharField(max_length=4) # mp3, flac
-    tags_dirty = models.NullBooleanField(
-       'File metadata is out of sync',
-        default=True,
-    )
 
     def __unicode__(self):
         return "Length %ds (from %s)" % (self.length, self.file)
@@ -69,38 +65,30 @@ class MusicFile(models.Model):
         return getattr(self, self.rev_model)
 
     def tag(self):
-        try:
-            data = self.get_parent_instance().metadata()
+        data = self.get_parent_instance().metadata()
 
-            with tempfile.NamedTemporaryFile(suffix='-musicdb.mp3') as f:
-                # Download
-                with default_storage.open(self.file.location) as g:
-                    contents = g.read()
+        with tempfile.NamedTemporaryFile(suffix='-musicdb.mp3') as f:
+            # Download
+            with default_storage.open(self.file.location) as g:
+                contents = g.read()
 
-                f.write(contents)
-                f.flush()
-                f.seek(0)
+            f.write(contents)
+            f.flush()
+            f.seek(0)
 
-                audio = MutagenFile(f.name)
-                audio.delete()
+            audio = MutagenFile(f.name)
+            audio.delete()
 
-                if isinstance(audio, mp3.MP3):
-                    audio.tags = easyid3.EasyID3()
+            if isinstance(audio, mp3.MP3):
+                audio.tags = easyid3.EasyID3()
 
-                audio.update(data)
-                audio.save()
+            audio.update(data)
+            audio.save()
 
-                self.length = int(audio.info.length)
+            self.length = int(audio.info.length)
 
-                # Copy it back
-                default_storage.delete(self.file.location)
-                dst = default_storage.save(self.file.location, DjangoFile(f))
+            # Copy it back
+            default_storage.delete(self.file.location)
+            dst = default_storage.save(self.file.location, DjangoFile(f))
 
-                assert dst == self.file.location
-        except:
-            self.tags_dirty = None
-            self.save()
-            raise
-        finally:
-            self.tags_dirty = False
-            self.save()
+            assert dst == self.file.location
