@@ -18,13 +18,13 @@ from .managers import ArtistManager, AlbumManager
 class Artist(AbstractArtist, NextPreviousMixin):
     name = models.CharField(max_length=250)
 
-    is_solo_artist = models.BooleanField(
-        'Artist represents a single person',
-        default=False,
-    )
+    # Artist represents a single person
+    is_solo_artist = models.BooleanField(default=False)
 
     nationality = models.ForeignKey(
-        'common.Nationality', blank=True, null=True,
+        'common.Nationality',
+        null=True,
+        blank=True,
         related_name='albums_artists',
     )
 
@@ -42,7 +42,7 @@ class Artist(AbstractArtist, NextPreviousMixin):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('albums:artist', (self.slug,))
+        return 'albums:artist', (self.slug,)
 
     def long_name(self):
         if self.is_solo_artist:
@@ -100,7 +100,7 @@ class Album(models.Model, NextPreviousMixin):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('albums:album', (self.artist.slug, self.slug))
+        return 'albums:album', (self.artist.slug, self.slug)
 
     def get_dir_name(self):
         if self.year:
