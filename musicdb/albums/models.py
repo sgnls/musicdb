@@ -13,7 +13,7 @@ from musicdb.common.models import AbstractArtist, MusicFile
 from musicdb.db.mixins import NextPreviousMixin
 from musicdb.db.fields import MySlugField, FirstLetterField, DirNameField
 
-from .managers import ArtistManager, AlbumManager, TrackManager
+from .managers import ArtistManager, AlbumManager
 
 class Artist(AbstractArtist, NextPreviousMixin):
     name = models.CharField(max_length=250)
@@ -165,8 +165,6 @@ class Track(models.Model):
     music_file = models.OneToOneField('common.MusicFile', related_name='track')
 
     dir_name = DirNameField('get_dir_name')
-
-    objects = TrackManager()
 
     class Meta:
         ordering = ('num',)
