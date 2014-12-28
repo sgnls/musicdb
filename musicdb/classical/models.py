@@ -6,19 +6,22 @@ import datetime
 
 from django.db import models
 
-from musicdb.common.models import AbstractArtist, MusicFile
-
 from musicdb.db.mixins import Mergeable, NextPreviousMixin
 from musicdb.db.fields import MySlugField, DenormalisedCharField
 
+from musicdb.common.models import  MusicFile
+
 from .managers import ArtistManager, WorkManager, RecordingManager
 
-class Artist(AbstractArtist, NextPreviousMixin):
+class Artist(models.Model, NextPreviousMixin):
     surname = models.CharField(max_length=100)
     forenames = models.CharField(max_length=100, blank=True)
 
     original_surname = models.CharField(max_length=100, blank=True)
     original_forenames = models.CharField(max_length=100, blank=True)
+
+    slug = MySlugField('slug_name')
+    url = models.CharField(max_length=200, blank=True)
 
     born = models.IntegerField(blank=True, null=True)
     died = models.IntegerField(blank=True, null=True)

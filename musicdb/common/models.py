@@ -7,16 +7,7 @@ from django.db import models
 from django.core.files import File as DjangoFile
 from django.core.files.storage import default_storage
 
-from musicdb.db.fields import MySlugField
-
 from .managers import FileManager
-
-class AbstractArtist(models.Model):
-    slug = MySlugField('slug_name')
-    url = models.CharField(max_length=200, blank=True)
-
-    class Meta:
-        abstract = True
 
 class Nationality(models.Model):
     noun = models.CharField(

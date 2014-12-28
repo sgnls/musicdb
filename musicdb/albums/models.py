@@ -4,18 +4,22 @@ from django_yadt import YADTImageField
 
 from django.db import models
 
-from musicdb.common.models import AbstractArtist, MusicFile
+from musicdb.common.models import MusicFile
 
 from musicdb.db.mixins import NextPreviousMixin
 from musicdb.db.fields import MySlugField, FirstLetterField
 
 from .managers import ArtistManager, AlbumManager, TrackManager
 
-class Artist(AbstractArtist, NextPreviousMixin):
+class Artist(models.Model, NextPreviousMixin):
     name = models.CharField(max_length=250)
 
     # Artist represents a single person
     is_solo_artist = models.BooleanField(default=False)
+
+    url = models.CharField(max_length=200, blank=True)
+    slug = MySlugField('slug_name')
+    name_first = FirstLetterField('name')
 
     nationality = models.ForeignKey(
         'common.Nationality',
@@ -23,8 +27,6 @@ class Artist(AbstractArtist, NextPreviousMixin):
         blank=True,
         related_name='albums_artists',
     )
-
-    name_first = FirstLetterField('name')
 
     objects = ArtistManager()
 
