@@ -356,7 +356,9 @@ class Recording(models.Model):
         return type(self).objects.filter(work=self.work)
 
     def get_tracks(self):
-        return MusicFile.objects.filter(movement__recording=self).order_by('movement')
+        return MusicFile.objects.filter(
+            movement__recording=self,
+        ).order_by('movement')
 
     def total_duration(self):
         # FIXME: Move to manager
