@@ -6,7 +6,6 @@ from django_yadt import YADTImageField
 
 from django.db import models
 from django.core.files import File as DjangoFile
-from django.db.models.aggregates import Sum
 
 from musicdb.common.models import AbstractArtist, MusicFile
 
@@ -101,15 +100,25 @@ class Album(models.Model, NextPreviousMixin):
         return 'albums:album', (self.artist.slug, self.slug)
 
     def get_tracks(self):
-        return MusicFile.objects.filter(track__cd__album=self). \
-            order_by('track__cd', 'track')
+        return MusicFile.objects.filter(
+            track__cd__album=self,
+        ).order_by(
+            'track__cd',
+            'track',
+        )
 
     def get_albums_tracks(self):
-        return Track.objects.filter(cd__album=self). \
-            order_by('cd__num', 'track')
+        return Track.objects.filter(
+            cd__album=self,
+        ).order_by(
+            'cd__num',
+            'track',
+        )
 
     def total_duration(self):
-        return self.get_tracks().aggregate(Sum('length')).values()[0] or 0
+        return self.get_tracks().aggregate(
+            models.Sum('length'),
+        ).values()[0] or 0
 
     def next(self):
         return super(Album, self).next(artist_id=self.artist_id)
@@ -142,20 +151,34 @@ class CD(models.Model):
         verbose_name_plural = 'CDs'
 
     def __unicode__(self):
-        return u"CD %d of %d from %s" % \
-            (self.num, self.album.cds.count(), self.album)
+        return u"CD %d of %d from %s" % (
+            self.num,
+            self.album.cds.count(),
+            self.album,
+        )
 
     def get_tracks(self):
-        return MusicFile.objects.filter(track__cd=self).order_by('track')
+        return MusicFile.objects.filter(
+            track__cd=self,
+        ).order_by(
+            'track',
+        )
 
     def total_duration(self):
-        return self.get_tracks().aggregate(Sum('length')).values()[0] or 0
+        return self.get_tracks().aggregate(
+            models.Sum('length'),
+        ).values()[0] or 0
 
 class Track(models.Model):
     title = models.CharField(max_length=250)
+
     cd = models.ForeignKey(CD, related_name='tracks')
     num = models.IntegerField()
-    music_file = models.OneToOneField('common.MusicFile', related_name='track')
+
+    music_file = models.OneToOneField(
+        'common.MusicFile',
+        related_name='track',
+    )
 
     class Meta:
         ordering = ('num',)
