@@ -168,9 +168,9 @@ class Track(models.Model):
         album = self.cd.album
 
         return {
-            'title': self.title,
-            'album': unicode(album.title),
-            'artist': unicode(album.artist.long_name()),
-            'tracknumber': str(self.num),
-            'date': str(album.year) or '',
+            'date': u"%s" % (album.year or ''),
+            'title': u"%s" % self.title,
+            'album': u"%s" % album.title,
+            'artist': u"%s" % album.artist.long_name(),
+            'tracknumber': "%d" % self.num,
         }
