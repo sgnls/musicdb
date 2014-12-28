@@ -11,7 +11,7 @@ class TestCase(TestCase):
         )
 
     def assertStatusCode(self, status_code, fn, urlconf, *args, **kwargs):
-        if kwargs.pop('login', False):
+        if kwargs.pop('login', True):
             self.client.login(username='testuser', password='password')
 
         response = fn(reverse(urlconf, args=args, kwargs=kwargs))
