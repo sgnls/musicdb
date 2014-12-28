@@ -36,7 +36,7 @@
       <ol>
         {% for track in cd.tracks.select_related.all %}
           <li>
-            <a class="track" href="{% url common:play-music-file track.music_file_id %}" data-url="{{ settings.MEDIA_LOCATION_HTTP }}/{{ track.music_file.file.location }}">{{ track }}</a>
+            <a class="track" href="{% url common:play-music-file track.music_file_id %}">{{ track }}</a>
             <span class="text-muted">{{ track.music_file.length|duration }}</span>
           </li>
         {% endfor %}
