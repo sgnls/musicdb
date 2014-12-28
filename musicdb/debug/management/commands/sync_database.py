@@ -1,7 +1,6 @@
 import getpass
+import optparse
 import subprocess
-
-from optparse import make_option
 
 from django.db import models
 from django.conf import settings
@@ -52,19 +51,19 @@ def psql(stdin, database=None, sudo=True, stop_on_error=True, gzip=False):
 
 class Command(NoArgsCommand):
     option_list = NoArgsCommand.option_list + (
-        make_option(
+        optparse.make_option(
             '--database-name',
             dest='database_name',
             help="Database name. [default: %default]",
             default='musicdb',
         ),
-        make_option(
+        optparse.make_option(
             '--hostname',
             dest='hostname',
             help="Remote host to sync from [default: %default]",
             default='tallis.chris-lamb.co.uk',
         ),
-        make_option(
+        optparse.make_option(
             '--no-data',
             dest='no_data',
             action='append',
