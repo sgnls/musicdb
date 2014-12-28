@@ -389,11 +389,11 @@ class Movement(models.Model):
         title += u' (%s)' % self.recording.short_name()
 
         return {
-            'title': title,
-            'artist': unicode(self.recording.work.composer),
-            'tracknumber': str(self.num),
-            'genre': 'Classical',
             'date': str(self.recording.year) or '',
+            'title': title,
+            'artist': u"%s" % self.recording.work.composer,
+            'genre': 'Classical',
+            'tracknumber': str(self.num),
         }
 
 class Performance(models.Model):
