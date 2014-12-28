@@ -304,7 +304,6 @@ class Key(models.Model):
         unique_together = (('name', 'minor'),)
 
     def __unicode__(self):
-        #val = self.name.replace('-flat', u'♭').replace('-sharp', u'♯') # breaks slugs
         val = self.name
 
         if self.minor:
