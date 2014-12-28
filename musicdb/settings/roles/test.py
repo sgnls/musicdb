@@ -7,3 +7,7 @@ DATABASES = {
        'USER': '',
     },
 }
+
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.SHA1PasswordHasher',
+)
