@@ -341,9 +341,9 @@ class Recording(models.Model):
         return '%s#%s' % (self.work.get_absolute_url(), self.slug)
 
     def short_name(self):
-        return ", ".join([
+        return ", ".join(
             x.get_subclass().short_name() for x in self.performances.all()
-        ])
+        )
 
     def slug_name(self):
         ret = unicode(self.short_name())
