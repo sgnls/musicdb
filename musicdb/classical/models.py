@@ -9,7 +9,7 @@ from django.db import models
 from musicdb.common.models import AbstractArtist, MusicFile
 
 from musicdb.db.mixins import Mergeable, NextPreviousMixin
-from musicdb.db.fields import MySlugField, DenormalisedCharField, DirNameField
+from musicdb.db.fields import MySlugField, DenormalisedCharField
 
 from .managers import ArtistManager, WorkManager, RecordingManager
 
@@ -37,8 +37,6 @@ class Artist(AbstractArtist, NextPreviousMixin):
         null=True,
         related_name='classical_artists',
     )
-
-    dir_name = DirNameField('__unicode__')
 
     objects = ArtistManager()
 
