@@ -39,7 +39,7 @@
             <a class="track" href="{% url common:play-music-file track.music_file_id %}">
               {{ track.title }}
             </a>
-            <span class="text-muted">{{ track.music_file.length|duration }}</span>
+            <small class="text-muted">{{ track.music_file.length|duration }}</small>
           </li>
         {% endfor %}
       </ol>
