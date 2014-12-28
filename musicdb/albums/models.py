@@ -74,7 +74,10 @@ class Album(models.Model, NextPreviousMixin):
 
     slug = MySlugField('title')
 
-    created = models.DateTimeField(default=datetime.datetime.utcnow, null=True)
+    created = models.DateTimeField(
+        null=True,
+        default=datetime.datetime.utcnow,
+    )
 
     objects = AlbumManager()
 
