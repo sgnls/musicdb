@@ -1,3 +1,4437 @@
+commit c56219d223af5145c171defb9fa1426e1dd022f3
+Merge: e213bc0 901ece7
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Jan 8 17:13:49 2015 -0800
+
+    Merge pull request #15524 from twbs/masonry
+    
+    Add pointer to Masonry (& similar) in the Thumbnail docs
+
+commit 901ece7996e4573daef66f265ea7c60bbcedd77e
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Aug 1 13:51:28 2014 -0700
+
+    add pointer to Masonry in the thumbnail docs
+
+ docs/_includes/components/thumbnails.html | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e213bc0cccf236243210830626c415be48aed6f1
+Author: Bootstrap's Grunt bot <twbs-grunt@users.noreply.github.com>
+Date:   Thu Jan 8 02:01:51 2015 +0000
+
+    automatic grunt dist
+
+ dist/css/bootstrap-theme.css.map | 2 +-
+ dist/css/bootstrap.css.map       | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 259245113a65fbc46aaf9a4ef0c3bf29df058734
+Merge: e16e11f 050babd
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Jan 7 17:51:32 2015 -0800
+
+    Merge pull request #15463 from twbs/bump-less
+    
+    Bump grunt-contrib-less to ~1.0.0
+
+commit 050babda0d18bfbf6f25fa31ffd2447dcce59844
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 29 12:11:22 2014 -0800
+
+    update shrinkwrap
+
+ test-infra/npm-shrinkwrap.json | 198 +++++++++++++++--------------------------
+ 1 file changed, 73 insertions(+), 125 deletions(-)
+
+commit b24e6cf2edb064046e648e0eb5ac109bf577a07e
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 29 12:09:39 2014 -0800
+
+    bump grunt-contrib-less to ~1.0.0
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e16e11fc433153c36d5ee5a96631fa5aa7714c25
+Merge: 9e01e30 9db1de2
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Wed Jan 7 01:13:59 2015 +0200
+
+    Merge pull request #15504 from twbs/jquery
+    
+    Update jQuery to v1.11.2.
+
+commit 9db1de2a3aa734f41d9f5d0d1c0dfac5b77f4874
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Tue Jan 6 12:49:31 2015 +0200
+
+    Update jQuery to v1.11.2.
+
+ docs/_includes/footer.html                    | 2 +-
+ docs/_includes/getting-started/template.html  | 2 +-
+ docs/examples/blog/index.html                 | 2 +-
+ docs/examples/carousel/index.html             | 2 +-
+ docs/examples/cover/index.html                | 2 +-
+ docs/examples/dashboard/index.html            | 2 +-
+ docs/examples/jumbotron/index.html            | 2 +-
+ docs/examples/navbar-fixed-top/index.html     | 2 +-
+ docs/examples/navbar-static-top/index.html    | 2 +-
+ docs/examples/navbar/index.html               | 2 +-
+ docs/examples/non-responsive/index.html       | 2 +-
+ docs/examples/offcanvas/index.html            | 2 +-
+ docs/examples/starter-template/index.html     | 2 +-
+ docs/examples/sticky-footer-navbar/index.html | 2 +-
+ docs/examples/theme/index.html                | 2 +-
+ docs/examples/tooltip-viewport/index.html     | 2 +-
+ js/tests/vendor/jquery.min.js                 | 9 +++++----
+ 17 files changed, 21 insertions(+), 20 deletions(-)
+
+commit 9e01e308ca694a11eacfc8d8f829b7a100fda437
+Merge: 4d15438 b3b7ece
+Author: Chris Rebert <github@rebertia.com>
+Date:   Tue Jan 6 14:17:04 2015 -0800
+
+    Merge pull request #15507 from twbs/shrinkwrap
+    
+    update shrinkwrap
+
+commit b3b7ece1742147df82af260143c94eec96eddcc7
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Jan 6 13:36:39 2015 -0800
+
+    update shrinkwrap
+
+ test-infra/npm-shrinkwrap.json | 326 ++++++++++++++++++++++-------------------
+ 1 file changed, 179 insertions(+), 147 deletions(-)
+
+commit 4d15438c4e3bc5cddee0b23426d5f8ec5acc8111
+Merge: 0841028 796634e
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Jan 5 16:40:05 2015 -0800
+
+    Merge pull request #15499 from twbs/bumps
+    
+    Update devDependencies
+
+commit 796634eb95099d229ba0e95222cf91c9d9b53ff2
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Jan 5 16:33:35 2015 -0800
+
+    update shrinkwrap
+    
+    [skip sauce]
+
+ test-infra/npm-shrinkwrap.json | 380 ++---------------------------------------
+ 1 file changed, 14 insertions(+), 366 deletions(-)
+
+commit 7f65b71cc3f7639eab7ca1f06388f16db2c630c5
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Jan 5 16:29:52 2015 -0800
+
+    bump grunt-banner to ~0.3.0
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e0b5de6ab12f181247108529b8e7a473eabe3b39
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Jan 5 16:29:17 2015 -0800
+
+    bump grunt-autoprefixer to ~2.1.0
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 08410280091ff1ef77e110c1e5e29eb8f3653a84
+Merge: 19222bf 9d0f6c0
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Jan 5 12:48:21 2015 -0800
+
+    Merge pull request #15495 from twbs/sauce-maxPollRetries
+    
+    Sauce testing: set maxPollRetries to 4 for increased robustness
+
+commit 9d0f6c05f423347356876d5a5478ef4b74eacd24
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Jan 5 12:40:43 2015 -0800
+
+    Sauce testing: set maxPollRetries to 4 for increased robustness
+
+ Gruntfile.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 19222bfe8962c9987aa96d7bdeb0b5f2ce1505ba
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sat Jan 3 22:05:49 2015 -0800
+
+    overview.html: add missing <p>
+
+ docs/_includes/js/overview.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 57260f16b364e4cb559cd65159197fd1cf5248f7
+Author: Bootstrap's Grunt bot <twbs-grunt@users.noreply.github.com>
+Date:   Thu Jan 1 19:02:43 2015 +0000
+
+    automatic grunt dist
+
+ dist/js/bootstrap.js | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+commit 401889a8dc7d530d9be3b6b005afe03856089437
+Merge: 548d46e 576230b
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Thu Jan 1 10:35:19 2015 -0800
+
+    Merge pull request #15477 from ZDroid/2015
+    
+    Happy New Year
+
+commit 548d46eb8b88f3876ec325be8500080c78934925
+Author: Bootstrap's Grunt bot <twbs-grunt@users.noreply.github.com>
+Date:   Thu Jan 1 03:01:40 2015 +0000
+
+    automatic grunt dist
+
+ dist/css/bootstrap.css.map | 2 +-
+ dist/css/bootstrap.min.css | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 576230b92ae5a082eb8e058dc2fab7c67c99bd19
+Author: Zlatan Vasović <legospace9876@gmail.com>
+Date:   Thu Jan 1 01:23:48 2015 +0100
+
+    Happy New Year :santa:
+
+ Gruntfile.js     | 2 +-
+ LICENSE          | 2 +-
+ README.md        | 2 +-
+ js/affix.js      | 2 +-
+ js/alert.js      | 2 +-
+ js/button.js     | 2 +-
+ js/carousel.js   | 2 +-
+ js/collapse.js   | 2 +-
+ js/dropdown.js   | 2 +-
+ js/modal.js      | 2 +-
+ js/popover.js    | 2 +-
+ js/scrollspy.js  | 2 +-
+ js/tab.js        | 2 +-
+ js/tooltip.js    | 2 +-
+ js/transition.js | 2 +-
+ 15 files changed, 15 insertions(+), 15 deletions(-)
+
+commit df38cdad32cfb3639c30caa5574688c462235441
+Merge: c328b62 511f37d
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Dec 31 16:12:38 2014 -0800
+
+    Merge pull request #15472 from twbs/address-15288
+    
+    Document that responsive tables use `overflow-y: hidden`
+
+commit c328b6254ff6572a7835244e7c6c7db78330a554
+Merge: 45f5841 4f1000d
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Dec 31 16:11:42 2014 -0800
+
+    Merge pull request #15473 from twbs/autoprefixer-docs
+    
+    Document that Autoprefixer is required
+
+commit 45f58417853f48de2448daf379227f6480b28dd5
+Merge: 6c383c5 35073fc
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Dec 31 16:11:04 2014 -0800
+
+    Merge pull request #15464 from twbs/address-15419
+    
+    Address #15419
+
+commit 6c383c5102011102d0d5157f6e37d7520f103ae7
+Author: Bootstrap's Grunt bot <twbs-grunt@users.noreply.github.com>
+Date:   Thu Jan 1 00:02:16 2015 +0000
+
+    automatic grunt dist
+
+ dist/css/bootstrap-theme.css     | 2 +-
+ dist/css/bootstrap-theme.min.css | 2 +-
+ dist/css/bootstrap.css           | 2 +-
+ dist/css/bootstrap.min.css       | 2 +-
+ dist/js/bootstrap.js             | 2 +-
+ dist/js/bootstrap.min.js         | 2 +-
+ 6 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 1b8f00b3893cdb503decc87802440df495f4d3cb
+Merge: b4ac87c 13d7cc7
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Wed Dec 31 19:17:46 2014 +0200
+
+    Merge pull request #15292 from twbs/customize-icon
+    
+    Use a glyphicon instead of the unicode character.
+
+commit b4ac87c901edbd4418336ad56f583bb3d4de7b08
+Merge: 714cd6b 1b37542
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Wed Dec 31 09:15:36 2014 -0800
+
+    Merge pull request #15474 from NateEag/patch-1
+    
+    Remove extra word from disabling-responsiveness.html
+
+commit 1b375420fa1491f724c6c5a685b61bb93b803f05
+Author: Nate Eagleson <nate@nateeag.com>
+Date:   Tue Dec 30 21:48:34 2014 -0500
+
+    Remove extra word  from disabling-responsiveness.html
+
+ docs/_includes/getting-started/disabling-responsiveness.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4f1000d77242f3cd9e363da9db9021cb1a227e59
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Dec 30 18:33:40 2014 -0800
+
+    Document that Autoprefixer is required
+    
+    Closes #14937
+    [skip sauce]
+
+ docs/_includes/getting-started/download.html | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 511f37dc049e99256838894b311b8847dba2c1c5
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Dec 30 18:16:16 2014 -0800
+
+    Document that responsive tables use `overflow-y: hidden`
+    
+    Closes #15288
+    
+    [skip sauce]
+
+ docs/_includes/css/tables.html | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 714cd6b60891036486c1102be1b2b3cbe67bdb02
+Merge: c3e6111 5ccfd98
+Author: Chris Rebert <github@rebertia.com>
+Date:   Tue Dec 30 13:32:44 2014 -0800
+
+    Merge pull request #15470 from twbs/document-version
+    
+    Document the VERSION property of the jQuery plugins;
+
+commit 5ccfd98c31c1a53f89a71f98307e1b52fa451988
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Dec 30 13:03:36 2014 -0800
+
+    Document the VERSION property of the jQuery plugins; fixes #15202
+    
+    [skip sauce]
+
+ docs/_includes/js/overview.html    | 6 ++++++
+ docs/_includes/nav/javascript.html | 1 +
+ 2 files changed, 7 insertions(+)
+
+commit c3e6111eef4778e14d97cb932b7d1ee13443b5c0
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Tue Dec 16 08:00:04 2014 +0100
+
+    Switch to shields.io for badges in README
+    
+    Closes #15380
+    [ci skip]
+
+ README.md | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 5a35555a72e96e4083e2be559b12d75e8095a1c6
+Author: Bootstrap's Grunt bot <twbs-grunt@users.noreply.github.com>
+Date:   Tue Dec 30 12:31:08 2014 +0000
+
+    automatic grunt dist
+
+ dist/css/bootstrap-theme.min.css |  2 +-
+ dist/css/bootstrap.min.css       |  2 +-
+ dist/js/bootstrap.js             | 28 ++++++++--------------------
+ dist/js/bootstrap.min.js         |  4 ++--
+ 4 files changed, 12 insertions(+), 24 deletions(-)
+
+commit 2166f238d7c01d35d663b762bb770227df50f65e
+Merge: b0437f8 c14ff80
+Author: Chris Rebert <github@rebertia.com>
+Date:   Tue Dec 30 00:12:38 2014 -0800
+
+    Merge pull request #15456 from twbs/bump-clean-css
+    
+    Bump grunt-contrib-cssmin to ~0.11.0
+
+commit 13d7cc7d4c0bd73a4875aa8dc65f52506431937f
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Tue Dec 2 13:31:52 2014 +0200
+
+    Use a glyphicon instead of the unicode character.
+
+ docs/assets/css/docs.min.css | 2 +-
+ docs/assets/css/src/docs.css | 6 ++++--
+ docs/customize.html          | 6 ++++--
+ 3 files changed, 9 insertions(+), 5 deletions(-)
+
+commit b0437f8ea961c0ff80c4fde35f3035229ac3c667
+Merge: 32cb071 adaabab
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 29 20:43:13 2014 -0800
+
+    Merge pull request #15466 from twbs/revert-14189
+    
+    Revert #14189 to fix #15168
+
+commit adaabab81bcc7da1c832ecdab79db9d87f04e5b2
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 29 20:03:27 2014 -0800
+
+    Revert "Allow multiple delegated tooltip selectors on a node"
+    
+    This reverts commit 1b3237629a316af41945e20837cf3a332798b264.
+    This reverts PR #14189 because it caused major regressions.
+    
+    Fixes #15168.
+    
+    We'll try to revisit #14167's feature request in Bootstrap v4.
+    
+    [skip validator]
+
+ js/popover.js            | 14 ++++----------
+ js/tests/unit/popover.js | 30 ------------------------------
+ js/tests/unit/tooltip.js | 31 -------------------------------
+ js/tooltip.js            | 14 ++++----------
+ 4 files changed, 8 insertions(+), 81 deletions(-)
+
+commit 32cb0715949e5ab20716121234d858e51f3ff386
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 29 18:34:35 2014 -0800
+
+    Remove semicolons from #15425 because fat
+
+ js/tests/unit/popover.js | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 35073fc1287654caa657fb17a2ac97103717df7a
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 29 17:00:21 2014 -0800
+
+    grunt build-glyphicons-data
+
+ docs/_data/glyphicons.yml | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 57a64be74970a6652b65168ebc7dd88c7f9093d8
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 29 17:00:04 2014 -0800
+
+    Minor fix to Glyphicons data generator
+
+ grunt/bs-glyphicons-data-generator.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 96e108f2b27a5a7f6ffc72dfd083171d07c8aa70
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 29 16:54:29 2014 -0800
+
+    Revert "remove Glyphicons docs autogeneration from Grunt"
+    
+    This reverts commit 36b530892600648a6d6a24dd2520f84839cc0ace.
+    This reverts PR #14065.
+    
+    Turns out Glyphicons is more active than we'd thought.
+
+ Gruntfile.js                          |  5 ++++-
+ grunt/bs-glyphicons-data-generator.js | 41 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 45 insertions(+), 1 deletion(-)
+
+commit ad138ed885626280be7e9c55b1719b1282e73817
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 29 16:44:33 2014 -0800
+
+    Disable .glyphicon-door & .glyphicon-key for the time being
+    
+    Closes #15419
+    Refs #10106
+
+ dist/css/bootstrap.css |  6 ------
+ less/glyphicons.less   | 10 ++++++++--
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+commit 9dc3cf7f19f8b24367e0db005e2bc3ba8a39fd96
+Merge: e4c7a92 27bfef5
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 29 16:22:37 2014 -0800
+
+    Merge pull request #15425 from twbs/regression-test-14244
+    
+    Add regression test for #14244.
+
+commit 27bfef5b35f3e12af8beb7140e3b19bb6a3b3a75
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 22 14:02:31 2014 -0800
+
+    Add regression test for #14244.
+    
+    Special thanks to @programcsharp
+    
+    [skip validator]
+
+ js/tests/unit/popover.js | 38 ++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 38 insertions(+)
+
+commit e4c7a92c76865545f76a84d75cfa19024d5001a5
+Merge: f149e43 2ae4c0b
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 29 12:11:51 2014 -0800
+
+    Merge pull request #15462 from twbs/bump-jscs
+    
+    bump grunt-jscs to ~1.1.0
+
+commit 2ae4c0b03f7fde62f99ea8324859fa60cd890163
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 29 12:02:32 2014 -0800
+
+    JSCS: enable requireSpaceBetweenArguments
+    
+    New rule added in JSCS v1.9.0
+    Our JS already complies with this.
+
+ js/.jscsrc | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 9e66526766ca0d1ca639a53dd6e830efdb2d83c0
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 29 12:00:47 2014 -0800
+
+    update shrinkwrap
+
+ test-infra/npm-shrinkwrap.json | 20 ++++++++++++++++----
+ 1 file changed, 16 insertions(+), 4 deletions(-)
+
+commit 995c7683307b2e39d8505989615967b5d7843caa
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 29 11:57:56 2014 -0800
+
+    bump grunt-jscs to ~1.1.0
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c14ff80f01dff57bed749e400def9e83317bd10d
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 20:29:42 2014 -0800
+
+    update shrinkwrap
+    
+    [skip sauce]
+    [skip validator]
+
+ test-infra/npm-shrinkwrap.json | 116 ++++++++++++++++++++---------------------
+ 1 file changed, 57 insertions(+), 59 deletions(-)
+
+commit f91071bc1bb0cb0999739d62dd46d18727312165
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 19:58:29 2014 -0800
+
+    Bump grunt-contrib-cssmin to ~0.11.0
+
+ Gruntfile.js | 2 +-
+ package.json | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit f149e4309add96394ed072265cca84aabd623649
+Merge: ac78d16 d6ab673
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sun Dec 28 19:53:35 2014 -0800
+
+    Merge pull request #15455 from twbs/bump-uglify
+    
+    bump grunt-contrib-uglify to ~0.7.0
+
+commit d6ab6731e67e25d93e263bb70393071f5b3389ea
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 19:49:12 2014 -0800
+
+    update shrinkwrap
+    
+    [skip sauce]
+    [skip validator]
+
+ test-infra/npm-shrinkwrap.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 139226157e43541f90991e1d4cf7b6cd3f4dbf07
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 19:47:46 2014 -0800
+
+    bump grunt-contrib-uglify to ~0.7.0
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ac78d16e41de8fe7a221576e098dfd0e2abf8b0e
+Merge: 120b1f1 a462676
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sun Dec 28 19:46:23 2014 -0800
+
+    Merge pull request #15454 from twbs/bump-compress
+    
+    bump grunt-contrib-compress to ~0.13.0
+
+commit a4626760750b14cebb19efc7010833f05491f1ed
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 19:37:16 2014 -0800
+
+    update shrinkwrap
+    
+    [skip sauce]
+    [skip validator]
+
+ test-infra/npm-shrinkwrap.json | 62 +++++++++++++++++++++++++++++++++++-------
+ 1 file changed, 52 insertions(+), 10 deletions(-)
+
+commit f5dad0fa39f93f467e771337d159b5bcae641afe
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 18:59:49 2014 -0800
+
+    bump grunt-contrib-compress to ~0.13.0
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 120b1f164b6c0ac813d36bf5af0fc5eedb55d126
+Merge: 4484700 109e4c7
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sun Dec 28 18:58:36 2014 -0800
+
+    Merge pull request #15453 from twbs/bump-jade
+    
+    bump grunt-contrib-jade to ~0.14.0
+
+commit 109e4c7c163465c80ba3d2996322ebce7c9f77c2
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 18:55:50 2014 -0800
+
+    update shrinkwrap
+    
+    [skip sauce]
+
+ test-infra/npm-shrinkwrap.json | 132 +++++++++--------------------------------
+ 1 file changed, 28 insertions(+), 104 deletions(-)
+
+commit b282e8a01fed462923de26f4568933611aa4e983
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 18:53:55 2014 -0800
+
+    bump grunt-contrib-jade to ~0.14.0
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4484700d10fca0e3ccaa9fe6727f49575797f305
+Merge: 688780e 6099bfd
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sun Dec 28 18:50:51 2014 -0800
+
+    Merge pull request #15452 from twbs/bump-load-grunt-tasks
+    
+    bump load-grunt-tasks to ~2.0.0
+
+commit 6099bfdea87fe70d61a13ea0627056e7998ea84d
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 18:45:56 2014 -0800
+
+    update shrinkwrap
+    
+    [skip sauce]
+    [skip validator]
+
+ test-infra/npm-shrinkwrap.json | 66 ++++++++++++++----------------------------
+ 1 file changed, 21 insertions(+), 45 deletions(-)
+
+commit 93cd02cd29bf750343429a0620e02008b3d7e1e9
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 18:43:47 2014 -0800
+
+    bump load-grunt-tasks to ~2.0.0
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 688780eb07b00533ebffe1302e5c85cc0f154002
+Merge: 977646d 952f7e9
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sun Dec 28 18:40:44 2014 -0800
+
+    Merge pull request #15451 from twbs/bump-remarkable
+    
+    bump remarkable to ~1.6.0
+
+commit 952f7e9a4e7b455701f46cbdf7ae09f7918c12ad
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 18:32:02 2014 -0800
+
+    update shrinkwrap
+
+ test-infra/npm-shrinkwrap.json | 276 +++++++++++++++++++++++------------------
+ 1 file changed, 157 insertions(+), 119 deletions(-)
+
+commit 28790491632befc63fb952dd79aab042d641176b
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Dec 28 18:25:49 2014 -0800
+
+    bump remarkable to ~1.6.0
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 977646d7a0cfd3453fb716af1bc0d458e2b0fd5d
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Mon Dec 22 19:48:48 2014 -0800
+
+    grunt
+
+ docs/assets/js/customize.min.js       |  2 +-
+ docs/assets/js/raw-files.min.js       |  2 +-
+ docs/dist/css/bootstrap-theme.css.map |  2 +-
+ docs/dist/css/bootstrap.css           | 12 ++++++++++--
+ docs/dist/css/bootstrap.css.map       |  2 +-
+ docs/dist/css/bootstrap.min.css       |  2 +-
+ 6 files changed, 15 insertions(+), 7 deletions(-)
+
+commit b615bd938bccbebb7dc5f89081f4fa024784bf1f
+Merge: c41970c 3668bde
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Mon Dec 22 19:30:51 2014 -0800
+
+    Merge branch 'master' of https://github.com/twbs/bootstrap
+    
+    Conflicts:
+    	dist/css/bootstrap.css.map
+
+commit c41970c5797cd1c3b61a5396031a3258c9c07705
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Mon Dec 22 19:28:29 2014 -0800
+
+    Fixes #15422: Alternate fix for temporal input sizing in input groups
+
+ dist/css/bootstrap.css     | 12 ++++++++++--
+ dist/css/bootstrap.css.map |  2 +-
+ dist/css/bootstrap.min.css |  2 +-
+ less/forms.less            | 22 ++++++++++------------
+ 4 files changed, 22 insertions(+), 16 deletions(-)
+
+commit 3668bde098e1bce289ba313119fe3cf05d01825b
+Author: Bootstrap's Grunt bot <twbs-grunt@users.noreply.github.com>
+Date:   Tue Dec 23 03:20:44 2014 +0000
+
+    automatic grunt dist
+
+ dist/css/bootstrap-theme.css.map | 2 +-
+ dist/css/bootstrap.css.map       | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit c4a23cc04063443a8f02c5451c3d30a81728caba
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Mon Dec 22 19:18:26 2014 -0800
+
+    grunt
+
+ docs/assets/js/customize.min.js | 2 +-
+ docs/assets/js/raw-files.min.js | 2 +-
+ docs/dist/css/bootstrap.css.map | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 5e8dd7d438fbcd3479b1a18d8f8d76f071c43843
+Merge: fa08c93 75ec739
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 22 19:10:23 2014 -0800
+
+    Merge pull request #15428 from twbs/browser-bugs
+    
+    add/update/summarize browser bug refs in Less comments
+
+commit fa08c932cd72448a42eb3b2283478c39bffc0373
+Merge: b61e4dd 3406a5c
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Mon Dec 22 19:03:28 2014 -0800
+
+    Merge pull request #15426 from twbs/hide-holder
+    
+    Remove holder.js references from syntax-highlighted example HTML
+
+commit 75ec7393ec2940cb1f015dc2d002328833ad3ef8
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 22 17:03:45 2014 -0800
+
+    Add summary of #11526 to explanatory Less comment
+    
+    [skip sauce]
+    [skip validator]
+
+ less/mixins/vendor-prefixes.less | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d84f726da4f55434de853202961310d153f35739
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 22 17:02:29 2014 -0800
+
+    IE11 & current Firefox are still affected.
+    
+    Refs #11623
+
+ less/tables.less | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 15c9c3aef7f047c9cce45fd33ada799e99fbd390
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 22 16:54:50 2014 -0800
+
+    add more refs to browser-related bugs in Less comments
+
+ less/carousel.less | 1 +
+ less/close.less    | 1 +
+ less/forms.less    | 2 +-
+ less/theme.less    | 4 ++--
+ 4 files changed, 5 insertions(+), 3 deletions(-)
+
+commit b61e4dd671830b803053c0da39f6fb975ff16a20
+Author: Bootstrap's Grunt bot <twbs-grunt@users.noreply.github.com>
+Date:   Mon Dec 22 23:10:45 2014 +0000
+
+    automatic grunt dist
+
+ dist/css/bootstrap.css.map | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e5051e76feaeafb0b999b0b2662f0c2669c48d10
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 22 15:02:34 2014 -0800
+
+    Reference iOS Safari temporal input bug in explanatory Less comment
+    
+    Refs #11266, #13098, #15415
+    
+    [skip sauce]
+    [skip validator]
+
+ less/forms.less | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f2a0a78b179d3730c9e49e661ff0d6d87e67f58f
+Merge: bb9118f c275850
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 22 14:59:35 2014 -0800
+
+    Merge pull request #15427 from twbs/defunct-bug-1969
+    
+    Remove reference to old fixed WebKit bug in Less comment.
+
+commit c27585098278c3629377de5fc5948e1d8fddb9ae
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 22 14:57:40 2014 -0800
+
+    Remove reference to old fixed WebKit bug in Less comment.
+    
+    Per https://github.com/twbs/bootstrap/issues/1969#issuecomment-36971094
+    
+    [skip sauce]
+    [skip validator]
+
+ less/forms.less | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 3406a5c97a28810844e8553cc9d3bdef7712115f
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 22 14:52:04 2014 -0800
+
+    Remove holder.js references from syntax-highlighted example HTML
+    
+    Our use of Holder.js in the docs is a mere implementation detail.
+    Don't want to confuse people into thinking Holder.js
+    is somehow required by the Thumbnail component.
+    
+    [skip sauce]
+
+ docs/_includes/components/thumbnails.html | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit bb9118f03a00b33f9859319d1237cdf13ae3ee4d
+Merge: 28d847a dc7ab34
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 22 12:28:26 2014 -0800
+
+    Merge pull request #15424 from twbs/chrome-438064-fixed
+    
+    Remove #14972's entry from Wall of Browser bugs
+
+commit dc7ab34cc9f857bcc059b584d67dea40548a3d56
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 22 12:14:44 2014 -0800
+
+    http://crbug.com/438064 has been fixed
+    
+    Refs #14972
+    
+    [skip sauce]
+    [skip validator]
+
+ docs/_data/browser-bugs.yml | 11 -----------
+ 1 file changed, 11 deletions(-)
+
+commit 28d847a1e03005403a0bc01e3328edf7598656cd
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Dec 20 23:05:18 2014 -0800
+
+    grunt
+
+ dist/fonts/glyphicons-halflings-regular.woff2      | Bin 0 -> 18028 bytes
+ docs/assets/css/docs.min.css                       |   2 +-
+ docs/assets/css/src/docs.css                       |   4 ++--
+ docs/assets/js/raw-files.min.js                    |   4 ++--
+ docs/dist/css/bootstrap.css                        |   8 ++++++--
+ docs/dist/css/bootstrap.css.map                    |   2 +-
+ docs/dist/css/bootstrap.min.css                    |   2 +-
+ docs/dist/fonts/glyphicons-halflings-regular.woff2 | Bin 0 -> 18028 bytes
+ 8 files changed, 13 insertions(+), 9 deletions(-)
+
+commit 9c526bf519c21587273f3e5324ba42bc49507a3b
+Author: Bootstrap's Grunt bot <twbs-grunt@users.noreply.github.com>
+Date:   Sun Dec 21 06:20:46 2014 +0000
+
+    automatic grunt dist
+
+ dist/css/bootstrap.css     | 4 ++++
+ dist/css/bootstrap.css.map | 2 +-
+ dist/css/bootstrap.min.css | 2 +-
+ 3 files changed, 6 insertions(+), 2 deletions(-)
+
+commit 4d2f68c4376741d1b261fd172d64518662383a63
+Merge: 8777803 7551723
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Sat Dec 20 22:15:15 2014 -0800
+
+    Merge pull request #15391 from stubbornella/master
+    
+    Fixes #14990: Media bodies take up full width
+
+commit 8777803acfb364a7cf10ba809d451432a6aa0a3e
+Merge: acef81d d7d6384
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Sat Dec 20 22:12:47 2014 -0800
+
+    Merge pull request #15307 from vsn4ik/part_of_15148
+    
+    Fix part of #15148.
+
+commit acef81d900054efcff1336271931152d9c63730c
+Author: Bootstrap's Grunt bot <twbs-grunt@users.noreply.github.com>
+Date:   Sat Dec 20 02:20:44 2014 +0000
+
+    automatic grunt dist
+
+ dist/css/bootstrap.css.map | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b8844f639fcddb2ef70758ad4b0dcf89f9792d73
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Dec 19 18:19:18 2014 -0800
+
+    fix "propertes" typos in comments
+
+ less/popovers.less | 2 +-
+ less/tooltip.less  | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit cde3093351d9d0923c7f4c07dede33ca19de30cb
+Merge: 46e059e 43b3c9d
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Dec 19 17:16:17 2014 -0800
+
+    Merge pull request #15415 from twbs/webkit-bug-139848
+    
+    Add Wall of Browser Bugs entry for #11266, #13098
+
+commit 43b3c9d0a8ca85820ad0ad6d5e01a140106b54d4
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Dec 19 17:13:13 2014 -0800
+
+    Add Wall of Browser Bugs entry for #11266, #13098
+    
+    [skip sauce]
+
+ docs/_data/browser-bugs.yml | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit 46e059e9d72b09479fe6b4c6e25d273d4ed0f3cf
+Merge: 6fe9cd9 e1484cc
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Dec 18 18:30:08 2014 -0800
+
+    Merge pull request #15407 from twbs/close-15205
+    
+    Add Wall of Browser Bugs entry for #15205
+
+commit e1484cc65df07886bddffc3f6b65ff5fb7b39fdf
+Author: Chris Rebert <code@rebertia.com>
+Date:   Thu Dec 18 18:28:13 2014 -0800
+
+    Add Wall of Browser Bugs entry for #15205
+    
+    Closes #15205
+
+ docs/_data/browser-bugs.yml | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit caed2c03035af2fb291e1e391c7cbb551b24cc87
+Author: Chris Rebert <code@rebertia.com>
+Date:   Thu Dec 18 18:24:02 2014 -0800
+
+    group Safari browser bugs by OS
+
+ docs/_data/browser-bugs.yml | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit 6fe9cd9fef3e0960d0ef8484dea7aecd0880de84
+Merge: 8deda61 f73b341
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Dec 17 13:14:14 2014 -0800
+
+    Merge pull request #15395 from twbs/firefox-customizer-warning
+    
+    Add warning to Customizer about Firefox bug
+
+commit f73b341639cebe9bce92c7edcadaa90fd1bbf1a8
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Dec 17 13:10:47 2014 -0800
+
+    Add warning to Customizer about Firefox bug; refs #15016
+    
+    [skip sauce]
+
+ docs/customize.html | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 75517230540feabc270ff089c0008380a6dc0c37
+Author: Nicole Sullivan <nsullivan@pivotal.io>
+Date:   Wed Dec 17 11:19:06 2014 -0500
+
+    Fixes #14990: Media bodies take up full width
+    
+    Signed-off-by: Beatrice Peng <bpeng@pivotal.io>
+
+ less/media.less | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 8deda6116f8f72b34ee46cd43c083aad7e13e406
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 15 16:25:43 2014 -0800
+
+    Port c66e3029df84f55a31f785 over from hosted docs
+
+ docs/customize.html | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit e41127efe4f9f9acffe023a70a749a9cd8c8b977
+Merge: d6a95b7 e674ea5
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 15 13:19:35 2014 -0800
+
+    Merge pull request #15373 from twbs/doc-15340
+    
+    Add docs for #15340
+
+commit d6a95b72a039581dea9bb2dc1d669d7d2d29cf66
+Merge: 4945e37 35bced0
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Mon Dec 15 12:44:04 2014 -0800
+
+    Merge branch 'master' of https://github.com/twbs/bootstrap
+
+commit e674ea553d13429e51044d46ccc6908c341c7fe2
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Dec 15 11:54:50 2014 -0800
+
+    Add docs for #15340
+    
+    border-radius CSS property doesn't affect <select>s in some browsers.
+    Hence, @input-border-radius doesn't affect <select class="form-control"> in some browsers.
+    Closes #15340.
+    
+    [skip sauce]
+    [skip validator]
+
+ less/variables.less | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 35bced0308de50036d1bf796bd4e5998463fcaef
+Merge: 181f4ae 9e5697a
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 15 08:35:21 2014 -0800
+
+    Merge pull request #15369 from bastienmoulia/woff2
+    
+    Add woff2 font in readme.md
+
+commit 9e5697a14f96e2d8755d7302d8dc2d0974422a87
+Author: Bastien <bmoulia@gmail.com>
+Date:   Mon Dec 15 10:00:19 2014 +0100
+
+    Add woff2 font in readme.md
+
+ README.md | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 4945e370f057ef491b0197034ddedd969913b06c
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Dec 14 16:59:47 2014 -0800
+
+    fixes #15340: mention in docs that most selects can't change border-radius
+
+ docs/_includes/css/forms.html | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 181f4aebea957f364a1b42a6331d0fa4624cf5e9
+Author: Bootstrap's Grunt bot <twbs-grunt@users.noreply.github.com>
+Date:   Mon Dec 15 00:30:39 2014 +0000
+
+    automatic grunt dist
+
+ dist/css/bootstrap.css     | 2 +-
+ dist/css/bootstrap.css.map | 2 +-
+ dist/css/bootstrap.min.css | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit b7be72c86c9b8b0289438f5e97a2263ecdb1344c
+Merge: c187f77 c8855a7
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Sun Dec 14 16:28:53 2014 -0800
+
+    Merge pull request #15348 from bastienmoulia/master
+    
+    Correction in the documentation, add the brand-primary true color in comment and woff2 glyphicons
+
+commit c187f77e65d177c3a0e662b99d5bff63ee47b3db
+Merge: f11a3a3 2d41894
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Sun Dec 14 23:30:37 2014 +0000
+
+    Merge pull request #15363 from patrickhlauke/docs-nicer-skip-link
+    
+    Make skip link look less "bare bones"
+
+commit 2d41894ce51a1ae3b6e9d96eb63bf9cc3b50f64b
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Sun Dec 14 14:47:05 2014 +0000
+
+    Expand/clarify advice about skip links
+
+ docs/_includes/getting-started/accessibility.html | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit d5647e1f6277864cb776e4f958a54f6f5c30b6e6
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Sun Dec 14 14:31:02 2014 +0000
+
+    Make skip link look less "bare bones"
+    
+    Additional markup for the skip link (to ensure it has the same effective
+    width as the main content, and to provide an outline around just the
+    link text) plus some basic styles...make it look a bit more in keeping
+    with the overall look and feel of the docs.
+
+ docs/_layouts/default.html   |  2 +-
+ docs/_layouts/home.html      |  2 +-
+ docs/assets/css/src/docs.css | 20 ++++++++++++++++++++
+ 3 files changed, 22 insertions(+), 2 deletions(-)
+
+commit f11a3a31f1382f212f9255671535d87060078355
+Merge: ae579b4 8be858a
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Dec 12 14:31:30 2014 -0800
+
+    Merge pull request #15357 from twbs/update-saucelabs
+    
+    bump grunt-saucelabs to ~8.4.0
+
+commit 8be858aac43524f91e8c4bfceea302ff9a67e45d
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Dec 12 14:19:42 2014 -0800
+
+    update shrinkwrap
+    
+    [skip validator]
+
+ test-infra/npm-shrinkwrap.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 33cbf2142b477417ba9ad2f42ce8f3ad65f9aca3
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Dec 12 14:13:17 2014 -0800
+
+    bump grunt-saucelabs to ~8.4.0
+    
+    [skip validator]
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ae579b4b754f275b478440705721798670f35404
+Merge: 79af63a 0d413c5
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Dec 12 14:16:55 2014 -0800
+
+    Merge pull request #15356 from twbs/remarkable
+    
+    bump remarkable to ~1.5.0
+
+commit 0d413c5c0824223b77edf1c46309dde7fda6cf3d
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Dec 12 14:08:01 2014 -0800
+
+    update shrinkwrap
+    
+    [skip sauce]
+    [skip validator]
+
+ test-infra/npm-shrinkwrap.json | 580 +++++++++++++++++++++++++++--------------
+ 1 file changed, 380 insertions(+), 200 deletions(-)
+
+commit 74df3175b9ec9aae3d72e27a60f2faced6ac8750
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Dec 12 13:42:43 2014 -0800
+
+    bump remarkable to ~1.5.0
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 79af63aac907a340e2eb9372f250b01442c86e08
+Merge: f9db33d 5f41801
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Dec 12 13:39:04 2014 -0800
+
+    Merge pull request #15355 from twbs/fix-15279
+    
+    use npm-shrinkwrap ^200.0.0
+
+commit 5f41801083d202fda57d4581c24c6333afcb274a
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Dec 12 13:20:06 2014 -0800
+
+    update shrinkwrap
+
+ test-infra/npm-shrinkwrap.json | 252 ++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 221 insertions(+), 31 deletions(-)
+
+commit f2ecc775620dc67f97179536d4638c9af6e1f9dc
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Dec 12 12:41:51 2014 -0800
+
+    use npm-shrinkwrap ^200.0.0 ; fixes #15279
+
+ package.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f9db33d7dbc464a71d2143e3dd323fd7db47773b
+Author: Bootstrap's Grunt bot <gruntworker@getbootstrap.com>
+Date:   Fri Dec 12 19:30:34 2014 +0000
+
+    automatic grunt dist
+
+ dist/css/bootstrap.css     | 2 +-
+ dist/css/bootstrap.css.map | 2 +-
+ dist/css/bootstrap.min.css | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit b12e24e7a12c66987f0ccc83e6e02500ddd15c08
+Merge: 7e3ca05 a940e1f
+Author: Julian Thilo <bigj95t@gmail.com>
+Date:   Fri Dec 12 14:28:40 2014 +0100
+
+    Merge pull request #15351 from twbs/revert-15350-patch-1
+    
+    Revert "fix typo in carousel doc"
+
+commit a940e1fdd6408193af33ad6f28564ad031bb0095
+Author: Julian Thilo <bigj95t@gmail.com>
+Date:   Fri Dec 12 14:24:50 2014 +0100
+
+    Revert "fix typo in carousel doc"
+
+ docs/_includes/js/carousel.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c8855a7ad120b37fd9a25125f90093478656362f
+Author: Bastien <bmoulia@gmail.com>
+Date:   Fri Dec 12 14:22:41 2014 +0100
+
+    Add glyphicons fonts in woff2
+
+ docs/_includes/getting-started/whats-included.html |   3 ++-
+ fonts/glyphicons-halflings-regular.woff2           | Bin 0 -> 18028 bytes
+ less/glyphicons.less                               |   1 +
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+
+commit 7e3ca05692301a390af326529c65f6d82852216b
+Merge: cb4c3a0 f0be5e0
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Fri Dec 12 12:08:56 2014 +0000
+
+    Merge pull request #15350 from emmanuelgautier/patch-1
+    
+    fix typo in carousel doc
+
+commit f0be5e0409ae2f2614dd3251cba7f55337340819
+Author: Emmanuel Gautier <manu.gautier1394@gmail.com>
+Date:   Fri Dec 12 12:53:50 2014 +0100
+
+    fix typo
+
+ docs/_includes/js/carousel.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit bc36e312800e72f1f76515fac8977602b66f012a
+Author: Bastien <bmoulia@gmail.com>
+Date:   Fri Dec 12 11:07:16 2014 +0100
+
+    Add new brand-primary color in the doc and the true color in comment
+
+ docs/_includes/css/less.html | 2 +-
+ less/variables.less          | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 5b8ba0cb4dc68deee9ad5bb2dbbdc2718c14ea67
+Author: Bastien <bmoulia@gmail.com>
+Date:   Fri Dec 12 10:58:21 2014 +0100
+
+    200 to 260 glyphicons in the doc
+
+ docs/_includes/components/glyphicons.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cb4c3a0eae9114af42c3be9a5bca134431e3260f
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Dec 11 11:45:33 2014 -0800
+
+    glyphicons.less: lowercase F in codepoint number for consistency
+
+ less/glyphicons.less | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4e27c48248a9846f8c89186c80915feac3388399
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Thu Dec 11 08:19:59 2014 +0200
+
+    Run `grunt`.
+
+ docs/_includes/customizer-variables.html | 564 +++++++++++++++----------------
+ docs/assets/css/docs.min.css             |   2 +-
+ docs/assets/js/customize.min.js          |   4 +-
+ docs/assets/js/docs.min.js               |   2 +-
+ docs/assets/js/raw-files.min.js          |   2 +-
+ docs/dist/css/bootstrap.css              |   1 +
+ docs/dist/css/bootstrap.css.map          |   2 +-
+ docs/dist/css/bootstrap.min.css          |   2 +-
+ test-infra/npm-shrinkwrap.json           |  96 +++---
+ 9 files changed, 338 insertions(+), 337 deletions(-)
+
+commit aa1e3e7325b2141200d0866ea8f0153bca57f616
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Thu Nov 13 19:28:14 2014 +0200
+
+    Tweak colors to improve accessibility.
+
+ docs/assets/css/src/docs.css | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+commit 46b0e94e25f7e488be1d4bd09e4f60c48df586f6
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Thu Nov 13 18:27:41 2014 +0200
+
+    Specify `img` dimensions in the HTML.
+
+ docs/about.html              | 8 ++++----
+ docs/assets/css/src/docs.css | 4 ----
+ 2 files changed, 4 insertions(+), 8 deletions(-)
+
+commit 266560585672413ab80a337bcd3a09a4186e1a63
+Merge: 69332cb edba4a3
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Wed Dec 10 22:12:50 2014 +0000
+
+    Merge pull request #15337 from twbs/patrickhlauke
+    
+    Add @patrickhlauke to Core Team list on the About page
+
+commit 69332cbb6806a69a12d9f869cb3db1c1f98c1226
+Merge: a9d92a5 d9c3e5f
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Wed Dec 10 20:59:41 2014 +0000
+
+    Merge pull request #15334 from patrickhlauke/progress-low-percentages
+    
+    Fix/merge advice on low percentage progress bars
+
+commit edba4a386c9e5f8849efdfb62ec8d2c7bb7e404f
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Dec 10 12:18:52 2014 -0800
+
+    Add @patrickhlauke to Core Team list on the About page
+    
+    [skip sauce]
+    [skip validator]
+
+ docs/_data/core-team.yml | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit a9d92a5e419fd8b8c7d4136dc8214b06bf8721b7
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Dec 10 12:13:21 2014 -0800
+
+    Filed http://openradar.appspot.com/19208483 for #12536
+
+ docs/_data/browser-bugs.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d9c3e5f3ad28a55102a6c880324ef8ac80ddf276
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Wed Dec 10 16:50:21 2014 +0000
+
+    Fix/merge advice on low percentage progress bars
+    
+    - actually add the ``min-width`` extra style (and use ``em`` rather than
+    ``px``) to the 0% and 2% example
+    - remove the unnecessarily redundant sentence in the "With labels"
+    section
+    - remove the unnecessary heading/section specifically for low percentage
+    case, make it flow naturally as part of the "With labels" section
+
+ docs/_includes/components/progress-bars.html | 14 ++++++--------
+ docs/_includes/nav/components.html           |  1 -
+ 2 files changed, 6 insertions(+), 9 deletions(-)
+
+commit 7c228b3cfab854bf43b0ba8aa4899fdabf62467a
+Merge: 762acc8 4529a9e
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Tue Dec 9 10:02:20 2014 +0000
+
+    Merge pull request #15330 from patrickhlauke/customizer-variables-help-block
+    
+    Tie help block to input with aria-describedby
+
+commit 4529a9e7b7fd7a12f4897acef8eed07a03b43099
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Tue Dec 9 00:44:31 2014 +0000
+
+    Tie help block to input with aria-describedby
+
+ docs/_jade/customizer-variables.jade | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 762acc826f3a4e266f3757a424eedb093286d71f
+Merge: afa4651 71f6dd2
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Tue Dec 9 10:19:05 2014 +0200
+
+    Merge pull request #15293 from twbs/grunt-contrib-compress
+    
+    Add grunt-contrib-compress.
+
+commit afa46515d07eecd41353a0134d3bf30de47245e0
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Tue Dec 9 07:55:38 2014 +0200
+
+    Update glob.
+
+ package.json                   |   2 +-
+ test-infra/npm-shrinkwrap.json | 176 ++++++++++++++++++++++-------------------
+ 2 files changed, 95 insertions(+), 83 deletions(-)
+
+commit 71f6dd25fc30c52c93fdb90fd6cb145593cdf2ee
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Tue Dec 2 13:50:20 2014 +0200
+
+    Add grunt-contrib-compress.
+    
+    Now, the zip file is created when running `grunt prep-release`.
+    
+    [ci skip]
+
+ Gruntfile.js                   |  22 +++++-
+ package.json                   |   1 +
+ test-infra/npm-shrinkwrap.json | 162 +++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 184 insertions(+), 1 deletion(-)
+
+commit f932eaa525aab1970172043e6da95cd01717f830
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 8 17:59:29 2014 -0800
+
+    tweak browser bug list order so Chrome bugs are contiguous
+
+ docs/_data/browser-bugs.yml | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
+
+commit 3ed0d586b7091e96745cf9a6ec10f3d20bb67d40
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 8 17:57:55 2014 -0800
+
+    tweak browser bug list order so Safari bugs are contiguous
+
+ docs/_data/browser-bugs.yml | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+commit 7cff5bb84fcaafe6970dd976f4d29074800f72e0
+Merge: 1f6f95a 285ec70
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Mon Dec 8 23:19:32 2014 +0000
+
+    Merge pull request #15327 from patrickhlauke/docs-accessibility-tweaks2
+    
+    More docs accessibility tweaks
+
+commit 1f6f95a245e613873b822fbcaba4fa78112c57b4
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 8 14:58:06 2014 -0800
+
+    grunt-saucelabs now uses `throttled` instead of `concurrency`
+    
+    [skip validator]
+
+ Gruntfile.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 285ec7049393792503b2127932e4bc6a967d58b6
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Mon Dec 8 15:25:02 2014 +0000
+
+    Make main segmented button keyboard-focusable
+    
+    unless there's a reason why ``tabindex="-1"`` was dropped in there...
+
+ docs/_includes/components/input-groups.html | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 24bc10266425cbb401ce9d4b681060159162a8b2
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Mon Dec 8 14:54:20 2014 +0000
+
+    Use aria-label for pagination prev/next
+    
+    Cleaner alternative to using ``<span class="sr-only">``
+
+ docs/_includes/components/pagination.html | 31 +++++++++++++------------------
+ 1 file changed, 13 insertions(+), 18 deletions(-)
+
+commit eee275762ff962121576f5aca93e0dfc52679d51
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Mon Dec 8 14:03:04 2014 +0000
+
+    Callout for labelling of input groups
+    
+    plus a few suggested approaches (in some cases, elided, as the actual
+    content of the label - being a generic example - is not important)
+
+ docs/_includes/components/input-groups.html | 90 +++++++++++++++--------------
+ 1 file changed, 47 insertions(+), 43 deletions(-)
+
+commit c918127e68ac320830f960ac8ab804378588db5b
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Mon Dec 8 12:05:42 2014 +0000
+
+    Split out/clarify ``<select>`` and ``multiple``
+
+ docs/_includes/css/forms.html | 25 ++++++++++++++++---------
+ 1 file changed, 16 insertions(+), 9 deletions(-)
+
+commit 52e4b87b5a2ac6543f9a901946bea84966681216
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Mon Dec 8 10:36:26 2014 +0000
+
+    Expand advice for optional icons with hidden labels
+    
+    to clarify/hint that a ``<label class="sr-only">`` is not the only way
+    to do it
+
+ docs/_includes/css/forms.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit deffd946ef585ec42268bf7439d351ef9123f376
+Merge: e11c634 e9dca8d
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Dec 8 00:46:55 2014 -0800
+
+    Merge pull request #15323 from BBosman/for
+    
+    Re-add missing "to" in docs
+
+commit e9dca8df523b5d625887e2a530ef3be6999e02c0
+Author: Bas Bosman <github@nazgul.nu>
+Date:   Mon Dec 8 09:41:44 2014 +0100
+
+    Add missing to
+
+ docs/_includes/components/button-groups.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e11c634be998ccefef9587a059af680b17f9d9e2
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Dec 7 22:26:19 2014 -0800
+
+    fixes #15311: mention in docs requirement for .btn-group-* sizing on immediate .btn-group
+
+ docs/_includes/components/button-groups.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 255e5d68751cb93f95d1cbddbf2a12d5f56d4b70
+Merge: 08f3886 202f1f8
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Sun Dec 7 22:46:20 2014 +0000
+
+    Merge pull request #15320 from patrickhlauke/docs-accessibility-tweaks
+    
+    Docs accessibility tweaks: use ``aria-label`` for close ``<button>``, expand advice for ``<abbr>``, form control labels, make sidebar navigation a ``<nav>``
+
+commit 202f1f8d69b119fd63d6788ee98e40321f53423b
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Sun Dec 7 15:17:49 2014 +0000
+
+    ``<abbr>`` with title also useful for AT
+    
+    ...and remove the redundant paragraph for basic abbreviation, which
+    simply repeats what was just said above.
+
+ docs/_includes/css/type.html | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 353d8395aea20dad7d59bb54b8972a29ab2cb6e2
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Sun Dec 7 15:11:28 2014 +0000
+
+    Expand advice about adding labels
+    
+    Harmonizing this with same advice given for CSS inline forms
+
+ docs/_includes/components/navbar.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8af8f7d5404536782f76e0ca02e01497f1e8b0ae
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Sun Dec 7 14:43:50 2014 +0000
+
+    Make sidebar navigation actual ``<nav>``
+
+ docs/_layouts/default.html | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit c609272ac199cc9806ad6c4cf8c7f8f4253fb347
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Sun Dec 7 14:29:03 2014 +0000
+
+    ``aria-label="close"`` instead of sr-only ``span``
+    
+    shorter, neater, well supported
+
+ docs/_includes/components/alerts.html |  4 ++--
+ docs/_includes/css/helpers.html       |  4 ++--
+ docs/_includes/js/alerts.html         |  7 +++----
+ docs/_includes/js/modal.html          | 16 ++++++++--------
+ 4 files changed, 15 insertions(+), 16 deletions(-)
+
+commit 08f388679b7e77104d3129733feffb956b10dcf0
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sat Dec 6 13:55:31 2014 -0800
+
+    tweak grid docs copy
+    
+    [skip sauce]
+
+ docs/_includes/css/grid.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f1102430eca4b498294b457020bedda8a8890d52
+Merge: 7e758f6 37183ed
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Dec 5 13:20:44 2014 -0800
+
+    Merge pull request #15309 from twbs/fix-customizer-compile-err-reporting
+    
+    Catch and properly report compile errors that Less.js's toCSS() can throw
+
+commit 37183edfd5682de22d338760d84b6dcd75eb8fe9
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Dec 5 12:58:47 2014 -0800
+
+    Customizer: Catch and properly report compile errors that Less.js's toCSS() can throw.
+    
+    Currently these errors are only reported in the JavaScript console, not in the Customizer UI.
+    Refs #15296
+    
+    [skip sauce]
+    [skip validator]
+
+ docs/assets/js/src/customizer.js | 22 ++++++++++++++--------
+ 1 file changed, 14 insertions(+), 8 deletions(-)
+
+commit d7d6384d397c457a69f1ec1ee8ebaf390334111f
+Author: vsn4ik <vsn4ik@gmail.com>
+Date:   Fri Dec 5 23:30:30 2014 +0300
+
+    Fix margin-bottom on dropdown (navbar-fixed-bottom).
+
+ less/navbar.less | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7e758f60fcb8f5391ea48cacf432c76e8b747909
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Dec 5 11:49:53 2014 -0800
+
+    Repeat warning comment about keeping "What's included" sections in sync
+    
+    Refs #15238
+    [skip sauce]
+
+ docs/_includes/getting-started/whats-included.html | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 1dd665c3ab7baed8e6a76245b022e02d14a04dc1
+Merge: c40fe68 215fc93
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Dec 5 11:47:45 2014 -0800
+
+    Merge pull request #15306 from vsn4ik/whats_included_readme
+    
+    Update source maps info in README.md.
+
+commit c40fe68f23912fd1197f0079e5b4ac58efa1a364
+Merge: 0c5a556 add44ca
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Dec 5 09:17:21 2014 -0800
+
+    Merge pull request #15305 from vsn4ik/fix_fonts_permission
+    
+    Remove execute permission on fonts.
+
+commit 215fc93096f157ab49edc42baf81641af68aa369
+Author: vsn4ik <vsn4ik@gmail.com>
+Date:   Fri Dec 5 20:00:19 2014 +0300
+
+    Update source maps info in README.md.
+
+ README.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit add44cae036d3350f2ff0dfc1cf261e5db764682
+Author: vsn4ik <vsn4ik@gmail.com>
+Date:   Fri Dec 5 19:52:23 2014 +0300
+
+    Remove execute permission on fonts.
+
+ fonts/glyphicons-halflings-regular.eot  | Bin
+ fonts/glyphicons-halflings-regular.svg  |   0
+ fonts/glyphicons-halflings-regular.ttf  | Bin
+ fonts/glyphicons-halflings-regular.woff | Bin
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 0c5a5563b271a6a15db7452f8f4878d4bd797074
+Merge: ac49a09 44447ee
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Dec 4 19:18:29 2014 -0800
+
+    Merge pull request #15214 from twbs/example-ids
+    
+    Give all embedded live docs examples data-example-id attrs
+    [skip sauce]
+
+commit ac49a0990689439be471752f6c5ea8a91256ad32
+Author: Bootstrap's Grunt bot <twbs-grunt@users.noreply.github.com>
+Date:   Wed Dec 3 07:20:27 2014 +0000
+
+    automatic `grunt dist`
+
+ dist/css/bootstrap.css     | 1 +
+ dist/css/bootstrap.css.map | 2 +-
+ dist/css/bootstrap.min.css | 2 +-
+ 3 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 66217e4a85c1b443a9f9c2b772d508321612cb67
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Dec 2 23:02:46 2014 -0800
+
+    Temporarily revert "automatic grunt dist" so Grunt bot will run again.
+    
+    This reverts commit 2c1c885ed4978900fb2a5e3310a428fd72b89c12.
+
+ dist/css/bootstrap.css     | 1 -
+ dist/css/bootstrap.css.map | 2 +-
+ dist/css/bootstrap.min.css | 2 +-
+ 3 files changed, 2 insertions(+), 3 deletions(-)
+
+commit 2c1c885ed4978900fb2a5e3310a428fd72b89c12
+Author: Bootstrap's Grunt bot <gruntworker@getbootstrap.com>
+Date:   Wed Dec 3 00:51:08 2014 +0000
+
+    automatic grunt dist
+
+ dist/css/bootstrap.css     | 1 +
+ dist/css/bootstrap.css.map | 2 +-
+ dist/css/bootstrap.min.css | 2 +-
+ 3 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 5cb0d933c95deaa54b2e37ddd48fe4595d72389b
+Merge: 0445f23 a527aaa
+Author: Chris Rebert <github@rebertia.com>
+Date:   Tue Dec 2 15:16:34 2014 -0600
+
+    Merge pull request #15269 from twbs/role-separator
+    
+    Whitelist <li role="separator">...</li>
+    [skip sauce]
+
+commit a527aaa11485edb260e2058544569b6ab1f7330a
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Dec 2 12:53:05 2014 -0800
+
+    Whitelist <li role="separator">...</li>
+    
+    Refs https://www.w3.org/Bugs/Public/show_bug.cgi?id=27120
+    Refs #15263
+    
+    [skip sauce]
+
+ Gruntfile.js | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 0445f23b728da63dab41e82c9f4aaf084e48bd98
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Dec 2 12:28:07 2014 -0800
+
+    Update Wall of Browser Bugs entry for #14972
+    
+    http://crbug.com/175502 is fixed in Chrome 40 and has been closed.
+    But Windows is still broken due to http://crbug.com/438064 ,
+      which is open and currently targeting Chrome 41.
+
+ docs/_data/browser-bugs.yml | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit a17f23c022aab37872b1801efa3a58cf73123fe0
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Mon Dec 1 01:39:31 2014 -0800
+
+    nuke the other incomplete example per @ianw
+
+ docs/_includes/js/collapse.html | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+commit 0eb2c922d892bdcd4356b7212ab61c7d8a44c2dc
+Merge: 88ec515 ced63b0
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Nov 30 17:11:24 2014 -0800
+
+    Merge branch 'master' of github.com:twbs/bootstrap
+
+commit 88ec5152da1453a6376739e4f0dd7f24187b9b56
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Nov 30 17:10:13 2014 -0800
+
+    clarify collapse example with link and button triggers; also mention classes
+
+ docs/_includes/js/collapse.html | 29 +++++++++++++++++++++--------
+ 1 file changed, 21 insertions(+), 8 deletions(-)
+
+commit ced63b0a0257fd096c12f1d2b4b2fa3ffc3f5e2f
+Merge: 20ddded 8770f55
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Sun Nov 30 14:20:21 2014 -0800
+
+    Merge pull request #15244 from zalog/patch-2
+    
+    Center .icon-prev and .icon-next in carousel
+
+commit 20ddded9f8050c9011c183f1c676d374d69a094e
+Merge: 2a1a3e6 a6950ce
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Sun Nov 30 12:38:01 2014 -0800
+
+    Merge pull request #15258 from Quy/media-object
+    
+    Add .media-object in docs
+
+commit a6950ce27661b74970c01f8280fb369136d2888e
+Author: Quy Ton <quy@fluxbb.org>
+Date:   Sun Nov 30 07:44:14 2014 -0800
+
+    Add .media-object in docs
+
+ docs/_includes/components/media.html | 32 ++++++++++++++++----------------
+ 1 file changed, 16 insertions(+), 16 deletions(-)
+
+commit 2a1a3e6806f2edb73e9f30e63f950a787032dae1
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Sun Nov 30 13:16:19 2014 +0200
+
+    Example: minor image compression improvements.
+    
+    [ci skip]
+
+ docs/examples/screenshots/blog.jpg                 | Bin 122350 -> 122280 bytes
+ docs/examples/screenshots/cover.jpg                | Bin 36631 -> 36580 bytes
+ docs/examples/screenshots/dashboard.jpg            | Bin 105375 -> 105325 bytes
+ docs/examples/screenshots/equal-height-columns.jpg | Bin 129313 -> 129265 bytes
+ docs/examples/screenshots/jumbotron.jpg            | Bin 101215 -> 101076 bytes
+ docs/examples/screenshots/navbar-static.jpg        | Bin 39671 -> 39654 bytes
+ docs/examples/screenshots/offcanvas.jpg            | Bin 112583 -> 112527 bytes
+ docs/examples/screenshots/sign-in.jpg              | Bin 13648 -> 13596 bytes
+ docs/examples/screenshots/starter-template.jpg     | Bin 22590 -> 22571 bytes
+ docs/examples/screenshots/sticky-footer.jpg        | Bin 25056 -> 25002 bytes
+ docs/examples/screenshots/theme.jpg                | Bin 85467 -> 85405 bytes
+ 11 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d5a4db48cce91e84feeb6f57cb9fdf9472e1c827
+Merge: 4e2db80 61bbe74
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Sun Nov 30 12:51:49 2014 +0200
+
+    Merge pull request #15183 from twbs/deps
+    
+    Update devDependencies
+
+commit 61bbe74df11b302a4e61ae027c44ef5ec80edfcf
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Thu Nov 20 08:04:47 2014 +0200
+
+    Update devDependencies.
+
+ docs/assets/js/customize.min.js       |   14 +-
+ docs/assets/js/vendor/autoprefixer.js | 4437 ++++++++++++++++++++-------------
+ package.json                          |   10 +-
+ test-infra/npm-shrinkwrap.json        |  428 ++--
+ 4 files changed, 2879 insertions(+), 2010 deletions(-)
+
+commit 4e2db80cbf60bac765f76aa1b10741cfd5ba0f67
+Merge: e6fc081 cb29c9a
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Sun Nov 30 12:50:24 2014 +0200
+
+    Merge pull request #15134 from twbs/docs-gh
+    
+    Add a target to generate the gh-pages files.
+
+commit e6fc081c91475237348fb1c75cf307a4acd69161
+Merge: bcb90ef 65f72ff
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Nov 30 01:32:03 2014 -0800
+
+    Merge branch 'master' of github.com:twbs/bootstrap
+
+commit bcb90ef3a0affa6540d141733a073593011af064
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Nov 30 01:31:49 2014 -0800
+
+    Bump Glyphicons to v1.9
+
+ dist/css/bootstrap.css                            | 180 ++++++++
+ dist/css/bootstrap.css.map                        |   2 +-
+ dist/css/bootstrap.min.css                        |   2 +-
+ dist/fonts/glyphicons-halflings-regular.eot       | Bin 20335 -> 20127 bytes
+ dist/fonts/glyphicons-halflings-regular.svg       | 487 ++++++++++++----------
+ dist/fonts/glyphicons-halflings-regular.ttf       | Bin 41280 -> 45404 bytes
+ dist/fonts/glyphicons-halflings-regular.woff      | Bin 23320 -> 23424 bytes
+ docs/_data/glyphicons.yml                         |  60 +++
+ docs/assets/js/customize.min.js                   |   2 +-
+ docs/assets/js/raw-files.min.js                   |   4 +-
+ docs/dist/css/bootstrap.css                       | 180 ++++++++
+ docs/dist/css/bootstrap.css.map                   |   2 +-
+ docs/dist/css/bootstrap.min.css                   |   2 +-
+ docs/dist/fonts/glyphicons-halflings-regular.eot  | Bin 20335 -> 20127 bytes
+ docs/dist/fonts/glyphicons-halflings-regular.svg  | 487 ++++++++++++----------
+ docs/dist/fonts/glyphicons-halflings-regular.ttf  | Bin 41280 -> 45404 bytes
+ docs/dist/fonts/glyphicons-halflings-regular.woff | Bin 23320 -> 23424 bytes
+ docs/examples/non-responsive/non-responsive.css   |  15 +-
+ fonts/glyphicons-halflings-regular.eot            | Bin 20335 -> 20127 bytes
+ fonts/glyphicons-halflings-regular.svg            | 487 ++++++++++++----------
+ fonts/glyphicons-halflings-regular.ttf            | Bin 41280 -> 45404 bytes
+ fonts/glyphicons-halflings-regular.woff           | Bin 23320 -> 23424 bytes
+ less/glyphicons.less                              |  60 +++
+ 23 files changed, 1315 insertions(+), 655 deletions(-)
+
+commit d74fd9af2f694ba2b700ed95423ba865175992b9
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Nov 30 00:54:43 2014 -0800
+
+    Fixes #15096: Fix navbar forms in the non-responsive example
+
+ docs/examples/non-responsive/index.html         |  6 ++
+ docs/examples/non-responsive/non-responsive.css | 78 ++++++++++++++++++++++++-
+ 2 files changed, 83 insertions(+), 1 deletion(-)
+
+commit 65f72ff095777646c5c1d76a4bc64fab2cbdfc61
+Merge: 9928144 db4e5ef
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Sat Nov 29 23:17:36 2014 -0800
+
+    Merge pull request #15133 from patrickhlauke/docs-table-fixes
+    
+    Fixes to scope
+
+commit 9928144dc4e8301ee0dd02ac073682d789b2adb1
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 29 23:03:47 2014 -0800
+
+    Fixes #15241: Add simple example to docs for collapse plugin
+
+ docs/_includes/js/collapse.html    | 28 ++++++++++++++++++++++++++--
+ docs/_includes/nav/javascript.html |  3 ++-
+ docs/assets/css/docs.min.css       |  2 +-
+ docs/assets/css/src/docs.css       |  5 +++++
+ docs/assets/js/customize.min.js    |  2 +-
+ 5 files changed, 35 insertions(+), 5 deletions(-)
+
+commit 23bdfc45eb6da41ceaa59803caa667a8f8d4de4d
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 29 21:40:04 2014 -0800
+
+    grunt
+
+ dist/css/bootstrap.css          | 11 ++++++++---
+ dist/css/bootstrap.css.map      |  2 +-
+ dist/css/bootstrap.min.css      |  2 +-
+ docs/assets/js/customize.min.js |  2 +-
+ docs/assets/js/raw-files.min.js |  2 +-
+ docs/dist/css/bootstrap.css     | 11 ++++++++---
+ docs/dist/css/bootstrap.css.map |  2 +-
+ docs/dist/css/bootstrap.min.css |  2 +-
+ 8 files changed, 22 insertions(+), 12 deletions(-)
+
+commit 7e27e749d1e21dbdf36fef40882497ed3d4b52c1
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 29 21:36:57 2014 -0800
+
+    Fixes #15140: Restore more missing .media styles from shipping #14801
+
+ less/media.less | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+
+commit 149f32d9d38d506bcdaa0361dc40d7743766cf9d
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 29 21:18:05 2014 -0800
+
+    Alternate fix for #15250 with a more descriptive theme jumbotron
+
+ docs/examples/theme/index.html | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+commit 9c049c99e2839239552bef2d7e4d2a43cdf387b2
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 29 20:58:14 2014 -0800
+
+    grunt
+
+ dist/css/bootstrap.css.map      |  2 +-
+ docs/assets/js/customize.min.js |  2 +-
+ docs/assets/js/raw-files.min.js |  2 +-
+ docs/dist/css/bootstrap.css     | 38 ++++++++++++++++++++++++++++++--------
+ docs/dist/css/bootstrap.css.map |  2 +-
+ docs/dist/css/bootstrap.min.css |  2 +-
+ 6 files changed, 35 insertions(+), 13 deletions(-)
+
+commit 7c71b4874bfb992bd39e55c369d52f825de1946c
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 29 20:57:04 2014 -0800
+
+    Fixes #15074: Fix the nesting problem with form control size variants
+
+ dist/css/bootstrap.css     | 38 ++++++++++++++++++++++++++++++--------
+ dist/css/bootstrap.css.map |  2 +-
+ dist/css/bootstrap.min.css |  2 +-
+ less/forms.less            | 19 +++++++++++++++----
+ 4 files changed, 47 insertions(+), 14 deletions(-)
+
+commit 80d7be11263ea014f32aaefef51917f2bef29a89
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 29 18:36:21 2014 -0800
+
+    grunt
+
+ dist/css/bootstrap-theme.css.map      | 2 +-
+ dist/css/bootstrap.css                | 5 ++++-
+ dist/css/bootstrap.css.map            | 2 +-
+ dist/css/bootstrap.min.css            | 2 +-
+ docs/assets/js/customize.min.js       | 2 +-
+ docs/assets/js/raw-files.min.js       | 2 +-
+ docs/dist/css/bootstrap-theme.css.map | 2 +-
+ docs/dist/css/bootstrap.css           | 5 ++++-
+ docs/dist/css/bootstrap.css.map       | 2 +-
+ docs/dist/css/bootstrap.min.css       | 2 +-
+ 10 files changed, 16 insertions(+), 10 deletions(-)
+
+commit c2d868cfbe63431d02330f59c84871e18a2e25d8
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 29 18:33:01 2014 -0800
+
+    Fixes #15124: Restore .media-object
+
+ less/media.less | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit c22b8dca147dad63fa1d1eddc38b2ac4bcfb6cd0
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 29 18:31:09 2014 -0800
+
+    Fixes #15148: make the dropdown and dropup menus have the same margins
+
+ less/dropdowns.less | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1de638f830a60297f4b27ae2af9b340d073a5a5a
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 29 18:27:51 2014 -0800
+
+    fixes #15164: wrap disable pagination spans in another span
+
+ docs/_includes/components/pagination.html | 39 ++++++++++++++++++++++++++-----
+ 1 file changed, 33 insertions(+), 6 deletions(-)
+
+commit c9289691ba9c5094b81243a07d2aa78f008fcc7f
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 29 16:53:37 2014 -0800
+
+    fix the run-on
+
+ docs/_includes/getting-started/whats-included.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a35ee9d21857cf34980645045aecec0d8ead9179
+Merge: 01fa32e c1885ef
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Sat Nov 29 16:51:38 2014 -0800
+
+    Merge pull request #15238 from peterblazejewicz/docs/dist-update
+    
+    Add CSS source maps reference to docs. Closes #15211
+
+commit 01fa32e879d001add202d3b28ee510ac5fd66ff9
+Merge: b38e284 992644e
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Sat Nov 29 14:25:12 2014 -0800
+
+    Merge pull request #15167 from vsn4ik/rem_blob_master_from_links
+    
+    Remove redundant .../blob/master/ prefix in markdown.
+
+commit b38e284e188f82548f62dfff8811deb593c2dd2f
+Merge: d763e0e 2c64fc2
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Nov 28 12:54:21 2014 -0600
+
+    Merge pull request #15249 from dandv/patch-1
+    
+    Fix copy/paste error
+
+commit 2c64fc2c4d6eea1b523e9d7f3a823b4fb2b5770f
+Author: Dan Dascalescu <ddascalescu+github@gmail.com>
+Date:   Fri Nov 28 04:30:04 2014 -0800
+
+    Fix copy/paste error
+
+ js/tests/unit/tooltip.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c1885ef58b1c1dfcc3948c42da1053a13db9de46
+Author: Peter Blazejewicz <peter.blazejewicz@gmail.com>
+Date:   Wed Nov 26 22:58:23 2014 +0100
+
+    Add CSS source maps reference to docs. Closes #15211
+    
+    - update distribution file list with relevant files
+    - add a short reference to CSS source map purpose
+    - add link to Google Chrome developer network article
+
+ docs/_includes/getting-started/whats-included.html | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 8770f55f1e16ee5d1f7f91b2671c7365d3e91828
+Author: Catalin Zalog <xxxxxcata@yahoo.com>
+Date:   Thu Nov 27 13:06:42 2014 +0200
+
+    Center .icon-prev and .icon-next
+    
+    Center .icon-prev and .icon-next the same way .glyphicon icon are.
+    And this is the html markup:
+    <a class="left carousel-control" href="#carousel-main-menu" role="button" data-slide="prev">
+    <span class="icon-prev" aria-hidden="true"></span>
+    </a>
+
+ less/carousel.less | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit d763e0e2a08ade0d36872cb9624813b5e4a5255b
+Merge: c022d88 c97d4d6
+Author: Chris Rebert <github@rebertia.com>
+Date:   Tue Nov 25 11:12:43 2014 -0800
+
+    Merge pull request #15215 from twbs/input-date-chrome
+    
+    Remove #12548's entry from the Wall of Browser Bugs
+    [skip sauce]
+
+commit c97d4d648f43255e4aa59e7ff2ad292eab1bfaff
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Nov 24 18:33:34 2014 -0800
+
+    Remove #12548's entry from the Wall of Browser Bugs
+    
+    Since https://crbug.com/346051 has been closed as WontFix.
+    Bug is now documented in MDN:
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input$compare?locale=en-US&to=698785&from=693137
+    Refs #12548
+    
+    [skip sauce]
+
+ docs/_data/browser-bugs.yml | 10 ----------
+ 1 file changed, 10 deletions(-)
+
+commit 44447eeefe61dbb16cab59900c3c061d9f207fbc
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Nov 24 17:09:32 2014 -0800
+
+    Give all embedded live docs examples data-example-id attrs
+    
+    Refs #11410
+
+ docs/_includes/components/alerts.html           |  6 +--
+ docs/_includes/components/badges.html           |  4 +-
+ docs/_includes/components/breadcrumbs.html      |  2 +-
+ docs/_includes/components/button-dropdowns.html |  8 ++--
+ docs/_includes/components/button-groups.html    | 14 +++----
+ docs/_includes/components/dropdowns.html        |  2 +-
+ docs/_includes/components/glyphicons.html       |  4 +-
+ docs/_includes/components/input-groups.html     | 12 +++---
+ docs/_includes/components/jumbotron.html        |  2 +-
+ docs/_includes/components/labels.html           |  4 +-
+ docs/_includes/components/list-group.html       | 12 +++---
+ docs/_includes/components/media.html            |  6 +--
+ docs/_includes/components/navbar.html           | 20 +++++-----
+ docs/_includes/components/navs.html             | 14 +++----
+ docs/_includes/components/page-header.html      |  2 +-
+ docs/_includes/components/pagination.html       | 12 +++---
+ docs/_includes/components/panels.html           | 14 +++----
+ docs/_includes/components/progress-bars.html    | 14 +++----
+ docs/_includes/components/responsive-embed.html |  2 +-
+ docs/_includes/components/thumbnails.html       |  4 +-
+ docs/_includes/components/wells.html            |  6 +--
+ docs/_includes/css/buttons.html                 | 16 ++++----
+ docs/_includes/css/code.html                    | 10 ++---
+ docs/_includes/css/forms.html                   | 48 +++++++++++------------
+ docs/_includes/css/helpers.html                 |  8 ++--
+ docs/_includes/css/images.html                  |  2 +-
+ docs/_includes/css/tables.html                  | 14 +++----
+ docs/_includes/css/type.html                    | 52 ++++++++++++-------------
+ docs/_includes/js/alerts.html                   |  2 +-
+ docs/_includes/js/buttons.html                  |  4 +-
+ docs/_includes/js/carousel.html                 |  4 +-
+ docs/_includes/js/collapse.html                 |  2 +-
+ docs/_includes/js/modal.html                    |  2 +-
+ docs/_includes/js/popovers.html                 |  2 +-
+ docs/_includes/js/scrollspy.html                |  2 +-
+ docs/_includes/js/tabs.html                     |  2 +-
+ docs/_includes/js/tooltips.html                 |  2 +-
+ 37 files changed, 168 insertions(+), 168 deletions(-)
+
+commit c022d88ac5674410fbba00c1c869c4da16fc0067
+Merge: 7ea4901 bf43c9c
+Author: Julian Thilo <bigj95t@gmail.com>
+Date:   Mon Nov 24 15:46:14 2014 +0100
+
+    Merge pull request #15108 from zacechola/irc_room
+    
+    corrects IRC room
+
+commit 7ea49019b86f8bf69008565b9369d8762223f4e2
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Mon Nov 24 09:53:42 2014 +0200
+
+    Run `grunt`.
+
+ dist/css/bootstrap-theme.css.map      | 2 +-
+ dist/css/bootstrap.css.map            | 2 +-
+ docs/assets/css/docs.min.css          | 2 +-
+ docs/assets/js/customize.min.js       | 2 +-
+ docs/assets/js/raw-files.min.js       | 4 ++--
+ docs/dist/css/bootstrap-theme.css.map | 2 +-
+ docs/dist/css/bootstrap.css.map       | 2 +-
+ docs/dist/js/bootstrap.js             | 2 +-
+ docs/dist/js/bootstrap.min.js         | 2 +-
+ 9 files changed, 10 insertions(+), 10 deletions(-)
+
+commit 33c4a2f1d7638fae91e03eeffce23c57cfb54e9e
+Merge: ede9cf0 7bf002d
+Author: Julian Thilo <bigj95t@gmail.com>
+Date:   Mon Nov 24 01:46:59 2014 +0100
+
+    Merge pull request #15198 from twbs/fix-15194
+    
+    Fix #15194: Shrink media link area
+
+commit ede9cf00371d9e48e805b22b24e5aa11fc08083f
+Merge: 6e9d4e6 8a4757d
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sun Nov 23 16:28:06 2014 -0800
+
+    Merge pull request #15200 from twbs/mdn
+    
+    add documenting in MDN as a step in browser bug handling process
+
+commit 992644ee34348f81c77a1558e190d4ff56671e23
+Author: vsn4ik <vsn4ik@gmail.com>
+Date:   Sun Nov 23 14:50:09 2014 +0300
+
+    Update links (.../blob/master prefix) in markdown.
+
+ CONTRIBUTING.md | 8 ++++----
+ README.md       | 2 +-
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 8a4757dfb09438407ffd3b989db4e0f421a7c46e
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sat Nov 22 18:32:47 2014 -0800
+
+    add documenting in MDN as a step in browser bug handling process
+    
+    [skip sauce]
+    [skip validator]
+
+ CONTRIBUTING.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6e9d4e69077ddac730f65792469bdd8491315ad0
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sat Nov 22 17:48:49 2014 -0800
+
+    add Apple Safari Radar entry for #8350
+
+ docs/_data/browser-bugs.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7bf002d63d8abf8847f09673871edd4aed70670d
+Author: Julian Thilo <bigj95t@gmail.com>
+Date:   Sat Nov 22 13:45:32 2014 +0100
+
+    Fix #15194: Shrink media link area
+
+ docs/_includes/components/media.html | 128 ++++++++++++++++++++++-------------
+ 1 file changed, 80 insertions(+), 48 deletions(-)
+
+commit bc5a753b67c2ce434f64ba4c2f9baa58773604fb
+Author: Chris Rebert <code@rebertia.com>
+Date:   Thu Nov 20 23:26:37 2014 -0800
+
+    fix affix-top unit test to properly clean up after itself
+
+ js/tests/unit/affix.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7527ce93c97f37ca078893a90f19bd1e8f6c2702
+Merge: 44735c8 7711c9d
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Nov 20 11:00:34 2014 -0800
+
+    Merge pull request #15187 from twbs/doc-savage-contributing
+    
+    Document Savage cross-browser JS pull request tester bot
+    [skip sauce]
+
+commit 7711c9d60d0dc7db86ac13b200be856409d1d946
+Author: Chris Rebert <code@rebertia.com>
+Date:   Thu Nov 20 10:02:57 2014 -0800
+
+    Document Savage cross-browser JS pull request tester bot
+    
+    Refs #12352, which is now implemented & deployed.
+    More info: https://github.com/twbs/savage
+    
+    [skip sauce]
+
+ CONTRIBUTING.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 44735c83bfd9224b0252feab7a12eef9da6ca8c9
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Nov 20 10:15:43 2014 -0800
+
+    Update Wall of Browser Bugs entry for #14972
+    
+    http://crbug.com/429604 has been merged into http://crbug.com/175502
+
+ docs/_data/browser-bugs.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit cab74e32389eca8ace1d7d0d850e783d640b48b4
+Author: Chris Rebert <code@rebertia.com>
+Date:   Thu Nov 20 09:49:10 2014 -0800
+
+    fix typo in CONTRIBUTING.md
+
+ CONTRIBUTING.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0c816d910d56d7526e8d7db152640fc78acef0c1
+Merge: af77842 a1b8aa3
+Author: XhmikosR <XhmikosR@users.noreply.github.com>
+Date:   Thu Nov 20 10:27:42 2014 +0200
+
+    Merge pull request #15159 from twbs/docs-muted
+    
+    Clean up old `muted` references and switch to `text-muted`.
+
+commit af77842ce74a21a59bf7a765a47edaf72c9395c4
+Merge: e7818e9 ddf39cc
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Nov 20 00:06:33 2014 -0800
+
+    Merge pull request #15111 from twbs/events-tables-wrapping
+    
+    Don't line wrap event names in JS plugin docs
+
+commit a1b8aa351edd80a7c0e7176b69b8087c126a34cd
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Mon Nov 17 19:31:13 2014 +0200
+
+    Clean up old `muted` references and switch to `text-muted`.
+
+ docs/_includes/footer.html      | 2 +-
+ docs/_includes/js/tooltips.html | 3 +--
+ docs/assets/css/src/docs.css    | 1 -
+ 3 files changed, 2 insertions(+), 4 deletions(-)
+
+commit cb29c9a41d4835155d12cc48b7fcbabe97160db7
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Fri Nov 14 15:00:02 2014 +0200
+
+    Add a target to generate the gh-pages files.
+    
+    It sets `github: true` for us.
+
+ Gruntfile.js | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+commit e7818e979f46da63a91146c7051e6aaef24288c8
+Merge: 8bb59ab 8318227
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Nov 19 19:47:25 2014 -0800
+
+    Merge pull request #15182 from twbs/sauce-sub-account
+    
+    Switch to using sub-account of main Sauce account for Savage
+
+commit 8318227709352413800b2af3bd4c5267dc2005c8
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Nov 19 19:38:21 2014 -0800
+
+    Switch to using sub-account of main Sauce account for Savage
+    
+    Refs commit 6cfd811fcc99e5800c9e6207c48a91f85f699ae7.
+
+ .travis.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 8bb59abf409d1473f16f87e560013300228cad78
+Merge: 324fd0d d79e898
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Nov 19 17:33:17 2014 -0800
+
+    Merge pull request #15090 from twbs/dropdowns-events
+    
+    consolidate relatedTarget docs in dropdown event docs
+
+commit 324fd0d75482767f8a677711f439fc3a75709ee1
+Merge: 34a7518 6575755
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Nov 19 17:03:02 2014 -0800
+
+    Merge pull request #15177 from twbs/savage-sauce
+    
+    Adjust build scripts for Savage
+
+commit 6575755dc49d9516840c0a0804185931f2edf9c7
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Nov 19 15:44:43 2014 -0800
+
+    Savage builds should not update the S3 cache
+
+ .travis.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a1c170ed373d9076ecf76d264220a6a636239f17
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Nov 19 15:51:11 2014 -0800
+
+    grant Savage access to the S3 cache
+
+ .travis.yml | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit db95e0bd01739fb68c9b89979c7a214ffdde587e
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Nov 19 15:43:23 2014 -0800
+
+    disable core tests for Savage builds
+
+ Gruntfile.js | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit aaffe4b49860ed7f8084b6fd967dd0aa0099c9a3
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Nov 19 15:41:05 2014 -0800
+
+    skip HTML validator for Savage builds
+
+ .travis.yml | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 6cfd811fcc99e5800c9e6207c48a91f85f699ae7
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Nov 19 15:22:45 2014 -0800
+
+    enable Sauce access for Savage
+
+ .travis.yml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 34a7518b19e515b07d863685bc3a946b96c14639
+Merge: dcd86a8 3cd8886
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Nov 19 14:50:20 2014 -0800
+
+    Merge pull request #15176 from twbs/savage-travis
+    
+    Setup Travis event notification webhook for Savage
+    [skip sauce]
+    [skip validator]
+
+commit 3cd88866c6f3e0d69dc4eae2afe9d5d65b05c093
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Nov 19 14:43:45 2014 -0800
+
+    Setup Travis event notification webhook for Savage
+
+ .travis.yml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit dcd86a8a914f88bfa6369833e637c2030bb66aef
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Nov 19 11:01:04 2014 -0800
+
+    grunt dist
+
+ dist/css/bootstrap.css.map | 2 +-
+ dist/js/bootstrap.js       | 2 +-
+ dist/js/bootstrap.min.js   | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 4fc8da4afdf7b53ac1327caa8a4073430913badf
+Merge: 4037990 e2520b8
+Author: Julian Thilo <bigj95t@gmail.com>
+Date:   Tue Nov 18 17:08:54 2014 +0100
+
+    Merge pull request #15166 from vsn4ik/upd_npm_and_core_team
+    
+    Use npm instead NPM and update twbs team link.
+
+commit e2520b8bd9f01abcf3f65fd4f0c989ad58627a46
+Author: vsn4ik <vsn4ik@gmail.com>
+Date:   Tue Nov 18 18:46:28 2014 +0300
+
+    Use npm instead NPM and update twbs team link.
+
+ README.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 403799023709c0cba0375258b7d8fb59356a4bf8
+Merge: 423825f 36b4f90
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Nov 17 18:19:55 2014 -0800
+
+    Merge pull request #15154 from nickyod/affix-top-bug
+
+commit 36b4f90f250b96390f10057ba5b1312367fafe8c
+Author: Nick O'Donoghue <nick.od@me.com>
+Date:   Sun Nov 16 21:01:32 2014 +0000
+
+    Fixes affix-top class not applying
+    
+    Use scrollTop instead of colliderTop which uses the elements
+    offset().top, as the offset top does not account for padding.
+    
+    This issue can be replicated by using a navbar-fixed-top and applying
+    relevant padding to the body. (A navbar-static-top with no padding on
+    the body does not encounter this issue)
+    
+    Fixes #15078
+    Closes #15154 by merging it
+
+ js/affix.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit da79ab94889dd72c83245c376e278a4c378f84b4
+Author: Nick O'Donoghue <nick.od@me.com>
+Date:   Mon Nov 17 00:42:55 2014 +0000
+
+    add unit test for affix-top for padding issue
+
+ js/tests/unit/affix.js | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+
+commit 423825f50670174033e85a3ebe59743e05e4e415
+Merge: c2abfc0 881f5fd
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Nov 17 15:49:07 2014 -0800
+
+    Merge pull request #15161 from twbs/travis-lint
+    
+    fix travis.yml lint errors
+
+commit 881f5fd5ca5b59aa7183a93a5df68d5b36683db7
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Nov 17 15:38:03 2014 -0800
+
+    fix travis.yml lint errors
+
+ .travis.yml | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit c2abfc0a4427237e288eee06a364662345fbbf9d
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Mon Nov 17 18:57:02 2014 +0100
+
+    grunt
+
+ dist/css/bootstrap.css.map      |  2 +-
+ dist/js/bootstrap.js            | 13 +++++--------
+ dist/js/bootstrap.min.js        |  2 +-
+ docs/assets/js/raw-files.min.js |  4 ++--
+ docs/dist/css/bootstrap.css.map |  2 +-
+ docs/dist/js/bootstrap.js       | 13 +++++--------
+ docs/dist/js/bootstrap.min.js   |  2 +-
+ less/carousel.less              |  2 +-
+ 8 files changed, 17 insertions(+), 23 deletions(-)
+
+commit 6503cb08228450eb14bbf4402f5bf7022f90216e
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Mon Nov 17 18:54:55 2014 +0100
+
+    Revert "Follow-up to #13074: use spec syntax instead of deprecated mixins"
+    
+    This reverts commit b10b373c6019666dbe1152245c9efdf214ceaa6a.
+    
+    Resolves #14937.
+
+ less/carousel.less | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit c04f95032d544c6d8050696c17aedfad6c0d7411
+Merge: 03f35d2 347ad61
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Nov 17 08:31:51 2014 -0800
+
+    Merge pull request #15156 from Quy/master
+    
+    Fix spelling of necolas' last name
+
+commit 347ad61010dd2e9f72af656e84e5e7fe9bf31d78
+Author: Quy Ton <quy@fluxbb.org>
+Date:   Mon Nov 17 08:05:26 2014 -0800
+
+    Fix name spelling
+
+ docs/_includes/css/less.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 03f35d2daba72f3fb9f74ffae0a0837a2ce59bdd
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Nov 17 03:19:05 2014 -0800
+
+    Since Safari has released new fixed versions, we're unlikely to take any further action on this.
+
+ docs/_includes/getting-started/browser-device-support.html | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 450a9ece107a2010e7d0c4eddafc58bad697b569
+Merge: 8df9298 bab3622
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Nov 17 02:13:21 2014 -0800
+
+    Merge pull request #15125 from patrickhlauke/docs-clean-up
+    
+    Docs clean up - unnecessary role attributes, callout clarifications
+
+commit 8df9298b1e8696dcbf0bae54bff1816bd8df061a
+Merge: d782eed b7398bc
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Nov 17 01:43:22 2014 -0800
+
+    Merge pull request #15152 from twbs/fix-15144
+    
+    honor wrap option in Carousel.getItemForDirection
+    [skip validator]
+
+commit d782eed426728a9a5ebe600a2f264c0f27a22c8f
+Merge: 7876ebd 4d2fb67
+Author: XhmikosR <XhmikosR@users.noreply.github.com>
+Date:   Mon Nov 17 11:31:21 2014 +0200
+
+    Merge pull request #15129 from twbs/examples-img-alt
+    
+    Specify `img` alternative text.
+
+commit 7876ebd2ed230334a3e591ce550bac702c845da5
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sun Nov 16 16:34:28 2014 -0800
+
+    rm redundant role="button" from <button>
+
+ docs/_includes/js/dropdowns.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1a2baf48735ee1762ce046e5bb24f5c8d6ba187a
+Merge: 5245baf cb85815
+Author: XhmikosR <XhmikosR@users.noreply.github.com>
+Date:   Sun Nov 16 17:42:33 2014 +0200
+
+    Merge pull request #15139 from patrickhlauke/docs-button-section-restructure
+    
+    Docs button section restructure
+
+commit 5245bafb928f23930d50fa5bf3389638e5273f88
+Merge: 939e759 0ada807
+Author: XhmikosR <XhmikosR@users.noreply.github.com>
+Date:   Sun Nov 16 17:42:05 2014 +0200
+
+    Merge pull request #15135 from hillai/patch-1
+    
+    Add modal autofocus example
+
+commit 0ada807ce6b99b95ce159a6b236309ab0ac425b3
+Author: hillai <hillaib@walla.com>
+Date:   Fri Nov 14 17:09:50 2014 +0200
+
+    Add modal autofocus example
+
+ docs/_includes/js/modal.html | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit b7398bc9c40f5f0e3404896adba10915b2a8304e
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sat Nov 15 22:43:20 2014 -0800
+
+    honor wrap option in Carousel.getItemForDirection; fixes #15144
+
+ js/carousel.js | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
+
+commit 8008fe707ec1259afcee1084bf4e79d29ed46ef4
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sat Nov 15 22:22:15 2014 -0800
+
+    add unit tests for Carousel's 'wrap' option
+
+ js/tests/unit/carousel.js | 153 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 153 insertions(+)
+
+commit 939e759f69f2afb83be563a14d0df323db83b14b
+Merge: 378f9d4 a7ae8c9
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sat Nov 15 21:33:02 2014 -0800
+
+    Merge pull request #15150 from twbs/ios-8.1
+    
+    upgrade iOS tests to 8.1
+
+commit a7ae8c91f2c997f0a1cdf4a0661a03627d00e385
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sat Nov 15 21:22:46 2014 -0800
+
+    upgrade iOS tests to 8.1
+    
+    [skip validator]
+
+ grunt/sauce_browsers.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 378f9d43ec5acabe51ed1f7c93ce323e401a6ee7
+Merge: 0c15270 eb93b5d
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sat Nov 15 21:25:37 2014 -0800
+
+    Merge pull request #15149 from twbs/yosemite
+    
+    upgrade OS X tests to Yosemite
+
+commit eb93b5db5f0144ed9e7ae872a1eaf9d7a66639c8
+Author: Chris Rebert <code@rebertia.com>
+Date:   Sat Nov 15 21:20:41 2014 -0800
+
+    upgrade OS X tests to Yosemite
+    
+    [skip validator]
+
+ grunt/sauce_browsers.yml | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit cb8581580c86ba7e2805dc63ac7edd4548c9801c
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Sat Nov 15 00:26:22 2014 +0000
+
+    Move button-tags section to start of button section
+
+ docs/_includes/css/buttons.html | 61 +++++++++++++++++++++--------------------
+ docs/_includes/nav/css.html     |  2 +-
+ 2 files changed, 32 insertions(+), 31 deletions(-)
+
+commit 25ef6ad625d02ef8832edabeee1319ffde4537cf
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Sat Nov 15 00:25:13 2014 +0000
+
+    Move context-specific callout to general tag usage
+
+ docs/_includes/css/buttons.html | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 0c1527010893065635b8af7df221db9edb3e8971
+Merge: 61c6e18 729a115
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Nov 14 16:16:08 2014 -0800
+
+    Merge pull request #15137 from twbs/split-inline-form
+    
+    split .form-inline .input-group into separate docs example
+    [skip sauce]
+
+commit 61c6e186a97481d39997a23f463f610cc851f0ad
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Nov 14 14:13:25 2014 -0800
+
+    Filed http://openradar.appspot.com/18987206
+    
+    Refs #9774
+
+ docs/_data/browser-bugs.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 729a115c8816edfacae48c26f0a751937fd387ae
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Nov 14 12:03:54 2014 -0800
+
+    split .form-inline .input-group into separate docs example
+
+ docs/_includes/css/forms.html | 40 ++++++++++++++++++++++++++--------------
+ 1 file changed, 26 insertions(+), 14 deletions(-)
+
+commit a577f1922ee7054a97b455ccfaa16857cb2b79fc
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Fri Nov 14 15:18:34 2014 +0100
+
+    Collapse: Use $.fn.children instead of `>` in selector
+    
+    Fixes #15131.
+
+ js/collapse.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit db4e5efb8f1ddf1720f20440bdc1e050f98e78e0
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Fri Nov 14 12:37:31 2014 +0000
+
+    Fixes to scope
+    
+    as discssued in
+    https://github.com/twbs/bootstrap/issues/15117#issuecomment-63029993
+    
+    - added ``scope="row"`` to row headers
+    - made sure row headers are actual ``<th>`` elements
+    - removed ``scope="col"`` where it was redundant
+    - simplified table examples with (to me) unnecessary
+    ``rowspan``/``colspan`` (unless you really want complex tables, in which
+    case we would need full-on ``id`` and ``headers`` attributes to make
+    sure each table cell has an explicit association with the related header
+    cells - overkill, in my opinion)
+    - one table (in typography) left header-less, as it's more or less presentational (though its structure is still important, hence not adding ``role="presentation"``)
+
+ docs/_includes/components/panels.html              | 12 +--
+ docs/_includes/css/grid.html                       | 18 ++---
+ docs/_includes/css/responsive-utilities.html       | 26 +++----
+ docs/_includes/css/sass.html                       | 12 +--
+ docs/_includes/css/tables.html                     | 91 +++++++++++-----------
+ .../getting-started/browser-device-support.html    | 14 ++--
+ 6 files changed, 85 insertions(+), 88 deletions(-)
+
+commit bab36220c98bc9552a483d5d091cb8d8acfd3d31
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Fri Nov 14 01:44:09 2014 +0000
+
+    Redundant role="navigation" on <nav>s
+    
+    plus one example that still used the old <div role="navigation"> and a
+    fix-up of the callout as per
+    https://github.com/twbs/bootstrap/issues/15109
+
+ docs/_includes/components/navbar.html         | 34 +++++++++++++--------------
+ docs/_includes/js/dropdowns.html              |  2 +-
+ docs/_includes/js/scrollspy.html              |  2 +-
+ docs/_includes/nav/main.html                  |  2 +-
+ docs/examples/carousel/index.html             |  2 +-
+ docs/examples/dashboard/index.html            |  2 +-
+ docs/examples/jumbotron/index.html            |  2 +-
+ docs/examples/justified-nav/index.html        |  4 ++--
+ docs/examples/navbar-fixed-top/index.html     |  2 +-
+ docs/examples/navbar-static-top/index.html    |  2 +-
+ docs/examples/navbar/index.html               |  2 +-
+ docs/examples/non-responsive/index.html       |  2 +-
+ docs/examples/offcanvas/index.html            |  4 ++--
+ docs/examples/starter-template/index.html     |  2 +-
+ docs/examples/sticky-footer-navbar/index.html |  2 +-
+ docs/examples/theme/index.html                |  2 +-
+ 16 files changed, 34 insertions(+), 34 deletions(-)
+
+commit 25cac1ea9a70ab192a4b4fb49b972de2f342d240
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Fri Nov 14 01:27:47 2014 +0000
+
+    Redundant role="form" on <form>s
+
+ docs/_includes/components/input-groups.html |  8 ++--
+ docs/_includes/css/forms.html               | 66 ++++++++++++++---------------
+ docs/_includes/js/modal.html                |  4 +-
+ docs/customize.html                         |  2 +-
+ docs/examples/jumbotron/index.html          |  2 +-
+ docs/examples/signin/index.html             |  2 +-
+ 6 files changed, 42 insertions(+), 42 deletions(-)
+
+commit 27d9d35ffd2ec9787374247b373d0cf96cdad3e8
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Fri Nov 14 01:15:54 2014 +0000
+
+    Expand caveat for disabled fieldsets and links
+
+ docs/_includes/css/forms.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4d2fb67050a4d1aee254a7b18fdc75d64f7984ad
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Thu Nov 13 19:31:17 2014 +0200
+
+    Specify `img` alternative text.
+
+ docs/_includes/getting-started/examples.html | 36 ++++++++++++++--------------
+ 1 file changed, 18 insertions(+), 18 deletions(-)
+
+commit 14857bd4a2d4486a12d0f8bacb3abd703cf8c1c7
+Merge: 7bdc307 cd03436
+Author: Julian Thilo <bigj95t@gmail.com>
+Date:   Fri Nov 14 08:33:21 2014 +0100
+
+    Merge pull request #15126 from Quy/master
+    
+    Fix link
+
+commit cd03436379cf911b111f5400e36c2ba7eb923714
+Author: Quy Ton <quy@fluxbb.org>
+Date:   Thu Nov 13 22:20:30 2014 -0800
+
+    Fix link
+
+ docs/_includes/getting-started/accessibility.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7bdc307b70caaad69fd88a6a9dd6de6a97e1505c
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Nov 13 15:18:55 2014 -0800
+
+    clarify that Bower is one among several installation methods
+
+ docs/_includes/getting-started/download.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b26eb44305ddc9f9d83192f8f734ecf27f2f04e7
+Merge: 3a96a80 a7682e3
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Nov 13 13:54:40 2014 -0800
+
+    Merge pull request #15122 from twbs/bump-remarkable
+    
+    bump remarkable devDependency to ~1.4.1
+
+commit a7682e3fde01e2b5e7c12cea10ca2d4251f73e69
+Author: Chris Rebert <code@rebertia.com>
+Date:   Thu Nov 13 13:51:53 2014 -0800
+
+    bump remarkable devDependency to ~1.4.1
+    
+    [skip sauce]
+
+ package.json                   |  2 +-
+ test-infra/npm-shrinkwrap.json | 34 ++++++++++++----------------------
+ 2 files changed, 13 insertions(+), 23 deletions(-)
+
+commit 3a96a80a1b304518879e73f945ea254b9aa023a9
+Merge: 101940b ea40766
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Nov 13 12:24:03 2014 -0800
+
+    Merge pull request #15093 from twbs/id-callouts
+    
+    Give all docs callouts IDs
+    [skip sauce]
+
+commit 101940b452d1def46882f0d01f81f6e596f1e8cf
+Merge: 6ce4ca7 13d2a03
+Author: XhmikosR <XhmikosR@users.noreply.github.com>
+Date:   Thu Nov 13 22:19:06 2014 +0200
+
+    Merge pull request #15121 from twbs/npm-shrinkwrap@5.0.0
+    
+    Pin npm-shrinkwrap to v5.0.0 so that it works with npm 2.x.
+
+commit 6ce4ca75a22ae490d0a5cf23f947868dba51e831
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Thu Nov 13 22:18:02 2014 +0200
+
+    Fix a small grammar mistake.
+    
+    [ci skip]
+
+ docs/_includes/getting-started/examples.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ea407666ce3c5d708b4a830fb2d00bdcb0d2d53e
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Nov 11 20:23:49 2014 -0800
+
+    give all docs callouts IDs
+    
+    [skip sauce]
+
+ docs/_includes/components/alerts.html           |  6 +++---
+ docs/_includes/components/badges.html           |  2 +-
+ docs/_includes/components/button-dropdowns.html |  2 +-
+ docs/_includes/components/button-groups.html    | 14 +++++++-------
+ docs/_includes/components/dropdowns.html        |  4 ++--
+ docs/_includes/components/glyphicons.html       |  8 ++++----
+ docs/_includes/components/input-groups.html     |  6 +++---
+ docs/_includes/components/labels.html           |  2 +-
+ docs/_includes/components/navbar.html           | 18 +++++++++---------
+ docs/_includes/components/navs.html             |  8 ++++----
+ docs/_includes/components/progress-bars.html    |  2 +-
+ docs/_includes/css/buttons.html                 | 12 ++++++------
+ docs/_includes/css/forms.html                   | 24 ++++++++++++------------
+ docs/_includes/css/helpers.html                 | 10 +++++-----
+ docs/_includes/css/images.html                  |  4 ++--
+ docs/_includes/css/tables.html                  |  6 +++---
+ docs/_includes/css/type.html                    |  4 ++--
+ docs/_includes/js/buttons.html                  | 10 +++++-----
+ docs/_includes/js/collapse.html                 |  4 ++--
+ docs/_includes/js/dropdowns.html                |  2 +-
+ docs/_includes/js/modal.html                    |  6 +++---
+ docs/_includes/js/overview.html                 |  6 +++---
+ docs/_includes/js/popovers.html                 | 16 ++++++++--------
+ docs/_includes/js/scrollspy.html                |  6 +++---
+ docs/_includes/js/tabs.html                     |  2 +-
+ docs/_includes/js/tooltips.html                 | 12 ++++++------
+ 26 files changed, 98 insertions(+), 98 deletions(-)
+
+commit 5660be42faef7fecdd9121e052265da55202ae3c
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Thu Nov 13 19:27:47 2014 +0200
+
+    Use a 40x40 image for the `navbar` brand image example.
+    
+    Saves 3.4KB.
+
+ docs/_includes/components/navbar.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 20ba8ad6f05403833f0cbb5f820a2d1811269d41
+Merge: 8064904 e5c888f
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Nov 13 12:07:38 2014 -0800
+
+    Merge pull request #15120 from twbs/fix-forms-doc
+    
+    Fix .form-inline docs example
+
+commit 13d2a03379711479b87f7645a5dd305a92d494a5
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Thu Nov 13 21:58:22 2014 +0200
+
+    Pin npm-shrinkwrap to v5.0.0 so that it works with npm 2.x.
+    
+    Fixes #15105.
+
+ package.json                   |   2 +-
+ test-infra/npm-shrinkwrap.json | 366 +++++++++++++++++++++++++++--------------
+ 2 files changed, 243 insertions(+), 125 deletions(-)
+
+commit e5c888f4a2676614dc8986fd70b5c36d92d3906c
+Author: Chris Rebert <code@rebertia.com>
+Date:   Thu Nov 13 11:23:40 2014 -0800
+
+    Fix .form-inline docs example
+    
+    Make sample code match live example
+    Move <label> out of .input-group into .form-group instead
+    Change field from Email to Username to make it less redundant, slightly more realistic
+    Add <label> for Username field for consistency
+    Fixes #15118
+
+ docs/_includes/css/forms.html | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+commit bf43c9cf9f8127e7d3ad2b634413e7185bacc7b2
+Author: Zac Echola <zac.echola@so.mnscu.edu>
+Date:   Thu Nov 13 09:12:31 2014 -0600
+
+    escaped uri
+
+ docs/_includes/getting-started/community.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 806490499a9c204071cae322cfbc6a47caed8c02
+Merge: 856d31b 82eaefc
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Nov 12 17:27:38 2014 -0800
+
+    Merge pull request #15110 from twbs/ios-clickability
+    
+    add link to MDN docs regarding iOS Safari element clickability
+
+commit ddf39cc2e7e1c676d5141e259e362e241e4c6f0f
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Nov 12 16:32:51 2014 -0800
+
+    Don't line wrap event names in JS plugin docs
+
+ docs/_includes/js/affix.html     | 2 +-
+ docs/_includes/js/alerts.html    | 2 +-
+ docs/_includes/js/carousel.html  | 2 +-
+ docs/_includes/js/collapse.html  | 2 +-
+ docs/_includes/js/dropdowns.html | 2 +-
+ docs/_includes/js/modal.html     | 2 +-
+ docs/_includes/js/popovers.html  | 2 +-
+ docs/_includes/js/scrollspy.html | 2 +-
+ docs/_includes/js/tabs.html      | 2 +-
+ docs/_includes/js/tooltips.html  | 2 +-
+ docs/assets/css/src/docs.css     | 5 +++++
+ 11 files changed, 15 insertions(+), 10 deletions(-)
+
+commit 82eaefcd43fd6b10bda9c9b3f0d3b1cceb508c74
+Author: Chris Rebert <code@rebertia.com>
+Date:   Wed Nov 12 16:16:10 2014 -0800
+
+    add link to MDN docs regarding iOS Safari element clickability
+
+ docs/_includes/getting-started/browser-device-support.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 75dfed7f8fb8d1f9d4b643429209e2e1b235e296
+Author: Zac Echola <zac.echola@so.mnscu.edu>
+Date:   Wed Nov 12 15:31:36 2014 -0600
+
+    corrects IRC room
+
+ docs/_includes/getting-started/community.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 856d31b373622b9bc45cc893835fc9683ee708c0
+Merge: 84dcd22 ab1a9d4
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Nov 12 10:07:22 2014 -0800
+
+    Merge pull request #15089 from twbs/data-attrib-callout
+    
+    move data attributes callout into data attributes doc subsection
+
+commit 84dcd226df93e604e7e9aa34692744d630250920
+Merge: 9a7e365 1211a81
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Nov 12 10:06:07 2014 -0800
+
+    Merge pull request #15094 from twbs/js-navs
+    
+    JS docs: add Options, Methods, Events subsections to nav sidebar
+
+commit 9a7e365c2c4360335d25246dac11afb1f577210a
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Wed Nov 12 09:03:16 2014 -0800
+
+    bump version to v3.3.1
+
+ README.md                             |  2 +-
+ _config.yml                           | 14 +++++-----
+ bower.json                            |  2 +-
+ dist/css/bootstrap-theme.css          |  2 +-
+ dist/css/bootstrap-theme.min.css      |  2 +-
+ dist/css/bootstrap.css                |  2 +-
+ dist/css/bootstrap.min.css            |  2 +-
+ dist/js/bootstrap.js                  | 48 +++++++++++++++++------------------
+ dist/js/bootstrap.min.js              |  6 ++---
+ docs/assets/js/customize.min.js       |  6 ++---
+ docs/assets/js/raw-files.min.js       |  4 +--
+ docs/assets/js/src/customizer.js      |  2 +-
+ docs/dist/css/bootstrap-theme.css     |  2 +-
+ docs/dist/css/bootstrap-theme.min.css |  2 +-
+ docs/dist/css/bootstrap.css           |  2 +-
+ docs/dist/css/bootstrap.min.css       |  2 +-
+ docs/dist/js/bootstrap.js             | 48 +++++++++++++++++------------------
+ docs/dist/js/bootstrap.min.js         |  6 ++---
+ js/affix.js                           |  4 +--
+ js/alert.js                           |  4 +--
+ js/button.js                          |  4 +--
+ js/carousel.js                        |  4 +--
+ js/collapse.js                        |  4 +--
+ js/dropdown.js                        |  4 +--
+ js/modal.js                           |  4 +--
+ js/popover.js                         |  4 +--
+ js/scrollspy.js                       |  4 +--
+ js/tab.js                             |  4 +--
+ js/tooltip.js                         |  4 +--
+ js/transition.js                      |  2 +-
+ package.json                          |  2 +-
+ test-infra/npm-shrinkwrap.json        |  2 +-
+ 32 files changed, 102 insertions(+), 102 deletions(-)
+
+commit 143c4a2f8fc91513dc656e7bf3f234d21a45f849
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Wed Nov 12 08:51:35 2014 -0800
+
+    grunt
+
+ docs/assets/js/customize.min.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 07c1881bc27eacba74f4d975ca3428a24abd4940
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Wed Nov 12 09:49:29 2014 +0200
+
+    Update npm-shrinkwrap.
+
+ package.json                   |   2 +-
+ test-infra/npm-shrinkwrap.json | 370 ++++++++++++++---------------------------
+ 2 files changed, 127 insertions(+), 245 deletions(-)
+
+commit 542c1040aae2da79432168e46d8e8efcd1363f48
+Merge: b87370c f94cb58
+Author: XhmikosR <XhmikosR@users.noreply.github.com>
+Date:   Wed Nov 12 09:29:44 2014 +0200
+
+    Merge pull request #15095 from gitaeks/master
+    
+    Fixed a typo in Sign-in page example
+
+commit f94cb5817a4b8ef1a645ae69251ff8b226b7d076
+Author: gitaeks <break@kimsq.com>
+Date:   Wed Nov 12 15:52:32 2014 +0900
+
+    Fixed a typo in Sign-in page example
+    
+    Fixed a typo in Sign-in page example
+    http://getbootstrap.com/examples/signin/
+
+ docs/examples/signin/index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b87370c28f6f8cd0d2de6cc541dcba22788e4001
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Nov 11 21:22:27 2014 -0800
+
+    navbar callouts cleanup
+    
+    Move all callouts to be adjacent to each other
+    Combine JS-related callouts into a single callout
+
+ docs/_includes/components/navbar.html | 17 ++++++-----------
+ 1 file changed, 6 insertions(+), 11 deletions(-)
+
+commit 1211a8155e9357ddd747f7ecba800e460e72465d
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Nov 11 21:16:34 2014 -0800
+
+    JS docs: add Options, Methods, Events subsections to nav sidebar
+
+ docs/_includes/js/affix.html       |  4 ++--
+ docs/_includes/js/alerts.html      |  4 ++--
+ docs/_includes/js/carousel.html    |  6 +++---
+ docs/_includes/js/collapse.html    |  6 +++---
+ docs/_includes/js/dropdowns.html   |  6 +++---
+ docs/_includes/js/modal.html       |  6 +++---
+ docs/_includes/js/popovers.html    |  4 ++--
+ docs/_includes/js/scrollspy.html   |  6 +++---
+ docs/_includes/js/tabs.html        |  4 ++--
+ docs/_includes/js/tooltips.html    |  6 +++---
+ docs/_includes/nav/javascript.html | 25 +++++++++++++++++++++++++
+ 11 files changed, 51 insertions(+), 26 deletions(-)
+
+commit ff386147ce341a15f02b31f638500487246e34da
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Tue Nov 11 20:25:09 2014 -0800
+
+    grunt
+
+ dist/css/bootstrap.css          | 4 ----
+ dist/css/bootstrap.css.map      | 2 +-
+ dist/css/bootstrap.min.css      | 2 +-
+ dist/js/bootstrap.js            | 2 +-
+ dist/js/bootstrap.min.js        | 2 +-
+ docs/assets/js/raw-files.min.js | 4 ++--
+ docs/dist/css/bootstrap.css     | 4 ----
+ docs/dist/css/bootstrap.css.map | 2 +-
+ docs/dist/css/bootstrap.min.css | 2 +-
+ docs/dist/js/bootstrap.js       | 2 +-
+ docs/dist/js/bootstrap.min.js   | 2 +-
+ 11 files changed, 10 insertions(+), 18 deletions(-)
+
+commit c672ed3fb0c15b4a3be4b707f206bda48f663bee
+Merge: cb9531f 69d42ce
+Author: Chris Rebert <github@rebertia.com>
+Date:   Tue Nov 11 19:56:28 2014 -0800
+
+    Merge pull request #15092 from twbs/scrollspy-callouts
+    
+    move scrollspy callouts so they're all adjacent to each other
+    [skip sauce]
+
+commit cb9531f3787539b1480f4f52d14b9570a519e0a1
+Merge: 125945e e2e9613
+Author: Chris Rebert <github@rebertia.com>
+Date:   Tue Nov 11 19:53:49 2014 -0800
+
+    Merge pull request #15091 from twbs/popovers-heading
+    
+    move popover examples heading to directly before the actual examples
+
+commit 125945eb9058ad8db1f3843259ee9aa73e9bec5f
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Nov 11 19:49:44 2014 -0800
+
+    add missing dots to .sr-only class mentions, for consistency w/ rest of docs
+
+ docs/_includes/css/buttons.html | 2 +-
+ docs/_includes/css/forms.html   | 6 +++---
+ docs/_includes/css/tables.html  | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 69d42cef141624491705b0dafcf30b2f13f319a2
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Nov 11 19:42:29 2014 -0800
+
+    move scrollspy callouts so they're all adjacent to each other
+
+ docs/_includes/js/scrollspy.html | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit e2e9613f8359189cc11a5c6c577f013b677dd59e
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Nov 11 19:40:47 2014 -0800
+
+    move popover examples heading to directly before the actual examples
+
+ docs/_includes/js/popovers.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d79e898d676dfc80f89c24cd52ad71967c796bf1
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Nov 11 19:38:06 2014 -0800
+
+    consolidate relatedTarget docs in dropdown event docs
+
+ docs/_includes/js/dropdowns.html | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+commit ab1a9d4fac0cb1fba893559e417fc85badac518c
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Nov 11 19:35:08 2014 -0800
+
+    move data attributes callout into data attributes doc subsection
+
+ docs/_includes/js/overview.html | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit ba2b3a013696acea8e140209a1d6eeb2628aa6e8
+Merge: 5ba5200 647d30a
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Tue Nov 11 19:30:54 2014 -0800
+
+    Merge pull request #14900 from twbs/labels-readme
+    
+    Add labels explanation to readme
+
+commit 5ba52001952b6a0744fc17252c0a07b97a836583
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Nov 11 19:29:56 2014 -0800
+
+    move carousel accessibility callout next to rest of callouts
+
+ docs/_includes/js/carousel.html | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 3b2d1570fa85c0faac0e7da65b415e59996f4300
+Author: Chris Rebert <code@rebertia.com>
+Date:   Tue Nov 11 19:26:10 2014 -0800
+
+    move single-toggle button plugin callout before example for consistency
+
+ docs/_includes/js/buttons.html | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 647d30aa04ee777aad378f8d31f2735ec465d61c
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Tue Nov 11 19:25:54 2014 -0800
+
+    move to the contributing guidelines
+
+ CONTRIBUTING.md | 19 +++++++++++++++++++
+ README.md       | 21 ---------------------
+ 2 files changed, 19 insertions(+), 21 deletions(-)
+
+commit 1e268ddfc30def5f4b2b0f2ace34b7de549ea830
+Merge: 4f6aeaa 001d5e0
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Tue Nov 11 19:25:16 2014 -0800
+
+    Merge branch 'master' into labels-readme
+
+commit 001d5e00c58bbb8e4d34c085c5b27b214a475bd5
+Merge: 56f4156 1d55ada
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 12 02:23:34 2014 +0100
+
+    Merge pull request #15088 from twbs/dropdown-keydown-ignores
+    
+    Dropdown: ignore keydown events coming from `input`s and `textarea`s
+
+commit 1d55ada581e2e669cc7c163dc469b9184bbd8f7d
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 12 01:18:06 2014 +0100
+
+    Dropdown: ignore keydown events coming from `input`s and `textarea`s
+    
+    Fixes #15084.
+
+ js/dropdown.js            |  2 +-
+ js/tests/unit/dropdown.js | 41 +++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 42 insertions(+), 1 deletion(-)
+
+commit 56f41561260651fc67fcbe7ce65f7aa7fc79788f
+Merge: 03d7512 0681971
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 12 01:19:39 2014 +0100
+
+    Merge pull request #15087 from patrickhlauke/dropdown-accessibility-tweaks
+    
+    Wash-up of some stray dropdown examples
+
+commit 0681971c8aea1c4de4ae3878506477b835cacc6b
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Tue Nov 11 23:52:52 2014 +0000
+
+    Wash-up of some stray dropdown examples
+    
+    adding explicit aria-expanded="false" initial state (so they're
+    correctly announced by AT as being collapsed), and - in the case of
+    old-school use of <a> - role="button"
+
+ docs/_includes/components/navbar.html         |  8 ++++----
+ docs/_includes/js/dropdowns.html              | 16 ++++++++--------
+ docs/_includes/js/scrollspy.html              |  2 +-
+ docs/examples/carousel/index.html             |  2 +-
+ docs/examples/navbar-fixed-top/index.html     |  2 +-
+ docs/examples/navbar-static-top/index.html    |  2 +-
+ docs/examples/navbar/index.html               |  2 +-
+ docs/examples/non-responsive/index.html       |  2 +-
+ docs/examples/sticky-footer-navbar/index.html |  2 +-
+ docs/examples/theme/index.html                |  8 ++++----
+ 10 files changed, 23 insertions(+), 23 deletions(-)
+
+commit 03d7512cc0f7153205d87cfb3276f3f2f7d1c32c
+Merge: 2006a43 857aab0
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Tue Nov 11 15:51:54 2014 -0800
+
+    Merge pull request #15086 from twbs/btn_group_focus
+    
+    Don't remove focus outline from buttons in button groups
+
+commit 2006a435d98b51a8d8430abe14ac3611113c2dff
+Merge: a4497c8 917deca
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Tue Nov 11 15:47:01 2014 -0800
+
+    Merge pull request #15077 from jayanthkoushik/issue-15076-fix
+    
+    Fix Issue #15076.
+
+commit 857aab0a1c121fb6929d61863e6c92f088d72e57
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Tue Nov 11 15:43:00 2014 -0800
+
+    Fixes #14939: Don't remove focus outline from buttons in button groups
+
+ less/button-groups.less | 4 ----
+ 1 file changed, 4 deletions(-)
+
+commit a4497c8a831fc96e5e2fefb7cf1570d81d957296
+Merge: bb89657 9391ef2
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 12 00:41:28 2014 +0100
+
+    Merge pull request #15085 from patrickhlauke/glyphicons-in-forms-tweak
+    
+    Glyphicon tweaks
+
+commit 9391ef207ff05f28e3952afdb92639c02b5920f5
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Tue Nov 11 22:41:21 2014 +0000
+
+    aria-hidden added to some stray glyphicons
+    
+    plus minor tweak to customizer's generated alerts
+
+ .../getting-started/browser-device-support.html    | 46 +++++++++++-----------
+ docs/_includes/js/carousel.html                    | 12 +++---
+ docs/assets/js/customize.min.js                    |  2 +-
+ docs/assets/js/src/customizer.js                   |  8 ++--
+ docs/examples/carousel/index.html                  |  4 +-
+ docs/examples/theme/index.html                     |  4 +-
+ 6 files changed, 38 insertions(+), 38 deletions(-)
+
+commit eb580f739ce8aec357f0847a687a8b372ab0d58a
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Tue Nov 11 22:13:25 2014 +0000
+
+    Improved accessible glyphicon advice/use
+    
+    ...to actually make it consistent with what I said in the glyphicon docs
+    section...
+
+ docs/_includes/css/forms.html | 62 ++++++++++++++++++++++++++-----------------
+ 1 file changed, 37 insertions(+), 25 deletions(-)
+
+commit 917decab6cc15c0178b1ebf9d30e4e3c0ef90c7f
+Author: Jayanth Koushik <jnkoushik@gmail.com>
+Date:   Tue Nov 11 15:28:21 2014 +0530
+
+    Fix Issue #15076.
+    
+    This commit adds documentation explaining the need to have an initial
+    .active element in carousels.
+
+ docs/_includes/js/carousel.html | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit bb89657bcb53a60d579d8fd9bbea56dde05dad8c
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Thu Oct 30 16:45:33 2014 +0000
+
+    Assorted accessibility (and some consistency) fixes for documentation
+    
+    Closes #14951 by merging it.
+
+ docs/_includes/components/button-dropdowns.html   |  46 +++----
+ docs/_includes/components/button-groups.html      | 143 ++++++++++++----------
+ docs/_includes/components/dropdowns.html          |  10 +-
+ docs/_includes/components/input-groups.html       |  12 +-
+ docs/_includes/components/navbar.html             |   4 +-
+ docs/_includes/components/navs.html               |  55 +++++----
+ docs/_includes/components/pagination.html         |  46 +++----
+ docs/_includes/css/buttons.html                   |  14 ++-
+ docs/_includes/css/forms.html                     | 104 +++++++++-------
+ docs/_includes/css/grid.html                      |   2 +-
+ docs/_includes/css/helpers.html                   |   8 ++
+ docs/_includes/css/tables.html                    |   5 +-
+ docs/_includes/getting-started/accessibility.html |   5 +
+ docs/_includes/js/tabs.html                       |  40 +++---
+ docs/_includes/nav/components.html                |   6 +-
+ docs/_includes/nav/css.html                       |  12 +-
+ docs/examples/cover/index.html                    |  12 +-
+ docs/examples/dashboard/index.html                |   2 +-
+ docs/examples/jumbotron-narrow/index.html         |  12 +-
+ docs/examples/justified-nav/index.html            |  18 +--
+ docs/examples/navbar-fixed-top/index.html         |   2 +-
+ docs/examples/navbar-static-top/index.html        |   2 +-
+ docs/examples/navbar/index.html                   |   8 +-
+ docs/examples/signin/index.html                   |   6 +-
+ 24 files changed, 322 insertions(+), 252 deletions(-)
+
+commit 99919c036496d72030a965953f0e2d2d760d638c
+Merge: eaf3b53 c513f58
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Nov 10 13:40:29 2014 -0800
+
+    Merge pull request #15073 from twbs/15072-more
+    
+    Remove X-UA-Compatible caveat from Validators docs
+
+commit c513f58c6a2e345da338aebe45ee422b07260017
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Nov 10 13:14:33 2014 -0800
+
+    Remove X-UA-Compatible caveat from Validators docs
+    
+    Refs #15072
+
+ docs/_includes/getting-started/browser-device-support.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eaf3b53e44e1e1015f87181d27d651a2b1ea0a0d
+Merge: bf4a331 ff5f9db
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Mon Nov 10 20:23:58 2014 +0100
+
+    Merge pull request #15072 from twbs/html-validator-x-ua-compatible
+    
+    HTML validation: No longer relax the `X-UA-Compatible` error
+
+commit ff5f9db68ec7c7f89dd353e9d73b9fc1abc15ac7
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Mon Nov 10 20:02:06 2014 +0100
+
+    HTML validation: No longer relax the `X-UA-Compatible` error
+    
+    The validator no longer complains about it unless the value is different from `content=IE=edge`, see https://www.w3.org/Bugs/Public/show_bug.cgi?id=27091
+
+ Gruntfile.js | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit bf4a331f1a6817b477bd5a931bb3b0671997f9de
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Mon Nov 10 12:55:26 2014 +0200
+
+    Run `grunt`.
+
+ docs/assets/css/docs.min.css    | 2 +-
+ docs/assets/js/customize.min.js | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 7047f9df14d89c9b38bff2d76be5c1d5f0f2b5db
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Mon Nov 10 12:35:33 2014 +0200
+
+    Update devDependencies.
+
+ package.json                   |   6 +-
+ test-infra/npm-shrinkwrap.json | 706 +++++++++++++++++++++++++++--------------
+ 2 files changed, 463 insertions(+), 249 deletions(-)
+
+commit 5339f7c8d577f5890f324df2a9310d7c1f1cb2bd
+Merge: c4847c8 19520d4
+Author: XhmikosR <XhmikosR@users.noreply.github.com>
+Date:   Mon Nov 10 12:30:34 2014 +0200
+
+    Merge pull request #15009 from patrickhlauke/glyphicon-accessibility-tweaks
+    
+    Glyphicon accessibility tweaks
+
+commit 19520d46208161eb83cb5201ee8bac526483fe74
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Tue Nov 4 10:56:40 2014 +0000
+
+    Add aria-hidden to icons in about page
+
+ docs/about.html | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 1786942d33d1c169b62cae18b52662c94a6224aa
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Tue Nov 4 10:50:50 2014 +0000
+
+    Meaningful icons in about page
+
+ docs/about.html | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit eb74d8c86399d41673b9aa0052c70582b13bd714
+Author: Patrick H. Lauke <redux@splintered.co.uk>
+Date:   Tue Nov 4 10:39:54 2014 +0000
+
+    Accessibility tweaks and explanation for glyphicons
+    
+    - add aria-hidden="true" to avoid SRs unintentionally reading out the
+    Unicode character (see
+    http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html)
+    - callout with advice on accessible icon usage
+    - replaced sr-only text in examples with (in the case of button) cleaner
+    aria-label
+    - additional example of icon used to convey meaning (in a
+    non-interactive control)
+
+ docs/_includes/components/glyphicons.html | 47 +++++++++++++++++++++++--------
+ 1 file changed, 36 insertions(+), 11 deletions(-)
+
+commit c4847c8f6ba39c331e4f0bfcd4f8d02ba4fa2fa6
+Merge: eb74a8c 1764c6e
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Nov 9 23:12:02 2014 -0800
+
+    Merge branch 'master' of github.com:twbs/bootstrap
+
+commit eb74a8cbf363699eb822057650ddff2f36765ec9
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Nov 9 23:11:28 2014 -0800
+
+    darken primary blue for accessibility contrast on link colors
+
+ dist/css/bootstrap-theme.css             | 76 ++++++++++++++++----------------
+ dist/css/bootstrap-theme.css.map         |  2 +-
+ dist/css/bootstrap-theme.min.css         |  2 +-
+ dist/css/bootstrap.css                   | 72 +++++++++++++++---------------
+ dist/css/bootstrap.css.map               |  2 +-
+ dist/css/bootstrap.min.css               |  2 +-
+ docs/_includes/customizer-variables.html |  2 +-
+ docs/assets/css/src/docs.css             |  4 +-
+ docs/assets/js/customize.min.js          |  2 +-
+ docs/assets/js/raw-files.min.js          |  2 +-
+ docs/dist/css/bootstrap-theme.css        | 76 ++++++++++++++++----------------
+ docs/dist/css/bootstrap-theme.css.map    |  2 +-
+ docs/dist/css/bootstrap-theme.min.css    |  2 +-
+ docs/dist/css/bootstrap.css              | 72 +++++++++++++++---------------
+ docs/dist/css/bootstrap.css.map          |  2 +-
+ docs/dist/css/bootstrap.min.css          |  2 +-
+ less/variables.less                      |  2 +-
+ 17 files changed, 162 insertions(+), 162 deletions(-)
+
+commit 1764c6e5090a687f3a3f3fc4a8ee595eea22a03f
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Mon Nov 10 08:06:37 2014 +0200
+
+    Bump Jekyll to v2.5.1.
+
+ .travis.yml | 2 +-
+ README.md   | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit d1278efcc5a6b45467caca15206bb1a83ae99fc5
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Nov 9 18:04:00 2014 -0800
+
+    grunt
+
+ dist/css/bootstrap.css          | 14 +++++++-------
+ dist/css/bootstrap.css.map      |  2 +-
+ dist/css/bootstrap.min.css      |  2 +-
+ docs/assets/js/customize.min.js |  2 +-
+ docs/assets/js/raw-files.min.js |  2 +-
+ docs/dist/css/bootstrap.css     | 14 +++++++-------
+ docs/dist/css/bootstrap.css.map |  2 +-
+ docs/dist/css/bootstrap.min.css |  2 +-
+ 8 files changed, 20 insertions(+), 20 deletions(-)
+
+commit 99148166c5cb4017227c649849c8fe51bb8d7473
+Merge: 5670dd8 a05f075
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Sun Nov 9 15:05:40 2014 -0800
+
+    Merge pull request #15052 from twbs/badge-in-non-anchor-list-group-item
+    
+    Badges: fix active styles when in non-anchor `.list-group-item`
+
+commit 5670dd8930228af772157b933fe672ca5c5313ca
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Nov 9 15:04:32 2014 -0800
+
+    comment and formatting
+
+ less/forms.less | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+commit 46d1bf8eefa5ca00357d7dd8f901ffb5c48c7be2
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sun Nov 9 15:03:33 2014 -0800
+
+    Fixes #14234 again
+    
+    - Rather than override and hack for IE8-10 and then IE11, scope to just Safari.
+    - Drops the IE hacks for a media query Webkit hack
+
+ dist/css/bootstrap.css          | 69 ++++++++++++-----------------------------
+ dist/css/bootstrap.css.map      |  2 +-
+ dist/css/bootstrap.min.css      |  2 +-
+ docs/assets/js/customize.min.js |  2 +-
+ docs/assets/js/raw-files.min.js |  2 +-
+ docs/dist/css/bootstrap.css     | 69 ++++++++++++-----------------------------
+ docs/dist/css/bootstrap.css.map |  2 +-
+ docs/dist/css/bootstrap.min.css |  2 +-
+ less/forms.less                 | 42 +++++++++----------------
+ 9 files changed, 59 insertions(+), 133 deletions(-)
+
+commit a05f07528a7081ad3ce520831ba851a81b903d8e
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Sat Nov 8 11:00:37 2014 +0100
+
+    Badges: fix active styles when in non-anchor `.list-group-item`
+
+ less/badges.less     | 8 +++++++-
+ less/list-group.less | 8 --------
+ 2 files changed, 7 insertions(+), 9 deletions(-)
+
+commit df28b7e25f2c4008ad3a8179ccf7e556fcb13400
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 8 00:13:19 2014 -0800
+
+    Fixes #14965: Reset top border-radii on dropdown menus in fixed bottom navbars
+
+ dist/css/bootstrap.css          | 2 ++
+ dist/css/bootstrap.css.map      | 2 +-
+ dist/css/bootstrap.min.css      | 2 +-
+ docs/assets/js/customize.min.js | 2 +-
+ docs/assets/js/raw-files.min.js | 2 +-
+ docs/dist/css/bootstrap.css     | 2 ++
+ docs/dist/css/bootstrap.css.map | 2 +-
+ docs/dist/css/bootstrap.min.css | 2 +-
+ less/navbar.less                | 1 +
+ 9 files changed, 11 insertions(+), 6 deletions(-)
+
+commit 852eef9689079b8781c102cce43dc352ae8325d6
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Sat Nov 8 00:10:53 2014 -0800
+
+    grunt
+
+ dist/css/bootstrap-theme.css          | 13 +++++++++++++
+ dist/css/bootstrap-theme.css.map      |  2 +-
+ dist/css/bootstrap-theme.min.css      |  2 +-
+ docs/assets/js/customize.min.js       |  2 +-
+ docs/assets/js/raw-files.min.js       |  2 +-
+ docs/dist/css/bootstrap-theme.css     | 13 +++++++++++++
+ docs/dist/css/bootstrap-theme.css.map |  2 +-
+ docs/dist/css/bootstrap-theme.min.css |  2 +-
+ 8 files changed, 32 insertions(+), 6 deletions(-)
+
+commit 39f8c8183bac23fdd05bb617a444e0941802ffac
+Merge: 8fbb2bb 0d851e8
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Sat Nov 8 00:07:39 2014 -0800
+
+    Merge pull request #15018 from twbs/fix-theme-active-items
+    
+    Theme: Correctly override active dropdown items in collapsed navbars
+
+commit 8fbb2bbbd17449205339553ffdcf8e87c4354630
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Fri Nov 7 23:01:20 2014 -0800
+
+    Fixes #14979: Override .jumbotron padding within .container-fluid to match .container
+
+ dist/css/bootstrap.css          | 3 ++-
+ dist/css/bootstrap.css.map      | 2 +-
+ dist/css/bootstrap.min.css      | 2 +-
+ docs/assets/js/customize.min.js | 2 +-
+ docs/assets/js/raw-files.min.js | 2 +-
+ docs/dist/css/bootstrap.css     | 3 ++-
+ docs/dist/css/bootstrap.css.map | 2 +-
+ docs/dist/css/bootstrap.min.css | 2 +-
+ less/jumbotron.less             | 3 ++-
+ 9 files changed, 12 insertions(+), 9 deletions(-)
+
+commit 2862c30320e8a1c0499f4bd83141e0c6cd959f1e
+Author: Mark Otto <markdotto@gmail.com>
+Date:   Fri Nov 7 22:17:39 2014 -0800
+
+    Fixes #15046: Add full font overrides for popovers and tooltips
+
+ dist/css/bootstrap.css          | 3 +++
+ dist/css/bootstrap.css.map      | 2 +-
+ dist/css/bootstrap.min.css      | 2 +-
+ docs/assets/js/raw-files.min.js | 2 +-
+ docs/dist/css/bootstrap.css     | 3 +++
+ docs/dist/css/bootstrap.css.map | 2 +-
+ docs/dist/css/bootstrap.min.css | 2 +-
+ less/popovers.less              | 1 +
+ less/tooltip.less               | 3 +++
+ 9 files changed, 15 insertions(+), 5 deletions(-)
+
+commit d904429e05ce8ba68ebba673cab603a861792aba
+Merge: f85c592 f0d8894
+Author: Chris Rebert <github@rebertia.com>
+Date:   Wed Nov 5 14:59:24 2014 -0800
+
+    Merge pull request #14986 from twbs/safari-broken-printing-doc
+    
+    Add #14868 to the compatibility docs
+
+commit f85c5921dd14636793e927fc32defbebf803ae4b
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 20:11:46 2014 +0100
+
+    grunt
+
+ docs/assets/js/customize.min.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1342c63893c76e5636af24b485628241faeefbe3
+Merge: 0383486 d775469
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 20:09:17 2014 +0100
+
+    Merge pull request #15031 from twbs/customizer-remove-file-type-check
+    
+    Customizer: Remove file type check from config import
+
+commit d77546963b823629c86fcbec949d9fd895fc0922
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 19:10:48 2014 +0100
+
+    Customizer: Remove file type check from config import
+    
+    Fixes #14978.
+
+ docs/assets/js/src/customizer.js | 32 +++++++++++++-------------------
+ 1 file changed, 13 insertions(+), 19 deletions(-)
+
+commit 03834866654025396530e5c4dddcd74cd214db30
+Merge: e27dc5d 30df201
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 18:52:09 2014 +0100
+
+    Merge pull request #15030 from twbs/config-bridge-jekyll-plugin
+    
+    Use a Jekyll plugin instead of the `copy:configBridge` grunt task
+
+commit 0d851e8b8a39eb7f79a202ad20182676805e742d
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Tue Nov 4 23:46:44 2014 +0100
+
+    Theme: Correctly override active dropdown items in collapsed navbars
+
+ less/theme.less | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit 30df201abc482c5545bf4995feb957dec98d6d21
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 18:35:13 2014 +0100
+
+    Use a Jekyll plugin instead of the `copy:configBridge` grunt task
+
+ .gitignore              | 1 -
+ Gruntfile.js            | 6 +-----
+ docs/_plugins/bridge.rb | 9 +++++++++
+ 3 files changed, 10 insertions(+), 6 deletions(-)
+
+commit e27dc5d71e962effae1ec3b67fa72f77b14d3d98
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 01:56:18 2014 +0100
+
+    grunt
+
+ dist/css/bootstrap.css.map      | 2 +-
+ dist/js/bootstrap.js            | 1 +
+ dist/js/bootstrap.min.js        | 4 ++--
+ docs/assets/js/customize.min.js | 2 +-
+ docs/assets/js/raw-files.min.js | 4 ++--
+ docs/dist/css/bootstrap.css.map | 2 +-
+ docs/dist/js/bootstrap.js       | 1 +
+ docs/dist/js/bootstrap.min.js   | 4 ++--
+ 8 files changed, 11 insertions(+), 9 deletions(-)
+
+commit 00fa64650a604639dfd7ffc747a126a06c88e031
+Merge: 2164432 b8dbb54
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 01:54:13 2014 +0100
+
+    Merge pull request #14921 from bassjobsen/patch-3
+    
+    Update grid-framework.less
+
+commit 21644321e4cc8d1aa2aec99e8b5f35bfbd27ee4f
+Merge: db90ff6 469dc3a
+Author: Chris Rebert <github@rebertia.com>
+Date:   Tue Nov 4 16:50:36 2014 -0800
+
+    Merge pull request #14993 from twbs/fix-14991
+    
+    Have Carousel ignore keyboard events from <input>s or <textarea>s
+
+commit db90ff6df7a1a3e3cc914a3edc0dad0518462f0d
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 01:45:16 2014 +0100
+
+    grunt
+
+ dist/js/bootstrap.js            | 41 +++++++++++++++++++++++++++++++++--------
+ dist/js/bootstrap.min.js        |  4 ++--
+ docs/assets/js/customize.min.js |  2 +-
+ docs/assets/js/raw-files.min.js |  2 +-
+ docs/dist/js/bootstrap.js       | 41 +++++++++++++++++++++++++++++++++--------
+ docs/dist/js/bootstrap.min.js   |  4 ++--
+ 6 files changed, 72 insertions(+), 22 deletions(-)
+
+commit 72ad89b0777278044bd852c3ac4520b42d5504bb
+Merge: 425a985 da74fba
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 01:39:46 2014 +0100
+
+    Merge pull request #14933 from twbs/center-modal-at-all-times
+    
+    Center modal at all times
+
+commit da74fba490673cd4b60e9485b4f0a7aea225d7cc
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Thu Oct 30 11:25:28 2014 +0100
+
+    Center modal dialog at all times
+
+ js/modal.js | 41 +++++++++++++++++++++++++++++++++--------
+ 1 file changed, 33 insertions(+), 8 deletions(-)
+
+commit 469dc3ab1fb991027d073cd3ffe6907361b1f058
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Nov 3 18:35:35 2014 -0800
+
+    Have Carousel ignore keyboard events from <input>s or <textarea>s; fixes #14991
+
+ js/carousel.js            |  1 +
+ js/tests/unit/carousel.js | 42 ++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 43 insertions(+)
+
+commit 425a985491b5c8f72bfcf483f5449f52b8d21af0
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 01:18:11 2014 +0100
+
+    Update head of all visual tests to use our basic template
+
+ js/tests/visual/affix.html     | 12 +++++++++++-
+ js/tests/visual/alert.html     | 12 +++++++++++-
+ js/tests/visual/button.html    | 12 +++++++++++-
+ js/tests/visual/carousel.html  | 12 +++++++++++-
+ js/tests/visual/collapse.html  | 12 +++++++++++-
+ js/tests/visual/dropdown.html  | 12 +++++++++++-
+ js/tests/visual/modal.html     | 12 +++++++++++-
+ js/tests/visual/popover.html   | 12 +++++++++++-
+ js/tests/visual/scrollspy.html | 15 +++++++++++++--
+ js/tests/visual/tab.html       | 16 ++++++++++++++--
+ js/tests/visual/tooltip.html   | 12 +++++++++++-
+ 11 files changed, 126 insertions(+), 13 deletions(-)
+
+commit 6020bb06f242450b34a55e6098e9549f33fcc226
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 00:36:52 2014 +0100
+
+    grunt
+
+ dist/css/bootstrap.css          | 15 +++++++++------
+ dist/css/bootstrap.css.map      |  2 +-
+ dist/css/bootstrap.min.css      |  2 +-
+ dist/js/bootstrap.js            | 18 ++++++++++++++++++
+ dist/js/bootstrap.min.js        |  4 ++--
+ docs/assets/css/docs.min.css    |  2 +-
+ docs/assets/js/customize.min.js | 20 ++++++++++++++++++--
+ docs/assets/js/docs.min.js      |  2 +-
+ docs/assets/js/raw-files.min.js |  4 ++--
+ docs/dist/css/bootstrap.css     | 15 +++++++++------
+ docs/dist/css/bootstrap.css.map |  2 +-
+ docs/dist/css/bootstrap.min.css |  2 +-
+ docs/dist/js/bootstrap.js       | 18 ++++++++++++++++++
+ docs/dist/js/bootstrap.min.js   |  4 ++--
+ 14 files changed, 84 insertions(+), 26 deletions(-)
+
+commit 0018723ccee06d704e31b83df6a0a3fd1f02d309
+Merge: e62a126 da3870f
+Author: Julian Thilo <bigj95t@gmail.com>
+Date:   Wed Nov 5 00:33:04 2014 +0100
+
+    Merge pull request #15019 from twbs/whoomp_there_it_was
+    
+    Deprecate diagonal tooltip classes
+
+commit e62a1264b91920de0094f73392528aca7251cda6
+Merge: 3a988c3 14e5fb0
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Wed Nov 5 00:15:52 2014 +0100
+
+    Merge pull request #14927 from twbs/fix-modal-backdrop-above-scrollbar
+    
+    Fix modal backdrop overlaying the modal's scrollbar
+
+commit da3870feacc64c337f4b298a79cb115d9fbb4194
+Author: Julian Thilo <bigj95t@gmail.com>
+Date:   Wed Nov 5 00:09:56 2014 +0100
+
+    Deprecate diagonal tooltip classes
+
+ less/tooltip.less | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3a988c358810e8e4a07dcd9de49b858f9cd1a570
+Merge: e55feac 87edaf2
+Author: Julian Thilo <bigj95t@gmail.com>
+Date:   Tue Nov 4 23:21:59 2014 +0100
+
+    Merge pull request #14938 from twbs/oh_arrow_where_art_thou
+    
+    Fix #14936: Use correct left/right and margin on tooltip arrows
+
+commit 14e5fb04e9bf7c406b799b75b0427522d87a4ccb
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Thu Oct 30 04:46:14 2014 +0100
+
+    Fix modal backdrop overlaying the modal's scrollbar
+    
+    Fixes #14916.
+
+ js/modal.js      | 18 ++++++++++++++++++
+ less/modals.less |  3 +--
+ 2 files changed, 19 insertions(+), 2 deletions(-)
+
+commit e55feacf5be152694205b14491ad626537756314
+Author: Jayanth Koushik <jnkoushik@gmail.com>
+Date:   Tue Nov 4 22:20:34 2014 +0530
+
+    Add initialization examples to tooltip and popover "Opt-in functionality" callouts
+    
+    Fixes #14950.
+    Closes #15015 by merging it.
+
+ docs/_includes/js/popovers.html | 6 ++++++
+ docs/_includes/js/tooltips.html | 7 +++++++
+ 2 files changed, 13 insertions(+)
+
+commit 0d291e862324bda24445e093651d6b5fe4f2d4c7
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Tue Nov 4 19:40:39 2014 +0100
+
+    HTTPS for Apple Safari Radar in bugify filter
+
+ docs/_plugins/bugify.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1a833e75d5a12d4b7aeb2ef05e10fe14232fc725
+Merge: d6a99cb 069488d
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Tue Nov 4 19:38:04 2014 +0100
+
+    Merge pull request #14987 from twbs/overengineer-wall-of-browser-bugs
+    
+    Use Jekyll data for Wall of Browser Bugs
+
+commit d6a99cb95534914655af462af023433c86c437ec
+Merge: 9dea306 1582039
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Tue Nov 4 19:35:34 2014 +0100
+
+    Merge pull request #14980 from twbs/customizer-autoprefixer
+    
+    Use autoprefixer for Customizer builds
+
+commit 15820391935170f9f7110a1d2d135044c95f722b
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Mon Nov 3 14:32:38 2014 +0100
+
+    Use autoprefixer for Customizer builds
+
+ docs/assets/js/src/customizer.js      |    41 +-
+ docs/assets/js/vendor/autoprefixer.js | 16015 ++++++++++++++++++++++++++++++++
+ 2 files changed, 16045 insertions(+), 11 deletions(-)
+
+commit 9dea3060970002a5813fe4d8241d9499e1747d1f
+Merge: 203912b d107004
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Tue Nov 4 19:30:13 2014 +0100
+
+    Merge pull request #14982 from twbs/grunt-customizer-share-common
+    
+    Remove duplicate code from Customizer/Gruntfile by sharing it
+
+commit d10700427805c40497b24d7f4ffdd58a7a83c997
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Mon Nov 3 16:19:40 2014 +0100
+
+    Remove duplicate code from Customizer/Gruntfile by sharing it
+
+ .gitignore                       |  1 +
+ Gruntfile.js                     | 59 ++++++++++++----------------------------
+ docs/_includes/footer.html       | 20 +++++---------
+ docs/assets/js/src/customizer.js | 19 +++----------
+ grunt/configBridge.json          | 44 ++++++++++++++++++++++++++++++
+ 5 files changed, 73 insertions(+), 70 deletions(-)
+
+commit 203912b9c500c44e3091093965fc4dc4ffeef7ff
+Merge: deab673 594831f
+Author: Chris Rebert <github@rebertia.com>
+Date:   Mon Nov 3 23:37:38 2014 -0800
+
+    Merge pull request #14989 from twbs/modal-relatedTarget-data-example
+    
+    Add event.relatedTarget + `data-*` example to Modal docs
+
+commit 069488dea398fa6124602e43ae633fe4781a4837
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Mon Nov 3 20:17:03 2014 +0100
+
+    Use Jekyll data for Wall of Browser Bugs
+
+ docs/_data/browser-bugs.yml  | 201 +++++++++++++++++++++++++++++++++++++++++++
+ docs/_layouts/default.html   |   4 +-
+ docs/_plugins/bugify.rb      |  25 ++++++
+ docs/assets/css/src/docs.css |  15 ++++
+ docs/browser-bugs.html       | 127 ++-------------------------
+ 5 files changed, 252 insertions(+), 120 deletions(-)
+
+commit 594831f4f3f3c1164812cfdd60497fe6d7438376
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Nov 3 13:37:27 2014 -0800
+
+    Add event.relatedTarget + `data-*` example to Modal docs
+    
+    Fixes #14245
+
+ docs/_includes/js/modal.html       | 80 ++++++++++++++++++++++++++++++++++++++
+ docs/_includes/nav/javascript.html |  1 +
+ docs/assets/js/src/application.js  | 11 ++++++
+ 3 files changed, 92 insertions(+)
+
+commit f0d8894d54afbd10b43a0919383b35fdbf961b51
+Author: Chris Rebert <code@rebertia.com>
+Date:   Mon Nov 3 10:56:30 2014 -0800
+
+    Add #14868 to the compatibility docs
+
+ docs/_includes/getting-started/browser-device-support.html | 13 +++++++++++--
+ docs/_includes/nav/getting-started.html                    |  2 +-
+ 2 files changed, 12 insertions(+), 3 deletions(-)
+
+commit deab673d43b1293857f708fa7a64228c023093e1
+Merge: ab6f79c 17a6b5e
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Mon Nov 3 18:21:15 2014 +0100
+
+    Merge pull request #14985 from twbs/14972-wall
+    
+    Add Wall of Browser Bugs entry for #14972
+
+commit 17a6b5e8432fe38397be01e8e79d473b8b84d77f
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Mon Nov 3 18:17:35 2014 +0100
+
+    Add Wall of Browser Bugs entry for #14972
+
+ docs/browser-bugs.html | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit ab6f79c472bc306c82f85dea660e7c7351e3413e
+Merge: 947aa1f f412979
+Author: Chris Rebert <github@rebertia.com>
+Date:   Sat Nov 1 17:49:22 2014 -0700
+
+    Merge pull request #14967 from aaron-coding/patch-1
+    
+    Fix typo
+
+commit f4129792874465a7950b871c6042110f47954248
+Author: Aaron Cordovez <aaron.cordovez.m@gmail.com>
+Date:   Sat Nov 1 17:46:33 2014 -0700
+
+    Fix typo
+    
+    Corrected spelling of the word "elements"
+
+ docs/_includes/js/carousel.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 947aa1f7e422a65d12ae92a05c9c7a313ea930af
+Merge: 7d8bacb 1f64aac
+Author: XhmikosR <XhmikosR@users.noreply.github.com>
+Date:   Sat Nov 1 17:01:14 2014 +0200
+
+    Merge pull request #14966 from krautcomputing/whitespace_fix
+    
+    fix whitespace in js dropdown docs
+
+commit 1f64aac6b9e04e9f5ba2cf2dcc29031c3d150d81
+Author: Manuel Meurer <manuel@krautcomputing.com>
+Date:   Sat Nov 1 11:51:11 2014 +0100
+
+    fix whitespace in js dropdown docs
+
+ docs/_includes/js/dropdowns.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7d8bacb8178c33c389575d1fc0fc2d99590eb4b6
+Merge: 15faedd c6d1aa7
+Author: XhmikosR <XhmikosR@users.noreply.github.com>
+Date:   Sat Nov 1 10:02:16 2014 +0200
+
+    Merge pull request #14746 from twbs/gems-bump
+    
+    Update Jekyll to v2.4.0 and rouge to v1.7.2.
+
+commit 15faedd8349ef537110351716d6a18ac8dbb6969
+Merge: 9a37a93 6b7d656
+Author: XhmikosR <XhmikosR@users.noreply.github.com>
+Date:   Sat Nov 1 08:55:03 2014 +0200
+
+    Merge pull request #14917 from twbs/examples-footer
+    
+    Examples: Make use of the `footer` tag instead of a class.
+
+commit 9a37a937a646ce8a388ab386121a07f98c7e5425
+Merge: 4613b36 7c0f873
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Oct 31 23:51:43 2014 -0700
+
+    Merge pull request #14959 from twbs/contrib-pitfalls
+    
+    Cover common contributor mistakes in CONTRIBUTING.md
+
+commit 7c0f873659b52538706bef5212372167d83c82ec
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Oct 31 17:33:20 2014 -0700
+
+    Cover common contributor mistakes in CONTRIBUTING.md
+    
+    Based on https://github.com/twbs/rorschach/tree/master/docs
+
+ CONTRIBUTING.md | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit 4613b366316649ed864d1443605a1e597aecf8d0
+Merge: 2da2901 08b0c37
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Oct 31 17:11:37 2014 -0700
+
+    Merge pull request #14958 from twbs/chrome-css-animation-mem-leak
+    
+    Add Wall of Browser Bugs entry for #14409
+
+commit 08b0c373b54a88648ee88f2249e2ad5e4ae186fe
+Author: Chris Rebert <code@rebertia.com>
+Date:   Fri Oct 31 17:08:01 2014 -0700
+
+    Add Wall of Browser Bugs entry for #14409
+    
+    Closes #14409.
+    [skip sauce]
+
+ docs/browser-bugs.html | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+commit 2da290189e10ece9a381508287851dec2ae40f9f
+Merge: a2c0bb4 5f3a980
+Author: Chris Rebert <github@rebertia.com>
+Date:   Fri Oct 31 16:15:32 2014 -0700
+
+    Merge pull request #14949 from twbs/bots-in-contributing
+    
+    Explain issue/PR bots in CONTRIBUTING.md
+
+commit a2c0bb49b187feab92ae96744b3bac88c9522aa9
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Fri Oct 31 11:09:01 2014 +0100
+
+    grunt
+
+ docs/assets/js/customize.min.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a7222a531a48ae3bbb5c26ccb6cc542a6d241898
+Merge: b91474e 12b3ba7
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Fri Oct 31 11:04:26 2014 +0100
+
+    Merge pull request #14954 from twbs/customizer-use-change-event
+    
+    Customizer: listen to the right event for manual file selection in import
+
+commit 12b3ba72787eedec75edd0af7c01616184930068
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Fri Oct 31 10:58:03 2014 +0100
+
+    Customizer: listen to the right event for manual file selection in import
+
+ docs/assets/js/src/customizer.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b91474e53858b3aa5fd70674374befaf856453d9
+Author: Heinrich Fenkart <hnrch02@gmail.com>
+Date:   Fri Oct 31 10:31:56 2014 +0100
+
+    grunt
+
+ docs/assets/js/customize.min.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 505171ef5d127e0e9a4ec82641396fd43804ace4
+Author: Chris Rebert <code@rebertia.com>
+Date:   Thu Oct 30 17:37:54 2014 -0700
+
+    Revert "Use jsDelivr CDN until BootstrapCDN gets updated"
+    
+    This reverts commit ea23969150e7329dd4e996b844db0282c4d2319d.
+    
+    BootstrapCDN has now uploaded Bootstrap v3.3.0
+
+ _config.yml | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 3711abf93622e11b36e9ff03583e904c28ce218a
+Merge: 1339ab7 88dfd95
+Author: Chris Rebert <github@rebertia.com>
+Date:   Thu Oct 30 17:37:06 2014 -0700
+
+    Merge pull request #14945 from twbs/media-pulls-docs
+    
+    Replace deprecated uses of .pull-left & .pull-right in .media docs
+
+commit 5f3a980950fdb30adb57806a39b15f254b6f6896
+Author: Chris Rebert <code@rebertia.com>
+Date:   Thu Oct 30 17:05:17 2014 -0700
+
+    Explain issue/PR bots in CONTRIBUTING.md
+    
+    [skip sauce]
+    [skip validator]
+
+ CONTRIBUTING.md | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit 88dfd954fa8b0eeefe37482ffd1dba19b1369098
+Author: Chris Rebert <code@rebertia.com>
+Date:   Thu Oct 30 11:31:28 2014 -0700
+
+    Replace deprecated uses of .pull-left & .pull-right in .media docs
+    
+    Refs https://github.com/twbs/bootlint/pull/153
+    [skip sauce]
+
+ docs/_includes/components/media.html | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 1339ab7a130600330b1db4e3acae9760710a0a41
+Author: hillai <hillaib@walla.com>
+Date:   Thu Oct 30 18:13:39 2014 +0200
+
+    Replace v3.2.1 reference with v3.3.0 since there wasn't a v3.2.1
+    
+    Closes #14941
+
+ docs/_includes/js/modal.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 87edaf295c44bbd5fa6ae4a435a27e8c8fc8e9eb
+Author: Julian Thilo <bigj95t@gmail.com>
+Date:   Thu Oct 30 16:33:14 2014 +0100
+
+    Fix #14936: Use correct left/right and margin on tooltip arrows
+
+ less/tooltip.less | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
 commit 4102a67f33bf2a382203547fe821d0d41bbc4ece
 Author: Chris Rebert <github@rebertia.com>
 Date:   Thu Oct 30 01:47:48 2014 -0700
@@ -44,6 +4478,19 @@ Date:   Thu Oct 30 07:20:41 2014 +0100
 
  _config.yml | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 6b7d6565dee1e3a8bc41c1104866ed00f9945981
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Wed Oct 29 22:07:13 2014 +0200
+
+    Examples: Make use of the `footer` tag instead of a `div`.
+
+ docs/examples/blog/index.html                 | 4 ++--
+ docs/examples/jumbotron-narrow/index.html     | 4 ++--
+ docs/examples/justified-nav/index.html        | 4 ++--
+ docs/examples/sticky-footer-navbar/index.html | 4 ++--
+ docs/examples/sticky-footer/index.html        | 4 ++--
+ 5 files changed, 10 insertions(+), 10 deletions(-)
 
 commit b8c3c5c19b2154d157256cec839c9b0a40b3e7b4
 Author: Heinrich Fenkart <hnrch02@gmail.com>
@@ -98,6 +4545,17 @@ Date:   Wed Oct 29 18:00:52 2014 -0700
 
  docs/browser-bugs.html | 6 ++++++
  1 file changed, 6 insertions(+)
+
+commit b8dbb545ac7e467ad1e1b95e0e0c647ccd129c4a
+Author: Bass Jobsen <bass@w3masters.nl>
+Date:   Thu Oct 30 01:20:35 2014 +0100
+
+    Update grid-framework.less
+    
+    The `when (@index = 1)` guards are not needed cause the mixins already only match on arity.
+
+ less/mixins/grid-framework.less | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 commit a41827377b5bc90aef88a2180a6dbddbb6eb0ff3
 Merge: 16dbdbd 850a9a0
@@ -506,6 +4964,15 @@ Date:   Tue Oct 28 17:53:55 2014 -0700
 
  docs/browser-bugs.html | 6 ++++++
  1 file changed, 6 insertions(+)
+
+commit 4f6aeaa6347725436296131c4d2b059243390a04
+Author: Mark Otto <markd.otto@gmail.com>
+Date:   Tue Oct 28 17:41:25 2014 -0700
+
+    Add labels explanation to readme
+
+ README.md | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
 commit 2758cfecd8dc135012018af474d8509e9f5ace45
 Merge: ca63e38 3908235
@@ -1419,6 +5886,16 @@ Date:   Thu Oct 23 09:19:03 2014 +0300
     Merge pull request #14860 from twbs/comment-typo
     
     Fix a small typo in comment.
+
+commit c6d1aa76fc91087caad8d05ba3e1ff1d61fad9d4
+Author: XhmikosR <xhmikosr@gmail.com>
+Date:   Tue Oct 7 15:48:16 2014 +0300
+
+    Update Jekyll to v2.4.0 and rouge to v1.7.2.
+
+ .travis.yml | 4 ++--
+ README.md   | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
 
 commit f33ed634fc0f29ffda350177b22486e0e6038607
 Author: XhmikosR <xhmikosr@gmail.com>
