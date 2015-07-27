@@ -11,7 +11,9 @@ def view(request, letter=None):
     if letter is None:
         return redirect('books:view', 'a')
 
-    authors = Author.objects.filter(last_name_first=letter)
+    authors = Author.objects.filter(
+        last_name_first=letter,
+    ).prefetch_related('books__book')
 
     return render(request, 'books/view.html', {
         'letter': letter,
