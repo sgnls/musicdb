@@ -6,11 +6,8 @@
   <a href="{% url "classical:view" %}">
     {{ artist.short_name }}
   </a>
-{% endblock %}
-
-{% block container_subtitle %}
   {% if artist.born or artist.died %}
-    ({{ artist.date_range }})
+    <small>({{ artist.date_range }})</small>
   {% endif %}
 {% endblock %}
 
