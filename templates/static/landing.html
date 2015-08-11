@@ -15,31 +15,21 @@
   >
 </a>
 
-<div
-  class="bg-slider-wrapper"
-  style="
-    background-size: cover;
-    background-image: url({% static "img/f_landing/header.jpg" %});
-  "
-></div>
+<br>
+<br>
+<br>
 
-<section class="promo section section-on-bg">
-  <div class="container text-center">
-    <h2 class="title">
-      Finally, a media library
-      <br>
-      done the right way
-    </h2>
-    <p class="intro">
-      This is my personal media library which I wrote after being frustrated
-      with other solutions using pre-1970s database technology.
-      <a href="https://github.com/lamby/musicdb">(Github)</a>
-    </p>
+<div class="container">
+  <div class="jumbotron">
+    <h1>musicdb</h1>
     <p>
-      <a class="btn btn-cta btn-cta-primary" href="{% url "auth:login" %}">Login</a>
+      This is my personal media library which I wrote after being frustrated with
+      other solutions using pre-1970s database technology.
+      <a href="https://github.com/lamby/musicdb">(Github)</a>
+    <p>
+      <a class="btn btn-lg btn-primary" href="{% url "auth:login" %}">Login</a>
     </p>
   </div>
-</section>
-
+</div>
 
 {% endblock %}

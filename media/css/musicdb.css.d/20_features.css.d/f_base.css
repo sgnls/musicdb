@@ -1,27 +1,7 @@
-.f_base .story-section {
-  padding-top: 50px;
+.f_base {
+  padding-top: 60px;
 }
 
-.f_base .story-section .title {
-  margin-bottom: 30px;
-}
-
-.f_base .story-section .intro {
-  margin-bottom: 40px;
-}
-
-.f_base .story-section .title a {
-  color: white;
-}
-
-.f_base .story-section .title a:hover {
-  text-decoration: none;
-}
-
-.f_base .story-section .intro a {
-  color: white;
-}
-
-.f_base .footer {
-  background: none;
+.f_base #footer {
+  margin: 30px 0 0 0;
 }
