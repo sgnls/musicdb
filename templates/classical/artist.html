@@ -7,7 +7,7 @@
     {{ artist.short_name }}
   </a>
   {% if artist.born or artist.died %}
-    <small>({{ artist.date_range }})</small>
+    <small>{{ artist.date_range }}</small>
   {% endif %}
 {% endblock %}
 
