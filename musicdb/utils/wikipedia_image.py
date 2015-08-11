@@ -1,6 +1,8 @@
 import json
 import urllib
 
+from StringIO import StringIO
+
 def get_wikipedia_image(q):
     url = 'https://en.wikipedia.org/w/api.php?%s' % urllib.urlencode((
         ('format', 'json'),
@@ -17,4 +19,4 @@ def get_wikipedia_image(q):
     except KeyError:
         return None
 
-    return urllib.urlopen(image_url)
+    return StringIO(urllib.urlopen(image_url).read())
