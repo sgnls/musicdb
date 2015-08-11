@@ -4,6 +4,8 @@ import re
 import roman
 import datetime
 
+from django_yadt import YADTImageField
+
 from django.db import models
 
 from musicdb.db.mixins import Mergeable, NextPreviousMixin
@@ -40,6 +42,12 @@ class Artist(models.Model, NextPreviousMixin):
         null=True,
         related_name='classical_artists',
     )
+
+    image = YADTImageField(variants={
+        'large': {
+            'format': 'jpeg',
+        },
+    }, cachebust=True, track_exists=True)
 
     objects = ArtistManager()
 

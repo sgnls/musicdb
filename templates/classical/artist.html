@@ -13,16 +13,26 @@
 
 {% block container %}
 
+
 {% if artist.works.exists %}
   {% if artist.performances.exists %}
     <h3>Compositions</h3>
   {% endif %}
-<ul>
-{% for work in works %}
-  <li><a href="{% url "classical:work" artist.slug work.slug %}">{{ work.pretty_title }}</a></li>
-{% endfor %}
-</ul>
 
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <ul>
+        {% for work in works %}
+        <li><a href="{% url "classical:work" artist.slug work.slug %}">{{ work.pretty_title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-sm-4 hidden-xs">
+      {% if artist.image.exists %}
+      <img class="img-responsive img-rounded" src="{{ artist.image.large.url }}">
+      {% endif %}
+    </div>
+  </div>
 {% endif %}
 
 {% if artist.performances.exists %}
