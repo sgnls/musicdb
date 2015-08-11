@@ -20,7 +20,7 @@ class Command(BaseCommand):
         try:
             artist.image.save(File(f))
         except Exception, exc:
-            print "W: Exception when saving for %s (%s): %s" % (artist, exc)
+            print "W: Exception when saving for %s: %s" % (artist, exc)
 
         artist.save()
 
