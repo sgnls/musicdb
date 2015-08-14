@@ -3,8 +3,6 @@ import urllib
 
 from lxml import etree
 
-from django.db import connection
-from django.conf import settings
 from django.core.files import File as DjangoFile
 from django.core.management.base import CommandError, make_option
 

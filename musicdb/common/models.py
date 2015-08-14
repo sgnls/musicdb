@@ -1,4 +1,3 @@
-import os
 import tempfile
 
 from mutagen import mp3, easyid3, File as MutagenFile
