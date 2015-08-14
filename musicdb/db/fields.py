@@ -1,11 +1,11 @@
 import re
 import itertools
 
-from django.db.models import fields
+from django.db import models
 
 from musicdb.utils import slugify
 
-class DenormalisedCharField(fields.CharField):
+class DenormalisedCharField(models.CharField):
     def __init__(self, attr, *args, **kwargs):
         # Set a longer max_length by default
         kwargs['max_length'] = kwargs.get('max_length', 100)
