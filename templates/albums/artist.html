@@ -12,12 +12,12 @@
 
 {% block container %}
 
-<div class="team row">
+<div class="row">
   {% for album in artist.albums.all %}
 
   {% grid_clearfix xs=2 sm=3 md=4 lg=4 %}
 
-  <div class="member {% grid_classes xs=2 sm=3 md=4 lg=4 %}">
+  <div class="{% grid_classes xs=2 sm=3 md=4 lg=4 %}">
     <a href="{{ album.get_absolute_url }}">
       <img
         class="img-responsive cover"
@@ -26,29 +26,18 @@
       >
     </a>
 
-    <div class="member-inner">
-      <figure class="profile">
-
-        <figcaption class="info">
-          <a class="name" href="{{ album.get_absolute_url }}">
-            {{ album.title }}
-          </a>
-
-          {% if album.year %}
-          <br>
-          <span class="job-title">{{ album.year }}</span>
-          {% endif %}
-        </figcaption>
-      </figure>
-
-      <div class="social">
-        <ul class="social-list list-inline">
-          <li><a
-            href="{% url "albums:play-album" album.pk %}"
-          ><i class="glyphicon glyphicon-play"></i></a></li>
-        </ul>
-      </div>
-    </div>
+    <p class="text-center">
+      <a class="name" href="{{ album.get_absolute_url }}">
+        {{ album.title }}
+      </a>
+      {% if album.year %}
+      <br>
+      <span class="job-title">{{ album.year }}</span>
+      {% endif %}
+      <br>
+      <a href="{% url "albums:play-album" album.pk %}"><i class="glyphicon glyphicon-play"></i></a>
+      <br>
+    </p>
   </div>
   {% endfor %}
 </div>
