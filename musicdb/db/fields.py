@@ -8,9 +8,9 @@ from musicdb.utils import slugify
 class DenormalisedCharField(models.CharField):
     def __init__(self, attr, *args, **kwargs):
         # Set a longer max_length by default
-        kwargs['max_length'] = kwargs.get('max_length', 100)
-        kwargs['db_index'] = kwargs.get('db_index', True)
-        kwargs['editable'] = kwargs.get('editable', False)
+        kwargs['max_length'] = kwargs.pop('max_length', 100)
+        kwargs['db_index'] = kwargs.pop('db_index', True)
+        kwargs['editable'] = kwargs.pop('editable', False)
 
         super(DenormalisedCharField, self).__init__(*args, **kwargs)
 
