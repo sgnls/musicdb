@@ -38,9 +38,3 @@ def range_skip_list(pages):
         else:
             out.append((x, x))
     return out
-
-def pagination_ranges(pager, current, limit=14):
-    return [
-        xrange(a, b + 1) for a, b in
-        range_skip_list(page_list(pager.num_pages, current, limit=limit))
-    ]
