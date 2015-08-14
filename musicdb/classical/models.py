@@ -67,7 +67,7 @@ class Artist(models.Model, NextPreviousMixin):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('classical:artist', (self.slug,))
+        return 'classical:artist', (self.slug,)
 
     def next_composer(self):
         return super(Artist, self).next(works__isnull=False)
@@ -159,7 +159,7 @@ class Ensemble(models.Model, Mergeable):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('classical:ensemble', (self.slug,))
+        return 'classical:ensemble', (self.slug,)
 
     def performances_by_composer(self):
         # FIXME: Move to manager
@@ -190,7 +190,7 @@ class Work(models.Model, Mergeable, NextPreviousMixin):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('classical:work', (self.composer.slug, self.slug))
+        return 'classical:work', (self.composer.slug, self.slug)
 
     def next(self):
         return super(Work, self).next(composer=self.composer)
