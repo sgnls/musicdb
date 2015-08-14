@@ -68,10 +68,10 @@ class FirstLetterField(DenormalisedCharField):
     def pre_save(self, obj, add):
         val = super(FirstLetterField, self).pre_save(obj, add).lower()
 
-        if re.match('[a-z]', val):
+        if re.match(r'[a-z]', val):
             return val
 
-        if re.match('\d', val):
+        if re.match(r'\d', val):
             return '0'
 
         return '-'
