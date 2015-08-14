@@ -1,7 +1,5 @@
 from django import template
 
-from musicdb.utils.paginator import pagination_ranges
-
 register = template.Library()
 
 @register.filter
@@ -30,7 +28,6 @@ class PaginationNode(template.Node):
         context.push()
 
         context['page'] = page
-        context['ranges'] = pagination_ranges(page.paginator, page.number)
         context['_page_url_maker'] = page.paginator.page_linker
 
         output = self.nodelist_page.render(context)
