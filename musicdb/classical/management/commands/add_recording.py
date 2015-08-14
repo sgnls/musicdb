@@ -1,5 +1,4 @@
 from django.db import models
-from django.conf import settings
 
 from musicdb.utils.commands import AddMusicFilesCommand
 from musicdb.utils.completion import Completer
