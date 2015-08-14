@@ -1,4 +1,5 @@
 import re
+import itertools
 
 from django.db.models import fields
 
@@ -45,8 +46,7 @@ class MySlugField(DenormalisedCharField):
         if self.filter is not None:
             qs = getattr(obj, self.filter)()
 
-        count = 1
-        while count <= 999:
+        for count in itertools.count(1):
             filters = {
                 self.name: val,
             }
@@ -55,9 +55,6 @@ class MySlugField(DenormalisedCharField):
                 return val
 
             val = '%s-%d' % (val_to_prepend, count)
-            count += 1
-
-        assert False
 
 class FirstLetterField(DenormalisedCharField):
     def __init__(self, *args, **kwargs):
