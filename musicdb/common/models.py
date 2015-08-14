@@ -34,14 +34,6 @@ class File(models.Model):
     def url(self):
         return default_storage.url(self.location)
 
-    def delete(self, *args, **kwargs):
-        path = self.absolute_location(for_writing=True)
-
-        if os.path.exists(path):
-            os.unlink(path)
-
-        super(File, self).delete(*args, **kwargs)
-
 class MusicFile(models.Model):
     file = models.OneToOneField(File)
     length = models.IntegerField("Duration in seconds", default=0)
