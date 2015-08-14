@@ -233,10 +233,10 @@ class Work(models.Model, Mergeable, NextPreviousMixin):
         for cat in self.catalogues.all():
             val += "%02d%s" % (
                 cat.catalogue.num, \
-                re.sub('\d+', zeropad, cat.value),
+                re.sub(r'\d+', zeropad, cat.value),
             )
 
-        val += re.sub('\d+', zeropad, self.title)
+        val += re.sub(r'\d+', zeropad, self.title)
         val += self.nickname
 
         return val
