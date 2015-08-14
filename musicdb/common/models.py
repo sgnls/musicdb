@@ -20,7 +20,7 @@ class Nationality(models.Model):
         ordering = ('noun',)
 
     def __unicode__(self):
-        return self.adjective
+        return u"%s" % self.adjective
 
 class File(models.Model):
     location = models.CharField(unique=True, max_length=255)
