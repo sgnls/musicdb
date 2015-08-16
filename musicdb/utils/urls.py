@@ -10,7 +10,10 @@ def google_search(terms):
 
 def google_image_search(terms):
     q = terms.encode('utf8') # urlencode doesn't like unicode strings
-    return 'http://images.google.co.uk/images?%s' % urllib.urlencode({'q': q})
+    return 'http://images.google.co.uk/images?%s' % urllib.urlencode({
+        'q': q,
+        'tbs': 'isz:lt,islt:svga',
+    })
 
 def static_media_url(path):
     return settings.STATIC_MEDIA_URL % {
