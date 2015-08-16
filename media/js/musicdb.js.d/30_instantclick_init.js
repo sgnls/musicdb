@@ -1,1 +1,1 @@
-InstantClick.init();
+InstantClick.init('mousedown');
