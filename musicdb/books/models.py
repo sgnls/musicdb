@@ -46,9 +46,6 @@ class Book(models.Model):
         },
     }, track_exists=True, cachebust=True)
 
-    # Deprecated
-    file = models.OneToOneField('common.File', related_name='book')
-
     class Meta:
         ordering = ('title',)
 
