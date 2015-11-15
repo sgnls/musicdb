@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import EmailMessage
@@ -30,7 +31,7 @@ def author(request, slug):
     })
 
 @login_required
-def mobi_file(request, mobi_file_id):
+def mobi_email(request, mobi_file_id):
     # FIXME: @require_POST
 
     mobi_file = get_object_or_404(MobiFile, pk=mobi_file_id)
@@ -38,7 +39,11 @@ def mobi_file(request, mobi_file_id):
     address = request.user.profile.kindle_email_address
 
     if not address:
-        return redirect(mobi_file.file.url())
+        messages.error(
+            request,
+            "You must first configure your Kindle email address."
+        )
+        return redirect('profile:view')
 
     message = EmailMessage(to=(address,))
     message.attach(
@@ -50,3 +55,9 @@ def mobi_file(request, mobi_file_id):
     messages.success(request, '"%s" sent to Kindle.' % mobi_file.book.title)
 
     return redirect(mobi_file.book.authors.all()[0].author)
+
+@login_required
+def mobi_download(request, mobi_file_id):
+    mobi_file = get_object_or_404(MobiFile, pk=mobi_file_id)
+
+    return redirect(mobi_file.file.url())

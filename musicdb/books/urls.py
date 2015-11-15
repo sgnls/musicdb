@@ -9,6 +9,9 @@ urlpatterns = patterns('musicdb.books.views',
         name='view'),
     url(r'^books/(?P<slug>[^/]+)$', 'author',
         name='author'),
-    url(r'^books/email-mobi/(?P<mobi_file_id>\d+)$', 'mobi_file',
-        name='mobi-file'),
+
+    url(r'^books/mobi/email/(?P<mobi_file_id>\d+)$', 'mobi_email',
+        name='mobi-email'),
+    url(r'^books/mobi/download/(?P<mobi_file_id>\d+)$', 'mobi_download',
+        name='mobi-download'),
 )

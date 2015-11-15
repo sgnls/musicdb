@@ -20,26 +20,41 @@
 
   <div class="{% grid_classes xs=2 sm=3 md=4 lg=6 %} text-center" style="margin-bottom: 20px;">
     <p>
-      <a href="{% url "books:mobi-file" book.mobi_file.pk %}" data-no-instant>
-        <img
-          {% if book.image.exists %}
-          src="{{ book.image.thumbnail.url }}"
-          {% else %}
-          src="{% static "img/f_books/missing_cover.jpg" %}"
-          {% endif %}
-          alt="{{ book.title }}"
-          class="img-responsive"
-          style="margin: 0 auto;"
-        >
-      </a>
+      <img
+        {% if book.image.exists %}
+        src="{{ book.image.thumbnail.url }}"
+        {% else %}
+        src="{% static "img/f_books/missing_cover.jpg" %}"
+        {% endif %}
+        alt="{{ book.title }}"
+        class="img-responsive"
+        style="margin: 0 auto;"
+      >
     </p>
 
     <p>
-      <a href="{% url "books:mobi-file" book.mobi_file.pk %}" data-no-instant>{{ book.title }}</a>
-      {% if request.user.is_superuser %}
-      <a href="{% url "books:admin:book" book.pk %}">[e]</a>
-      {% endif %}
+      {{ book.title }}
     </p>
+
+    <div class="dropdown">
+      <button class="btn btn-default btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        Actions
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="{% url "books:mobi-download" book.mobi_file.pk %}" data-no-instant>Download .mobi</a>
+        </li>
+        <li>
+          <a href="{% url "books:mobi-email" book.mobi_file.pk %}" data-no-instant>Send to my Kindle</a>
+        </li>
+        {% if request.user.is_superuser %}
+        <li>
+          <a href="{% url "books:admin:book" book.pk %}">Edit</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
   </div>
 {% endwith %}
 {% endfor %}
