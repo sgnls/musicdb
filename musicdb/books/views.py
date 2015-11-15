@@ -31,6 +31,8 @@ def author(request, slug):
 
 @login_required
 def mobi_file(request, mobi_file_id):
+    # FIXME: @require_POST
+
     mobi_file = get_object_or_404(MobiFile, pk=mobi_file_id)
 
     address = request.user.profile.kindle_email_address
