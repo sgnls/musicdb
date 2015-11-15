@@ -13,7 +13,7 @@ def view(request, letter=None):
 
     authors = Author.objects.filter(
         last_name_first=letter,
-    ).prefetch_related('books__book')
+    )
 
     return render(request, 'books/view.html', {
         'letter': letter,

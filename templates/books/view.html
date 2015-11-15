@@ -26,15 +26,6 @@
   <a class="list-group-item" href="{% url "books:author" author.slug %}">
     <strong>{{ author.last_name }}, {{ author.first_names }}</strong>
   </a>
-  {% for book_author in author.books.all %}
-  {% with book_author.book.mobi_file as mobi_file %}
-    {% if mobi_file %}
-      <a class="list-group-item" href="{% url "books:mobi-file" mobi_file.pk %}" data-no-instant>&nbsp; {{ book_author.book.title }}</a>
-    {% else %}
-      <a class="list-group-item" href="#">&nbsp; {{ book_author.book.title }}</a>
-    {% endif %}
-  {% endwith %}
-  {% endfor %}
 {% endfor %}
 </div>
 
