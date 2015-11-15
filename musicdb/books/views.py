@@ -4,7 +4,7 @@ from django.core.mail import EmailMessage
 from django.core.files.storage import default_storage
 from django.contrib.auth.decorators import login_required
 
-from .models import Author, Book
+from .models import Author, MobiFile
 
 @login_required
 def view(request, letter=None):
@@ -30,21 +30,21 @@ def author(request, slug):
     })
 
 @login_required
-def book(request, book_id):
-    book = get_object_or_404(Book, pk=book_id)
+def mobi_file(request, mobi_file_id):
+    mobi_file = get_object_or_404(MobiFile, pk=mobi_file_id)
 
     address = request.user.profile.kindle_email_address
 
     if not address:
-        return redirect(book.file.url())
+        return redirect(mobi_file.file.url())
 
     message = EmailMessage(to=(address,))
     message.attach(
-        '%d.mobi' % book.pk,
-        default_storage.open(book.file.location).read(),
+        '%d.mobi' % mobi_file.pk,
+        default_storage.open(mobi_file.file.location).read(),
     )
     message.send()
 
-    messages.success(request, '"%s" sent to Kindle.' % book.title)
+    messages.success(request, '"%s" sent to Kindle.' % mobi_file.book.title)
 
-    return redirect(book.authors.all()[0].author)
+    return redirect(mobi_file.book.authors.all()[0].author)

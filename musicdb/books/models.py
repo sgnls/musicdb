@@ -46,6 +46,7 @@ class Book(models.Model):
         },
     }, track_exists=True, cachebust=True)
 
+    # Deprecated
     file = models.OneToOneField('common.File', related_name='book')
 
     class Meta:
@@ -53,10 +54,6 @@ class Book(models.Model):
 
     def __unicode__(self):
         return u"%s" % self.title
-
-    @models.permalink
-    def get_absolute_url(self):
-        return 'books:book', (self.pk,)
 
 class BookAuthor(models.Model):
     book = models.ForeignKey(Book, related_name='authors')
@@ -69,3 +66,12 @@ class BookAuthor(models.Model):
             ('book', 'num'),
             ('book', 'author'),
         )
+
+class MobiFile(models.Model):
+    book = models.OneToOneField(
+        Book,
+        primary_key=True,
+        related_name='mobi_file',
+    )
+
+    file = models.OneToOneField('common.File', related_name='book_mobi')
