@@ -11,7 +11,7 @@ from musicdb.utils.commands import AddFilesCommand
 
 from musicdb.common.models import File
 
-from ...models import Author, Book
+from ...models import Author, Book, MobiFile
 
 class Command(AddFilesCommand):
     option_list = AddFilesCommand.option_list + (
@@ -100,6 +100,10 @@ class Command(AddFilesCommand):
         book = Book.objects.create(
             pk=book_pk,
             title=title,
+        )
+
+        MobiFile.objects.create(
+            book=book,
             file=file_,
         )
 
