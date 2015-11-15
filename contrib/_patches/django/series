@@ -1,1 +1,2 @@
 01_dont_use_git_for_versioning.diff -p2
+02_new_bcrypt.diff -p2

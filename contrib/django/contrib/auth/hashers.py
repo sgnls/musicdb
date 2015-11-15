@@ -284,7 +284,7 @@ class BCryptPasswordHasher(BasePasswordHasher):
         algorithm, data = encoded.split('$', 1)
         assert algorithm == self.algorithm
         bcrypt = self._load_library()
-        return constant_time_compare(data, bcrypt.hashpw(force_bytes(password), data))
+        return constant_time_compare(data, bcrypt.hashpw(force_bytes(password), force_bytes(data)))
 
     def safe_summary(self, encoded):
         algorithm, empty, algostr, work_factor, data = encoded.split('$', 4)
