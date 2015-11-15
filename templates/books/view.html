@@ -24,7 +24,7 @@
 <div class="list-group" style="margin-top: 30px;">
 {% for author in authors %}
   <a class="list-group-item" href="{% url "books:author" author.slug %}">
-    <strong>{{ author.last_name }}, {{ author.first_names }}</strong>
+    {{ author.last_name }}, {{ author.first_names }}
   </a>
 {% endfor %}
 </div>
