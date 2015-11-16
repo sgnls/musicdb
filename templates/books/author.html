@@ -32,32 +32,25 @@
       >
     </p>
 
-    <p>
-      {{ book.title }}
-
-      {% if book.mobi_file %}
-        <span class="badge badge-info">Kindle</span>
-      {% endif %}
-
-      {% if book.tracks.exists %}
-        <span class="badge badge-info">Audiobook</span>
-      {% endif %}
-    </p>
-
     <div class="dropdown">
-      <button class="btn btn-default btn-block dropdown-toggle" type="button" data-toggle="dropdown" id="dropdown-{{ book.pk }}">
-        Actions
-        <span class="caret"></span>
+      <button
+        class="btn btn-default dropdown-toggle"
+        type="button"
+        data-toggle="dropdown"
+        id="dropdown-{{ book.pk }}"
+        style="white-space: inherit; min-height: 50px;"
+      >
+        {{ book.title }}
       </button>
       <ul class="dropdown-menu">
-        <li>
-          <a href="{% url "books:mobi-download" book.mobi_file.pk %}" data-no-instant>Download .mobi</a>
-        </li>
         <li>
           <form method="POST" action="{% url "books:mobi-email" book.mobi_file.pk %}">
             {% csrf_token %}
             <button type="submit" class="btn btn-link">Send to my Kindle</button>
           </form>
+        </li>
+        <li>
+          <a href="{% url "books:mobi-download" book.mobi_file.pk %}" data-no-instant>Download <tt>.mobi</tt></a>
         </li>
         {% if request.user.is_superuser %}
         <li>
