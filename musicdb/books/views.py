@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import EmailMessage
 from django.core.files.storage import default_storage
+from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 
 from .models import Author, MobiFile
@@ -30,10 +31,9 @@ def author(request, slug):
         'author': author,
     })
 
+@require_POST
 @login_required
 def mobi_email(request, mobi_file_id):
-    # FIXME: @require_POST
-
     mobi_file = get_object_or_404(MobiFile, pk=mobi_file_id)
 
     address = request.user.profile.kindle_email_address

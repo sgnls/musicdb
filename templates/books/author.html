@@ -46,7 +46,10 @@
           <a href="{% url "books:mobi-download" book.mobi_file.pk %}" data-no-instant>Download .mobi</a>
         </li>
         <li>
-          <a href="{% url "books:mobi-email" book.mobi_file.pk %}" data-no-instant>Send to my Kindle</a>
+          <form method="POST" action="{% url "books:mobi-email" book.mobi_file.pk %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-link">Send to my Kindle</button>
+          </form>
         </li>
         {% if request.user.is_superuser %}
         <li>
