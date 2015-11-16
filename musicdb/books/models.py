@@ -72,3 +72,15 @@ class MobiFile(models.Model):
     )
 
     file = models.OneToOneField('common.File', related_name='book_mobi')
+
+class Track(models.Model):
+    book = models.ForeignKey(Book, related_name='tracks')
+    num = models.IntegerField()
+
+    file = models.OneToOneField('common.File', related_name='audiobook_track')
+
+    class Meta:
+        ordering = ('num',)
+        unique_together = (
+            ('book', 'num'),
+        )

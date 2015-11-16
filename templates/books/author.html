@@ -34,6 +34,14 @@
 
     <p>
       {{ book.title }}
+
+      {% if book.mobi_file %}
+        <span class="badge badge-info">Kindle</span>
+      {% endif %}
+
+      {% if book.tracks.exists %}
+        <span class="badge badge-info">Audiobook</span>
+      {% endif %}
     </p>
 
     <div class="dropdown">
