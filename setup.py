@@ -6,7 +6,6 @@ import sys
 from os.path import join, dirname, abspath
 from setuptools import setup, find_packages
 
-
 def find_data_files(dirs):
     result = []
     for x in dirs:
