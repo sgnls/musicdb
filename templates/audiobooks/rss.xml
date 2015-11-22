@@ -8,8 +8,8 @@
 
   {% for x in audiobook.get_tracks %}
   <item>
-    <title>Track {{ forloop.counter }}</title>
-    <description></description>
+    <title>{{ audiobook.title }}{% if audiobook.tracks.count > 1 %} ({{ forloop.counter }}/{{ audiobook.tracks.count }}){% endif %}</title>
+    <description>{{ audiobook.author.long_name }}</description>
     <pubDate>{{ audiobook.created|date:"r" }}</pubDate>
     <enclosure url="{{ x.file.url }}" length="{{ x.length }}" type="audio/mpeg" />
   </item>
