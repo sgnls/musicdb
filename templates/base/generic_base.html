@@ -39,10 +39,8 @@
 
   {% block body %}{% endblock %}
 
-</body>
-
 {% block javascript %}
-  <script src="{% static "js/musicdb.js" %}"></script>
+  <script src="{% static "js/musicdb.js" %}" data-no-instant></script>
 {% endblock %}
 
 </body>
