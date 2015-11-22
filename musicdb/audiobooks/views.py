@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.signing import Signer, BadSignature
 from django.contrib.auth.decorators import login_required
 
+from musicdb.utils import slugify
 from musicdb.utils.http import render_playlist
 
 from .models import Author, AudioBook
@@ -44,10 +45,11 @@ def play(request, signed_audiobook_id, format_):
         }, content_type='application/rss+xml')
 
     if format_ == 'xspf':
-        return render_playlist(
-            request,
-            audiobook.get_tracks(),
-            'audiobook-%d.xspf' % audiobook.pk,
-        )
+        filename = '%s.xspf' % slugify('%s %s' % (
+            audiobook.title,
+            audiobook.author.long_name(),
+        ))
+
+        return render_playlist(request, audiobook.get_tracks(), filename)
 
     raise NotImplementedError()
