@@ -30,7 +30,6 @@ class XSPFResponse(HttpResponse):
             duration.text = unicode(track.length * 1000)
 
             location = etree.SubElement(elem, 'location')
-
             location.text = track.file.url().replace('https:', 'http:')
 
         super(XSPFResponse, self).__init__(
