@@ -5,11 +5,11 @@ from lxml import etree
 from django.http import HttpResponse
 from django.utils import simplejson
 
-def render_playlist(request, tracks, prefix=None):
-    return XSPFResponse(tracks, prefix, filename=None)
+def render_playlist(request, tracks):
+    return XSPFResponse(tracks, filename=None)
 
 class XSPFResponse(HttpResponse):
-    def __init__(self, tracks, prefix, filename=None):
+    def __init__(self, tracks, filename=None):
         NSMAP = {
             None: 'http://xspf.org/ns/0/',
         }
@@ -32,9 +32,6 @@ class XSPFResponse(HttpResponse):
             location = etree.SubElement(elem, 'location')
 
             location.text = track.file.url().replace('https:', 'http:')
-
-            if prefix is not None:
-                location.text = os.path.join(prefix, track.file.location)
 
         super(XSPFResponse, self).__init__(
             etree.tounicode(playlist),
