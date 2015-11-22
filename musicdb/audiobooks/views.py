@@ -41,7 +41,7 @@ def play(request, signed_audiobook_id, format_):
     if format_ == 'rss':
         return render(request, 'audiobooks/rss.xml', {
             'audiobook': audiobook,
-        }, content_type='application/xml')
+        }, content_type='application/rss+xml')
 
     if format_ == 'xspf':
         return render_playlist(
