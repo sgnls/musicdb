@@ -1,6 +1,6 @@
 from django import template
 
-from django.core.signing import Signer, BadSignature
+from django.core.signing import Signer
 
 register = template.Library()
 
