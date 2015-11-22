@@ -1,4 +1,6 @@
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.signing import Signer, BadSignature
 from django.contrib.auth.decorators import login_required
 
 from musicdb.utils.http import render_playlist
@@ -28,8 +30,12 @@ def author(request, slug):
         'author': author,
     })
 
-@login_required
-def play(request, audiobook_id):
+def play(request, signed_audiobook_id):
+    try:
+        audiobook_id = Signer().unsign(signed_audiobook_id)
+    except BadSignature:
+        return HttpResponseForbidden()
+
     audiobook = get_object_or_404(AudioBook, pk=audiobook_id)
 
     return render_playlist(request, audiobook.get_tracks())

@@ -14,12 +14,13 @@
 
 <div class="row">
 {% for audiobook in author.books.all %}
+{% with audiobook.pk|sign as signed_audiobook_id %}
 
   {% grid_clearfix xs=2 sm=3 md=4 lg=6 %}
 
   <div class="{% grid_classes xs=2 sm=3 md=4 lg=6 %} text-center" style="margin-bottom: 20px;">
     <p>
-      <a href="{% url "audiobooks:play" audiobook.pk %}">
+      <a href="{% url "audiobooks:play" signed_audiobook_id %}">
         <img
           {% if audiobook.image.exists %}
           src="{{ audiobook.image.thumbnail.url }}"
@@ -34,7 +35,7 @@
     </p>
 
     <p>
-      <a href="{% url "audiobooks:play" audiobook.pk %}">
+      <a href="{% url "audiobooks:play" signed_audiobook_id %}">
         {{ audiobook.title }}
       </a>
     </p>
@@ -50,11 +51,12 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <a href="{% url "audiobooks:play" audiobook.pk %}">Play</a>
+          <a href="{% url "audiobooks:play" signed_audiobook_id %}">Play</a>
         </li>
       </ul>
     </div>
   </div>
+{% endwith %}
 {% endfor %}
 </div>
 

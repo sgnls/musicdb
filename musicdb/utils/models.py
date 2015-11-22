@@ -5,6 +5,7 @@ for x in (
     'fonts',
     'media',
     'pagination',
+    'signing',
 ):
     add_to_builtins('musicdb.utils.templatetags.%s' % x)
 

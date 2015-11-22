@@ -8,6 +8,6 @@ urlpatterns = patterns('musicdb.audiobooks.views',
     url(r'^audiobooks/(?P<slug>[^/]+)$', 'author',
         name='author'),
 
-    url(r'^audiobooks/play/(?P<audiobook_id>[^/]+).m3u$', 'play',
+    url(r'^audiobooks/play/(?P<signed_audiobook_id>[^.]+).xspf$', 'play',
         name='play'),
 )
