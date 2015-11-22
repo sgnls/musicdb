@@ -6,10 +6,10 @@ from django.http import HttpResponse
 from django.utils import simplejson
 
 def render_playlist(request, tracks, prefix=None):
-    return XSPFResponse(tracks, prefix)
+    return XSPFResponse(tracks, prefix, filename=None)
 
 class XSPFResponse(HttpResponse):
-    def __init__(self, tracks, prefix):
+    def __init__(self, tracks, prefix, filename=None):
         NSMAP = {
             None: 'http://xspf.org/ns/0/',
         }
@@ -41,7 +41,10 @@ class XSPFResponse(HttpResponse):
             mimetype='application/xspf+xml',
         )
 
-        self['Content-Disposition'] = 'attachment; filename=playlist.xspf'
+        if filename is None:
+            filename = 'playlist.xspf'
+
+        self['Content-Disposition'] = 'attachment; filename=%s' % filename
 
 class JSONResponse(HttpResponse):
     def __init__(self, data):

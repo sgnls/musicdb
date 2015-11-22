@@ -38,4 +38,8 @@ def play(request, signed_audiobook_id):
 
     audiobook = get_object_or_404(AudioBook, pk=audiobook_id)
 
-    return render_playlist(request, audiobook.get_tracks())
+    return render_playlist(
+        request,
+        audiobook.get_tracks(),
+        'audiobook-%d.xspf' % audiobook.pk,
+    )
