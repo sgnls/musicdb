@@ -19,25 +19,40 @@
 
   <div class="{% grid_classes xs=2 sm=3 md=4 lg=6 %} text-center" style="margin-bottom: 20px;">
     <p>
-      <img
-        {% if audiobook.image.exists %}
-        src="{{ audiobook.image.thumbnail.url }}"
-        {% else %}
-        src="{% static "img/f_audiobooks/missing_cover.jpg" %}"
-        {% endif %}
-        alt="{{ audiobook.title }}"
-        class="img-responsive"
-        style="margin: 0 auto;"
-      >
+      <a href="{% url "audiobooks:play" audiobook.pk %}">
+        <img
+          {% if audiobook.image.exists %}
+          src="{{ audiobook.image.thumbnail.url }}"
+          {% else %}
+          src="{% static "img/f_audiobooks/missing_cover.jpg" %}"
+          {% endif %}
+          alt="{{ audiobook.title }}"
+          class="img-responsive"
+          style="margin: 0 auto;"
+        >
+      </a>
+    </p>
+
+    <p>
+      <a href="{% url "audiobooks:play" audiobook.pk %}">
+        {{ audiobook.title }}
+      </a>
     </p>
 
     <div class="dropdown">
-      <a
-        href="{% url "audiobooks:play" audiobook.pk %}"
-        class="btn btn-default dropdown-toggle"
+      <button
+        class="btn btn-default btn-sm dropdown-toggle"
+        type="button"
+        data-toggle="dropdown"
+        id="dropdown-{{ audiobook.pk }}"
       >
-        {{ audiobook.title }}
-      </a>
+        More <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="{% url "audiobooks:play" audiobook.pk %}">Play</a>
+        </li>
+      </ul>
     </div>
   </div>
 {% endfor %}
