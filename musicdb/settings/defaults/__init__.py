@@ -93,7 +93,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_DEFAULT_ACL = 'private'
 AWS_ACCESS_KEY_ID = 'private'
 AWS_SECRET_ACCESS_KEY = 'private'
-AWS_QUERYSTRING_EXPIRE = 86400 * 7
+AWS_QUERYSTRING_EXPIRE = 86400 * 7 * 12
 AWS_STORAGE_BUCKET_NAME = 'lamby-musicdb'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
