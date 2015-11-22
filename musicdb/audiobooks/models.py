@@ -1,3 +1,5 @@
+import datetime
+
 from django_yadt import YADTImageField
 
 from django.db import models
@@ -14,6 +16,8 @@ class Author(models.Model):
 
     slug = MySlugField('long_name')
     last_name_first = FirstLetterField('last_name')
+
+    created = models.DateTimeField(default=datetime.datetime.utcnow)
 
     objects = AuthorManager()
 
@@ -49,6 +53,8 @@ class AudioBook(models.Model):
             ),
         },
     }, track_exists=True, cachebust=True)
+
+    created = models.DateTimeField(default=datetime.datetime.utcnow)
 
     class Meta:
         ordering = ('title',)
