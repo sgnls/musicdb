@@ -41,10 +41,3 @@ class XSPFResponse(HttpResponse):
         )
 
         self['Content-Disposition'] = 'attachment; filename=%s' % filename
-
-class JSONResponse(HttpResponse):
-    def __init__(self, data):
-        super(JSONResponse, self).__init__(
-            simplejson.dumps(data),
-            mimetype='application/json',
-        )
