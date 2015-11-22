@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/DTDs/Podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+  <title>{{ audiobook.author.long_name}} - {{ audiobook.title }}</title>
+  <description></description>
+  <link>{{ settings.SITE_URL }}{% url "audiobooks:author" audiobook.author.slug %}</link>
+  <pubDate>{{ audiobook.created|date:"r" }}</pubDate>
+
+  {% for x in audiobook.get_tracks %}
+  <item>
+    <title>Track {{ forloop.counter }}</title>
+    <description></description>
+    <pubDate>{{ audiobook.created|date:"r" }}</pubDate>
+    <enclosure url="{{ x.file.url }}" length="{{ x.length }}" type="audio/mpeg" />
+  </item>
+  {% endfor %}
+</channel>
+</rss>
