@@ -2,8 +2,8 @@ from lxml import etree
 
 from django.http import HttpResponse
 
-def render_playlist(request, tracks):
-    return XSPFResponse(tracks, filename=None)
+def render_playlist(request, tracks, filename=None):
+    return XSPFResponse(tracks, filename)
 
 class XSPFResponse(HttpResponse):
     def __init__(self, tracks, filename=None):
