@@ -10,6 +10,4 @@ urlpatterns = patterns('musicdb.audiobooks.views',
 
     url(r'^audiobooks/play/(?P<audiobook_id>[^/]+).m3u$', 'play',
         name='play'),
-    url(r'^audiobooks/play/(?P<audiobook_id>[^/]+).rss$', 'rss',
-        name='rss'),
 )

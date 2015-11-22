@@ -33,11 +33,3 @@ def play(request, audiobook_id):
     audiobook = get_object_or_404(AudioBook, pk=audiobook_id)
 
     return render_playlist(request, audiobook.get_tracks())
-
-@login_required
-def rss(request, audiobook_id):
-    audiobook = get_object_or_404(AudioBook, pk=audiobook_id)
-
-    return render(request, 'audiobooks/rss.xml', {
-        'audiobook': audiobook,
-    }, content_type='text/xml')
