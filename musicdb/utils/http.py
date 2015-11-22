@@ -1,9 +1,6 @@
-import os
-
 from lxml import etree
 
 from django.http import HttpResponse
-from django.utils import simplejson
 
 def render_playlist(request, tracks):
     return XSPFResponse(tracks, filename=None)
