@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
 
 urlpatterns = patterns('',
+    url(r'', include('musicdb.audiobooks.urls', namespace='audiobooks')),
     url(r'', include('musicdb.auth.urls', namespace='auth')),
     url(r'', include('musicdb.books.urls', namespace='books')),
     url(r'', include('musicdb.classical.urls', namespace='classical')),

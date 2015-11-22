@@ -11,6 +11,7 @@ INSTALLED_APPS = (
     'storages',
     'south',
 
+    'musicdb.audiobooks',
     'musicdb.auth',
     'musicdb.auth.auth_admin',
     'musicdb.db',

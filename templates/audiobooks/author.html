@@ -1,0 +1,46 @@
+{% extends "audiobooks/base.html" %}
+
+{% load humanize %}
+
+{% block title %}{{ author.long_name }} - Audiobooks - {{ block.super }}{% endblock %}
+
+{% block container_title %}
+  <a href="{% url "audiobooks:view" author.last_name_first %}">
+    {{ author.long_name }}
+  </a>
+{% endblock %}
+
+{% block container %}
+
+<div class="row">
+{% for audiobook in author.books.all %}
+
+  {% grid_clearfix xs=2 sm=3 md=4 lg=6 %}
+
+  <div class="{% grid_classes xs=2 sm=3 md=4 lg=6 %} text-center" style="margin-bottom: 20px;">
+    <p>
+      <img
+        {% if audiobook.image.exists %}
+        src="{{ audiobook.image.thumbnail.url }}"
+        {% else %}
+        src="{% static "img/f_audiobooks/missing_cover.jpg" %}"
+        {% endif %}
+        alt="{{ audiobook.title }}"
+        class="img-responsive"
+        style="margin: 0 auto;"
+      >
+    </p>
+
+    <div class="dropdown">
+      <a
+        href="{% url "audiobooks:play" audiobook.pk %}"
+        class="btn btn-default dropdown-toggle"
+      >
+        {{ audiobook.title }}
+      </a>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+{% endblock %}
