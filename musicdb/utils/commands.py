@@ -146,7 +146,7 @@ class AddMusicFilesCommand(AddFilesCommand):
             )
         print
 
-    def copy_and_tag(self, files, target, rev_model, manager):
+    def copy_and_tag(self, files, target, rev_model, manager, tag=True):
         try:
             print "Copying tracks..."
 
@@ -178,14 +178,15 @@ class AddMusicFilesCommand(AddFilesCommand):
 
             # Tag in a seperate run as we may return different metadata
             # depending on the presence of other tracks.
-            print "Tagging tracks..."
-            for music_file in progress(music_files):
-                try:
-                    music_file.tag()
-                except:
-                    print "Caught exception when tagging %s" % \
-                        music_file.file.location
-                    raise
+            if tag:
+                print "Tagging tracks..."
+                for music_file in progress(music_files):
+                    try:
+                        music_file.tag()
+                    except:
+                        print "Caught exception when tagging %s" % \
+                            music_file.file.location
+                        raise
 
         except:
             print "Caught exception; cleaning up %r" % target

@@ -57,4 +57,5 @@ class Command(AddMusicFilesCommand):
             'audiobooks/%d' % audiobook.pk,
             'audiobook_track',
             audiobook.tracks,
+            tag=False,
         )
