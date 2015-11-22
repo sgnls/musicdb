@@ -30,7 +30,7 @@ def author(request, slug):
         'author': author,
     })
 
-def play(request, signed_audiobook_id):
+def play(request, signed_audiobook_id, format_):
     try:
         audiobook_id = Signer().unsign(signed_audiobook_id)
     except BadSignature:
@@ -38,8 +38,16 @@ def play(request, signed_audiobook_id):
 
     audiobook = get_object_or_404(AudioBook, pk=audiobook_id)
 
-    return render_playlist(
-        request,
-        audiobook.get_tracks(),
-        'audiobook-%d.xspf' % audiobook.pk,
-    )
+    if format_ == 'rss':
+        return render(request, 'audiobooks/rss.xml', {
+            'audiobook': audiobook,
+        }, content_type='application/xml')
+
+    if format_ == 'xspf':
+        return render_playlist(
+            request,
+            audiobook.get_tracks(),
+            'audiobook-%d.xspf' % audiobook.pk,
+        )
+
+    raise NotImplementedError()
