@@ -39,22 +39,6 @@
         {{ audiobook.title }}
       </a>
     </p>
-
-    <div class="dropdown">
-      <button
-        class="btn btn-default btn-sm dropdown-toggle"
-        type="button"
-        data-toggle="dropdown"
-        id="dropdown-{{ audiobook.pk }}"
-      >
-        More <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li>
-          <a href="{% url "audiobooks:play" signed_audiobook_id %}">Play</a>
-        </li>
-      </ul>
-    </div>
   </div>
 {% endwith %}
 {% endfor %}
