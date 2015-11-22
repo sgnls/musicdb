@@ -10,6 +10,9 @@ def render_playlist(request, tracks):
 
 class XSPFResponse(HttpResponse):
     def __init__(self, tracks, filename=None):
+        if filename is None:
+            filename = 'playlist.xspf'
+
         NSMAP = {
             None: 'http://xspf.org/ns/0/',
         }
@@ -36,9 +39,6 @@ class XSPFResponse(HttpResponse):
             etree.tounicode(playlist),
             mimetype='application/xspf+xml',
         )
-
-        if filename is None:
-            filename = 'playlist.xspf'
 
         self['Content-Disposition'] = 'attachment; filename=%s' % filename
 
