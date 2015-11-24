@@ -2,7 +2,10 @@ musicdb
 =======
 
 .. image:: https://api.travis-ci.org/lamby/musicdb.svg?branch=master
-   :target: https://travis-ci.org/musicdb/musicdb
+  :target: https://travis-ci.org/musicdb/musicdb
+
+.. image:: https://coveralls.io/repos/lamby/musicdb/badge.svg?branch=master&service=github
+  :target: https://coveralls.io/github/lamby/musicdb?branch=master
 
 This is my personal media library which I wrote after being frustrated with
 other solutions which use pre-1970s database technology.
