@@ -1,3 +1,8 @@
+import os
+import shutil
+import tempfile
+import subprocess
+
 from django.core.management.base import CommandError
 
 from musicdb.utils.commands import AddMusicFilesCommand
@@ -5,6 +10,34 @@ from musicdb.utils.commands import AddMusicFilesCommand
 from ...models import Author
 
 class Command(AddMusicFilesCommand):
+    def handle_filenames(self, files):
+        tempdir = tempfile.mkdtemp(prefix='musicdb-add_audiobook-')
+
+        result = []
+        for idx, val in enumerate(files, 1):
+            if os.path.isfile(val):
+                result.append(val)
+                continue
+
+            self.handle_youtube(val, '%s/%d.%%(ext)s' % (tempdir, idx))
+
+            result.append('%s/%d.mp3' % (tempdir, idx))
+
+        try:
+            super(Command, self).handle_filenames(result)
+        finally:
+            shutil.rmtree(tempdir, ignore_errors=True)
+
+    def handle_youtube(self, val, output):
+        return subprocess.check_call((
+            'youtube-dl',
+            val,
+            '--extract-audio',
+            '--audio-format', 'mp3',
+            '--audio-quality', '4',
+            '--output', output,
+        ))
+
     def handle_files(self, files):
         self.show_filenames(files)
 
