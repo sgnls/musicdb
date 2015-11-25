@@ -35,7 +35,12 @@ class AddFilesCommand(BaseCommand):
                 if os.path.splitext(filename)[1].lower() in ('.flac', '.mp3'):
                     files.append(filename)
 
+        self.handle_prompt(files)
+
         transaction.commit_on_success(self.handle_filenames)(files)
+
+    def handle_prompt(self, files):
+        pass
 
     def prompt_string(self, name, qs=None, field=None, default=None):
         if qs and field:

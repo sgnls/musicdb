@@ -10,40 +10,7 @@ from musicdb.utils.commands import AddMusicFilesCommand
 from ...models import Author
 
 class Command(AddMusicFilesCommand):
-    def handle_filenames(self, files):
-        tempdir = tempfile.mkdtemp(prefix='musicdb-add_audiobook-')
-
-        result = []
-        for idx, val in enumerate(files, 1):
-            if os.path.isfile(val):
-                result.append(val)
-                continue
-
-            self.handle_youtube(val, '%s/%d.%%(ext)s' % (tempdir, idx))
-
-            result.append('%s/%d.mp3' % (tempdir, idx))
-
-        try:
-            super(Command, self).handle_filenames(result)
-        finally:
-            shutil.rmtree(tempdir, ignore_errors=True)
-
-    def handle_youtube(self, val, output):
-        return subprocess.check_call((
-            'youtube-dl',
-            val,
-            '--extract-audio',
-            '--audio-format', 'mp3',
-            '--audio-quality', '4',
-            '--output', output,
-        ))
-
-    def handle_files(self, files):
-        self.show_filenames(files)
-
-        if not files:
-            raise CommandError("Must specify at least one filename")
-
+    def handle_prompt(self, files):
         last_name = self.prompt_string(
             "Author last name",
             Author.objects.all(),
@@ -83,12 +50,39 @@ class Command(AddMusicFilesCommand):
         if raw_input("Accept? [Yn] ").upper() not in ('', 'Y'):
             raise CommandError("Cancelling")
 
-        audiobook = author.books.create(title=title)
+        self.audiobook = author.books.create(title=title)
 
+    def handle_filenames(self, files):
+        tempdir = tempfile.mkdtemp(prefix='musicdb-add_audiobook-')
+        result = []
+        for idx, val in enumerate(files, 1):
+            if os.path.isfile(val):
+                result.append(val)
+                continue
+
+            subprocess.check_call((
+                'youtube-dl',
+                val,
+                '--extract-audio',
+                '--audio-format', 'mp3',
+                '--audio-quality', '4',
+                '--output',
+                '%s/%d.%%(ext)s' % (tempdir, idx),
+            ))
+
+            result.append('%s/%d.mp3' % (tempdir, idx))
+
+        try:
+            super(Command, self).handle_filenames(result)
+        finally:
+            shutil.rmtree(tempdir, ignore_errors=True)
+
+    def handle_files(self, files):
         self.copy_and_tag(
             files,
-            'audiobooks/%d' % audiobook.pk,
+            'audiobooks/%d' % self.audiobook.pk,
             'audiobook_track',
-            audiobook.tracks,
+            self.audiobook.tracks,
             tag=False,
         )
+
