@@ -8,6 +8,7 @@
 
   {% for x in audiobook.get_tracks %}
   <item>
+    <guid>{{ x.pk }}</title>
     <title>{{ audiobook.title }} - {{ audiobook.author.long_name }}{% if audiobook.tracks.count > 1 %} ({{ forloop.counter }}/{{ audiobook.tracks.count }}){% endif %}</title>
     <description></description>
     <pubDate>{{ audiobook.created|date:"r" }}</pubDate>
