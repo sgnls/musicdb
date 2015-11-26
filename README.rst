@@ -7,6 +7,9 @@ musicdb
 .. image:: https://coveralls.io/repos/lamby/musicdb/badge.svg?branch=master&service=github
   :target: https://coveralls.io/github/lamby/musicdb?branch=master
 
+.. image:: https://requires.io/github/takeyourmeds/takeyourmeds-web/requirements.svg?branch=master
+  :target: https://requires.io/github/takeyourmeds/takeyourmeds-web/requirements/?branch=master
+
 This is my personal media library which I wrote after being frustrated with
 other solutions which use pre-1970s database technology.
 
