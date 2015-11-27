@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/DTDs/Podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
-  <title>{{ audiobook.author.long_name }} - {{ audiobook.title }}</title>
+  <title>{{ audiobook.author.last_name }}, {{ audiobook.author.first_names }} - {{ audiobook.title }}</title>
   <description></description>
   <link>{{ settings.SITE_URL }}{% url "audiobooks:author" audiobook.author.slug %}</link>
   <pubDate>{{ audiobook.created|date:"r" }}</pubDate>
@@ -9,11 +9,7 @@
   {% for x in audiobook.get_tracks %}
   <item>
     <guid>{{ x.pk }}</guid>
-    {% if audiobook.tracks.count > 1 %}
-      <title>{{ audiobook.title }} ({{ forloop.counter }}/{{ audiobook.tracks.count }})</title>
-    {% else %}
-      <title>{{ audiobook.author.long_name }} - {{ audiobook.title }}</title>
-    {% endif %}
+    <title>{{ audiobook.title }}{% if audiobook.tracks.count > 1 %} ({{ forloop.counter }}/{{ audiobook.tracks.count }}){% endif %}</title>
     <description></description>
     <pubDate>{{ audiobook.created|date:"r" }}</pubDate>
     <enclosure url="{{ x.file.url }}" length="{{ x.length }}" type="audio/mpeg" />
