@@ -8,7 +8,7 @@
 
   {% for x in audiobook.get_tracks %}
   <item>
-    <guid>{{ x.pk }}</title>
+    <guid>{{ x.pk }}</guid>
     {% if audiobook.tracks.count > 1 %}
       <title>{{ audiobook.title }} ({{ forloop.counter }}/{{ audiobook.tracks.count }})</title>
     {% else %}
