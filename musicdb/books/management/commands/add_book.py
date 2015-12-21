@@ -110,16 +110,20 @@ class Command(AddFilesCommand):
         book.authors.create(num=1, author=author)
 
         if self.options['cover_url']:
-            tempfile, _ = urllib.urlretrieve(self.options['cover_url'])
+            if 'http' in self.options['cover_url']:
+                tempfile, _ = urllib.urlretrieve(self.options['cover_url'])
 
-            try:
-                book.image.save(DjangoFile(open(tempfile)))
-                book.save()
-            finally:
                 try:
-                    os.unlink(tempfile)
-                except:
-                    pass
+                    book.image.save(DjangoFile(open(tempfile)))
+                    book.save()
+                finally:
+                    try:
+                        os.unlink(tempfile)
+                    except:
+                        pass
+            else:
+                book.image.save(DjangoFile(open(self.options['cover_url'])))
+                book.save()
 
 def guess_book_details(val):
     val = os.path.basename(val)
