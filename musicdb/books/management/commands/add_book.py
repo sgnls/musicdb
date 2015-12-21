@@ -19,8 +19,8 @@ class Command(AddFilesCommand):
             action='store', help="Author last name (optional)"),
         make_option('-t', '--title', dest='title', default='',
             action='store', help="Title (optional)"),
-        make_option('-c', '--cover', dest='cover_url', default=None,
-            action='store', help="Cover URL (optional)"),
+        make_option('-c', '--cover', dest='cover', default=None,
+            action='store', help="Cover file/URL (optional)"),
     )
 
     def handle_filenames(self, filenames):
@@ -73,7 +73,7 @@ class Command(AddFilesCommand):
 
         print " Author: %s" % author.long_name()
         print "  Title: %s" % title
-        print "  Cover: %s" % self.options['cover_url']
+        print "  Cover: %s" % self.options['cover']
         print
 
         if raw_input("Accept? [Yn] ").upper() not in ('', 'Y'):
@@ -101,9 +101,9 @@ class Command(AddFilesCommand):
 
         book.authors.create(num=1, author=author)
 
-        if self.options['cover_url']:
-            if 'http' in self.options['cover_url']:
-                tempfile, _ = urllib.urlretrieve(self.options['cover_url'])
+        if self.options['cover']:
+            if 'http' in self.options['cover']:
+                tempfile, _ = urllib.urlretrieve(self.options['cover'])
 
                 try:
                     book.image.save(DjangoFile(open(tempfile)))
@@ -114,5 +114,5 @@ class Command(AddFilesCommand):
                     except:
                         pass
             else:
-                book.image.save(DjangoFile(open(self.options['cover_url'])))
+                book.image.save(DjangoFile(open(self.options['cover'])))
                 book.save()
