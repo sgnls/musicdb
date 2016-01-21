@@ -1,5 +1,3 @@
-import os
-
 from apps import *
 from setup_warnings import *
 
