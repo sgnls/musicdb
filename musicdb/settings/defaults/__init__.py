@@ -1,10 +1,19 @@
-from apps import *
-from setup_warnings import *
+import djcelery
 
 from os.path import abspath, dirname, join
 
+from apps import *
+from setup_warnings import *
+
+djcelery.setup_loader()
+
+BASE_DIR = '/usr/share/python/musicdb'
+
+# Fallback to relative location
+if not __file__.startswith(BASE_DIR):
+    BASE_DIR = dirname(dirname(dirname(dirname(abspath(__file__)))))
+
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Chris Lamb', 'chris@chris-lamb.co.uk'),
@@ -12,6 +21,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 INTERNAL_IPS = ('127.0.0.1',)
+ALLOWED_HOSTS = ('*',)
 
 DATABASES = {
     'default': {
@@ -20,11 +30,10 @@ DATABASES = {
         'USER': 'musicdb',
         'PASSWORD': '',
         'HOST': '',
-        'PORT': '6432',
+        'PORT': '5432',
+        'ATOMIC_REQUESTS': True,
     }
 }
-
-MUSICDB_BASE_PATH = dirname(dirname(dirname(dirname(abspath(__file__)))))
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -49,40 +58,53 @@ USE_L10N = False
 # Example: "http://media.lawrence.com"
 MEDIA_URL = ''
 
-STATIC_MEDIA_URL = '/media/%(hash).6s/%(path)s'
-STATIC_MEDIA_ROOT = join(MUSICDB_BASE_PATH, 'media')
-
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
+STATIC_URL = '/static/'
+STATIC_ROOT = join(BASE_DIR, 'static')
+STATICFILES_DIRS = (join(BASE_DIR, 'media'),)
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_FINDERS = (
+    'staticfiles_dotd.finders.DotDFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+TEMPLATES = [{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [
+        join(BASE_DIR, 'templates'),
+    ],
+    'APP_DIRS': True,
+    'OPTIONS': {
+        'context_processors': [
+            'django.template.context_processors.debug',
+            'django.template.context_processors.request',
+            'django.contrib.auth.context_processors.auth',
+            'django.contrib.messages.context_processors.messages',
+            'musicdb.utils.context_processors.settings_context',
+        ],
+        'builtins': [
+            'django.contrib.staticfiles.templatetags.staticfiles',
+            'django_autologin.templatetags.django_autologin',
+            'musicdb.utils.templatetags.bootstrap',
+            'musicdb.utils.templatetags.fonts',
+            'musicdb.utils.templatetags.pagination',
+            'musicdb.utils.templatetags.signing',
+        ],
+    },
+}]
+
 MIDDLEWARE_CLASSES = (
-    'django.middleware.transaction.TransactionMiddleware',
     'django.middleware.gzip.GZipMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'musicdb.debug.middleware.ShowForSuperusersMiddleware',
+    'musicdb.utils.middleware.ShowForSuperusersMiddleware',
     'django_autologin.middleware.AutomaticLoginMiddleware',
 )
 
 ROOT_URLCONF = 'musicdb.urls'
-
-TEMPLATE_DIRS = (
-    join(MUSICDB_BASE_PATH, 'templates'),
-)
-
-DEBUG_TOOLBAR_CONFIG = {
-    'HIDE_DJANGO_SQL': True,
-    'INTERCEPT_REDIRECTS': False,
-    'SHOW_TEMPLATE_CONTEXT': False,
-}
 
 SECRET_KEY = 'private'
 
@@ -111,25 +133,16 @@ CACHES = {
     }
 }
 
-SITE_URL = 'https://musicdb.chris-lamb.co.uk'
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.request',
-    'django.contrib.messages.context_processors.messages',
-    'musicdb.utils.context_processors.settings_context',
-)
+SITE_URL = 'overriden-in-productoin'
 
 LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/albums' # albums:view
-
-DATABASE_ENGINE = 'dummy_for_debug_toolbar'
 
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.BCryptPasswordHasher',
 )
 
-SERVER_EMAIL = 'noreply@musicdb.chris-lamb.co.uk'
+SERVER_EMAIL = 'overriden-in-production'
 DEFAULT_FROM_EMAIL = SERVER_EMAIL
 
 SOUTH_TESTS_MIGRATE = False
@@ -137,3 +150,8 @@ SOUTH_TESTS_MIGRATE = False
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
 
 FONTS_ENABLED = True
+
+BROKER_URL = 'redis://localhost:6379/0'
+
+CELERYBEAT_SCHEDULE = {
+}

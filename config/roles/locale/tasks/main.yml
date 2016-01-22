@@ -1,0 +1,22 @@
+---
+- name: locales-all
+  apt:
+    pkg=locales-all
+
+- name: All locales
+  debconf:
+    name=locales
+    vtype=multiselect
+    question=locales/locales_to_be_generated
+    value={{ locale }}
+  notify:
+    update locales
+
+- name: Default locale
+  debconf:
+    name=locales
+    vtype=select
+    question=locales/default_environment_locale
+    value={{ locale }}
+  notify:
+    update locales

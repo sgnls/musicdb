@@ -4,7 +4,6 @@ def base_dir(*xs):
     return join(dirname(dirname(dirname(dirname(abspath(__file__))))), *xs)
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 ADMINS = ()
 
@@ -29,7 +28,6 @@ CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
 
 SITE_URL = 'http://127.0.0.1:8000'
-STATIC_MEDIA_URL = '/media/%(path)s'
 
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 

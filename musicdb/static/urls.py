@@ -1,6 +1,8 @@
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import url
 
-urlpatterns = patterns('musicdb.static.views',
-    url(r'^$', 'landing',
+from . import views
+
+urlpatterns = (
+    url(r'^$', views.landing,
         name='landing'),
 )

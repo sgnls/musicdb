@@ -1,4 +1,0 @@
-#!/bin/sh
-
-rm -rf tests
-rm -rf locale/*/

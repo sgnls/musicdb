@@ -36,7 +36,7 @@
 
           <ul class="dropdown-menu">
             <li><a href="{% url "profile:view" %}">Profile</a></li>
-            <li><a href="{% url "auth:logout" %}" data-no-instant>Logout</a></li>
+            <li><a href="{% url "account:logout" %}" data-no-instant>Logout</a></li>
             {% if request.user.is_superuser %}
             <li class="divider"></li>
             <li><a href="{% url "superuser:view" %}">Superuser</a></li>
@@ -45,7 +45,7 @@
         </li>
         {% else %}
           <li class="nav-item">
-            <a class="" href="{% url "auth:login" %}">
+            <a class="" href="{% url "account:login" %}">
               Login
             </a>
           </li>

@@ -2,23 +2,25 @@ Source: musicdb
 Section: net
 Priority: optional
 Maintainer: Chris Lamb <lamby@debian.org>
-Build-Depends: debhelper (>= 7.0.50~)
-Standards-Version: 3.9.2
+Build-Depends:
+ debhelper (>= 9),
+ dh-systemd (>= 1.5),
+ dh-virtualenv (>= 0.10),
+ libffi-dev,
+ libjpeg-dev,
+ libpq-dev,
+ libpython-dev,
+ libxml2-dev,
+ libxslt1-dev,
+ python
+Standards-Version: 3.9.6
 
 Package: musicdb
-Architecture: all
+Architecture: any
+Pre-Depends:
+ python2.7,
+ ${misc:Pre-Depends}
 Depends:
-  ${misc:Depends},
-  ${python:Depends},
-  gunicorn (>= 0.14.2),
-  nginx,
-  python-boto (>= 2.25),
-  python-bcrypt,
-  python-mutagen,
-  python-memcache,
-  python-psycopg2,
-  python-roman,
-  python-imaging,
-  python-lxml,
-  python-progressbar,
-Description: musicdb.chris-lamb.co.uk
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: musicdb

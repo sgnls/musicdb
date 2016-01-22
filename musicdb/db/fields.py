@@ -24,10 +24,15 @@ class DenormalisedCharField(models.CharField):
 
         return val[:self.max_length]
 
-    def south_field_triple(self):
-        from south.modelsinspector import introspector
-        args, kwargs = introspector(self)
-        return ('django.db.models.fields.TextField', args, kwargs)
+    def deconstruct(self):
+        name, _, _, kwargs = super(DenormalisedCharField, self).deconstruct()
+
+        return (
+            name,
+            'musicdb.db.fields.DenormalisedCharField',
+            (self.attr,),
+            kwargs,
+        )
 
 class MySlugField(DenormalisedCharField):
     def __init__(self, *args, **kwargs):

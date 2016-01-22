@@ -1,0 +1,15 @@
+[Unit]
+Description=musicdb-celery
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+Restart=always
+
+PermissionsStartOnly=true
+ExecStartPre=-/usr/bin/install -o www-data -g www-data -d /var/lib/musicdb-celery
+
+ExecStart=/usr/share/python/musicdb/bin/manage.py celery worker --beat --schedule=/var/lib/musicdb-celery/schedule --loglevel=info --concurrency=1
+
+PrivateTmp=true

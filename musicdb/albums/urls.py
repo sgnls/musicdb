@@ -1,18 +1,20 @@
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import url
 
-urlpatterns = patterns('musicdb.albums.views',
+from . import views
+
+urlpatterns = (
     # settings.LOGIN_REDIRECT_URL
-    url(r'^albums$', 'view',
+    url(r'^albums$', views.view,
         name='view'),
-    url(r'^albums/(?P<letter>[a-z-0])$', 'view',
+    url(r'^albums/(?P<letter>[a-z-0])$', views.view,
         name='view'),
 
-    url(r'^albums/(?P<slug>[^/]+)$', 'artist',
+    url(r'^albums/(?P<slug>[^/]+)$', views.artist,
         name='artist'),
-    url(r'^albums/(?P<artist_slug>[^/]+)/(?P<slug>[^/]+)$', 'album',
+    url(r'^albums/(?P<artist_slug>[^/]+)/(?P<slug>[^/]+)$', views.album,
         name='album'),
-    url(r'^albums/play/album/(?P<album_id>\d+)$', 'play_album',
+    url(r'^albums/play/album/(?P<album_id>\d+)$', views.play_album,
         name='play-album'),
-    url(r'^albums/play/album/(?P<album_id>\d+)/cd/(?P<cd_id>\d+)$', 'play_cd',
+    url(r'^albums/play/album/(?P<album_id>\d+)/cd/(?P<cd_id>\d+)$', views.play_cd,
         name='play-cd'),
 )

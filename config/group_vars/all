@@ -1,0 +1,6 @@
+---
+base_dir: /usr/share/python/musicdb
+root_email: chris@chris-lamb.co.uk
+site_packages: /usr/share/python/musicdb/lib/python2.7/site-packages
+debian_mirror: http://httpredir.debian.org
+debian_release: jessie

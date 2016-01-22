@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -eu
+
+TEMP="$(mktemp -d)"
+SOURCE="$(dpkg-parsechangelog --show-field Source)"
+
+pip install ansible
+install -v -D -m644 ../${SOURCE}_*.deb config/roles/${SOURCE}/files/${SOURCE}.deb
+
+echo "${ANSIBLE_VAULT_PASSWORD}" > ${TEMP}/password
+echo "${HOSTNAME} ansible_ssh_user=root ansible_ssh_private_key_file=${TEMP}/id_rsa" > ${TEMP}/hosts
+
+cp config/ssh_keys/${HOSTNAME} ${TEMP}/id_rsa
+ansible-vault decrypt --vault-password-file=${TEMP}/password ${TEMP}/id_rsa
+chmod 600 "${TEMP}/id_rsa"
+
+exec env ANSIBLE_HOST_KEY_CHECKING=0 ansible-playbook \
+	config/playbook.yml \
+	--verbose \
+	--inventory=${TEMP}/hosts \
+	--vault-password-file=${TEMP}/password \
+	"${@}"

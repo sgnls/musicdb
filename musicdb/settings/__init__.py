@@ -11,8 +11,3 @@ else:
         from custom import *
     except ImportError:
         pass
-
-STATIC_URL = STATIC_MEDIA_URL % {
-    'hash': 'hash',
-    'path': '',
-}

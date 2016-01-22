@@ -1,0 +1,3 @@
+---
+- name: update locales
+  command: locale-gen

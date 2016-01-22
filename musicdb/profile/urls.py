@@ -1,6 +1,8 @@
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import url
 
-urlpatterns = patterns('musicdb.profile.views',
-    url(r'^profile$', 'view',
+from . import views
+
+urlpatterns = (
+    url(r'^profile$', views.view,
         name='view'),
 )

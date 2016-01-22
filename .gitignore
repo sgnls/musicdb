@@ -1,5 +1,7 @@
 *.pyc
+*.deb
 /musicdb/settings/custom.py
 /storage/
 /site_media/
 /media_location/
+/static/

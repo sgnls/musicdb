@@ -1,17 +1,11 @@
 #!/usr/bin/make -f
 
-export PYTHONDONTWRITEBYTECODE = 1
-
 %:
-	dh $@
+	dh $@ --with=python-virtualenv,systemd
 
-override_dh_auto_clean:
-	rm -f contrib/*/*.log
+override_dh_systemd_start:
+	dh_systemd_start --no-start
 
-override_dh_auto_build:
-	# Test in build so we don't have to build first
-	musicdb/manage.py test --verbosity=2
-	
-	debian/bin/concatenate_media media
-	debian/bin/generate_hashes media > musicdb/settings/hashes.py
-	echo "from roles.live import *" > musicdb/settings/role.py
+override_dh_systemd_enable:
+	dh_systemd_enable --name musicdb-celery
+	dh_systemd_enable --name musicdb-gunicorn

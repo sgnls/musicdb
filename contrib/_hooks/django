@@ -1,8 +1,0 @@
-#!/bin/sh
-
-rm -rf conf/locale/*/
-rm -rf contrib/gis
-rm -rf contrib/*/tests.py
-rm -rf contrib/*/tests/
-rm -rf contrib/*/locale/*/
-rm -rf contrib/localflavor

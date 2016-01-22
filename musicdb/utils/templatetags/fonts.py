@@ -1,5 +1,6 @@
 from django import template
 from django.conf import settings
+from django.utils.safestring import mark_safe
 
 register = template.Library()
 
@@ -10,4 +11,4 @@ def font(definition):
     if not settings.FONTS_ENABLED:
         return ''
 
-    return TEMPLATE % definition
+    return mark_safe(TEMPLATE % definition)
