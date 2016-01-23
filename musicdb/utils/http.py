@@ -34,7 +34,7 @@ class XSPFResponse(HttpResponse):
 
         super(XSPFResponse, self).__init__(
             etree.tounicode(playlist),
-            mimetype='application/xspf+xml',
+            content_type='application/xspf+xml',
         )
 
         self['Content-Disposition'] = 'attachment; filename=%s' % filename
