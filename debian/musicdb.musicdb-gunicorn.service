@@ -7,7 +7,7 @@ User=www-data
 Group=www-data
 Restart=always
 
-ExecStart=/usr/share/python/musicdb/bin/gunicorn --workers=8 --log-level=info --preload musicdb.wsgi
+ExecStart=/usr/share/python/musicdb/bin/gunicorn --workers=4 --log-level=info --preload musicdb.wsgi
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
 
