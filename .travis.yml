@@ -1,7 +1,16 @@
 sudo: required
+python: "2.7"
+language: python
 
 services:
   - docker
 
 script:
   - wget -O- http://travis.debian.net/script.sh | sh -
+
+deploy:
+  on:
+    branch: master
+  script: config/deploy
+  provider: script
+  skip_cleanup: true
