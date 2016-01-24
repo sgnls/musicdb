@@ -6,19 +6,30 @@ class SmokeTests(TestCase):
     def setUp(self):
         super(SmokeTests, self).setUp()
 
-        artist = Artist.objects.create(name="Test artist")
-        artist.albums.create(title="Test album")
+        self.artist = Artist.objects.create(
+            name="Test artist",
+            slug='test-artist',
+        )
+
+        self.album = self.artist.albums.create(
+            title="Test album",
+            slug='test-album',
+        )
+
+        self.cd = self.album.cds.create(num=1)
 
     def test_view(self):
         self.assertHTTP302('albums:view')
         self.assertHTTP200('albums:view', 'a')
 
     def test_artist(self):
-        artist = Artist.objects.get()
-
-        self.assertHTTP200(artist.get_absolute_url())
+        self.assertHTTP200(self.artist.get_absolute_url())
 
     def test_album(self):
-        album = Artist.objects.get().albums.get()
+        self.assertHTTP200(self.album.get_absolute_url())
 
-        self.assertHTTP200(album.get_absolute_url())
+    def test_play_album(self):
+        self.assertHTTP200('albums:play-album', self.album.pk)
+
+    def test_play_cd(self):
+        self.assertHTTP200('albums:play-cd', self.album.pk, self.cd.pk)
