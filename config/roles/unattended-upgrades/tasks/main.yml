@@ -1,0 +1,10 @@
+---
+- name: pkg
+  apt:
+    pkg=unattended-upgrades
+
+- name: 50unattended-upgrades
+  template:
+    src=50unattended-upgrades
+    dest=/etc/apt/apt.conf.d/50unattended-upgrades
+    mode=0644

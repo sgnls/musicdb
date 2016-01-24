@@ -9,6 +9,7 @@
   hosts: all
   roles:
     - apt
+    - unattended-upgrades
     - hostname
     - locale
     - timezone
