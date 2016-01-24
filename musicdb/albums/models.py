@@ -101,7 +101,7 @@ class Album(models.Model, NextPreviousMixin):
             track__cd__album=self,
         ).order_by(
             'track__cd',
-            'track',
+            'track__num',
         )
 
     def total_duration(self):
@@ -134,7 +134,7 @@ class CD(models.Model):
         return MusicFile.objects.filter(
             track__cd=self,
         ).order_by(
-            'track',
+            'track__num',
         )
 
 class Track(models.Model):

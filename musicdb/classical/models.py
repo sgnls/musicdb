@@ -363,7 +363,7 @@ class Recording(models.Model):
     def get_tracks(self):
         return MusicFile.objects.filter(
             movement__recording=self,
-        ).order_by('movement')
+        ).order_by('movement__num')
 
 class Movement(models.Model):
     recording = models.ForeignKey(Recording, related_name='movements')
