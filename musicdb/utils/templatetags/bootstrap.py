@@ -1,4 +1,5 @@
 from django import template
+from django.utils.safestring import mark_safe
 
 register = template.Library()
 
@@ -61,7 +62,7 @@ def grid_clearfix(context, *args, **kwargs):
     if not classes:
         return ''
 
-    return '<div class="clearfix %s"></div>' % ' '.join(classes)
+    return mark_safe('<div class="clearfix %s"></div>' % ' '.join(classes))
 
 def _get_cols(context, xs=12, sm=None, md=None, lg=None):
     try:
