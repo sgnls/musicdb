@@ -2,9 +2,6 @@
 - name: servers
   hosts: all
   roles:
-    - memcached
-    - postgresql
-    - redis
     - nginx
 
 - name: deploy
