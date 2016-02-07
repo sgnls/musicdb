@@ -1,8 +1,0 @@
----
-- name: Set timezone
-  template:
-    src=timezone
-    dest=/etc/timezone
-    mode=0644
-  notify:
-    - update timezone

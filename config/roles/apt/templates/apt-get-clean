@@ -1,3 +1,0 @@
-# Sunday at 02:30
-
-30 2 * * 0 root apt-get clean

@@ -1,4 +1,0 @@
----
-- name: packages
-  raw:
-    apt-get install --yes python python-simplejson python-psycopg2 sudo rsync
