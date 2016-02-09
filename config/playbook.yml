@@ -1,9 +1,4 @@
 ---
-- name: servers
-  hosts: all
-  roles:
-    - nginx
-
 - name: deploy
   hosts: all
   roles:
