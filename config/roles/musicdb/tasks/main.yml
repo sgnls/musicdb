@@ -1,10 +1,4 @@
 ---
-- name: rsync package
-  synchronize:
-    src=musicdb.deb
-    dest=/tmp/musicdb.deb
-    checksum=yes
-
 - name: Stop services to avoid race conditions
   action: service
     name={{ item }}
@@ -16,13 +10,10 @@
   ignore_errors: yes # Permit initial installation
 
 - name: Install package
-  shell:
-    dpkg -i /tmp/musicdb.deb
-  ignore_errors: yes # For new dependencies
-
-- name: Ensure dependencies
-  shell:
-    apt-get -f --yes install
+  apt:
+    name=musicdb
+    state=latest
+    update_cache=yes
 
 - name: Set role
   template:
